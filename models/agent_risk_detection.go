@@ -159,6 +159,16 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["identityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAgentIdentityType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityType(val.(*AgentIdentityType))
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -220,6 +230,18 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetIdentityType gets the identityType property value. The identityType property
+// returns a *AgentIdentityType when successful
+func (m *AgentRiskDetection) GetIdentityType()(*AgentIdentityType) {
+    val, err := m.GetBackingStore().Get("identityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AgentIdentityType)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time that the risk detection was last updated.  Supports $filter (eq, le, and ge).
 // returns a *Time when successful
@@ -336,6 +358,13 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetIdentityType() != nil {
+        cast := (*m.GetIdentityType()).String()
+        err = writer.WriteStringValue("identityType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
@@ -419,6 +448,13 @@ func (m *AgentRiskDetection) SetDetectionTimingType(value *RiskDetectionTimingTy
         panic(err)
     }
 }
+// SetIdentityType sets the identityType property value. The identityType property
+func (m *AgentRiskDetection) SetIdentityType(value *AgentIdentityType)() {
+    err := m.GetBackingStore().Set("identityType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time that the risk detection was last updated.  Supports $filter (eq, le, and ge).
 func (m *AgentRiskDetection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -470,6 +506,7 @@ type AgentRiskDetectionable interface {
     GetAgentId()(*string)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDetectionTimingType()(*RiskDetectionTimingType)
+    GetIdentityType()(*AgentIdentityType)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRiskDetail()(*RiskDetail)
     GetRiskEventType()(*string)
@@ -482,6 +519,7 @@ type AgentRiskDetectionable interface {
     SetAgentId(value *string)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDetectionTimingType(value *RiskDetectionTimingType)()
+    SetIdentityType(value *AgentIdentityType)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRiskDetail(value *RiskDetail)()
     SetRiskEventType(value *string)()

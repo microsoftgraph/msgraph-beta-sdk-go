@@ -43,7 +43,7 @@ func (m *BaselineResource) GetAdditionalData()(map[string]any) {
 func (m *BaselineResource) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Unique name of the resource.
 // returns a *string when successful
 func (m *BaselineResource) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -125,7 +125,7 @@ func (m *BaselineResource) GetProperties()(OpenComplexDictionaryTypeable) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. Name of the resource type.
 // returns a *string when successful
 func (m *BaselineResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -182,7 +182,7 @@ func (m *BaselineResource) SetAdditionalData(value map[string]any)() {
 func (m *BaselineResource) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Unique name of the resource.
 func (m *BaselineResource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *BaselineResource) SetProperties(value OpenComplexDictionaryTypeable)() 
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. Name of the resource type.
 func (m *BaselineResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

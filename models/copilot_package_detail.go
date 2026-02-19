@@ -15,6 +15,8 @@ func NewCopilotPackageDetail()(*CopilotPackageDetail) {
     m := &CopilotPackageDetail{
         CopilotPackage: *NewCopilotPackage(),
     }
+    odataTypeValue := "#microsoft.graph.copilotPackageDetail"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCopilotPackageDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -14,7 +14,7 @@ import (
 type TeamsPolicyUserAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamsPolicyUserAssignmentsRequestBuilderGetQueryParameters navigation property to the collection of user policy assignments.
+// TeamsPolicyUserAssignmentsRequestBuilderGetQueryParameters the collection of user policy assignments.
 type TeamsPolicyUserAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewTeamsPolicyUserAssignmentsRequestBuilder(rawUrl string, requestAdapter i
 func (m *TeamsPolicyUserAssignmentsRequestBuilder) Count()(*TeamsPolicyUserAssignmentsCountRequestBuilder) {
     return NewTeamsPolicyUserAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get navigation property to the collection of user policy assignments.
+// Get the collection of user policy assignments.
 // returns a TeamsPolicyUserAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsPolicyUserAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsPolicyUserAssignmentsRequestBuilderGetRequestConfiguration)(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyUserAssignmentCollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *TeamsPolicyUserAssignmentsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyUserAssignmentable), nil
 }
-// ToGetRequestInformation navigation property to the collection of user policy assignments.
+// ToGetRequestInformation the collection of user policy assignments.
 // returns a *RequestInformation when successful
 func (m *TeamsPolicyUserAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsPolicyUserAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

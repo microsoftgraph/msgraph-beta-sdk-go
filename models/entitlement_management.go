@@ -214,6 +214,18 @@ func (m *EntitlementManagement) GetControlConfigurations()([]ControlConfiguratio
     }
     return nil
 }
+// GetExternalOriginResourceConnectors gets the externalOriginResourceConnectors property value. The externalOriginResourceConnectors property
+// returns a []ExternalOriginResourceConnectorable when successful
+func (m *EntitlementManagement) GetExternalOriginResourceConnectors()([]ExternalOriginResourceConnectorable) {
+    val, err := m.GetBackingStore().Get("externalOriginResourceConnectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalOriginResourceConnectorable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -474,6 +486,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["externalOriginResourceConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalOriginResourceConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalOriginResourceConnectorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ExternalOriginResourceConnectorable)
+                }
+            }
+            m.SetExternalOriginResourceConnectors(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue)
         if err != nil {
@@ -724,6 +752,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetExternalOriginResourceConnectors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalOriginResourceConnectors()))
+        for i, v := range m.GetExternalOriginResourceConnectors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalOriginResourceConnectors", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -856,6 +896,13 @@ func (m *EntitlementManagement) SetControlConfigurations(value []ControlConfigur
         panic(err)
     }
 }
+// SetExternalOriginResourceConnectors sets the externalOriginResourceConnectors property value. The externalOriginResourceConnectors property
+func (m *EntitlementManagement) SetExternalOriginResourceConnectors(value []ExternalOriginResourceConnectorable)() {
+    err := m.GetBackingStore().Set("externalOriginResourceConnectors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
 func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -889,6 +936,7 @@ type EntitlementManagementable interface {
     GetAvailableAccessPackages()([]AvailableAccessPackageable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
     GetControlConfigurations()([]ControlConfigurationable)
+    GetExternalOriginResourceConnectors()([]ExternalOriginResourceConnectorable)
     GetSettings()(EntitlementManagementSettingsable)
     GetSubjects()([]AccessPackageSubjectable)
     SetAccessPackageAssignmentApprovals(value []Approvalable)()
@@ -907,6 +955,7 @@ type EntitlementManagementable interface {
     SetAvailableAccessPackages(value []AvailableAccessPackageable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
     SetControlConfigurations(value []ControlConfigurationable)()
+    SetExternalOriginResourceConnectors(value []ExternalOriginResourceConnectorable)()
     SetSettings(value EntitlementManagementSettingsable)()
     SetSubjects(value []AccessPackageSubjectable)()
 }

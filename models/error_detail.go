@@ -43,7 +43,7 @@ func (m *ErrorDetail) GetAdditionalData()(map[string]any) {
 func (m *ErrorDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorMessage gets the errorMessage property value. The errorMessage property
+// GetErrorMessage gets the errorMessage property value. The message that describes the error to help the admin take action.
 // returns a *string when successful
 func (m *ErrorDetail) GetErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("errorMessage")
@@ -113,7 +113,7 @@ func (m *ErrorDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceInstanceName gets the resourceInstanceName property value. The resourceInstanceName property
+// GetResourceInstanceName gets the resourceInstanceName property value. The resource type identifier.
 // returns a *string when successful
 func (m *ErrorDetail) GetResourceInstanceName()(*string) {
     val, err := m.GetBackingStore().Get("resourceInstanceName")
@@ -125,7 +125,7 @@ func (m *ErrorDetail) GetResourceInstanceName()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. Name of the resource type.
 // returns a *string when successful
 func (m *ErrorDetail) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -164,7 +164,7 @@ func (m *ErrorDetail) SetAdditionalData(value map[string]any)() {
 func (m *ErrorDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorMessage sets the errorMessage property value. The errorMessage property
+// SetErrorMessage sets the errorMessage property value. The message that describes the error to help the admin take action.
 func (m *ErrorDetail) SetErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("errorMessage", value)
     if err != nil {
@@ -178,14 +178,14 @@ func (m *ErrorDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceInstanceName sets the resourceInstanceName property value. The resourceInstanceName property
+// SetResourceInstanceName sets the resourceInstanceName property value. The resource type identifier.
 func (m *ErrorDetail) SetResourceInstanceName(value *string)() {
     err := m.GetBackingStore().Set("resourceInstanceName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. Name of the resource type.
 func (m *ErrorDetail) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

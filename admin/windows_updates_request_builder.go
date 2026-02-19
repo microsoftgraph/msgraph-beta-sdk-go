@@ -128,6 +128,11 @@ func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable), nil
 }
+// Policies provides operations to manage the policies property of the microsoft.graph.adminWindowsUpdates entity.
+// returns a *WindowsUpdatesPoliciesRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) Policies()(*WindowsUpdatesPoliciesRequestBuilder) {
+    return NewWindowsUpdatesPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Products provides operations to manage the products property of the microsoft.graph.adminWindowsUpdates entity.
 // returns a *WindowsUpdatesProductsRequestBuilder when successful
 func (m *WindowsUpdatesRequestBuilder) Products()(*WindowsUpdatesProductsRequestBuilder) {

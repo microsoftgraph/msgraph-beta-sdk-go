@@ -21,7 +21,7 @@ type BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuil
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetQueryParameters get sharePointBrowseSessions from solutions
+// BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetQueryParameters read the properties and relationships of sharePointBrowseSession object.
 type BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     }
     return nil
 }
-// Get get sharePointBrowseSessions from solutions
+// Get read the properties and relationships of sharePointBrowseSession object.
 // returns a SharePointBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharepointbrowsesession-get?view=graph-rest-beta
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sharePointBrowseSessions from solutions
+// ToGetRequestInformation read the properties and relationships of sharePointBrowseSession object.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

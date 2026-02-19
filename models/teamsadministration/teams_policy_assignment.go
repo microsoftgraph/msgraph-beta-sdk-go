@@ -45,7 +45,7 @@ func (m *TeamsPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetUserAssignments gets the userAssignments property value. Navigation property to the collection of user policy assignments.
+// GetUserAssignments gets the userAssignments property value. The collection of user policy assignments.
 // returns a []TeamsPolicyUserAssignmentable when successful
 func (m *TeamsPolicyAssignment) GetUserAssignments()([]TeamsPolicyUserAssignmentable) {
     val, err := m.GetBackingStore().Get("userAssignments")
@@ -77,7 +77,7 @@ func (m *TeamsPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetUserAssignments sets the userAssignments property value. Navigation property to the collection of user policy assignments.
+// SetUserAssignments sets the userAssignments property value. The collection of user policy assignments.
 func (m *TeamsPolicyAssignment) SetUserAssignments(value []TeamsPolicyUserAssignmentable)() {
     err := m.GetBackingStore().Set("userAssignments", value)
     if err != nil {

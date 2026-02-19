@@ -21,7 +21,7 @@ type ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetQueryParameters get configurationMonitors from admin
+// ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetQueryParameters get the properties and relationships of a configurationMonitor object.
 type ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,8 +62,11 @@ func NewConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequ
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property configurationMonitors for admin
+// Delete delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can't be restored.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmonitor-delete?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
     }
     return nil
 }
-// Get get configurationMonitors from admin
+// Get get the properties and relationships of a configurationMonitor object.
 // returns a ConfigurationMonitorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmonitor-get?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,9 +104,12 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable), nil
 }
-// Patch update the navigation property configurationMonitors in admin
+// Patch update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
 // returns a ConfigurationMonitorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmonitor-update?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable), nil
 }
-// ToDeleteRequestInformation delete navigation property configurationMonitors for admin
+// ToDeleteRequestInformation delete a configurationMonitor object permanently. When deleted, the configurationMonitor data can't be restored.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get configurationMonitors from admin
+// ToGetRequestInformation get the properties and relationships of a configurationMonitor object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property configurationMonitors in admin
+// ToPatchRequestInformation update the properties of a configurationMonitor object, including the monitor name, description, and baseline. You must provide the full monitor body when you call this API.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, requestConfiguration *ConfigurationManagementConfigurationMonitorsConfigurationMonitorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

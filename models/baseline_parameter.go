@@ -43,7 +43,7 @@ func (m *BaselineParameter) GetAdditionalData()(map[string]any) {
 func (m *BaselineParameter) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. User-friendly description of the parameter.
 // returns a *string when successful
 func (m *BaselineParameter) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -55,7 +55,7 @@ func (m *BaselineParameter) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Parameter names such as FQDN and Tenant ID.
 // returns a *string when successful
 func (m *BaselineParameter) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -183,14 +183,14 @@ func (m *BaselineParameter) SetAdditionalData(value map[string]any)() {
 func (m *BaselineParameter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. User-friendly description of the parameter.
 func (m *BaselineParameter) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Parameter names such as FQDN and Tenant ID.
 func (m *BaselineParameter) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

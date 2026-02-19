@@ -22,7 +22,7 @@ func NewConfigurationBaseline()(*ConfigurationBaseline) {
 func CreateConfigurationBaselineFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationBaseline(), nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. User-friendly description of the baseline given by the user.
 // returns a *string when successful
 func (m *ConfigurationBaseline) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -34,7 +34,7 @@ func (m *ConfigurationBaseline) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. User-friendly name given by the user to the baseline.
 // returns a *string when successful
 func (m *ConfigurationBaseline) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -104,7 +104,7 @@ func (m *ConfigurationBaseline) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetParameters gets the parameters property value. The parameters property
+// GetParameters gets the parameters property value. Collection of parameters attached to the baseline.
 // returns a []BaselineParameterable when successful
 func (m *ConfigurationBaseline) GetParameters()([]BaselineParameterable) {
     val, err := m.GetBackingStore().Get("parameters")
@@ -116,7 +116,7 @@ func (m *ConfigurationBaseline) GetParameters()([]BaselineParameterable) {
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. Collection of resources and their properties that are added to the baseline. At least one property of one resource must be present in the baseline.
 // returns a []BaselineResourceable when successful
 func (m *ConfigurationBaseline) GetResources()([]BaselineResourceable) {
     val, err := m.GetBackingStore().Get("resources")
@@ -172,28 +172,28 @@ func (m *ConfigurationBaseline) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. User-friendly description of the baseline given by the user.
 func (m *ConfigurationBaseline) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. User-friendly name given by the user to the baseline.
 func (m *ConfigurationBaseline) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. The parameters property
+// SetParameters sets the parameters property value. Collection of parameters attached to the baseline.
 func (m *ConfigurationBaseline) SetParameters(value []BaselineParameterable)() {
     err := m.GetBackingStore().Set("parameters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. Collection of resources and their properties that are added to the baseline. At least one property of one resource must be present in the baseline.
 func (m *ConfigurationBaseline) SetResources(value []BaselineResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {

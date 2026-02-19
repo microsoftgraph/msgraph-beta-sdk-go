@@ -71,6 +71,16 @@ func (m *RiskyAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["identityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAgentIdentityType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityType(val.(*AgentIdentityType))
+        }
+        return nil
+    }
     res["isDeleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -142,6 +152,18 @@ func (m *RiskyAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetIdentityType gets the identityType property value. The identityType property
+// returns a *AgentIdentityType when successful
+func (m *RiskyAgent) GetIdentityType()(*AgentIdentityType) {
+    val, err := m.GetBackingStore().Get("identityType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AgentIdentityType)
+    }
+    return nil
 }
 // GetIsDeleted gets the isDeleted property value. Indicates whether the agent is deleted.
 // returns a *bool when successful
@@ -239,6 +261,13 @@ func (m *RiskyAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetIdentityType() != nil {
+        cast := (*m.GetIdentityType()).String()
+        err = writer.WriteStringValue("identityType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isDeleted", m.GetIsDeleted())
         if err != nil {
@@ -289,6 +318,13 @@ func (m *RiskyAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 // SetAgentDisplayName sets the agentDisplayName property value. Name of the agent.  Supports $filter (eq, startsWith).
 func (m *RiskyAgent) SetAgentDisplayName(value *string)() {
     err := m.GetBackingStore().Set("agentDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIdentityType sets the identityType property value. The identityType property
+func (m *RiskyAgent) SetIdentityType(value *AgentIdentityType)() {
+    err := m.GetBackingStore().Set("identityType", value)
     if err != nil {
         panic(err)
     }
@@ -346,6 +382,7 @@ type RiskyAgentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgentDisplayName()(*string)
+    GetIdentityType()(*AgentIdentityType)
     GetIsDeleted()(*bool)
     GetIsEnabled()(*bool)
     GetIsProcessing()(*bool)
@@ -354,6 +391,7 @@ type RiskyAgentable interface {
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
     SetAgentDisplayName(value *string)()
+    SetIdentityType(value *AgentIdentityType)()
     SetIsDeleted(value *bool)()
     SetIsEnabled(value *bool)()
     SetIsProcessing(value *bool)()

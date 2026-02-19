@@ -11,10 +11,11 @@ const (
     SOFTDELETE_REMEDIATIONACTION
     MOVETODELETEDITEMS_REMEDIATIONACTION
     UNKNOWNFUTUREVALUE_REMEDIATIONACTION
+    MOVETOQUARANTINE_REMEDIATIONACTION
 )
 
 func (i RemediationAction) String() string {
-    return []string{"moveToJunk", "moveToInbox", "hardDelete", "softDelete", "moveToDeletedItems", "unknownFutureValue"}[i]
+    return []string{"moveToJunk", "moveToInbox", "hardDelete", "softDelete", "moveToDeletedItems", "unknownFutureValue", "moveToQuarantine"}[i]
 }
 func ParseRemediationAction(v string) (any, error) {
     result := MOVETOJUNK_REMEDIATIONACTION
@@ -31,6 +32,8 @@ func ParseRemediationAction(v string) (any, error) {
             result = MOVETODELETEDITEMS_REMEDIATIONACTION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMEDIATIONACTION
+        case "moveToQuarantine":
+            result = MOVETOQUARANTINE_REMEDIATIONACTION
         default:
             return nil, nil
     }

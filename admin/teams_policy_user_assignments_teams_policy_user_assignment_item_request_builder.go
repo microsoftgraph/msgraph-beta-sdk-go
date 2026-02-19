@@ -21,7 +21,7 @@ type TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderGetQueryParameters navigation property to the collection of user policy assignments.
+// TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderGetQueryParameters the collection of user policy assignments.
 type TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilder) 
     }
     return nil
 }
-// Get navigation property to the collection of user policy assignments.
+// Get the collection of user policy assignments.
 // returns a TeamsPolicyUserAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderGetRequestConfiguration)(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyUserAssignmentable, error) {
@@ -124,7 +124,7 @@ func (m *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation navigation property to the collection of user policy assignments.
+// ToGetRequestInformation the collection of user policy assignments.
 // returns a *RequestInformation when successful
 func (m *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsPolicyUserAssignmentsTeamsPolicyUserAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

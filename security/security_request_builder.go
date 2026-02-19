@@ -289,3 +289,8 @@ func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UserSecurityProfilesReq
 func (m *SecurityRequestBuilder) WithUrl(rawUrl string)(*SecurityRequestBuilder) {
     return NewSecurityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
+// Zones provides operations to manage the zones property of the microsoft.graph.security entity.
+// returns a *ZonesRequestBuilder when successful
+func (m *SecurityRequestBuilder) Zones()(*ZonesRequestBuilder) {
+    return NewZonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

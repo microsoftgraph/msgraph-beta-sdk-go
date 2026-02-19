@@ -23,7 +23,7 @@ func NewConfigurationSnapshotJob()(*ConfigurationSnapshotJob) {
 func CreateConfigurationSnapshotJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationSnapshotJob(), nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. The completedDateTime property
+// GetCompletedDateTime gets the completedDateTime property value. The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationSnapshotJob) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
@@ -47,7 +47,7 @@ func (m *ConfigurationSnapshotJob) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationSnapshotJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -59,7 +59,7 @@ func (m *ConfigurationSnapshotJob) GetCreatedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. User-friendly description of the snapshot given by the user.
 // returns a *string when successful
 func (m *ConfigurationSnapshotJob) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -71,7 +71,7 @@ func (m *ConfigurationSnapshotJob) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. User-friendly name provided by the user during snapshot creation.
 // returns a *string when successful
 func (m *ConfigurationSnapshotJob) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -83,7 +83,7 @@ func (m *ConfigurationSnapshotJob) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetErrorDetails gets the errorDetails property value. The errorDetails property
+// GetErrorDetails gets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete.
 // returns a []string when successful
 func (m *ConfigurationSnapshotJob) GetErrorDetails()([]string) {
     val, err := m.GetBackingStore().Get("errorDetails")
@@ -213,7 +213,7 @@ func (m *ConfigurationSnapshotJob) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetResourceLocation gets the resourceLocation property value. The resourceLocation property
+// GetResourceLocation gets the resourceLocation property value. The URL at which the snapshot file resides.
 // returns a *string when successful
 func (m *ConfigurationSnapshotJob) GetResourceLocation()(*string) {
     val, err := m.GetBackingStore().Get("resourceLocation")
@@ -225,7 +225,7 @@ func (m *ConfigurationSnapshotJob) GetResourceLocation()(*string) {
     }
     return nil
 }
-// GetResources gets the resources property value. The resources property
+// GetResources gets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system.
 // returns a []string when successful
 func (m *ConfigurationSnapshotJob) GetResources()([]string) {
     val, err := m.GetBackingStore().Get("resources")
@@ -249,7 +249,7 @@ func (m *ConfigurationSnapshotJob) GetStatus()(*SnapshotJobStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the snapshot is created.
 // returns a *string when successful
 func (m *ConfigurationSnapshotJob) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -300,7 +300,7 @@ func (m *ConfigurationSnapshotJob) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCompletedDateTime sets the completedDateTime property value. The completedDateTime property
+// SetCompletedDateTime sets the completedDateTime property value. The date and time when the snapshot job was completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationSnapshotJob) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completedDateTime", value)
     if err != nil {
@@ -314,42 +314,42 @@ func (m *ConfigurationSnapshotJob) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the snapshot job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationSnapshotJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. User-friendly description of the snapshot given by the user.
 func (m *ConfigurationSnapshotJob) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. User-friendly name provided by the user during snapshot creation.
 func (m *ConfigurationSnapshotJob) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrorDetails sets the errorDetails property value. The errorDetails property
+// SetErrorDetails sets the errorDetails property value. Details of errors related to the reasons why the snapshot can't complete.
 func (m *ConfigurationSnapshotJob) SetErrorDetails(value []string)() {
     err := m.GetBackingStore().Set("errorDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceLocation sets the resourceLocation property value. The resourceLocation property
+// SetResourceLocation sets the resourceLocation property value. The URL at which the snapshot file resides.
 func (m *ConfigurationSnapshotJob) SetResourceLocation(value *string)() {
     err := m.GetBackingStore().Set("resourceLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. The resources property
+// SetResources sets the resources property value. The names of all resources included in the request body by the user who created the snapshot. Fetched by the system.
 func (m *ConfigurationSnapshotJob) SetResources(value []string)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
@@ -363,7 +363,7 @@ func (m *ConfigurationSnapshotJob) SetStatus(value *SnapshotJobStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the snapshot is created.
 func (m *ConfigurationSnapshotJob) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

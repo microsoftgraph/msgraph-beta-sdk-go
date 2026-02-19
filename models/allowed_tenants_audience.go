@@ -24,7 +24,7 @@ func NewAllowedTenantsAudience()(*AllowedTenantsAudience) {
 func CreateAllowedTenantsAudienceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAllowedTenantsAudience(), nil
 }
-// GetAllowedTenantIds gets the allowedTenantIds property value. The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). Must contain at least one value. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.
+// GetAllowedTenantIds gets the allowedTenantIds property value. The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). This property must contain at least one value and can't include more than 20 values. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.
 // returns a []string when successful
 func (m *AllowedTenantsAudience) GetAllowedTenantIds()([]string) {
     val, err := m.GetBackingStore().Get("allowedTenantIds")
@@ -100,7 +100,7 @@ func (m *AllowedTenantsAudience) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetAllowedTenantIds sets the allowedTenantIds property value. The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). Must contain at least one value. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.
+// SetAllowedTenantIds sets the allowedTenantIds property value. The list of Entra tenant IDs where the application can be used as either a client application or a resource application (API). This property must contain at least one value and can't include more than 20 values. The tenant ID where the application is registered may be included, but is not required (see isHomeTenantAllowed). Required.
 func (m *AllowedTenantsAudience) SetAllowedTenantIds(value []string)() {
     err := m.GetBackingStore().Set("allowedTenantIds", value)
     if err != nil {

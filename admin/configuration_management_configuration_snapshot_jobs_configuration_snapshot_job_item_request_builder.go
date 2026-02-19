@@ -21,7 +21,7 @@ type ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderGetQueryParameters get configurationSnapshotJobs from admin
+// ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderGetQueryParameters read the properties and relationships of a configurationSnapshotJob object.
 type ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJob
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property configurationSnapshotJobs for admin
+// Delete delete a configurationSnapshotJob object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationsnapshotjob-delete?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJo
     }
     return nil
 }
-// Get get configurationSnapshotJobs from admin
+// Get read the properties and relationships of a configurationSnapshotJob object.
 // returns a ConfigurationSnapshotJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationsnapshotjob-get?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationSnapshotJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationSnapshotJobable), nil
 }
-// ToDeleteRequestInformation delete navigation property configurationSnapshotJobs for admin
+// ToDeleteRequestInformation delete a configurationSnapshotJob object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +130,7 @@ func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get configurationSnapshotJobs from admin
+// ToGetRequestInformation read the properties and relationships of a configurationSnapshotJob object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsConfigurationSnapshotJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -21,7 +21,7 @@ type BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSess
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetQueryParameters get oneDriveForBusinessBrowseSessions from solutions
+// BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetQueryParameters read the properties and relationships of oneDriveForBusinessBrowseSession object.
 type BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     }
     return nil
 }
-// Get get oneDriveForBusinessBrowseSessions from solutions
+// Get read the properties and relationships of oneDriveForBusinessBrowseSession object.
 // returns a OneDriveForBusinessBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/onedriveforbusinessbrowsesession-get?view=graph-rest-beta
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get oneDriveForBusinessBrowseSessions from solutions
+// ToGetRequestInformation read the properties and relationships of oneDriveForBusinessBrowseSession object.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -24,10 +24,66 @@ func NewUsageRight()(*UsageRight) {
 func CreateUsageRightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUsageRight(), nil
 }
+// GetAllotments gets the allotments property value. The set of allotments associated with the assignments that combine to form this usageRight.
+// returns a []Allotmentable when successful
+func (m *UsageRight) GetAllotments()([]Allotmentable) {
+    val, err := m.GetBackingStore().Get("allotments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Allotmentable)
+    }
+    return nil
+}
+// GetAssignments gets the assignments property value. The set of assignments that combine to form this usageRight, including both direct assignments and assignments inherited through group membership.
+// returns a []Assignmentable when successful
+func (m *UsageRight) GetAssignments()([]Assignmentable) {
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Assignmentable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allotments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAllotmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Allotmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Allotmentable)
+                }
+            }
+            m.SetAllotments(res)
+        }
+        return nil
+    }
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Assignmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Assignmentable)
+                }
+            }
+            m.SetAssignments(res)
+        }
+        return nil
+    }
     res["services"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateServiceFromDiscriminatorValue)
         if err != nil {
@@ -108,6 +164,30 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     if err != nil {
         return err
     }
+    if m.GetAllotments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllotments()))
+        for i, v := range m.GetAllotments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("allotments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
+        for i, v := range m.GetAssignments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("assignments", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
@@ -134,6 +214,20 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
+// SetAllotments sets the allotments property value. The set of allotments associated with the assignments that combine to form this usageRight.
+func (m *UsageRight) SetAllotments(value []Allotmentable)() {
+    err := m.GetBackingStore().Set("allotments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAssignments sets the assignments property value. The set of assignments that combine to form this usageRight, including both direct assignments and assignments inherited through group membership.
+func (m *UsageRight) SetAssignments(value []Assignmentable)() {
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServices sets the services property value. Information about the services associated with the usageRight. Not nullable. Read-only. Supports $filter on the planId property.
 func (m *UsageRight) SetServices(value []Serviceable)() {
     err := m.GetBackingStore().Set("services", value)
@@ -158,9 +252,13 @@ func (m *UsageRight) SetSkuPartNumber(value *string)() {
 type UsageRightable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllotments()([]Allotmentable)
+    GetAssignments()([]Assignmentable)
     GetServices()([]Serviceable)
     GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSkuPartNumber()(*string)
+    SetAllotments(value []Allotmentable)()
+    SetAssignments(value []Assignmentable)()
     SetServices(value []Serviceable)()
     SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSkuPartNumber(value *string)()

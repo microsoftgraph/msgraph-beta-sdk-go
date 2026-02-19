@@ -47,7 +47,7 @@ func (m *ConfigurationMonitor) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationMonitor) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -59,7 +59,7 @@ func (m *ConfigurationMonitor) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. User-friendly description of the monitor given by the user.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -71,7 +71,7 @@ func (m *ConfigurationMonitor) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. User-friendly name given by the user to the monitor.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -197,26 +197,6 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["runAsUTCMServicePrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRunAsUTCMServicePrincipal(val)
-        }
-        return nil
-    }
-    res["runningOnBehalfOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRunningOnBehalfOf(val.(IdentitySetable))
-        }
-        return nil
-    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMonitorStatus)
         if err != nil {
@@ -239,7 +219,7 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInactivationReason gets the inactivationReason property value. The inactivationReason property
+// GetInactivationReason gets the inactivationReason property value. The reason for the monitor's inactivation.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetInactivationReason()(*string) {
     val, err := m.GetBackingStore().Get("inactivationReason")
@@ -263,7 +243,7 @@ func (m *ConfigurationMonitor) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationMonitor) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -287,7 +267,7 @@ func (m *ConfigurationMonitor) GetMode()(*MonitorMode) {
     }
     return nil
 }
-// GetMonitorRunFrequencyInHours gets the monitorRunFrequencyInHours property value. The monitorRunFrequencyInHours property
+// GetMonitorRunFrequencyInHours gets the monitorRunFrequencyInHours property value. Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.
 // returns a *int32 when successful
 func (m *ConfigurationMonitor) GetMonitorRunFrequencyInHours()(*int32) {
     val, err := m.GetBackingStore().Get("monitorRunFrequencyInHours")
@@ -299,7 +279,7 @@ func (m *ConfigurationMonitor) GetMonitorRunFrequencyInHours()(*int32) {
     }
     return nil
 }
-// GetParameters gets the parameters property value. The parameters property
+// GetParameters gets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline.
 // returns a OpenComplexDictionaryTypeable when successful
 func (m *ConfigurationMonitor) GetParameters()(OpenComplexDictionaryTypeable) {
     val, err := m.GetBackingStore().Get("parameters")
@@ -308,30 +288,6 @@ func (m *ConfigurationMonitor) GetParameters()(OpenComplexDictionaryTypeable) {
     }
     if val != nil {
         return val.(OpenComplexDictionaryTypeable)
-    }
-    return nil
-}
-// GetRunAsUTCMServicePrincipal gets the runAsUTCMServicePrincipal property value. The runAsUTCMServicePrincipal property
-// returns a *bool when successful
-func (m *ConfigurationMonitor) GetRunAsUTCMServicePrincipal()(*bool) {
-    val, err := m.GetBackingStore().Get("runAsUTCMServicePrincipal")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
-}
-// GetRunningOnBehalfOf gets the runningOnBehalfOf property value. The runningOnBehalfOf property
-// returns a IdentitySetable when successful
-func (m *ConfigurationMonitor) GetRunningOnBehalfOf()(IdentitySetable) {
-    val, err := m.GetBackingStore().Get("runningOnBehalfOf")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySetable)
     }
     return nil
 }
@@ -347,7 +303,7 @@ func (m *ConfigurationMonitor) GetStatus()(*MonitorStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -403,25 +359,7 @@ func (m *ConfigurationMonitor) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteInt32Value("monitorRunFrequencyInHours", m.GetMonitorRunFrequencyInHours())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("parameters", m.GetParameters())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("runAsUTCMServicePrincipal", m.GetRunAsUTCMServicePrincipal())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("runningOnBehalfOf", m.GetRunningOnBehalfOf())
         if err != nil {
             return err
         }
@@ -449,28 +387,28 @@ func (m *ConfigurationMonitor) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationMonitor) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. User-friendly description of the monitor given by the user.
 func (m *ConfigurationMonitor) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. User-friendly name given by the user to the monitor.
 func (m *ConfigurationMonitor) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInactivationReason sets the inactivationReason property value. The inactivationReason property
+// SetInactivationReason sets the inactivationReason property value. The reason for the monitor's inactivation.
 func (m *ConfigurationMonitor) SetInactivationReason(value *string)() {
     err := m.GetBackingStore().Set("inactivationReason", value)
     if err != nil {
@@ -484,7 +422,7 @@ func (m *ConfigurationMonitor) SetLastModifiedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationMonitor) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -498,30 +436,16 @@ func (m *ConfigurationMonitor) SetMode(value *MonitorMode)() {
         panic(err)
     }
 }
-// SetMonitorRunFrequencyInHours sets the monitorRunFrequencyInHours property value. The monitorRunFrequencyInHours property
+// SetMonitorRunFrequencyInHours sets the monitorRunFrequencyInHours property value. Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.
 func (m *ConfigurationMonitor) SetMonitorRunFrequencyInHours(value *int32)() {
     err := m.GetBackingStore().Set("monitorRunFrequencyInHours", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. The parameters property
+// SetParameters sets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline.
 func (m *ConfigurationMonitor) SetParameters(value OpenComplexDictionaryTypeable)() {
     err := m.GetBackingStore().Set("parameters", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRunAsUTCMServicePrincipal sets the runAsUTCMServicePrincipal property value. The runAsUTCMServicePrincipal property
-func (m *ConfigurationMonitor) SetRunAsUTCMServicePrincipal(value *bool)() {
-    err := m.GetBackingStore().Set("runAsUTCMServicePrincipal", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRunningOnBehalfOf sets the runningOnBehalfOf property value. The runningOnBehalfOf property
-func (m *ConfigurationMonitor) SetRunningOnBehalfOf(value IdentitySetable)() {
-    err := m.GetBackingStore().Set("runningOnBehalfOf", value)
     if err != nil {
         panic(err)
     }
@@ -533,7 +457,7 @@ func (m *ConfigurationMonitor) SetStatus(value *MonitorStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 func (m *ConfigurationMonitor) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
@@ -554,8 +478,6 @@ type ConfigurationMonitorable interface {
     GetMode()(*MonitorMode)
     GetMonitorRunFrequencyInHours()(*int32)
     GetParameters()(OpenComplexDictionaryTypeable)
-    GetRunAsUTCMServicePrincipal()(*bool)
-    GetRunningOnBehalfOf()(IdentitySetable)
     GetStatus()(*MonitorStatus)
     GetTenantId()(*string)
     SetBaseline(value ConfigurationBaselineable)()
@@ -569,8 +491,6 @@ type ConfigurationMonitorable interface {
     SetMode(value *MonitorMode)()
     SetMonitorRunFrequencyInHours(value *int32)()
     SetParameters(value OpenComplexDictionaryTypeable)()
-    SetRunAsUTCMServicePrincipal(value *bool)()
-    SetRunningOnBehalfOf(value IdentitySetable)()
     SetStatus(value *MonitorStatus)()
     SetTenantId(value *string)()
 }

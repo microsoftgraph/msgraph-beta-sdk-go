@@ -58,7 +58,7 @@ func (m *BackupRestoreRoot) GetAllSitesBackup()(AllSitesBackupable) {
     }
     return nil
 }
-// GetBrowseSessions gets the browseSessions property value. The browseSessions property
+// GetBrowseSessions gets the browseSessions property value. The list of browse sessions in the tenant.
 // returns a []BrowseSessionBaseable when successful
 func (m *BackupRestoreRoot) GetBrowseSessions()([]BrowseSessionBaseable) {
     val, err := m.GetBackingStore().Get("browseSessions")
@@ -602,7 +602,7 @@ func (m *BackupRestoreRoot) GetMailboxProtectionUnitsBulkAdditionJobs()([]Mailbo
     }
     return nil
 }
-// GetOneDriveForBusinessBrowseSessions gets the oneDriveForBusinessBrowseSessions property value. The oneDriveForBusinessBrowseSessions property
+// GetOneDriveForBusinessBrowseSessions gets the oneDriveForBusinessBrowseSessions property value. The list of onedriveforbusiness browse sessions in the tenant.
 // returns a []OneDriveForBusinessBrowseSessionable when successful
 func (m *BackupRestoreRoot) GetOneDriveForBusinessBrowseSessions()([]OneDriveForBusinessBrowseSessionable) {
     val, err := m.GetBackingStore().Get("oneDriveForBusinessBrowseSessions")
@@ -710,7 +710,7 @@ func (m *BackupRestoreRoot) GetServiceStatus()(ServiceStatusable) {
     }
     return nil
 }
-// GetSharePointBrowseSessions gets the sharePointBrowseSessions property value. The sharePointBrowseSessions property
+// GetSharePointBrowseSessions gets the sharePointBrowseSessions property value. The list of sharepoint browse sessions in the tenant.
 // returns a []SharePointBrowseSessionable when successful
 func (m *BackupRestoreRoot) GetSharePointBrowseSessions()([]SharePointBrowseSessionable) {
     val, err := m.GetBackingStore().Get("sharePointBrowseSessions")
@@ -1117,7 +1117,7 @@ func (m *BackupRestoreRoot) SetAllSitesBackup(value AllSitesBackupable)() {
         panic(err)
     }
 }
-// SetBrowseSessions sets the browseSessions property value. The browseSessions property
+// SetBrowseSessions sets the browseSessions property value. The list of browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetBrowseSessions(value []BrowseSessionBaseable)() {
     err := m.GetBackingStore().Set("browseSessions", value)
     if err != nil {
@@ -1187,7 +1187,7 @@ func (m *BackupRestoreRoot) SetMailboxProtectionUnitsBulkAdditionJobs(value []Ma
         panic(err)
     }
 }
-// SetOneDriveForBusinessBrowseSessions sets the oneDriveForBusinessBrowseSessions property value. The oneDriveForBusinessBrowseSessions property
+// SetOneDriveForBusinessBrowseSessions sets the oneDriveForBusinessBrowseSessions property value. The list of onedriveforbusiness browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetOneDriveForBusinessBrowseSessions(value []OneDriveForBusinessBrowseSessionable)() {
     err := m.GetBackingStore().Set("oneDriveForBusinessBrowseSessions", value)
     if err != nil {
@@ -1250,7 +1250,7 @@ func (m *BackupRestoreRoot) SetServiceStatus(value ServiceStatusable)() {
         panic(err)
     }
 }
-// SetSharePointBrowseSessions sets the sharePointBrowseSessions property value. The sharePointBrowseSessions property
+// SetSharePointBrowseSessions sets the sharePointBrowseSessions property value. The list of sharepoint browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetSharePointBrowseSessions(value []SharePointBrowseSessionable)() {
     err := m.GetBackingStore().Set("sharePointBrowseSessions", value)
     if err != nil {

@@ -784,7 +784,7 @@ func (m *Site) GetSites()([]Siteable) {
     }
     return nil
 }
-// GetTemplate gets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, group, sts, unknownFutureValue.
+// GetTemplate gets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, sts, unknownFutureValue.
 // returns a *SiteTemplateType when successful
 func (m *Site) GetTemplate()(*SiteTemplateType) {
     val, err := m.GetBackingStore().Get("template")
@@ -1286,7 +1286,7 @@ func (m *Site) SetSites(value []Siteable)() {
         panic(err)
     }
 }
-// SetTemplate sets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, group, sts, unknownFutureValue.
+// SetTemplate sets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, sts, unknownFutureValue.
 func (m *Site) SetTemplate(value *SiteTemplateType)() {
     err := m.GetBackingStore().Set("template", value)
     if err != nil {

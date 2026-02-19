@@ -71,7 +71,7 @@ func (m *TeamsPolicyUserAssignment) GetPolicyId()(*string) {
     }
     return nil
 }
-// GetPolicyType gets the policyType property value. The type of Teams policy assigned or unassigned, such as TeamsMeetingBroadcastPolicy.
+// GetPolicyType gets the policyType property value. The type of Teams policy assigned or unassigned, such as teamsMeetingBroadcastPolicy.
 // returns a *string when successful
 func (m *TeamsPolicyUserAssignment) GetPolicyType()(*string) {
     val, err := m.GetBackingStore().Get("policyType")
@@ -128,7 +128,7 @@ func (m *TeamsPolicyUserAssignment) SetPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetPolicyType sets the policyType property value. The type of Teams policy assigned or unassigned, such as TeamsMeetingBroadcastPolicy.
+// SetPolicyType sets the policyType property value. The type of Teams policy assigned or unassigned, such as teamsMeetingBroadcastPolicy.
 func (m *TeamsPolicyUserAssignment) SetPolicyType(value *string)() {
     err := m.GetBackingStore().Set("policyType", value)
     if err != nil {

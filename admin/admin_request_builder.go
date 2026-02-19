@@ -42,6 +42,11 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
 func (m *AdminRequestBuilder) AppsAndServices()(*AppsAndServicesRequestBuilder) {
     return NewAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudLicensing provides operations to manage the cloudLicensing property of the microsoft.graph.admin entity.
+// returns a *CloudLicensingRequestBuilder when successful
+func (m *AdminRequestBuilder) CloudLicensing()(*CloudLicensingRequestBuilder) {
+    return NewCloudLicensingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ConfigurationManagement provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
 // returns a *ConfigurationManagementRequestBuilder when successful
 func (m *AdminRequestBuilder) ConfigurationManagement()(*ConfigurationManagementRequestBuilder) {
