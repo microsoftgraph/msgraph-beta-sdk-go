@@ -24,7 +24,7 @@ func NewFileStorageContainer()(*FileStorageContainer) {
 func CreateFileStorageContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainer(), nil
 }
-// GetArchivalDetails gets the archivalDetails property value. The archivalDetails property
+// GetArchivalDetails gets the archivalDetails property value. Archival details of the fileStorageContainer. Read-write.
 // returns a SiteArchivalDetailsable when successful
 func (m *FileStorageContainer) GetArchivalDetails()(SiteArchivalDetailsable) {
     val, err := m.GetBackingStore().Get("archivalDetails")
@@ -717,7 +717,7 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetArchivalDetails sets the archivalDetails property value. The archivalDetails property
+// SetArchivalDetails sets the archivalDetails property value. Archival details of the fileStorageContainer. Read-write.
 func (m *FileStorageContainer) SetArchivalDetails(value SiteArchivalDetailsable)() {
     err := m.GetBackingStore().Set("archivalDetails", value)
     if err != nil {

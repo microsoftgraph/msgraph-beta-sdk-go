@@ -24,9 +24,9 @@ type BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtec
 // BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderGetQueryParameters the list of OneDrive for Business protection policies in the tenant.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -72,6 +72,16 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessPr
         return err
     }
     return nil
+}
+// DriveExclusionUnits provides operations to manage the driveExclusionUnits property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+// returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder) DriveExclusionUnits()(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DriveExclusionUnitsBulkAdditionJobs provides operations to manage the driveExclusionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+// returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesOneDriveForBusinessProtectionPolicyItemRequestBuilder) DriveExclusionUnitsBulkAdditionJobs()(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DriveInclusionRules provides operations to manage the driveInclusionRules property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
 // returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveInclusionRulesRequestBuilder when successful

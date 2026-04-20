@@ -24,9 +24,9 @@ type MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderDelet
 // MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a mobilityManagementPolicy object.
 type MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderGetRequestConfiguration struct {

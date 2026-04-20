@@ -16,9 +16,9 @@ type CompaniesItemSalesQuoteLinesItemItem_EscapedPictureCountRequestBuilder stru
 // CompaniesItemSalesQuoteLinesItemItem_EscapedPictureCountRequestBuilderGetQueryParameters get the number of the resource
 type CompaniesItemSalesQuoteLinesItemItem_EscapedPictureCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // CompaniesItemSalesQuoteLinesItemItem_EscapedPictureCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesQuoteLinesItemItem_EscapedPictureCountRequestBuilderGetRequestConfiguration struct {

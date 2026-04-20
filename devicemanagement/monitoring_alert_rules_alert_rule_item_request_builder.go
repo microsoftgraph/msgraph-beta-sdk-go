@@ -24,9 +24,9 @@ type MonitoringAlertRulesAlertRuleItemRequestBuilderDeleteRequestConfiguration s
 // MonitoringAlertRulesAlertRuleItemRequestBuilderGetQueryParameters read the properties and relationships of an alertRule object.
 type MonitoringAlertRulesAlertRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MonitoringAlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MonitoringAlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration struct {

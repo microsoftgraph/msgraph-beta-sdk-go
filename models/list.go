@@ -156,6 +156,16 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["itemCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemCount(val)
+        }
+        return nil
+    }
     res["items"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateListItemFromDiscriminatorValue)
         if err != nil {
@@ -251,6 +261,18 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     return res
+}
+// GetItemCount gets the itemCount property value. The number of items in the list. Read-only.
+// returns a *int32 when successful
+func (m *List) GetItemCount()(*int32) {
+    val, err := m.GetBackingStore().Get("itemCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetItems gets the items property value. All items contained in the list.
 // returns a []ListItemable when successful
@@ -390,6 +412,12 @@ func (m *List) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("itemCount", m.GetItemCount())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetItems()))
         for i, v := range m.GetItems() {
@@ -493,6 +521,13 @@ func (m *List) SetDrive(value Driveable)() {
         panic(err)
     }
 }
+// SetItemCount sets the itemCount property value. The number of items in the list. Read-only.
+func (m *List) SetItemCount(value *int32)() {
+    err := m.GetBackingStore().Set("itemCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetItems sets the items property value. All items contained in the list.
 func (m *List) SetItems(value []ListItemable)() {
     err := m.GetBackingStore().Set("items", value)
@@ -550,6 +585,7 @@ type Listable interface {
     GetContentTypes()([]ContentTypeable)
     GetDisplayName()(*string)
     GetDrive()(Driveable)
+    GetItemCount()(*int32)
     GetItems()([]ListItemable)
     GetList()(ListInfoable)
     GetOperations()([]RichLongRunningOperationable)
@@ -562,6 +598,7 @@ type Listable interface {
     SetContentTypes(value []ContentTypeable)()
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
+    SetItemCount(value *int32)()
     SetItems(value []ListItemable)()
     SetList(value ListInfoable)()
     SetOperations(value []RichLongRunningOperationable)()

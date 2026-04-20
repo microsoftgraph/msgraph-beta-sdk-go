@@ -58,7 +58,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
     }
     return nil
 }
-// GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+// GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Requires $select to retrieve.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateResourceUrl")
@@ -274,6 +274,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["subnetPrivateIpDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcOnPremisesConnectionSubnetIpDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubnetPrivateIpDetail(val.(CloudPcOnPremisesConnectionSubnetIpDetailable))
+        }
+        return nil
+    }
     res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -350,7 +360,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesC
     }
     return nil
 }
-// GetHealthCheckStatusDetail gets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetHealthCheckStatusDetail gets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 // returns a CloudPcOnPremisesConnectionStatusDetailable when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPremisesConnectionStatusDetailable) {
     val, err := m.GetBackingStore().Get("healthCheckStatusDetail")
@@ -362,7 +372,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail()(CloudPcOnPrem
     }
     return nil
 }
-// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 // returns a CloudPcOnPremisesConnectionStatusDetailsable when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable) {
     val, err := m.GetBackingStore().Get("healthCheckStatusDetails")
@@ -374,7 +384,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails()(CloudPcOnPre
     }
     return nil
 }
-// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetInUse gets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 // returns a *bool when successful
 func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
     val, err := m.GetBackingStore().Get("inUse")
@@ -455,6 +465,18 @@ func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSubnetPrivateIpDetail gets the subnetPrivateIpDetail property value. The subnetPrivateIpDetail property
+// returns a CloudPcOnPremisesConnectionSubnetIpDetailable when successful
+func (m *CloudPcOnPremisesConnection) GetSubnetPrivateIpDetail()(CloudPcOnPremisesConnectionSubnetIpDetailable) {
+    val, err := m.GetBackingStore().Get("subnetPrivateIpDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcOnPremisesConnectionSubnetIpDetailable)
     }
     return nil
 }
@@ -630,6 +652,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("subnetPrivateIpDetail", m.GetSubnetPrivateIpDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("subscriptionId", m.GetSubscriptionId())
         if err != nil {
             return err
@@ -683,7 +711,7 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
         panic(err)
     }
 }
-// SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+// SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Requires $select to retrieve.
 func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
     err := m.GetBackingStore().Set("alternateResourceUrl", value)
     if err != nil {
@@ -718,21 +746,21 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremi
         panic(err)
     }
 }
-// SetHealthCheckStatusDetail sets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetHealthCheckStatusDetail sets the healthCheckStatusDetail property value. Indicates the results of health checks performed on the on-premises connection. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)() {
     err := m.GetBackingStore().Set("healthCheckStatusDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)() {
     err := m.GetBackingStore().Set("healthCheckStatusDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetInUse sets the inUse property value. When true, the Azure network connection is in use. When false, the connection isn't in use. You can't delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
 func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
     err := m.GetBackingStore().Set("inUse", value)
     if err != nil {
@@ -777,6 +805,13 @@ func (m *CloudPcOnPremisesConnection) SetScopeIds(value []string)() {
 // SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
     err := m.GetBackingStore().Set("subnetId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSubnetPrivateIpDetail sets the subnetPrivateIpDetail property value. The subnetPrivateIpDetail property
+func (m *CloudPcOnPremisesConnection) SetSubnetPrivateIpDetail(value CloudPcOnPremisesConnectionSubnetIpDetailable)() {
+    err := m.GetBackingStore().Set("subnetPrivateIpDetail", value)
     if err != nil {
         panic(err)
     }
@@ -836,6 +871,7 @@ type CloudPcOnPremisesConnectionable interface {
     GetResourceGroupId()(*string)
     GetScopeIds()([]string)
     GetSubnetId()(*string)
+    GetSubnetPrivateIpDetail()(CloudPcOnPremisesConnectionSubnetIpDetailable)
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
     GetTypeEscaped()(*CloudPcOnPremisesConnectionType)
@@ -858,6 +894,7 @@ type CloudPcOnPremisesConnectionable interface {
     SetResourceGroupId(value *string)()
     SetScopeIds(value []string)()
     SetSubnetId(value *string)()
+    SetSubnetPrivateIpDetail(value CloudPcOnPremisesConnectionSubnetIpDetailable)()
     SetSubscriptionId(value *string)()
     SetSubscriptionName(value *string)()
     SetTypeEscaped(value *CloudPcOnPremisesConnectionType)()

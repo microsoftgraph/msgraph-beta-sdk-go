@@ -10,10 +10,12 @@ const (
     INTERNALSERVERERROR_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
     APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
     UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+    ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+    FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
 )
 
 func (i CloudPcCloudAppActionFailedErrorCode) String() string {
-    return []string{"cloudAppQuotaExceeded", "cloudPcLicenseNotFound", "internalServerError", "appDiscoveryFailed", "unknownFutureValue"}[i]
+    return []string{"cloudAppQuotaExceeded", "cloudPcLicenseNotFound", "internalServerError", "appDiscoveryFailed", "unknownFutureValue", "iconPathInvalid", "filePathInvalid"}[i]
 }
 func ParseCloudPcCloudAppActionFailedErrorCode(v string) (any, error) {
     result := CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
@@ -28,6 +30,10 @@ func ParseCloudPcCloudAppActionFailedErrorCode(v string) (any, error) {
             result = APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+        case "iconPathInvalid":
+            result = ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+        case "filePathInvalid":
+            result = FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
         default:
             return nil, nil
     }

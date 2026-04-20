@@ -17,9 +17,9 @@ type ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder
 // ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetQueryParameters the collection of child folders in this folder.
 type ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilderGetRequestConfiguration struct {

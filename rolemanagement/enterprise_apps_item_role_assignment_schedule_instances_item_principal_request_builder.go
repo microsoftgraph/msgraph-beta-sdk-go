@@ -17,9 +17,9 @@ type EnterpriseAppsItemRoleAssignmentScheduleInstancesItemPrincipalRequestBuilde
 // EnterpriseAppsItemRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment or role eligibility through the request.
 type EnterpriseAppsItemRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EnterpriseAppsItemRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EnterpriseAppsItemRoleAssignmentScheduleInstancesItemPrincipalRequestBuilderGetRequestConfiguration struct {

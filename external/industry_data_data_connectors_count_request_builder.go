@@ -16,9 +16,9 @@ type IndustryDataDataConnectorsCountRequestBuilder struct {
 // IndustryDataDataConnectorsCountRequestBuilderGetQueryParameters get the number of the resource
 type IndustryDataDataConnectorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // IndustryDataDataConnectorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IndustryDataDataConnectorsCountRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderDeleteReq
 // ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderGetQueryParameters read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
 type ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderGetRequestConfiguration struct {

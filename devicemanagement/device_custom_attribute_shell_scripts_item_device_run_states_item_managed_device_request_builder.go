@@ -17,9 +17,9 @@ type DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceReques
 // DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderGetQueryParameters the managed devices that executes the device management script.
 type DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceCustomAttributeShellScriptsItemDeviceRunStatesItemManagedDeviceRequestBuilderGetRequestConfiguration struct {

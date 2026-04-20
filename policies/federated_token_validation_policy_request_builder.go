@@ -24,9 +24,9 @@ type FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration stru
 // FederatedTokenValidationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a federatedTokenValidationPolicy object.
 type FederatedTokenValidationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration struct {

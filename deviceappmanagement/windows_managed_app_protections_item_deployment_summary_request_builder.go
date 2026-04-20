@@ -24,9 +24,9 @@ type WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderDeleteReques
 // WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetQueryParameters navigation property to deployment summary of the configuration.
 type WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderGetRequestConfiguration struct {

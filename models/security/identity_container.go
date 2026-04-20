@@ -85,6 +85,22 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["sensorMigration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSensorMigrationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SensorMigrationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SensorMigrationable)
+                }
+            }
+            m.SetSensorMigration(res)
+        }
+        return nil
+    }
     res["sensors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensorFromDiscriminatorValue)
         if err != nil {
@@ -161,6 +177,18 @@ func (m *IdentityContainer) GetSensorCandidates()([]SensorCandidateable) {
     }
     return nil
 }
+// GetSensorMigration gets the sensorMigration property value. The sensorMigration property
+// returns a []SensorMigrationable when successful
+func (m *IdentityContainer) GetSensorMigration()([]SensorMigrationable) {
+    val, err := m.GetBackingStore().Get("sensorMigration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensorMigrationable)
+    }
+    return nil
+}
 // GetSensors gets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 // returns a []Sensorable when successful
 func (m *IdentityContainer) GetSensors()([]Sensorable) {
@@ -233,6 +261,18 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetSensorMigration() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensorMigration()))
+        for i, v := range m.GetSensorMigration() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sensorMigration", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSensors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensors()))
         for i, v := range m.GetSensors() {
@@ -281,6 +321,13 @@ func (m *IdentityContainer) SetSensorCandidates(value []SensorCandidateable)() {
         panic(err)
     }
 }
+// SetSensorMigration sets the sensorMigration property value. The sensorMigration property
+func (m *IdentityContainer) SetSensorMigration(value []SensorMigrationable)() {
+    err := m.GetBackingStore().Set("sensorMigration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensors sets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 func (m *IdentityContainer) SetSensors(value []Sensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
@@ -302,12 +349,14 @@ type IdentityContainerable interface {
     GetIdentityAccounts()([]IdentityAccountsable)
     GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable)
     GetSensorCandidates()([]SensorCandidateable)
+    GetSensorMigration()([]SensorMigrationable)
     GetSensors()([]Sensorable)
     GetSettings()(SettingsContainerable)
     SetHealthIssues(value []HealthIssueable)()
     SetIdentityAccounts(value []IdentityAccountsable)()
     SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)()
     SetSensorCandidates(value []SensorCandidateable)()
+    SetSensorMigration(value []SensorMigrationable)()
     SetSensors(value []Sensorable)()
     SetSettings(value SettingsContainerable)()
 }

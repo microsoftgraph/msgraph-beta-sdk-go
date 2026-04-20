@@ -40,10 +40,12 @@ const (
     WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
     // Template Family for Company Portal settings
     COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+    // Windows Recovery and Remediation Configuration Policy
+    WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "windowsOsRecoveryPolicies", "companyPortal"}[i]
+    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "windowsOsRecoveryPolicies", "companyPortal", "windowsRecoveryAndRemediationConfiguration"}[i]
 }
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
     result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
@@ -82,6 +84,8 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
             result = WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         case "companyPortal":
             result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+        case "windowsRecoveryAndRemediationConfiguration":
+            result = WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
             return nil, nil
     }

@@ -24,9 +24,9 @@ type PermissionsAnalyticsAwsFindingsFindingItemRequestBuilderDeleteRequestConfig
 // PermissionsAnalyticsAwsFindingsFindingItemRequestBuilderGetQueryParameters the output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.
 type PermissionsAnalyticsAwsFindingsFindingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PermissionsAnalyticsAwsFindingsFindingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PermissionsAnalyticsAwsFindingsFindingItemRequestBuilderGetRequestConfiguration struct {

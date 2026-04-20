@@ -17,9 +17,9 @@ type ItemDeviceTemplateDeviceTemplateItemRequestBuilder struct {
 // ItemDeviceTemplateDeviceTemplateItemRequestBuilderGetQueryParameters device template used to instantiate this device. Nullable. Read-only.
 type ItemDeviceTemplateDeviceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDeviceTemplateDeviceTemplateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDeviceTemplateDeviceTemplateItemRequestBuilderGetRequestConfiguration struct {

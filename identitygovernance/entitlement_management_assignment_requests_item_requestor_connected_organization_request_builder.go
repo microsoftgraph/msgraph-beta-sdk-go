@@ -17,9 +17,9 @@ type EntitlementManagementAssignmentRequestsItemRequestorConnectedOrganizationRe
 // EntitlementManagementAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderGetQueryParameters the connected organization of the subject. Read-only. Nullable.
 type EntitlementManagementAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAssignmentRequestsItemRequestorConnectedOrganizationRequestBuilderGetRequestConfiguration struct {

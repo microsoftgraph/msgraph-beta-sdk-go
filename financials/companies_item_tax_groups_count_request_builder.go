@@ -16,9 +16,9 @@ type CompaniesItemTaxGroupsCountRequestBuilder struct {
 // CompaniesItemTaxGroupsCountRequestBuilderGetQueryParameters get the number of the resource
 type CompaniesItemTaxGroupsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // CompaniesItemTaxGroupsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemTaxGroupsCountRequestBuilderGetRequestConfiguration struct {

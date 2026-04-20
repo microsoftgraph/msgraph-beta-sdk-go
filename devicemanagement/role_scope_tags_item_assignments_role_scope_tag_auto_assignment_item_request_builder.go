@@ -24,9 +24,9 @@ type RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderDel
 // RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters the list of assignments for this Role Scope Tag.
 type RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleScopeTagsItemAssignmentsRoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration struct {

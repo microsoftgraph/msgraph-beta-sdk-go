@@ -24,9 +24,9 @@ type VirtualEndpointOrganizationSettingsRequestBuilderDeleteRequestConfiguration
 // VirtualEndpointOrganizationSettingsRequestBuilderGetQueryParameters read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
 type VirtualEndpointOrganizationSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointOrganizationSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointOrganizationSettingsRequestBuilderGetRequestConfiguration struct {

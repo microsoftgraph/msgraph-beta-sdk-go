@@ -24,9 +24,9 @@ type ApprovalRequestBuilderDeleteRequestConfiguration struct {
 // ApprovalRequestBuilderGetQueryParameters read the properties of an approvalSolution object to determine the provisioning state for a tenant.
 type ApprovalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ApprovalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApprovalRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemAuthenticationRequirementsRequestBuilder struct {
 // ItemAuthenticationRequirementsRequestBuilderGetQueryParameters read the properties of a user's authentication states. Use this API to retrieve the following information:
 type ItemAuthenticationRequirementsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationRequirementsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationRequirementsRequestBuilderGetRequestConfiguration struct {

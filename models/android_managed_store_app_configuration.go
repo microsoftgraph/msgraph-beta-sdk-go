@@ -49,6 +49,18 @@ func (m *AndroidManagedStoreAppConfiguration) GetConnectedAppsEnabled()(*bool) {
     }
     return nil
 }
+// GetCredentialProviderRoleState gets the credentialProviderRoleState property value. The Android credential provider role state for apps.
+// returns a *AndroidAppCredentialProviderRoleState when successful
+func (m *AndroidManagedStoreAppConfiguration) GetCredentialProviderRoleState()(*AndroidAppCredentialProviderRoleState) {
+    val, err := m.GetBackingStore().Get("credentialProviderRoleState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AndroidAppCredentialProviderRoleState)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,6 +82,16 @@ func (m *AndroidManagedStoreAppConfiguration) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetConnectedAppsEnabled(val)
+        }
+        return nil
+    }
+    res["credentialProviderRoleState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAndroidAppCredentialProviderRoleState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCredentialProviderRoleState(val.(*AndroidAppCredentialProviderRoleState))
         }
         return nil
     }
@@ -181,6 +203,13 @@ func (m *AndroidManagedStoreAppConfiguration) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    if m.GetCredentialProviderRoleState() != nil {
+        cast := (*m.GetCredentialProviderRoleState()).String()
+        err = writer.WriteStringValue("credentialProviderRoleState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("packageId", m.GetPackageId())
         if err != nil {
@@ -228,6 +257,13 @@ func (m *AndroidManagedStoreAppConfiguration) SetConnectedAppsEnabled(value *boo
         panic(err)
     }
 }
+// SetCredentialProviderRoleState sets the credentialProviderRoleState property value. The Android credential provider role state for apps.
+func (m *AndroidManagedStoreAppConfiguration) SetCredentialProviderRoleState(value *AndroidAppCredentialProviderRoleState)() {
+    err := m.GetBackingStore().Set("credentialProviderRoleState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPackageId sets the packageId property value. Android Enterprise app configuration package id.
 func (m *AndroidManagedStoreAppConfiguration) SetPackageId(value *string)() {
     err := m.GetBackingStore().Set("packageId", value)
@@ -261,12 +297,14 @@ type AndroidManagedStoreAppConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppSupportsOemConfig()(*bool)
     GetConnectedAppsEnabled()(*bool)
+    GetCredentialProviderRoleState()(*AndroidAppCredentialProviderRoleState)
     GetPackageId()(*string)
     GetPayloadJson()(*string)
     GetPermissionActions()([]AndroidPermissionActionable)
     GetProfileApplicability()(*AndroidProfileApplicability)
     SetAppSupportsOemConfig(value *bool)()
     SetConnectedAppsEnabled(value *bool)()
+    SetCredentialProviderRoleState(value *AndroidAppCredentialProviderRoleState)()
     SetPackageId(value *string)()
     SetPayloadJson(value *string)()
     SetPermissionActions(value []AndroidPermissionActionable)()

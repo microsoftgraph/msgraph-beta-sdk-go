@@ -24,9 +24,9 @@ type CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderDeleteReq
 // CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderGetQueryParameters get paymentTerm from financials
 type CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemCustomerPaymentsItemCustomerPaymentTermRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderDeleteRequestCo
 // ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetQueryParameters the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 type ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetRequestConfiguration struct {

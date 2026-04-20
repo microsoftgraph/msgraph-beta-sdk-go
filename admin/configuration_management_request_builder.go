@@ -24,9 +24,9 @@ type ConfigurationManagementRequestBuilderDeleteRequestConfiguration struct {
 // ConfigurationManagementRequestBuilderGetQueryParameters get configurationManagement from admin
 type ConfigurationManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConfigurationManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementRequestBuilderGetRequestConfiguration struct {

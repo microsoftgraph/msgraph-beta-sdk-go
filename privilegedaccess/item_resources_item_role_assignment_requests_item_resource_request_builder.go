@@ -17,9 +17,9 @@ type ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilder struct {
 // ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderGetQueryParameters read-only. The resource that the request aims to.
 type ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemResourcesItemRoleAssignmentRequestsItemResourceRequestBuilderGetRequestConfiguration struct {

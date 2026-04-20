@@ -24,9 +24,9 @@ type ItemTeamDefinitionPrimaryChannelAllMembersConversationMemberItemRequestBuil
 // ItemTeamDefinitionPrimaryChannelAllMembersConversationMemberItemRequestBuilderGetQueryParameters a collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
 type ItemTeamDefinitionPrimaryChannelAllMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamDefinitionPrimaryChannelAllMembersConversationMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionPrimaryChannelAllMembersConversationMemberItemRequestBuilderGetRequestConfiguration struct {

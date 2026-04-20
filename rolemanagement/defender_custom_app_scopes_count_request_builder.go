@@ -16,9 +16,9 @@ type DefenderCustomAppScopesCountRequestBuilder struct {
 // DefenderCustomAppScopesCountRequestBuilderGetQueryParameters get the number of the resource
 type DefenderCustomAppScopesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // DefenderCustomAppScopesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DefenderCustomAppScopesCountRequestBuilderGetRequestConfiguration struct {

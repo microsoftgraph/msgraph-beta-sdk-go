@@ -17,9 +17,9 @@ type CloudLicensingAllotmentsItemWaitingMembersWaitingMemberItemRequestBuilder s
 // CloudLicensingAllotmentsItemWaitingMembersWaitingMemberItemRequestBuilderGetQueryParameters list of over-assigned users who are in the waiting room for an allotment due to license capacity limits.
 type CloudLicensingAllotmentsItemWaitingMembersWaitingMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudLicensingAllotmentsItemWaitingMembersWaitingMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudLicensingAllotmentsItemWaitingMembersWaitingMemberItemRequestBuilderGetRequestConfiguration struct {

@@ -38,6 +38,18 @@ func (m *CloudPcSupportedRegionRestrictionDetail) GetAdditionalData()(map[string
     }
     return val.(map[string]any)
 }
+// GetAvailabilityZoneRestricted gets the availabilityZoneRestricted property value. Indicates that the region is restricted due to lack of availability zone support. When True, the region does not have availability zone infrastructure and is intended for disaster recovery scenarios only. When false, the region has full availability zone support. The default is false. Read-Only.
+// returns a *bool when successful
+func (m *CloudPcSupportedRegionRestrictionDetail) GetAvailabilityZoneRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("availabilityZoneRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *CloudPcSupportedRegionRestrictionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -59,6 +71,16 @@ func (m *CloudPcSupportedRegionRestrictionDetail) GetCPURestricted()(*bool) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcSupportedRegionRestrictionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["availabilityZoneRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAvailabilityZoneRestricted(val)
+        }
+        return nil
+    }
     res["cPURestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -140,6 +162,12 @@ func (m *CloudPcSupportedRegionRestrictionDetail) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *CloudPcSupportedRegionRestrictionDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteBoolValue("availabilityZoneRestricted", m.GetAvailabilityZoneRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("cPURestricted", m.GetCPURestricted())
         if err != nil {
             return err
@@ -174,6 +202,13 @@ func (m *CloudPcSupportedRegionRestrictionDetail) Serialize(writer i878a80d2330e
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcSupportedRegionRestrictionDetail) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAvailabilityZoneRestricted sets the availabilityZoneRestricted property value. Indicates that the region is restricted due to lack of availability zone support. When True, the region does not have availability zone infrastructure and is intended for disaster recovery scenarios only. When false, the region has full availability zone support. The default is false. Read-Only.
+func (m *CloudPcSupportedRegionRestrictionDetail) SetAvailabilityZoneRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("availabilityZoneRestricted", value)
     if err != nil {
         panic(err)
     }
@@ -214,11 +249,13 @@ type CloudPcSupportedRegionRestrictionDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAvailabilityZoneRestricted()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCPURestricted()(*bool)
     GetGPURestricted()(*bool)
     GetNestedVirtualizationRestricted()(*bool)
     GetOdataType()(*string)
+    SetAvailabilityZoneRestricted(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCPURestricted(value *bool)()
     SetGPURestricted(value *bool)()

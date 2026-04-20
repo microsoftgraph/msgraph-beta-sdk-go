@@ -60,6 +60,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body
     return res.(ItemSynchronizationSecretsResponseable), nil
 }
 // PutAsSecretsPutResponse update property secrets value.
+// Deprecated: Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a ItemSynchronizationSecretsPutResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(ItemSynchronizationSecretsPutResponseable, error) {
@@ -80,6 +81,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx c
     return res.(ItemSynchronizationSecretsPutResponseable), nil
 }
 // ToPutRequestInformation update property secrets value.
+// Deprecated: Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -95,6 +97,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *ItemSynchronizationSecretsRequestBuilder when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationSecretsRequestBuilder) {
     return NewItemSynchronizationSecretsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

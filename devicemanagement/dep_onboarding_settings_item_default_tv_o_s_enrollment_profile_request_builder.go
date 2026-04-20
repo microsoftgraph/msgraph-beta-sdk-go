@@ -17,9 +17,9 @@ type DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilder struct 
 // DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilderGetQueryParameters default TvOS Enrollment Profile
 type DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilderGetRequestConfiguration struct {

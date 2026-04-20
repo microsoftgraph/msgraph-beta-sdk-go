@@ -16,9 +16,9 @@ type CloudPCResourceNamespacesCountRequestBuilder struct {
 // CloudPCResourceNamespacesCountRequestBuilderGetQueryParameters get the number of the resource
 type CloudPCResourceNamespacesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // CloudPCResourceNamespacesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudPCResourceNamespacesCountRequestBuilderGetRequestConfiguration struct {

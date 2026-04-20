@@ -24,9 +24,9 @@ type IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderDelet
 // IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderGetQueryParameters collection of states of all users that the intent is applied to
 type IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderGetRequestConfiguration struct {

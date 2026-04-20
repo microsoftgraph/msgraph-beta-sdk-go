@@ -24,7 +24,7 @@ func NewExternalTokenBasedSapIagConnectionInfo()(*ExternalTokenBasedSapIagConnec
 func CreateExternalTokenBasedSapIagConnectionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalTokenBasedSapIagConnectionInfo(), nil
 }
-// GetAccessTokenUrl gets the accessTokenUrl property value. The accessTokenUrl property
+// GetAccessTokenUrl gets the accessTokenUrl property value. The URL endpoint used to obtain access tokens for authentication with the SAP IAG system.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetAccessTokenUrl()(*string) {
     val, err := m.GetBackingStore().Get("accessTokenUrl")
@@ -36,22 +36,10 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetAccessTokenUrl()(*string) {
     }
     return nil
 }
-// GetClientId gets the clientId property value. The clientId property
+// GetClientId gets the clientId property value. The client identifier used for authentication with the SAP IAG system.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetDomain gets the domain property value. The domain property
-// returns a *string when successful
-func (m *ExternalTokenBasedSapIagConnectionInfo) GetDomain()(*string) {
-    val, err := m.GetBackingStore().Get("domain")
     if err != nil {
         panic(err)
     }
@@ -81,16 +69,6 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetFieldDeserializers()(map[str
         }
         if val != nil {
             m.SetClientId(val)
-        }
-        return nil
-    }
-    res["domain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDomain(val)
         }
         return nil
     }
@@ -136,7 +114,7 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetKeyVaultName gets the keyVaultName property value. The keyVaultName property
+// GetKeyVaultName gets the keyVaultName property value. The name of the Azure Key Vault that stores the client secret for authentication.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetKeyVaultName()(*string) {
     val, err := m.GetBackingStore().Get("keyVaultName")
@@ -148,7 +126,7 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetKeyVaultName()(*string) {
     }
     return nil
 }
-// GetResourceGroup gets the resourceGroup property value. The resourceGroup property
+// GetResourceGroup gets the resourceGroup property value. The Azure resource group that contains the Key Vault.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetResourceGroup()(*string) {
     val, err := m.GetBackingStore().Get("resourceGroup")
@@ -160,7 +138,7 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetResourceGroup()(*string) {
     }
     return nil
 }
-// GetSecretName gets the secretName property value. The secretName property
+// GetSecretName gets the secretName property value. The name of the secret in Azure Key Vault that contains the client secret.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetSecretName()(*string) {
     val, err := m.GetBackingStore().Get("secretName")
@@ -172,7 +150,7 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) GetSecretName()(*string) {
     }
     return nil
 }
-// GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
+// GetSubscriptionId gets the subscriptionId property value. The Azure subscription ID that contains the Key Vault.
 // returns a *string when successful
 func (m *ExternalTokenBasedSapIagConnectionInfo) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
@@ -203,12 +181,6 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) Serialize(writer i878a80d2330e8
         }
     }
     {
-        err = writer.WriteStringValue("domain", m.GetDomain())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("keyVaultName", m.GetKeyVaultName())
         if err != nil {
             return err
@@ -234,49 +206,42 @@ func (m *ExternalTokenBasedSapIagConnectionInfo) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetAccessTokenUrl sets the accessTokenUrl property value. The accessTokenUrl property
+// SetAccessTokenUrl sets the accessTokenUrl property value. The URL endpoint used to obtain access tokens for authentication with the SAP IAG system.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetAccessTokenUrl(value *string)() {
     err := m.GetBackingStore().Set("accessTokenUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientId sets the clientId property value. The clientId property
+// SetClientId sets the clientId property value. The client identifier used for authentication with the SAP IAG system.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetClientId(value *string)() {
     err := m.GetBackingStore().Set("clientId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomain sets the domain property value. The domain property
-func (m *ExternalTokenBasedSapIagConnectionInfo) SetDomain(value *string)() {
-    err := m.GetBackingStore().Set("domain", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetKeyVaultName sets the keyVaultName property value. The keyVaultName property
+// SetKeyVaultName sets the keyVaultName property value. The name of the Azure Key Vault that stores the client secret for authentication.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetKeyVaultName(value *string)() {
     err := m.GetBackingStore().Set("keyVaultName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceGroup sets the resourceGroup property value. The resourceGroup property
+// SetResourceGroup sets the resourceGroup property value. The Azure resource group that contains the Key Vault.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetResourceGroup(value *string)() {
     err := m.GetBackingStore().Set("resourceGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecretName sets the secretName property value. The secretName property
+// SetSecretName sets the secretName property value. The name of the secret in Azure Key Vault that contains the client secret.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetSecretName(value *string)() {
     err := m.GetBackingStore().Set("secretName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
+// SetSubscriptionId sets the subscriptionId property value. The Azure subscription ID that contains the Key Vault.
 func (m *ExternalTokenBasedSapIagConnectionInfo) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {
@@ -288,14 +253,12 @@ type ExternalTokenBasedSapIagConnectionInfoable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessTokenUrl()(*string)
     GetClientId()(*string)
-    GetDomain()(*string)
     GetKeyVaultName()(*string)
     GetResourceGroup()(*string)
     GetSecretName()(*string)
     GetSubscriptionId()(*string)
     SetAccessTokenUrl(value *string)()
     SetClientId(value *string)()
-    SetDomain(value *string)()
     SetKeyVaultName(value *string)()
     SetResourceGroup(value *string)()
     SetSecretName(value *string)()

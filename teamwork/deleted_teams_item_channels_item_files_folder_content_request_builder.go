@@ -24,7 +24,7 @@ type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderDeleteRequestCo
 // DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetQueryParameters the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetQueryParameters struct {
     // Format of the content
-    Format *string `uriparametername:"%24format"`
+    Format *string "uriparametername:\"%24format\""
 }
 // DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemFilesFolderContentRequestBuilderGetRequestConfiguration struct {

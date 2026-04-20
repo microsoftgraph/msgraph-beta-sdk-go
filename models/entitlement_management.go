@@ -214,7 +214,7 @@ func (m *EntitlementManagement) GetControlConfigurations()([]ControlConfiguratio
     }
     return nil
 }
-// GetExternalOriginResourceConnectors gets the externalOriginResourceConnectors property value. The externalOriginResourceConnectors property
+// GetExternalOriginResourceConnectors gets the externalOriginResourceConnectors property value. Represents the connectors used to communicate with external resource systems.
 // returns a []ExternalOriginResourceConnectorable when successful
 func (m *EntitlementManagement) GetExternalOriginResourceConnectors()([]ExternalOriginResourceConnectorable) {
     val, err := m.GetBackingStore().Get("externalOriginResourceConnectors")
@@ -896,7 +896,7 @@ func (m *EntitlementManagement) SetControlConfigurations(value []ControlConfigur
         panic(err)
     }
 }
-// SetExternalOriginResourceConnectors sets the externalOriginResourceConnectors property value. The externalOriginResourceConnectors property
+// SetExternalOriginResourceConnectors sets the externalOriginResourceConnectors property value. Represents the connectors used to communicate with external resource systems.
 func (m *EntitlementManagement) SetExternalOriginResourceConnectors(value []ExternalOriginResourceConnectorable)() {
     err := m.GetBackingStore().Set("externalOriginResourceConnectors", value)
     if err != nil {

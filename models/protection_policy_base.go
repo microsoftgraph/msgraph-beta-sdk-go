@@ -57,7 +57,7 @@ func (m *ProtectionPolicyBase) GetBillingPolicyId()(*string) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The identity of person who created the policy.
+// GetCreatedBy gets the createdBy property value. The identity of the person who created the policy.
 // returns a IdentitySetable when successful
 func (m *ProtectionPolicyBase) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -81,7 +81,7 @@ func (m *ProtectionPolicyBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the policy to be created.
+// GetDisplayName gets the displayName property value. The name of the policy.
 // returns a *string when successful
 func (m *ProtectionPolicyBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -261,7 +261,7 @@ func (m *ProtectionPolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetOffboardRequestedDateTime gets the offboardRequestedDateTime property value. The offboardRequestedDateTime property
+// GetOffboardRequestedDateTime gets the offboardRequestedDateTime property value. The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ProtectionPolicyBase) GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("offboardRequestedDateTime")
@@ -285,7 +285,7 @@ func (m *ProtectionPolicyBase) GetProtectionMode()(*BackupPolicyProtectionMode) 
     }
     return nil
 }
-// GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
+// GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Requires $select to retrieve.
 // returns a ProtectionPolicyArtifactCountable when successful
 func (m *ProtectionPolicyBase) GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable) {
     val, err := m.GetBackingStore().Get("protectionPolicyArtifactCount")
@@ -309,7 +309,7 @@ func (m *ProtectionPolicyBase) GetRetentionSettings()([]RetentionSettingable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue.
+// GetStatus gets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.
 // returns a *ProtectionPolicyStatus when successful
 func (m *ProtectionPolicyBase) GetStatus()(*ProtectionPolicyStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -416,7 +416,7 @@ func (m *ProtectionPolicyBase) SetBillingPolicyId(value *string)() {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The identity of person who created the policy.
+// SetCreatedBy sets the createdBy property value. The identity of the person who created the policy.
 func (m *ProtectionPolicyBase) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -430,7 +430,7 @@ func (m *ProtectionPolicyBase) SetCreatedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the policy to be created.
+// SetDisplayName sets the displayName property value. The name of the policy.
 func (m *ProtectionPolicyBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -458,7 +458,7 @@ func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
-// SetOffboardRequestedDateTime sets the offboardRequestedDateTime property value. The offboardRequestedDateTime property
+// SetOffboardRequestedDateTime sets the offboardRequestedDateTime property value. The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ProtectionPolicyBase) SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("offboardRequestedDateTime", value)
     if err != nil {
@@ -472,7 +472,7 @@ func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMo
         panic(err)
     }
 }
-// SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
+// SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Requires $select to retrieve.
 func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)() {
     err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
     if err != nil {
@@ -486,7 +486,7 @@ func (m *ProtectionPolicyBase) SetRetentionSettings(value []RetentionSettingable
         panic(err)
     }
 }
-// SetStatus sets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue.
+// SetStatus sets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.
 func (m *ProtectionPolicyBase) SetStatus(value *ProtectionPolicyStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

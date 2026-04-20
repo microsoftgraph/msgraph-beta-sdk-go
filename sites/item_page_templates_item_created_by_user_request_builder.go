@@ -17,9 +17,9 @@ type ItemPageTemplatesItemCreatedByUserRequestBuilder struct {
 // ItemPageTemplatesItemCreatedByUserRequestBuilderGetQueryParameters get createdByUser from sites
 type ItemPageTemplatesItemCreatedByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPageTemplatesItemCreatedByUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPageTemplatesItemCreatedByUserRequestBuilderGetRequestConfiguration struct {

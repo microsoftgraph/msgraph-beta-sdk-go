@@ -17,9 +17,9 @@ type CompaniesItemAccountsAccountItemRequestBuilder struct {
 // CompaniesItemAccountsAccountItemRequestBuilderGetQueryParameters get accounts from financials
 type CompaniesItemAccountsAccountItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemAccountsAccountItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemAccountsAccountItemRequestBuilderGetRequestConfiguration struct {

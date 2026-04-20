@@ -21,12 +21,12 @@ type AuditLogRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuditLogRequestBuilderGetQueryParameters get auditLog from security
+// AuditLogRequestBuilderGetQueryParameters the entry point for Microsoft Purview audit log queries and operations.
 type AuditLogRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuditLogRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuditLogRequestBuilderGetRequestConfiguration struct {
@@ -73,7 +73,7 @@ func (m *AuditLogRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// Get get auditLog from security
+// Get the entry point for Microsoft Purview audit log queries and operations.
 // returns a AuditCoreRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuditLogRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditCoreRootable, error) {
@@ -129,7 +129,7 @@ func (m *AuditLogRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get auditLog from security
+// ToGetRequestInformation the entry point for Microsoft Purview audit log queries and operations.
 // returns a *RequestInformation when successful
 func (m *AuditLogRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

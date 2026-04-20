@@ -24,9 +24,9 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestI
 // ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration struct {

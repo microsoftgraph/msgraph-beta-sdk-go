@@ -24,9 +24,9 @@ type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteReques
 // VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPcDeviceImage object.
 type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration struct {
@@ -118,6 +118,11 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable), nil
+}
+// RetryUpload provides operations to call the retryUpload method.
+// returns a *VirtualEndpointDeviceImagesItemRetryUploadRequestBuilder when successful
+func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) RetryUpload()(*VirtualEndpointDeviceImagesItemRetryUploadRequestBuilder) {
+    return NewVirtualEndpointDeviceImagesItemRetryUploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reupload provides operations to call the reupload method.
 // returns a *VirtualEndpointDeviceImagesItemReuploadRequestBuilder when successful

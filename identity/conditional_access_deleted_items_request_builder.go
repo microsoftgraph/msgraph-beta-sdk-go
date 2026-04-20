@@ -24,9 +24,9 @@ type ConditionalAccessDeletedItemsRequestBuilderDeleteRequestConfiguration struc
 // ConditionalAccessDeletedItemsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 type ConditionalAccessDeletedItemsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConditionalAccessDeletedItemsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConditionalAccessDeletedItemsRequestBuilderGetRequestConfiguration struct {

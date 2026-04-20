@@ -17,9 +17,9 @@ type ItemJoinedTeamsTeamItemRequestBuilder struct {
 // ItemJoinedTeamsTeamItemRequestBuilderGetQueryParameters the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 type ItemJoinedTeamsTeamItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemJoinedTeamsTeamItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemJoinedTeamsTeamItemRequestBuilderGetRequestConfiguration struct {

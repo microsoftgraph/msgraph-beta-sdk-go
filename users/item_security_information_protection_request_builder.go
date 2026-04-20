@@ -24,9 +24,9 @@ type ItemSecurityInformationProtectionRequestBuilderDeleteRequestConfiguration s
 // ItemSecurityInformationProtectionRequestBuilderGetQueryParameters get informationProtection from users
 type ItemSecurityInformationProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSecurityInformationProtectionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSecurityInformationProtectionRequestBuilderGetRequestConfiguration struct {

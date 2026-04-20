@@ -323,6 +323,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["trafficRoutingMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTrafficRoutingMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrafficRoutingMethod(val.(*TrafficRoutingMethod))
+        }
+        return nil
+    }
     res["useAlternateUrlForTranslationAndRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -593,6 +603,18 @@ func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSin
     }
     return nil
 }
+// GetTrafficRoutingMethod gets the trafficRoutingMethod property value. The trafficRoutingMethod property
+// returns a *TrafficRoutingMethod when successful
+func (m *OnPremisesPublishing) GetTrafficRoutingMethod()(*TrafficRoutingMethod) {
+    val, err := m.GetBackingStore().Get("trafficRoutingMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TrafficRoutingMethod)
+    }
+    return nil
+}
 // GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
@@ -812,6 +834,13 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetTrafficRoutingMethod() != nil {
+        cast := (*m.GetTrafficRoutingMethod()).String()
+        err := writer.WriteStringValue("trafficRoutingMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", m.GetUseAlternateUrlForTranslationAndRedirect())
         if err != nil {
@@ -1026,6 +1055,13 @@ func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishin
         panic(err)
     }
 }
+// SetTrafficRoutingMethod sets the trafficRoutingMethod property value. The trafficRoutingMethod property
+func (m *OnPremisesPublishing) SetTrafficRoutingMethod(value *TrafficRoutingMethod)() {
+    err := m.GetBackingStore().Set("trafficRoutingMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool)() {
     err := m.GetBackingStore().Set("useAlternateUrlForTranslationAndRedirect", value)
@@ -1101,6 +1137,7 @@ type OnPremisesPublishingable interface {
     GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable)
     GetSegmentsConfiguration()(SegmentConfigurationable)
     GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable)
+    GetTrafficRoutingMethod()(*TrafficRoutingMethod)
     GetUseAlternateUrlForTranslationAndRedirect()(*bool)
     GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable)
     GetVerifiedCustomDomainKeyCredential()(KeyCredentialable)
@@ -1130,6 +1167,7 @@ type OnPremisesPublishingable interface {
     SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)()
     SetSegmentsConfiguration(value SegmentConfigurationable)()
     SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)()
+    SetTrafficRoutingMethod(value *TrafficRoutingMethod)()
     SetUseAlternateUrlForTranslationAndRedirect(value *bool)()
     SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)()
     SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)()

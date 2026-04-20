@@ -17,7 +17,7 @@ type ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesR
 // ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetQueryParameters retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren't supported.  
 type ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetQueryParameters struct {
     // Usage: challengeTimeoutInMinutes=@challengeTimeoutInMinutes
-    ChallengeTimeoutInMinutes *int32 `uriparametername:"challengeTimeoutInMinutes"`
+    ChallengeTimeoutInMinutes *int32 "uriparametername:\"challengeTimeoutInMinutes\""
 }
 // ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetRequestConfiguration struct {

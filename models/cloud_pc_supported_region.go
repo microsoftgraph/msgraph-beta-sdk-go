@@ -124,7 +124,7 @@ func (m *CloudPcSupportedRegion) GetRegionGroup()(*CloudPcRegionGroup) {
     }
     return nil
 }
-// GetRegionRestrictionDetail gets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+// GetRegionRestrictionDetail gets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.
 // returns a CloudPcSupportedRegionRestrictionDetailable when successful
 func (m *CloudPcSupportedRegion) GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable) {
     val, err := m.GetBackingStore().Get("regionRestrictionDetail")
@@ -229,7 +229,7 @@ func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
         panic(err)
     }
 }
-// SetRegionRestrictionDetail sets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+// SetRegionRestrictionDetail sets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)() {
     err := m.GetBackingStore().Set("regionRestrictionDetail", value)
     if err != nil {

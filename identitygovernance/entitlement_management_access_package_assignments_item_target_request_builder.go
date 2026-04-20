@@ -24,9 +24,9 @@ type EntitlementManagementAccessPackageAssignmentsItemTargetRequestBuilderDelete
 // EntitlementManagementAccessPackageAssignmentsItemTargetRequestBuilderGetQueryParameters the subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
 type EntitlementManagementAccessPackageAssignmentsItemTargetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageAssignmentsItemTargetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentsItemTargetRequestBuilderGetRequestConfiguration struct {

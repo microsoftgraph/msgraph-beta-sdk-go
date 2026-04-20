@@ -24,9 +24,9 @@ type WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleReq
 // WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderGetQueryParameters knowledge base article associated with the release when the known issue was first reported.
 type WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderGetRequestConfiguration struct {

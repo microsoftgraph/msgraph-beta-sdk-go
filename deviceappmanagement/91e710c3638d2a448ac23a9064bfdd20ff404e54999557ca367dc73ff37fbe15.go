@@ -24,9 +24,9 @@ type MobileAppsItemGraphManagedMobileLobAppRelationshipsMobileAppRelationshipIte
 // MobileAppsItemGraphManagedMobileLobAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters the set of direct relationships for this app.
 type MobileAppsItemGraphManagedMobileLobAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphManagedMobileLobAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphManagedMobileLobAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type AgentInstancesCountRequestBuilder struct {
 // AgentInstancesCountRequestBuilderGetQueryParameters get the number of the resource
 type AgentInstancesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // AgentInstancesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AgentInstancesCountRequestBuilderGetRequestConfiguration struct {

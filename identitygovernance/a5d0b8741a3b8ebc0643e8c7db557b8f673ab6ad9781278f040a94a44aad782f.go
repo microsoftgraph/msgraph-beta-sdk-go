@@ -14,12 +14,12 @@ import (
 type EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetQueryParameters get externalOriginResourceConnector from identityGovernance
+// EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetQueryParameters the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 type EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration struct {
@@ -43,7 +43,7 @@ func NewEntitlementManagementAccessPackageResourcesItemExternalOriginResourceCon
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get externalOriginResourceConnector from identityGovernance
+// Get the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 // returns a ExternalOriginResourceConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, error) {
@@ -63,7 +63,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable), nil
 }
-// ToGetRequestInformation get externalOriginResourceConnector from identityGovernance
+// ToGetRequestInformation the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

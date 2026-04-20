@@ -24,9 +24,9 @@ type CertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigu
 // CertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetQueryParameters defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 type CertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetRequestConfiguration struct {

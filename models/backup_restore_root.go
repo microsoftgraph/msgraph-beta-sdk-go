@@ -22,39 +22,15 @@ func NewBackupRestoreRoot()(*BackupRestoreRoot) {
 func CreateBackupRestoreRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBackupRestoreRoot(), nil
 }
-// GetAllDrivesBackup gets the allDrivesBackup property value. The allDrivesBackup property
-// returns a AllDrivesBackupable when successful
-func (m *BackupRestoreRoot) GetAllDrivesBackup()(AllDrivesBackupable) {
-    val, err := m.GetBackingStore().Get("allDrivesBackup")
+// GetActivityLogs gets the activityLogs property value. The activityLogs property
+// returns a []ActivityLogBaseable when successful
+func (m *BackupRestoreRoot) GetActivityLogs()([]ActivityLogBaseable) {
+    val, err := m.GetBackingStore().Get("activityLogs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AllDrivesBackupable)
-    }
-    return nil
-}
-// GetAllMailboxesBackup gets the allMailboxesBackup property value. The allMailboxesBackup property
-// returns a AllMailboxesBackupable when successful
-func (m *BackupRestoreRoot) GetAllMailboxesBackup()(AllMailboxesBackupable) {
-    val, err := m.GetBackingStore().Get("allMailboxesBackup")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AllMailboxesBackupable)
-    }
-    return nil
-}
-// GetAllSitesBackup gets the allSitesBackup property value. The allSitesBackup property
-// returns a AllSitesBackupable when successful
-func (m *BackupRestoreRoot) GetAllSitesBackup()(AllSitesBackupable) {
-    val, err := m.GetBackingStore().Get("allSitesBackup")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AllSitesBackupable)
+        return val.([]ActivityLogBaseable)
     }
     return nil
 }
@@ -67,6 +43,30 @@ func (m *BackupRestoreRoot) GetBrowseSessions()([]BrowseSessionBaseable) {
     }
     if val != nil {
         return val.([]BrowseSessionBaseable)
+    }
+    return nil
+}
+// GetDriveExclusionUnits gets the driveExclusionUnits property value. The driveExclusionUnits property
+// returns a []DriveExclusionUnitable when successful
+func (m *BackupRestoreRoot) GetDriveExclusionUnits()([]DriveExclusionUnitable) {
+    val, err := m.GetBackingStore().Get("driveExclusionUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveExclusionUnitable)
+    }
+    return nil
+}
+// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// returns a []DriveExclusionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("driveExclusionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveExclusionUnitsBulkAdditionJobable)
     }
     return nil
 }
@@ -142,37 +142,35 @@ func (m *BackupRestoreRoot) GetExchangeRestoreSessions()([]ExchangeRestoreSessio
     }
     return nil
 }
+// GetExclusionUnits gets the exclusionUnits property value. The exclusionUnits property
+// returns a []ExclusionUnitBaseable when successful
+func (m *BackupRestoreRoot) GetExclusionUnits()([]ExclusionUnitBaseable) {
+    val, err := m.GetBackingStore().Get("exclusionUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExclusionUnitBaseable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allDrivesBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAllDrivesBackupFromDiscriminatorValue)
+    res["activityLogs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateActivityLogBaseFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllDrivesBackup(val.(AllDrivesBackupable))
-        }
-        return nil
-    }
-    res["allMailboxesBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAllMailboxesBackupFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllMailboxesBackup(val.(AllMailboxesBackupable))
-        }
-        return nil
-    }
-    res["allSitesBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAllSitesBackupFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllSitesBackup(val.(AllSitesBackupable))
+            res := make([]ActivityLogBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ActivityLogBaseable)
+                }
+            }
+            m.SetActivityLogs(res)
         }
         return nil
     }
@@ -189,6 +187,38 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetBrowseSessions(res)
+        }
+        return nil
+    }
+    res["driveExclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveExclusionUnitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveExclusionUnitable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveExclusionUnitable)
+                }
+            }
+            m.SetDriveExclusionUnits(res)
+        }
+        return nil
+    }
+    res["driveExclusionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveExclusionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveExclusionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetDriveExclusionUnitsBulkAdditionJobs(res)
         }
         return nil
     }
@@ -279,6 +309,54 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetExchangeRestoreSessions(res)
+        }
+        return nil
+    }
+    res["exclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExclusionUnitBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExclusionUnitBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ExclusionUnitBaseable)
+                }
+            }
+            m.SetExclusionUnits(res)
+        }
+        return nil
+    }
+    res["mailboxExclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MailboxExclusionUnitable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MailboxExclusionUnitable)
+                }
+            }
+            m.SetMailboxExclusionUnits(res)
+        }
+        return nil
+    }
+    res["mailboxExclusionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MailboxExclusionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MailboxExclusionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetMailboxExclusionUnitsBulkAdditionJobs(res)
         }
         return nil
     }
@@ -410,6 +488,16 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBackupReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReports(val.(BackupReportable))
+        }
+        return nil
+    }
     res["restorePoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRestorePointFromDiscriminatorValue)
         if err != nil {
@@ -516,6 +604,38 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["siteExclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteExclusionUnitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SiteExclusionUnitable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SiteExclusionUnitable)
+                }
+            }
+            m.SetSiteExclusionUnits(res)
+        }
+        return nil
+    }
+    res["siteExclusionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSiteExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SiteExclusionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SiteExclusionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetSiteExclusionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
     res["siteInclusionRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSiteProtectionRuleFromDiscriminatorValue)
         if err != nil {
@@ -565,6 +685,30 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+// returns a []MailboxExclusionUnitable when successful
+func (m *BackupRestoreRoot) GetMailboxExclusionUnits()([]MailboxExclusionUnitable) {
+    val, err := m.GetBackingStore().Get("mailboxExclusionUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailboxExclusionUnitable)
+    }
+    return nil
+}
+// GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+// returns a []MailboxExclusionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("mailboxExclusionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailboxExclusionUnitsBulkAdditionJobable)
+    }
+    return nil
 }
 // GetMailboxInclusionRules gets the mailboxInclusionRules property value. The list of mailbox inclusion rules applied to the tenant.
 // returns a []MailboxProtectionRuleable when successful
@@ -662,6 +806,18 @@ func (m *BackupRestoreRoot) GetProtectionUnits()([]ProtectionUnitBaseable) {
     }
     return nil
 }
+// GetReports gets the reports property value. The reports property
+// returns a BackupReportable when successful
+func (m *BackupRestoreRoot) GetReports()(BackupReportable) {
+    val, err := m.GetBackingStore().Get("reports")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BackupReportable)
+    }
+    return nil
+}
 // GetRestorePoints gets the restorePoints property value. List of restore points in the tenant.
 // returns a []RestorePointable when successful
 func (m *BackupRestoreRoot) GetRestorePoints()([]RestorePointable) {
@@ -746,6 +902,30 @@ func (m *BackupRestoreRoot) GetSharePointRestoreSessions()([]SharePointRestoreSe
     }
     return nil
 }
+// GetSiteExclusionUnits gets the siteExclusionUnits property value. The siteExclusionUnits property
+// returns a []SiteExclusionUnitable when successful
+func (m *BackupRestoreRoot) GetSiteExclusionUnits()([]SiteExclusionUnitable) {
+    val, err := m.GetBackingStore().Get("siteExclusionUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteExclusionUnitable)
+    }
+    return nil
+}
+// GetSiteExclusionUnitsBulkAdditionJobs gets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+// returns a []SiteExclusionUnitsBulkAdditionJobable when successful
+func (m *BackupRestoreRoot) GetSiteExclusionUnitsBulkAdditionJobs()([]SiteExclusionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("siteExclusionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SiteExclusionUnitsBulkAdditionJobable)
+    }
+    return nil
+}
 // GetSiteInclusionRules gets the siteInclusionRules property value. The list of site inclusion rules applied to the tenant.
 // returns a []SiteProtectionRuleable when successful
 func (m *BackupRestoreRoot) GetSiteInclusionRules()([]SiteProtectionRuleable) {
@@ -788,20 +968,14 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteObjectValue("allDrivesBackup", m.GetAllDrivesBackup())
-        if err != nil {
-            return err
+    if m.GetActivityLogs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivityLogs()))
+        for i, v := range m.GetActivityLogs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
         }
-    }
-    {
-        err = writer.WriteObjectValue("allMailboxesBackup", m.GetAllMailboxesBackup())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("allSitesBackup", m.GetAllSitesBackup())
+        err = writer.WriteCollectionOfObjectValues("activityLogs", cast)
         if err != nil {
             return err
         }
@@ -814,6 +988,30 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err = writer.WriteCollectionOfObjectValues("browseSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDriveExclusionUnits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveExclusionUnits()))
+        for i, v := range m.GetDriveExclusionUnits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveExclusionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDriveExclusionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveExclusionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetDriveExclusionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveExclusionUnitsBulkAdditionJobs", cast)
         if err != nil {
             return err
         }
@@ -880,6 +1078,42 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err = writer.WriteCollectionOfObjectValues("exchangeRestoreSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetExclusionUnits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExclusionUnits()))
+        for i, v := range m.GetExclusionUnits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("exclusionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMailboxExclusionUnits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnits()))
+        for i, v := range m.GetMailboxExclusionUnits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMailboxExclusionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetMailboxExclusionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnitsBulkAdditionJobs", cast)
         if err != nil {
             return err
         }
@@ -980,6 +1214,12 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("reports", m.GetReports())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRestorePoints() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRestorePoints()))
         for i, v := range m.GetRestorePoints() {
@@ -1058,6 +1298,30 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetSiteExclusionUnits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteExclusionUnits()))
+        for i, v := range m.GetSiteExclusionUnits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("siteExclusionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSiteExclusionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteExclusionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetSiteExclusionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("siteExclusionUnitsBulkAdditionJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSiteInclusionRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSiteInclusionRules()))
         for i, v := range m.GetSiteInclusionRules() {
@@ -1096,23 +1360,9 @@ func (m *BackupRestoreRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAllDrivesBackup sets the allDrivesBackup property value. The allDrivesBackup property
-func (m *BackupRestoreRoot) SetAllDrivesBackup(value AllDrivesBackupable)() {
-    err := m.GetBackingStore().Set("allDrivesBackup", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetAllMailboxesBackup sets the allMailboxesBackup property value. The allMailboxesBackup property
-func (m *BackupRestoreRoot) SetAllMailboxesBackup(value AllMailboxesBackupable)() {
-    err := m.GetBackingStore().Set("allMailboxesBackup", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetAllSitesBackup sets the allSitesBackup property value. The allSitesBackup property
-func (m *BackupRestoreRoot) SetAllSitesBackup(value AllSitesBackupable)() {
-    err := m.GetBackingStore().Set("allSitesBackup", value)
+// SetActivityLogs sets the activityLogs property value. The activityLogs property
+func (m *BackupRestoreRoot) SetActivityLogs(value []ActivityLogBaseable)() {
+    err := m.GetBackingStore().Set("activityLogs", value)
     if err != nil {
         panic(err)
     }
@@ -1120,6 +1370,20 @@ func (m *BackupRestoreRoot) SetAllSitesBackup(value AllSitesBackupable)() {
 // SetBrowseSessions sets the browseSessions property value. The list of browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetBrowseSessions(value []BrowseSessionBaseable)() {
     err := m.GetBackingStore().Set("browseSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDriveExclusionUnits sets the driveExclusionUnits property value. The driveExclusionUnits property
+func (m *BackupRestoreRoot) SetDriveExclusionUnits(value []DriveExclusionUnitable)() {
+    err := m.GetBackingStore().Set("driveExclusionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("driveExclusionUnitsBulkAdditionJobs", value)
     if err != nil {
         panic(err)
     }
@@ -1162,6 +1426,27 @@ func (m *BackupRestoreRoot) SetExchangeProtectionPolicies(value []ExchangeProtec
 // SetExchangeRestoreSessions sets the exchangeRestoreSessions property value. The list of Exchange restore sessions available in the tenant.
 func (m *BackupRestoreRoot) SetExchangeRestoreSessions(value []ExchangeRestoreSessionable)() {
     err := m.GetBackingStore().Set("exchangeRestoreSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExclusionUnits sets the exclusionUnits property value. The exclusionUnits property
+func (m *BackupRestoreRoot) SetExclusionUnits(value []ExclusionUnitBaseable)() {
+    err := m.GetBackingStore().Set("exclusionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+func (m *BackupRestoreRoot) SetMailboxExclusionUnits(value []MailboxExclusionUnitable)() {
+    err := m.GetBackingStore().Set("mailboxExclusionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("mailboxExclusionUnitsBulkAdditionJobs", value)
     if err != nil {
         panic(err)
     }
@@ -1222,6 +1507,13 @@ func (m *BackupRestoreRoot) SetProtectionUnits(value []ProtectionUnitBaseable)()
         panic(err)
     }
 }
+// SetReports sets the reports property value. The reports property
+func (m *BackupRestoreRoot) SetReports(value BackupReportable)() {
+    err := m.GetBackingStore().Set("reports", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestorePoints sets the restorePoints property value. List of restore points in the tenant.
 func (m *BackupRestoreRoot) SetRestorePoints(value []RestorePointable)() {
     err := m.GetBackingStore().Set("restorePoints", value)
@@ -1271,6 +1563,20 @@ func (m *BackupRestoreRoot) SetSharePointRestoreSessions(value []SharePointResto
         panic(err)
     }
 }
+// SetSiteExclusionUnits sets the siteExclusionUnits property value. The siteExclusionUnits property
+func (m *BackupRestoreRoot) SetSiteExclusionUnits(value []SiteExclusionUnitable)() {
+    err := m.GetBackingStore().Set("siteExclusionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSiteExclusionUnitsBulkAdditionJobs sets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+func (m *BackupRestoreRoot) SetSiteExclusionUnitsBulkAdditionJobs(value []SiteExclusionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("siteExclusionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSiteInclusionRules sets the siteInclusionRules property value. The list of site inclusion rules applied to the tenant.
 func (m *BackupRestoreRoot) SetSiteInclusionRules(value []SiteProtectionRuleable)() {
     err := m.GetBackingStore().Set("siteInclusionRules", value)
@@ -1295,16 +1601,19 @@ func (m *BackupRestoreRoot) SetSiteProtectionUnitsBulkAdditionJobs(value []SiteP
 type BackupRestoreRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllDrivesBackup()(AllDrivesBackupable)
-    GetAllMailboxesBackup()(AllMailboxesBackupable)
-    GetAllSitesBackup()(AllSitesBackupable)
+    GetActivityLogs()([]ActivityLogBaseable)
     GetBrowseSessions()([]BrowseSessionBaseable)
+    GetDriveExclusionUnits()([]DriveExclusionUnitable)
+    GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable)
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
     GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
     GetEmailNotificationsSetting()(EmailNotificationsSettingable)
     GetExchangeProtectionPolicies()([]ExchangeProtectionPolicyable)
     GetExchangeRestoreSessions()([]ExchangeRestoreSessionable)
+    GetExclusionUnits()([]ExclusionUnitBaseable)
+    GetMailboxExclusionUnits()([]MailboxExclusionUnitable)
+    GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable)
     GetMailboxInclusionRules()([]MailboxProtectionRuleable)
     GetMailboxProtectionUnits()([]MailboxProtectionUnitable)
     GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable)
@@ -1313,6 +1622,7 @@ type BackupRestoreRootable interface {
     GetOneDriveForBusinessRestoreSessions()([]OneDriveForBusinessRestoreSessionable)
     GetProtectionPolicies()([]ProtectionPolicyBaseable)
     GetProtectionUnits()([]ProtectionUnitBaseable)
+    GetReports()(BackupReportable)
     GetRestorePoints()([]RestorePointable)
     GetRestoreSessions()([]RestoreSessionBaseable)
     GetServiceApps()([]ServiceAppable)
@@ -1320,19 +1630,24 @@ type BackupRestoreRootable interface {
     GetSharePointBrowseSessions()([]SharePointBrowseSessionable)
     GetSharePointProtectionPolicies()([]SharePointProtectionPolicyable)
     GetSharePointRestoreSessions()([]SharePointRestoreSessionable)
+    GetSiteExclusionUnits()([]SiteExclusionUnitable)
+    GetSiteExclusionUnitsBulkAdditionJobs()([]SiteExclusionUnitsBulkAdditionJobable)
     GetSiteInclusionRules()([]SiteProtectionRuleable)
     GetSiteProtectionUnits()([]SiteProtectionUnitable)
     GetSiteProtectionUnitsBulkAdditionJobs()([]SiteProtectionUnitsBulkAdditionJobable)
-    SetAllDrivesBackup(value AllDrivesBackupable)()
-    SetAllMailboxesBackup(value AllMailboxesBackupable)()
-    SetAllSitesBackup(value AllSitesBackupable)()
+    SetActivityLogs(value []ActivityLogBaseable)()
     SetBrowseSessions(value []BrowseSessionBaseable)()
+    SetDriveExclusionUnits(value []DriveExclusionUnitable)()
+    SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)()
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
     SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()
     SetEmailNotificationsSetting(value EmailNotificationsSettingable)()
     SetExchangeProtectionPolicies(value []ExchangeProtectionPolicyable)()
     SetExchangeRestoreSessions(value []ExchangeRestoreSessionable)()
+    SetExclusionUnits(value []ExclusionUnitBaseable)()
+    SetMailboxExclusionUnits(value []MailboxExclusionUnitable)()
+    SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)()
     SetMailboxInclusionRules(value []MailboxProtectionRuleable)()
     SetMailboxProtectionUnits(value []MailboxProtectionUnitable)()
     SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)()
@@ -1341,6 +1656,7 @@ type BackupRestoreRootable interface {
     SetOneDriveForBusinessRestoreSessions(value []OneDriveForBusinessRestoreSessionable)()
     SetProtectionPolicies(value []ProtectionPolicyBaseable)()
     SetProtectionUnits(value []ProtectionUnitBaseable)()
+    SetReports(value BackupReportable)()
     SetRestorePoints(value []RestorePointable)()
     SetRestoreSessions(value []RestoreSessionBaseable)()
     SetServiceApps(value []ServiceAppable)()
@@ -1348,6 +1664,8 @@ type BackupRestoreRootable interface {
     SetSharePointBrowseSessions(value []SharePointBrowseSessionable)()
     SetSharePointProtectionPolicies(value []SharePointProtectionPolicyable)()
     SetSharePointRestoreSessions(value []SharePointRestoreSessionable)()
+    SetSiteExclusionUnits(value []SiteExclusionUnitable)()
+    SetSiteExclusionUnitsBulkAdditionJobs(value []SiteExclusionUnitsBulkAdditionJobable)()
     SetSiteInclusionRules(value []SiteProtectionRuleable)()
     SetSiteProtectionUnits(value []SiteProtectionUnitable)()
     SetSiteProtectionUnitsBulkAdditionJobs(value []SiteProtectionUnitsBulkAdditionJobable)()

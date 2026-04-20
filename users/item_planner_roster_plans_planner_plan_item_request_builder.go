@@ -17,9 +17,9 @@ type ItemPlannerRosterPlansPlannerPlanItemRequestBuilder struct {
 // ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
 type ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerRosterPlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct {

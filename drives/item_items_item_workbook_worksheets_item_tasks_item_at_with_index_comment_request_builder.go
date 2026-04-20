@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemAtWithIndexCommentRequestBuilde
 // ItemItemsItemWorkbookWorksheetsItemTasksItemAtWithIndexCommentRequestBuilderGetQueryParameters the comment that the task is associated with.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemAtWithIndexCommentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemTasksItemAtWithIndexCommentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemAtWithIndexCommentRequestBuilderGetRequestConfiguration struct {

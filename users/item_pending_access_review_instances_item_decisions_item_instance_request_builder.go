@@ -24,9 +24,9 @@ type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderDele
 // ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderGetQueryParameters there's exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilderGetRequestConfiguration struct {
@@ -53,6 +53,11 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilder
 // returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilder) ApplyDecisions()(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BatchApplyCustomDataProvidedResourceDecisions provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.
+// returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder when successful
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceRequestBuilder) BatchApplyCustomDataProvidedResourceDecisions()(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
+    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BatchRecordDecisions provides operations to call the batchRecordDecisions method.
 // returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder when successful

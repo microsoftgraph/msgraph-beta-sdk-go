@@ -24,9 +24,9 @@ type SettingsConditionalAccessRequestBuilderDeleteRequestConfiguration struct {
 // SettingsConditionalAccessRequestBuilderGetQueryParameters retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
 type SettingsConditionalAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SettingsConditionalAccessRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SettingsConditionalAccessRequestBuilderGetRequestConfiguration struct {

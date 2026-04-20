@@ -16,9 +16,9 @@ type BusinessScenariosCountRequestBuilder struct {
 // BusinessScenariosCountRequestBuilderGetQueryParameters get the number of the resource
 type BusinessScenariosCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // BusinessScenariosCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BusinessScenariosCountRequestBuilderGetRequestConfiguration struct {

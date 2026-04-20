@@ -71,6 +71,18 @@ func (m *AgentRiskDetection) GetAgentId()(*string) {
     }
     return nil
 }
+// GetBlueprintId gets the blueprintId property value. The identifier of the blueprint associated with the agent. Nullable.
+// returns a *string when successful
+func (m *AgentRiskDetection) GetBlueprintId()(*string) {
+    val, err := m.GetBackingStore().Get("blueprintId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDetectedDateTime gets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).
 // returns a *Time when successful
 func (m *AgentRiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -136,6 +148,16 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAgentId(val)
+        }
+        return nil
+    }
+    res["blueprintId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlueprintId(val)
         }
         return nil
     }
@@ -229,6 +251,16 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSource(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityType gets the identityType property value. The identityType property
@@ -315,6 +347,18 @@ func (m *AgentRiskDetection) GetRiskState()(*RiskState) {
     }
     return nil
 }
+// GetSource gets the source property value. The source system that generated the risk detection. Nullable.
+// returns a *string when successful
+func (m *AgentRiskDetection) GetSource()(*string) {
+    val, err := m.GetBackingStore().Get("source")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -341,6 +385,12 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("agentId", m.GetAgentId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("blueprintId", m.GetBlueprintId())
         if err != nil {
             return err
         }
@@ -404,6 +454,12 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("source", m.GetSource())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetActivityDateTime sets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).
@@ -430,6 +486,13 @@ func (m *AgentRiskDetection) SetAgentDisplayName(value *string)() {
 // SetAgentId sets the agentId property value. The unique identifier for the agent. This is equivalent to 'id' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).
 func (m *AgentRiskDetection) SetAgentId(value *string)() {
     err := m.GetBackingStore().Set("agentId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBlueprintId sets the blueprintId property value. The identifier of the blueprint associated with the agent. Nullable.
+func (m *AgentRiskDetection) SetBlueprintId(value *string)() {
+    err := m.GetBackingStore().Set("blueprintId", value)
     if err != nil {
         panic(err)
     }
@@ -497,6 +560,13 @@ func (m *AgentRiskDetection) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
+// SetSource sets the source property value. The source system that generated the risk detection. Nullable.
+func (m *AgentRiskDetection) SetSource(value *string)() {
+    err := m.GetBackingStore().Set("source", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AgentRiskDetectionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -504,6 +574,7 @@ type AgentRiskDetectionable interface {
     GetAdditionalInfo()(*string)
     GetAgentDisplayName()(*string)
     GetAgentId()(*string)
+    GetBlueprintId()(*string)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDetectionTimingType()(*RiskDetectionTimingType)
     GetIdentityType()(*AgentIdentityType)
@@ -513,10 +584,12 @@ type AgentRiskDetectionable interface {
     GetRiskEvidence()(*string)
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
+    GetSource()(*string)
     SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAdditionalInfo(value *string)()
     SetAgentDisplayName(value *string)()
     SetAgentId(value *string)()
+    SetBlueprintId(value *string)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDetectionTimingType(value *RiskDetectionTimingType)()
     SetIdentityType(value *AgentIdentityType)()
@@ -526,4 +599,5 @@ type AgentRiskDetectionable interface {
     SetRiskEvidence(value *string)()
     SetRiskLevel(value *RiskLevel)()
     SetRiskState(value *RiskState)()
+    SetSource(value *string)()
 }

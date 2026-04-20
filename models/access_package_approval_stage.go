@@ -79,7 +79,7 @@ func (m *AccessPackageApprovalStage) GetDurationBeforeEscalation()(*i878a80d2330
     }
     return nil
 }
-// GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
+// GetEscalationApprovers gets the escalationApprovers property value. If escalation is enabled and the primary approvers don't respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
 // returns a []SubjectSetable when successful
 func (m *AccessPackageApprovalStage) GetEscalationApprovers()([]SubjectSetable) {
     val, err := m.GetBackingStore().Get("escalationApprovers")
@@ -420,7 +420,7 @@ func (m *AccessPackageApprovalStage) SetDurationBeforeEscalation(value *i878a80d
         panic(err)
     }
 }
-// SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
+// SetEscalationApprovers sets the escalationApprovers property value. If escalation is enabled and the primary approvers don't respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.
 func (m *AccessPackageApprovalStage) SetEscalationApprovers(value []SubjectSetable)() {
     err := m.GetBackingStore().Set("escalationApprovers", value)
     if err != nil {

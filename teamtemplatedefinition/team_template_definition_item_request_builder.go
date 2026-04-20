@@ -24,9 +24,9 @@ type TeamTemplateDefinitionItemRequestBuilderDeleteRequestConfiguration struct {
 // TeamTemplateDefinitionItemRequestBuilderGetQueryParameters get entity from teamTemplateDefinition by key
 type TeamTemplateDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration struct {

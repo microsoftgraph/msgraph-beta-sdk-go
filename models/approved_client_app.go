@@ -22,7 +22,7 @@ func NewApprovedClientApp()(*ApprovedClientApp) {
 func CreateApprovedClientAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApprovedClientApp(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name for the client application.
 // returns a *string when successful
 func (m *ApprovedClientApp) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -64,7 +64,7 @@ func (m *ApprovedClientApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name for the client application.
 func (m *ApprovedClientApp) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

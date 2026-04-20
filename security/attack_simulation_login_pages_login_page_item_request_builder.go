@@ -24,9 +24,9 @@ type AttackSimulationLoginPagesLoginPageItemRequestBuilderDeleteRequestConfigura
 // AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters represents an attack simulation training login page.
 type AttackSimulationLoginPagesLoginPageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AttackSimulationLoginPagesLoginPageItemRequestBuilderGetRequestConfiguration struct {

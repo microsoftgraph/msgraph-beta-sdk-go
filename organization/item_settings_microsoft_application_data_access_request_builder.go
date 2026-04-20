@@ -24,9 +24,9 @@ type ItemSettingsMicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfig
 // ItemSettingsMicrosoftApplicationDataAccessRequestBuilderGetQueryParameters get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
 type ItemSettingsMicrosoftApplicationDataAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsMicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsMicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration struct {

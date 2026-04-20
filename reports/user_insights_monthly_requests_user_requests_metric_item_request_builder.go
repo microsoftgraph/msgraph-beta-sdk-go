@@ -17,9 +17,9 @@ type UserInsightsMonthlyRequestsUserRequestsMetricItemRequestBuilder struct {
 // UserInsightsMonthlyRequestsUserRequestsMetricItemRequestBuilderGetQueryParameters insights for all user requests on apps registered in the tenant for a specified period.
 type UserInsightsMonthlyRequestsUserRequestsMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsMonthlyRequestsUserRequestsMetricItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsMonthlyRequestsUserRequestsMetricItemRequestBuilderGetRequestConfiguration struct {

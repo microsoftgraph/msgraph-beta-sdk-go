@@ -24,9 +24,9 @@ type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAnalyti
 // UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParameters the user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
 type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAnalyticsAnomalyCorrelationGroupOverviewItemRequestBuilderGetRequestConfiguration struct {

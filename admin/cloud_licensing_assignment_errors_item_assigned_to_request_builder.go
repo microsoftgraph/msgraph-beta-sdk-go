@@ -17,9 +17,9 @@ type CloudLicensingAssignmentErrorsItemAssignedToRequestBuilder struct {
 // CloudLicensingAssignmentErrorsItemAssignedToRequestBuilderGetQueryParameters get a user or group object for a given assignmentError to which licenses are assigned.
 type CloudLicensingAssignmentErrorsItemAssignedToRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudLicensingAssignmentErrorsItemAssignedToRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudLicensingAssignmentErrorsItemAssignedToRequestBuilderGetRequestConfiguration struct {

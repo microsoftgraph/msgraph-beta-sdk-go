@@ -24,7 +24,7 @@ func NewCrossTenantIdentitySyncPolicyPartner()(*CrossTenantIdentitySyncPolicyPar
 func CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantIdentitySyncPolicyPartner(), nil
 }
-// GetDisplayName gets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
+// GetDisplayName gets the displayName property value. Display name for the cross-tenant user and group synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
 // returns a *string when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -104,7 +104,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetGroupSyncInbound gets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant. Key.
+// GetGroupSyncInbound gets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant.
 // returns a CrossTenantGroupSyncInboundable when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound()(CrossTenantGroupSyncInboundable) {
     val, err := m.GetBackingStore().Get("groupSyncInbound")
@@ -116,7 +116,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound()(CrossTenant
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
+// GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.
 // returns a *string when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -128,7 +128,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
     }
     return nil
 }
-// GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant. Key.
+// GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
 // returns a CrossTenantUserSyncInboundable when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetUserSyncInbound()(CrossTenantUserSyncInboundable) {
     val, err := m.GetBackingStore().Get("userSyncInbound")
@@ -178,7 +178,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. Display name for the cross-tenant user synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
+// SetDisplayName sets the displayName property value. Display name for the cross-tenant user and group synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -192,21 +192,21 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetExternalCloudAuthorizedApplica
         panic(err)
     }
 }
-// SetGroupSyncInbound sets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant. Key.
+// SetGroupSyncInbound sets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)() {
     err := m.GetBackingStore().Set("groupSyncInbound", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
+// SetTenantId sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserSyncInbound sets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant. Key.
+// SetUserSyncInbound sets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetUserSyncInbound(value CrossTenantUserSyncInboundable)() {
     err := m.GetBackingStore().Set("userSyncInbound", value)
     if err != nil {

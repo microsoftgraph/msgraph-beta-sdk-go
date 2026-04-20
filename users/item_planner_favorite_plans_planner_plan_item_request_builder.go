@@ -17,9 +17,9 @@ type ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder struct {
 // ItemPlannerFavoritePlansPlannerPlanItemRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
 type ItemPlannerFavoritePlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerFavoritePlansPlannerPlanItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerFavoritePlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct {

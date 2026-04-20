@@ -24,9 +24,9 @@ type SignUpsSelfServiceSignUpItemRequestBuilderDeleteRequestConfiguration struct
 // SignUpsSelfServiceSignUpItemRequestBuilderGetQueryParameters retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
 type SignUpsSelfServiceSignUpItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SignUpsSelfServiceSignUpItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SignUpsSelfServiceSignUpItemRequestBuilderGetRequestConfiguration struct {

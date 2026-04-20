@@ -47,7 +47,7 @@ func (m *ExternalOriginResourceConnector) GetConnectorType()(*ConnectorType) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identifier of the user or application that created the connector.
 // returns a *string when successful
 func (m *ExternalOriginResourceConnector) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -59,7 +59,7 @@ func (m *ExternalOriginResourceConnector) GetCreatedBy()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the connector was created.
 // returns a *Time when successful
 func (m *ExternalOriginResourceConnector) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -71,7 +71,7 @@ func (m *ExternalOriginResourceConnector) GetCreatedDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A description of the connector.
 // returns a *string when successful
 func (m *ExternalOriginResourceConnector) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -83,7 +83,7 @@ func (m *ExternalOriginResourceConnector) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the connector.
 // returns a *string when successful
 func (m *ExternalOriginResourceConnector) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -181,7 +181,7 @@ func (m *ExternalOriginResourceConnector) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetModifiedBy gets the modifiedBy property value. The modifiedBy property
+// GetModifiedBy gets the modifiedBy property value. The identifier of the user or application that last modified the connector.
 // returns a *string when successful
 func (m *ExternalOriginResourceConnector) GetModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("modifiedBy")
@@ -193,7 +193,7 @@ func (m *ExternalOriginResourceConnector) GetModifiedBy()(*string) {
     }
     return nil
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
+// GetModifiedDateTime gets the modifiedDateTime property value. The date and time when the connector was last modified.
 // returns a *Time when successful
 func (m *ExternalOriginResourceConnector) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
@@ -276,42 +276,42 @@ func (m *ExternalOriginResourceConnector) SetConnectorType(value *ConnectorType)
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identifier of the user or application that created the connector.
 func (m *ExternalOriginResourceConnector) SetCreatedBy(value *string)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the connector was created.
 func (m *ExternalOriginResourceConnector) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A description of the connector.
 func (m *ExternalOriginResourceConnector) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the connector.
 func (m *ExternalOriginResourceConnector) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModifiedBy sets the modifiedBy property value. The modifiedBy property
+// SetModifiedBy sets the modifiedBy property value. The identifier of the user or application that last modified the connector.
 func (m *ExternalOriginResourceConnector) SetModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("modifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
+// SetModifiedDateTime sets the modifiedDateTime property value. The date and time when the connector was last modified.
 func (m *ExternalOriginResourceConnector) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
     if err != nil {

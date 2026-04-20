@@ -33,6 +33,8 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.networkaccess.cloudFirewallPolicy":
+                        return NewCloudFirewallPolicy(), nil
                     case "#microsoft.graph.networkaccess.filteringPolicy":
                         return NewFilteringPolicy(), nil
                     case "#microsoft.graph.networkaccess.forwardingPolicy":

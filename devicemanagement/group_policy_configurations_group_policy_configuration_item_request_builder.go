@@ -24,9 +24,9 @@ type GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderDeleteRe
 // GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderGetQueryParameters the group policy configurations created by this account.
 type GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyConfigurationsGroupPolicyConfigurationItemRequestBuilderGetRequestConfiguration struct {

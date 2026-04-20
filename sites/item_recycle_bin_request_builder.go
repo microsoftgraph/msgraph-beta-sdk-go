@@ -24,9 +24,9 @@ type ItemRecycleBinRequestBuilderDeleteRequestConfiguration struct {
 // ItemRecycleBinRequestBuilderGetQueryParameters a container for a collection of recycleBinItem resources in this site.
 type ItemRecycleBinRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRecycleBinRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRecycleBinRequestBuilderGetRequestConfiguration struct {

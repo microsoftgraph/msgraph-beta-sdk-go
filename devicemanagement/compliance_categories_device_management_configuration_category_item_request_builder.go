@@ -24,9 +24,9 @@ type ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder
 // ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderGetQueryParameters list of all compliance categories
 type ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderGetRequestConfiguration struct {

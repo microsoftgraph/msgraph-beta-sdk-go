@@ -24,9 +24,9 @@ type HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderDeleteReques
 // HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderGetQueryParameters device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.
 type HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderGetRequestConfiguration struct {

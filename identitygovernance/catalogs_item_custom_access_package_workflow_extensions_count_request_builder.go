@@ -16,9 +16,9 @@ type CatalogsItemCustomAccessPackageWorkflowExtensionsCountRequestBuilder struct
 // CatalogsItemCustomAccessPackageWorkflowExtensionsCountRequestBuilderGetQueryParameters get the number of the resource
 type CatalogsItemCustomAccessPackageWorkflowExtensionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // CatalogsItemCustomAccessPackageWorkflowExtensionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CatalogsItemCustomAccessPackageWorkflowExtensionsCountRequestBuilderGetRequestConfiguration struct {

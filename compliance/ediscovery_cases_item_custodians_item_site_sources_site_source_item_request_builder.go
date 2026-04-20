@@ -24,9 +24,9 @@ type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderDel
 // EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a siteSource object.
 type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdiscoveryCasesItemCustodiansItemSiteSourcesSiteSourceItemRequestBuilderGetRequestConfiguration struct {

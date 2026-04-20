@@ -67,6 +67,8 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewProvisioningSystem(), nil
                     case "#microsoft.graph.servicePrincipalIdentity":
                         return NewServicePrincipalIdentity(), nil
+                    case "#microsoft.graph.sharePointGroupIdentity":
+                        return NewSharePointGroupIdentity(), nil
                     case "#microsoft.graph.sharePointIdentity":
                         return NewSharePointIdentity(), nil
                     case "#microsoft.graph.sourceProvisionedIdentity":

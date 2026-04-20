@@ -17,9 +17,9 @@ type ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilder struct {
 // ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetQueryParameters the list of categories for this eBook.
 type ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedEBooksItemCategoriesManagedEBookCategoryItemRequestBuilderGetRequestConfiguration struct {

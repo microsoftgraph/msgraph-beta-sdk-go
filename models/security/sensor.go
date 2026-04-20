@@ -142,6 +142,16 @@ func (m *Sensor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["migrationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMigrationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMigrationState(val.(*MigrationState))
+        }
+        return nil
+    }
     res["openHealthIssuesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt64Value()
         if err != nil {
@@ -215,6 +225,18 @@ func (m *Sensor) GetHealthStatus()(*SensorHealthStatus) {
     }
     if val != nil {
         return val.(*SensorHealthStatus)
+    }
+    return nil
+}
+// GetMigrationState gets the migrationState property value. The migrationState property
+// returns a *MigrationState when successful
+func (m *Sensor) GetMigrationState()(*MigrationState) {
+    val, err := m.GetBackingStore().Get("migrationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MigrationState)
     }
     return nil
 }
@@ -328,6 +350,13 @@ func (m *Sensor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetMigrationState() != nil {
+        cast := (*m.GetMigrationState()).String()
+        err = writer.WriteStringValue("migrationState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt64Value("openHealthIssuesCount", m.GetOpenHealthIssuesCount())
         if err != nil {
@@ -404,6 +433,13 @@ func (m *Sensor) SetHealthStatus(value *SensorHealthStatus)() {
         panic(err)
     }
 }
+// SetMigrationState sets the migrationState property value. The migrationState property
+func (m *Sensor) SetMigrationState(value *MigrationState)() {
+    err := m.GetBackingStore().Set("migrationState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOpenHealthIssuesCount sets the openHealthIssuesCount property value. This field displays the count of health issues related to this sensor.
 func (m *Sensor) SetOpenHealthIssuesCount(value *int64)() {
     err := m.GetBackingStore().Set("openHealthIssuesCount", value)
@@ -448,6 +484,7 @@ type Sensorable interface {
     GetDomainName()(*string)
     GetHealthIssues()([]HealthIssueable)
     GetHealthStatus()(*SensorHealthStatus)
+    GetMigrationState()(*MigrationState)
     GetOpenHealthIssuesCount()(*int64)
     GetSensorType()(*SensorType)
     GetServiceStatus()(*ServiceStatus)
@@ -459,6 +496,7 @@ type Sensorable interface {
     SetDomainName(value *string)()
     SetHealthIssues(value []HealthIssueable)()
     SetHealthStatus(value *SensorHealthStatus)()
+    SetMigrationState(value *MigrationState)()
     SetOpenHealthIssuesCount(value *int64)()
     SetSensorType(value *SensorType)()
     SetServiceStatus(value *ServiceStatus)()

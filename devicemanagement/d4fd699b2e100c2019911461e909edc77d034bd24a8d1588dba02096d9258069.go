@@ -17,9 +17,9 @@ type GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPres
 // GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderGetQueryParameters the group policy presentation associated with the presentation value.
 type GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesItemPresentationRequestBuilderGetRequestConfiguration struct {

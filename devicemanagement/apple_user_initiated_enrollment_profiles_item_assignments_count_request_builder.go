@@ -16,9 +16,9 @@ type AppleUserInitiatedEnrollmentProfilesItemAssignmentsCountRequestBuilder stru
 // AppleUserInitiatedEnrollmentProfilesItemAssignmentsCountRequestBuilderGetQueryParameters get the number of the resource
 type AppleUserInitiatedEnrollmentProfilesItemAssignmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // AppleUserInitiatedEnrollmentProfilesItemAssignmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AppleUserInitiatedEnrollmentProfilesItemAssignmentsCountRequestBuilderGetRequestConfiguration struct {

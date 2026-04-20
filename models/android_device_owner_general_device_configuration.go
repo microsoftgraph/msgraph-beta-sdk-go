@@ -573,6 +573,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["isKioskModeExitCodeSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsKioskModeExitCodeSet(val)
+        }
+        return nil
+    }
     res["kioskCustomizationDeviceSettingsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1795,6 +1805,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGlobalProxy()(AndroidD
 // returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGoogleAccountsBlocked()(*bool) {
     val, err := m.GetBackingStore().Get("googleAccountsBlocked")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsKioskModeExitCodeSet gets the isKioskModeExitCodeSet property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+// returns a *bool when successful
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetIsKioskModeExitCodeSet()(*bool) {
+    val, err := m.GetBackingStore().Get("isKioskModeExitCodeSet")
     if err != nil {
         panic(err)
     }
@@ -3357,6 +3379,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("isKioskModeExitCodeSet", m.GetIsKioskModeExitCodeSet())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("kioskCustomizationDeviceSettingsBlocked", m.GetKioskCustomizationDeviceSettingsBlocked())
         if err != nil {
             return err
@@ -4276,6 +4304,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetGoogleAccountsBlocked(
         panic(err)
     }
 }
+// SetIsKioskModeExitCodeSet sets the isKioskModeExitCodeSet property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetIsKioskModeExitCodeSet(value *bool)() {
+    err := m.GetBackingStore().Set("isKioskModeExitCodeSet", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetKioskCustomizationDeviceSettingsBlocked sets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationDeviceSettingsBlocked(value *bool)() {
     err := m.GetBackingStore().Set("kioskCustomizationDeviceSettingsBlocked", value)
@@ -5109,6 +5144,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetFactoryResetDeviceAdministratorEmails()([]string)
     GetGlobalProxy()(AndroidDeviceOwnerGlobalProxyable)
     GetGoogleAccountsBlocked()(*bool)
+    GetIsKioskModeExitCodeSet()(*bool)
     GetKioskCustomizationDeviceSettingsBlocked()(*bool)
     GetKioskCustomizationPowerButtonActionsBlocked()(*bool)
     GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar)
@@ -5249,6 +5285,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetFactoryResetDeviceAdministratorEmails(value []string)()
     SetGlobalProxy(value AndroidDeviceOwnerGlobalProxyable)()
     SetGoogleAccountsBlocked(value *bool)()
+    SetIsKioskModeExitCodeSet(value *bool)()
     SetKioskCustomizationDeviceSettingsBlocked(value *bool)()
     SetKioskCustomizationPowerButtonActionsBlocked(value *bool)()
     SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)()

@@ -60,6 +60,18 @@ func (m *DeviceManagement) GetAdvancedThreatProtectionOnboardingStateSummary()(A
     }
     return nil
 }
+// GetAndroidAppConfigurationSchema gets the androidAppConfigurationSchema property value. Android App Configurations Schema entity.
+// returns a AndroidAppConfigurationSchemaable when successful
+func (m *DeviceManagement) GetAndroidAppConfigurationSchema()(AndroidAppConfigurationSchemaable) {
+    val, err := m.GetBackingStore().Get("androidAppConfigurationSchema")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AndroidAppConfigurationSchemaable)
+    }
+    return nil
+}
 // GetAndroidDeviceOwnerEnrollmentProfiles gets the androidDeviceOwnerEnrollmentProfiles property value. Android device owner enrollment profile entities.
 // returns a []AndroidDeviceOwnerEnrollmentProfileable when successful
 func (m *DeviceManagement) GetAndroidDeviceOwnerEnrollmentProfiles()([]AndroidDeviceOwnerEnrollmentProfileable) {
@@ -835,6 +847,16 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetAdvancedThreatProtectionOnboardingStateSummary(val.(AdvancedThreatProtectionOnboardingStateSummaryable))
+        }
+        return nil
+    }
+    res["androidAppConfigurationSchema"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAndroidAppConfigurationSchemaFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAndroidAppConfigurationSchema(val.(AndroidAppConfigurationSchemaable))
         }
         return nil
     }
@@ -2485,6 +2507,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetRoleScopeTags(res)
+        }
+        return nil
+    }
+    res["samsungEFotaFirmwareVersions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSamsungEFotaFirmwareVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SamsungEFotaFirmwareVersionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SamsungEFotaFirmwareVersionable)
+                }
+            }
+            m.SetSamsungEFotaFirmwareVersions(res)
         }
         return nil
     }
@@ -4186,6 +4224,18 @@ func (m *DeviceManagement) GetRoleScopeTags()([]RoleScopeTagable) {
     }
     return nil
 }
+// GetSamsungEFotaFirmwareVersions gets the samsungEFotaFirmwareVersions property value. The collection of Samsung EFOTA firmware versions.
+// returns a []SamsungEFotaFirmwareVersionable when successful
+func (m *DeviceManagement) GetSamsungEFotaFirmwareVersions()([]SamsungEFotaFirmwareVersionable) {
+    val, err := m.GetBackingStore().Get("samsungEFotaFirmwareVersions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SamsungEFotaFirmwareVersionable)
+    }
+    return nil
+}
 // GetServiceNowConnections gets the serviceNowConnections property value. A list of ServiceNowConnections
 // returns a []ServiceNowConnectionable when successful
 func (m *DeviceManagement) GetServiceNowConnections()([]ServiceNowConnectionable) {
@@ -5118,6 +5168,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("advancedThreatProtectionOnboardingStateSummary", m.GetAdvancedThreatProtectionOnboardingStateSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("androidAppConfigurationSchema", m.GetAndroidAppConfigurationSchema())
         if err != nil {
             return err
         }
@@ -6310,6 +6366,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetSamsungEFotaFirmwareVersions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSamsungEFotaFirmwareVersions()))
+        for i, v := range m.GetSamsungEFotaFirmwareVersions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("samsungEFotaFirmwareVersions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceNowConnections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceNowConnections()))
         for i, v := range m.GetServiceNowConnections() {
@@ -7133,6 +7201,13 @@ func (m *DeviceManagement) SetAdvancedThreatProtectionOnboardingStateSummary(val
         panic(err)
     }
 }
+// SetAndroidAppConfigurationSchema sets the androidAppConfigurationSchema property value. Android App Configurations Schema entity.
+func (m *DeviceManagement) SetAndroidAppConfigurationSchema(value AndroidAppConfigurationSchemaable)() {
+    err := m.GetBackingStore().Set("androidAppConfigurationSchema", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAndroidDeviceOwnerEnrollmentProfiles sets the androidDeviceOwnerEnrollmentProfiles property value. Android device owner enrollment profile entities.
 func (m *DeviceManagement) SetAndroidDeviceOwnerEnrollmentProfiles(value []AndroidDeviceOwnerEnrollmentProfileable)() {
     err := m.GetBackingStore().Set("androidDeviceOwnerEnrollmentProfiles", value)
@@ -7910,6 +7985,13 @@ func (m *DeviceManagement) SetRoleScopeTags(value []RoleScopeTagable)() {
         panic(err)
     }
 }
+// SetSamsungEFotaFirmwareVersions sets the samsungEFotaFirmwareVersions property value. The collection of Samsung EFOTA firmware versions.
+func (m *DeviceManagement) SetSamsungEFotaFirmwareVersions(value []SamsungEFotaFirmwareVersionable)() {
+    err := m.GetBackingStore().Set("samsungEFotaFirmwareVersions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServiceNowConnections sets the serviceNowConnections property value. A list of ServiceNowConnections
 func (m *DeviceManagement) SetServiceNowConnections(value []ServiceNowConnectionable)() {
     err := m.GetBackingStore().Set("serviceNowConnections", value)
@@ -8448,6 +8530,7 @@ type DeviceManagementable interface {
     GetAccountMoveCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetAdminConsent()(AdminConsentable)
     GetAdvancedThreatProtectionOnboardingStateSummary()(AdvancedThreatProtectionOnboardingStateSummaryable)
+    GetAndroidAppConfigurationSchema()(AndroidAppConfigurationSchemaable)
     GetAndroidDeviceOwnerEnrollmentProfiles()([]AndroidDeviceOwnerEnrollmentProfileable)
     GetAndroidForWorkAppConfigurationSchemas()([]AndroidForWorkAppConfigurationSchemaable)
     GetAndroidForWorkEnrollmentProfiles()([]AndroidForWorkEnrollmentProfileable)
@@ -8559,6 +8642,7 @@ type DeviceManagementable interface {
     GetRoleAssignments()([]DeviceAndAppManagementRoleAssignmentable)
     GetRoleDefinitions()([]RoleDefinitionable)
     GetRoleScopeTags()([]RoleScopeTagable)
+    GetSamsungEFotaFirmwareVersions()([]SamsungEFotaFirmwareVersionable)
     GetServiceNowConnections()([]ServiceNowConnectionable)
     GetSettingDefinitions()([]DeviceManagementSettingDefinitionable)
     GetSettings()(DeviceManagementSettingsable)
@@ -8638,6 +8722,7 @@ type DeviceManagementable interface {
     SetAccountMoveCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAdminConsent(value AdminConsentable)()
     SetAdvancedThreatProtectionOnboardingStateSummary(value AdvancedThreatProtectionOnboardingStateSummaryable)()
+    SetAndroidAppConfigurationSchema(value AndroidAppConfigurationSchemaable)()
     SetAndroidDeviceOwnerEnrollmentProfiles(value []AndroidDeviceOwnerEnrollmentProfileable)()
     SetAndroidForWorkAppConfigurationSchemas(value []AndroidForWorkAppConfigurationSchemaable)()
     SetAndroidForWorkEnrollmentProfiles(value []AndroidForWorkEnrollmentProfileable)()
@@ -8749,6 +8834,7 @@ type DeviceManagementable interface {
     SetRoleAssignments(value []DeviceAndAppManagementRoleAssignmentable)()
     SetRoleDefinitions(value []RoleDefinitionable)()
     SetRoleScopeTags(value []RoleScopeTagable)()
+    SetSamsungEFotaFirmwareVersions(value []SamsungEFotaFirmwareVersionable)()
     SetServiceNowConnections(value []ServiceNowConnectionable)()
     SetSettingDefinitions(value []DeviceManagementSettingDefinitionable)()
     SetSettings(value DeviceManagementSettingsable)()

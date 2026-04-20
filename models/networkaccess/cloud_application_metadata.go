@@ -25,6 +25,18 @@ func NewCloudApplicationMetadata()(*CloudApplicationMetadata) {
 func CreateCloudApplicationMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudApplicationMetadata(), nil
 }
+// GetActivity gets the activity property value. The activity property
+// returns a *ApplicationActivity when successful
+func (m *CloudApplicationMetadata) GetActivity()(*ApplicationActivity) {
+    val, err := m.GetBackingStore().Get("activity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApplicationActivity)
+    }
+    return nil
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
 func (m *CloudApplicationMetadata) GetAdditionalData()(map[string]any) {
@@ -83,6 +95,16 @@ func (m *CloudApplicationMetadata) GetComplianceScore()(*int32) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudApplicationMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["activity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseApplicationActivity)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivity(val.(*ApplicationActivity))
+        }
+        return nil
+    }
     res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -237,7 +259,7 @@ func (m *CloudApplicationMetadata) GetLoginUser()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The name of the application (e.g., ChatGPT, Salesforce, Bing).
+// GetName gets the name property value. The name of the application, for example, ChatGPT, Salesforce, or Bing.
 // returns a *string when successful
 func (m *CloudApplicationMetadata) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -285,7 +307,7 @@ func (m *CloudApplicationMetadata) GetSecurityScore()(*int32) {
     }
     return nil
 }
-// GetSubactivity gets the subactivity property value. The subactivity property
+// GetSubactivity gets the subactivity property value. A finer-grained activity classification, for example, chat-interaction or tools/call.
 // returns a *string when successful
 func (m *CloudApplicationMetadata) GetSubactivity()(*string) {
     val, err := m.GetBackingStore().Get("subactivity")
@@ -299,6 +321,13 @@ func (m *CloudApplicationMetadata) GetSubactivity()(*string) {
 }
 // Serialize serializes information the current object
 func (m *CloudApplicationMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetActivity() != nil {
+        cast := (*m.GetActivity()).String()
+        err := writer.WriteStringValue("activity", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCategories() != nil {
         err := writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
@@ -373,6 +402,13 @@ func (m *CloudApplicationMetadata) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
+// SetActivity sets the activity property value. The activity property
+func (m *CloudApplicationMetadata) SetActivity(value *ApplicationActivity)() {
+    err := m.GetBackingStore().Set("activity", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudApplicationMetadata) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
@@ -426,7 +462,7 @@ func (m *CloudApplicationMetadata) SetLoginUser(value *string)() {
         panic(err)
     }
 }
-// SetName sets the name property value. The name of the application (e.g., ChatGPT, Salesforce, Bing).
+// SetName sets the name property value. The name of the application, for example, ChatGPT, Salesforce, or Bing.
 func (m *CloudApplicationMetadata) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -454,7 +490,7 @@ func (m *CloudApplicationMetadata) SetSecurityScore(value *int32)() {
         panic(err)
     }
 }
-// SetSubactivity sets the subactivity property value. The subactivity property
+// SetSubactivity sets the subactivity property value. A finer-grained activity classification, for example, chat-interaction or tools/call.
 func (m *CloudApplicationMetadata) SetSubactivity(value *string)() {
     err := m.GetBackingStore().Set("subactivity", value)
     if err != nil {
@@ -465,6 +501,7 @@ type CloudApplicationMetadataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivity()(*ApplicationActivity)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCategories()([]string)
     GetCloudApplicationCatalogId()(*string)
@@ -477,6 +514,7 @@ type CloudApplicationMetadataable interface {
     GetRiskScore()(*int32)
     GetSecurityScore()(*int32)
     GetSubactivity()(*string)
+    SetActivity(value *ApplicationActivity)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCategories(value []string)()
     SetCloudApplicationCatalogId(value *string)()

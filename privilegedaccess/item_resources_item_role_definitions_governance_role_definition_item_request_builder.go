@@ -24,9 +24,9 @@ type ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderD
 // ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetQueryParameters the collection of role definitions for the resource.
 type ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration struct {

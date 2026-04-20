@@ -24,9 +24,9 @@ type TeamsRequestBuilderDeleteRequestConfiguration struct {
 // TeamsRequestBuilderGetQueryParameters a container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
 type TeamsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsRequestBuilderGetRequestConfiguration struct {
