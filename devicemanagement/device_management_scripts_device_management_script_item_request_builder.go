@@ -24,9 +24,9 @@ type DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderDeleteReques
 // DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetQueryParameters the list of device management scripts associated with the tenant.
 type DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceManagementScriptsDeviceManagementScriptItemRequestBuilderGetRequestConfiguration struct {

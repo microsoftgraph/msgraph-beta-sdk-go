@@ -17,9 +17,9 @@ type ItemTransitiveReportsDirectoryObjectItemRequestBuilder struct {
 // ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetQueryParameters the transitive reports for a user. Read-only.
 type ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTransitiveReportsDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

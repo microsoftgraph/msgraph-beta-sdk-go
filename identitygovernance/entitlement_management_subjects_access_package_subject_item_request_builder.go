@@ -24,9 +24,9 @@ type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderDeleteRe
 // EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetQueryParameters represents the subjects within entitlement management.
 type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderGetRequestConfiguration struct {
@@ -98,7 +98,7 @@ func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSubjectable), nil
 }
-// Patch update an existing accessPackageSubject object to change the subject lifecycle.
+// Patch update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
 // returns a AccessPackageSubjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -146,7 +146,7 @@ func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing accessPackageSubject object to change the subject lifecycle.
+// ToPatchRequestInformation update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSubjectable, requestConfiguration *EntitlementManagementSubjectsAccessPackageSubjectItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

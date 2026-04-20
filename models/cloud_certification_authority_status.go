@@ -2,7 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
-// Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.
+// Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.
 type CloudCertificationAuthorityStatus int
 
 const (
@@ -18,10 +18,12 @@ const (
     SIGNINGPENDING_CLOUDCERTIFICATIONAUTHORITYSTATUS
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_CLOUDCERTIFICATIONAUTHORITYSTATUS
+    // Indicates certification authority has expired and cannot issue certificates until renewed and activated.
+    EXPIRED_CLOUDCERTIFICATIONAUTHORITYSTATUS
 )
 
 func (i CloudCertificationAuthorityStatus) String() string {
-    return []string{"unknown", "active", "paused", "revoked", "signingPending", "unknownFutureValue"}[i]
+    return []string{"unknown", "active", "paused", "revoked", "signingPending", "unknownFutureValue", "expired"}[i]
 }
 func ParseCloudCertificationAuthorityStatus(v string) (any, error) {
     result := UNKNOWN_CLOUDCERTIFICATIONAUTHORITYSTATUS
@@ -38,6 +40,8 @@ func ParseCloudCertificationAuthorityStatus(v string) (any, error) {
             result = SIGNINGPENDING_CLOUDCERTIFICATIONAUTHORITYSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDCERTIFICATIONAUTHORITYSTATUS
+        case "expired":
+            result = EXPIRED_CLOUDCERTIFICATIONAUTHORITYSTATUS
         default:
             return nil, nil
     }

@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderDelete
 // ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderGetQueryParameters the task associated with the comment. Read-only. Nullable.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentTaskRequestBuilderGetRequestConfiguration struct {

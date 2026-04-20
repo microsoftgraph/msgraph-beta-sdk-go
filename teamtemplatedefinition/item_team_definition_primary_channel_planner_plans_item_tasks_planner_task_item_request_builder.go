@@ -24,9 +24,9 @@ type ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequest
 // ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetQueryParameters collection of tasks in the plan. Read-only. Nullable.
 type ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration struct {
@@ -107,6 +107,11 @@ func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemReq
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
+}
+// Messages provides operations to manage the messages property of the microsoft.graph.plannerTask entity.
+// returns a *ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilder) Messages()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tasks in teamTemplateDefinition
 // returns a PlannerTaskable when successful

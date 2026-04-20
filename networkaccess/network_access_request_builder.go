@@ -17,9 +17,9 @@ type NetworkAccessRequestBuilder struct {
 // NetworkAccessRequestBuilderGetQueryParameters get networkAccess
 type NetworkAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // NetworkAccessRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type NetworkAccessRequestBuilderGetRequestConfiguration struct {
@@ -41,6 +41,11 @@ type NetworkAccessRequestBuilderPatchRequestConfiguration struct {
 // returns a *AlertsRequestBuilder when successful
 func (m *NetworkAccessRequestBuilder) Alerts()(*AlertsRequestBuilder) {
     return NewAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CloudFirewallPolicies provides operations to manage the cloudFirewallPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *CloudFirewallPoliciesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) CloudFirewallPolicies()(*CloudFirewallPoliciesRequestBuilder) {
+    return NewCloudFirewallPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Connectivity provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.
 // returns a *ConnectivityRequestBuilder when successful

@@ -17,9 +17,9 @@ type DeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder struct {
 // DeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetQueryParameters collection of device objects created based on this template.
 type DeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetRequestConfiguration struct {

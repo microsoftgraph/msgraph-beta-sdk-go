@@ -92,6 +92,22 @@ func (m *SensorCandidate) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["sensorTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseDeviceType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceType, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*DeviceType))
+                }
+            }
+            m.SetSensorTypes(res)
+        }
+        return nil
+    }
     return res
 }
 // GetLastSeenDateTime gets the lastSeenDateTime property value. The date and time when the sensor was last seen.
@@ -115,6 +131,18 @@ func (m *SensorCandidate) GetSenseClientVersion()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSensorTypes gets the sensorTypes property value. The list of device types for the sensor. The possible values are: domainController, adfs, adcs, entraConnect unknownFutureValue. This flagged enumeration allows multiple members to be returned simultaneously.
+// returns a []DeviceType when successful
+func (m *SensorCandidate) GetSensorTypes()([]DeviceType) {
+    val, err := m.GetBackingStore().Get("sensorTypes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceType)
     }
     return nil
 }
@@ -144,6 +172,12 @@ func (m *SensorCandidate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     {
         err = writer.WriteStringValue("senseClientVersion", m.GetSenseClientVersion())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSensorTypes() != nil {
+        err = writer.WriteCollectionOfStringValues("sensorTypes", SerializeDeviceType(m.GetSensorTypes()))
         if err != nil {
             return err
         }
@@ -178,6 +212,13 @@ func (m *SensorCandidate) SetSenseClientVersion(value *string)() {
         panic(err)
     }
 }
+// SetSensorTypes sets the sensorTypes property value. The list of device types for the sensor. The possible values are: domainController, adfs, adcs, entraConnect unknownFutureValue. This flagged enumeration allows multiple members to be returned simultaneously.
+func (m *SensorCandidate) SetSensorTypes(value []DeviceType)() {
+    err := m.GetBackingStore().Set("sensorTypes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type SensorCandidateable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -185,8 +226,10 @@ type SensorCandidateable interface {
     GetDomainName()(*string)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSenseClientVersion()(*string)
+    GetSensorTypes()([]DeviceType)
     SetComputerDnsName(value *string)()
     SetDomainName(value *string)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSenseClientVersion(value *string)()
+    SetSensorTypes(value []DeviceType)()
 }

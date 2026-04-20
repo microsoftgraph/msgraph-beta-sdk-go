@@ -17,9 +17,9 @@ type DirectoryRequestBuilder struct {
 // DirectoryRequestBuilderGetQueryParameters get directory
 type DirectoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRequestBuilderGetRequestConfiguration struct {
@@ -180,6 +180,11 @@ func (m *DirectoryRequestBuilder) RecommendationConfiguration()(*RecommendationC
 func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuilder) {
     return NewRecommendationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Recovery provides operations to manage the recovery property of the microsoft.graph.directory entity.
+// returns a *RecoveryRequestBuilder when successful
+func (m *DirectoryRequestBuilder) Recovery()(*RecoveryRequestBuilder) {
+    return NewRecoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SharedEmailDomains provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
 // returns a *SharedEmailDomainsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsRequestBuilder) {
@@ -204,6 +209,11 @@ func (m *DirectoryRequestBuilder) SubscriptionsWithOcpSubscriptionId(ocpSubscrip
 // returns a *TemplatesRequestBuilder when successful
 func (m *DirectoryRequestBuilder) Templates()(*TemplatesRequestBuilder) {
     return NewTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TenantGovernance provides operations to manage the tenantGovernance property of the microsoft.graph.directory entity.
+// returns a *TenantGovernanceRequestBuilder when successful
+func (m *DirectoryRequestBuilder) TenantGovernance()(*TenantGovernanceRequestBuilder) {
+    return NewTenantGovernanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get directory
 // returns a *RequestInformation when successful

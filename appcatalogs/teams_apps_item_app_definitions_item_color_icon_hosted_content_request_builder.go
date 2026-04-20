@@ -24,9 +24,9 @@ type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderDeleteRe
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderGetQueryParameters retrieve the hosted content in an app's icon.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppsItemAppDefinitionsItemColorIconHostedContentRequestBuilderGetRequestConfiguration struct {

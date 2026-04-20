@@ -24,9 +24,9 @@ type WindowsUpdatesCatalogRequestBuilderDeleteRequestConfiguration struct {
 // WindowsUpdatesCatalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
 type WindowsUpdatesCatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration struct {

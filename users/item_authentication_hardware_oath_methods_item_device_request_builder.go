@@ -24,9 +24,9 @@ type ItemAuthenticationHardwareOathMethodsItemDeviceRequestBuilderDeleteRequestC
 // ItemAuthenticationHardwareOathMethodsItemDeviceRequestBuilderGetQueryParameters exposes the hardware OATH method in the directory.
 type ItemAuthenticationHardwareOathMethodsItemDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationHardwareOathMethodsItemDeviceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationHardwareOathMethodsItemDeviceRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type UserExperienceAnalyticsDeviceScopesCountRequestBuilder struct {
 // UserExperienceAnalyticsDeviceScopesCountRequestBuilderGetQueryParameters get the number of the resource
 type UserExperienceAnalyticsDeviceScopesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // UserExperienceAnalyticsDeviceScopesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsDeviceScopesCountRequestBuilderGetRequestConfiguration struct {

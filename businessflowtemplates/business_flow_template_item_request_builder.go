@@ -24,9 +24,9 @@ type BusinessFlowTemplateItemRequestBuilderDeleteRequestConfiguration struct {
 // BusinessFlowTemplateItemRequestBuilderGetQueryParameters get entity from businessFlowTemplates by key
 type BusinessFlowTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration struct {

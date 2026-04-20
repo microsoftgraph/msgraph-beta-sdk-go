@@ -24,9 +24,9 @@ type HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderDeleteRequestConf
 // HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderGetQueryParameters intune will provide customer the ability to configure BIOS configuration settings on the enrolled Windows 10 and Windows 11 Microsoft Entra joined devices. Starting from June, 2024, customers should start using hardwarePasswordDetail resource type - Microsoft Graph beta | Microsoft Learn. HardwarePasswordInfo will be marked as deprecated with Intune Release 2409
 type HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderGetRequestConfiguration struct {

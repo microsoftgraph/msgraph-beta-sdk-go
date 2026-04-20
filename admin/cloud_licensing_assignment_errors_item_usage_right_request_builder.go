@@ -17,9 +17,9 @@ type CloudLicensingAssignmentErrorsItemUsageRightRequestBuilder struct {
 // CloudLicensingAssignmentErrorsItemUsageRightRequestBuilderGetQueryParameters get a usageRight object affected by an assignmentError. A usageRight object is returned only if a preexisting one is in effect and can't be updated due to this assignmentError.
 type CloudLicensingAssignmentErrorsItemUsageRightRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudLicensingAssignmentErrorsItemUsageRightRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudLicensingAssignmentErrorsItemUsageRightRequestBuilderGetRequestConfiguration struct {

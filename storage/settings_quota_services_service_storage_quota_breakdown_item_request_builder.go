@@ -24,9 +24,9 @@ type SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderDeleteRe
 // SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetQueryParameters the breakdown of services contributing to the user's quota usage.
 type SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SettingsQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetRequestConfiguration struct {

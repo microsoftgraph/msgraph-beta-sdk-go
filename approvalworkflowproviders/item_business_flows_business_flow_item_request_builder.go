@@ -24,9 +24,9 @@ type ItemBusinessFlowsBusinessFlowItemRequestBuilderDeleteRequestConfiguration s
 // ItemBusinessFlowsBusinessFlowItemRequestBuilderGetQueryParameters get businessFlows from approvalWorkflowProviders
 type ItemBusinessFlowsBusinessFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemBusinessFlowsBusinessFlowItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemBusinessFlowsBusinessFlowItemRequestBuilderGetRequestConfiguration struct {

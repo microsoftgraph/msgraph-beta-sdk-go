@@ -24,9 +24,9 @@ type DeletedItemsRequestBuilderDeleteRequestConfiguration struct {
 // DeletedItemsRequestBuilderGetQueryParameters policies that support soft-delete functionality and can be restored within 30 days.
 type DeletedItemsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsRequestBuilderGetRequestConfiguration struct {

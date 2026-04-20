@@ -24,9 +24,9 @@ type WindowsUpdatesDeploymentsItemAudienceApplicableContentApplicableContentCata
 // WindowsUpdatesDeploymentsItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters content eligible to deploy to devices in the audience. Not nullable. Read-only.
 type WindowsUpdatesDeploymentsItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesDeploymentsItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesDeploymentsItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ClassesItemAssignmentSettingsRequestBuilderDeleteRequestConfiguration struc
 // ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
 type ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration struct {

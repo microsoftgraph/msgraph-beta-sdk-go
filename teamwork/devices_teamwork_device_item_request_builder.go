@@ -24,9 +24,9 @@ type DevicesTeamworkDeviceItemRequestBuilderDeleteRequestConfiguration struct {
 // DevicesTeamworkDeviceItemRequestBuilderGetQueryParameters get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that's enabled for Teams.
 type DevicesTeamworkDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DevicesTeamworkDeviceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DevicesTeamworkDeviceItemRequestBuilderGetRequestConfiguration struct {

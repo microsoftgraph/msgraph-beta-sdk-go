@@ -17,9 +17,9 @@ type AlertsItemPolicyRequestBuilder struct {
 // AlertsItemPolicyRequestBuilderGetQueryParameters the filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
 type AlertsItemPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AlertsItemPolicyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AlertsItemPolicyRequestBuilderGetRequestConfiguration struct {

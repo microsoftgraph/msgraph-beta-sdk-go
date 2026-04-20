@@ -335,7 +335,7 @@ func (m *IosCompliancePolicy) GetPasscodeBlockSimple()(*bool) {
     }
     return nil
 }
-// GetPasscodeExpirationDays gets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
+// GetPasscodeExpirationDays gets the passcodeExpirationDays property value. Number of days before the passcode expires. Starting January 2026 (Intune release version: 2601), the maximum expiration days will be limited to 730 days. Any setting above 730 days will be default to 730 days. Valid values 1 to 65535
 // returns a *int32 when successful
 func (m *IosCompliancePolicy) GetPasscodeExpirationDays()(*int32) {
     val, err := m.GetBackingStore().Get("passcodeExpirationDays")
@@ -649,7 +649,7 @@ func (m *IosCompliancePolicy) SetPasscodeBlockSimple(value *bool)() {
         panic(err)
     }
 }
-// SetPasscodeExpirationDays sets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
+// SetPasscodeExpirationDays sets the passcodeExpirationDays property value. Number of days before the passcode expires. Starting January 2026 (Intune release version: 2601), the maximum expiration days will be limited to 730 days. Any setting above 730 days will be default to 730 days. Valid values 1 to 65535
 func (m *IosCompliancePolicy) SetPasscodeExpirationDays(value *int32)() {
     err := m.GetBackingStore().Set("passcodeExpirationDays", value)
     if err != nil {

@@ -24,9 +24,9 @@ type GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderDele
 // GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderGetQueryParameters a list of Group Policy migration reports.
 type GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyMigrationReportsGroupPolicyMigrationReportItemRequestBuilderGetRequestConfiguration struct {

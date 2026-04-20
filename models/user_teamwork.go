@@ -90,6 +90,22 @@ func (m *UserTeamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["sections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamworkSectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamworkSectionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamworkSectionable)
+                }
+            }
+            m.SetSections(res)
+        }
+        return nil
+    }
     return res
 }
 // GetInstalledApps gets the installedApps property value. The apps installed in the personal scope of this user.
@@ -125,6 +141,18 @@ func (m *UserTeamwork) GetRegion()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSections gets the sections property value. User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// returns a []TeamworkSectionable when successful
+func (m *UserTeamwork) GetSections()([]TeamworkSectionable) {
+    val, err := m.GetBackingStore().Get("sections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamworkSectionable)
     }
     return nil
 }
@@ -170,6 +198,18 @@ func (m *UserTeamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetSections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSections()))
+        for i, v := range m.GetSections() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sections", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssociatedTeams sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
@@ -200,6 +240,13 @@ func (m *UserTeamwork) SetRegion(value *string)() {
         panic(err)
     }
 }
+// SetSections sets the sections property value. User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+func (m *UserTeamwork) SetSections(value []TeamworkSectionable)() {
+    err := m.GetBackingStore().Set("sections", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserTeamworkable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -207,8 +254,10 @@ type UserTeamworkable interface {
     GetInstalledApps()([]UserScopeTeamsAppInstallationable)
     GetLocale()(*string)
     GetRegion()(*string)
+    GetSections()([]TeamworkSectionable)
     SetAssociatedTeams(value []AssociatedTeamInfoable)()
     SetInstalledApps(value []UserScopeTeamsAppInstallationable)()
     SetLocale(value *string)()
     SetRegion(value *string)()
+    SetSections(value []TeamworkSectionable)()
 }

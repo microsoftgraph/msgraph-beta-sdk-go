@@ -24,9 +24,9 @@ type FilteringProfilesFilteringProfileItemRequestBuilderDeleteRequestConfigurati
 // FilteringProfilesFilteringProfileItemRequestBuilderGetQueryParameters a filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
 type FilteringProfilesFilteringProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FilteringProfilesFilteringProfileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FilteringProfilesFilteringProfileItemRequestBuilderGetRequestConfiguration struct {

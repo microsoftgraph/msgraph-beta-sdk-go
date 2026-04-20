@@ -24,9 +24,9 @@ type WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderDeleteRe
 // WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderGetQueryParameters a collection of windows update catalog items (fetaure updates item , quality updates item)
 type WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration struct {

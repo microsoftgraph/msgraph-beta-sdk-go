@@ -24,9 +24,9 @@ type AuthenticationMethodDevicesRequestBuilderDeleteRequestConfiguration struct 
 // AuthenticationMethodDevicesRequestBuilderGetQueryParameters exposes the hardware OATH method in the directory.
 type AuthenticationMethodDevicesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthenticationMethodDevicesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationMethodDevicesRequestBuilderGetRequestConfiguration struct {

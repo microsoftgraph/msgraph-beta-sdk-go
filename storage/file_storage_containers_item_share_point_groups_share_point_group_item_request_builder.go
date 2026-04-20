@@ -24,9 +24,9 @@ type FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderD
 // FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetQueryParameters the collection of sharePointGroup objects local to the container. Read-write.
 type FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainersItemSharePointGroupsSharePointGroupItemRequestBuilderGetRequestConfiguration struct {

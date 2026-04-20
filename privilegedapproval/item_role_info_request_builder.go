@@ -24,9 +24,9 @@ type ItemRoleInfoRequestBuilderDeleteRequestConfiguration struct {
 // ItemRoleInfoRequestBuilderGetQueryParameters get roleInfo from privilegedApproval
 type ItemRoleInfoRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleInfoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleInfoRequestBuilderGetRequestConfiguration struct {

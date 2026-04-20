@@ -24,9 +24,9 @@ type DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration str
 // DirectoryRoleAccessReviewPolicyRequestBuilderGetQueryParameters get directoryRoleAccessReviewPolicy from policies
 type DirectoryRoleAccessReviewPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration struct {

@@ -489,6 +489,22 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["messages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerTaskChatMessageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerTaskChatMessageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlannerTaskChatMessageable)
+                }
+            }
+            m.SetMessages(res)
+        }
+        return nil
+    }
     res["orderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -601,7 +617,7 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHasChat gets the hasChat property value. The hasChat property
+// GetHasChat gets the hasChat property value. Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTask) GetHasChat()(*bool) {
     val, err := m.GetBackingStore().Get("hasChat")
@@ -613,7 +629,7 @@ func (m *PlannerTask) GetHasChat()(*bool) {
     }
     return nil
 }
-// GetHasDescription gets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
+// GetHasDescription gets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTask) GetHasDescription()(*bool) {
     val, err := m.GetBackingStore().Get("hasDescription")
@@ -685,7 +701,19 @@ func (m *PlannerTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetOrderHint gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
+// GetMessages gets the messages property value. Read-only. Nullable. Chat messages associated with the task.
+// returns a []PlannerTaskChatMessageable when successful
+func (m *PlannerTask) GetMessages()([]PlannerTaskChatMessageable) {
+    val, err := m.GetBackingStore().Get("messages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerTaskChatMessageable)
+    }
+    return nil
+}
+// GetOrderHint gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in planner.
 // returns a *string when successful
 func (m *PlannerTask) GetOrderHint()(*string) {
     val, err := m.GetBackingStore().Get("orderHint")
@@ -967,6 +995,18 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetMessages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMessages()))
+        for i, v := range m.GetMessages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("messages", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("orderHint", m.GetOrderHint())
         if err != nil {
@@ -1156,14 +1196,14 @@ func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
         panic(err)
     }
 }
-// SetHasChat sets the hasChat property value. The hasChat property
+// SetHasChat sets the hasChat property value. Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.
 func (m *PlannerTask) SetHasChat(value *bool)() {
     err := m.GetBackingStore().Set("hasChat", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasDescription sets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
+// SetHasDescription sets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise, false.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
     err := m.GetBackingStore().Set("hasDescription", value)
     if err != nil {
@@ -1205,7 +1245,14 @@ func (m *PlannerTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
+// SetMessages sets the messages property value. Read-only. Nullable. Chat messages associated with the task.
+func (m *PlannerTask) SetMessages(value []PlannerTaskChatMessageable)() {
+    err := m.GetBackingStore().Set("messages", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in planner.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
     if err != nil {
@@ -1309,6 +1356,7 @@ type PlannerTaskable interface {
     GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMessages()([]PlannerTaskChatMessageable)
     GetOrderHint()(*string)
     GetPercentComplete()(*int32)
     GetPlanId()(*string)
@@ -1344,6 +1392,7 @@ type PlannerTaskable interface {
     SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMessages(value []PlannerTaskChatMessageable)()
     SetOrderHint(value *string)()
     SetPercentComplete(value *int32)()
     SetPlanId(value *string)()

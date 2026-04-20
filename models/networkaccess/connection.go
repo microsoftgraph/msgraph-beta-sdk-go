@@ -60,6 +60,18 @@ func (m *Connection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
+// GetCrossTenantAccessType gets the crossTenantAccessType property value. Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
+// returns a *CrossTenantAccessType when successful
+func (m *Connection) GetCrossTenantAccessType()(*CrossTenantAccessType) {
+    val, err := m.GetBackingStore().Get("crossTenantAccessType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CrossTenantAccessType)
+    }
+    return nil
+}
 // GetDestinationFqdn gets the destinationFqdn property value. The destination FQDN of the connection.
 // returns a *string when successful
 func (m *Connection) GetDestinationFqdn()(*string) {
@@ -117,6 +129,18 @@ func (m *Connection) GetDeviceId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetDeviceJoinType gets the deviceJoinType property value. Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
+// returns a *DeviceJoinType when successful
+func (m *Connection) GetDeviceJoinType()(*DeviceJoinType) {
+    val, err := m.GetBackingStore().Get("deviceJoinType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceJoinType)
     }
     return nil
 }
@@ -190,6 +214,16 @@ func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["crossTenantAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCrossTenantAccessType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCrossTenantAccessType(val.(*CrossTenantAccessType))
+        }
+        return nil
+    }
     res["destinationFqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -240,6 +274,16 @@ func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["deviceJoinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceJoinType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceJoinType(val.(*DeviceJoinType))
+        }
+        return nil
+    }
     res["deviceOperatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -267,6 +311,16 @@ func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetEndDateTime(val)
+        }
+        return nil
+    }
+    res["homeTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHomeTenantId(val)
         }
         return nil
     }
@@ -441,6 +495,18 @@ func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetHomeTenantId gets the homeTenantId property value. The identifier of the home tenant, for Entra B2B scenarios.
+// returns a *string when successful
+func (m *Connection) GetHomeTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("homeTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInitiatingProcessName gets the initiatingProcessName property value. The process initiating the traffic connection.
 // returns a *string when successful
@@ -670,6 +736,13 @@ func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetCrossTenantAccessType() != nil {
+        cast := (*m.GetCrossTenantAccessType()).String()
+        err = writer.WriteStringValue("crossTenantAccessType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("destinationFqdn", m.GetDestinationFqdn())
         if err != nil {
@@ -701,6 +774,13 @@ func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetDeviceJoinType() != nil {
+        cast := (*m.GetDeviceJoinType()).String()
+        err = writer.WriteStringValue("deviceJoinType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("deviceOperatingSystem", m.GetDeviceOperatingSystem())
         if err != nil {
@@ -715,6 +795,12 @@ func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
         if err != nil {
             return err
         }
@@ -848,6 +934,13 @@ func (m *Connection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6
         panic(err)
     }
 }
+// SetCrossTenantAccessType sets the crossTenantAccessType property value. Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
+func (m *Connection) SetCrossTenantAccessType(value *CrossTenantAccessType)() {
+    err := m.GetBackingStore().Set("crossTenantAccessType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDestinationFqdn sets the destinationFqdn property value. The destination FQDN of the connection.
 func (m *Connection) SetDestinationFqdn(value *string)() {
     err := m.GetBackingStore().Set("destinationFqdn", value)
@@ -883,6 +976,13 @@ func (m *Connection) SetDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetDeviceJoinType sets the deviceJoinType property value. Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
+func (m *Connection) SetDeviceJoinType(value *DeviceJoinType)() {
+    err := m.GetBackingStore().Set("deviceJoinType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceOperatingSystem sets the deviceOperatingSystem property value. The device operating system type.
 func (m *Connection) SetDeviceOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("deviceOperatingSystem", value)
@@ -900,6 +1000,13 @@ func (m *Connection) SetDeviceOperatingSystemVersion(value *string)() {
 // SetEndDateTime sets the endDateTime property value. The time the connection was terminated.
 func (m *Connection) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHomeTenantId sets the homeTenantId property value. The identifier of the home tenant, for Entra B2B scenarios.
+func (m *Connection) SetHomeTenantId(value *string)() {
+    err := m.GetBackingStore().Set("homeTenantId", value)
     if err != nil {
         panic(err)
     }
@@ -1029,14 +1136,17 @@ type Connectionable interface {
     GetAgentVersion()(*string)
     GetApplicationSnapshot()(ApplicationSnapshotable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCrossTenantAccessType()(*CrossTenantAccessType)
     GetDestinationFqdn()(*string)
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
     GetDeviceCategory()(*DeviceCategory)
     GetDeviceId()(*string)
+    GetDeviceJoinType()(*DeviceJoinType)
     GetDeviceOperatingSystem()(*string)
     GetDeviceOperatingSystemVersion()(*string)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHomeTenantId()(*string)
     GetInitiatingProcessName()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNetworkProtocol()(*NetworkingProtocol)
@@ -1057,14 +1167,17 @@ type Connectionable interface {
     SetAgentVersion(value *string)()
     SetApplicationSnapshot(value ApplicationSnapshotable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCrossTenantAccessType(value *CrossTenantAccessType)()
     SetDestinationFqdn(value *string)()
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()
     SetDeviceCategory(value *DeviceCategory)()
     SetDeviceId(value *string)()
+    SetDeviceJoinType(value *DeviceJoinType)()
     SetDeviceOperatingSystem(value *string)()
     SetDeviceOperatingSystemVersion(value *string)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHomeTenantId(value *string)()
     SetInitiatingProcessName(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNetworkProtocol(value *NetworkingProtocol)()

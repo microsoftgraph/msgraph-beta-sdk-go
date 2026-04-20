@@ -24,9 +24,9 @@ type DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBu
 // DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderGetQueryParameters the list of group assignments for the device health script
 type DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceHealthScriptsItemAssignmentsDeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration struct {

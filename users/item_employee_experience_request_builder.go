@@ -21,12 +21,12 @@ type ItemEmployeeExperienceRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemEmployeeExperienceRequestBuilderGetQueryParameters get employeeExperience from users
+// ItemEmployeeExperienceRequestBuilderGetQueryParameters the employee experience resources for the user. Read-only. Nullable.
 type ItemEmployeeExperienceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemEmployeeExperienceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemEmployeeExperienceRequestBuilderGetRequestConfiguration struct {
@@ -78,7 +78,7 @@ func (m *ItemEmployeeExperienceRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
-// Get get employeeExperience from users
+// Get the employee experience resources for the user. Read-only. Nullable.
 // returns a EmployeeExperienceUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceUserable, error) {
@@ -128,6 +128,11 @@ func (m *ItemEmployeeExperienceRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmployeeExperienceUserable), nil
 }
+// Storyline provides operations to manage the storyline property of the microsoft.graph.employeeExperienceUser entity.
+// returns a *ItemEmployeeExperienceStorylineRequestBuilder when successful
+func (m *ItemEmployeeExperienceRequestBuilder) Storyline()(*ItemEmployeeExperienceStorylineRequestBuilder) {
+    return NewItemEmployeeExperienceStorylineRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property employeeExperience for users
 // returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +144,7 @@ func (m *ItemEmployeeExperienceRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get employeeExperience from users
+// ToGetRequestInformation the employee experience resources for the user. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

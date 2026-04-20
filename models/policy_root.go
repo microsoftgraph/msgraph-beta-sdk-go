@@ -588,6 +588,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["ownerlessGroupPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOwnerlessGroupPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerlessGroupPolicy(val.(OwnerlessGroupPolicyable))
+        }
+        return nil
+    }
     res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
@@ -759,6 +769,18 @@ func (m *PolicyRoot) GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPol
     }
     if val != nil {
         return val.([]OnPremAuthenticationPolicyable)
+    }
+    return nil
+}
+// GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
+// returns a OwnerlessGroupPolicyable when successful
+func (m *PolicyRoot) GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable) {
+    val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OwnerlessGroupPolicyable)
     }
     return nil
 }
@@ -1074,6 +1096,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("ownerlessGroupPolicy", m.GetOwnerlessGroupPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissionGrantPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
         for i, v := range m.GetPermissionGrantPolicies() {
@@ -1335,6 +1363,13 @@ func (m *PolicyRoot) SetOnPremAuthenticationPolicies(value []OnPremAuthenticatio
         panic(err)
     }
 }
+// SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
+func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)() {
+    err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     err := m.GetBackingStore().Set("permissionGrantPolicies", value)
@@ -1412,6 +1447,7 @@ type PolicyRootable interface {
     GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable)
     GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable)
     GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable)
+    GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
@@ -1444,6 +1480,7 @@ type PolicyRootable interface {
     SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)()
     SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)()
     SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)()
+    SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()

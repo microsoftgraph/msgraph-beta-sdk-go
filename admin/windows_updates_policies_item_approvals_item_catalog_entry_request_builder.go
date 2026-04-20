@@ -17,9 +17,9 @@ type WindowsUpdatesPoliciesItemApprovalsItemCatalogEntryRequestBuilder struct {
 // WindowsUpdatesPoliciesItemApprovalsItemCatalogEntryRequestBuilderGetQueryParameters the content that you can approve for deployment. Read-only.
 type WindowsUpdatesPoliciesItemApprovalsItemCatalogEntryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesPoliciesItemApprovalsItemCatalogEntryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesPoliciesItemApprovalsItemCatalogEntryRequestBuilderGetRequestConfiguration struct {

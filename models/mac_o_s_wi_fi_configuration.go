@@ -43,7 +43,7 @@ func CreateMacOSWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e8
     }
     return NewMacOSWiFiConfiguration(), nil
 }
-// GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// GetConnectAutomatically gets the connectAutomatically property value. Indicates whether to automatically connect to this network when it is in range of the device. When TRUE will skip the user prompt and automatically connect the device to Wi-Fi network. Default is false.
 // returns a *bool when successful
 func (m *MacOSWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
@@ -55,7 +55,7 @@ func (m *MacOSWiFiConfiguration) GetConnectAutomatically()(*bool) {
     }
     return nil
 }
-// GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. Indicates whether the device should connect to the network when it is not broadcasting its name (SSID). When TRUE, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices. Default is false.
 // returns a *bool when successful
 func (m *MacOSWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
@@ -67,7 +67,7 @@ func (m *MacOSWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     }
     return nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Once set, cannot be changed. Possible values are deviceChannel, and userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSWiFiConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -195,7 +195,7 @@ func (m *MacOSWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetNetworkName gets the networkName property value. Network Name
+// GetNetworkName gets the networkName property value. Indicates the Wi-Fi configuration profile name. Used to identify the configuration profile.
 // returns a *string when successful
 func (m *MacOSWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
@@ -219,7 +219,7 @@ func (m *MacOSWiFiConfiguration) GetPreSharedKey()(*string) {
     }
     return nil
 }
-// GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
+// GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Indicates URL of the proxy server automatic configuration (PAC) script when proxySettings is automatic. Used to find the location of PAC (Proxy Auto Configuration) file. Example: itproxy.contoso.com
 // returns a *string when successful
 func (m *MacOSWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
@@ -231,7 +231,7 @@ func (m *MacOSWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
     }
     return nil
 }
-// GetProxyManualAddress gets the proxyManualAddress property value. IP Address or DNS hostname of the proxy server when manual configuration is selected.
+// GetProxyManualAddress gets the proxyManualAddress property value. Indicates IP Address or DNS hostname of the proxy server when manual configuration is selected. Used for proxy settings. Example: 10.0.0.2
 // returns a *string when successful
 func (m *MacOSWiFiConfiguration) GetProxyManualAddress()(*string) {
     val, err := m.GetBackingStore().Get("proxyManualAddress")
@@ -243,7 +243,7 @@ func (m *MacOSWiFiConfiguration) GetProxyManualAddress()(*string) {
     }
     return nil
 }
-// GetProxyManualPort gets the proxyManualPort property value. Port of the proxy server when manual configuration is selected.
+// GetProxyManualPort gets the proxyManualPort property value. Indicates the proxy server TCP port to use when proxySettings is manual. Used for proxy settings. Example: 8080
 // returns a *int32 when successful
 func (m *MacOSWiFiConfiguration) GetProxyManualPort()(*int32) {
     val, err := m.GetBackingStore().Get("proxyManualPort")
@@ -368,28 +368,28 @@ func (m *MacOSWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// SetConnectAutomatically sets the connectAutomatically property value. Indicates whether to automatically connect to this network when it is in range of the device. When TRUE will skip the user prompt and automatically connect the device to Wi-Fi network. Default is false.
 func (m *MacOSWiFiConfiguration) SetConnectAutomatically(value *bool)() {
     err := m.GetBackingStore().Set("connectAutomatically", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. Connect when the network is not broadcasting its name (SSID). When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. Indicates whether the device should connect to the network when it is not broadcasting its name (SSID). When TRUE, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices. Default is false.
 func (m *MacOSWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
     err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Once set, cannot be changed. Possible values are deviceChannel, and userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSWiFiConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNetworkName sets the networkName property value. Network Name
+// SetNetworkName sets the networkName property value. Indicates the Wi-Fi configuration profile name. Used to identify the configuration profile.
 func (m *MacOSWiFiConfiguration) SetNetworkName(value *string)() {
     err := m.GetBackingStore().Set("networkName", value)
     if err != nil {
@@ -403,21 +403,21 @@ func (m *MacOSWiFiConfiguration) SetPreSharedKey(value *string)() {
         panic(err)
     }
 }
-// SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
+// SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. Indicates URL of the proxy server automatic configuration (PAC) script when proxySettings is automatic. Used to find the location of PAC (Proxy Auto Configuration) file. Example: itproxy.contoso.com
 func (m *MacOSWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
     err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProxyManualAddress sets the proxyManualAddress property value. IP Address or DNS hostname of the proxy server when manual configuration is selected.
+// SetProxyManualAddress sets the proxyManualAddress property value. Indicates IP Address or DNS hostname of the proxy server when manual configuration is selected. Used for proxy settings. Example: 10.0.0.2
 func (m *MacOSWiFiConfiguration) SetProxyManualAddress(value *string)() {
     err := m.GetBackingStore().Set("proxyManualAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProxyManualPort sets the proxyManualPort property value. Port of the proxy server when manual configuration is selected.
+// SetProxyManualPort sets the proxyManualPort property value. Indicates the proxy server TCP port to use when proxySettings is manual. Used for proxy settings. Example: 8080
 func (m *MacOSWiFiConfiguration) SetProxyManualPort(value *int32)() {
     err := m.GetBackingStore().Set("proxyManualPort", value)
     if err != nil {

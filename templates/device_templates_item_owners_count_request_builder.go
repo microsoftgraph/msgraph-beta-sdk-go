@@ -16,9 +16,9 @@ type DeviceTemplatesItemOwnersCountRequestBuilder struct {
 // DeviceTemplatesItemOwnersCountRequestBuilderGetQueryParameters get the number of the resource
 type DeviceTemplatesItemOwnersCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // DeviceTemplatesItemOwnersCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceTemplatesItemOwnersCountRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type AgentInstancesItemAgentCardManifestRequestBuilderDeleteRequestConfiguration
 // AgentInstancesItemAgentCardManifestRequestBuilderGetQueryParameters list the agent card manifest referenced by the agent instance.
 type AgentInstancesItemAgentCardManifestRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AgentInstancesItemAgentCardManifestRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AgentInstancesItemAgentCardManifestRequestBuilderGetRequestConfiguration struct {

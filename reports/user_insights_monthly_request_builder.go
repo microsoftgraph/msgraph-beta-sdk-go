@@ -24,9 +24,9 @@ type UserInsightsMonthlyRequestBuilderDeleteRequestConfiguration struct {
 // UserInsightsMonthlyRequestBuilderGetQueryParameters summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 type UserInsightsMonthlyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsMonthlyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsMonthlyRequestBuilderGetRequestConfiguration struct {

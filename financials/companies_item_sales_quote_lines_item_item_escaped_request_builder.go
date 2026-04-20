@@ -24,9 +24,9 @@ type CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderDeleteRequestConf
 // CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderGetQueryParameters get item from financials
 type CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderGetRequestConfiguration struct {

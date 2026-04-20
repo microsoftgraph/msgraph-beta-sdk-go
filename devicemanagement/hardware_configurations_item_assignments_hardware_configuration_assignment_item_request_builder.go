@@ -24,9 +24,9 @@ type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemReq
 // HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters a list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemR
 // ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilderGetQueryParameters retrieve the permissionGrantPreApprovalPolicy object for the servicePrincipal.
 type ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilderGetRequestConfiguration struct {

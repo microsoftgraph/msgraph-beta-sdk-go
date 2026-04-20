@@ -137,7 +137,7 @@ func (m *AccessPackageResource) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalOriginResourceConnector gets the externalOriginResourceConnector property value. The externalOriginResourceConnector property
+// GetExternalOriginResourceConnector gets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 // returns a ExternalOriginResourceConnectorable when successful
 func (m *AccessPackageResource) GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable) {
     val, err := m.GetBackingStore().Get("externalOriginResourceConnector")
@@ -353,7 +353,7 @@ func (m *AccessPackageResource) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -579,7 +579,7 @@ func (m *AccessPackageResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalOriginResourceConnector sets the externalOriginResourceConnector property value. The externalOriginResourceConnector property
+// SetExternalOriginResourceConnector sets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 func (m *AccessPackageResource) SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)() {
     err := m.GetBackingStore().Set("externalOriginResourceConnector", value)
     if err != nil {
@@ -600,7 +600,7 @@ func (m *AccessPackageResource) SetOriginId(value *string)() {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {

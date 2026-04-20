@@ -24,9 +24,9 @@ type UserInsightsDailyMfaTelecomFraudMfaTelecomFraudMetricItemRequestBuilderDele
 // UserInsightsDailyMfaTelecomFraudMfaTelecomFraudMetricItemRequestBuilderGetQueryParameters get mfaTelecomFraud from reports
 type UserInsightsDailyMfaTelecomFraudMfaTelecomFraudMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsDailyMfaTelecomFraudMfaTelecomFraudMetricItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsDailyMfaTelecomFraudMfaTelecomFraudMetricItemRequestBuilderGetRequestConfiguration struct {

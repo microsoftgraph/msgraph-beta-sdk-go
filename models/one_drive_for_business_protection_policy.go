@@ -24,6 +24,30 @@ func NewOneDriveForBusinessProtectionPolicy()(*OneDriveForBusinessProtectionPoli
 func CreateOneDriveForBusinessProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessProtectionPolicy(), nil
 }
+// GetDriveExclusionUnits gets the driveExclusionUnits property value. The driveExclusionUnits property
+// returns a []DriveExclusionUnitable when successful
+func (m *OneDriveForBusinessProtectionPolicy) GetDriveExclusionUnits()([]DriveExclusionUnitable) {
+    val, err := m.GetBackingStore().Get("driveExclusionUnits")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveExclusionUnitable)
+    }
+    return nil
+}
+// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// returns a []DriveExclusionUnitsBulkAdditionJobable when successful
+func (m *OneDriveForBusinessProtectionPolicy) GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable) {
+    val, err := m.GetBackingStore().Get("driveExclusionUnitsBulkAdditionJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DriveExclusionUnitsBulkAdditionJobable)
+    }
+    return nil
+}
 // GetDriveInclusionRules gets the driveInclusionRules property value. Contains the details of the OneDrive for Work or School protection rule.
 // returns a []DriveProtectionRuleable when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetDriveInclusionRules()([]DriveProtectionRuleable) {
@@ -64,6 +88,38 @@ func (m *OneDriveForBusinessProtectionPolicy) GetDriveProtectionUnitsBulkAdditio
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ProtectionPolicyBase.GetFieldDeserializers()
+    res["driveExclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveExclusionUnitFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveExclusionUnitable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveExclusionUnitable)
+                }
+            }
+            m.SetDriveExclusionUnits(res)
+        }
+        return nil
+    }
+    res["driveExclusionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DriveExclusionUnitsBulkAdditionJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DriveExclusionUnitsBulkAdditionJobable)
+                }
+            }
+            m.SetDriveExclusionUnitsBulkAdditionJobs(res)
+        }
+        return nil
+    }
     res["driveInclusionRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDriveProtectionRuleFromDiscriminatorValue)
         if err != nil {
@@ -120,6 +176,30 @@ func (m *OneDriveForBusinessProtectionPolicy) Serialize(writer i878a80d2330e89d2
     if err != nil {
         return err
     }
+    if m.GetDriveExclusionUnits() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveExclusionUnits()))
+        for i, v := range m.GetDriveExclusionUnits() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveExclusionUnits", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDriveExclusionUnitsBulkAdditionJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveExclusionUnitsBulkAdditionJobs()))
+        for i, v := range m.GetDriveExclusionUnitsBulkAdditionJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("driveExclusionUnitsBulkAdditionJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDriveInclusionRules() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDriveInclusionRules()))
         for i, v := range m.GetDriveInclusionRules() {
@@ -158,6 +238,20 @@ func (m *OneDriveForBusinessProtectionPolicy) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
+// SetDriveExclusionUnits sets the driveExclusionUnits property value. The driveExclusionUnits property
+func (m *OneDriveForBusinessProtectionPolicy) SetDriveExclusionUnits(value []DriveExclusionUnitable)() {
+    err := m.GetBackingStore().Set("driveExclusionUnits", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+func (m *OneDriveForBusinessProtectionPolicy) SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)() {
+    err := m.GetBackingStore().Set("driveExclusionUnitsBulkAdditionJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDriveInclusionRules sets the driveInclusionRules property value. Contains the details of the OneDrive for Work or School protection rule.
 func (m *OneDriveForBusinessProtectionPolicy) SetDriveInclusionRules(value []DriveProtectionRuleable)() {
     err := m.GetBackingStore().Set("driveInclusionRules", value)
@@ -182,9 +276,13 @@ func (m *OneDriveForBusinessProtectionPolicy) SetDriveProtectionUnitsBulkAdditio
 type OneDriveForBusinessProtectionPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionPolicyBaseable
+    GetDriveExclusionUnits()([]DriveExclusionUnitable)
+    GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable)
     GetDriveInclusionRules()([]DriveProtectionRuleable)
     GetDriveProtectionUnits()([]DriveProtectionUnitable)
     GetDriveProtectionUnitsBulkAdditionJobs()([]DriveProtectionUnitsBulkAdditionJobable)
+    SetDriveExclusionUnits(value []DriveExclusionUnitable)()
+    SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)()
     SetDriveInclusionRules(value []DriveProtectionRuleable)()
     SetDriveProtectionUnits(value []DriveProtectionUnitable)()
     SetDriveProtectionUnitsBulkAdditionJobs(value []DriveProtectionUnitsBulkAdditionJobable)()

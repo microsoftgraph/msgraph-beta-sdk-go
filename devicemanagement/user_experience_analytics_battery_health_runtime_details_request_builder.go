@@ -24,9 +24,9 @@ type UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderDeleteReque
 // UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderGetQueryParameters user Experience Analytics Battery Health Runtime Details
 type UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderGetRequestConfiguration struct {

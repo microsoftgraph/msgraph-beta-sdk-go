@@ -17,9 +17,9 @@ type PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsItemAuthorizationS
 // PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsItemAuthorizationSystemRequestBuilderGetQueryParameters represents an authorization system onboarded to Permissions Management.
 type PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsItemAuthorizationSystemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsItemAuthorizationSystemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsItemAuthorizationSystemRequestBuilderGetRequestConfiguration struct {

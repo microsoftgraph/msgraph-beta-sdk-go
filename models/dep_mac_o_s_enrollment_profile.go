@@ -359,6 +359,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["usePlatformSSODuringSetupAssistant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUsePlatformSSODuringSetupAssistant(val)
+        }
+        return nil
+    }
     res["zoomDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -495,6 +505,18 @@ func (m *DepMacOSEnrollmentProfile) GetSetPrimarySetupAccountAsRegularUser()(*bo
 // returns a *bool when successful
 func (m *DepMacOSEnrollmentProfile) GetSkipPrimarySetupAccountCreation()(*bool) {
     val, err := m.GetBackingStore().Get("skipPrimarySetupAccountCreation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetUsePlatformSSODuringSetupAssistant gets the usePlatformSSODuringSetupAssistant property value. Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.
+// returns a *bool when successful
+func (m *DepMacOSEnrollmentProfile) GetUsePlatformSSODuringSetupAssistant()(*bool) {
+    val, err := m.GetBackingStore().Get("usePlatformSSODuringSetupAssistant")
     if err != nil {
         panic(err)
     }
@@ -643,6 +665,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteBoolValue("skipPrimarySetupAccountCreation", m.GetSkipPrimarySetupAccountCreation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("usePlatformSSODuringSetupAssistant", m.GetUsePlatformSSODuringSetupAssistant())
         if err != nil {
             return err
         }
@@ -802,6 +830,13 @@ func (m *DepMacOSEnrollmentProfile) SetSkipPrimarySetupAccountCreation(value *bo
         panic(err)
     }
 }
+// SetUsePlatformSSODuringSetupAssistant sets the usePlatformSSODuringSetupAssistant property value. Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.
+func (m *DepMacOSEnrollmentProfile) SetUsePlatformSSODuringSetupAssistant(value *bool)() {
+    err := m.GetBackingStore().Set("usePlatformSSODuringSetupAssistant", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
     err := m.GetBackingStore().Set("zoomDisabled", value)
@@ -833,6 +868,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetRequestRequiresNetworkTether()(*bool)
     GetSetPrimarySetupAccountAsRegularUser()(*bool)
     GetSkipPrimarySetupAccountCreation()(*bool)
+    GetUsePlatformSSODuringSetupAssistant()(*bool)
     GetZoomDisabled()(*bool)
     SetAccessibilityScreenDisabled(value *bool)()
     SetAdminAccountFullName(value *string)()
@@ -855,5 +891,6 @@ type DepMacOSEnrollmentProfileable interface {
     SetRequestRequiresNetworkTether(value *bool)()
     SetSetPrimarySetupAccountAsRegularUser(value *bool)()
     SetSkipPrimarySetupAccountCreation(value *bool)()
+    SetUsePlatformSSODuringSetupAssistant(value *bool)()
     SetZoomDisabled(value *bool)()
 }

@@ -17,9 +17,9 @@ type ItemOwnedDevicesDirectoryObjectItemRequestBuilder struct {
 // ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters devices owned by the user. Read-only. Nullable. Supports $expand.
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOwnedDevicesDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

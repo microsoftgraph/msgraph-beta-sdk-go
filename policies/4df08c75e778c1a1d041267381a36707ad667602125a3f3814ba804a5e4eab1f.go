@@ -24,9 +24,9 @@ type DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartn
 // DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 type DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetRequestConfiguration struct {

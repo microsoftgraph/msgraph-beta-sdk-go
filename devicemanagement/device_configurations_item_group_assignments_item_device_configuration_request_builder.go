@@ -17,9 +17,9 @@ type DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuild
 // DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderGetQueryParameters the navigation link to the Device Configuration being targeted.
 type DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceConfigurationsItemGroupAssignmentsItemDeviceConfigurationRequestBuilderGetRequestConfiguration struct {

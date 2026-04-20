@@ -16,9 +16,9 @@ type ItemConnectorsItemMemberOfCountRequestBuilder struct {
 // ItemConnectorsItemMemberOfCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemConnectorsItemMemberOfCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemConnectorsItemMemberOfCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemConnectorsItemMemberOfCountRequestBuilderGetRequestConfiguration struct {

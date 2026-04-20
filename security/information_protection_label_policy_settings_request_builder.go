@@ -24,9 +24,9 @@ type InformationProtectionLabelPolicySettingsRequestBuilderDeleteRequestConfigur
 // InformationProtectionLabelPolicySettingsRequestBuilderGetQueryParameters read the Microsoft Purview Information Protection policy settings for the user or organization.
 type InformationProtectionLabelPolicySettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // InformationProtectionLabelPolicySettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type InformationProtectionLabelPolicySettingsRequestBuilderGetRequestConfiguration struct {

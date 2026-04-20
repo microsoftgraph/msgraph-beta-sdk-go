@@ -24,9 +24,9 @@ type ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuild
 // ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters each forwarding profile associated with a branch site is specified. Supports $expand.
 type ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration struct {

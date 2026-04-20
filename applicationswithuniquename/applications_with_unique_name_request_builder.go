@@ -24,9 +24,9 @@ type ApplicationsWithUniqueNameRequestBuilderDeleteRequestConfiguration struct {
 // ApplicationsWithUniqueNameRequestBuilderGetQueryParameters get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
 type ApplicationsWithUniqueNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ApplicationsWithUniqueNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ApplicationsWithUniqueNameRequestBuilderGetRequestConfiguration struct {

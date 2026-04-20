@@ -24,9 +24,9 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderDeleteReq
 // FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters the collection of deleted fileStorageContainer resources.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration struct {
@@ -48,6 +48,11 @@ type FileStorageDeletedContainersFileStorageContainerItemRequestBuilderPatchRequ
 // returns a *FileStorageDeletedContainersItemActivateRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Activate()(*FileStorageDeletedContainersItemActivateRequestBuilder) {
     return NewFileStorageDeletedContainersItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Archive provides operations to call the archive method.
+// returns a *FileStorageDeletedContainersItemArchiveRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Archive()(*FileStorageDeletedContainersItemArchiveRequestBuilder) {
+    return NewFileStorageDeletedContainersItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageDeletedContainersItemColumnsRequestBuilder when successful
@@ -207,6 +212,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToP
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *FileStorageDeletedContainersItemUnarchiveRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Unarchive()(*FileStorageDeletedContainersItemUnarchiveRequestBuilder) {
+    return NewFileStorageDeletedContainersItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Unlock provides operations to call the unlock method.
 // returns a *FileStorageDeletedContainersItemUnlockRequestBuilder when successful

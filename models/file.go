@@ -38,6 +38,18 @@ func (m *File) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetArchiveStatus gets the archiveStatus property value. The archiveStatus property
+// returns a *FileArchiveStatus when successful
+func (m *File) GetArchiveStatus()(*FileArchiveStatus) {
+    val, err := m.GetBackingStore().Get("archiveStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FileArchiveStatus)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *File) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -47,6 +59,16 @@ func (m *File) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb9
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["archiveStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFileArchiveStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchiveStatus(val.(*FileArchiveStatus))
+        }
+        return nil
+    }
     res["hashes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateHashesFromDiscriminatorValue)
         if err != nil {
@@ -139,6 +161,13 @@ func (m *File) GetProcessingMetadata()(*bool) {
 }
 // Serialize serializes information the current object
 func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetArchiveStatus() != nil {
+        cast := (*m.GetArchiveStatus()).String()
+        err := writer.WriteStringValue("archiveStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("hashes", m.GetHashes())
         if err != nil {
@@ -174,6 +203,13 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *File) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetArchiveStatus sets the archiveStatus property value. The archiveStatus property
+func (m *File) SetArchiveStatus(value *FileArchiveStatus)() {
+    err := m.GetBackingStore().Set("archiveStatus", value)
     if err != nil {
         panic(err)
     }
@@ -214,11 +250,13 @@ type Fileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArchiveStatus()(*FileArchiveStatus)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetHashes()(Hashesable)
     GetMimeType()(*string)
     GetOdataType()(*string)
     GetProcessingMetadata()(*bool)
+    SetArchiveStatus(value *FileArchiveStatus)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetHashes(value Hashesable)()
     SetMimeType(value *string)()

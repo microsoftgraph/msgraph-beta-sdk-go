@@ -24,9 +24,9 @@ type VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderDele
 // VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcExternalPartner object.
 type VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderGetRequestConfiguration struct {
@@ -43,6 +43,11 @@ type VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderPatc
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ConfigureAgent provides operations to call the configureAgent method.
+// returns a *VirtualEndpointExternalPartnersItemConfigureAgentRequestBuilder when successful
+func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder) ConfigureAgent()(*VirtualEndpointExternalPartnersItemConfigureAgentRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersItemConfigureAgentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewVirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderInternal instantiates a new VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder and sets the default values.
 func NewVirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder) {
@@ -72,6 +77,11 @@ func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder
         return err
     }
     return nil
+}
+// DeployAgent provides operations to call the deployAgent method.
+// returns a *VirtualEndpointExternalPartnersItemDeployAgentRequestBuilder when successful
+func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder) DeployAgent()(*VirtualEndpointExternalPartnersItemDeployAgentRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersItemDeployAgentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read the properties and relationships of a cloudPcExternalPartner object.
 // returns a CloudPcExternalPartnerable when successful
@@ -118,6 +128,16 @@ func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerable), nil
+}
+// RetrieveActionReports provides operations to call the retrieveActionReports method.
+// returns a *VirtualEndpointExternalPartnersItemRetrieveActionReportsRequestBuilder when successful
+func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder) RetrieveActionReports()(*VirtualEndpointExternalPartnersItemRetrieveActionReportsRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersItemRetrieveActionReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId provides operations to call the retrieveDeployAgentActionResults method.
+// returns a *VirtualEndpointExternalPartnersItemRetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder when successful
+func (m *VirtualEndpointExternalPartnersCloudPcExternalPartnerItemRequestBuilder) RetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcId()(*VirtualEndpointExternalPartnersItemRetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersItemRetrieveDeployAgentActionResultsactivityIdActivityIdCloudPcIdCloudPcIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property externalPartners for deviceManagement
 // returns a *RequestInformation when successful

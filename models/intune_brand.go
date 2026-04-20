@@ -436,16 +436,6 @@ func (m *IntuneBrand) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
-    res["sendDeviceOwnershipChangePushNotification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSendDeviceOwnershipChangePushNotification(val)
-        }
-        return nil
-    }
     res["showAzureADEnterpriseApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -623,18 +613,6 @@ func (m *IntuneBrand) GetRoleScopeTagIds()([]string) {
     }
     if val != nil {
         return val.([]string)
-    }
-    return nil
-}
-// GetSendDeviceOwnershipChangePushNotification gets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
-// returns a *bool when successful
-func (m *IntuneBrand) GetSendDeviceOwnershipChangePushNotification()(*bool) {
-    val, err := m.GetBackingStore().Get("sendDeviceOwnershipChangePushNotification")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
     }
     return nil
 }
@@ -864,12 +842,6 @@ func (m *IntuneBrand) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
-        err := writer.WriteBoolValue("sendDeviceOwnershipChangePushNotification", m.GetSendDeviceOwnershipChangePushNotification())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteBoolValue("showAzureADEnterpriseApps", m.GetShowAzureADEnterpriseApps())
         if err != nil {
             return err
@@ -1084,13 +1056,6 @@ func (m *IntuneBrand) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// SetSendDeviceOwnershipChangePushNotification sets the sendDeviceOwnershipChangePushNotification property value. Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate
-func (m *IntuneBrand) SetSendDeviceOwnershipChangePushNotification(value *bool)() {
-    err := m.GetBackingStore().Set("sendDeviceOwnershipChangePushNotification", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetShowAzureADEnterpriseApps sets the showAzureADEnterpriseApps property value. Boolean that indicates if AzureAD Enterprise Apps will be shown in Company Portal
 func (m *IntuneBrand) SetShowAzureADEnterpriseApps(value *bool)() {
     err := m.GetBackingStore().Set("showAzureADEnterpriseApps", value)
@@ -1167,7 +1132,6 @@ type IntuneBrandable interface {
     GetOnlineSupportSiteUrl()(*string)
     GetPrivacyUrl()(*string)
     GetRoleScopeTagIds()([]string)
-    GetSendDeviceOwnershipChangePushNotification()(*bool)
     GetShowAzureADEnterpriseApps()(*bool)
     GetShowConfigurationManagerApps()(*bool)
     GetShowDisplayNameNextToLogo()(*bool)
@@ -1198,7 +1162,6 @@ type IntuneBrandable interface {
     SetOnlineSupportSiteUrl(value *string)()
     SetPrivacyUrl(value *string)()
     SetRoleScopeTagIds(value []string)()
-    SetSendDeviceOwnershipChangePushNotification(value *bool)()
     SetShowAzureADEnterpriseApps(value *bool)()
     SetShowConfigurationManagerApps(value *bool)()
     SetShowDisplayNameNextToLogo(value *bool)()

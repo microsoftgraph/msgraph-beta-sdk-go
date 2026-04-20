@@ -16,9 +16,9 @@ type IntentsItemCategoriesItemSettingsCountRequestBuilder struct {
 // IntentsItemCategoriesItemSettingsCountRequestBuilderGetQueryParameters get the number of the resource
 type IntentsItemCategoriesItemSettingsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // IntentsItemCategoriesItemSettingsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IntentsItemCategoriesItemSettingsCountRequestBuilderGetRequestConfiguration struct {

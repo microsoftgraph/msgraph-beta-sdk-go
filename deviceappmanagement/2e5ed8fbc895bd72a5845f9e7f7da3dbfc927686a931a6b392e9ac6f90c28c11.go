@@ -24,9 +24,9 @@ type MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsMobileAppCo
 // MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderGetQueryParameters the list of scripts for this app content version.
 type MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderGetRequestConfiguration struct {

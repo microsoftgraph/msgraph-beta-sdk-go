@@ -24,9 +24,9 @@ type AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsA
 // AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderGetQueryParameters represents the summary of password resets and changes for a specific day. This includes the number of password resets that were self-service and those triggered by an administrator.
 type AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderGetRequestConfiguration struct {

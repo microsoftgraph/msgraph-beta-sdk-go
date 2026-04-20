@@ -24,9 +24,9 @@ type CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilder
 // CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetQueryParameters represents a custom security attribute audit log.
 type CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CustomSecurityAttributeAuditsCustomSecurityAttributeAuditItemRequestBuilderGetRequestConfiguration struct {

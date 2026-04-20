@@ -16,9 +16,9 @@ type ItemTeamDefinitionGroupServiceProvisioningErrorsCountRequestBuilder struct 
 // ItemTeamDefinitionGroupServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemTeamDefinitionGroupServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemTeamDefinitionGroupServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionGroupServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration struct {

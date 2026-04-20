@@ -17,9 +17,9 @@ type EnterpriseAppsItemRoleEligibilityScheduleRequestsItemTargetScheduleRequestB
 // EnterpriseAppsItemRoleEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetQueryParameters the schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
 type EnterpriseAppsItemRoleEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EnterpriseAppsItemRoleEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EnterpriseAppsItemRoleEligibilityScheduleRequestsItemTargetScheduleRequestBuilderGetRequestConfiguration struct {

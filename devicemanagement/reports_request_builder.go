@@ -24,9 +24,9 @@ type ReportsRequestBuilderDeleteRequestConfiguration struct {
 // ReportsRequestBuilderGetQueryParameters get reports from deviceManagement
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ReportsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsRequestBuilderGetRequestConfiguration struct {
@@ -442,11 +442,6 @@ func (m *ReportsRequestBuilder) GetWindowsUpdateAlertsPerPolicyPerDeviceReport()
 // returns a *ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) GetWindowsUpdateAlertSummaryReport()(*ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) {
     return NewReportsGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetZebraFotaDeploymentReport provides operations to call the getZebraFotaDeploymentReport method.
-// returns a *ReportsGetZebraFotaDeploymentReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetZebraFotaDeploymentReport()(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
-    return NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property reports in deviceManagement
 // returns a DeviceManagementReportsable when successful

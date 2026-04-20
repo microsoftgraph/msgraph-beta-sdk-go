@@ -24,9 +24,9 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequ
 // CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequestBuilderGetQueryParameters get itemCategory from financials
 type CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequestBuilderGetRequestConfiguration struct {

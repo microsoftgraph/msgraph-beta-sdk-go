@@ -24,9 +24,9 @@ type ItemSettingsDirectorySettingItemRequestBuilderDeleteRequestConfiguration st
 // ItemSettingsDirectorySettingItemRequestBuilderGetQueryParameters settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
 type ItemSettingsDirectorySettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsDirectorySettingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsDirectorySettingItemRequestBuilderGetRequestConfiguration struct {

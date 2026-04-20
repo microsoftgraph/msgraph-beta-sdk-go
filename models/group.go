@@ -50,7 +50,7 @@ func (m *Group) GetAccessType()(*GroupAccessType) {
     }
     return nil
 }
-// GetAllowExternalSenders gets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetAllowExternalSenders gets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetAllowExternalSenders()(*bool) {
     val, err := m.GetBackingStore().Get("allowExternalSenders")
@@ -74,7 +74,7 @@ func (m *Group) GetAppRoleAssignments()([]AppRoleAssignmentable) {
     }
     return nil
 }
-// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.
+// GetAssignedLabels gets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.
 // returns a []AssignedLabelable when successful
 func (m *Group) GetAssignedLabels()([]AssignedLabelable) {
     val, err := m.GetBackingStore().Get("assignedLabels")
@@ -86,7 +86,7 @@ func (m *Group) GetAssignedLabels()([]AssignedLabelable) {
     }
     return nil
 }
-// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
+// GetAssignedLicenses gets the assignedLicenses property value. The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.
 // returns a []AssignedLicenseable when successful
 func (m *Group) GetAssignedLicenses()([]AssignedLicenseable) {
     val, err := m.GetBackingStore().Get("assignedLicenses")
@@ -98,7 +98,7 @@ func (m *Group) GetAssignedLicenses()([]AssignedLicenseable) {
     }
     return nil
 }
-// GetAutoSubscribeNewMembers gets the autoSubscribeNewMembers property value. Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetAutoSubscribeNewMembers gets the autoSubscribeNewMembers property value. Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetAutoSubscribeNewMembers()(*bool) {
     val, err := m.GetBackingStore().Get("autoSubscribeNewMembers")
@@ -840,6 +840,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["onPremisesExtensionAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesExtensionAttributesFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesExtensionAttributes(val.(OnPremisesExtensionAttributesable))
+        }
+        return nil
+    }
     res["onPremisesLastSyncDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -1332,7 +1342,7 @@ func (m *Group) GetHasMembersWithLicenseErrors()(*bool) {
     }
     return nil
 }
-// GetHideFromAddressLists gets the hideFromAddressLists property value. true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromAddressLists gets the hideFromAddressLists property value. true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetHideFromAddressLists()(*bool) {
     val, err := m.GetBackingStore().Get("hideFromAddressLists")
@@ -1344,7 +1354,7 @@ func (m *Group) GetHideFromAddressLists()(*bool) {
     }
     return nil
 }
-// GetHideFromOutlookClients gets the hideFromOutlookClients property value. true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetHideFromOutlookClients gets the hideFromOutlookClients property value. true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetHideFromOutlookClients()(*bool) {
     val, err := m.GetBackingStore().Get("hideFromOutlookClients")
@@ -1416,7 +1426,7 @@ func (m *Group) GetIsManagementRestricted()(*bool) {
     }
     return nil
 }
-// GetIsSubscribedByMail gets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetIsSubscribedByMail gets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetIsSubscribedByMail()(*bool) {
     val, err := m.GetBackingStore().Get("isSubscribedByMail")
@@ -1428,7 +1438,7 @@ func (m *Group) GetIsSubscribedByMail()(*bool) {
     }
     return nil
 }
-// GetLicenseProcessingState gets the licenseProcessingState property value. Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
+// GetLicenseProcessingState gets the licenseProcessingState property value. Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Requires $select to retrieve. Read-only.
 // returns a LicenseProcessingStateable when successful
 func (m *Group) GetLicenseProcessingState()(LicenseProcessingStateable) {
     val, err := m.GetBackingStore().Get("licenseProcessingState")
@@ -1524,7 +1534,7 @@ func (m *Group) GetMembershipRuleProcessingState()(*string) {
     }
     return nil
 }
-// GetMembershipRuleProcessingStatus gets the membershipRuleProcessingStatus property value. Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.
+// GetMembershipRuleProcessingStatus gets the membershipRuleProcessingStatus property value. Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}). Read-only.
 // returns a MembershipRuleProcessingStatusable when successful
 func (m *Group) GetMembershipRuleProcessingStatus()(MembershipRuleProcessingStatusable) {
     val, err := m.GetBackingStore().Get("membershipRuleProcessingStatus")
@@ -1569,6 +1579,18 @@ func (m *Group) GetOnPremisesDomainName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+// returns a OnPremisesExtensionAttributesable when successful
+func (m *Group) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
+    val, err := m.GetBackingStore().Get("onPremisesExtensionAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesExtensionAttributesable)
     }
     return nil
 }
@@ -1944,7 +1966,7 @@ func (m *Group) GetUniqueName()(*string) {
     }
     return nil
 }
-// GetUnseenConversationsCount gets the unseenConversationsCount property value. Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+// GetUnseenConversationsCount gets the unseenConversationsCount property value. Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Requires $select to retrieve.
 // returns a *int32 when successful
 func (m *Group) GetUnseenConversationsCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenConversationsCount")
@@ -1956,7 +1978,7 @@ func (m *Group) GetUnseenConversationsCount()(*int32) {
     }
     return nil
 }
-// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetUnseenCount gets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *int32 when successful
 func (m *Group) GetUnseenCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenCount")
@@ -1968,7 +1990,7 @@ func (m *Group) GetUnseenCount()(*int32) {
     }
     return nil
 }
-// GetUnseenMessagesCount gets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
+// GetUnseenMessagesCount gets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Requires $select to retrieve.
 // returns a *int32 when successful
 func (m *Group) GetUnseenMessagesCount()(*int32) {
     val, err := m.GetBackingStore().Get("unseenMessagesCount")
@@ -1992,7 +2014,7 @@ func (m *Group) GetVisibility()(*string) {
     }
     return nil
 }
-// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetWelcomeMessageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("welcomeMessageEnabled")
@@ -2378,6 +2400,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesExtensionAttributes", m.GetOnPremisesExtensionAttributes())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("onPremisesLastSyncDateTime", m.GetOnPremisesLastSyncDateTime())
         if err != nil {
             return err
@@ -2681,7 +2709,7 @@ func (m *Group) SetAccessType(value *GroupAccessType)() {
         panic(err)
     }
 }
-// SetAllowExternalSenders sets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetAllowExternalSenders sets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetAllowExternalSenders(value *bool)() {
     err := m.GetBackingStore().Set("allowExternalSenders", value)
     if err != nil {
@@ -2695,21 +2723,21 @@ func (m *Group) SetAppRoleAssignments(value []AppRoleAssignmentable)() {
         panic(err)
     }
 }
-// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.
+// SetAssignedLabels sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.
 func (m *Group) SetAssignedLabels(value []AssignedLabelable)() {
     err := m.GetBackingStore().Set("assignedLabels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
+// SetAssignedLicenses sets the assignedLicenses property value. The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.
 func (m *Group) SetAssignedLicenses(value []AssignedLicenseable)() {
     err := m.GetBackingStore().Set("assignedLicenses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAutoSubscribeNewMembers sets the autoSubscribeNewMembers property value. Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetAutoSubscribeNewMembers sets the autoSubscribeNewMembers property value. Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don't set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetAutoSubscribeNewMembers(value *bool)() {
     err := m.GetBackingStore().Set("autoSubscribeNewMembers", value)
     if err != nil {
@@ -2842,14 +2870,14 @@ func (m *Group) SetHasMembersWithLicenseErrors(value *bool)() {
         panic(err)
     }
 }
-// SetHideFromAddressLists sets the hideFromAddressLists property value. true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromAddressLists sets the hideFromAddressLists property value. true if the group isn't displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromAddressLists(value *bool)() {
     err := m.GetBackingStore().Set("hideFromAddressLists", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHideFromOutlookClients sets the hideFromOutlookClients property value. true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetHideFromOutlookClients sets the hideFromOutlookClients property value. true if the group isn't displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetHideFromOutlookClients(value *bool)() {
     err := m.GetBackingStore().Set("hideFromOutlookClients", value)
     if err != nil {
@@ -2891,14 +2919,14 @@ func (m *Group) SetIsManagementRestricted(value *bool)() {
         panic(err)
     }
 }
-// SetIsSubscribedByMail sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetIsSubscribedByMail sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetIsSubscribedByMail(value *bool)() {
     err := m.GetBackingStore().Set("isSubscribedByMail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLicenseProcessingState sets the licenseProcessingState property value. Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
+// SetLicenseProcessingState sets the licenseProcessingState property value. Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Requires $select to retrieve. Read-only.
 func (m *Group) SetLicenseProcessingState(value LicenseProcessingStateable)() {
     err := m.GetBackingStore().Set("licenseProcessingState", value)
     if err != nil {
@@ -2954,7 +2982,7 @@ func (m *Group) SetMembershipRuleProcessingState(value *string)() {
         panic(err)
     }
 }
-// SetMembershipRuleProcessingStatus sets the membershipRuleProcessingStatus property value. Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.
+// SetMembershipRuleProcessingStatus sets the membershipRuleProcessingStatus property value. Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}). Read-only.
 func (m *Group) SetMembershipRuleProcessingStatus(value MembershipRuleProcessingStatusable)() {
     err := m.GetBackingStore().Set("membershipRuleProcessingStatus", value)
     if err != nil {
@@ -2978,6 +3006,13 @@ func (m *Group) SetOnenote(value Onenoteable)() {
 // SetOnPremisesDomainName sets the onPremisesDomainName property value. Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.
 func (m *Group) SetOnPremisesDomainName(value *string)() {
     err := m.GetBackingStore().Set("onPremisesDomainName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+func (m *Group) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
+    err := m.GetBackingStore().Set("onPremisesExtensionAttributes", value)
     if err != nil {
         panic(err)
     }
@@ -3199,21 +3234,21 @@ func (m *Group) SetUniqueName(value *string)() {
         panic(err)
     }
 }
-// SetUnseenConversationsCount sets the unseenConversationsCount property value. Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Returned only on $select.
+// SetUnseenConversationsCount sets the unseenConversationsCount property value. Count of conversations delivered one or more new posts since the signed-in user's last visit to the group. This property is the same as unseenCount. Requires $select to retrieve.
 func (m *Group) SetUnseenConversationsCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenConversationsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetUnseenCount sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetUnseenCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUnseenMessagesCount sets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Returned only on $select.
+// SetUnseenMessagesCount sets the unseenMessagesCount property value. Count of new posts that have been delivered to the group's conversations since the signed-in user's last visit to the group. Requires $select to retrieve.
 func (m *Group) SetUnseenMessagesCount(value *int32)() {
     err := m.GetBackingStore().Set("unseenMessagesCount", value)
     if err != nil {
@@ -3227,7 +3262,7 @@ func (m *Group) SetVisibility(value *string)() {
         panic(err)
     }
 }
-// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetWelcomeMessageEnabled(value *bool)() {
     err := m.GetBackingStore().Set("welcomeMessageEnabled", value)
     if err != nil {
@@ -3289,6 +3324,7 @@ type Groupable interface {
     GetMembersWithLicenseErrors()([]DirectoryObjectable)
     GetOnenote()(Onenoteable)
     GetOnPremisesDomainName()(*string)
+    GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesNetBiosName()(*string)
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
@@ -3371,6 +3407,7 @@ type Groupable interface {
     SetMembersWithLicenseErrors(value []DirectoryObjectable)()
     SetOnenote(value Onenoteable)()
     SetOnPremisesDomainName(value *string)()
+    SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesNetBiosName(value *string)()
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()

@@ -24,9 +24,9 @@ type SensitivityPolicySettingsRequestBuilderDeleteRequestConfiguration struct {
 // SensitivityPolicySettingsRequestBuilderGetQueryParameters get sensitivityPolicySettings from informationProtection
 type SensitivityPolicySettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SensitivityPolicySettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SensitivityPolicySettingsRequestBuilderGetRequestConfiguration struct {

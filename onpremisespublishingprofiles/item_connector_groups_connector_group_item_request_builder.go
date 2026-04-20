@@ -24,9 +24,9 @@ type ItemConnectorGroupsConnectorGroupItemRequestBuilderDeleteRequestConfigurati
 // ItemConnectorGroupsConnectorGroupItemRequestBuilderGetQueryParameters list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 type ItemConnectorGroupsConnectorGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemConnectorGroupsConnectorGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemConnectorGroupsConnectorGroupItemRequestBuilderGetRequestConfiguration struct {

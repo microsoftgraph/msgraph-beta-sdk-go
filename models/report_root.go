@@ -58,6 +58,18 @@ func (m *ReportRoot) GetAuthenticationMethods()(AuthenticationMethodsRootable) {
     }
     return nil
 }
+// GetAzureADPremiumLicenseInsight gets the azureADPremiumLicenseInsight property value. Provides insight into the Microsoft Entra ID P1 and P2 premium license utilization for the tenant.
+// returns a AzureADPremiumLicenseInsightable when successful
+func (m *ReportRoot) GetAzureADPremiumLicenseInsight()(AzureADPremiumLicenseInsightable) {
+    val, err := m.GetBackingStore().Get("azureADPremiumLicenseInsight")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AzureADPremiumLicenseInsightable)
+    }
+    return nil
+}
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 // returns a []CredentialUserRegistrationDetailsable when successful
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
@@ -173,6 +185,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetAuthenticationMethods(val.(AuthenticationMethodsRootable))
+        }
+        return nil
+    }
+    res["azureADPremiumLicenseInsight"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAzureADPremiumLicenseInsightFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAzureADPremiumLicenseInsight(val.(AzureADPremiumLicenseInsightable))
         }
         return nil
     }
@@ -588,6 +610,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("azureADPremiumLicenseInsight", m.GetAzureADPremiumLicenseInsight())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCredentialUserRegistrationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCredentialUserRegistrationDetails()))
         for i, v := range m.GetCredentialUserRegistrationDetails() {
@@ -785,6 +813,13 @@ func (m *ReportRoot) SetAuthenticationMethods(value AuthenticationMethodsRootabl
         panic(err)
     }
 }
+// SetAzureADPremiumLicenseInsight sets the azureADPremiumLicenseInsight property value. Provides insight into the Microsoft Entra ID P1 and P2 premium license utilization for the tenant.
+func (m *ReportRoot) SetAzureADPremiumLicenseInsight(value AzureADPremiumLicenseInsightable)() {
+    err := m.GetBackingStore().Set("azureADPremiumLicenseInsight", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
     err := m.GetBackingStore().Set("credentialUserRegistrationDetails", value)
@@ -910,6 +945,7 @@ type ReportRootable interface {
     GetAppCredentialSignInActivities()([]AppCredentialSignInActivityable)
     GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable)
     GetAuthenticationMethods()(AuthenticationMethodsRootable)
+    GetAzureADPremiumLicenseInsight()(AzureADPremiumLicenseInsightable)
     GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable)
     GetDailyPrintUsage()([]PrintUsageable)
     GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable)
@@ -930,6 +966,7 @@ type ReportRootable interface {
     SetAppCredentialSignInActivities(value []AppCredentialSignInActivityable)()
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
+    SetAzureADPremiumLicenseInsight(value AzureADPremiumLicenseInsightable)()
     SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)()
     SetDailyPrintUsage(value []PrintUsageable)()
     SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)()

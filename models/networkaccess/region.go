@@ -41,10 +41,15 @@ const (
     FRANCESOUTH_REGION
     ISRAELCENTRAL_REGION
     UNKNOWNFUTUREVALUE_REGION
+    TAIWANNORTH_REGION
+    MEXICOCENTRAL_REGION
+    SPAINCENTRAL_REGION
+    JIOINDIACENTRAL_REGION
+    BRAZILSOUTHEAST_REGION
 )
 
 func (i Region) String() string {
-    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "koreaSouth", "italyNorth", "franceSouth", "israelCentral", "unknownFutureValue"}[i]
+    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "koreaSouth", "italyNorth", "franceSouth", "israelCentral", "unknownFutureValue", "taiwanNorth", "mexicoCentral", "spainCentral", "jioIndiaCentral", "brazilSouthEast"}[i]
 }
 func ParseRegion(v string) (any, error) {
     result := EASTUS_REGION
@@ -121,6 +126,16 @@ func ParseRegion(v string) (any, error) {
             result = ISRAELCENTRAL_REGION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGION
+        case "taiwanNorth":
+            result = TAIWANNORTH_REGION
+        case "mexicoCentral":
+            result = MEXICOCENTRAL_REGION
+        case "spainCentral":
+            result = SPAINCENTRAL_REGION
+        case "jioIndiaCentral":
+            result = JIOINDIACENTRAL_REGION
+        case "brazilSouthEast":
+            result = BRAZILSOUTHEAST_REGION
         default:
             return nil, nil
     }

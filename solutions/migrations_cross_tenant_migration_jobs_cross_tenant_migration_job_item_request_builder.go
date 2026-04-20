@@ -24,9 +24,9 @@ type MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder
 // MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilderGetQueryParameters read the properties and relationships of crossTenantMigrationJob object. Includes details of the crossTenantMigrationJob , but not details of the individual crossTenantMigrationTasks of the crossTenantMigrationJob.
 type MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilderGetRequestConfiguration struct {

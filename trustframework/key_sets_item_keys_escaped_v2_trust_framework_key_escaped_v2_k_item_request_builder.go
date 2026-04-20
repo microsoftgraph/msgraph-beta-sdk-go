@@ -17,9 +17,9 @@ type KeySetsItemKeys_v2TrustFrameworkKey_v2KItemRequestBuilder struct {
 // KeySetsItemKeys_v2TrustFrameworkKey_v2KItemRequestBuilderGetQueryParameters read the properties and relationships of a trustFrameworkKeyv2 object.
 type KeySetsItemKeys_v2TrustFrameworkKey_v2KItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // KeySetsItemKeys_v2TrustFrameworkKey_v2KItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type KeySetsItemKeys_v2TrustFrameworkKey_v2KItemRequestBuilderGetRequestConfiguration struct {

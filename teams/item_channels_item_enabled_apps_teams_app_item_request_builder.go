@@ -17,9 +17,9 @@ type ItemChannelsItemEnabledAppsTeamsAppItemRequestBuilder struct {
 // ItemChannelsItemEnabledAppsTeamsAppItemRequestBuilderGetQueryParameters a collection of enabled apps in the channel.
 type ItemChannelsItemEnabledAppsTeamsAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChannelsItemEnabledAppsTeamsAppItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChannelsItemEnabledAppsTeamsAppItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemInstancesAccessReviewItemRequestBuilderDeleteRequestConfiguration struc
 // ItemInstancesAccessReviewItemRequestBuilderGetQueryParameters the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 type ItemInstancesAccessReviewItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemInstancesAccessReviewItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInstancesAccessReviewItemRequestBuilderGetRequestConfiguration struct {

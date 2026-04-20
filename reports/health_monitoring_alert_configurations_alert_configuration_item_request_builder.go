@@ -24,9 +24,9 @@ type HealthMonitoringAlertConfigurationsAlertConfigurationItemRequestBuilderDele
 // HealthMonitoringAlertConfigurationsAlertConfigurationItemRequestBuilderGetQueryParameters read the properties and relationships of a Microsoft Entra health monitoring alertConfiguration object. The returned alertConfiguration object contains the settings for the distribution groups where alert notifications are to be sent.
 type HealthMonitoringAlertConfigurationsAlertConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HealthMonitoringAlertConfigurationsAlertConfigurationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HealthMonitoringAlertConfigurationsAlertConfigurationItemRequestBuilderGetRequestConfiguration struct {

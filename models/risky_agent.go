@@ -57,6 +57,18 @@ func (m *RiskyAgent) GetAgentDisplayName()(*string) {
     }
     return nil
 }
+// GetBlueprintId gets the blueprintId property value. The identifier of the blueprint associated with the agent. Nullable.
+// returns a *string when successful
+func (m *RiskyAgent) GetBlueprintId()(*string) {
+    val, err := m.GetBackingStore().Get("blueprintId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,6 +80,16 @@ func (m *RiskyAgent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetAgentDisplayName(val)
+        }
+        return nil
+    }
+    res["blueprintId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBlueprintId(val)
         }
         return nil
     }
@@ -261,6 +283,12 @@ func (m *RiskyAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("blueprintId", m.GetBlueprintId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIdentityType() != nil {
         cast := (*m.GetIdentityType()).String()
         err = writer.WriteStringValue("identityType", &cast)
@@ -318,6 +346,13 @@ func (m *RiskyAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
 // SetAgentDisplayName sets the agentDisplayName property value. Name of the agent.  Supports $filter (eq, startsWith).
 func (m *RiskyAgent) SetAgentDisplayName(value *string)() {
     err := m.GetBackingStore().Set("agentDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBlueprintId sets the blueprintId property value. The identifier of the blueprint associated with the agent. Nullable.
+func (m *RiskyAgent) SetBlueprintId(value *string)() {
+    err := m.GetBackingStore().Set("blueprintId", value)
     if err != nil {
         panic(err)
     }
@@ -382,6 +417,7 @@ type RiskyAgentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgentDisplayName()(*string)
+    GetBlueprintId()(*string)
     GetIdentityType()(*AgentIdentityType)
     GetIsDeleted()(*bool)
     GetIsEnabled()(*bool)
@@ -391,6 +427,7 @@ type RiskyAgentable interface {
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
     SetAgentDisplayName(value *string)()
+    SetBlueprintId(value *string)()
     SetIdentityType(value *AgentIdentityType)()
     SetIsDeleted(value *bool)()
     SetIsEnabled(value *bool)()

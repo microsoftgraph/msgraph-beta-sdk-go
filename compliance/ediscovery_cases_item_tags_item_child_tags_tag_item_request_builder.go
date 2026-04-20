@@ -17,9 +17,9 @@ type EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilder struct {
 // EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
 type EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdiscoveryCasesItemTagsItemChildTagsTagItemRequestBuilderGetRequestConfiguration struct {

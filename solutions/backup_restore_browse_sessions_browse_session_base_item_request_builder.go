@@ -24,9 +24,9 @@ type BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderDeleteRequest
 // BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetQueryParameters the list of browse sessions in the tenant.
 type BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration struct {

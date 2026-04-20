@@ -24,9 +24,9 @@ type ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemReq
 // ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderGetQueryParameters list of log collection requests
 type ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ComanagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration struct {

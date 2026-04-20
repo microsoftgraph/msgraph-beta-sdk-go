@@ -24,9 +24,9 @@ type BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequ
 // BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderGetQueryParameters the list of SharePoint protection policies in the tenant.
 type BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -115,6 +115,16 @@ func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItem
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointProtectionPolicyable), nil
+}
+// SiteExclusionUnits provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.
+// returns a *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder when successful
+func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder) SiteExclusionUnits()(*BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder) {
+    return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SiteExclusionUnitsBulkAdditionJobs provides operations to manage the siteExclusionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.
+// returns a *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder) SiteExclusionUnitsBulkAdditionJobs()(*BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SiteInclusionRules provides operations to manage the siteInclusionRules property of the microsoft.graph.sharePointProtectionPolicy entity.
 // returns a *BackupRestoreSharePointProtectionPoliciesItemSiteInclusionRulesRequestBuilder when successful

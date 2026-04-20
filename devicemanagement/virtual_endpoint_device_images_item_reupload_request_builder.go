@@ -34,6 +34,7 @@ func NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder(rawUrl string, req
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reupload a cloudPcDeviceImage object that failed to upload.
+// Deprecated: The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation reupload a cloudPcDeviceImage object that failed to upload.
+// Deprecated: The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesItemReuploadRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The reupload is deprecated and will not be supported starting June 25, 2026. Please use retryUpload instead. as of 2026-01/reupload on 2026-01-09 and will be removed 2026-06-25
 // returns a *VirtualEndpointDeviceImagesItemReuploadRequestBuilder when successful
 func (m *VirtualEndpointDeviceImagesItemReuploadRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

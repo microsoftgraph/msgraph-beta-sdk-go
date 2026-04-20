@@ -48,6 +48,18 @@ func (m *Note) GetBody()(ItemBodyable) {
     }
     return nil
 }
+// GetBodyPreview gets the bodyPreview property value. Auto-generated preview of the note body content (first ~255 characters). Read-only.
+// returns a *string when successful
+func (m *Note) GetBodyPreview()(*string) {
+    val, err := m.GetBackingStore().Get("bodyPreview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetExtensions gets the extensions property value. The extensions property
 // returns a []Extensionable when successful
 func (m *Note) GetExtensions()([]Extensionable) {
@@ -87,6 +99,16 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetBody(val.(ItemBodyable))
+        }
+        return nil
+    }
+    res["bodyPreview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBodyPreview(val)
         }
         return nil
     }
@@ -266,18 +288,6 @@ func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
-    {
-        err = writer.WriteBoolValue("hasAttachments", m.GetHasAttachments())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isDeleted", m.GetIsDeleted())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
@@ -320,6 +330,13 @@ func (m *Note) SetAttachments(value []Attachmentable)() {
 // SetBody sets the body property value. The body property
 func (m *Note) SetBody(value ItemBodyable)() {
     err := m.GetBackingStore().Set("body", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBodyPreview sets the bodyPreview property value. Auto-generated preview of the note body content (first ~255 characters). Read-only.
+func (m *Note) SetBodyPreview(value *string)() {
+    err := m.GetBackingStore().Set("bodyPreview", value)
     if err != nil {
         panic(err)
     }
@@ -371,6 +388,7 @@ type Noteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttachments()([]Attachmentable)
     GetBody()(ItemBodyable)
+    GetBodyPreview()(*string)
     GetExtensions()([]Extensionable)
     GetHasAttachments()(*bool)
     GetIsDeleted()(*bool)
@@ -379,6 +397,7 @@ type Noteable interface {
     GetSubject()(*string)
     SetAttachments(value []Attachmentable)()
     SetBody(value ItemBodyable)()
+    SetBodyPreview(value *string)()
     SetExtensions(value []Extensionable)()
     SetHasAttachments(value *bool)()
     SetIsDeleted(value *bool)()

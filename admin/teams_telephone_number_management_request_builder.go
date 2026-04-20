@@ -24,9 +24,9 @@ type TeamsTelephoneNumberManagementRequestBuilderDeleteRequestConfiguration stru
 // TeamsTelephoneNumberManagementRequestBuilderGetQueryParameters represents a collection of available telephone number management operations.
 type TeamsTelephoneNumberManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsTelephoneNumberManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsTelephoneNumberManagementRequestBuilderGetRequestConfiguration struct {

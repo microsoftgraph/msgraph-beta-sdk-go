@@ -8,6 +8,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
+// AuditData abstract base type for audit event data.
 type AuditData struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -35,12 +36,38 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.security.a365AiExecuteTool":
+                        return NewA365AiExecuteTool(), nil
+                    case "#microsoft.graph.security.a365AiInferenceCall":
+                        return NewA365AiInferenceCall(), nil
+                    case "#microsoft.graph.security.a365AiInvokeAgent":
+                        return NewA365AiInvokeAgent(), nil
+                    case "#microsoft.graph.security.a365AiRunSummary":
+                        return NewA365AiRunSummary(), nil
+                    case "#microsoft.graph.security.a365SpanOutputs":
+                        return NewA365SpanOutputs(), nil
                     case "#microsoft.graph.security.aadRiskDetectionAuditRecord":
                         return NewAadRiskDetectionAuditRecord(), nil
                     case "#microsoft.graph.security.aedAuditRecord":
                         return NewAedAuditRecord(), nil
+                    case "#microsoft.graph.security.agentAdminActivityRecord":
+                        return NewAgentAdminActivityRecord(), nil
+                    case "#microsoft.graph.security.agentSettingAdminActivity":
+                        return NewAgentSettingAdminActivity(), nil
                     case "#microsoft.graph.security.aiAppInteractionAuditRecord":
                         return NewAiAppInteractionAuditRecord(), nil
+                    case "#microsoft.graph.security.aiExecuteToolAuditRecord":
+                        return NewAiExecuteToolAuditRecord(), nil
+                    case "#microsoft.graph.security.aiInteractionsChangeNotificationAuditRecord":
+                        return NewAiInteractionsChangeNotificationAuditRecord(), nil
+                    case "#microsoft.graph.security.aiInteractionsExportAuditRecord":
+                        return NewAiInteractionsExportAuditRecord(), nil
+                    case "#microsoft.graph.security.aiInteractionsSubscriptionAuditRecord":
+                        return NewAiInteractionsSubscriptionAuditRecord(), nil
+                    case "#microsoft.graph.security.aiInvokeAgentAuditRecord":
+                        return NewAiInvokeAgentAuditRecord(), nil
+                    case "#microsoft.graph.security.aipDiscover":
+                        return NewAipDiscover(), nil
                     case "#microsoft.graph.security.aipFileDeleted":
                         return NewAipFileDeleted(), nil
                     case "#microsoft.graph.security.aipHeartBeat":
@@ -59,28 +86,38 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewAirManualInvestigationData(), nil
                     case "#microsoft.graph.security.attackSimAdminAuditRecord":
                         return NewAttackSimAdminAuditRecord(), nil
+                    case "#microsoft.graph.security.attackSimAuditRecord":
+                        return NewAttackSimAuditRecord(), nil
+                    case "#microsoft.graph.security.auditConfigAuditRecord":
+                        return NewAuditConfigAuditRecord(), nil
                     case "#microsoft.graph.security.auditSearchAuditRecord":
                         return NewAuditSearchAuditRecord(), nil
+                    case "#microsoft.graph.security.azfwApplicationRuleAggregationEventRecord":
+                        return NewAzfwApplicationRuleAggregationEventRecord(), nil
+                    case "#microsoft.graph.security.azfwDnsQueryEventRecord":
+                        return NewAzfwDnsQueryEventRecord(), nil
+                    case "#microsoft.graph.security.azfwNetworkRuleEventRecord":
+                        return NewAzfwNetworkRuleEventRecord(), nil
                     case "#microsoft.graph.security.azureActiveDirectoryAccountLogonAuditRecord":
                         return NewAzureActiveDirectoryAccountLogonAuditRecord(), nil
                     case "#microsoft.graph.security.azureActiveDirectoryAuditRecord":
                         return NewAzureActiveDirectoryAuditRecord(), nil
-                    case "#microsoft.graph.security.azureActiveDirectoryBaseAuditRecord":
-                        return NewAzureActiveDirectoryBaseAuditRecord(), nil
                     case "#microsoft.graph.security.azureActiveDirectoryStsLogonAuditRecord":
                         return NewAzureActiveDirectoryStsLogonAuditRecord(), nil
                     case "#microsoft.graph.security.campaignAuditRecord":
                         return NewCampaignAuditRecord(), nil
-                    case "#microsoft.graph.security.caseAuditRecord":
-                        return NewCaseAuditRecord(), nil
-                    case "#microsoft.graph.security.caseInvestigation":
-                        return NewCaseInvestigation(), nil
+                    case "#microsoft.graph.security.ccraiPolicyViolationRecord":
+                        return NewCcraiPolicyViolationRecord(), nil
+                    case "#microsoft.graph.security.cdpClassifierHealthRecord":
+                        return NewCdpClassifierHealthRecord(), nil
                     case "#microsoft.graph.security.cdpColdCrawlStatusRecord":
                         return NewCdpColdCrawlStatusRecord(), nil
+                    case "#microsoft.graph.security.cdpConsumptionResourceRecord":
+                        return NewCdpConsumptionResourceRecord(), nil
                     case "#microsoft.graph.security.cdpContentExplorerAggregateRecord":
                         return NewCdpContentExplorerAggregateRecord(), nil
-                    case "#microsoft.graph.security.cdpDlpSensitiveAuditRecord":
-                        return NewCdpDlpSensitiveAuditRecord(), nil
+                    case "#microsoft.graph.security.cdpdlmaiInteractionInsightsRecord":
+                        return NewCdpdlmaiInteractionInsightsRecord(), nil
                     case "#microsoft.graph.security.cdpDlpSensitiveEndpointAuditRecord":
                         return NewCdpDlpSensitiveEndpointAuditRecord(), nil
                     case "#microsoft.graph.security.cdpLogRecord":
@@ -89,72 +126,86 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewCdpOcrBillingRecord(), nil
                     case "#microsoft.graph.security.cdpResourceScopeChangeEventRecord":
                         return NewCdpResourceScopeChangeEventRecord(), nil
-                    case "#microsoft.graph.security.cernerSMSLinkRecord":
-                        return NewCernerSMSLinkRecord(), nil
-                    case "#microsoft.graph.security.cernerSMSSettingsUpdateRecord":
-                        return NewCernerSMSSettingsUpdateRecord(), nil
-                    case "#microsoft.graph.security.cernerSMSUnlinkRecord":
-                        return NewCernerSMSUnlinkRecord(), nil
+                    case "#microsoft.graph.security.cloudUpdateDeviceConfigAuditRecord":
+                        return NewCloudUpdateDeviceConfigAuditRecord(), nil
+                    case "#microsoft.graph.security.cloudUpdateProfileConfigAuditRecord":
+                        return NewCloudUpdateProfileConfigAuditRecord(), nil
+                    case "#microsoft.graph.security.cloudUpdateTenantConfigAuditRecord":
+                        return NewCloudUpdateTenantConfigAuditRecord(), nil
                     case "#microsoft.graph.security.complianceConnectorAuditRecord":
                         return NewComplianceConnectorAuditRecord(), nil
                     case "#microsoft.graph.security.complianceDLMExchangeAuditRecord":
                         return NewComplianceDLMExchangeAuditRecord(), nil
                     case "#microsoft.graph.security.complianceDLMSharePointAuditRecord":
                         return NewComplianceDLMSharePointAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpApplicationsAuditRecord":
-                        return NewComplianceDlpApplicationsAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpApplicationsClassificationAuditRecord":
-                        return NewComplianceDlpApplicationsClassificationAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpBaseAuditRecord":
-                        return NewComplianceDlpBaseAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpClassificationBaseAuditRecord":
-                        return NewComplianceDlpClassificationBaseAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpClassificationBaseCdpRecord":
-                        return NewComplianceDlpClassificationBaseCdpRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpEndpointAuditRecord":
-                        return NewComplianceDlpEndpointAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpEndpointDiscoveryAuditRecord":
-                        return NewComplianceDlpEndpointDiscoveryAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpExchangeAuditRecord":
-                        return NewComplianceDlpExchangeAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpExchangeClassificationAuditRecord":
-                        return NewComplianceDlpExchangeClassificationAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpExchangeClassificationCdpRecord":
-                        return NewComplianceDlpExchangeClassificationCdpRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpExchangeDiscoveryAuditRecord":
-                        return NewComplianceDlpExchangeDiscoveryAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpSharePointAuditRecord":
-                        return NewComplianceDlpSharePointAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpSharePointClassificationAuditRecord":
-                        return NewComplianceDlpSharePointClassificationAuditRecord(), nil
-                    case "#microsoft.graph.security.complianceDlpSharePointClassificationExtendedAuditRecord":
-                        return NewComplianceDlpSharePointClassificationExtendedAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPApplicationsAuditRecord":
+                        return NewComplianceDLPApplicationsAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPApplicationsClassificationAuditRecord":
+                        return NewComplianceDLPApplicationsClassificationAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPEndpointAuditRecord":
+                        return NewComplianceDLPEndpointAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPEndpointDiscoveryAuditRecord":
+                        return NewComplianceDLPEndpointDiscoveryAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPEnforcementAuditRecord":
+                        return NewComplianceDLPEnforcementAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPExchangeAuditRecord":
+                        return NewComplianceDLPExchangeAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPExchangeClassificationAuditRecord":
+                        return NewComplianceDLPExchangeClassificationAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPExchangeClassificationCdpRecord":
+                        return NewComplianceDLPExchangeClassificationCdpRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPExchangeDiscoveryAuditRecord":
+                        return NewComplianceDLPExchangeDiscoveryAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPSharePointAuditRecord":
+                        return NewComplianceDLPSharePointAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPSharePointClassificationAuditRecord":
+                        return NewComplianceDLPSharePointClassificationAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPSharePointClassificationCdpRecord":
+                        return NewComplianceDLPSharePointClassificationCdpRecord(), nil
+                    case "#microsoft.graph.security.complianceDLPSharePointClassificationExtendedAuditRecord":
+                        return NewComplianceDLPSharePointClassificationExtendedAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceExchangeOcrAuditRecord":
+                        return NewComplianceExchangeOcrAuditRecord(), nil
                     case "#microsoft.graph.security.complianceManagerActionRecord":
                         return NewComplianceManagerActionRecord(), nil
-                    case "#microsoft.graph.security.complianceSupervisionBaseAuditRecord":
-                        return NewComplianceSupervisionBaseAuditRecord(), nil
+                    case "#microsoft.graph.security.complianceSettingsChangeAuditRecord":
+                        return NewComplianceSettingsChangeAuditRecord(), nil
                     case "#microsoft.graph.security.complianceSupervisionExchangeAuditRecord":
                         return NewComplianceSupervisionExchangeAuditRecord(), nil
+                    case "#microsoft.graph.security.connectedAIAppInteractionAuditRecord":
+                        return NewConnectedAIAppInteractionAuditRecord(), nil
                     case "#microsoft.graph.security.consumptionResourceAuditRecord":
                         return NewConsumptionResourceAuditRecord(), nil
+                    case "#microsoft.graph.security.contentStoreMetadataRecord":
+                        return NewContentStoreMetadataRecord(), nil
+                    case "#microsoft.graph.security.copilotAgentManagementAuditRecord":
+                        return NewCopilotAgentManagementAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotForSecurityLoggingAuditRecord":
+                        return NewCopilotForSecurityLoggingAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotForSecurityTriggerAuditRecord":
+                        return NewCopilotForSecurityTriggerAuditRecord(), nil
                     case "#microsoft.graph.security.copilotInteractionAuditRecord":
                         return NewCopilotInteractionAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotPluginSettingAuditRecord":
+                        return NewCopilotPluginSettingAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotPromptBookSettingAuditRecord":
+                        return NewCopilotPromptBookSettingAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotSettingAuditRecord":
+                        return NewCopilotSettingAuditRecord(), nil
+                    case "#microsoft.graph.security.copilotWorkspaceSettingAuditRecord":
+                        return NewCopilotWorkspaceSettingAuditRecord(), nil
                     case "#microsoft.graph.security.coreReportingSettingsAuditRecord":
                         return NewCoreReportingSettingsAuditRecord(), nil
                     case "#microsoft.graph.security.cortanaBriefingAuditRecord":
                         return NewCortanaBriefingAuditRecord(), nil
-                    case "#microsoft.graph.security.cpsCommonPolicyAuditRecord":
-                        return NewCpsCommonPolicyAuditRecord(), nil
-                    case "#microsoft.graph.security.cpsPolicyConfigAuditRecord":
-                        return NewCpsPolicyConfigAuditRecord(), nil
-                    case "#microsoft.graph.security.crmBaseAuditRecord":
-                        return NewCrmBaseAuditRecord(), nil
+                    case "#microsoft.graph.security.criticalAssetManagementClassificationRecord":
+                        return NewCriticalAssetManagementClassificationRecord(), nil
                     case "#microsoft.graph.security.crmEntityOperationAuditRecord":
                         return NewCrmEntityOperationAuditRecord(), nil
+                    case "#microsoft.graph.security.crossTenantAccessPolicyAuditRecord":
+                        return NewCrossTenantAccessPolicyAuditRecord(), nil
                     case "#microsoft.graph.security.customerKeyServiceEncryptionAuditRecord":
                         return NewCustomerKeyServiceEncryptionAuditRecord(), nil
-                    case "#microsoft.graph.security.dataCenterSecurityBaseAuditRecord":
-                        return NewDataCenterSecurityBaseAuditRecord(), nil
                     case "#microsoft.graph.security.dataCenterSecurityCmdletAuditRecord":
                         return NewDataCenterSecurityCmdletAuditRecord(), nil
                     case "#microsoft.graph.security.dataGovernanceAuditRecord":
@@ -163,56 +214,48 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewDataInsightsRestApiAuditRecord(), nil
                     case "#microsoft.graph.security.dataLakeExportOperationAuditRecord":
                         return NewDataLakeExportOperationAuditRecord(), nil
+                    case "#microsoft.graph.security.dataSecurityInvestigationAuditRecord":
+                        return NewDataSecurityInvestigationAuditRecord(), nil
                     case "#microsoft.graph.security.dataShareOperationAuditRecord":
                         return NewDataShareOperationAuditRecord(), nil
                     case "#microsoft.graph.security.defaultAuditData":
                         return NewDefaultAuditData(), nil
-                    case "#microsoft.graph.security.defenderSecurityAlertBaseRecord":
-                        return NewDefenderSecurityAlertBaseRecord(), nil
-                    case "#microsoft.graph.security.deleteCertificateRecord":
-                        return NewDeleteCertificateRecord(), nil
-                    case "#microsoft.graph.security.disableConsentRecord":
-                        return NewDisableConsentRecord(), nil
+                    case "#microsoft.graph.security.defenderCaseManagementAuditRecord":
+                        return NewDefenderCaseManagementAuditRecord(), nil
+                    case "#microsoft.graph.security.defenderPreviewFeaturesRecord":
+                        return NewDefenderPreviewFeaturesRecord(), nil
+                    case "#microsoft.graph.security.deployFeatureActivityRecord":
+                        return NewDeployFeatureActivityRecord(), nil
+                    case "#microsoft.graph.security.deviceDiscoverySettingsAuthenticatedScansRecord":
+                        return NewDeviceDiscoverySettingsAuthenticatedScansRecord(), nil
+                    case "#microsoft.graph.security.deviceDiscoverySettingsExclusionRecord":
+                        return NewDeviceDiscoverySettingsExclusionRecord(), nil
+                    case "#microsoft.graph.security.deviceDiscoverySettingsRecord":
+                        return NewDeviceDiscoverySettingsRecord(), nil
                     case "#microsoft.graph.security.discoveryAuditRecord":
                         return NewDiscoveryAuditRecord(), nil
                     case "#microsoft.graph.security.dlpEndpointAuditRecord":
                         return NewDlpEndpointAuditRecord(), nil
-                    case "#microsoft.graph.security.dlpSensitiveInformationTypeCmdletRecord":
-                        return NewDlpSensitiveInformationTypeCmdletRecord(), nil
+                    case "#microsoft.graph.security.dlpImportResultAuditRecord":
+                        return NewDlpImportResultAuditRecord(), nil
                     case "#microsoft.graph.security.dlpSensitiveInformationTypeRulePackageCmdletRecord":
                         return NewDlpSensitiveInformationTypeRulePackageCmdletRecord(), nil
-                    case "#microsoft.graph.security.downloadCertificateRecord":
-                        return NewDownloadCertificateRecord(), nil
                     case "#microsoft.graph.security.dynamics365BusinessCentralAuditRecord":
                         return NewDynamics365BusinessCentralAuditRecord(), nil
-                    case "#microsoft.graph.security.enableConsentRecord":
-                        return NewEnableConsentRecord(), nil
-                    case "#microsoft.graph.security.epicSMSLinkRecord":
-                        return NewEpicSMSLinkRecord(), nil
-                    case "#microsoft.graph.security.epicSMSSettingsUpdateRecord":
-                        return NewEpicSMSSettingsUpdateRecord(), nil
-                    case "#microsoft.graph.security.epicSMSUnlinkRecord":
-                        return NewEpicSMSUnlinkRecord(), nil
+                    case "#microsoft.graph.security.ehrConnectorAuditBaseRecord":
+                        return NewEhrConnectorAuditBaseRecord(), nil
                     case "#microsoft.graph.security.exchangeAdminAuditRecord":
                         return NewExchangeAdminAuditRecord(), nil
                     case "#microsoft.graph.security.exchangeAggregatedMailboxAuditRecord":
                         return NewExchangeAggregatedMailboxAuditRecord(), nil
                     case "#microsoft.graph.security.exchangeAggregatedOperationRecord":
                         return NewExchangeAggregatedOperationRecord(), nil
-                    case "#microsoft.graph.security.exchangeMailboxAuditBaseRecord":
-                        return NewExchangeMailboxAuditBaseRecord(), nil
                     case "#microsoft.graph.security.exchangeMailboxAuditGroupRecord":
                         return NewExchangeMailboxAuditGroupRecord(), nil
                     case "#microsoft.graph.security.exchangeMailboxAuditRecord":
                         return NewExchangeMailboxAuditRecord(), nil
-                    case "#microsoft.graph.security.fhirBaseUrlAddRecord":
-                        return NewFhirBaseUrlAddRecord(), nil
-                    case "#microsoft.graph.security.fhirBaseUrlApproveRecord":
-                        return NewFhirBaseUrlApproveRecord(), nil
-                    case "#microsoft.graph.security.fhirBaseUrlDeleteRecord":
-                        return NewFhirBaseUrlDeleteRecord(), nil
-                    case "#microsoft.graph.security.fhirBaseUrlUpdateRecord":
-                        return NewFhirBaseUrlUpdateRecord(), nil
+                    case "#microsoft.graph.security.fabricAuditRecord":
+                        return NewFabricAuditRecord(), nil
                     case "#microsoft.graph.security.healthcareSignalRecord":
                         return NewHealthcareSignalRecord(), nil
                     case "#microsoft.graph.security.hostedRpaAuditRecord":
@@ -229,8 +272,12 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewInsiderRiskScopedUserInsightsRecord(), nil
                     case "#microsoft.graph.security.insiderRiskScopedUsersRecord":
                         return NewInsiderRiskScopedUsersRecord(), nil
-                    case "#microsoft.graph.security.irmSecurityAlertRecord":
-                        return NewIrmSecurityAlertRecord(), nil
+                    case "#microsoft.graph.security.integratedAppsAppAdminActivityAuditRecord":
+                        return NewIntegratedAppsAppAdminActivityAuditRecord(), nil
+                    case "#microsoft.graph.security.integratedAppsAppSettingsAdminActivityAuditRecord":
+                        return NewIntegratedAppsAppSettingsAdminActivityAuditRecord(), nil
+                    case "#microsoft.graph.security.irmActivityAuditTrailRecord":
+                        return NewIrmActivityAuditTrailRecord(), nil
                     case "#microsoft.graph.security.irmUserDefinedDetectionRecord":
                         return NewIrmUserDefinedDetectionRecord(), nil
                     case "#microsoft.graph.security.kaizalaAuditRecord":
@@ -243,8 +290,12 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewLargeContentMetadataAuditRecord(), nil
                     case "#microsoft.graph.security.m365ComplianceConnectorAuditRecord":
                         return NewM365ComplianceConnectorAuditRecord(), nil
-                    case "#microsoft.graph.security.m365DAADAuditRecord":
-                        return NewM365DAADAuditRecord(), nil
+                    case "#microsoft.graph.security.m365daadAuditRecord":
+                        return NewM365daadAuditRecord(), nil
+                    case "#microsoft.graph.security.m365odspAssetMetadataRecord":
+                        return NewM365odspAssetMetadataRecord(), nil
+                    case "#microsoft.graph.security.m365SearchSectionsRecord":
+                        return NewM365SearchSectionsRecord(), nil
                     case "#microsoft.graph.security.mailSubmissionData":
                         return NewMailSubmissionData(), nil
                     case "#microsoft.graph.security.managedServicesAuditRecord":
@@ -257,8 +308,12 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMapgOnboardAuditRecord(), nil
                     case "#microsoft.graph.security.mapgPolicyAuditRecord":
                         return NewMapgPolicyAuditRecord(), nil
+                    case "#microsoft.graph.security.mapgRemediationAuditRecord":
+                        return NewMapgRemediationAuditRecord(), nil
                     case "#microsoft.graph.security.mcasAlertsAuditRecord":
                         return NewMcasAlertsAuditRecord(), nil
+                    case "#microsoft.graph.security.mdaAuditRecord":
+                        return NewMdaAuditRecord(), nil
                     case "#microsoft.graph.security.mdaDataSecuritySignalRecord":
                         return NewMdaDataSecuritySignalRecord(), nil
                     case "#microsoft.graph.security.mdatpAuditRecord":
@@ -273,12 +328,14 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMicrosoft365BackupBackupItemAuditRecord(), nil
                     case "#microsoft.graph.security.microsoft365BackupBackupPolicyAuditRecord":
                         return NewMicrosoft365BackupBackupPolicyAuditRecord(), nil
+                    case "#microsoft.graph.security.microsoft365BackupGranularBrowseTaskAuditRecord":
+                        return NewMicrosoft365BackupGranularBrowseTaskAuditRecord(), nil
                     case "#microsoft.graph.security.microsoft365BackupRestoreItemAuditRecord":
                         return NewMicrosoft365BackupRestoreItemAuditRecord(), nil
                     case "#microsoft.graph.security.microsoft365BackupRestoreTaskAuditRecord":
                         return NewMicrosoft365BackupRestoreTaskAuditRecord(), nil
-                    case "#microsoft.graph.security.microsoftDefenderExpertsBaseAuditRecord":
-                        return NewMicrosoftDefenderExpertsBaseAuditRecord(), nil
+                    case "#microsoft.graph.security.microsoft365CopilotScheduledPromptAuditRecord":
+                        return NewMicrosoft365CopilotScheduledPromptAuditRecord(), nil
                     case "#microsoft.graph.security.microsoftDefenderExpertsXDRAuditRecord":
                         return NewMicrosoftDefenderExpertsXDRAuditRecord(), nil
                     case "#microsoft.graph.security.microsoftFlowAuditRecord":
@@ -289,6 +346,8 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMicrosoftGraphDataConnectConsent(), nil
                     case "#microsoft.graph.security.microsoftGraphDataConnectOperation":
                         return NewMicrosoftGraphDataConnectOperation(), nil
+                    case "#microsoft.graph.security.microsoftPurviewDataCatalogOperationRecord":
+                        return NewMicrosoftPurviewDataCatalogOperationRecord(), nil
                     case "#microsoft.graph.security.microsoftPurviewDataMapOperationRecord":
                         return NewMicrosoftPurviewDataMapOperationRecord(), nil
                     case "#microsoft.graph.security.microsoftPurviewMetadataPolicyOperationRecord":
@@ -297,6 +356,8 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMicrosoftPurviewPolicyOperationRecord(), nil
                     case "#microsoft.graph.security.microsoftPurviewPrivacyAuditEvent":
                         return NewMicrosoftPurviewPrivacyAuditEvent(), nil
+                    case "#microsoft.graph.security.microsoftPurviewUnifiedCatalogOperationRecord":
+                        return NewMicrosoftPurviewUnifiedCatalogOperationRecord(), nil
                     case "#microsoft.graph.security.microsoftStreamAuditRecord":
                         return NewMicrosoftStreamAuditRecord(), nil
                     case "#microsoft.graph.security.microsoftTeamsAdminAuditRecord":
@@ -315,10 +376,6 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMicrosoftTeamsShiftsAuditRecord(), nil
                     case "#microsoft.graph.security.mipAutoLabelExchangeItemAuditRecord":
                         return NewMipAutoLabelExchangeItemAuditRecord(), nil
-                    case "#microsoft.graph.security.mipAutoLabelItemAuditRecord":
-                        return NewMipAutoLabelItemAuditRecord(), nil
-                    case "#microsoft.graph.security.mipAutoLabelPolicyAuditRecord":
-                        return NewMipAutoLabelPolicyAuditRecord(), nil
                     case "#microsoft.graph.security.mipAutoLabelProgressFeedbackAuditRecord":
                         return NewMipAutoLabelProgressFeedbackAuditRecord(), nil
                     case "#microsoft.graph.security.mipAutoLabelSharePointItemAuditRecord":
@@ -331,20 +388,22 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMipAutoLabelSimulationSharePointProgressRecord(), nil
                     case "#microsoft.graph.security.mipAutoLabelSimulationStatisticsRecord":
                         return NewMipAutoLabelSimulationStatisticsRecord(), nil
-                    case "#microsoft.graph.security.mipAutoLabelSimulationStatusRecord":
-                        return NewMipAutoLabelSimulationStatusRecord(), nil
                     case "#microsoft.graph.security.mipExactDataMatchAuditRecord":
                         return NewMipExactDataMatchAuditRecord(), nil
                     case "#microsoft.graph.security.mipLabelAnalyticsAuditRecord":
                         return NewMipLabelAnalyticsAuditRecord(), nil
                     case "#microsoft.graph.security.mipLabelAuditRecord":
                         return NewMipLabelAuditRecord(), nil
-                    case "#microsoft.graph.security.mS365DCustomDetectionAuditRecord":
-                        return NewMS365DCustomDetectionAuditRecord(), nil
-                    case "#microsoft.graph.security.mS365DIncidentAuditRecord":
-                        return NewMS365DIncidentAuditRecord(), nil
-                    case "#microsoft.graph.security.mS365DSuppressionRuleAuditRecord":
-                        return NewMS365DSuppressionRuleAuditRecord(), nil
+                    case "#microsoft.graph.security.mosAgentInfoRecord":
+                        return NewMosAgentInfoRecord(), nil
+                    case "#microsoft.graph.security.ms365dCustomDetectionAuditRecord":
+                        return NewMs365dCustomDetectionAuditRecord(), nil
+                    case "#microsoft.graph.security.ms365dIncidentAuditRecord":
+                        return NewMs365dIncidentAuditRecord(), nil
+                    case "#microsoft.graph.security.ms365dSuppressionRuleAuditRecord":
+                        return NewMs365dSuppressionRuleAuditRecord(), nil
+                    case "#microsoft.graph.security.msdeCustomCollectionAuditRecord":
+                        return NewMsdeCustomCollectionAuditRecord(), nil
                     case "#microsoft.graph.security.msdeGeneralSettingsAuditRecord":
                         return NewMsdeGeneralSettingsAuditRecord(), nil
                     case "#microsoft.graph.security.msdeIndicatorsSettingsAuditRecord":
@@ -359,30 +418,56 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewMultiStageDispositionAuditRecord(), nil
                     case "#microsoft.graph.security.myAnalyticsSettingsAuditRecord":
                         return NewMyAnalyticsSettingsAuditRecord(), nil
+                    case "#microsoft.graph.security.noisyAlertPolicyAuditRecord":
+                        return NewNoisyAlertPolicyAuditRecord(), nil
                     case "#microsoft.graph.security.officeNativeAuditRecord":
                         return NewOfficeNativeAuditRecord(), nil
                     case "#microsoft.graph.security.omePortalAuditRecord":
                         return NewOmePortalAuditRecord(), nil
+                    case "#microsoft.graph.security.onDemandSharePointClassificationAuditRecord":
+                        return NewOnDemandSharePointClassificationAuditRecord(), nil
                     case "#microsoft.graph.security.oneDriveAuditRecord":
                         return NewOneDriveAuditRecord(), nil
-                    case "#microsoft.graph.security.onPremisesFileShareScannerDlpAuditRecord":
-                        return NewOnPremisesFileShareScannerDlpAuditRecord(), nil
-                    case "#microsoft.graph.security.onPremisesScannerDlpAuditRecord":
-                        return NewOnPremisesScannerDlpAuditRecord(), nil
-                    case "#microsoft.graph.security.onPremisesSharePointScannerDlpAuditRecord":
-                        return NewOnPremisesSharePointScannerDlpAuditRecord(), nil
+                    case "#microsoft.graph.security.onPremisesFileShareScannerDLPAuditRecord":
+                        return NewOnPremisesFileShareScannerDLPAuditRecord(), nil
+                    case "#microsoft.graph.security.onPremisesSharePointScannerDLPAuditRecord":
+                        return NewOnPremisesSharePointScannerDLPAuditRecord(), nil
+                    case "#microsoft.graph.security.organizationalDataInM365AuditRecord":
+                        return NewOrganizationalDataInM365AuditRecord(), nil
+                    case "#microsoft.graph.security.outlookCopilotAutomationAuditRecord":
+                        return NewOutlookCopilotAutomationAuditRecord(), nil
                     case "#microsoft.graph.security.owaGetAccessTokenForResourceAuditRecord":
                         return NewOwaGetAccessTokenForResourceAuditRecord(), nil
+                    case "#microsoft.graph.security.p4aiAssessmentCategoryRecord":
+                        return NewP4aiAssessmentCategoryRecord(), nil
+                    case "#microsoft.graph.security.p4aiAssessmentFabricScannerRecord":
+                        return NewP4aiAssessmentFabricScannerRecord(), nil
+                    case "#microsoft.graph.security.p4aiAssessmentLocationResultRecord":
+                        return NewP4aiAssessmentLocationResultRecord(), nil
+                    case "#microsoft.graph.security.p4aiAssessmentRecord":
+                        return NewP4aiAssessmentRecord(), nil
                     case "#microsoft.graph.security.peopleAdminSettingsAuditRecord":
                         return NewPeopleAdminSettingsAuditRecord(), nil
                     case "#microsoft.graph.security.physicalBadgingSignalAuditRecord":
                         return NewPhysicalBadgingSignalAuditRecord(), nil
+                    case "#microsoft.graph.security.placesDirectoryAuditRecord":
+                        return NewPlacesDirectoryAuditRecord(), nil
+                    case "#microsoft.graph.security.plannerChatMessageAuditRecord":
+                        return NewPlannerChatMessageAuditRecord(), nil
+                    case "#microsoft.graph.security.plannerChatMessageListAuditRecord":
+                        return NewPlannerChatMessageListAuditRecord(), nil
                     case "#microsoft.graph.security.plannerCopyPlanAuditRecord":
                         return NewPlannerCopyPlanAuditRecord(), nil
+                    case "#microsoft.graph.security.plannerGoalAuditRecord":
+                        return NewPlannerGoalAuditRecord(), nil
+                    case "#microsoft.graph.security.plannerGoalListAuditRecord":
+                        return NewPlannerGoalListAuditRecord(), nil
                     case "#microsoft.graph.security.plannerPlanAuditRecord":
                         return NewPlannerPlanAuditRecord(), nil
                     case "#microsoft.graph.security.plannerPlanListAuditRecord":
                         return NewPlannerPlanListAuditRecord(), nil
+                    case "#microsoft.graph.security.plannerPlanSensitivityLabelAuditRecord":
+                        return NewPlannerPlanSensitivityLabelAuditRecord(), nil
                     case "#microsoft.graph.security.plannerRosterAuditRecord":
                         return NewPlannerRosterAuditRecord(), nil
                     case "#microsoft.graph.security.plannerRosterSensitivityLabelAuditRecord":
@@ -393,16 +478,18 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewPlannerTaskListAuditRecord(), nil
                     case "#microsoft.graph.security.plannerTenantSettingsAuditRecord":
                         return NewPlannerTenantSettingsAuditRecord(), nil
+                    case "#microsoft.graph.security.policyConfigChangeAuditRecord":
+                        return NewPolicyConfigChangeAuditRecord(), nil
                     case "#microsoft.graph.security.powerAppsAuditAppRecord":
                         return NewPowerAppsAuditAppRecord(), nil
                     case "#microsoft.graph.security.powerAppsAuditPlanRecord":
                         return NewPowerAppsAuditPlanRecord(), nil
                     case "#microsoft.graph.security.powerAppsAuditResourceRecord":
                         return NewPowerAppsAuditResourceRecord(), nil
-                    case "#microsoft.graph.security.powerBiAuditRecord":
-                        return NewPowerBiAuditRecord(), nil
-                    case "#microsoft.graph.security.powerBiDlpAuditRecord":
-                        return NewPowerBiDlpAuditRecord(), nil
+                    case "#microsoft.graph.security.powerBIAuditRecord":
+                        return NewPowerBIAuditRecord(), nil
+                    case "#microsoft.graph.security.powerBIDlpAuditRecord":
+                        return NewPowerBIDlpAuditRecord(), nil
                     case "#microsoft.graph.security.powerPagesSiteAuditRecord":
                         return NewPowerPagesSiteAuditRecord(), nil
                     case "#microsoft.graph.security.powerPlatformAdminDlpAuditRecord":
@@ -417,6 +504,8 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewPowerPlatformLockboxResourceCommandAuditRecord(), nil
                     case "#microsoft.graph.security.powerPlatformServiceActivityAuditRecord":
                         return NewPowerPlatformServiceActivityAuditRecord(), nil
+                    case "#microsoft.graph.security.powerPlatformTenantIsolationRecord":
+                        return NewPowerPlatformTenantIsolationRecord(), nil
                     case "#microsoft.graph.security.privacyDataMatchAuditRecord":
                         return NewPrivacyDataMatchAuditRecord(), nil
                     case "#microsoft.graph.security.privacyDataMinimizationRecord":
@@ -431,8 +520,10 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewPrivacyRemediationActionRecord(), nil
                     case "#microsoft.graph.security.privacyRemediationRecord":
                         return NewPrivacyRemediationRecord(), nil
-                    case "#microsoft.graph.security.privacyTenantAuditHistoryRecord":
-                        return NewPrivacyTenantAuditHistoryRecord(), nil
+                    case "#microsoft.graph.security.privaPrivacyAssessmentOperationRecord":
+                        return NewPrivaPrivacyAssessmentOperationRecord(), nil
+                    case "#microsoft.graph.security.privaPrivacyConsentOperationRecord":
+                        return NewPrivaPrivacyConsentOperationRecord(), nil
                     case "#microsoft.graph.security.projectAuditRecord":
                         return NewProjectAuditRecord(), nil
                     case "#microsoft.graph.security.projectForTheWebAssignedToMeSettingsAuditRecord":
@@ -455,12 +546,28 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewPurviewInsiderRiskAlertsRecord(), nil
                     case "#microsoft.graph.security.purviewInsiderRiskCasesRecord":
                         return NewPurviewInsiderRiskCasesRecord(), nil
+                    case "#microsoft.graph.security.purviewMCRecommendationRecord":
+                        return NewPurviewMCRecommendationRecord(), nil
+                    case "#microsoft.graph.security.purviewPostureAgentAuditRecord":
+                        return NewPurviewPostureAgentAuditRecord(), nil
                     case "#microsoft.graph.security.quarantineAuditRecord":
                         return NewQuarantineAuditRecord(), nil
                     case "#microsoft.graph.security.recordsManagementAuditRecord":
                         return NewRecordsManagementAuditRecord(), nil
+                    case "#microsoft.graph.security.reportSubmission":
+                        return NewReportSubmission(), nil
+                    case "#microsoft.graph.security.reportSubmissionResultDetail":
+                        return NewReportSubmissionResultDetail(), nil
+                    case "#microsoft.graph.security.restrictedModeAuditRecord":
+                        return NewRestrictedModeAuditRecord(), nil
                     case "#microsoft.graph.security.retentionPolicyAuditRecord":
                         return NewRetentionPolicyAuditRecord(), nil
+                    case "#microsoft.graph.security.rtiOperationsAgentAuditRecord":
+                        return NewRtiOperationsAgentAuditRecord(), nil
+                    case "#microsoft.graph.security.sbpConfigurationEventRecord":
+                        return NewSbpConfigurationEventRecord(), nil
+                    case "#microsoft.graph.security.sbpUsageEventRecord":
+                        return NewSbpUsageEventRecord(), nil
                     case "#microsoft.graph.security.scoreEvidence":
                         return NewScoreEvidence(), nil
                     case "#microsoft.graph.security.scorePlatformGenericAuditRecord":
@@ -479,12 +586,40 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewSecurityComplianceRBACAuditRecord(), nil
                     case "#microsoft.graph.security.securityComplianceUserChangeAuditRecord":
                         return NewSecurityComplianceUserChangeAuditRecord(), nil
+                    case "#microsoft.graph.security.sensitiveInfoRemediationAgentDataRecord":
+                        return NewSensitiveInfoRemediationAgentDataRecord(), nil
+                    case "#microsoft.graph.security.sensitivityLabelActionAuditRecord":
+                        return NewSensitivityLabelActionAuditRecord(), nil
+                    case "#microsoft.graph.security.sensitivityLabeledFileActionAuditRecord":
+                        return NewSensitivityLabeledFileActionAuditRecord(), nil
+                    case "#microsoft.graph.security.sensitivityLabelPolicyMatchAuditRecord":
+                        return NewSensitivityLabelPolicyMatchAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelAIToolAuditRecord":
+                        return NewSentinelAIToolAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelGraphAuditRecord":
+                        return NewSentinelGraphAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelJobAuditRecord":
+                        return NewSentinelJobAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelKQLOnLakeAuditRecord":
+                        return NewSentinelKQLOnLakeAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelLakeDataOnboardingAuditRecord":
+                        return NewSentinelLakeDataOnboardingAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelLakeEncryptionAuditRecord":
+                        return NewSentinelLakeEncryptionAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelLakeOnboardingAuditRecord":
+                        return NewSentinelLakeOnboardingAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelNotebookOnLakeAuditRecord":
+                        return NewSentinelNotebookOnLakeAuditRecord(), nil
+                    case "#microsoft.graph.security.sentinelPackageAuditRecord":
+                        return NewSentinelPackageAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointAppPermissionOperationAuditRecord":
                         return NewSharePointAppPermissionOperationAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointAuditRecord":
                         return NewSharePointAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointCommentOperationAuditRecord":
                         return NewSharePointCommentOperationAuditRecord(), nil
+                    case "#microsoft.graph.security.sharePointContentSecurityPolicyAuditRecord":
+                        return NewSharePointContentSecurityPolicyAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointContentTypeOperationAuditRecord":
                         return NewSharePointContentTypeOperationAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointESignatureAuditRecord":
@@ -493,28 +628,34 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewSharePointFieldOperationAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointFileOperationAuditRecord":
                         return NewSharePointFileOperationAuditRecord(), nil
+                    case "#microsoft.graph.security.sharePointListItemOperationAuditRecord":
+                        return NewSharePointListItemOperationAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointListOperationAuditRecord":
                         return NewSharePointListOperationAuditRecord(), nil
                     case "#microsoft.graph.security.sharePointSharingOperationAuditRecord":
                         return NewSharePointSharingOperationAuditRecord(), nil
-                    case "#microsoft.graph.security.skypeForBusinessBaseAuditRecord":
-                        return NewSkypeForBusinessBaseAuditRecord(), nil
                     case "#microsoft.graph.security.skypeForBusinessCmdletsAuditRecord":
                         return NewSkypeForBusinessCmdletsAuditRecord(), nil
                     case "#microsoft.graph.security.skypeForBusinessPSTNUsageAuditRecord":
                         return NewSkypeForBusinessPSTNUsageAuditRecord(), nil
                     case "#microsoft.graph.security.skypeForBusinessUsersBlockedAuditRecord":
                         return NewSkypeForBusinessUsersBlockedAuditRecord(), nil
-                    case "#microsoft.graph.security.smsCreatePhoneNumberRecord":
-                        return NewSmsCreatePhoneNumberRecord(), nil
-                    case "#microsoft.graph.security.smsDeletePhoneNumberRecord":
-                        return NewSmsDeletePhoneNumberRecord(), nil
+                    case "#microsoft.graph.security.sonarDetonationContentMetadata":
+                        return NewSonarDetonationContentMetadata(), nil
                     case "#microsoft.graph.security.supervisoryReviewDayXInsightsAuditRecord":
                         return NewSupervisoryReviewDayXInsightsAuditRecord(), nil
                     case "#microsoft.graph.security.syntheticProbeAuditRecord":
                         return NewSyntheticProbeAuditRecord(), nil
+                    case "#microsoft.graph.security.teamCopilotInteractionAuditRecord":
+                        return NewTeamCopilotInteractionAuditRecord(), nil
                     case "#microsoft.graph.security.teamsEasyApprovalsAuditRecord":
                         return NewTeamsEasyApprovalsAuditRecord(), nil
+                    case "#microsoft.graph.security.teamsEvalDataHubAdminOperationAuditRecord":
+                        return NewTeamsEvalDataHubAdminOperationAuditRecord(), nil
+                    case "#microsoft.graph.security.teamsEvalDataHubDataAccessAuditRecord":
+                        return NewTeamsEvalDataHubDataAccessAuditRecord(), nil
+                    case "#microsoft.graph.security.teamsEvalDataHubPermissionChangeAuditRecord":
+                        return NewTeamsEvalDataHubPermissionChangeAuditRecord(), nil
                     case "#microsoft.graph.security.teamsHealthcareAuditRecord":
                         return NewTeamsHealthcareAuditRecord(), nil
                     case "#microsoft.graph.security.teamsUpdatesAuditRecord":
@@ -525,12 +666,18 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewThreatFinderAuditRecord(), nil
                     case "#microsoft.graph.security.threatIntelligenceAtpContentData":
                         return NewThreatIntelligenceAtpContentData(), nil
+                    case "#microsoft.graph.security.threatIntelligenceExportAuditRecord":
+                        return NewThreatIntelligenceExportAuditRecord(), nil
                     case "#microsoft.graph.security.threatIntelligenceMailData":
                         return NewThreatIntelligenceMailData(), nil
+                    case "#microsoft.graph.security.threatIntelligenceObjectAuditRecord":
+                        return NewThreatIntelligenceObjectAuditRecord(), nil
                     case "#microsoft.graph.security.threatIntelligenceUrlClickData":
                         return NewThreatIntelligenceUrlClickData(), nil
                     case "#microsoft.graph.security.todoAuditRecord":
                         return NewTodoAuditRecord(), nil
+                    case "#microsoft.graph.security.trainableClassifierAuditRecord":
+                        return NewTrainableClassifierAuditRecord(), nil
                     case "#microsoft.graph.security.uamOperationAuditRecord":
                         return NewUamOperationAuditRecord(), nil
                     case "#microsoft.graph.security.unifiedGroupAuditRecord":
@@ -539,8 +686,10 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewUnifiedSimulationMatchedItemAuditRecord(), nil
                     case "#microsoft.graph.security.unifiedSimulationSummaryAuditRecord":
                         return NewUnifiedSimulationSummaryAuditRecord(), nil
-                    case "#microsoft.graph.security.uploadCertificateRecord":
-                        return NewUploadCertificateRecord(), nil
+                    case "#microsoft.graph.security.universalPrintManagementAuditRecord":
+                        return NewUniversalPrintManagementAuditRecord(), nil
+                    case "#microsoft.graph.security.universalPrintPrintJobAuditRecord":
+                        return NewUniversalPrintPrintJobAuditRecord(), nil
                     case "#microsoft.graph.security.urbacAssignmentAuditRecord":
                         return NewUrbacAssignmentAuditRecord(), nil
                     case "#microsoft.graph.security.urbacEnableStateAuditRecord":
@@ -549,14 +698,46 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewUrbacRoleAuditRecord(), nil
                     case "#microsoft.graph.security.userTrainingAuditRecord":
                         return NewUserTrainingAuditRecord(), nil
-                    case "#microsoft.graph.security.vfamBasePolicyAuditRecord":
-                        return NewVfamBasePolicyAuditRecord(), nil
+                    case "#microsoft.graph.security.usxWorkspaceOnboardingAuditRecord":
+                        return NewUsxWorkspaceOnboardingAuditRecord(), nil
                     case "#microsoft.graph.security.vfamCreatePolicyAuditRecord":
                         return NewVfamCreatePolicyAuditRecord(), nil
                     case "#microsoft.graph.security.vfamDeletePolicyAuditRecord":
                         return NewVfamDeletePolicyAuditRecord(), nil
                     case "#microsoft.graph.security.vfamUpdatePolicyAuditRecord":
                         return NewVfamUpdatePolicyAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaAmplifyAuditRecord":
+                        return NewVivaAmplifyAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaEngageEventsAuditRecord":
+                        return NewVivaEngageEventsAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaEngageNetworkAssociationAuditRecord":
+                        return NewVivaEngageNetworkAssociationAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaEngageSegmentAuditRecord":
+                        return NewVivaEngageSegmentAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintAdvancedConfigurationAuditRecord":
+                        return NewVivaGlintAdvancedConfigurationAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintFeedbackProgramAuditRecord":
+                        return NewVivaGlintFeedbackProgramAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintOrganizationalDataAuditRecord":
+                        return NewVivaGlintOrganizationalDataAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintPulseProgramAuditRecord":
+                        return NewVivaGlintPulseProgramAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintPulseProgramRespondentRateAuditRecord":
+                        return NewVivaGlintPulseProgramRespondentRateAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintQuestionAuditRecord":
+                        return NewVivaGlintQuestionAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintRoleAuditRecord":
+                        return NewVivaGlintRoleAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintRubiconAuditRecord":
+                        return NewVivaGlintRubiconAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintSupportAccessAuditRecord":
+                        return NewVivaGlintSupportAccessAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintSystemAuditRecord":
+                        return NewVivaGlintSystemAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintUserAuditRecord":
+                        return NewVivaGlintUserAuditRecord(), nil
+                    case "#microsoft.graph.security.vivaGlintUserGroupAuditRecord":
+                        return NewVivaGlintUserGroupAuditRecord(), nil
                     case "#microsoft.graph.security.vivaGoalsAuditRecord":
                         return NewVivaGoalsAuditRecord(), nil
                     case "#microsoft.graph.security.vivaLearningAdminAuditRecord":
@@ -573,12 +754,16 @@ func CreateAuditDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                         return NewVivaPulseResponseAuditRecord(), nil
                     case "#microsoft.graph.security.wdatpAlertsAuditRecord":
                         return NewWdatpAlertsAuditRecord(), nil
+                    case "#microsoft.graph.security.webContentFilteringAuditRecord":
+                        return NewWebContentFilteringAuditRecord(), nil
                     case "#microsoft.graph.security.windows365CustomerLockboxAuditRecord":
                         return NewWindows365CustomerLockboxAuditRecord(), nil
                     case "#microsoft.graph.security.workplaceAnalyticsAuditRecord":
                         return NewWorkplaceAnalyticsAuditRecord(), nil
                     case "#microsoft.graph.security.yammerAuditRecord":
                         return NewYammerAuditRecord(), nil
+                    case "#microsoft.graph.security.yammerUserHidingAuditRecord":
+                        return NewYammerUserHidingAuditRecord(), nil
                 }
             }
         }

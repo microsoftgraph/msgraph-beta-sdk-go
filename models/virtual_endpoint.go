@@ -504,7 +504,7 @@ func (m *VirtualEndpoint) GetReport()(CloudPcReportable) {
     }
     return nil
 }
-// GetReports gets the reports property value. Cloud PC-related reports.
+// GetReports gets the reports property value. Cloud PC-related reports. Read-only.
 // returns a CloudPcReportsable when successful
 func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -893,7 +893,7 @@ func (m *VirtualEndpoint) SetReport(value CloudPcReportable)() {
         panic(err)
     }
 }
-// SetReports sets the reports property value. Cloud PC-related reports.
+// SetReports sets the reports property value. Cloud PC-related reports. Read-only.
 func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {

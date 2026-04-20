@@ -49,6 +49,18 @@ func (m *Win32MobileAppCatalogPackage) GetBranchDisplayName()(*string) {
     }
     return nil
 }
+// GetBranchId gets the branchId property value. The identifier of a specific branch irrespective of version, or other attributes. This id is associated with the branchDisplayName. Read-only. This property is read-only.
+// returns a *string when successful
+func (m *Win32MobileAppCatalogPackage) GetBranchId()(*string) {
+    val, err := m.GetBackingStore().Get("branchId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32MobileAppCatalogPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -70,6 +82,16 @@ func (m *Win32MobileAppCatalogPackage) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetBranchDisplayName(val)
+        }
+        return nil
+    }
+    res["branchId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBranchId(val)
         }
         return nil
     }
@@ -154,6 +176,13 @@ func (m *Win32MobileAppCatalogPackage) SetBranchDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetBranchId sets the branchId property value. The identifier of a specific branch irrespective of version, or other attributes. This id is associated with the branchDisplayName. Read-only. This property is read-only.
+func (m *Win32MobileAppCatalogPackage) SetBranchId(value *string)() {
+    err := m.GetBackingStore().Set("branchId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLocales sets the locales property value. One or more locale(s) supported by the branch. Value is a two-letter ISO 639 language tags with optional two-letter subtags (example: en-US, ko, de, de-DE), or mul to indicate multi-language. Read-only. This property is read-only.
 func (m *Win32MobileAppCatalogPackage) SetLocales(value []string)() {
     err := m.GetBackingStore().Set("locales", value)
@@ -173,10 +202,12 @@ type Win32MobileAppCatalogPackageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicableArchitectures()(*WindowsArchitecture)
     GetBranchDisplayName()(*string)
+    GetBranchId()(*string)
     GetLocales()([]string)
     GetPackageAutoUpdateCapable()(*bool)
     SetApplicableArchitectures(value *WindowsArchitecture)()
     SetBranchDisplayName(value *string)()
+    SetBranchId(value *string)()
     SetLocales(value []string)()
     SetPackageAutoUpdateCapable(value *bool)()
 }

@@ -24,9 +24,9 @@ type ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilderDeleteRequestConfig
 // ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilderGetQueryParameters the layout of the content in a given SharePoint page template, including horizontal sections and vertical sections.
 type ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderDeleteRequest
 // DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters get the details of an async, long-running operation on a Microsoft Teams-enabled device.
 type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration struct {

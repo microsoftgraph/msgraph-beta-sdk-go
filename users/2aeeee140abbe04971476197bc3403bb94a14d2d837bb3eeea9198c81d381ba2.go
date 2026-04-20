@@ -24,9 +24,9 @@ type ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicy
 // ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetQueryParameters get dataLossPreventionPolicies from users
 type ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration struct {
