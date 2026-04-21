@@ -23,7 +23,7 @@ func NewTeamworkSectionItem()(*TeamworkSectionItem) {
 func CreateTeamworkSectionItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkSectionItem(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the item was added to the section. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *TeamworkSectionItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -71,7 +71,7 @@ func (m *TeamworkSectionItem) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetItemType gets the itemType property value. The itemType property
+// GetItemType gets the itemType property value. The type of the item. The possible values are: chat, channel, meeting, community, unknownFutureValue. Read-only.
 // returns a *SectionItemType when successful
 func (m *TeamworkSectionItem) GetItemType()(*SectionItemType) {
     val, err := m.GetBackingStore().Get("itemType")
@@ -83,7 +83,7 @@ func (m *TeamworkSectionItem) GetItemType()(*SectionItemType) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the item was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *TeamworkSectionItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -122,21 +122,21 @@ func (m *TeamworkSectionItem) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the item was added to the section. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *TeamworkSectionItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItemType sets the itemType property value. The itemType property
+// SetItemType sets the itemType property value. The type of the item. The possible values are: chat, channel, meeting, community, unknownFutureValue. Read-only.
 func (m *TeamworkSectionItem) SetItemType(value *SectionItemType)() {
     err := m.GetBackingStore().Set("itemType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the item was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *TeamworkSectionItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
