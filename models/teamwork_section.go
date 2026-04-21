@@ -23,7 +23,7 @@ func NewTeamworkSection()(*TeamworkSection) {
 func CreateTeamworkSectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkSection(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the section was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *TeamworkSection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -35,7 +35,7 @@ func (m *TeamworkSection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetDisplayIcon gets the displayIcon property value. The displayIcon property
+// GetDisplayIcon gets the displayIcon property value. The icon displayed for the section.
 // returns a SectionDisplayIconable when successful
 func (m *TeamworkSection) GetDisplayIcon()(SectionDisplayIconable) {
     val, err := m.GetBackingStore().Get("displayIcon")
@@ -47,7 +47,7 @@ func (m *TeamworkSection) GetDisplayIcon()(SectionDisplayIconable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the section. Required. Maximum length is 50 characters. Display names are case-sensitive and must be unique within a user's sections. The following names are reserved for system-defined sections and can't be used when creating a user-defined section: RecentChats, QuickViews, TeamsAndChannels, MutedChats, MeetingChats, EngageCommunities.
 // returns a *string when successful
 func (m *TeamworkSection) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -161,7 +161,7 @@ func (m *TeamworkSection) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetIsExpanded gets the isExpanded property value. The isExpanded property
+// GetIsExpanded gets the isExpanded property value. Indicates whether the section is expanded in the user interface. The default value is true.
 // returns a *bool when successful
 func (m *TeamworkSection) GetIsExpanded()(*bool) {
     val, err := m.GetBackingStore().Get("isExpanded")
@@ -173,7 +173,7 @@ func (m *TeamworkSection) GetIsExpanded()(*bool) {
     }
     return nil
 }
-// GetIsHierarchicalViewEnabled gets the isHierarchicalViewEnabled property value. The isHierarchicalViewEnabled property
+// GetIsHierarchicalViewEnabled gets the isHierarchicalViewEnabled property value. Indicates whether the hierarchical view is enabled for the section. Read-only.
 // returns a *bool when successful
 func (m *TeamworkSection) GetIsHierarchicalViewEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isHierarchicalViewEnabled")
@@ -185,7 +185,7 @@ func (m *TeamworkSection) GetIsHierarchicalViewEnabled()(*bool) {
     }
     return nil
 }
-// GetItems gets the items property value. The items property
+// GetItems gets the items property value. The items (chats, channels, meetings, or communities) organized within the section.
 // returns a []TeamworkSectionItemable when successful
 func (m *TeamworkSection) GetItems()([]TeamworkSectionItemable) {
     val, err := m.GetBackingStore().Get("items")
@@ -197,7 +197,7 @@ func (m *TeamworkSection) GetItems()([]TeamworkSectionItemable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date and time when the section was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *TeamworkSection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -209,7 +209,7 @@ func (m *TeamworkSection) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSectionType gets the sectionType property value. The sectionType property
+// GetSectionType gets the sectionType property value. The type of the section. The possible values are: userDefined, systemDefined, unknownFutureValue. Read-only.
 // returns a *SectionType when successful
 func (m *TeamworkSection) GetSectionType()(*SectionType) {
     val, err := m.GetBackingStore().Get("sectionType")
@@ -221,7 +221,7 @@ func (m *TeamworkSection) GetSectionType()(*SectionType) {
     }
     return nil
 }
-// GetSortType gets the sortType property value. The sortType property
+// GetSortType gets the sortType property value. The sort order of items in the section. The valid values depend on the sectionType. The possible values are: mostRecent, unreadThenMostRecent, nameAlphabetical, userDefinedCustomOrder, unknownFutureValue.
 // returns a *SectionSortType when successful
 func (m *TeamworkSection) GetSortType()(*SectionSortType) {
     val, err := m.GetBackingStore().Get("sortType")
@@ -303,63 +303,63 @@ func (m *TeamworkSection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the section was created. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *TeamworkSection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayIcon sets the displayIcon property value. The displayIcon property
+// SetDisplayIcon sets the displayIcon property value. The icon displayed for the section.
 func (m *TeamworkSection) SetDisplayIcon(value SectionDisplayIconable)() {
     err := m.GetBackingStore().Set("displayIcon", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the section. Required. Maximum length is 50 characters. Display names are case-sensitive and must be unique within a user's sections. The following names are reserved for system-defined sections and can't be used when creating a user-defined section: RecentChats, QuickViews, TeamsAndChannels, MutedChats, MeetingChats, EngageCommunities.
 func (m *TeamworkSection) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExpanded sets the isExpanded property value. The isExpanded property
+// SetIsExpanded sets the isExpanded property value. Indicates whether the section is expanded in the user interface. The default value is true.
 func (m *TeamworkSection) SetIsExpanded(value *bool)() {
     err := m.GetBackingStore().Set("isExpanded", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsHierarchicalViewEnabled sets the isHierarchicalViewEnabled property value. The isHierarchicalViewEnabled property
+// SetIsHierarchicalViewEnabled sets the isHierarchicalViewEnabled property value. Indicates whether the hierarchical view is enabled for the section. Read-only.
 func (m *TeamworkSection) SetIsHierarchicalViewEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isHierarchicalViewEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItems sets the items property value. The items property
+// SetItems sets the items property value. The items (chats, channels, meetings, or communities) organized within the section.
 func (m *TeamworkSection) SetItems(value []TeamworkSectionItemable)() {
     err := m.GetBackingStore().Set("items", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date and time when the section was last modified. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *TeamworkSection) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSectionType sets the sectionType property value. The sectionType property
+// SetSectionType sets the sectionType property value. The type of the section. The possible values are: userDefined, systemDefined, unknownFutureValue. Read-only.
 func (m *TeamworkSection) SetSectionType(value *SectionType)() {
     err := m.GetBackingStore().Set("sectionType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSortType sets the sortType property value. The sortType property
+// SetSortType sets the sortType property value. The sort order of items in the section. The valid values depend on the sectionType. The possible values are: mostRecent, unreadThenMostRecent, nameAlphabetical, userDefinedCustomOrder, unknownFutureValue.
 func (m *TeamworkSection) SetSortType(value *SectionSortType)() {
     err := m.GetBackingStore().Set("sortType", value)
     if err != nil {

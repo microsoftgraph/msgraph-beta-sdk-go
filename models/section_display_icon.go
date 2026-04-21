@@ -43,7 +43,7 @@ func (m *SectionDisplayIcon) GetAdditionalData()(map[string]any) {
 func (m *SectionDisplayIcon) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentUrl gets the contentUrl property value. The contentUrl property
+// GetContentUrl gets the contentUrl property value. The URL to a custom icon image. Applicable when iconType is custom.
 // returns a *string when successful
 func (m *SectionDisplayIcon) GetContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentUrl")
@@ -55,7 +55,7 @@ func (m *SectionDisplayIcon) GetContentUrl()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The human-readable name of the icon.
 // returns a *string when successful
 func (m *SectionDisplayIcon) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -123,7 +123,7 @@ func (m *SectionDisplayIcon) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIconType gets the iconType property value. The iconType property
+// GetIconType gets the iconType property value. The type of icon. Use an emoji character such as 👍 for an emoji icon, or custom for a custom image icon.
 // returns a *string when successful
 func (m *SectionDisplayIcon) GetIconType()(*string) {
     val, err := m.GetBackingStore().Get("iconType")
@@ -147,7 +147,7 @@ func (m *SectionDisplayIcon) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSkinTone gets the skinTone property value. The skinTone property
+// GetSkinTone gets the skinTone property value. The skin tone variant applied to the icon. Read-only. The possible values are: light, mediumLight, medium, mediumDark, dark, unknownFutureValue.
 // returns a *SectionIconSkinTone when successful
 func (m *SectionDisplayIcon) GetSkinTone()(*SectionIconSkinTone) {
     val, err := m.GetBackingStore().Get("skinTone")
@@ -211,21 +211,21 @@ func (m *SectionDisplayIcon) SetAdditionalData(value map[string]any)() {
 func (m *SectionDisplayIcon) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentUrl sets the contentUrl property value. The contentUrl property
+// SetContentUrl sets the contentUrl property value. The URL to a custom icon image. Applicable when iconType is custom.
 func (m *SectionDisplayIcon) SetContentUrl(value *string)() {
     err := m.GetBackingStore().Set("contentUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The human-readable name of the icon.
 func (m *SectionDisplayIcon) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIconType sets the iconType property value. The iconType property
+// SetIconType sets the iconType property value. The type of icon. Use an emoji character such as 👍 for an emoji icon, or custom for a custom image icon.
 func (m *SectionDisplayIcon) SetIconType(value *string)() {
     err := m.GetBackingStore().Set("iconType", value)
     if err != nil {
@@ -239,7 +239,7 @@ func (m *SectionDisplayIcon) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSkinTone sets the skinTone property value. The skinTone property
+// SetSkinTone sets the skinTone property value. The skin tone variant applied to the icon. Read-only. The possible values are: light, mediumLight, medium, mediumDark, dark, unknownFutureValue.
 func (m *SectionDisplayIcon) SetSkinTone(value *SectionIconSkinTone)() {
     err := m.GetBackingStore().Set("skinTone", value)
     if err != nil {

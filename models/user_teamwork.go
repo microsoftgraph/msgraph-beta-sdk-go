@@ -144,7 +144,7 @@ func (m *UserTeamwork) GetRegion()(*string) {
     }
     return nil
 }
-// GetSections gets the sections property value. User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// GetSections gets the sections property value. The sections in the user's chat list.
 // returns a []TeamworkSectionable when successful
 func (m *UserTeamwork) GetSections()([]TeamworkSectionable) {
     val, err := m.GetBackingStore().Get("sections")
@@ -240,7 +240,7 @@ func (m *UserTeamwork) SetRegion(value *string)() {
         panic(err)
     }
 }
-// SetSections sets the sections property value. User's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// SetSections sets the sections property value. The sections in the user's chat list.
 func (m *UserTeamwork) SetSections(value []TeamworkSectionable)() {
     err := m.GetBackingStore().Set("sections", value)
     if err != nil {

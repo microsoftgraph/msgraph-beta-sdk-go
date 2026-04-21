@@ -21,7 +21,7 @@ type ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderGetQueryParameters get items from users
+// ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderGetQueryParameters the items (chats, channels, meetings, or communities) organized within the section.
 type ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,8 +57,11 @@ func NewItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property items for users
+// Delete remove an item from a user-defined section in a user's teamwork. This API doesn't delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworksectionitem-delete?view=graph-rest-beta
 func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) Del
     }
     return nil
 }
-// Get get items from users
+// Get the items (chats, channels, meetings, or communities) organized within the section.
 // returns a TeamworkSectionItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionItemable, error) {
@@ -118,7 +121,7 @@ func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) Pat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionItemable), nil
 }
-// ToDeleteRequestInformation delete navigation property items for users
+// ToDeleteRequestInformation remove an item from a user-defined section in a user's teamwork. This API doesn't delete the underlying chat, channel, meeting, or community; it only removes the item from the user-defined section. The item is automatically moved back to its default system-defined section.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +132,7 @@ func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get items from users
+// ToGetRequestInformation the items (chats, channels, meetings, or communities) organized within the section.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkSectionsItemItemsTeamworkSectionItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

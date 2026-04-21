@@ -21,7 +21,7 @@ type ItemTeamworkSectionsTeamworkSectionItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamworkSectionsTeamworkSectionItemRequestBuilderGetQueryParameters user's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// ItemTeamworkSectionsTeamworkSectionItemRequestBuilderGetQueryParameters read the properties of a section in a user's teamwork.
 type ItemTeamworkSectionsTeamworkSectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,8 +57,11 @@ func NewItemTeamworkSectionsTeamworkSectionItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamworkSectionsTeamworkSectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property sections for users
+// Delete delete a user-defined section from a user's teamwork. System-defined sections can't be deleted.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworksection-delete?view=graph-rest-beta
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get user's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// Get read the properties of a section in a user's teamwork.
 // returns a TeamworkSectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworksection-get?view=graph-rest-beta
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,9 +104,12 @@ func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Get(ctx context.
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Items()(*ItemTeamworkSectionsItemItemsRequestBuilder) {
     return NewItemTeamworkSectionsItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property sections in users
+// Patch update the properties of a section in a user's teamwork. For system-defined sections, only the sortType property can be updated.
 // returns a TeamworkSectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworksection-update?view=graph-rest-beta
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) Patch(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable), nil
 }
-// ToDeleteRequestInformation delete navigation property sections for users
+// ToDeleteRequestInformation delete a user-defined section from a user's teamwork. System-defined sections can't be deleted.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation user's teamwork sections for organizing chats and channels. The collection response may include @microsoft.graph.sectionsOrder and @microsoft.graph.sectionsVersion instance annotations for ordering and optimistic concurrency control.
+// ToGetRequestInformation read the properties of a section in a user's teamwork.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property sections in users
+// ToPatchRequestInformation update the properties of a section in a user's teamwork. For system-defined sections, only the sortType property can be updated.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsTeamworkSectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable, requestConfiguration *ItemTeamworkSectionsTeamworkSectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
