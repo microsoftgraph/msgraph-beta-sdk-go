@@ -24,7 +24,7 @@ func NewAccessReviewInstanceDecisionItemCustomDataProvidedResource()(*AccessRevi
 func CreateAccessReviewInstanceDecisionItemCustomDataProvidedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemCustomDataProvidedResource(), nil
 }
-// GetCustomData gets the customData property value. The customData property
+// GetCustomData gets the customData property value. Custom data to include with the decision.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetCustomData()(*string) {
     val, err := m.GetBackingStore().Get("customData")
@@ -72,7 +72,7 @@ func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetFieldDes
     }
     return res
 }
-// GetScopeDisplayName gets the scopeDisplayName property value. The scopeDisplayName property
+// GetScopeDisplayName gets the scopeDisplayName property value. The name of the scope for the decision.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetScopeDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("scopeDisplayName")
@@ -84,7 +84,7 @@ func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetScopeDis
     }
     return nil
 }
-// GetScopeId gets the scopeId property value. The scopeId property
+// GetScopeId gets the scopeId property value. The id of the scope for the decision.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetScopeId()(*string) {
     val, err := m.GetBackingStore().Get("scopeId")
@@ -122,21 +122,21 @@ func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) Serialize(w
     }
     return nil
 }
-// SetCustomData sets the customData property value. The customData property
+// SetCustomData sets the customData property value. Custom data to include with the decision.
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetCustomData(value *string)() {
     err := m.GetBackingStore().Set("customData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeDisplayName sets the scopeDisplayName property value. The scopeDisplayName property
+// SetScopeDisplayName sets the scopeDisplayName property value. The name of the scope for the decision.
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetScopeDisplayName(value *string)() {
     err := m.GetBackingStore().Set("scopeDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeId sets the scopeId property value. The scopeId property
+// SetScopeId sets the scopeId property value. The id of the scope for the decision.
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetScopeId(value *string)() {
     err := m.GetBackingStore().Set("scopeId", value)
     if err != nil {

@@ -21,7 +21,7 @@ type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUpl
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -74,13 +74,15 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return nil
 }
-// Get read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-get?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,13 +100,10 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
-// Patch update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
+// Patch update the navigation property uploadSessions in identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-update?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +133,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// ToGetRequestInformation get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +148,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
+// ToPatchRequestInformation update the navigation property uploadSessions in identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

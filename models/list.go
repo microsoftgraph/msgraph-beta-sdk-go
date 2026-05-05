@@ -262,7 +262,7 @@ func (m *List) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetItemCount gets the itemCount property value. The number of items in the list. Read-only.
+// GetItemCount gets the itemCount property value. The total count of items in the list. Read-only.
 // returns a *int32 when successful
 func (m *List) GetItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("itemCount")
@@ -521,7 +521,7 @@ func (m *List) SetDrive(value Driveable)() {
         panic(err)
     }
 }
-// SetItemCount sets the itemCount property value. The number of items in the list. Read-only.
+// SetItemCount sets the itemCount property value. The total count of items in the list. Read-only.
 func (m *List) SetItemCount(value *int32)() {
     err := m.GetBackingStore().Set("itemCount", value)
     if err != nil {

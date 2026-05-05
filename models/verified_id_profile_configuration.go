@@ -79,6 +79,18 @@ func (m *VerifiedIdProfileConfiguration) GetClaimBindingSource()(*ClaimBindingSo
     }
     return nil
 }
+// GetClaimValidation gets the claimValidation property value. The claimValidation property
+// returns a ClaimValidationable when successful
+func (m *VerifiedIdProfileConfiguration) GetClaimValidation()(ClaimValidationable) {
+    val, err := m.GetBackingStore().Get("claimValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ClaimValidationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VerifiedIdProfileConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -116,6 +128,16 @@ func (m *VerifiedIdProfileConfiguration) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetClaimBindingSource(val.(*ClaimBindingSource))
+        }
+        return nil
+    }
+    res["claimValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateClaimValidationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClaimValidation(val.(ClaimValidationable))
         }
         return nil
     }
@@ -193,6 +215,12 @@ func (m *VerifiedIdProfileConfiguration) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err := writer.WriteObjectValue("claimValidation", m.GetClaimValidation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -244,6 +272,13 @@ func (m *VerifiedIdProfileConfiguration) SetClaimBindingSource(value *ClaimBindi
         panic(err)
     }
 }
+// SetClaimValidation sets the claimValidation property value. The claimValidation property
+func (m *VerifiedIdProfileConfiguration) SetClaimValidation(value ClaimValidationable)() {
+    err := m.GetBackingStore().Set("claimValidation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VerifiedIdProfileConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -266,12 +301,14 @@ type VerifiedIdProfileConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetClaimBindings()([]ClaimBindingable)
     GetClaimBindingSource()(*ClaimBindingSource)
+    GetClaimValidation()(ClaimValidationable)
     GetOdataType()(*string)
     GetTypeEscaped()(*string)
     SetAcceptedIssuer(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClaimBindings(value []ClaimBindingable)()
     SetClaimBindingSource(value *ClaimBindingSource)()
+    SetClaimValidation(value ClaimValidationable)()
     SetOdataType(value *string)()
     SetTypeEscaped(value *string)()
 }

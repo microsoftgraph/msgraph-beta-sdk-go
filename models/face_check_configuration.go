@@ -103,7 +103,7 @@ func (m *FaceCheckConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourcePhotoClaimName gets the sourcePhotoClaimName property value. The sourcePhotoClaimName property
+// GetSourcePhotoClaimName gets the sourcePhotoClaimName property value. Source of photo to validate Face Check against. Currently must always be portrait
 // returns a *string when successful
 func (m *FaceCheckConfiguration) GetSourcePhotoClaimName()(*string) {
     val, err := m.GetBackingStore().Get("sourcePhotoClaimName")
@@ -168,7 +168,7 @@ func (m *FaceCheckConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourcePhotoClaimName sets the sourcePhotoClaimName property value. The sourcePhotoClaimName property
+// SetSourcePhotoClaimName sets the sourcePhotoClaimName property value. Source of photo to validate Face Check against. Currently must always be portrait
 func (m *FaceCheckConfiguration) SetSourcePhotoClaimName(value *string)() {
     err := m.GetBackingStore().Set("sourcePhotoClaimName", value)
     if err != nil {

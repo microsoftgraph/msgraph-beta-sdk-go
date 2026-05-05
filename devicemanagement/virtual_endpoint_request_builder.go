@@ -59,6 +59,11 @@ func (m *VirtualEndpointRequestBuilder) BulkActions()(*VirtualEndpointBulkAction
 func (m *VirtualEndpointRequestBuilder) CloudApps()(*VirtualEndpointCloudAppsRequestBuilder) {
     return NewVirtualEndpointCloudAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudPcPools provides operations to manage the cloudPcPools property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointCloudPcPoolsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) CloudPcPools()(*VirtualEndpointCloudPcPoolsRequestBuilder) {
+    return NewVirtualEndpointCloudPcPoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointCloudPCsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {

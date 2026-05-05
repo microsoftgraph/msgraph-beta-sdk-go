@@ -34,7 +34,7 @@ func NewAlerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewAlerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post move one or more alert resources to an existing incident.
+// Post move one or more alert resources to a new or existing incident.
 // returns a MergeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,7 +57,7 @@ func (m *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder) Post(ctx conte
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.MergeResponseable), nil
 }
-// ToPostRequestInformation move one or more alert resources to an existing incident.
+// ToPostRequestInformation move one or more alert resources to a new or existing incident.
 // returns a *RequestInformation when successful
 func (m *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder) ToPostRequestInformation(ctx context.Context, body Alerts_v2MicrosoftGraphSecurityMoveAlertsMoveAlertsPostRequestBodyable, requestConfiguration *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -74,6 +74,11 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return nil
 }
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
