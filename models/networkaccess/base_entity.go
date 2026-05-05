@@ -37,6 +37,8 @@ func CreateBaseEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewFilteringProfile(), nil
                     case "#microsoft.graph.networkaccess.forwardingProfile":
                         return NewForwardingProfile(), nil
+                    case "#microsoft.graph.networkaccess.forwardingProfileBase":
+                        return NewForwardingProfileBase(), nil
                     case "#microsoft.graph.networkaccess.profile":
                         return NewProfile(), nil
                     case "#microsoft.graph.networkaccess.remoteNetwork":

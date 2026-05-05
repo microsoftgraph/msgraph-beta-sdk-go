@@ -96,6 +96,11 @@ func (m *CrossTenantAccessPolicyDefaultRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyConfigurationDefaultable), nil
 }
+// M365Capabilities provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationDefault entity.
+// returns a *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder when successful
+func (m *CrossTenantAccessPolicyDefaultRequestBuilder) M365Capabilities()(*CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) {
+    return NewCrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the default configuration of a cross-tenant access policy.
 // returns a CrossTenantAccessPolicyConfigurationDefaultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

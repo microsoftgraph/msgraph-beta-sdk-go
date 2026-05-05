@@ -33,7 +33,7 @@ func NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
+// Post update the Active Directory domain password for a successful cloudPcOnPremisesConnection. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBu
     }
     return nil
 }
-// ToPostRequestInformation update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
+// ToPostRequestInformation update the Active Directory domain password for a successful cloudPcOnPremisesConnection. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -14,7 +14,7 @@ import (
 type CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
+// CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters get a list of the customDataProvidedResourceUploadSession objects and their properties.
 type CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -80,10 +80,13 @@ func NewCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder(rawUr
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Count()(*CatalogsItemAccessPackageResourcesItemUploadSessionsCountRequestBuilder) {
     return NewCatalogsItemAccessPackageResourcesItemUploadSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get uploadSessions from identityGovernance
+// Get get a list of the customDataProvidedResourceUploadSession objects and their properties.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageresource-list-uploadsessions?view=graph-rest-beta
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,10 +104,13 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Get
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionCollectionResponseable), nil
 }
-// Post create new navigation property to uploadSessions for identityGovernance
+// Post create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +128,7 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Pos
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
-// ToGetRequestInformation get uploadSessions from identityGovernance
+// ToGetRequestInformation get a list of the customDataProvidedResourceUploadSession objects and their properties.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -137,7 +143,7 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to uploadSessions for identityGovernance
+// ToPostRequestInformation create a customDataProvidedResourceUploadSession object. Only one upload session is allowed per reference instance (for example, access review instance) and customDataProvidedResource pair. Once you create an upload session, upload files, and complete the session, the data is processed and you cannot create another upload session for that same pair. If you encounter errors with files uploaded or need to start fresh, you can delete the active upload session to create a new one.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

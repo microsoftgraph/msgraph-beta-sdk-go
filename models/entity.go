@@ -705,6 +705,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudFlareWebApplicationFirewallProvider(), nil
                     case "#microsoft.graph.cloudPC":
                         return NewCloudPC(), nil
+                    case "#microsoft.graph.cloudPcAgentPool":
+                        return NewCloudPcAgentPool(), nil
+                    case "#microsoft.graph.cloudPcAgentPoolUserAssignment":
+                        return NewCloudPcAgentPoolUserAssignment(), nil
                     case "#microsoft.graph.cloudPcAuditEvent":
                         return NewCloudPcAuditEvent(), nil
                     case "#microsoft.graph.cloudPcBulkAction":
@@ -763,6 +767,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcOnPremisesConnection(), nil
                     case "#microsoft.graph.cloudPcOrganizationSettings":
                         return NewCloudPcOrganizationSettings(), nil
+                    case "#microsoft.graph.cloudPcPool":
+                        return NewCloudPcPool(), nil
+                    case "#microsoft.graph.cloudPcPoolAssignment":
+                        return NewCloudPcPoolAssignment(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicy":
                         return NewCloudPcProvisioningPolicy(), nil
                     case "#microsoft.graph.cloudPcProvisioningPolicyAssignment":
@@ -893,10 +901,32 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
                         return NewCrossTenantAccessPolicyConfigurationDefault(), nil
+                    case "#microsoft.graph.crossTenantCalendarAvailabilityBasic":
+                        return NewCrossTenantCalendarAvailabilityBasic(), nil
+                    case "#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails":
+                        return NewCrossTenantCalendarAvailabilityLimitedDetails(), nil
+                    case "#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail":
+                        return NewCrossTenantCalendarSharingFreeBusyDetail(), nil
+                    case "#microsoft.graph.crossTenantCalendarSharingFreeBusyReviewer":
+                        return NewCrossTenantCalendarSharingFreeBusyReviewer(), nil
+                    case "#microsoft.graph.crossTenantCalendarSharingFreeBusySimple":
+                        return NewCrossTenantCalendarSharingFreeBusySimple(), nil
+                    case "#microsoft.graph.crossTenantMailTipsAll":
+                        return NewCrossTenantMailTipsAll(), nil
+                    case "#microsoft.graph.crossTenantMailTipsLimited":
+                        return NewCrossTenantMailTipsLimited(), nil
+                    case "#microsoft.graph.crossTenantMigration":
+                        return NewCrossTenantMigration(), nil
                     case "#microsoft.graph.crossTenantMigrationJob":
                         return NewCrossTenantMigrationJob(), nil
                     case "#microsoft.graph.crossTenantMigrationTask":
                         return NewCrossTenantMigrationTask(), nil
+                    case "#microsoft.graph.crossTenantOpenProfileCard":
+                        return NewCrossTenantOpenProfileCard(), nil
+                    case "#microsoft.graph.crossTenantPlacesDeskBooking":
+                        return NewCrossTenantPlacesDeskBooking(), nil
+                    case "#microsoft.graph.crossTenantPlacesRoomBooking":
+                        return NewCrossTenantPlacesRoomBooking(), nil
                     case "#microsoft.graph.customAccessPackageWorkflowExtension":
                         return NewCustomAccessPackageWorkflowExtension(), nil
                     case "#microsoft.graph.customAppScope":
@@ -1917,6 +1947,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewLookupResultRow(), nil
                     case "#microsoft.graph.m365AppsInstallationOptions":
                         return NewM365AppsInstallationOptions(), nil
+                    case "#microsoft.graph.m365CapabilityBase":
+                        return NewM365CapabilityBase(), nil
                     case "#microsoft.graph.macOSCertificateProfileBase":
                         return NewMacOSCertificateProfileBase(), nil
                     case "#microsoft.graph.macOSCompliancePolicy":
@@ -2333,6 +2365,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnTokenIssuanceStartListener(), nil
                     case "#microsoft.graph.onUserCreateStartListener":
                         return NewOnUserCreateStartListener(), nil
+                    case "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension":
+                        return NewOnVerifiedIdClaimValidationCustomExtension(), nil
+                    case "#microsoft.graph.onVerifiedIdClaimValidationListener":
+                        return NewOnVerifiedIdClaimValidationListener(), nil
                     case "#microsoft.graph.openAwsSecurityGroupFinding":
                         return NewOpenAwsSecurityGroupFinding(), nil
                     case "#microsoft.graph.openIdConnectIdentityProvider":

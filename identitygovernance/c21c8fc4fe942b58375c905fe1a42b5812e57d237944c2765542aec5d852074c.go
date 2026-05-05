@@ -33,9 +33,12 @@ func NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelPro
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action cancelProcessing
+// Post cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
 // Deprecated:  as of 2025-11/PrivatePreview:cancelWorkflows on 2025-10-28 and will be removed 2026-10-28
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflow-cancelprocessing?view=graph-rest-beta
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder) Post(ctx context.Context, body LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingCancelProcessingPostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelPr
     }
     return nil
 }
-// ToPostRequestInformation invoke action cancelProcessing
+// ToPostRequestInformation cancel one or more workflow runs that are currently in queued or inProgress status. Currently limited to canceling one run per request.
 // Deprecated:  as of 2025-11/PrivatePreview:cancelWorkflows on 2025-10-28 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder) ToPostRequestInformation(ctx context.Context, body LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingCancelProcessingPostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -39,6 +39,8 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
                         return NewFilteringProfile(), nil
                     case "#microsoft.graph.networkaccess.forwardingProfile":
                         return NewForwardingProfile(), nil
+                    case "#microsoft.graph.networkaccess.forwardingProfileBase":
+                        return NewForwardingProfileBase(), nil
                 }
             }
         }

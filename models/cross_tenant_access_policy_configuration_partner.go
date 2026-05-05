@@ -96,7 +96,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetB2bDirectConnectOutboun
     }
     return nil
 }
-// GetBlockServiceProviderOutboundAccess gets the blockServiceProviderOutboundAccess property value. The blockServiceProviderOutboundAccess property
+// GetBlockServiceProviderOutboundAccess gets the blockServiceProviderOutboundAccess property value. Specifies whether users can use granular delegated admin privileges (GDAP) to sign-in and access resources in other organizations. Default value is false.
 // returns a *bool when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetBlockServiceProviderOutboundAccess()(*bool) {
     val, err := m.GetBackingStore().Get("blockServiceProviderOutboundAccess")
@@ -222,6 +222,22 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["m365Capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateM365CapabilityBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]M365CapabilityBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(M365CapabilityBaseable)
+                }
+            }
+            m.SetM365Capabilities(res)
+        }
+        return nil
+    }
     res["m365CollaborationInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyM365CollaborationInboundSettingFromDiscriminatorValue)
         if err != nil {
@@ -309,6 +325,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetIsServiceProvider()(*bo
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetM365Capabilities gets the m365Capabilities property value. Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+// returns a []M365CapabilityBaseable when successful
+func (m *CrossTenantAccessPolicyConfigurationPartner) GetM365Capabilities()([]M365CapabilityBaseable) {
+    val, err := m.GetBackingStore().Get("m365Capabilities")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]M365CapabilityBaseable)
     }
     return nil
 }
@@ -432,6 +460,18 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) Serialize(writer i878a80d2
             return err
         }
     }
+    if m.GetM365Capabilities() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetM365Capabilities()))
+        for i, v := range m.GetM365Capabilities() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("m365Capabilities", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("m365CollaborationInbound", m.GetM365CollaborationInbound())
         if err != nil {
@@ -500,7 +540,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetB2bDirectConnectOutboun
         panic(err)
     }
 }
-// SetBlockServiceProviderOutboundAccess sets the blockServiceProviderOutboundAccess property value. The blockServiceProviderOutboundAccess property
+// SetBlockServiceProviderOutboundAccess sets the blockServiceProviderOutboundAccess property value. Specifies whether users can use granular delegated admin privileges (GDAP) to sign-in and access resources in other organizations. Default value is false.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetBlockServiceProviderOutboundAccess(value *bool)() {
     err := m.GetBackingStore().Set("blockServiceProviderOutboundAccess", value)
     if err != nil {
@@ -531,6 +571,13 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsInMultiTenantOrganiza
 // SetIsServiceProvider sets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetIsServiceProvider(value *bool)() {
     err := m.GetBackingStore().Set("isServiceProvider", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetM365Capabilities sets the m365Capabilities property value. Defines the partner-specific Microsoft 365 cross-tenant capabilities for inbound access from the partner organization.
+func (m *CrossTenantAccessPolicyConfigurationPartner) SetM365Capabilities(value []M365CapabilityBaseable)() {
+    err := m.GetBackingStore().Set("m365Capabilities", value)
     if err != nil {
         panic(err)
     }
@@ -577,6 +624,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     GetInboundTrust()(CrossTenantAccessPolicyInboundTrustable)
     GetIsInMultiTenantOrganization()(*bool)
     GetIsServiceProvider()(*bool)
+    GetM365Capabilities()([]M365CapabilityBaseable)
     GetM365CollaborationInbound()(CrossTenantAccessPolicyM365CollaborationInboundSettingable)
     GetM365CollaborationOutbound()(CrossTenantAccessPolicyM365CollaborationOutboundSettingable)
     GetTenantId()(*string)
@@ -592,6 +640,7 @@ type CrossTenantAccessPolicyConfigurationPartnerable interface {
     SetInboundTrust(value CrossTenantAccessPolicyInboundTrustable)()
     SetIsInMultiTenantOrganization(value *bool)()
     SetIsServiceProvider(value *bool)()
+    SetM365Capabilities(value []M365CapabilityBaseable)()
     SetM365CollaborationInbound(value CrossTenantAccessPolicyM365CollaborationInboundSettingable)()
     SetM365CollaborationOutbound(value CrossTenantAccessPolicyM365CollaborationOutboundSettingable)()
     SetTenantId(value *string)()

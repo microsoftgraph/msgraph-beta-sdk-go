@@ -124,7 +124,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Patch(ctx contex
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Policies()(*ForwardingProfilesItemPoliciesRequestBuilder) {
     return NewForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
 // returns a *ForwardingProfilesItemServicePrincipalRequestBuilder when successful
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ServicePrincipal()(*ForwardingProfilesItemServicePrincipalRequestBuilder) {
     return NewForwardingProfilesItemServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

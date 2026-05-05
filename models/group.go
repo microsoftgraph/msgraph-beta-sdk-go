@@ -1582,7 +1582,7 @@ func (m *Group) GetOnPremisesDomainName()(*string) {
     }
     return nil
 }
-// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+// GetOnPremisesExtensionAttributes gets the onPremisesExtensionAttributes property value. Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on $select. Supports $filter (eq, ne, not, in).
 // returns a OnPremisesExtensionAttributesable when successful
 func (m *Group) GetOnPremisesExtensionAttributes()(OnPremisesExtensionAttributesable) {
     val, err := m.GetBackingStore().Get("onPremisesExtensionAttributes")
@@ -1822,7 +1822,7 @@ func (m *Group) GetResourceBehaviorOptions()([]string) {
     }
     return nil
 }
-// GetResourceProvisioningOptions gets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+// GetResourceProvisioningOptions gets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).
 // returns a []string when successful
 func (m *Group) GetResourceProvisioningOptions()([]string) {
     val, err := m.GetBackingStore().Get("resourceProvisioningOptions")
@@ -3010,7 +3010,7 @@ func (m *Group) SetOnPremisesDomainName(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. The onPremisesExtensionAttributes property
+// SetOnPremisesExtensionAttributes sets the onPremisesExtensionAttributes property value. Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on $select. Supports $filter (eq, ne, not, in).
 func (m *Group) SetOnPremisesExtensionAttributes(value OnPremisesExtensionAttributesable)() {
     err := m.GetBackingStore().Set("onPremisesExtensionAttributes", value)
     if err != nil {
@@ -3150,7 +3150,7 @@ func (m *Group) SetResourceBehaviorOptions(value []string)() {
         panic(err)
     }
 }
-// SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+// SetResourceProvisioningOptions sets the resourceProvisioningOptions property value. Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).
 func (m *Group) SetResourceProvisioningOptions(value []string)() {
     err := m.GetBackingStore().Set("resourceProvisioningOptions", value)
     if err != nil {

@@ -67,6 +67,18 @@ func (m *GranularRestoreArtifactBase) GetCompletionDateTime()(*i336074805fc85398
     }
     return nil
 }
+// GetDestinationType gets the destinationType property value. The destinationType property
+// returns a *DestinationType when successful
+func (m *GranularRestoreArtifactBase) GetDestinationType()(*DestinationType) {
+    val, err := m.GetBackingStore().Get("destinationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DestinationType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GranularRestoreArtifactBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -88,6 +100,16 @@ func (m *GranularRestoreArtifactBase) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetCompletionDateTime(val)
+        }
+        return nil
+    }
+    res["destinationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDestinationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDestinationType(val.(*DestinationType))
         }
         return nil
     }
@@ -265,6 +287,13 @@ func (m *GranularRestoreArtifactBase) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetDestinationType() != nil {
+        cast := (*m.GetDestinationType()).String()
+        err = writer.WriteStringValue("destinationType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("restoredItemKey", m.GetRestoredItemKey())
         if err != nil {
@@ -324,6 +353,13 @@ func (m *GranularRestoreArtifactBase) SetCompletionDateTime(value *i336074805fc8
         panic(err)
     }
 }
+// SetDestinationType sets the destinationType property value. The destinationType property
+func (m *GranularRestoreArtifactBase) SetDestinationType(value *DestinationType)() {
+    err := m.GetBackingStore().Set("destinationType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRestoredItemKey sets the restoredItemKey property value. The unique identifier for the restored artifact.
 func (m *GranularRestoreArtifactBase) SetRestoredItemKey(value *string)() {
     err := m.GetBackingStore().Set("restoredItemKey", value)
@@ -378,6 +414,7 @@ type GranularRestoreArtifactBaseable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBrowseSessionId()(*string)
     GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDestinationType()(*DestinationType)
     GetRestoredItemKey()(*string)
     GetRestoredItemPath()(*string)
     GetRestoredItemWebUrl()(*string)
@@ -387,6 +424,7 @@ type GranularRestoreArtifactBaseable interface {
     GetWebUrl()(*string)
     SetBrowseSessionId(value *string)()
     SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDestinationType(value *DestinationType)()
     SetRestoredItemKey(value *string)()
     SetRestoredItemPath(value *string)()
     SetRestoredItemWebUrl(value *string)()
