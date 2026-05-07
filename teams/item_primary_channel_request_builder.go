@@ -24,9 +24,9 @@ type ItemPrimaryChannelRequestBuilderDeleteRequestConfiguration struct {
 // ItemPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team.
 type ItemPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPrimaryChannelRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPrimaryChannelRequestBuilderGetRequestConfiguration struct {

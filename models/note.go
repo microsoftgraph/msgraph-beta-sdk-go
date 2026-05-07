@@ -24,7 +24,7 @@ func NewNote()(*Note) {
 func CreateNoteFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNote(), nil
 }
-// GetAttachments gets the attachments property value. The attachments property
+// GetAttachments gets the attachments property value. The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.
 // returns a []Attachmentable when successful
 func (m *Note) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
@@ -36,7 +36,7 @@ func (m *Note) GetAttachments()([]Attachmentable) {
     }
     return nil
 }
-// GetBody gets the body property value. The body property
+// GetBody gets the body property value. The content of the note. Supports text or html content types.
 // returns a ItemBodyable when successful
 func (m *Note) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
@@ -48,7 +48,19 @@ func (m *Note) GetBody()(ItemBodyable) {
     }
     return nil
 }
-// GetExtensions gets the extensions property value. The extensions property
+// GetBodyPreview gets the bodyPreview property value. Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.
+// returns a *string when successful
+func (m *Note) GetBodyPreview()(*string) {
+    val, err := m.GetBackingStore().Get("bodyPreview")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetExtensions gets the extensions property value. The collection of open extensions defined for the note.
 // returns a []Extensionable when successful
 func (m *Note) GetExtensions()([]Extensionable) {
     val, err := m.GetBackingStore().Get("extensions")
@@ -87,6 +99,16 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetBody(val.(ItemBodyable))
+        }
+        return nil
+    }
+    res["bodyPreview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBodyPreview(val)
         }
         return nil
     }
@@ -170,7 +192,7 @@ func (m *Note) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetHasAttachments gets the hasAttachments property value. The hasAttachments property
+// GetHasAttachments gets the hasAttachments property value. Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
 // returns a *bool when successful
 func (m *Note) GetHasAttachments()(*bool) {
     val, err := m.GetBackingStore().Get("hasAttachments")
@@ -182,7 +204,7 @@ func (m *Note) GetHasAttachments()(*bool) {
     }
     return nil
 }
-// GetIsDeleted gets the isDeleted property value. The isDeleted property
+// GetIsDeleted gets the isDeleted property value. Indicates whether the note is soft-deleted. Read-only.
 // returns a *bool when successful
 func (m *Note) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
@@ -194,7 +216,7 @@ func (m *Note) GetIsDeleted()(*bool) {
     }
     return nil
 }
-// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// GetMultiValueExtendedProperties gets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the note.
 // returns a []MultiValueLegacyExtendedPropertyable when successful
 func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("multiValueExtendedProperties")
@@ -206,7 +228,7 @@ func (m *Note) GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPrope
     }
     return nil
 }
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the note.
 // returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -218,7 +240,7 @@ func (m *Note) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPro
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.
 // returns a *string when successful
 func (m *Note) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -266,18 +288,6 @@ func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
-    {
-        err = writer.WriteBoolValue("hasAttachments", m.GetHasAttachments())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isDeleted", m.GetIsDeleted())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetMultiValueExtendedProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiValueExtendedProperties()))
         for i, v := range m.GetMultiValueExtendedProperties() {
@@ -310,56 +320,63 @@ func (m *Note) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAttachments sets the attachments property value. The attachments property
+// SetAttachments sets the attachments property value. The file attachments for the note. Only inline image attachments (image/png, image/jpeg, image/gif, or image/bmp) are supported, with a maximum size of 3 MB per attachment. Use $expand to retrieve attachments.
 func (m *Note) SetAttachments(value []Attachmentable)() {
     err := m.GetBackingStore().Set("attachments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBody sets the body property value. The body property
+// SetBody sets the body property value. The content of the note. Supports text or html content types.
 func (m *Note) SetBody(value ItemBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensions sets the extensions property value. The extensions property
+// SetBodyPreview sets the bodyPreview property value. Auto-generated preview of the note body content (first ~255 characters, plain text). Read-only.
+func (m *Note) SetBodyPreview(value *string)() {
+    err := m.GetBackingStore().Set("bodyPreview", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExtensions sets the extensions property value. The collection of open extensions defined for the note.
 func (m *Note) SetExtensions(value []Extensionable)() {
     err := m.GetBackingStore().Set("extensions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasAttachments sets the hasAttachments property value. The hasAttachments property
+// SetHasAttachments sets the hasAttachments property value. Indicates whether the note has file attachments. Supports $filter (eq). Read-only.
 func (m *Note) SetHasAttachments(value *bool)() {
     err := m.GetBackingStore().Set("hasAttachments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDeleted sets the isDeleted property value. The isDeleted property
+// SetIsDeleted sets the isDeleted property value. Indicates whether the note is soft-deleted. Read-only.
 func (m *Note) SetIsDeleted(value *bool)() {
     err := m.GetBackingStore().Set("isDeleted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The multiValueExtendedProperties property
+// SetMultiValueExtendedProperties sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the note.
 func (m *Note) SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("multiValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the note.
 func (m *Note) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The title of the note. Supports $filter (eq, ne, startsWith) and $orderby.
 func (m *Note) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {
@@ -371,6 +388,7 @@ type Noteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttachments()([]Attachmentable)
     GetBody()(ItemBodyable)
+    GetBodyPreview()(*string)
     GetExtensions()([]Extensionable)
     GetHasAttachments()(*bool)
     GetIsDeleted()(*bool)
@@ -379,6 +397,7 @@ type Noteable interface {
     GetSubject()(*string)
     SetAttachments(value []Attachmentable)()
     SetBody(value ItemBodyable)()
+    SetBodyPreview(value *string)()
     SetExtensions(value []Extensionable)()
     SetHasAttachments(value *bool)()
     SetIsDeleted(value *bool)()

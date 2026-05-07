@@ -24,9 +24,9 @@ type CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessio
 // CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
 type CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration struct {
@@ -73,6 +73,11 @@ func (m *CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSe
         return err
     }
     return nil
+}
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder when successful
+func (m *CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder) {
+    return NewCatalogsItemAccessPackageResourceRolesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31

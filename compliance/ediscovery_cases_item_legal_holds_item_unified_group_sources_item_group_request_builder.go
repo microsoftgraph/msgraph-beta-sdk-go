@@ -17,9 +17,9 @@ type EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesItemGroupRequestBuilder
 // EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesItemGroupRequestBuilderGetQueryParameters the group associated with the unifiedGroupSource.
 type EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesItemGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdiscoveryCasesItemLegalHoldsItemUnifiedGroupSourcesItemGroupRequestBuilderGetRequestConfiguration struct {

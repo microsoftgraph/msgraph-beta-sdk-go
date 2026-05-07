@@ -24,9 +24,9 @@ type OnlineMeetingsItemRegistrationRequestBuilderDeleteRequestConfiguration stru
 // OnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters the registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
 type OnlineMeetingsItemRegistrationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnlineMeetingsItemRegistrationRequestBuilderGetRequestConfiguration struct {

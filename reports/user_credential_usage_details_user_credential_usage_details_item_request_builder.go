@@ -24,9 +24,9 @@ type UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderDelet
 // UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetQueryParameters represents the self-service password reset (SSPR) usage for a given tenant.
 type UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration struct {

@@ -41,6 +41,30 @@ func CreateCopilotPackageFromDiscriminatorValue(parseNode i878a80d2330e89d268963
     }
     return NewCopilotPackage(), nil
 }
+// GetAppId gets the appId property value. The appId property
+// returns a *string when successful
+func (m *CopilotPackage) GetAppId()(*string) {
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetAssetId gets the assetId property value. The assetId property
+// returns a *string when successful
+func (m *CopilotPackage) GetAssetId()(*string) {
+    val, err := m.GetBackingStore().Get("assetId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAvailableTo gets the availableTo property value. The availableTo property
 // returns a *PackageStatus when successful
 func (m *CopilotPackage) GetAvailableTo()(*PackageStatus) {
@@ -93,6 +117,26 @@ func (m *CopilotPackage) GetElementTypes()([]string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppId(val)
+        }
+        return nil
+    }
+    res["assetId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssetId(val)
+        }
+        return nil
+    }
     res["availableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParsePackageStatus)
         if err != nil {
@@ -159,6 +203,46 @@ func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["manifestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManifestId(val)
+        }
+        return nil
+    }
+    res["manifestVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManifestVersion(val)
+        }
+        return nil
+    }
+    res["ownerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerId(val)
+        }
+        return nil
+    }
+    res["platform"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlatform(val)
+        }
+        return nil
+    }
     res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -205,6 +289,16 @@ func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVersion(val)
+        }
+        return nil
+    }
     res["zipFile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -238,6 +332,54 @@ func (m *CopilotPackage) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetManifestId gets the manifestId property value. The manifestId property
+// returns a *string when successful
+func (m *CopilotPackage) GetManifestId()(*string) {
+    val, err := m.GetBackingStore().Get("manifestId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetManifestVersion gets the manifestVersion property value. The manifestVersion property
+// returns a *string when successful
+func (m *CopilotPackage) GetManifestVersion()(*string) {
+    val, err := m.GetBackingStore().Get("manifestVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOwnerId gets the ownerId property value. The ownerId property
+// returns a *string when successful
+func (m *CopilotPackage) GetOwnerId()(*string) {
+    val, err := m.GetBackingStore().Get("ownerId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPlatform gets the platform property value. The platform property
+// returns a *string when successful
+func (m *CopilotPackage) GetPlatform()(*string) {
+    val, err := m.GetBackingStore().Get("platform")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -289,6 +431,18 @@ func (m *CopilotPackage) GetTypeEscaped()(*PackageType) {
     }
     return nil
 }
+// GetVersion gets the version property value. The version property
+// returns a *string when successful
+func (m *CopilotPackage) GetVersion()(*string) {
+    val, err := m.GetBackingStore().Get("version")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetZipFile gets the zipFile property value. The zipFile property
 // returns a []byte when successful
 func (m *CopilotPackage) GetZipFile()([]byte) {
@@ -306,6 +460,18 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("appId", m.GetAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("assetId", m.GetAssetId())
+        if err != nil {
+            return err
+        }
     }
     if m.GetAvailableTo() != nil {
         cast := (*m.GetAvailableTo()).String()
@@ -346,6 +512,30 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("manifestId", m.GetManifestId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("manifestVersion", m.GetManifestVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("ownerId", m.GetOwnerId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("platform", m.GetPlatform())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publisher", m.GetPublisher())
         if err != nil {
             return err
@@ -371,12 +561,32 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteStringValue("version", m.GetVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteByteArrayValue("zipFile", m.GetZipFile())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAppId sets the appId property value. The appId property
+func (m *CopilotPackage) SetAppId(value *string)() {
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAssetId sets the assetId property value. The assetId property
+func (m *CopilotPackage) SetAssetId(value *string)() {
+    err := m.GetBackingStore().Set("assetId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAvailableTo sets the availableTo property value. The availableTo property
 func (m *CopilotPackage) SetAvailableTo(value *PackageStatus)() {
@@ -420,6 +630,34 @@ func (m *CopilotPackage) SetLastModifiedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
+// SetManifestId sets the manifestId property value. The manifestId property
+func (m *CopilotPackage) SetManifestId(value *string)() {
+    err := m.GetBackingStore().Set("manifestId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetManifestVersion sets the manifestVersion property value. The manifestVersion property
+func (m *CopilotPackage) SetManifestVersion(value *string)() {
+    err := m.GetBackingStore().Set("manifestVersion", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerId sets the ownerId property value. The ownerId property
+func (m *CopilotPackage) SetOwnerId(value *string)() {
+    err := m.GetBackingStore().Set("ownerId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPlatform sets the platform property value. The platform property
+func (m *CopilotPackage) SetPlatform(value *string)() {
+    err := m.GetBackingStore().Set("platform", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisher sets the publisher property value. The publisher property
 func (m *CopilotPackage) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
@@ -448,6 +686,13 @@ func (m *CopilotPackage) SetTypeEscaped(value *PackageType)() {
         panic(err)
     }
 }
+// SetVersion sets the version property value. The version property
+func (m *CopilotPackage) SetVersion(value *string)() {
+    err := m.GetBackingStore().Set("version", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetZipFile sets the zipFile property value. The zipFile property
 func (m *CopilotPackage) SetZipFile(value []byte)() {
     err := m.GetBackingStore().Set("zipFile", value)
@@ -458,26 +703,40 @@ func (m *CopilotPackage) SetZipFile(value []byte)() {
 type CopilotPackageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppId()(*string)
+    GetAssetId()(*string)
     GetAvailableTo()(*PackageStatus)
     GetDeployedTo()(*PackageStatus)
     GetDisplayName()(*string)
     GetElementTypes()([]string)
     GetIsBlocked()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManifestId()(*string)
+    GetManifestVersion()(*string)
+    GetOwnerId()(*string)
+    GetPlatform()(*string)
     GetPublisher()(*string)
     GetShortDescription()(*string)
     GetSupportedHosts()([]string)
     GetTypeEscaped()(*PackageType)
+    GetVersion()(*string)
     GetZipFile()([]byte)
+    SetAppId(value *string)()
+    SetAssetId(value *string)()
     SetAvailableTo(value *PackageStatus)()
     SetDeployedTo(value *PackageStatus)()
     SetDisplayName(value *string)()
     SetElementTypes(value []string)()
     SetIsBlocked(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManifestId(value *string)()
+    SetManifestVersion(value *string)()
+    SetOwnerId(value *string)()
+    SetPlatform(value *string)()
     SetPublisher(value *string)()
     SetShortDescription(value *string)()
     SetSupportedHosts(value []string)()
     SetTypeEscaped(value *PackageType)()
+    SetVersion(value *string)()
     SetZipFile(value []byte)()
 }

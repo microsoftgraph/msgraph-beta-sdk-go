@@ -12,12 +12,13 @@ const (
     NONE_RESTOREPOINTTAGS = 1
     FASTRESTORE_RESTOREPOINTTAGS = 2
     UNKNOWNFUTUREVALUE_RESTOREPOINTTAGS = 4
+    INCLUDENEWERITEMS_RESTOREPOINTTAGS = 8
 )
 
 func (i RestorePointTags) String() string {
     var values []string
-    options := []string{"none", "fastRestore", "unknownFutureValue"}
-    for p := 0; p < 3; p++ {
+    options := []string{"none", "fastRestore", "unknownFutureValue", "includeNewerItems"}
+    for p := 0; p < 4; p++ {
         mantis := RestorePointTags(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -36,6 +37,8 @@ func ParseRestorePointTags(v string) (any, error) {
                 result |= FASTRESTORE_RESTOREPOINTTAGS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_RESTOREPOINTTAGS
+            case "includeNewerItems":
+                result |= INCLUDENEWERITEMS_RESTOREPOINTTAGS
             default:
                 return nil, nil
         }

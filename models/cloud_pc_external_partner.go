@@ -23,6 +23,18 @@ func NewCloudPcExternalPartner()(*CloudPcExternalPartner) {
 func CreateCloudPcExternalPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcExternalPartner(), nil
 }
+// GetAgentSetting gets the agentSetting property value. The agent settings associated with the external partner.
+// returns a CloudPcExternalPartnerAgentSettingable when successful
+func (m *CloudPcExternalPartner) GetAgentSetting()(CloudPcExternalPartnerAgentSettingable) {
+    val, err := m.GetBackingStore().Get("agentSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcExternalPartnerAgentSettingable)
+    }
+    return nil
+}
 // GetConnectionStatus gets the connectionStatus property value. The connectionStatus property
 // returns a *CloudPcExternalPartnerStatus when successful
 func (m *CloudPcExternalPartner) GetConnectionStatus()(*CloudPcExternalPartnerStatus) {
@@ -51,6 +63,16 @@ func (m *CloudPcExternalPartner) GetEnableConnection()(*bool) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcExternalPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["agentSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcExternalPartnerAgentSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentSetting(val.(CloudPcExternalPartnerAgentSettingable))
+        }
+        return nil
+    }
     res["connectionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcExternalPartnerStatus)
         if err != nil {
@@ -145,6 +167,12 @@ func (m *CloudPcExternalPartner) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("agentSetting", m.GetAgentSetting())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectionStatus() != nil {
         cast := (*m.GetConnectionStatus()).String()
         err = writer.WriteStringValue("connectionStatus", &cast)
@@ -177,6 +205,13 @@ func (m *CloudPcExternalPartner) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     return nil
+}
+// SetAgentSetting sets the agentSetting property value. The agent settings associated with the external partner.
+func (m *CloudPcExternalPartner) SetAgentSetting(value CloudPcExternalPartnerAgentSettingable)() {
+    err := m.GetBackingStore().Set("agentSetting", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetConnectionStatus sets the connectionStatus property value. The connectionStatus property
 func (m *CloudPcExternalPartner) SetConnectionStatus(value *CloudPcExternalPartnerStatus)() {
@@ -216,11 +251,13 @@ func (m *CloudPcExternalPartner) SetStatusDetails(value *string)() {
 type CloudPcExternalPartnerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentSetting()(CloudPcExternalPartnerAgentSettingable)
     GetConnectionStatus()(*CloudPcExternalPartnerStatus)
     GetEnableConnection()(*bool)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPartnerId()(*string)
     GetStatusDetails()(*string)
+    SetAgentSetting(value CloudPcExternalPartnerAgentSettingable)()
     SetConnectionStatus(value *CloudPcExternalPartnerStatus)()
     SetEnableConnection(value *bool)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

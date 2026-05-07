@@ -24,9 +24,9 @@ type AuditActivityTypesAuditActivityTypeItemRequestBuilderDeleteRequestConfigura
 // AuditActivityTypesAuditActivityTypeItemRequestBuilderGetQueryParameters represents an audit activity type which includes the associated service and category for a specific activity.
 type AuditActivityTypesAuditActivityTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuditActivityTypesAuditActivityTypeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuditActivityTypesAuditActivityTypeItemRequestBuilderGetRequestConfiguration struct {

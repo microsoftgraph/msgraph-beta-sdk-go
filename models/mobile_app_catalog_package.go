@@ -45,6 +45,16 @@ func CreateMobileAppCatalogPackageFromDiscriminatorValue(parseNode i878a80d2330e
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MobileAppCatalogPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["productDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProductDescription(val)
+        }
+        return nil
+    }
     res["productDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -86,6 +96,18 @@ func (m *MobileAppCatalogPackage) GetFieldDeserializers()(map[string]func(i878a8
         return nil
     }
     return res
+}
+// GetProductDescription gets the productDescription property value. The description of the product (example: "Fabrikam for Business is a productivity app."). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.
+// returns a *string when successful
+func (m *MobileAppCatalogPackage) GetProductDescription()(*string) {
+    val, err := m.GetBackingStore().Get("productDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetProductDisplayName gets the productDisplayName property value. The name of the product (example: "Fabrikam for Business"). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.
 // returns a *string when successful
@@ -143,6 +165,13 @@ func (m *MobileAppCatalogPackage) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
+// SetProductDescription sets the productDescription property value. The description of the product (example: "Fabrikam for Business is a productivity app."). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.
+func (m *MobileAppCatalogPackage) SetProductDescription(value *string)() {
+    err := m.GetBackingStore().Set("productDescription", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProductDisplayName sets the productDisplayName property value. The name of the product (example: "Fabrikam for Business"). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.
 func (m *MobileAppCatalogPackage) SetProductDisplayName(value *string)() {
     err := m.GetBackingStore().Set("productDisplayName", value)
@@ -174,10 +203,12 @@ func (m *MobileAppCatalogPackage) SetVersionDisplayName(value *string)() {
 type MobileAppCatalogPackageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetProductDescription()(*string)
     GetProductDisplayName()(*string)
     GetProductId()(*string)
     GetPublisherDisplayName()(*string)
     GetVersionDisplayName()(*string)
+    SetProductDescription(value *string)()
     SetProductDisplayName(value *string)()
     SetProductId(value *string)()
     SetPublisherDisplayName(value *string)()

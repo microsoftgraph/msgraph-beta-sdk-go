@@ -24,9 +24,9 @@ type ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilderDelete
 // ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilderGetQueryParameters the Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
 type ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExchangeOnPremisesPoliciesItemConditionalAccessSettingsRequestBuilderGetRequestConfiguration struct {

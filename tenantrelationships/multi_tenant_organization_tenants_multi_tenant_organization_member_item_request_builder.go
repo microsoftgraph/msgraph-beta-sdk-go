@@ -24,9 +24,9 @@ type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuild
 // MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters get a tenant and its properties in the multi-tenant organization.
 type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MultiTenantOrganizationTenantsMultiTenantOrganizationMemberItemRequestBuilderGetRequestConfiguration struct {

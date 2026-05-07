@@ -24,9 +24,9 @@ type SecureScoresSecureScoreItemRequestBuilderDeleteRequestConfiguration struct 
 // SecureScoresSecureScoreItemRequestBuilderGetQueryParameters measurements of tenants' security posture to help protect them from threats.
 type SecureScoresSecureScoreItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration struct {

@@ -28,7 +28,29 @@ func CreateForwardingPolicyLinkFromDiscriminatorValue(parseNode i878a80d2330e89d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ForwardingPolicyLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.PolicyLink.GetFieldDeserializers()
+    res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPriority(val)
+        }
+        return nil
+    }
     return res
+}
+// GetPriority gets the priority property value. The priority property
+// returns a *int64 when successful
+func (m *ForwardingPolicyLink) GetPriority()(*int64) {
+    val, err := m.GetBackingStore().Get("priority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ForwardingPolicyLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -36,9 +58,24 @@ func (m *ForwardingPolicyLink) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteInt64Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetPriority sets the priority property value. The priority property
+func (m *ForwardingPolicyLink) SetPriority(value *int64)() {
+    err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type ForwardingPolicyLinkable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyLinkable
+    GetPriority()(*int64)
+    SetPriority(value *int64)()
 }

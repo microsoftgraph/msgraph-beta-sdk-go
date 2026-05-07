@@ -25,9 +25,9 @@ type ServiceActivityRequestBuilderDeleteRequestConfiguration struct {
 // ServiceActivityRequestBuilderGetQueryParameters reports that relate to tenant-level authentication activities in Microsoft Entra.
 type ServiceActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ServiceActivityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceActivityRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder
 // AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderGetQueryParameters retrieve an accessReviewInstance object using the identifier of an accessReviewInstance and its parent accessReviewScheduleDefinition. This returns all properties of the instance except for the associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
 type AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilderGetRequestConfiguration struct {
@@ -53,6 +53,11 @@ func (m *AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBui
 // returns a *AccessReviewsDefinitionsItemInstancesItemApplyDecisionsRequestBuilder when successful
 func (m *AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder) ApplyDecisions()(*AccessReviewsDefinitionsItemInstancesItemApplyDecisionsRequestBuilder) {
     return NewAccessReviewsDefinitionsItemInstancesItemApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BatchApplyCustomDataProvidedResourceDecisions provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.
+// returns a *AccessReviewsDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder when successful
+func (m *AccessReviewsDefinitionsItemInstancesAccessReviewInstanceItemRequestBuilder) BatchApplyCustomDataProvidedResourceDecisions()(*AccessReviewsDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
+    return NewAccessReviewsDefinitionsItemInstancesItemBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BatchRecordDecisions provides operations to call the batchRecordDecisions method.
 // returns a *AccessReviewsDefinitionsItemInstancesItemBatchRecordDecisionsRequestBuilder when successful

@@ -48,6 +48,30 @@ func (m *CloudCertificationAuthorityLeafCertificate) GetCertificationAuthorityIs
     }
     return nil
 }
+// GetCertificationAuthorityVersionNumber gets the certificationAuthorityVersionNumber property value. The version number of the certification authority that issued this leaf certificate. Read-only.
+// returns a *int32 when successful
+func (m *CloudCertificationAuthorityLeafCertificate) GetCertificationAuthorityVersionNumber()(*int32) {
+    val, err := m.GetBackingStore().Get("certificationAuthorityVersionNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetCloudCertificationAuthorityVersion gets the cloudCertificationAuthorityVersion property value. The certification authority version that issued this leaf certificate. Read-only.
+// returns a CloudCertificationAuthorityVersionable when successful
+func (m *CloudCertificationAuthorityLeafCertificate) GetCloudCertificationAuthorityVersion()(CloudCertificationAuthorityVersionable) {
+    val, err := m.GetBackingStore().Get("cloudCertificationAuthorityVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudCertificationAuthorityVersionable)
+    }
+    return nil
+}
 // GetCrlDistributionPointUrl gets the crlDistributionPointUrl property value. URL to find the relevant Certificate Revocation List for this certificate. Read-only.
 // returns a *string when successful
 func (m *CloudCertificationAuthorityLeafCertificate) GetCrlDistributionPointUrl()(*string) {
@@ -129,6 +153,26 @@ func (m *CloudCertificationAuthorityLeafCertificate) GetFieldDeserializers()(map
         }
         if val != nil {
             m.SetCertificationAuthorityIssuerUri(val)
+        }
+        return nil
+    }
+    res["certificationAuthorityVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCertificationAuthorityVersionNumber(val)
+        }
+        return nil
+    }
+    res["cloudCertificationAuthorityVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudCertificationAuthorityVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudCertificationAuthorityVersion(val.(CloudCertificationAuthorityVersionable))
         }
         return nil
     }
@@ -480,6 +524,18 @@ func (m *CloudCertificationAuthorityLeafCertificate) Serialize(writer i878a80d23
         }
     }
     {
+        err = writer.WriteInt32Value("certificationAuthorityVersionNumber", m.GetCertificationAuthorityVersionNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("cloudCertificationAuthorityVersion", m.GetCloudCertificationAuthorityVersion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("crlDistributionPointUrl", m.GetCrlDistributionPointUrl())
         if err != nil {
             return err
@@ -593,6 +649,20 @@ func (m *CloudCertificationAuthorityLeafCertificate) SetCertificateStatus(value 
 // SetCertificationAuthorityIssuerUri sets the certificationAuthorityIssuerUri property value. The URI of the certification authority that issued the certificate. Read-only.
 func (m *CloudCertificationAuthorityLeafCertificate) SetCertificationAuthorityIssuerUri(value *string)() {
     err := m.GetBackingStore().Set("certificationAuthorityIssuerUri", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCertificationAuthorityVersionNumber sets the certificationAuthorityVersionNumber property value. The version number of the certification authority that issued this leaf certificate. Read-only.
+func (m *CloudCertificationAuthorityLeafCertificate) SetCertificationAuthorityVersionNumber(value *int32)() {
+    err := m.GetBackingStore().Set("certificationAuthorityVersionNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCloudCertificationAuthorityVersion sets the cloudCertificationAuthorityVersion property value. The certification authority version that issued this leaf certificate. Read-only.
+func (m *CloudCertificationAuthorityLeafCertificate) SetCloudCertificationAuthorityVersion(value CloudCertificationAuthorityVersionable)() {
+    err := m.GetBackingStore().Set("cloudCertificationAuthorityVersion", value)
     if err != nil {
         panic(err)
     }
@@ -721,6 +791,8 @@ type CloudCertificationAuthorityLeafCertificateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCertificateStatus()(*CloudCertificationAuthorityLeafCertificateStatus)
     GetCertificationAuthorityIssuerUri()(*string)
+    GetCertificationAuthorityVersionNumber()(*int32)
+    GetCloudCertificationAuthorityVersion()(CloudCertificationAuthorityVersionable)
     GetCrlDistributionPointUrl()(*string)
     GetDeviceId()(*string)
     GetDeviceName()(*string)
@@ -740,6 +812,8 @@ type CloudCertificationAuthorityLeafCertificateable interface {
     GetValidityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCertificateStatus(value *CloudCertificationAuthorityLeafCertificateStatus)()
     SetCertificationAuthorityIssuerUri(value *string)()
+    SetCertificationAuthorityVersionNumber(value *int32)()
+    SetCloudCertificationAuthorityVersion(value CloudCertificationAuthorityVersionable)()
     SetCrlDistributionPointUrl(value *string)()
     SetDeviceId(value *string)()
     SetDeviceName(value *string)()

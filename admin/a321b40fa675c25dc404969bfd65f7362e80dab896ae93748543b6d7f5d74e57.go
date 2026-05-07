@@ -24,9 +24,9 @@ type TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperation
 // TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderGetQueryParameters read the properties and relationships of microsoft.graph.teamsAdministration.telephoneNumberLongRunningOperation object. This method is used to query the status of an assign or unassign number action using Graph API. This link is returned in the Location response header found in assign or unassign operation result.
 type TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsTelephoneNumberManagementOperationsTelephoneNumberLongRunningOperationItemRequestBuilderGetRequestConfiguration struct {

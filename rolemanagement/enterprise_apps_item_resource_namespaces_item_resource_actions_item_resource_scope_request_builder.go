@@ -24,9 +24,9 @@ type EnterpriseAppsItemResourceNamespacesItemResourceActionsItemResourceScopeReq
 // EnterpriseAppsItemResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetQueryParameters get resourceScope from roleManagement
 type EnterpriseAppsItemResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EnterpriseAppsItemResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EnterpriseAppsItemResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetRequestConfiguration struct {

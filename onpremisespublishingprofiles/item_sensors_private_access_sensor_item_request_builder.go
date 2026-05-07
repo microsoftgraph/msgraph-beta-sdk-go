@@ -24,9 +24,9 @@ type ItemSensorsPrivateAccessSensorItemRequestBuilderDeleteRequestConfiguration 
 // ItemSensorsPrivateAccessSensorItemRequestBuilderGetQueryParameters a lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
 type ItemSensorsPrivateAccessSensorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSensorsPrivateAccessSensorItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSensorsPrivateAccessSensorItemRequestBuilderGetRequestConfiguration struct {

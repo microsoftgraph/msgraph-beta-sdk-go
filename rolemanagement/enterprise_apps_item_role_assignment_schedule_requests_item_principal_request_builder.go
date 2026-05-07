@@ -17,9 +17,9 @@ type EnterpriseAppsItemRoleAssignmentScheduleRequestsItemPrincipalRequestBuilder
 // EnterpriseAppsItemRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters the principal that's getting a role assignment through the request. Supports $expand and $select nested in $expand for id only.
 type EnterpriseAppsItemRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EnterpriseAppsItemRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EnterpriseAppsItemRoleAssignmentScheduleRequestsItemPrincipalRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderDeleteRequestConfigura
 // CompaniesItemPurchaseInvoicesItemVendorRequestBuilderGetQueryParameters get vendor from financials
 type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemPurchaseInvoicesItemVendorRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemPurchaseInvoicesItemVendorRequestBuilderGetRequestConfiguration struct {

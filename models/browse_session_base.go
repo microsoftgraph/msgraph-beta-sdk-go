@@ -145,6 +145,16 @@ func (m *BrowseSessionBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["restorePointId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRestorePointId(val)
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBrowseSessionStatus)
         if err != nil {
@@ -166,6 +176,18 @@ func (m *BrowseSessionBase) GetRestorePointDateTime()(*i336074805fc853987abe6f7f
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetRestorePointId gets the restorePointId property value. The restorePointId property
+// returns a *string when successful
+func (m *BrowseSessionBase) GetRestorePointId()(*string) {
+    val, err := m.GetBackingStore().Get("restorePointId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -217,6 +239,12 @@ func (m *BrowseSessionBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("restorePointId", m.GetRestorePointId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -261,6 +289,13 @@ func (m *BrowseSessionBase) SetRestorePointDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetRestorePointId sets the restorePointId property value. The restorePointId property
+func (m *BrowseSessionBase) SetRestorePointId(value *string)() {
+    err := m.GetBackingStore().Set("restorePointId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *BrowseSessionBase) SetStatus(value *BrowseSessionStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -276,11 +311,13 @@ type BrowseSessionBaseable interface {
     GetError()(PublicErrorable)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetRestorePointId()(*string)
     GetStatus()(*BrowseSessionStatus)
     SetBackupSizeInBytes(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetError(value PublicErrorable)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetRestorePointId(value *string)()
     SetStatus(value *BrowseSessionStatus)()
 }

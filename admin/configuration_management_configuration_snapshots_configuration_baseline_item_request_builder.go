@@ -24,9 +24,9 @@ type ConfigurationManagementConfigurationSnapshotsConfigurationBaselineItemReque
 // ConfigurationManagementConfigurationSnapshotsConfigurationBaselineItemRequestBuilderGetQueryParameters a container for configuration snapshot baselines.
 type ConfigurationManagementConfigurationSnapshotsConfigurationBaselineItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConfigurationManagementConfigurationSnapshotsConfigurationBaselineItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementConfigurationSnapshotsConfigurationBaselineItemRequestBuilderGetRequestConfiguration struct {

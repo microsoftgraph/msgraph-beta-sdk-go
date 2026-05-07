@@ -24,9 +24,9 @@ type SchemaExtensionItemRequestBuilderDeleteRequestConfiguration struct {
 // SchemaExtensionItemRequestBuilderGetQueryParameters get the properties of the specified schemaExtension definition.
 type SchemaExtensionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SchemaExtensionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SchemaExtensionItemRequestBuilderGetRequestConfiguration struct {

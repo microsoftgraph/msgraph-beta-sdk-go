@@ -17,9 +17,9 @@ type AgentInstancesItemCollectionsAgentCollectionItemRequestBuilder struct {
 // AgentInstancesItemCollectionsAgentCollectionItemRequestBuilderGetQueryParameters the agent collections that the agent instance is a member of.
 type AgentInstancesItemCollectionsAgentCollectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AgentInstancesItemCollectionsAgentCollectionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AgentInstancesItemCollectionsAgentCollectionItemRequestBuilderGetRequestConfiguration struct {

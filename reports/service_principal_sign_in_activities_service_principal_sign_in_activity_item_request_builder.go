@@ -24,9 +24,9 @@ type ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBu
 // ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
 type ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetRequestConfiguration struct {

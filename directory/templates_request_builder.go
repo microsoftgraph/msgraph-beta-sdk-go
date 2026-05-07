@@ -24,9 +24,9 @@ type TemplatesRequestBuilderDeleteRequestConfiguration struct {
 // TemplatesRequestBuilderGetQueryParameters a container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 type TemplatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TemplatesRequestBuilderGetRequestConfiguration struct {

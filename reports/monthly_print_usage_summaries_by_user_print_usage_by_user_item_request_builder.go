@@ -24,9 +24,9 @@ type MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderDeleteReq
 // MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetQueryParameters get monthlyPrintUsageSummariesByUser from reports
 type MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration struct {

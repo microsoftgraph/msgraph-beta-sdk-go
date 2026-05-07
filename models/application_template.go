@@ -47,6 +47,18 @@ func (m *ApplicationTemplate) GetConfigurationUris()([]ConfigurationUriable) {
     }
     return nil
 }
+// GetDeprecationDate gets the deprecationDate property value. Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.
+// returns a *DateOnly when successful
+func (m *ApplicationTemplate) GetDeprecationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
+    val, err := m.GetBackingStore().Get("deprecationDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
+}
 // GetDescription gets the description property value. A description of the application.
 // returns a *string when successful
 func (m *ApplicationTemplate) GetDescription()(*string) {
@@ -119,6 +131,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["deprecationDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetDateOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeprecationDate(val)
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -172,6 +194,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetInformationalUrls(val.(InformationalUrlsable))
+        }
+        return nil
+    }
+    res["isEntraIntegrated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEntraIntegrated(val)
         }
         return nil
     }
@@ -290,6 +322,18 @@ func (m *ApplicationTemplate) GetInformationalUrls()(InformationalUrlsable) {
     }
     if val != nil {
         return val.(InformationalUrlsable)
+    }
+    return nil
+}
+// GetIsEntraIntegrated gets the isEntraIntegrated property value. Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).
+// returns a *bool when successful
+func (m *ApplicationTemplate) GetIsEntraIntegrated()(*bool) {
+    val, err := m.GetBackingStore().Get("isEntraIntegrated")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -414,6 +458,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteDateOnlyValue("deprecationDate", m.GetDeprecationDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -439,6 +489,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteObjectValue("informationalUrls", m.GetInformationalUrls())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isEntraIntegrated", m.GetIsEntraIntegrated())
         if err != nil {
             return err
         }
@@ -507,6 +563,13 @@ func (m *ApplicationTemplate) SetConfigurationUris(value []ConfigurationUriable)
         panic(err)
     }
 }
+// SetDeprecationDate sets the deprecationDate property value. Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.
+func (m *ApplicationTemplate) SetDeprecationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
+    err := m.GetBackingStore().Set("deprecationDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. A description of the application.
 func (m *ApplicationTemplate) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -538,6 +601,13 @@ func (m *ApplicationTemplate) SetHomePageUrl(value *string)() {
 // SetInformationalUrls sets the informationalUrls property value. The informationalUrls property
 func (m *ApplicationTemplate) SetInformationalUrls(value InformationalUrlsable)() {
     err := m.GetBackingStore().Set("informationalUrls", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsEntraIntegrated sets the isEntraIntegrated property value. Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).
+func (m *ApplicationTemplate) SetIsEntraIntegrated(value *bool)() {
+    err := m.GetBackingStore().Set("isEntraIntegrated", value)
     if err != nil {
         panic(err)
     }
@@ -603,11 +673,13 @@ type ApplicationTemplateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCategories()([]string)
     GetConfigurationUris()([]ConfigurationUriable)
+    GetDeprecationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEndpoints()([]string)
     GetHomePageUrl()(*string)
     GetInformationalUrls()(InformationalUrlsable)
+    GetIsEntraIntegrated()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogoUrl()(*string)
     GetPublisher()(*string)
@@ -618,11 +690,13 @@ type ApplicationTemplateable interface {
     GetSupportedSingleSignOnModes()([]string)
     SetCategories(value []string)()
     SetConfigurationUris(value []ConfigurationUriable)()
+    SetDeprecationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEndpoints(value []string)()
     SetHomePageUrl(value *string)()
     SetInformationalUrls(value InformationalUrlsable)()
+    SetIsEntraIntegrated(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogoUrl(value *string)()
     SetPublisher(value *string)()

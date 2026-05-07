@@ -24,9 +24,9 @@ type ConfigurationManagementConfigurationMonitorsItemBaselineRequestBuilderDelet
 // ConfigurationManagementConfigurationMonitorsItemBaselineRequestBuilderGetQueryParameters read the properties and relationships of a configurationBaseline object that is attached to a specific monitor.
 type ConfigurationManagementConfigurationMonitorsItemBaselineRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConfigurationManagementConfigurationMonitorsItemBaselineRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementConfigurationMonitorsItemBaselineRequestBuilderGetRequestConfiguration struct {

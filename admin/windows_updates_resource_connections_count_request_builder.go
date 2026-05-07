@@ -16,9 +16,9 @@ type WindowsUpdatesResourceConnectionsCountRequestBuilder struct {
 // WindowsUpdatesResourceConnectionsCountRequestBuilderGetQueryParameters get the number of the resource
 type WindowsUpdatesResourceConnectionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // WindowsUpdatesResourceConnectionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesResourceConnectionsCountRequestBuilderGetRequestConfiguration struct {

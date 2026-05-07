@@ -24,9 +24,9 @@ type MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderDeleteRequestConfi
 // MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderGetQueryParameters collection of MicrosoftTunnelSite settings associated with account.
 type MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderGetRequestConfiguration struct {

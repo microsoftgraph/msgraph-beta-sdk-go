@@ -24,9 +24,9 @@ type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderDeleteRequestConfigura
 // WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetQueryParameters read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
 type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetRequestConfiguration struct {

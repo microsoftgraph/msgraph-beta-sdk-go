@@ -24,9 +24,9 @@ type EntraUxSettingRequestBuilderDeleteRequestConfiguration struct {
 // EntraUxSettingRequestBuilderGetQueryParameters get the properties and relationships of a uxSetting object.
 type EntraUxSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntraUxSettingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntraUxSettingRequestBuilderGetRequestConfiguration struct {

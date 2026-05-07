@@ -16,9 +16,9 @@ type MobileAppsGraphWinGetAppCountRequestBuilder struct {
 // MobileAppsGraphWinGetAppCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppsGraphWinGetAppCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppsGraphWinGetAppCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsGraphWinGetAppCountRequestBuilderGetRequestConfiguration struct {

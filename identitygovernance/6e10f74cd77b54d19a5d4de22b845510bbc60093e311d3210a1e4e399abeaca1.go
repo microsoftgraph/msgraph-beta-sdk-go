@@ -14,24 +14,24 @@ import (
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetRequestConfiguration struct {
@@ -80,7 +80,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItem
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// Get get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -101,13 +101,10 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionCollectionResponseable), nil
 }
-// Post create a new customDataProvidedResourceUploadSession object.
+// Post create new navigation property to uploadSessions for identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresource-post-uploadsessions?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +122,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a customDataProvidedResourceUploadSession object.
+// ToGetRequestInformation get uploadSessions from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -140,7 +137,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new customDataProvidedResourceUploadSession object.
+// ToPostRequestInformation create new navigation property to uploadSessions for identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemUploadSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -24,9 +24,9 @@ type ItemRoleSettingsItemRoleDefinitionRequestBuilderDeleteRequestConfiguration 
 // ItemRoleSettingsItemRoleDefinitionRequestBuilderGetQueryParameters read-only. The role definition that is enforced with this role setting.
 type ItemRoleSettingsItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleSettingsItemRoleDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleSettingsItemRoleDefinitionRequestBuilderGetRequestConfiguration struct {

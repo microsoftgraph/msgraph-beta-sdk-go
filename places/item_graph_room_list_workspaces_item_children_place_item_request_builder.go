@@ -17,9 +17,9 @@ type ItemGraphRoomListWorkspacesItemChildrenPlaceItemRequestBuilder struct {
 // ItemGraphRoomListWorkspacesItemChildrenPlaceItemRequestBuilderGetQueryParameters a collection of children places that is only used in the Upsert places API.
 type ItemGraphRoomListWorkspacesItemChildrenPlaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphRoomListWorkspacesItemChildrenPlaceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphRoomListWorkspacesItemChildrenPlaceItemRequestBuilderGetRequestConfiguration struct {

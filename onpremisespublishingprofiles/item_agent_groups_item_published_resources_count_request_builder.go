@@ -16,9 +16,9 @@ type ItemAgentGroupsItemPublishedResourcesCountRequestBuilder struct {
 // ItemAgentGroupsItemPublishedResourcesCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemAgentGroupsItemPublishedResourcesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemAgentGroupsItemPublishedResourcesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAgentGroupsItemPublishedResourcesCountRequestBuilderGetRequestConfiguration struct {

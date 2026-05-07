@@ -24,9 +24,9 @@ type ItemAuthenticationQrCodePinMethodPinRequestBuilderDeleteRequestConfiguratio
 // ItemAuthenticationQrCodePinMethodPinRequestBuilderGetQueryParameters the PIN linked to the QR Code auth method of the user.
 type ItemAuthenticationQrCodePinMethodPinRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationQrCodePinMethodPinRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationQrCodePinMethodPinRequestBuilderGetRequestConfiguration struct {

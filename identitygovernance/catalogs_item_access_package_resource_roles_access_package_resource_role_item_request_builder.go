@@ -24,9 +24,9 @@ type CatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestB
 // CatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters the roles in each resource in a catalog. Read-only.
 type CatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CatalogsItemAccessPackageResourceRolesAccessPackageResourceRoleItemRequestBuilderGetRequestConfiguration struct {

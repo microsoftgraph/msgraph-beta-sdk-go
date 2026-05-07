@@ -24,9 +24,9 @@ type CompaniesItemSalesOrdersItemCurrencyRequestBuilderDeleteRequestConfiguratio
 // CompaniesItemSalesOrdersItemCurrencyRequestBuilderGetQueryParameters get currency from financials
 type CompaniesItemSalesOrdersItemCurrencyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemSalesOrdersItemCurrencyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesOrdersItemCurrencyRequestBuilderGetRequestConfiguration struct {

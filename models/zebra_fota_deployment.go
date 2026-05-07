@@ -23,18 +23,6 @@ func NewZebraFotaDeployment()(*ZebraFotaDeployment) {
 func CreateZebraFotaDeploymentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewZebraFotaDeployment(), nil
 }
-// GetDeploymentAssignments gets the deploymentAssignments property value. Collection of Android FOTA Assignment
-// returns a []AndroidFotaDeploymentAssignmentable when successful
-func (m *ZebraFotaDeployment) GetDeploymentAssignments()([]AndroidFotaDeploymentAssignmentable) {
-    val, err := m.GetBackingStore().Get("deploymentAssignments")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AndroidFotaDeploymentAssignmentable)
-    }
-    return nil
-}
 // GetDeploymentSettings gets the deploymentSettings property value. The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
 // returns a ZebraFotaDeploymentSettingsable when successful
 func (m *ZebraFotaDeployment) GetDeploymentSettings()(ZebraFotaDeploymentSettingsable) {
@@ -87,22 +75,6 @@ func (m *ZebraFotaDeployment) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ZebraFotaDeployment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["deploymentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAndroidFotaDeploymentAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AndroidFotaDeploymentAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AndroidFotaDeploymentAssignmentable)
-                }
-            }
-            m.SetDeploymentAssignments(res)
-        }
-        return nil
-    }
     res["deploymentSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateZebraFotaDeploymentSettingsFromDiscriminatorValue)
         if err != nil {
@@ -179,18 +151,6 @@ func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     if err != nil {
         return err
     }
-    if m.GetDeploymentAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeploymentAssignments()))
-        for i, v := range m.GetDeploymentAssignments() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("deploymentAssignments", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteObjectValue("deploymentSettings", m.GetDeploymentSettings())
         if err != nil {
@@ -222,13 +182,6 @@ func (m *ZebraFotaDeployment) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     return nil
-}
-// SetDeploymentAssignments sets the deploymentAssignments property value. Collection of Android FOTA Assignment
-func (m *ZebraFotaDeployment) SetDeploymentAssignments(value []AndroidFotaDeploymentAssignmentable)() {
-    err := m.GetBackingStore().Set("deploymentAssignments", value)
-    if err != nil {
-        panic(err)
-    }
 }
 // SetDeploymentSettings sets the deploymentSettings property value. The Zebra FOTA deployment complex type that describes the settings required to create a FOTA deployment.
 func (m *ZebraFotaDeployment) SetDeploymentSettings(value ZebraFotaDeploymentSettingsable)() {
@@ -268,13 +221,11 @@ func (m *ZebraFotaDeployment) SetRoleScopeTagIds(value []string)() {
 type ZebraFotaDeploymentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDeploymentAssignments()([]AndroidFotaDeploymentAssignmentable)
     GetDeploymentSettings()(ZebraFotaDeploymentSettingsable)
     GetDeploymentStatus()(ZebraFotaDeploymentStatusable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetRoleScopeTagIds()([]string)
-    SetDeploymentAssignments(value []AndroidFotaDeploymentAssignmentable)()
     SetDeploymentSettings(value ZebraFotaDeploymentSettingsable)()
     SetDeploymentStatus(value ZebraFotaDeploymentStatusable)()
     SetDescription(value *string)()

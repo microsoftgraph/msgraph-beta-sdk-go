@@ -25,7 +25,7 @@ func NewEducationalActivityDetail()(*EducationalActivityDetail) {
 func CreateEducationalActivityDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationalActivityDetail(), nil
 }
-// GetAbbreviation gets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
+// GetAbbreviation gets the abbreviation property value. Shortened name of the degree or program, for example, PhD and MBA.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetAbbreviation()(*string) {
     val, err := m.GetBackingStore().Get("abbreviation")
@@ -227,7 +227,7 @@ func (m *EducationalActivityDetail) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
+// GetFieldsOfStudy gets the fieldsOfStudy property value. Majors and minors associated with the program, if applicable.
 // returns a []string when successful
 func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
     val, err := m.GetBackingStore().Get("fieldsOfStudy")
@@ -239,7 +239,7 @@ func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
     }
     return nil
 }
-// GetGrade gets the grade property value. The final grade, class, GPA, or score.
+// GetGrade gets the grade property value. The final grade, class, grade point average (GPA), or score.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetGrade()(*string) {
     val, err := m.GetBackingStore().Get("grade")
@@ -251,7 +251,7 @@ func (m *EducationalActivityDetail) GetGrade()(*string) {
     }
     return nil
 }
-// GetNotes gets the notes property value. More notes the user provided.
+// GetNotes gets the notes property value. More notes provided by the user.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
@@ -357,7 +357,7 @@ func (m *EducationalActivityDetail) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAbbreviation sets the abbreviation property value. Shortened name of the degree or program (example: PhD, MBA)
+// SetAbbreviation sets the abbreviation property value. Shortened name of the degree or program, for example, PhD and MBA.
 func (m *EducationalActivityDetail) SetAbbreviation(value *string)() {
     err := m.GetBackingStore().Set("abbreviation", value)
     if err != nil {
@@ -403,21 +403,21 @@ func (m *EducationalActivityDetail) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFieldsOfStudy sets the fieldsOfStudy property value. Majors and minors associated with the program. (if applicable)
+// SetFieldsOfStudy sets the fieldsOfStudy property value. Majors and minors associated with the program, if applicable.
 func (m *EducationalActivityDetail) SetFieldsOfStudy(value []string)() {
     err := m.GetBackingStore().Set("fieldsOfStudy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetGrade sets the grade property value. The final grade, class, GPA, or score.
+// SetGrade sets the grade property value. The final grade, class, grade point average (GPA), or score.
 func (m *EducationalActivityDetail) SetGrade(value *string)() {
     err := m.GetBackingStore().Set("grade", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. More notes the user provided.
+// SetNotes sets the notes property value. More notes provided by the user.
 func (m *EducationalActivityDetail) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {

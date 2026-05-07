@@ -24,9 +24,9 @@ type ItemPageTemplatesItemCanvasLayoutVerticalSectionRequestBuilderDeleteRequest
 // ItemPageTemplatesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters vertical section on the SharePoint page.
 type ItemPageTemplatesItemCanvasLayoutVerticalSectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPageTemplatesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPageTemplatesItemCanvasLayoutVerticalSectionRequestBuilderGetRequestConfiguration struct {

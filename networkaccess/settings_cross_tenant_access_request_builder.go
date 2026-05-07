@@ -24,9 +24,9 @@ type SettingsCrossTenantAccessRequestBuilderDeleteRequestConfiguration struct {
 // SettingsCrossTenantAccessRequestBuilderGetQueryParameters retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
 type SettingsCrossTenantAccessRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SettingsCrossTenantAccessRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SettingsCrossTenantAccessRequestBuilderGetRequestConfiguration struct {

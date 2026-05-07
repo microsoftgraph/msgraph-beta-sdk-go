@@ -24,9 +24,9 @@ type TeamsAppsItemAppDefinitionsItemOutlineIconRequestBuilderDeleteRequestConfig
 // TeamsAppsItemAppDefinitionsItemOutlineIconRequestBuilderGetQueryParameters retrieve a Teams app icon associated with a specific definition of an app.
 type TeamsAppsItemAppDefinitionsItemOutlineIconRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsAppsItemAppDefinitionsItemOutlineIconRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsAppsItemAppDefinitionsItemOutlineIconRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectIte
 // LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters the administrative units in the scope of the workflow. Optional. Supports $expand.
 type LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

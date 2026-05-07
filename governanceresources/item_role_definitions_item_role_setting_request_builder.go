@@ -17,9 +17,9 @@ type ItemRoleDefinitionsItemRoleSettingRequestBuilder struct {
 // ItemRoleDefinitionsItemRoleSettingRequestBuilderGetQueryParameters the associated role setting for the role definition.
 type ItemRoleDefinitionsItemRoleSettingRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleDefinitionsItemRoleSettingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleDefinitionsItemRoleSettingRequestBuilderGetRequestConfiguration struct {

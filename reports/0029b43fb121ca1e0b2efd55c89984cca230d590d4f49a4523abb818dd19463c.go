@@ -17,17 +17,17 @@ type ServiceActivityGetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnect
 // ServiceActivityGetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderGetQueryParameters retrieve the number of remote network tunnels which are connected. A remote network represents a location such as a branch office where customer premises equipment (CPE) is connected to the nearest deployment of Global Secure Access service through IPsec tunnels.
 type ServiceActivityGetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderGetQueryParameters struct {
     // Usage: aggregationIntervalInMinutes=@aggregationIntervalInMinutes
-    AggregationIntervalInMinutes *int32 `uriparametername:"aggregationIntervalInMinutes"`
+    AggregationIntervalInMinutes *int32 "uriparametername:\"aggregationIntervalInMinutes\""
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ServiceActivityGetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ServiceActivityGetMetricsForNetworkAccessRemoteNetworkBranchesTunnelConnectedWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderGetRequestConfiguration struct {

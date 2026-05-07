@@ -24,9 +24,9 @@ type ConnectionsItemItemsExternalItemItemRequestBuilderDeleteRequestConfiguratio
 // ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn't intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
 type ConnectionsItemItemsExternalItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectionsItemItemsExternalItemItemRequestBuilderGetRequestConfiguration struct {

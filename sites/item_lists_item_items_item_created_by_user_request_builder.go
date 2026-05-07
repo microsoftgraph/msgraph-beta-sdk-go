@@ -17,9 +17,9 @@ type ItemListsItemItemsItemCreatedByUserRequestBuilder struct {
 // ItemListsItemItemsItemCreatedByUserRequestBuilderGetQueryParameters get createdByUser from sites
 type ItemListsItemItemsItemCreatedByUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListsItemItemsItemCreatedByUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemCreatedByUserRequestBuilderGetRequestConfiguration struct {

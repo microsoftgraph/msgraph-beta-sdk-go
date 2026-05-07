@@ -24,11 +24,77 @@ func NewAccessReviewInstanceDecisionItemCustomDataProvidedResource()(*AccessRevi
 func CreateAccessReviewInstanceDecisionItemCustomDataProvidedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemCustomDataProvidedResource(), nil
 }
+// GetCustomData gets the customData property value. Custom data to include with the decision.
+// returns a *string when successful
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetCustomData()(*string) {
+    val, err := m.GetBackingStore().Get("customData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AccessReviewInstanceDecisionItemResource.GetFieldDeserializers()
+    res["customData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomData(val)
+        }
+        return nil
+    }
+    res["scopeDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScopeDisplayName(val)
+        }
+        return nil
+    }
+    res["scopeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScopeId(val)
+        }
+        return nil
+    }
     return res
+}
+// GetScopeDisplayName gets the scopeDisplayName property value. The name of the scope for the decision.
+// returns a *string when successful
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetScopeDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("scopeDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetScopeId gets the scopeId property value. The id of the scope for the decision.
+// returns a *string when successful
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) GetScopeId()(*string) {
+    val, err := m.GetBackingStore().Get("scopeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -36,9 +102,54 @@ func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) Serialize(w
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("customData", m.GetCustomData())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("scopeDisplayName", m.GetScopeDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("scopeId", m.GetScopeId())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetCustomData sets the customData property value. Custom data to include with the decision.
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetCustomData(value *string)() {
+    err := m.GetBackingStore().Set("customData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetScopeDisplayName sets the scopeDisplayName property value. The name of the scope for the decision.
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetScopeDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("scopeDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetScopeId sets the scopeId property value. The id of the scope for the decision.
+func (m *AccessReviewInstanceDecisionItemCustomDataProvidedResource) SetScopeId(value *string)() {
+    err := m.GetBackingStore().Set("scopeId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type AccessReviewInstanceDecisionItemCustomDataProvidedResourceable interface {
     AccessReviewInstanceDecisionItemResourceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCustomData()(*string)
+    GetScopeDisplayName()(*string)
+    GetScopeId()(*string)
+    SetCustomData(value *string)()
+    SetScopeDisplayName(value *string)()
+    SetScopeId(value *string)()
 }

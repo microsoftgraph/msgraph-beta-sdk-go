@@ -14,12 +14,12 @@ import (
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetQueryParameters get externalOriginResourceConnector from identityGovernance
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetQueryParameters the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration struct {
@@ -43,7 +43,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItem
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get externalOriginResourceConnector from identityGovernance
+// Get the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a ExternalOriginResourceConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -64,7 +64,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesIte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable), nil
 }
-// ToGetRequestInformation get externalOriginResourceConnector from identityGovernance
+// ToGetRequestInformation the connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceAccessPackageResourceRolesItemAccessPackageResourceExternalOriginResourceConnectorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -24,9 +24,9 @@ type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderDeleteReq
 // ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters the custom rules that define an access scenario.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConditionalAccessPoliciesConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration struct {

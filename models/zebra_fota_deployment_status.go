@@ -247,7 +247,7 @@ func (m *ZebraFotaDeploymentStatus) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value.  Date and time when the deployment status was updated from Zebra
 // returns a *Time when successful
 func (m *ZebraFotaDeploymentStatus) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -307,7 +307,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalCanceled()(*int32) {
     }
     return nil
 }
-// GetTotalCreated gets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.
+// GetTotalCreated gets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices. 
 // returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalCreated()(*int32) {
     val, err := m.GetBackingStore().Get("totalCreated")
@@ -367,7 +367,7 @@ func (m *ZebraFotaDeploymentStatus) GetTotalFailedInstall()(*int32) {
     }
     return nil
 }
-// GetTotalScheduled gets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled.
+// GetTotalScheduled gets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled. 
 // returns a *int32 when successful
 func (m *ZebraFotaDeploymentStatus) GetTotalScheduled()(*int32) {
     val, err := m.GetBackingStore().Get("totalScheduled")
@@ -543,7 +543,7 @@ func (m *ZebraFotaDeploymentStatus) SetErrorCode(value *ZebraFotaErrorCode)() {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the deployment status was updated from Zebra
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value.  Date and time when the deployment status was updated from Zebra
 func (m *ZebraFotaDeploymentStatus) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -578,7 +578,7 @@ func (m *ZebraFotaDeploymentStatus) SetTotalCanceled(value *int32)() {
         panic(err)
     }
 }
-// SetTotalCreated sets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices.
+// SetTotalCreated sets the totalCreated property value. An integer that indicates the total number of devices that have a job in the CREATED state. Typically indicates jobs that did not reach the devices. 
 func (m *ZebraFotaDeploymentStatus) SetTotalCreated(value *int32)() {
     err := m.GetBackingStore().Set("totalCreated", value)
     if err != nil {
@@ -613,7 +613,7 @@ func (m *ZebraFotaDeploymentStatus) SetTotalFailedInstall(value *int32)() {
         panic(err)
     }
 }
-// SetTotalScheduled sets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled.
+// SetTotalScheduled sets the totalScheduled property value. An integer that indicates the total number of devices that received the json and are scheduled. 
 func (m *ZebraFotaDeploymentStatus) SetTotalScheduled(value *int32)() {
     err := m.GetBackingStore().Set("totalScheduled", value)
     if err != nil {

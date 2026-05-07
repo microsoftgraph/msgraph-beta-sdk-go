@@ -17,9 +17,9 @@ type ItemDevicesItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilder stru
 // ItemDevicesItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilderGetQueryParameters get the item of type microsoft.graph.directoryObject as microsoft.graph.appRoleAssignment
 type ItemDevicesItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDevicesItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemRegisteredUsersItemGraphAppRoleAssignmentRequestBuilderGetRequestConfiguration struct {

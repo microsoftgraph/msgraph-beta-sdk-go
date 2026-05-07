@@ -17,21 +17,21 @@ type ItemSponsorsRequestBuilder struct {
 // ItemSponsorsRequestBuilderGetQueryParameters get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 type ItemSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemSponsorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
@@ -42,7 +42,7 @@ type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the sponsors property of the microsoft.graph.user entity.
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.sponsors.item collection
 // returns a *ItemSponsorsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -94,6 +94,11 @@ func (m *ItemSponsorsRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
+}
+// Ref provides operations to manage the collection of user entities.
+// returns a *ItemSponsorsRefRequestBuilder when successful
+func (m *ItemSponsorsRequestBuilder) Ref()(*ItemSponsorsRefRequestBuilder) {
+    return NewItemSponsorsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a *RequestInformation when successful

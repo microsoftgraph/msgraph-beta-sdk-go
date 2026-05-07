@@ -17,9 +17,9 @@ type LogsTrafficItemUserRequestBuilder struct {
 // LogsTrafficItemUserRequestBuilderGetQueryParameters represents the user associated with the network traffic, providing details about the individual or account initiating the transaction.
 type LogsTrafficItemUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LogsTrafficItemUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LogsTrafficItemUserRequestBuilderGetRequestConfiguration struct {

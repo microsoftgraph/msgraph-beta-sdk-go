@@ -93,7 +93,7 @@ func (m *ZebraFotaDeploymentSettings) GetDownloadRuleNetworkType()(*ZebraFotaNet
     }
     return nil
 }
-// GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
+// GetDownloadRuleStartDateTime gets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.
 // returns a *Time when successful
 func (m *ZebraFotaDeploymentSettings) GetDownloadRuleStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("downloadRuleStartDateTime")
@@ -281,7 +281,7 @@ func (m *ZebraFotaDeploymentSettings) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetFirmwareTargetArtifactDescription gets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+// GetFirmwareTargetArtifactDescription gets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: `LifeGuard Update 120 (released 29-June-2022)`.
 // returns a *string when successful
 func (m *ZebraFotaDeploymentSettings) GetFirmwareTargetArtifactDescription()(*string) {
     val, err := m.GetBackingStore().Get("firmwareTargetArtifactDescription")
@@ -401,7 +401,7 @@ func (m *ZebraFotaDeploymentSettings) GetScheduleMode()(*ZebraFotaScheduleMode) 
     }
     return nil
 }
-// GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+// GetTimeZoneOffsetInMinutes gets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 // returns a *int32 when successful
 func (m *ZebraFotaDeploymentSettings) GetTimeZoneOffsetInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("timeZoneOffsetInMinutes")
@@ -579,14 +579,14 @@ func (m *ZebraFotaDeploymentSettings) SetDownloadRuleNetworkType(value *ZebraFot
         panic(err)
     }
 }
-// SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.
+// SetDownloadRuleStartDateTime sets the downloadRuleStartDateTime property value. Date and time in the device time zone when the download will start (e.g., `2018-07-25T10:20:32`). The default value is UTC now and the maximum is 10 days from deployment creation.
 func (m *ZebraFotaDeploymentSettings) SetDownloadRuleStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("downloadRuleStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirmwareTargetArtifactDescription sets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+// SetFirmwareTargetArtifactDescription sets the firmwareTargetArtifactDescription property value. A description provided by Zebra for the the firmware artifact to update the device to (e.g.: `LifeGuard Update 120 (released 29-June-2022)`.
 func (m *ZebraFotaDeploymentSettings) SetFirmwareTargetArtifactDescription(value *string)() {
     err := m.GetBackingStore().Set("firmwareTargetArtifactDescription", value)
     if err != nil {
@@ -656,7 +656,7 @@ func (m *ZebraFotaDeploymentSettings) SetScheduleMode(value *ZebraFotaScheduleMo
         panic(err)
     }
 }
-// SetTimeZoneOffsetInMinutes sets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
+// SetTimeZoneOffsetInMinutes sets the timeZoneOffsetInMinutes property value. This attribute indicates the deployment time offset (e.g.`180` represents an offset of `+03:00`, and `-270` represents an offset of `-04:30`). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone
 func (m *ZebraFotaDeploymentSettings) SetTimeZoneOffsetInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("timeZoneOffsetInMinutes", value)
     if err != nil {

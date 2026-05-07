@@ -24,9 +24,9 @@ type ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestB
 // ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQueryParameters collection of resource access settings associated with account.
 type ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ResourceAccessProfilesDeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration struct {

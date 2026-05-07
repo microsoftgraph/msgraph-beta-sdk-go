@@ -17,9 +17,9 @@ type DeviceManagementResourceNamespacesItemResourceActionsItemAuthenticationCont
 // DeviceManagementResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilderGetQueryParameters get authenticationContext from roleManagement
 type DeviceManagementResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceManagementResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceManagementResourceNamespacesItemResourceActionsItemAuthenticationContextRequestBuilderGetRequestConfiguration struct {

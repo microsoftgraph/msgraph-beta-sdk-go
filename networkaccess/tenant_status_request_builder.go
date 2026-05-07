@@ -24,9 +24,9 @@ type TenantStatusRequestBuilderDeleteRequestConfiguration struct {
 // TenantStatusRequestBuilderGetQueryParameters retrieve the onboarding status of a specific tenant.
 type TenantStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TenantStatusRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TenantStatusRequestBuilderGetRequestConfiguration struct {

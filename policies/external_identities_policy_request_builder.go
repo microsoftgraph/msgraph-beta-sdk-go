@@ -24,9 +24,9 @@ type ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration struct {
 // ExternalIdentitiesPolicyRequestBuilderGetQueryParameters read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
 type ExternalIdentitiesPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ConditionalAccessAuthenticationStrengthRequestBuilderDeleteRequestConfigura
 // ConditionalAccessAuthenticationStrengthRequestBuilderGetQueryParameters defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
 type ConditionalAccessAuthenticationStrengthRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConditionalAccessAuthenticationStrengthRequestBuilderGetRequestConfiguration struct {

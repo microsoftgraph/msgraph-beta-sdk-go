@@ -24,9 +24,9 @@ type FileStorageContainersFileStorageContainerItemRequestBuilderDeleteRequestCon
 // FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters retrieve the properties of a fileStorageContainer.
 type FileStorageContainersFileStorageContainerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainersFileStorageContainerItemRequestBuilderGetRequestConfiguration struct {
@@ -48,6 +48,11 @@ type FileStorageContainersFileStorageContainerItemRequestBuilderPatchRequestConf
 // returns a *FileStorageContainersItemActivateRequestBuilder when successful
 func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Activate()(*FileStorageContainersItemActivateRequestBuilder) {
     return NewFileStorageContainersItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Archive provides operations to call the archive method.
+// returns a *FileStorageContainersItemArchiveRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Archive()(*FileStorageContainersItemArchiveRequestBuilder) {
+    return NewFileStorageContainersItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Columns provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.
 // returns a *FileStorageContainersItemColumnsRequestBuilder when successful
@@ -210,6 +215,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ToPatchReq
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *FileStorageContainersItemUnarchiveRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Unarchive()(*FileStorageContainersItemUnarchiveRequestBuilder) {
+    return NewFileStorageContainersItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Unlock provides operations to call the unlock method.
 // returns a *FileStorageContainersItemUnlockRequestBuilder when successful

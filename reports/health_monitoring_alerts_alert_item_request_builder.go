@@ -24,9 +24,9 @@ type HealthMonitoringAlertsAlertItemRequestBuilderDeleteRequestConfiguration str
 // HealthMonitoringAlertsAlertItemRequestBuilderGetQueryParameters read the properties and relationships of a Microsoft Entra health monitoring alert object. The returned alert object contains information about the state, type, date, and impact of each alert that fired within your tenant.
 type HealthMonitoringAlertsAlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HealthMonitoringAlertsAlertItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HealthMonitoringAlertsAlertItemRequestBuilderGetRequestConfiguration struct {

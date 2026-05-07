@@ -47,6 +47,16 @@ func (m *ClaimBinding) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4118542
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ClaimBinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["matchConfidenceLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMatchConfidenceLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMatchConfidenceLevel(val.(*MatchConfidenceLevel))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -78,6 +88,18 @@ func (m *ClaimBinding) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetMatchConfidenceLevel gets the matchConfidenceLevel property value. The matchConfidenceLevel property
+// returns a *MatchConfidenceLevel when successful
+func (m *ClaimBinding) GetMatchConfidenceLevel()(*MatchConfidenceLevel) {
+    val, err := m.GetBackingStore().Get("matchConfidenceLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MatchConfidenceLevel)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -117,6 +139,13 @@ func (m *ClaimBinding) GetVerifiedIdClaim()(*string) {
 }
 // Serialize serializes information the current object
 func (m *ClaimBinding) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetMatchConfidenceLevel() != nil {
+        cast := (*m.GetMatchConfidenceLevel()).String()
+        err := writer.WriteStringValue("matchConfidenceLevel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -154,6 +183,13 @@ func (m *ClaimBinding) SetAdditionalData(value map[string]any)() {
 func (m *ClaimBinding) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetMatchConfidenceLevel sets the matchConfidenceLevel property value. The matchConfidenceLevel property
+func (m *ClaimBinding) SetMatchConfidenceLevel(value *MatchConfidenceLevel)() {
+    err := m.GetBackingStore().Set("matchConfidenceLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ClaimBinding) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -180,10 +216,12 @@ type ClaimBindingable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMatchConfidenceLevel()(*MatchConfidenceLevel)
     GetOdataType()(*string)
     GetSourceAttribute()(*string)
     GetVerifiedIdClaim()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMatchConfidenceLevel(value *MatchConfidenceLevel)()
     SetOdataType(value *string)()
     SetSourceAttribute(value *string)()
     SetVerifiedIdClaim(value *string)()

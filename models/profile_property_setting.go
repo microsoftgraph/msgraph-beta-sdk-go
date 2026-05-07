@@ -22,15 +22,15 @@ func NewProfilePropertySetting()(*ProfilePropertySetting) {
 func CreateProfilePropertySettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProfilePropertySetting(), nil
 }
-// GetAllowedAudiences gets the allowedAudiences property value. A privacy setting that reflects the allowed audience for the configured property. The possible values are: me, organization, federatedOrganizations, everyone, unknownFutureValue.
-// returns a *OrganizationAllowedAudiences when successful
-func (m *ProfilePropertySetting) GetAllowedAudiences()(*OrganizationAllowedAudiences) {
-    val, err := m.GetBackingStore().Get("allowedAudiences")
+// GetDisplayName gets the displayName property value. Name of the property-level setting.
+// returns a *string when successful
+func (m *ProfilePropertySetting) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*OrganizationAllowedAudiences)
+        return val.(*string)
     }
     return nil
 }
@@ -38,23 +38,13 @@ func (m *ProfilePropertySetting) GetAllowedAudiences()(*OrganizationAllowedAudie
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProfilePropertySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedAudiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseOrganizationAllowedAudiences)
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowedAudiences(val.(*OrganizationAllowedAudiences))
-        }
-        return nil
-    }
-    res["isUserOverrideForAudienceEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsUserOverrideForAudienceEnabled(val)
+            m.SetDisplayName(val)
         }
         return nil
     }
@@ -86,19 +76,7 @@ func (m *ProfilePropertySetting) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsUserOverrideForAudienceEnabled gets the isUserOverrideForAudienceEnabled property value. Defines whether a user is allowed to override the tenant admin privacy setting.
-// returns a *bool when successful
-func (m *ProfilePropertySetting) GetIsUserOverrideForAudienceEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isUserOverrideForAudienceEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
-}
-// GetName gets the name property value. Name of the property-level setting.
+// GetName gets the name property value. Other name of the property-level setting. For backward compatibility.
 // returns a *string when successful
 func (m *ProfilePropertySetting) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -128,15 +106,8 @@ func (m *ProfilePropertySetting) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
-    if m.GetAllowedAudiences() != nil {
-        cast := (*m.GetAllowedAudiences()).String()
-        err = writer.WriteStringValue("allowedAudiences", &cast)
-        if err != nil {
-            return err
-        }
-    }
     {
-        err = writer.WriteBoolValue("isUserOverrideForAudienceEnabled", m.GetIsUserOverrideForAudienceEnabled())
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
@@ -155,21 +126,14 @@ func (m *ProfilePropertySetting) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetAllowedAudiences sets the allowedAudiences property value. A privacy setting that reflects the allowed audience for the configured property. The possible values are: me, organization, federatedOrganizations, everyone, unknownFutureValue.
-func (m *ProfilePropertySetting) SetAllowedAudiences(value *OrganizationAllowedAudiences)() {
-    err := m.GetBackingStore().Set("allowedAudiences", value)
+// SetDisplayName sets the displayName property value. Name of the property-level setting.
+func (m *ProfilePropertySetting) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsUserOverrideForAudienceEnabled sets the isUserOverrideForAudienceEnabled property value. Defines whether a user is allowed to override the tenant admin privacy setting.
-func (m *ProfilePropertySetting) SetIsUserOverrideForAudienceEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isUserOverrideForAudienceEnabled", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetName sets the name property value. Name of the property-level setting.
+// SetName sets the name property value. Other name of the property-level setting. For backward compatibility.
 func (m *ProfilePropertySetting) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -186,12 +150,10 @@ func (m *ProfilePropertySetting) SetPrioritizedSourceUrls(value []string)() {
 type ProfilePropertySettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedAudiences()(*OrganizationAllowedAudiences)
-    GetIsUserOverrideForAudienceEnabled()(*bool)
+    GetDisplayName()(*string)
     GetName()(*string)
     GetPrioritizedSourceUrls()([]string)
-    SetAllowedAudiences(value *OrganizationAllowedAudiences)()
-    SetIsUserOverrideForAudienceEnabled(value *bool)()
+    SetDisplayName(value *string)()
     SetName(value *string)()
     SetPrioritizedSourceUrls(value []string)()
 }

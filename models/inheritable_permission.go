@@ -79,7 +79,7 @@ func (m *InheritablePermission) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInheritableScopes gets the inheritableScopes property value. The inheritableScopes property
+// GetInheritableScopes gets the inheritableScopes property value. Inheritance configuration for delegated permission scopes published by the resource application. Supports three patterns: allAllowedScopes (inherit all available scopes), enumeratedScopes (inherit only the listed scopes), and noScopes (inherit none). Each pattern exposes a kind discriminator for filtering.
 // returns a InheritableScopesable when successful
 func (m *InheritablePermission) GetInheritableScopes()(InheritableScopesable) {
     val, err := m.GetBackingStore().Get("inheritableScopes")
@@ -154,7 +154,7 @@ func (m *InheritablePermission) SetAdditionalData(value map[string]any)() {
 func (m *InheritablePermission) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInheritableScopes sets the inheritableScopes property value. The inheritableScopes property
+// SetInheritableScopes sets the inheritableScopes property value. Inheritance configuration for delegated permission scopes published by the resource application. Supports three patterns: allAllowedScopes (inherit all available scopes), enumeratedScopes (inherit only the listed scopes), and noScopes (inherit none). Each pattern exposes a kind discriminator for filtering.
 func (m *InheritablePermission) SetInheritableScopes(value InheritableScopesable)() {
     err := m.GetBackingStore().Set("inheritableScopes", value)
     if err != nil {

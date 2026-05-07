@@ -24,9 +24,9 @@ type PartnerRequestBuilderDeleteRequestConfiguration struct {
 // PartnerRequestBuilderGetQueryParameters a container that safeguards the Microsoft Azure resources of Microsoft Cloud Solution Provider (CSP) partners' customers, including alerts, scores, and all aspects of security.
 type PartnerRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PartnerRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PartnerRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type DeletedItemsItemGraphGroupRequestBuilder struct {
 // DeletedItemsItemGraphGroupRequestBuilderGetQueryParameters retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- agentIdentityBlueprint- agentIdentity- agentIdentityBlueprintPrincipal- agentUser- certificateBasedAuthPki- certificateAuthorityDetail- externalUserProfile- group- pendingExternalUserProfile- servicePrincipal- user
 type DeletedItemsItemGraphGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsItemGraphGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsItemGraphGroupRequestBuilderGetRequestConfiguration struct {

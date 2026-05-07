@@ -24,9 +24,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansIte
 // TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetQueryParameters collection of tasks in the plan. Read-only. Nullable.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilderGetRequestConfiguration struct {
@@ -107,6 +107,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlan
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
+}
+// Messages provides operations to manage the messages property of the microsoft.graph.plannerTask entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksPlannerTaskItemRequestBuilder) Messages()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemTasksItemMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property tasks in teamwork
 // returns a PlannerTaskable when successful

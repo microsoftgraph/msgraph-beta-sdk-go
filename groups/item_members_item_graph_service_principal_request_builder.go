@@ -17,9 +17,9 @@ type ItemMembersItemGraphServicePrincipalRequestBuilder struct {
 // ItemMembersItemGraphServicePrincipalRequestBuilderGetQueryParameters get a list of the group's direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn't transitive.
 type ItemMembersItemGraphServicePrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMembersItemGraphServicePrincipalRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMembersItemGraphServicePrincipalRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranu
 // BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters a collection of browse session id and item key details that can be used to restore SharePoint files and folders.
 type BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointRestoreSessionsItemGranularSiteRestoreArtifactsGranularSiteRestoreArtifactItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type AuthorizationSystemsAuthorizationSystemItemRequestBuilderDeleteRequestConfi
 // AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetQueryParameters represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 type AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetRequestConfiguration struct {

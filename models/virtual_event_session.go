@@ -24,6 +24,18 @@ func NewVirtualEventSession()(*VirtualEventSession) {
 func CreateVirtualEventSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventSession(), nil
 }
+// GetCapacity gets the capacity property value. The capacity property
+// returns a *int32 when successful
+func (m *VirtualEventSession) GetCapacity()(*int32) {
+    val, err := m.GetBackingStore().Get("capacity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetEndDateTime gets the endDateTime property value. The virtual event session end time.
 // returns a DateTimeTimeZoneable when successful
 func (m *VirtualEventSession) GetEndDateTime()(DateTimeTimeZoneable) {
@@ -40,6 +52,16 @@ func (m *VirtualEventSession) GetEndDateTime()(DateTimeTimeZoneable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEventSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnlineMeetingBase.GetFieldDeserializers()
+    res["capacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCapacity(val)
+        }
+        return nil
+    }
     res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -159,6 +181,12 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
         return err
     }
     {
+        err = writer.WriteInt32Value("capacity", m.GetCapacity())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("endDateTime", m.GetEndDateTime())
         if err != nil {
             return err
@@ -202,6 +230,13 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
+// SetCapacity sets the capacity property value. The capacity property
+func (m *VirtualEventSession) SetCapacity(value *int32)() {
+    err := m.GetBackingStore().Set("capacity", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEndDateTime sets the endDateTime property value. The virtual event session end time.
 func (m *VirtualEventSession) SetEndDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endDateTime", value)
@@ -240,11 +275,13 @@ func (m *VirtualEventSession) SetVideoOnDemandWebUrl(value *string)() {
 type VirtualEventSessionable interface {
     OnlineMeetingBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCapacity()(*int32)
     GetEndDateTime()(DateTimeTimeZoneable)
     GetPresenters()([]VirtualEventPresenterable)
     GetRegistrations()([]VirtualEventRegistrationable)
     GetStartDateTime()(DateTimeTimeZoneable)
     GetVideoOnDemandWebUrl()(*string)
+    SetCapacity(value *int32)()
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetPresenters(value []VirtualEventPresenterable)()
     SetRegistrations(value []VirtualEventRegistrationable)()

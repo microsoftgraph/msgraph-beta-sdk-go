@@ -24,9 +24,9 @@ type DataDiscoveryRequestBuilderDeleteRequestConfiguration struct {
 // DataDiscoveryRequestBuilderGetQueryParameters get dataDiscovery from security
 type DataDiscoveryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DataDiscoveryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DataDiscoveryRequestBuilderGetRequestConfiguration struct {

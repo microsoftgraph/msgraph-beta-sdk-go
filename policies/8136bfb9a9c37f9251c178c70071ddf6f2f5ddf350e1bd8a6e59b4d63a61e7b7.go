@@ -24,9 +24,9 @@ type DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerT
 // DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 type DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetRequestConfiguration struct {
@@ -103,6 +103,11 @@ func (m *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPart
 // returns a *DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilder when successful
 func (m *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) IdentitySynchronization()(*DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilder) {
     return NewDeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// M365Capabilities provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
+// returns a *DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder when successful
+func (m *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) M365Capabilities()(*DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder) {
+    return NewDeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property crossTenantPartners in policies
 // returns a CrossTenantAccessPolicyConfigurationPartnerable when successful

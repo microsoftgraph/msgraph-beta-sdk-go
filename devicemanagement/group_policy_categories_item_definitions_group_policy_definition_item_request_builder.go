@@ -17,9 +17,9 @@ type GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilder
 // GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetQueryParameters the immediate GroupPolicyDefinition children of the category
 type GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyCategoriesItemDefinitionsGroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration struct {

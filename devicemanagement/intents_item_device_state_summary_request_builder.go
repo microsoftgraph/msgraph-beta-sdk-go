@@ -24,9 +24,9 @@ type IntentsItemDeviceStateSummaryRequestBuilderDeleteRequestConfiguration struc
 // IntentsItemDeviceStateSummaryRequestBuilderGetQueryParameters a summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
 type IntentsItemDeviceStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IntentsItemDeviceStateSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IntentsItemDeviceStateSummaryRequestBuilderGetRequestConfiguration struct {

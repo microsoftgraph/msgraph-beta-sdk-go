@@ -92,7 +92,7 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     }
     return nil
 }
-// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 // returns a AuthenticationBehaviorsable when successful
 func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
     val, err := m.GetBackingStore().Get("authenticationBehaviors")
@@ -128,7 +128,7 @@ func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
     }
     return nil
 }
-// GetCreatedByAppId gets the createdByAppId property value. The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+// GetCreatedByAppId gets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
 // returns a *string when successful
 func (m *Application) GetCreatedByAppId()(*string) {
     val, err := m.GetBackingStore().Get("createdByAppId")
@@ -529,6 +529,22 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetLogo(val)
+        }
+        return nil
+    }
+    res["managerApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("uuid")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
+            }
+            m.SetManagerApplications(res)
         }
         return nil
     }
@@ -935,6 +951,18 @@ func (m *Application) GetLogo()([]byte) {
     }
     if val != nil {
         return val.([]byte)
+    }
+    return nil
+}
+// GetManagerApplications gets the managerApplications property value. A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Requires $select to retrieve.
+// returns a []UUID when successful
+func (m *Application) GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("managerApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     }
     return nil
 }
@@ -1442,6 +1470,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetManagerApplications() != nil {
+        err = writer.WriteCollectionOfUUIDValues("managerApplications", m.GetManagerApplications())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetNativeAuthenticationApisEnabled() != nil {
         cast := (*m.GetNativeAuthenticationApisEnabled()).String()
         err = writer.WriteStringValue("nativeAuthenticationApisEnabled", &cast)
@@ -1659,7 +1693,7 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         panic(err)
     }
 }
-// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 func (m *Application) SetAuthenticationBehaviors(value AuthenticationBehaviorsable)() {
     err := m.GetBackingStore().Set("authenticationBehaviors", value)
     if err != nil {
@@ -1680,7 +1714,7 @@ func (m *Application) SetConnectorGroup(value ConnectorGroupable)() {
         panic(err)
     }
 }
-// SetCreatedByAppId sets the createdByAppId property value. The globally unique appId (called Application (client) ID on the Microsoft Entra admin center) of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+// SetCreatedByAppId sets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
 func (m *Application) SetCreatedByAppId(value *string)() {
     err := m.GetBackingStore().Set("createdByAppId", value)
     if err != nil {
@@ -1802,6 +1836,13 @@ func (m *Application) SetKeyCredentials(value []KeyCredentialable)() {
 // SetLogo sets the logo property value. The main logo for the application. Not nullable.
 func (m *Application) SetLogo(value []byte)() {
     err := m.GetBackingStore().Set("logo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetManagerApplications sets the managerApplications property value. A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Requires $select to retrieve.
+func (m *Application) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("managerApplications", value)
     if err != nil {
         panic(err)
     }
@@ -2016,6 +2057,7 @@ type Applicationable interface {
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
+    GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetNativeAuthenticationApisEnabled()(*NativeAuthenticationApisEnabled)
     GetNotes()(*string)
     GetOnPremisesPublishing()(OnPremisesPublishingable)
@@ -2067,6 +2109,7 @@ type Applicationable interface {
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()
+    SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)()
     SetNotes(value *string)()
     SetOnPremisesPublishing(value OnPremisesPublishingable)()

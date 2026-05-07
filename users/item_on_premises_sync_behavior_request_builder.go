@@ -24,9 +24,9 @@ type ItemOnPremisesSyncBehaviorRequestBuilderDeleteRequestConfiguration struct {
 // ItemOnPremisesSyncBehaviorRequestBuilderGetQueryParameters indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
 type ItemOnPremisesSyncBehaviorRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOnPremisesSyncBehaviorRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnPremisesSyncBehaviorRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfigu
 // ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters the user's Outlook task groups. Read-only. Nullable.
 type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilder struct
 // TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilderGetQueryParameters the template this team was created from. See available templates.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionTemplateRequestBuilderGetRequestConfiguration struct {

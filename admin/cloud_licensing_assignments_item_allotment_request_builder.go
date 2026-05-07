@@ -17,9 +17,9 @@ type CloudLicensingAssignmentsItemAllotmentRequestBuilder struct {
 // CloudLicensingAssignmentsItemAllotmentRequestBuilderGetQueryParameters get the allotment that is the source of the licenses used in the assignment.
 type CloudLicensingAssignmentsItemAllotmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudLicensingAssignmentsItemAllotmentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudLicensingAssignmentsItemAllotmentRequestBuilderGetRequestConfiguration struct {

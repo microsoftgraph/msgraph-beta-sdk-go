@@ -16,9 +16,9 @@ type WdacSupplementalPoliciesItemDeviceStatusesCountRequestBuilder struct {
 // WdacSupplementalPoliciesItemDeviceStatusesCountRequestBuilderGetQueryParameters get the number of the resource
 type WdacSupplementalPoliciesItemDeviceStatusesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // WdacSupplementalPoliciesItemDeviceStatusesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WdacSupplementalPoliciesItemDeviceStatusesCountRequestBuilderGetRequestConfiguration struct {

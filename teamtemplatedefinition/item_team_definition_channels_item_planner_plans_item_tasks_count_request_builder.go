@@ -16,9 +16,9 @@ type ItemTeamDefinitionChannelsItemPlannerPlansItemTasksCountRequestBuilder stru
 // ItemTeamDefinitionChannelsItemPlannerPlansItemTasksCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemTeamDefinitionChannelsItemPlannerPlansItemTasksCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemTeamDefinitionChannelsItemPlannerPlansItemTasksCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamDefinitionChannelsItemPlannerPlansItemTasksCountRequestBuilderGetRequestConfiguration struct {

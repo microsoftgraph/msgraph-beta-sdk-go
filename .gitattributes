@@ -6,3 +6,5 @@ go.mod text eol=lf
 *.go text eol=lf
 # Fallback: treat everything else as text and let git normalize according to platform/default
 * text=auto
+# Track large export files with Git LFS to avoid GitHub's 100MB file size limit
+kiota-dom-export.txt filter=lfs diff=lfs merge=lfs -text

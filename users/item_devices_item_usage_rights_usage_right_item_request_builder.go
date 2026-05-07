@@ -24,9 +24,9 @@ type ItemDevicesItemUsageRightsUsageRightItemRequestBuilderDeleteRequestConfigur
 // ItemDevicesItemUsageRightsUsageRightItemRequestBuilderGetQueryParameters represents the usage rights a device has been granted.
 type ItemDevicesItemUsageRightsUsageRightItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDevicesItemUsageRightsUsageRightItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemUsageRightsUsageRightItemRequestBuilderGetRequestConfiguration struct {

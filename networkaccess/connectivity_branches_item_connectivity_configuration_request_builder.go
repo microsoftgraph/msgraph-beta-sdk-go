@@ -24,9 +24,9 @@ type ConnectivityBranchesItemConnectivityConfigurationRequestBuilderDeleteReques
 // ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetQueryParameters retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization's router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
 type ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetRequestConfiguration struct {

@@ -22,10 +22,16 @@ const (
     OTHER_DEVICEVENDOR
     CISCOCATALYST_DEVICEVENDOR
     UNKNOWNFUTUREVALUE_DEVICEVENDOR
+    AVIATRIX_DEVICEVENDOR
+    NETSKOPE_DEVICEVENDOR
+    TERIDION_DEVICEVENDOR
+    ARISTANETWORKS_DEVICEVENDOR
+    ARISTAVELOCLOUD_DEVICEVENDOR
+    JUNIPERNETWORKS_DEVICEVENDOR
 )
 
 func (i DeviceVendor) String() string {
-    return []string{"barracudaNetworks", "checkPoint", "ciscoMeraki", "citrix", "fortinet", "hpeAruba", "netFoundry", "nuage", "openSystems", "paloAltoNetworks", "riverbedTechnology", "silverPeak", "vmWareSdWan", "versa", "other", "ciscoCatalyst", "unknownFutureValue"}[i]
+    return []string{"barracudaNetworks", "checkPoint", "ciscoMeraki", "citrix", "fortinet", "hpeAruba", "netFoundry", "nuage", "openSystems", "paloAltoNetworks", "riverbedTechnology", "silverPeak", "vmWareSdWan", "versa", "other", "ciscoCatalyst", "unknownFutureValue", "aviatrix", "netskope", "teridion", "aristaNetworks", "aristaVeloCloud", "juniperNetworks"}[i]
 }
 func ParseDeviceVendor(v string) (any, error) {
     result := BARRACUDANETWORKS_DEVICEVENDOR
@@ -64,6 +70,18 @@ func ParseDeviceVendor(v string) (any, error) {
             result = CISCOCATALYST_DEVICEVENDOR
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEVENDOR
+        case "aviatrix":
+            result = AVIATRIX_DEVICEVENDOR
+        case "netskope":
+            result = NETSKOPE_DEVICEVENDOR
+        case "teridion":
+            result = TERIDION_DEVICEVENDOR
+        case "aristaNetworks":
+            result = ARISTANETWORKS_DEVICEVENDOR
+        case "aristaVeloCloud":
+            result = ARISTAVELOCLOUD_DEVICEVENDOR
+        case "juniperNetworks":
+            result = JUNIPERNETWORKS_DEVICEVENDOR
         default:
             return nil, nil
     }

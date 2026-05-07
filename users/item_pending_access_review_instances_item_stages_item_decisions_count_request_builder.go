@@ -16,9 +16,9 @@ type ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilder 
 // ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPendingAccessReviewInstancesItemStagesItemDecisionsCountRequestBuilderGetRequestConfiguration struct {

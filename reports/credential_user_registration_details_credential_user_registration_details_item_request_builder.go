@@ -24,9 +24,9 @@ type CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemReque
 // CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetQueryParameters details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 type CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemRequestBuilderGetRequestConfiguration struct {

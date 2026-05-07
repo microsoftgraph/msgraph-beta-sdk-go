@@ -24,9 +24,9 @@ type CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderDel
 // CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderGetQueryParameters collection of CloudCertificationAuthority records associated with account.
 type CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderGetRequestConfiguration struct {
@@ -43,6 +43,16 @@ type CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilderPat
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Activate provides operations to call the activate method.
+// returns a *CloudCertificationAuthorityItemActivateRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) Activate()(*CloudCertificationAuthorityItemActivateRequestBuilder) {
+    return NewCloudCertificationAuthorityItemActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ActiveVersion provides operations to manage the activeVersion property of the microsoft.graph.cloudCertificationAuthority entity.
+// returns a *CloudCertificationAuthorityItemActiveVersionRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) ActiveVersion()(*CloudCertificationAuthorityItemActiveVersionRequestBuilder) {
+    return NewCloudCertificationAuthorityItemActiveVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ChangeCloudCertificationAuthorityStatus provides operations to call the changeCloudCertificationAuthorityStatus method.
 // returns a *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusRequestBuilder when successful
@@ -118,6 +128,16 @@ func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilde
 func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) GetCloudCertificationAuthority()(*CloudCertificationAuthorityItemGetCloudCertificationAuthorityRequestBuilder) {
     return NewCloudCertificationAuthorityItemGetCloudCertificationAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetCloudCertificationAuthorityVersion provides operations to call the getCloudCertificationAuthorityVersion method.
+// returns a *CloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) GetCloudCertificationAuthorityVersion()(*CloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionRequestBuilder) {
+    return NewCloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetCloudCertificationAuthorityVersions provides operations to call the getCloudCertificationAuthorityVersions method.
+// returns a *CloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionsRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) GetCloudCertificationAuthorityVersions()(*CloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionsRequestBuilder) {
+    return NewCloudCertificationAuthorityItemGetCloudCertificationAuthorityVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property cloudCertificationAuthority in deviceManagement
 // returns a CloudCertificationAuthorityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -147,6 +167,11 @@ func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilde
 // returns a *CloudCertificationAuthorityItemPostCloudCertificationAuthorityRequestBuilder when successful
 func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) PostCloudCertificationAuthority()(*CloudCertificationAuthorityItemPostCloudCertificationAuthorityRequestBuilder) {
     return NewCloudCertificationAuthorityItemPostCloudCertificationAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Renew provides operations to call the renew method.
+// returns a *CloudCertificationAuthorityItemRenewRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) Renew()(*CloudCertificationAuthorityItemRenewRequestBuilder) {
+    return NewCloudCertificationAuthorityItemRenewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RevokeCloudCertificationAuthorityCertificate provides operations to call the revokeCloudCertificationAuthorityCertificate method.
 // returns a *CloudCertificationAuthorityItemRevokeCloudCertificationAuthorityCertificateRequestBuilder when successful
@@ -212,6 +237,11 @@ func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilde
 // returns a *CloudCertificationAuthorityItemUploadExternallySignedCertificationAuthorityCertificateRequestBuilder when successful
 func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) UploadExternallySignedCertificationAuthorityCertificate()(*CloudCertificationAuthorityItemUploadExternallySignedCertificationAuthorityCertificateRequestBuilder) {
     return NewCloudCertificationAuthorityItemUploadExternallySignedCertificationAuthorityCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Versions provides operations to manage the versions property of the microsoft.graph.cloudCertificationAuthority entity.
+// returns a *CloudCertificationAuthorityItemVersionsRequestBuilder when successful
+func (m *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder) Versions()(*CloudCertificationAuthorityItemVersionsRequestBuilder) {
+    return NewCloudCertificationAuthorityItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *CloudCertificationAuthorityCloudCertificationAuthorityItemRequestBuilder when successful

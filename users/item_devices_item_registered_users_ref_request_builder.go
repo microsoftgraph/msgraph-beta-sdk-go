@@ -17,7 +17,7 @@ type ItemDevicesItemRegisteredUsersRefRequestBuilder struct {
 // ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteQueryParameters delete ref of navigation property registeredUsers for users
 type ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type ItemDevicesItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration s
 // ItemDevicesItemRegisteredUsersRefRequestBuilderGetQueryParameters collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 type ItemDevicesItemRegisteredUsersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemDevicesItemRegisteredUsersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemRegisteredUsersRefRequestBuilderGetRequestConfiguration struct {
