@@ -118,7 +118,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Policies()(*ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
 // returns a *ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ServicePrincipal()(*ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

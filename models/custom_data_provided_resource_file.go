@@ -59,7 +59,7 @@ func (m *CustomDataProvidedResourceFile) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetName gets the name property value. Name of the file that was uploaded.
+// GetName gets the name property value. Name of the uploaded file, including the file extension. Required.  Supports $filter (eq, ne)  and $orderby.
 // returns a *string when successful
 func (m *CustomDataProvidedResourceFile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -71,7 +71,7 @@ func (m *CustomDataProvidedResourceFile) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. Size of the uploaded file in bytes.
+// GetSize gets the size property value. Size of the file in bytes. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.
 // returns a *int64 when successful
 func (m *CustomDataProvidedResourceFile) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
@@ -83,7 +83,7 @@ func (m *CustomDataProvidedResourceFile) GetSize()(*int64) {
     }
     return nil
 }
-// GetUploadedDateTime gets the uploadedDateTime property value. Time at which the file was uploaded.
+// GetUploadedDateTime gets the uploadedDateTime property value. Timestamp when the file was uploaded. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.
 // returns a *Time when successful
 func (m *CustomDataProvidedResourceFile) GetUploadedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("uploadedDateTime")
@@ -121,21 +121,21 @@ func (m *CustomDataProvidedResourceFile) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetName sets the name property value. Name of the file that was uploaded.
+// SetName sets the name property value. Name of the uploaded file, including the file extension. Required.  Supports $filter (eq, ne)  and $orderby.
 func (m *CustomDataProvidedResourceFile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. Size of the uploaded file in bytes.
+// SetSize sets the size property value. Size of the file in bytes. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.
 func (m *CustomDataProvidedResourceFile) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUploadedDateTime sets the uploadedDateTime property value. Time at which the file was uploaded.
+// SetUploadedDateTime sets the uploadedDateTime property value. Timestamp when the file was uploaded. Read-only.  Supports $filter (eq, ne, gt, ge, lt, le) and $orderby.
 func (m *CustomDataProvidedResourceFile) SetUploadedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("uploadedDateTime", value)
     if err != nil {

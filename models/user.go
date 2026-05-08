@@ -331,6 +331,18 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
+// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// returns a []CloudPcPoolable when successful
+func (m *User) GetCloudPcPools()([]CloudPcPoolable) {
+    val, err := m.GetBackingStore().Get("cloudPcPools")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcPoolable)
+    }
+    return nil
+}
 // GetCloudPCs gets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 // returns a []CloudPCable when successful
 func (m *User) GetCloudPCs()([]CloudPCable) {
@@ -1064,6 +1076,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCloudClipboard(val.(CloudClipboardRootable))
+        }
+        return nil
+    }
+    res["cloudPcPools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcPoolFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcPoolable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcPoolable)
+                }
+            }
+            m.SetCloudPcPools(res)
         }
         return nil
     }
@@ -4227,6 +4255,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetCloudPcPools() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcPools()))
+        for i, v := range m.GetCloudPcPools() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudPcPools", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCloudPCs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
@@ -5489,6 +5529,13 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
+// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+func (m *User) SetCloudPcPools(value []CloudPcPoolable)() {
+    err := m.GetBackingStore().Set("cloudPcPools", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCs sets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 func (m *User) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
@@ -6475,6 +6522,7 @@ type Userable interface {
     GetChats()([]Chatable)
     GetCity()(*string)
     GetCloudClipboard()(CloudClipboardRootable)
+    GetCloudPcPools()([]CloudPcPoolable)
     GetCloudPCs()([]CloudPCable)
     GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable)
     GetCommunications()(UserCloudCommunicationable)
@@ -6636,6 +6684,7 @@ type Userable interface {
     SetChats(value []Chatable)()
     SetCity(value *string)()
     SetCloudClipboard(value CloudClipboardRootable)()
+    SetCloudPcPools(value []CloudPcPoolable)()
     SetCloudPCs(value []CloudPCable)()
     SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)()
     SetCommunications(value UserCloudCommunicationable)()

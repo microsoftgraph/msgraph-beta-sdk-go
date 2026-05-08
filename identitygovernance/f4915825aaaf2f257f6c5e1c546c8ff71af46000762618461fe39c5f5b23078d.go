@@ -73,6 +73,11 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceSco
     }
     return nil
 }
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*EntitlementManagementAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilder) {
+    return NewEntitlementManagementAccessPackageResourcesItemAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get uploadSessions from identityGovernance
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

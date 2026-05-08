@@ -92,7 +92,7 @@ func (m *CloudPcOnPremisesConnectionSubnetIpDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSubnetAvailableIpCount gets the subnetAvailableIpCount property value. The subnetAvailableIpCount property
+// GetSubnetAvailableIpCount gets the subnetAvailableIpCount property value. The number of available private IP addresses within the subnet.
 // returns a *int32 when successful
 func (m *CloudPcOnPremisesConnectionSubnetIpDetail) GetSubnetAvailableIpCount()(*int32) {
     val, err := m.GetBackingStore().Get("subnetAvailableIpCount")
@@ -104,7 +104,7 @@ func (m *CloudPcOnPremisesConnectionSubnetIpDetail) GetSubnetAvailableIpCount()(
     }
     return nil
 }
-// GetSubnetAvailableIpCountLastSyncDateTime gets the subnetAvailableIpCountLastSyncDateTime property value. The subnetAvailableIpCountLastSyncDateTime property
+// GetSubnetAvailableIpCountLastSyncDateTime gets the subnetAvailableIpCountLastSyncDateTime property value. Indicates the date and time at which the subnet available IP count was synced with Azure. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcOnPremisesConnectionSubnetIpDetail) GetSubnetAvailableIpCountLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("subnetAvailableIpCountLastSyncDateTime")
@@ -162,14 +162,14 @@ func (m *CloudPcOnPremisesConnectionSubnetIpDetail) SetOdataType(value *string)(
         panic(err)
     }
 }
-// SetSubnetAvailableIpCount sets the subnetAvailableIpCount property value. The subnetAvailableIpCount property
+// SetSubnetAvailableIpCount sets the subnetAvailableIpCount property value. The number of available private IP addresses within the subnet.
 func (m *CloudPcOnPremisesConnectionSubnetIpDetail) SetSubnetAvailableIpCount(value *int32)() {
     err := m.GetBackingStore().Set("subnetAvailableIpCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubnetAvailableIpCountLastSyncDateTime sets the subnetAvailableIpCountLastSyncDateTime property value. The subnetAvailableIpCountLastSyncDateTime property
+// SetSubnetAvailableIpCountLastSyncDateTime sets the subnetAvailableIpCountLastSyncDateTime property value. Indicates the date and time at which the subnet available IP count was synced with Azure. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcOnPremisesConnectionSubnetIpDetail) SetSubnetAvailableIpCountLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("subnetAvailableIpCountLastSyncDateTime", value)
     if err != nil {

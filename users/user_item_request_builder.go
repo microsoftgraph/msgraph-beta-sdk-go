@@ -144,6 +144,11 @@ func (m *UserItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsReq
 func (m *UserItemRequestBuilder) CloudClipboard()(*ItemCloudClipboardRequestBuilder) {
     return NewItemCloudClipboardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudPcPools provides operations to manage the cloudPcPools property of the microsoft.graph.user entity.
+// returns a *ItemCloudPcPoolsRequestBuilder when successful
+func (m *UserItemRequestBuilder) CloudPcPools()(*ItemCloudPcPoolsRequestBuilder) {
+    return NewItemCloudPcPoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
 // returns a *ItemCloudPCsRequestBuilder when successful
 func (m *UserItemRequestBuilder) CloudPCs()(*ItemCloudPCsRequestBuilder) {

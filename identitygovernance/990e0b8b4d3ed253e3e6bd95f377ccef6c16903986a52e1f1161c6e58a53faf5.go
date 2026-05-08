@@ -21,7 +21,7 @@ type CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResou
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
+// CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters read the properties and relationships of a customDataProvidedResourceUploadSession object.
 type CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,9 +57,12 @@ func NewCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedRe
     urlParams["request-raw-url"] = rawUrl
     return NewCatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property uploadSessions for identityGovernance
+// Delete delete a customDataProvidedResourceUploadSession object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageresource-delete-uploadsessions?view=graph-rest-beta
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,10 +77,18 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedR
     }
     return nil
 }
-// Get get uploadSessions from identityGovernance
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *CatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder when successful
+func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*CatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) {
+    return NewCatalogsItemAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get read the properties and relationships of a customDataProvidedResourceUploadSession object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-get?view=graph-rest-beta
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,10 +106,13 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
-// Patch update the navigation property uploadSessions in identityGovernance
+// Patch update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customdataprovidedresourceuploadsession-update?view=graph-rest-beta
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +130,7 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
-// ToDeleteRequestInformation delete navigation property uploadSessions for identityGovernance
+// ToDeleteRequestInformation delete a customDataProvidedResourceUploadSession object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -128,7 +142,7 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get uploadSessions from identityGovernance
+// ToGetRequestInformation read the properties and relationships of a customDataProvidedResourceUploadSession object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -143,7 +157,7 @@ func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property uploadSessions in identityGovernance
+// ToPatchRequestInformation update the properties of a customDataProvidedResourceUploadSession created for a customDataProvidedResource object.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *CatalogsItemAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

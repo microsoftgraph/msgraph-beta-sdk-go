@@ -44,14 +44,14 @@ func (m *ApproverDelegate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d411
     return m.backingStore
 }
 // GetDelegate gets the delegate property value. The delegate property
-// returns a SubjectSetable when successful
-func (m *ApproverDelegate) GetDelegate()(SubjectSetable) {
+// returns a UserSetable when successful
+func (m *ApproverDelegate) GetDelegate()(UserSetable) {
     val, err := m.GetBackingStore().Get("delegate")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(SubjectSetable)
+        return val.(UserSetable)
     }
     return nil
 }
@@ -60,12 +60,12 @@ func (m *ApproverDelegate) GetDelegate()(SubjectSetable) {
 func (m *ApproverDelegate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["delegate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSubjectSetFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateUserSetFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDelegate(val.(SubjectSetable))
+            m.SetDelegate(val.(UserSetable))
         }
         return nil
     }
@@ -155,7 +155,7 @@ func (m *ApproverDelegate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
     m.backingStore = value
 }
 // SetDelegate sets the delegate property value. The delegate property
-func (m *ApproverDelegate) SetDelegate(value SubjectSetable)() {
+func (m *ApproverDelegate) SetDelegate(value UserSetable)() {
     err := m.GetBackingStore().Set("delegate", value)
     if err != nil {
         panic(err)
@@ -180,11 +180,11 @@ type ApproverDelegateable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDelegate()(SubjectSetable)
+    GetDelegate()(UserSetable)
     GetOdataType()(*string)
     GetSchedule()(RequestScheduleable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDelegate(value SubjectSetable)()
+    SetDelegate(value UserSetable)()
     SetOdataType(value *string)()
     SetSchedule(value RequestScheduleable)()
 }
