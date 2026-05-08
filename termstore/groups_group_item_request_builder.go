@@ -24,9 +24,9 @@ type GroupsGroupItemRequestBuilderDeleteRequestConfiguration struct {
 // GroupsGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a term store group object.
 type GroupsGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupsGroupItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupsGroupItemRequestBuilderGetRequestConfiguration struct {

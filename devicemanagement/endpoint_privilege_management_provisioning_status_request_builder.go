@@ -24,9 +24,9 @@ type EndpointPrivilegeManagementProvisioningStatusRequestBuilderDeleteRequestCon
 // EndpointPrivilegeManagementProvisioningStatusRequestBuilderGetQueryParameters endpoint privilege management (EPM) tenant provisioning status contains tenant level license and onboarding state information.
 type EndpointPrivilegeManagementProvisioningStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EndpointPrivilegeManagementProvisioningStatusRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EndpointPrivilegeManagementProvisioningStatusRequestBuilderGetRequestConfiguration struct {

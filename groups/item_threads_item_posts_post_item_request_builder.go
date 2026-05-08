@@ -17,9 +17,9 @@ type ItemThreadsItemPostsPostItemRequestBuilder struct {
 // ItemThreadsItemPostsPostItemRequestBuilderGetQueryParameters get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
 type ItemThreadsItemPostsPostItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemThreadsItemPostsPostItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemThreadsItemPostsPostItemRequestBuilderGetRequestConfiguration struct {

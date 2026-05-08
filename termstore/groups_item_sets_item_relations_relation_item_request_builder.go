@@ -24,9 +24,9 @@ type GroupsItemSetsItemRelationsRelationItemRequestBuilderDeleteRequestConfigura
 // GroupsItemSetsItemRelationsRelationItemRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
 type GroupsItemSetsItemRelationsRelationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupsItemSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupsItemSetsItemRelationsRelationItemRequestBuilderGetRequestConfiguration struct {

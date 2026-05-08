@@ -73,6 +73,38 @@ func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["inheritedAppRoleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAppRoleAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AppRoleAssignmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AppRoleAssignmentable)
+                }
+            }
+            m.SetInheritedAppRoleAssignments(res)
+        }
+        return nil
+    }
+    res["inheritedOauth2PermissionGrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOAuth2PermissionGrantFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OAuth2PermissionGrantable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OAuth2PermissionGrantable)
+                }
+            }
+            m.SetInheritedOauth2PermissionGrants(res)
+        }
+        return nil
+    }
     res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -90,6 +122,30 @@ func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetInheritedAppRoleAssignments gets the inheritedAppRoleAssignments property value. Application role assignments that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.
+// returns a []AppRoleAssignmentable when successful
+func (m *AgentIdentity) GetInheritedAppRoleAssignments()([]AppRoleAssignmentable) {
+    val, err := m.GetBackingStore().Get("inheritedAppRoleAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AppRoleAssignmentable)
+    }
+    return nil
+}
+// GetInheritedOauth2PermissionGrants gets the inheritedOauth2PermissionGrants property value. Delegated permission grants that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.
+// returns a []OAuth2PermissionGrantable when successful
+func (m *AgentIdentity) GetInheritedOauth2PermissionGrants()([]OAuth2PermissionGrantable) {
+    val, err := m.GetBackingStore().Get("inheritedOauth2PermissionGrants")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OAuth2PermissionGrantable)
+    }
+    return nil
 }
 // GetSponsors gets the sponsors property value. The sponsors for this agent identity.
 // returns a []DirectoryObjectable when successful
@@ -117,6 +173,30 @@ func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInheritedAppRoleAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritedAppRoleAssignments()))
+        for i, v := range m.GetInheritedAppRoleAssignments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("inheritedAppRoleAssignments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInheritedOauth2PermissionGrants() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritedOauth2PermissionGrants()))
+        for i, v := range m.GetInheritedOauth2PermissionGrants() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("inheritedOauth2PermissionGrants", cast)
         if err != nil {
             return err
         }
@@ -149,6 +229,20 @@ func (m *AgentIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
+// SetInheritedAppRoleAssignments sets the inheritedAppRoleAssignments property value. Application role assignments that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.
+func (m *AgentIdentity) SetInheritedAppRoleAssignments(value []AppRoleAssignmentable)() {
+    err := m.GetBackingStore().Set("inheritedAppRoleAssignments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetInheritedOauth2PermissionGrants sets the inheritedOauth2PermissionGrants property value. Delegated permission grants that this agent identity inherits from its parent Agent Identity Blueprint service principal. Read-only. Nullable.
+func (m *AgentIdentity) SetInheritedOauth2PermissionGrants(value []OAuth2PermissionGrantable)() {
+    err := m.GetBackingStore().Set("inheritedOauth2PermissionGrants", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSponsors sets the sponsors property value. The sponsors for this agent identity.
 func (m *AgentIdentity) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
@@ -161,8 +255,12 @@ type AgentIdentityable interface {
     ServicePrincipalable
     GetAgentIdentityBlueprintId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetInheritedAppRoleAssignments()([]AppRoleAssignmentable)
+    GetInheritedOauth2PermissionGrants()([]OAuth2PermissionGrantable)
     GetSponsors()([]DirectoryObjectable)
     SetAgentIdentityBlueprintId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetInheritedAppRoleAssignments(value []AppRoleAssignmentable)()
+    SetInheritedOauth2PermissionGrants(value []OAuth2PermissionGrantable)()
     SetSponsors(value []DirectoryObjectable)()
 }

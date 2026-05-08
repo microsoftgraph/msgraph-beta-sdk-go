@@ -6,22 +6,26 @@ package models
 type WiFiSecurityType int
 
 const (
-    // Open (No Authentication).
+    // Default. Indicates Wi-Fi security type is associated with Open (No Authentication).
     OPEN_WIFISECURITYTYPE WiFiSecurityType = iota
-    // WPA-Personal.
+    // Indicates Wi-Fi security type is associated with WPA-Personal.
     WPAPERSONAL_WIFISECURITYTYPE
-    // WPA-Enterprise. Must use IOSEnterpriseWifiConfiguration type to configure enterprise options.
+    // Indicates Wi-Fi security type is associated with WPA-Enterprise. Must use IOSEnterpriseWifiConfiguration type to configure enterprise options.
     WPAENTERPRISE_WIFISECURITYTYPE
-    // WEP Encryption.
+    // Indicates Wi-Fi security type is associated with WEP Encryption.
     WEP_WIFISECURITYTYPE
-    // WPA2-Personal.
+    // Indicates Wi-Fi security type is associated with WPA2-Personal.
     WPA2PERSONAL_WIFISECURITYTYPE
-    // WPA2-Enterprise. Must use WindowsWifiEnterpriseEAPConfiguration type to configure enterprise options.
+    // Indicates Wi-Fi security type is associated with WPA2-Enterprise. Must use WindowsWifiEnterpriseEAPConfiguration type to configure enterprise options.
     WPA2ENTERPRISE_WIFISECURITYTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WIFISECURITYTYPE
+    // Indicates Wi-Fi security type is associated with WPA3-Personal. Provides stronger encryption using Simultaneous Authentication of Equals (SAE).
+    WPA3PERSONAL_WIFISECURITYTYPE
 )
 
 func (i WiFiSecurityType) String() string {
-    return []string{"open", "wpaPersonal", "wpaEnterprise", "wep", "wpa2Personal", "wpa2Enterprise"}[i]
+    return []string{"open", "wpaPersonal", "wpaEnterprise", "wep", "wpa2Personal", "wpa2Enterprise", "unknownFutureValue", "wpa3Personal"}[i]
 }
 func ParseWiFiSecurityType(v string) (any, error) {
     result := OPEN_WIFISECURITYTYPE
@@ -38,6 +42,10 @@ func ParseWiFiSecurityType(v string) (any, error) {
             result = WPA2PERSONAL_WIFISECURITYTYPE
         case "wpa2Enterprise":
             result = WPA2ENTERPRISE_WIFISECURITYTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WIFISECURITYTYPE
+        case "wpa3Personal":
+            result = WPA3PERSONAL_WIFISECURITYTYPE
         default:
             return nil, nil
     }

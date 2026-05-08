@@ -24,9 +24,9 @@ type EdiscoveryCasesCaseItemRequestBuilderDeleteRequestConfiguration struct {
 // EdiscoveryCasesCaseItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a case object.
 type EdiscoveryCasesCaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdiscoveryCasesCaseItemRequestBuilderGetRequestConfiguration struct {

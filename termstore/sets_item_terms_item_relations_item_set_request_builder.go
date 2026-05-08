@@ -17,9 +17,9 @@ type SetsItemTermsItemRelationsItemSetRequestBuilder struct {
 // SetsItemTermsItemRelationsItemSetRequestBuilderGetQueryParameters the [set] in which the relation is relevant.
 type SetsItemTermsItemRelationsItemSetRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SetsItemTermsItemRelationsItemSetRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SetsItemTermsItemRelationsItemSetRequestBuilderGetRequestConfiguration struct {

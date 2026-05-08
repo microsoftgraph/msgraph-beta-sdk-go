@@ -16,9 +16,9 @@ type CompaniesItemJournalLinesCountRequestBuilder struct {
 // CompaniesItemJournalLinesCountRequestBuilderGetQueryParameters get the number of the resource
 type CompaniesItemJournalLinesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // CompaniesItemJournalLinesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemJournalLinesCountRequestBuilderGetRequestConfiguration struct {

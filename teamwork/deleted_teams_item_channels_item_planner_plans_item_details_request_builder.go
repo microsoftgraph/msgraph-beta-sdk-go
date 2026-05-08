@@ -24,9 +24,9 @@ type DeletedTeamsItemChannelsItemPlannerPlansItemDetailsRequestBuilderDeleteRequ
 // DeletedTeamsItemChannelsItemPlannerPlansItemDetailsRequestBuilderGetQueryParameters extra details about the plan. Read-only. Nullable.
 type DeletedTeamsItemChannelsItemPlannerPlansItemDetailsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedTeamsItemChannelsItemPlannerPlansItemDetailsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemPlannerPlansItemDetailsRequestBuilderGetRequestConfiguration struct {

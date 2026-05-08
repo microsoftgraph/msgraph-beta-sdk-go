@@ -23,7 +23,7 @@ func NewCustomDataProvidedResourceUploadSession()(*CustomDataProvidedResourceUpl
 func CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomDataProvidedResourceUploadSession(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. DateTime when the upload session was created. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. DateTime when the upload session was created. Read-only. Supports $orderby.
 // returns a *Time when successful
 func (m *CustomDataProvidedResourceUploadSession) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -71,6 +71,22 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["files"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomDataProvidedResourceFileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomDataProvidedResourceFileable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CustomDataProvidedResourceFileable)
+                }
+            }
+            m.SetFiles(res)
+        }
+        return nil
+    }
     res["isUploadDone"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -78,6 +94,16 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
         }
         if val != nil {
             m.SetIsUploadDone(val)
+        }
+        return nil
+    }
+    res["referenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReferenceId(val)
         }
         return nil
     }
@@ -123,6 +149,18 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
     }
     return res
 }
+// GetFiles gets the files property value. The files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.
+// returns a []CustomDataProvidedResourceFileable when successful
+func (m *CustomDataProvidedResourceUploadSession) GetFiles()([]CustomDataProvidedResourceFileable) {
+    val, err := m.GetBackingStore().Get("files")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomDataProvidedResourceFileable)
+    }
+    return nil
+}
 // GetIsUploadDone gets the isUploadDone property value. Indicates if all the necessary files have been uploaded to this session.
 // returns a *bool when successful
 func (m *CustomDataProvidedResourceUploadSession) GetIsUploadDone()(*bool) {
@@ -132,6 +170,18 @@ func (m *CustomDataProvidedResourceUploadSession) GetIsUploadDone()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetReferenceId gets the referenceId property value. The ID of the context for which data is being uploaded, for example, the Access Review instance ID. Supports $filter (eq).
+// returns a *string when successful
+func (m *CustomDataProvidedResourceUploadSession) GetReferenceId()(*string) {
+    val, err := m.GetBackingStore().Get("referenceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -201,8 +251,26 @@ func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e
             return err
         }
     }
+    if m.GetFiles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFiles()))
+        for i, v := range m.GetFiles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("files", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isUploadDone", m.GetIsUploadDone())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("referenceId", m.GetReferenceId())
         if err != nil {
             return err
         }
@@ -234,7 +302,7 @@ func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. DateTime when the upload session was created. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. DateTime when the upload session was created. Read-only. Supports $orderby.
 func (m *CustomDataProvidedResourceUploadSession) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -248,9 +316,23 @@ func (m *CustomDataProvidedResourceUploadSession) SetData(value CustomExtensionD
         panic(err)
     }
 }
+// SetFiles sets the files property value. The files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.
+func (m *CustomDataProvidedResourceUploadSession) SetFiles(value []CustomDataProvidedResourceFileable)() {
+    err := m.GetBackingStore().Set("files", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsUploadDone sets the isUploadDone property value. Indicates if all the necessary files have been uploaded to this session.
 func (m *CustomDataProvidedResourceUploadSession) SetIsUploadDone(value *bool)() {
     err := m.GetBackingStore().Set("isUploadDone", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceId sets the referenceId property value. The ID of the context for which data is being uploaded, for example, the Access Review instance ID. Supports $filter (eq).
+func (m *CustomDataProvidedResourceUploadSession) SetReferenceId(value *string)() {
+    err := m.GetBackingStore().Set("referenceId", value)
     if err != nil {
         panic(err)
     }
@@ -288,14 +370,18 @@ type CustomDataProvidedResourceUploadSessionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetData()(CustomExtensionDataable)
+    GetFiles()([]CustomDataProvidedResourceFileable)
     GetIsUploadDone()(*bool)
+    GetReferenceId()(*string)
     GetSource()(*string)
     GetStats()(CustomDataProvidedResourceUploadStatsable)
     GetStatus()(*CustomDataProvidedResourceUploadStatus)
     GetTypeEscaped()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetData(value CustomExtensionDataable)()
+    SetFiles(value []CustomDataProvidedResourceFileable)()
     SetIsUploadDone(value *bool)()
+    SetReferenceId(value *string)()
     SetSource(value *string)()
     SetStats(value CustomDataProvidedResourceUploadStatsable)()
     SetStatus(value *CustomDataProvidedResourceUploadStatus)()

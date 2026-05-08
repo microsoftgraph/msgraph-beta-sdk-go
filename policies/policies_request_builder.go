@@ -17,9 +17,9 @@ type PoliciesRequestBuilder struct {
 // PoliciesRequestBuilderGetQueryParameters get policies
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PoliciesRequestBuilderGetRequestConfiguration struct {
@@ -194,6 +194,11 @@ func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*MobileDeviceM
 // returns a *OnPremAuthenticationPoliciesRequestBuilder when successful
 func (m *PoliciesRequestBuilder) OnPremAuthenticationPolicies()(*OnPremAuthenticationPoliciesRequestBuilder) {
     return NewOnPremAuthenticationPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OwnerlessGroupPolicy provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.
+// returns a *OwnerlessGroupPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) OwnerlessGroupPolicy()(*OwnerlessGroupPolicyRequestBuilder) {
+    return NewOwnerlessGroupPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update policies
 // returns a PolicyRootable when successful

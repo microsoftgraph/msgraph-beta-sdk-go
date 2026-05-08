@@ -24,9 +24,9 @@ type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemR
 // ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters the traffic forwarding policies associated with this profile.
 type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration struct {

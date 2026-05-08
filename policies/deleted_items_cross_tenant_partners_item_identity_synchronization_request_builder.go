@@ -24,9 +24,9 @@ type DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderDel
 // DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.
 type DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedItemsCrossTenantPartnersItemIdentitySynchronizationRequestBuilderGetRequestConfiguration struct {

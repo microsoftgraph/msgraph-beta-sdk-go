@@ -24,9 +24,9 @@ type EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResour
 // EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters get uploadSessions from identityGovernance
 type EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration struct {
@@ -72,6 +72,11 @@ func (m *EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageRe
         return err
     }
     return nil
+}
+// Files provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// returns a *EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Files()(*EntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesRequestBuilder) {
+    return NewEntitlementManagementAccessPackageResourceRoleScopesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get uploadSessions from identityGovernance
 // returns a CustomDataProvidedResourceUploadSessionable when successful

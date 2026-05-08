@@ -24,9 +24,9 @@ type ItemSettingsContactInsightsRequestBuilderDeleteRequestConfiguration struct 
 // ItemSettingsContactInsightsRequestBuilderGetQueryParameters get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
 type ItemSettingsContactInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsContactInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsContactInsightsRequestBuilderGetRequestConfiguration struct {

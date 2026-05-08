@@ -10,13 +10,12 @@ const (
     UPDATING_PROTECTIONPOLICYSTATUS
     ACTIVE_PROTECTIONPOLICYSTATUS
     UNKNOWNFUTUREVALUE_PROTECTIONPOLICYSTATUS
-    DORMANT_PROTECTIONPOLICYSTATUS
     OFFBOARDREQUESTED_PROTECTIONPOLICYSTATUS
     OFFBOARDED_PROTECTIONPOLICYSTATUS
 )
 
 func (i ProtectionPolicyStatus) String() string {
-    return []string{"inactive", "activeWithErrors", "updating", "active", "unknownFutureValue", "dormant", "offboardRequested", "offboarded"}[i]
+    return []string{"inactive", "activeWithErrors", "updating", "active", "unknownFutureValue", "offboardRequested", "offboarded"}[i]
 }
 func ParseProtectionPolicyStatus(v string) (any, error) {
     result := INACTIVE_PROTECTIONPOLICYSTATUS
@@ -31,8 +30,6 @@ func ParseProtectionPolicyStatus(v string) (any, error) {
             result = ACTIVE_PROTECTIONPOLICYSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PROTECTIONPOLICYSTATUS
-        case "dormant":
-            result = DORMANT_PROTECTIONPOLICYSTATUS
         case "offboardRequested":
             result = OFFBOARDREQUESTED_PROTECTIONPOLICYSTATUS
         case "offboarded":

@@ -24,9 +24,9 @@ type ItemAuthenticationQrCodePinMethodTemporaryQRCodeRequestBuilderDeleteRequest
 // ItemAuthenticationQrCodePinMethodTemporaryQRCodeRequestBuilderGetQueryParameters temporary QR code has lifetime up to 12 hours. It can be issued when the user doesn't have access to their standard QR code. There can be only one active temporary QR code for the user.
 type ItemAuthenticationQrCodePinMethodTemporaryQRCodeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemAuthenticationQrCodePinMethodTemporaryQRCodeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemAuthenticationQrCodePinMethodTemporaryQRCodeRequestBuilderGetRequestConfiguration struct {

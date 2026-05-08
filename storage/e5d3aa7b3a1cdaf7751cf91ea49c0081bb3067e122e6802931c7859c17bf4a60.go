@@ -24,9 +24,9 @@ type FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupM
 // FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderGetQueryParameters the set of members in the sharePointGroup. Read-write.
 type FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageDeletedContainersItemSharePointGroupsItemMembersSharePointGroupMemberItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArti
 // BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters a collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration struct {

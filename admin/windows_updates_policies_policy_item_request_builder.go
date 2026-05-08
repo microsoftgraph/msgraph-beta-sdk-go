@@ -24,9 +24,9 @@ type WindowsUpdatesPoliciesPolicyItemRequestBuilderDeleteRequestConfiguration st
 // WindowsUpdatesPoliciesPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
 type WindowsUpdatesPoliciesPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesPoliciesPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesPoliciesPolicyItemRequestBuilderGetRequestConfiguration struct {

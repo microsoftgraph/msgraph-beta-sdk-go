@@ -10,10 +10,12 @@ const (
     AVAILABLEWITHWARNING_CLOUDPCCONNECTIVITYSTATUS
     UNAVAILABLE_CLOUDPCCONNECTIVITYSTATUS
     UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYSTATUS
+    UNDERSERVICEMAINTENANCE_CLOUDPCCONNECTIVITYSTATUS
+    INUSE_CLOUDPCCONNECTIVITYSTATUS
 )
 
 func (i CloudPcConnectivityStatus) String() string {
-    return []string{"unknown", "available", "availableWithWarning", "unavailable", "unknownFutureValue"}[i]
+    return []string{"unknown", "available", "availableWithWarning", "unavailable", "unknownFutureValue", "underServiceMaintenance", "inUse"}[i]
 }
 func ParseCloudPcConnectivityStatus(v string) (any, error) {
     result := UNKNOWN_CLOUDPCCONNECTIVITYSTATUS
@@ -28,6 +30,10 @@ func ParseCloudPcConnectivityStatus(v string) (any, error) {
             result = UNAVAILABLE_CLOUDPCCONNECTIVITYSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYSTATUS
+        case "underServiceMaintenance":
+            result = UNDERSERVICEMAINTENANCE_CLOUDPCCONNECTIVITYSTATUS
+        case "inUse":
+            result = INUSE_CLOUDPCCONNECTIVITYSTATUS
         default:
             return nil, nil
     }

@@ -24,9 +24,9 @@ type CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderDe
 // CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters get accessPackageResources from identityGovernance
 type CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration struct {

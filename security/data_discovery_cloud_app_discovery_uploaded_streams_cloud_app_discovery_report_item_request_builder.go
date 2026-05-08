@@ -25,9 +25,9 @@ type DataDiscoveryCloudAppDiscoveryUploadedStreamsCloudAppDiscoveryReportItemReq
 // DataDiscoveryCloudAppDiscoveryUploadedStreamsCloudAppDiscoveryReportItemRequestBuilderGetQueryParameters a collection of streams available for generating cloud discovery report.
 type DataDiscoveryCloudAppDiscoveryUploadedStreamsCloudAppDiscoveryReportItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DataDiscoveryCloudAppDiscoveryUploadedStreamsCloudAppDiscoveryReportItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DataDiscoveryCloudAppDiscoveryUploadedStreamsCloudAppDiscoveryReportItemRequestBuilderGetRequestConfiguration struct {

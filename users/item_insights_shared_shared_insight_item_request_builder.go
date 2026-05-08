@@ -24,9 +24,9 @@ type ItemInsightsSharedSharedInsightItemRequestBuilderDeleteRequestConfiguration
 // ItemInsightsSharedSharedInsightItemRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
 type ItemInsightsSharedSharedInsightItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemInsightsSharedSharedInsightItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInsightsSharedSharedInsightItemRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,7 @@ func NewItemInsightsSharedSharedInsightItemRequestBuilder(rawUrl string, request
     return NewItemInsightsSharedSharedInsightItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property shared for users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Delete(ctx context.C
     return nil
 }
 // Get access this property from the derived type itemInsights.
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a SharedInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedInsightable, error) {
@@ -99,6 +101,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) LastSharedMethod()(*
     return NewItemInsightsSharedItemLastSharedMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property shared in users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a SharedInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedInsightable, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedInsightable, error) {
@@ -124,6 +127,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) Resource()(*ItemInsi
     return NewItemInsightsSharedItemResourceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property shared for users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *RequestInformation when successful
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,6 +139,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToDeleteRequestInfor
     return requestInfo, nil
 }
 // ToGetRequestInformation access this property from the derived type itemInsights.
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *RequestInformation when successful
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property shared in users
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *RequestInformation when successful
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharedInsightable, requestConfiguration *ItemInsightsSharedSharedInsightItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +170,7 @@ func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01
 // returns a *ItemInsightsSharedSharedInsightItemRequestBuilder when successful
 func (m *ItemInsightsSharedSharedInsightItemRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsSharedSharedInsightItemRequestBuilder) {
     return NewItemInsightsSharedSharedInsightItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

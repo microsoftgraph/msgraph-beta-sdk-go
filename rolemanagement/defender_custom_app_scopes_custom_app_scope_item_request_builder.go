@@ -17,9 +17,9 @@ type DefenderCustomAppScopesCustomAppScopeItemRequestBuilder struct {
 // DefenderCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters represents the resources that the principal has been granted access.
 type DefenderCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DefenderCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DefenderCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration struct {

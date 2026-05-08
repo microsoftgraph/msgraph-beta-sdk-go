@@ -7,10 +7,11 @@ type SignUpIdentifierType int
 const (
     EMAILADDRESS_SIGNUPIDENTIFIERTYPE SignUpIdentifierType = iota
     UNKNOWNFUTUREVALUE_SIGNUPIDENTIFIERTYPE
+    FEDERATION_SIGNUPIDENTIFIERTYPE
 )
 
 func (i SignUpIdentifierType) String() string {
-    return []string{"emailAddress", "unknownFutureValue"}[i]
+    return []string{"emailAddress", "unknownFutureValue", "federation"}[i]
 }
 func ParseSignUpIdentifierType(v string) (any, error) {
     result := EMAILADDRESS_SIGNUPIDENTIFIERTYPE
@@ -19,6 +20,8 @@ func ParseSignUpIdentifierType(v string) (any, error) {
             result = EMAILADDRESS_SIGNUPIDENTIFIERTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNUPIDENTIFIERTYPE
+        case "federation":
+            result = FEDERATION_SIGNUPIDENTIFIERTYPE
         default:
             return nil, nil
     }

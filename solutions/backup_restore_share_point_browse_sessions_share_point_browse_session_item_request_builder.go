@@ -24,9 +24,9 @@ type BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuil
 // BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetQueryParameters read the properties and relationships of sharePointBrowseSession object.
 type BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetRequestConfiguration struct {

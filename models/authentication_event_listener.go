@@ -54,6 +54,8 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
                         return NewOnTokenIssuanceStartListener(), nil
                     case "#microsoft.graph.onUserCreateStartListener":
                         return NewOnUserCreateStartListener(), nil
+                    case "#microsoft.graph.onVerifiedIdClaimValidationListener":
+                        return NewOnVerifiedIdClaimValidationListener(), nil
                 }
             }
         }

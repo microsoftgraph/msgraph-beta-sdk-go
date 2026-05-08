@@ -16,9 +16,9 @@ type TeamsTelephoneNumberManagementOperationsCountRequestBuilder struct {
 // TeamsTelephoneNumberManagementOperationsCountRequestBuilderGetQueryParameters get the number of the resource
 type TeamsTelephoneNumberManagementOperationsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // TeamsTelephoneNumberManagementOperationsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsTelephoneNumberManagementOperationsCountRequestBuilderGetRequestConfiguration struct {

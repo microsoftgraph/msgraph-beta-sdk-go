@@ -17,9 +17,9 @@ type DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemReques
 // DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderGetQueryParameters read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
 type DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceManagementRoleAssignmentsItemDirectoryScopesDirectoryObjectItemRequestBuilderGetRequestConfiguration struct {

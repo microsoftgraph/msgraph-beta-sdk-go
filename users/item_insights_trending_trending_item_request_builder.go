@@ -24,9 +24,9 @@ type ItemInsightsTrendingTrendingItemRequestBuilderDeleteRequestConfiguration st
 // ItemInsightsTrendingTrendingItemRequestBuilderGetQueryParameters access this property from the derived type itemInsights.
 type ItemInsightsTrendingTrendingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemInsightsTrendingTrendingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemInsightsTrendingTrendingItemRequestBuilderGetRequestConfiguration struct {

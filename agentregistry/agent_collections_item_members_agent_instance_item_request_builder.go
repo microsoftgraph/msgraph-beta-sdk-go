@@ -24,9 +24,9 @@ type AgentCollectionsItemMembersAgentInstanceItemRequestBuilderDeleteRequestConf
 // AgentCollectionsItemMembersAgentInstanceItemRequestBuilderGetQueryParameters list of agent instances that are members of this collection. Supports $expand.
 type AgentCollectionsItemMembersAgentInstanceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AgentCollectionsItemMembersAgentInstanceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AgentCollectionsItemMembersAgentInstanceItemRequestBuilderGetRequestConfiguration struct {

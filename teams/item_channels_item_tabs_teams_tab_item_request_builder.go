@@ -24,9 +24,9 @@ type ItemChannelsItemTabsTeamsTabItemRequestBuilderDeleteRequestConfiguration st
 // ItemChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters a collection of all the tabs in the channel.
 type ItemChannelsItemTabsTeamsTabItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChannelsItemTabsTeamsTabItemRequestBuilderGetRequestConfiguration struct {

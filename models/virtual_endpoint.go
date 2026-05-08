@@ -58,6 +58,18 @@ func (m *VirtualEndpoint) GetCloudApps()([]CloudPcCloudAppable) {
     }
     return nil
 }
+// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// returns a []CloudPcPoolable when successful
+func (m *VirtualEndpoint) GetCloudPcPools()([]CloudPcPoolable) {
+    val, err := m.GetBackingStore().Get("cloudPcPools")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcPoolable)
+    }
+    return nil
+}
 // GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
 // returns a []CloudPCable when successful
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
@@ -167,6 +179,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetCloudApps(res)
+        }
+        return nil
+    }
+    res["cloudPcPools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcPoolFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcPoolable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcPoolable)
+                }
+            }
+            m.SetCloudPcPools(res)
         }
         return nil
     }
@@ -504,7 +532,7 @@ func (m *VirtualEndpoint) GetReport()(CloudPcReportable) {
     }
     return nil
 }
-// GetReports gets the reports property value. Cloud PC-related reports.
+// GetReports gets the reports property value. Cloud PC-related reports. Read-only.
 // returns a CloudPcReportsable when successful
 func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -602,6 +630,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             }
         }
         err = writer.WriteCollectionOfObjectValues("cloudApps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCloudPcPools() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcPools()))
+        for i, v := range m.GetCloudPcPools() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudPcPools", cast)
         if err != nil {
             return err
         }
@@ -809,6 +849,13 @@ func (m *VirtualEndpoint) SetCloudApps(value []CloudPcCloudAppable)() {
         panic(err)
     }
 }
+// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+func (m *VirtualEndpoint) SetCloudPcPools(value []CloudPcPoolable)() {
+    err := m.GetBackingStore().Set("cloudPcPools", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
@@ -893,7 +940,7 @@ func (m *VirtualEndpoint) SetReport(value CloudPcReportable)() {
         panic(err)
     }
 }
-// SetReports sets the reports property value. Cloud PC-related reports.
+// SetReports sets the reports property value. Cloud PC-related reports. Read-only.
 func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {
@@ -934,6 +981,7 @@ type VirtualEndpointable interface {
     GetAuditEvents()([]CloudPcAuditEventable)
     GetBulkActions()([]CloudPcBulkActionable)
     GetCloudApps()([]CloudPcCloudAppable)
+    GetCloudPcPools()([]CloudPcPoolable)
     GetCloudPCs()([]CloudPCable)
     GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
@@ -954,6 +1002,7 @@ type VirtualEndpointable interface {
     SetAuditEvents(value []CloudPcAuditEventable)()
     SetBulkActions(value []CloudPcBulkActionable)()
     SetCloudApps(value []CloudPcCloudAppable)()
+    SetCloudPcPools(value []CloudPcPoolable)()
     SetCloudPCs(value []CloudPCable)()
     SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()

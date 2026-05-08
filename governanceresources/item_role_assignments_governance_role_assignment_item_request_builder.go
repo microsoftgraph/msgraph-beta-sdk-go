@@ -24,9 +24,9 @@ type ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderDeleteRequestC
 // ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderGetQueryParameters the collection of role assignments for the resource.
 type ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleAssignmentsGovernanceRoleAssignmentItemRequestBuilderGetRequestConfiguration struct {

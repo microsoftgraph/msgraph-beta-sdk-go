@@ -17,9 +17,9 @@ type ZonesItemAggregationsAggregatedEnvironmentKindItemRequestBuilder struct {
 // ZonesItemAggregationsAggregatedEnvironmentKindItemRequestBuilderGetQueryParameters environment count summaries by type. Read-only. Supports $filter (eq) on the kind property. For example, $filter=aggregations/any(a: a/kind eq 'azureSubscription').
 type ZonesItemAggregationsAggregatedEnvironmentKindItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ZonesItemAggregationsAggregatedEnvironmentKindItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ZonesItemAggregationsAggregatedEnvironmentKindItemRequestBuilderGetRequestConfiguration struct {

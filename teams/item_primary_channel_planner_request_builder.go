@@ -24,9 +24,9 @@ type ItemPrimaryChannelPlannerRequestBuilderDeleteRequestConfiguration struct {
 // ItemPrimaryChannelPlannerRequestBuilderGetQueryParameters selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
 type ItemPrimaryChannelPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPrimaryChannelPlannerRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPrimaryChannelPlannerRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfigurat
 // ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters provides detailed information about interests the user has associated with themselves in various services.
 type ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration struct {

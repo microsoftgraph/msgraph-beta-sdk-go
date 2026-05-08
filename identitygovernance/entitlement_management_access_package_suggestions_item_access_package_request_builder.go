@@ -17,9 +17,9 @@ type EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilde
 // EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetQueryParameters the access package information for the suggested package.
 type EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetRequestConfiguration struct {

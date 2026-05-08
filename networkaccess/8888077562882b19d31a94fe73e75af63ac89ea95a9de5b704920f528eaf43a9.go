@@ -14,18 +14,18 @@ import (
 type ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters an API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+// ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters returns connections count per traffic type: Private/Internet/Microsoft.
 type ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration struct {
@@ -55,7 +55,7 @@ func NewReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTim
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get an API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+// Get returns connections count per traffic type: Private/Internet/Microsoft.
 // Deprecated: This method is obsolete. Use GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -79,7 +79,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTi
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse an API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+// GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse returns connections count per traffic type: Private/Internet/Microsoft.
 // returns a ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTi
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation an API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
+// ToGetRequestInformation returns connections count per traffic type: Private/Internet/Microsoft.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

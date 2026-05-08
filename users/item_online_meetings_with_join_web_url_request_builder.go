@@ -24,9 +24,9 @@ type ItemOnlineMeetingsWithJoinWebUrlRequestBuilderDeleteRequestConfiguration st
 // ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
 type ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration struct {

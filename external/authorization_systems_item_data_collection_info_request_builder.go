@@ -24,9 +24,9 @@ type AuthorizationSystemsItemDataCollectionInfoRequestBuilderDeleteRequestConfig
 // AuthorizationSystemsItemDataCollectionInfoRequestBuilderGetQueryParameters defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 type AuthorizationSystemsItemDataCollectionInfoRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthorizationSystemsItemDataCollectionInfoRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthorizationSystemsItemDataCollectionInfoRequestBuilderGetRequestConfiguration struct {

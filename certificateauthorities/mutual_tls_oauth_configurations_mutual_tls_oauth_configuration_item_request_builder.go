@@ -24,9 +24,9 @@ type MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderDe
 // MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 type MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration struct {

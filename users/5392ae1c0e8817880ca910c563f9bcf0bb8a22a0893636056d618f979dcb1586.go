@@ -24,9 +24,9 @@ type ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerI
 // ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderGetQueryParameters returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
 type ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPendingAccessReviewInstancesItemContactedReviewersAccessReviewReviewerItemRequestBuilderGetRequestConfiguration struct {

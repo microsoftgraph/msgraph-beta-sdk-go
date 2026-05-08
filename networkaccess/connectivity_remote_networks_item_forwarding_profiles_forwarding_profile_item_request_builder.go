@@ -24,9 +24,9 @@ type ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemReques
 // ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters each forwarding profile associated with a remote network is specified. Supports $expand and $select.
 type ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration struct {
@@ -118,7 +118,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) Policies()(*ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
 // returns a *ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRequestBuilder) ServicePrincipal()(*ConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

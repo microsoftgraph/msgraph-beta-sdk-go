@@ -24,9 +24,9 @@ type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderDeleteRequestConfi
 // ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetQueryParameters represents detailed information about languages that a user has added to their profile.
 type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration struct {

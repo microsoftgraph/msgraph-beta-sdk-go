@@ -16,9 +16,9 @@ type TemplatesDeviceTemplatesItemDeviceInstancesCountRequestBuilder struct {
 // TemplatesDeviceTemplatesItemDeviceInstancesCountRequestBuilderGetQueryParameters get the number of the resource
 type TemplatesDeviceTemplatesItemDeviceInstancesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // TemplatesDeviceTemplatesItemDeviceInstancesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TemplatesDeviceTemplatesItemDeviceInstancesCountRequestBuilderGetRequestConfiguration struct {

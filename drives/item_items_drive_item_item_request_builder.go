@@ -24,9 +24,9 @@ type ItemItemsDriveItemItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemItemsDriveItemItemRequestBuilderGetQueryParameters all items contained in the drive. Read-only. Nullable.
 type ItemItemsDriveItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsDriveItemItemRequestBuilderGetRequestConfiguration struct {
@@ -53,6 +53,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Activities()(*ItemItemsItemActivi
 // returns a *ItemItemsItemAnalyticsRequestBuilder when successful
 func (m *ItemItemsDriveItemItemRequestBuilder) Analytics()(*ItemItemsItemAnalyticsRequestBuilder) {
     return NewItemItemsItemAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Archive provides operations to call the archive method.
+// returns a *ItemItemsItemArchiveRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) Archive()(*ItemItemsItemArchiveRequestBuilder) {
+    return NewItemItemsItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AssignSensitivityLabel provides operations to call the assignSensitivityLabel method.
 // returns a *ItemItemsItemAssignSensitivityLabelRequestBuilder when successful
@@ -302,6 +307,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) ToPatchRequestInformation(ctx con
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *ItemItemsItemUnarchiveRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) Unarchive()(*ItemItemsItemUnarchiveRequestBuilder) {
+    return NewItemItemsItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Unfollow provides operations to call the unfollow method.
 // returns a *ItemItemsItemUnfollowRequestBuilder when successful

@@ -16,9 +16,9 @@ type DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountR
 // DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilderGetQueryParameters get the number of the resource
 type DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceCustomAttributeShellScriptsItemUserRunStatesItemDeviceRunStatesCountRequestBuilderGetRequestConfiguration struct {

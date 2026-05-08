@@ -24,9 +24,9 @@ type LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderDeleteRequestConfigura
 // LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderGetQueryParameters read the properties and relationships of a workflow object.
 type LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderGetRequestConfiguration struct {
@@ -129,10 +129,25 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphId
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivateWithScope()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphIdentityGovernanceCancelProcessing provides operations to call the cancelProcessing method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceCancelProcessing()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphIdentityGovernanceCreateNewVersion provides operations to call the createNewVersion method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceCreateNewVersion()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernancePreviewTaskFailures provides operations to call the previewTaskFailures method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernancePreviewTaskFailures()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernancePreviewWorkflow provides operations to call the previewWorkflow method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernancePreviewWorkflow()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphIdentityGovernanceRestore provides operations to call the restore method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceRestoreRequestBuilder when successful
@@ -161,6 +176,11 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) Patch(ctx contex
         return nil, nil
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Workflowable), nil
+}
+// PreviewScope provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.
+// returns a *LifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) PreviewScope()(*LifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemPreviewScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Runs provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.
 // returns a *LifecycleWorkflowsWorkflowsItemRunsRequestBuilder when successful

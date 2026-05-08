@@ -24,9 +24,9 @@ type CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicture
 // CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilderGetQueryParameters get picture from financials
 type CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemCustomerPaymentJournalsItemCustomerPaymentsItemCustomerPicturePictureItemRequestBuilderGetRequestConfiguration struct {

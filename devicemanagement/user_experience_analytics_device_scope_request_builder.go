@@ -24,9 +24,9 @@ type UserExperienceAnalyticsDeviceScopeRequestBuilderDeleteRequestConfiguration 
 // UserExperienceAnalyticsDeviceScopeRequestBuilderGetQueryParameters the user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.
 type UserExperienceAnalyticsDeviceScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserExperienceAnalyticsDeviceScopeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserExperienceAnalyticsDeviceScopeRequestBuilderGetRequestConfiguration struct {

@@ -17,9 +17,9 @@ type UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilder str
 // UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetQueryParameters insights for authentications on apps registered in the tenant for a specified period.
 type UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsDailyAuthenticationsAuthenticationsMetricItemRequestBuilderGetRequestConfiguration struct {

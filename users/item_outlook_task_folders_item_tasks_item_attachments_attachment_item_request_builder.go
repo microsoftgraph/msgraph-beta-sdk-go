@@ -24,9 +24,9 @@ type ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderD
 // ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
 type ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuilderGetRequestConfiguration struct {

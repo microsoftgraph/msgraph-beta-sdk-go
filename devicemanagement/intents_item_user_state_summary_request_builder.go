@@ -24,9 +24,9 @@ type IntentsItemUserStateSummaryRequestBuilderDeleteRequestConfiguration struct 
 // IntentsItemUserStateSummaryRequestBuilderGetQueryParameters a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to
 type IntentsItemUserStateSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IntentsItemUserStateSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IntentsItemUserStateSummaryRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type WindowsUpdatesUpdatePoliciesItemAudienceMembersUpdatableAssetItemRequestBui
 // WindowsUpdatesUpdatePoliciesItemAudienceMembersUpdatableAssetItemRequestBuilderGetQueryParameters specifies the assets to include in the audience.
 type WindowsUpdatesUpdatePoliciesItemAudienceMembersUpdatableAssetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesUpdatePoliciesItemAudienceMembersUpdatableAssetItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesUpdatePoliciesItemAudienceMembersUpdatableAssetItemRequestBuilderGetRequestConfiguration struct {

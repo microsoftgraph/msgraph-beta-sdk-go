@@ -24,9 +24,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItem
 // TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetQueryParameters members and owners of the team.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionMembersConversationMemberItemRequestBuilderGetRequestConfiguration struct {

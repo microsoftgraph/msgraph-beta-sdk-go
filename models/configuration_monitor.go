@@ -47,7 +47,7 @@ func (m *ConfigurationMonitor) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.
 // returns a *Time when successful
 func (m *ConfigurationMonitor) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -59,7 +59,7 @@ func (m *ConfigurationMonitor) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetDescription gets the description property value. User-friendly description of the monitor given by the user.
+// GetDescription gets the description property value. User-friendly description of the monitor given by the user. Supports $filter (eq, ne, startsWith) and $orderby.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -71,7 +71,7 @@ func (m *ConfigurationMonitor) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. User-friendly name given by the user to the monitor.
+// GetDisplayName gets the displayName property value. User-friendly name given by the user to the monitor. Supports $filter (eq, ne, startsWith) and $orderby.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -219,7 +219,7 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInactivationReason gets the inactivationReason property value. The reason for the monitor's inactivation.
+// GetInactivationReason gets the inactivationReason property value. The reason for the monitor's inactivation. Requires $select to retrieve.
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetInactivationReason()(*string) {
     val, err := m.GetBackingStore().Get("inactivationReason")
@@ -243,7 +243,7 @@ func (m *ConfigurationMonitor) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.
 // returns a *Time when successful
 func (m *ConfigurationMonitor) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -279,7 +279,7 @@ func (m *ConfigurationMonitor) GetMonitorRunFrequencyInHours()(*int32) {
     }
     return nil
 }
-// GetParameters gets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline.
+// GetParameters gets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.
 // returns a OpenComplexDictionaryTypeable when successful
 func (m *ConfigurationMonitor) GetParameters()(OpenComplexDictionaryTypeable) {
     val, err := m.GetBackingStore().Get("parameters")
@@ -303,7 +303,7 @@ func (m *ConfigurationMonitor) GetStatus()(*MonitorStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).
 // returns a *string when successful
 func (m *ConfigurationMonitor) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -387,28 +387,28 @@ func (m *ConfigurationMonitor) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the monitor was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.
 func (m *ConfigurationMonitor) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. User-friendly description of the monitor given by the user.
+// SetDescription sets the description property value. User-friendly description of the monitor given by the user. Supports $filter (eq, ne, startsWith) and $orderby.
 func (m *ConfigurationMonitor) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. User-friendly name given by the user to the monitor.
+// SetDisplayName sets the displayName property value. User-friendly name given by the user to the monitor. Supports $filter (eq, ne, startsWith) and $orderby.
 func (m *ConfigurationMonitor) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInactivationReason sets the inactivationReason property value. The reason for the monitor's inactivation.
+// SetInactivationReason sets the inactivationReason property value. The reason for the monitor's inactivation. Requires $select to retrieve.
 func (m *ConfigurationMonitor) SetInactivationReason(value *string)() {
     err := m.GetBackingStore().Set("inactivationReason", value)
     if err != nil {
@@ -422,7 +422,7 @@ func (m *ConfigurationMonitor) SetLastModifiedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the monitor was last modified. If no modifications are made to the monitor, it's the same as createdDateTime. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, ge, le) and $orderby.
 func (m *ConfigurationMonitor) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -443,7 +443,7 @@ func (m *ConfigurationMonitor) SetMonitorRunFrequencyInHours(value *int32)() {
         panic(err)
     }
 }
-// SetParameters sets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline.
+// SetParameters sets the parameters property value. Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.
 func (m *ConfigurationMonitor) SetParameters(value OpenComplexDictionaryTypeable)() {
     err := m.GetBackingStore().Set("parameters", value)
     if err != nil {
@@ -457,7 +457,7 @@ func (m *ConfigurationMonitor) SetStatus(value *MonitorStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
+// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system. Supports $filter (eq, ne).
 func (m *ConfigurationMonitor) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

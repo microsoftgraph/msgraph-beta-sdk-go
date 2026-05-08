@@ -17,9 +17,9 @@ type ItemExternalColumnsColumnDefinitionItemRequestBuilder struct {
 // ItemExternalColumnsColumnDefinitionItemRequestBuilderGetQueryParameters the collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
 type ItemExternalColumnsColumnDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemExternalColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemExternalColumnsColumnDefinitionItemRequestBuilderGetRequestConfiguration struct {

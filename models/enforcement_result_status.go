@@ -13,11 +13,10 @@ const (
     OSOVERRIDE_ENFORCEMENTRESULTSTATUS
     PROCESSNONEXISTENT_ENFORCEMENTRESULTSTATUS
     OTHER_ENFORCEMENTRESULTSTATUS
-    UNKNOWNFUTUREVALUE_ENFORCEMENTRESULTSTATUS
 )
 
 func (i EnforcementResultStatus) String() string {
-    return []string{"success", "missingOrInvalidConfiguration", "userOverride", "agentFailure", "enforcementTimeout", "oSOverride", "processNonExistent", "other", "unknownFutureValue"}[i]
+    return []string{"success", "missingOrInvalidConfiguration", "userOverride", "agentFailure", "enforcementTimeout", "oSOverride", "processNonExistent", "other"}[i]
 }
 func ParseEnforcementResultStatus(v string) (any, error) {
     result := SUCCESS_ENFORCEMENTRESULTSTATUS
@@ -38,8 +37,6 @@ func ParseEnforcementResultStatus(v string) (any, error) {
             result = PROCESSNONEXISTENT_ENFORCEMENTRESULTSTATUS
         case "other":
             result = OTHER_ENFORCEMENTRESULTSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ENFORCEMENTRESULTSTATUS
         default:
             return nil, nil
     }

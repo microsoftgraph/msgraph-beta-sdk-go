@@ -39,7 +39,7 @@ func (m *SiteArchivalDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetArchivedBy gets the archivedBy property value. The archivedBy property
+// GetArchivedBy gets the archivedBy property value. The user or application that archived the container.
 // returns a IdentitySetable when successful
 func (m *SiteArchivalDetails) GetArchivedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("archivedBy")
@@ -51,7 +51,7 @@ func (m *SiteArchivalDetails) GetArchivedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetArchivedDateTime gets the archivedDateTime property value. The archivedDateTime property
+// GetArchivedDateTime gets the archivedDateTime property value. Time when the container was archived. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SiteArchivalDetails) GetArchivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("archivedDateTime")
@@ -63,7 +63,7 @@ func (m *SiteArchivalDetails) GetArchivedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetArchiveStatus gets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select.
+// GetArchiveStatus gets the archiveStatus property value. Represents the current archive status of the site collection. Requires $select to retrieve.
 // returns a *SiteArchiveStatus when successful
 func (m *SiteArchivalDetails) GetArchiveStatus()(*SiteArchiveStatus) {
     val, err := m.GetBackingStore().Get("archiveStatus")
@@ -180,21 +180,21 @@ func (m *SiteArchivalDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetArchivedBy sets the archivedBy property value. The archivedBy property
+// SetArchivedBy sets the archivedBy property value. The user or application that archived the container.
 func (m *SiteArchivalDetails) SetArchivedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("archivedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetArchivedDateTime sets the archivedDateTime property value. The archivedDateTime property
+// SetArchivedDateTime sets the archivedDateTime property value. Time when the container was archived. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SiteArchivalDetails) SetArchivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("archivedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetArchiveStatus sets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select.
+// SetArchiveStatus sets the archiveStatus property value. Represents the current archive status of the site collection. Requires $select to retrieve.
 func (m *SiteArchivalDetails) SetArchiveStatus(value *SiteArchiveStatus)() {
     err := m.GetBackingStore().Set("archiveStatus", value)
     if err != nil {

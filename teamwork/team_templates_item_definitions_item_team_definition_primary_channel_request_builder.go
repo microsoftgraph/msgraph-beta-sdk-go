@@ -24,9 +24,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderD
 // TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBu
 // ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters a collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
 type ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersItemMessagesItemMentionsMentionItemRequestBuilderGetRequestConfiguration struct {

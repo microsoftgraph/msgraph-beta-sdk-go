@@ -17,9 +17,9 @@ type ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuil
 // ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
 type ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemResourcesItemRoleAssignmentsItemLinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration struct {

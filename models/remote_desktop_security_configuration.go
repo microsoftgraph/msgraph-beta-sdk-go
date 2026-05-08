@@ -22,7 +22,7 @@ func NewRemoteDesktopSecurityConfiguration()(*RemoteDesktopSecurityConfiguration
 func CreateRemoteDesktopSecurityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRemoteDesktopSecurityConfiguration(), nil
 }
-// GetApprovedClientApps gets the approvedClientApps property value. The approvedClientApps property
+// GetApprovedClientApps gets the approvedClientApps property value. The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
 // returns a []ApprovedClientAppable when successful
 func (m *RemoteDesktopSecurityConfiguration) GetApprovedClientApps()([]ApprovedClientAppable) {
     val, err := m.GetBackingStore().Get("approvedClientApps")
@@ -94,7 +94,7 @@ func (m *RemoteDesktopSecurityConfiguration) GetIsRemoteDesktopProtocolEnabled()
     }
     return nil
 }
-// GetTargetDeviceGroups gets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+// GetTargetDeviceGroups gets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 // returns a []TargetDeviceGroupable when successful
 func (m *RemoteDesktopSecurityConfiguration) GetTargetDeviceGroups()([]TargetDeviceGroupable) {
     val, err := m.GetBackingStore().Get("targetDeviceGroups")
@@ -144,7 +144,7 @@ func (m *RemoteDesktopSecurityConfiguration) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetApprovedClientApps sets the approvedClientApps property value. The approvedClientApps property
+// SetApprovedClientApps sets the approvedClientApps property value. The collection of approved client apps that are associated with the RDS configuration. Supports $expand.
 func (m *RemoteDesktopSecurityConfiguration) SetApprovedClientApps(value []ApprovedClientAppable)() {
     err := m.GetBackingStore().Set("approvedClientApps", value)
     if err != nil {
@@ -158,7 +158,7 @@ func (m *RemoteDesktopSecurityConfiguration) SetIsRemoteDesktopProtocolEnabled(v
         panic(err)
     }
 }
-// SetTargetDeviceGroups sets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. <br/<Supports $expand.
+// SetTargetDeviceGroups sets the targetDeviceGroups property value. The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.
 func (m *RemoteDesktopSecurityConfiguration) SetTargetDeviceGroups(value []TargetDeviceGroupable)() {
     err := m.GetBackingStore().Set("targetDeviceGroups", value)
     if err != nil {

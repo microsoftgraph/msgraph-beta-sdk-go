@@ -21,12 +21,12 @@ type EntitlementManagementExternalOriginResourceConnectorsExternalOriginResource
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetQueryParameters get externalOriginResourceConnectors from identityGovernance
+// EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetQueryParameters represents the connectors used to communicate with external resource systems.
 type EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetRequestConfiguration struct {
@@ -57,8 +57,11 @@ func NewEntitlementManagementExternalOriginResourceConnectorsExternalOriginResou
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property externalOriginResourceConnectors for identityGovernance
+// Delete delete an externalOriginResourceConnector object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externaloriginresourceconnector-delete?view=graph-rest-beta
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginReso
     }
     return nil
 }
-// Get get externalOriginResourceConnectors from identityGovernance
+// Get represents the connectors used to communicate with external resource systems.
 // returns a ExternalOriginResourceConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, error) {
@@ -93,9 +96,12 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginReso
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable), nil
 }
-// Patch update the navigation property externalOriginResourceConnectors in identityGovernance
+// Patch update the properties of an externalOriginResourceConnector object.
 // returns a ExternalOriginResourceConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externaloriginresourceconnector-update?view=graph-rest-beta
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginReso
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable), nil
 }
-// ToDeleteRequestInformation delete navigation property externalOriginResourceConnectors for identityGovernance
+// ToDeleteRequestInformation delete an externalOriginResourceConnector object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +130,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginReso
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get externalOriginResourceConnectors from identityGovernance
+// ToGetRequestInformation represents the connectors used to communicate with external resource systems.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginReso
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property externalOriginResourceConnectors in identityGovernance
+// ToPatchRequestInformation update the properties of an externalOriginResourceConnector object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

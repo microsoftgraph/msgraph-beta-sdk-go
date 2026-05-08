@@ -16,9 +16,9 @@ type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilder struct {
 // B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters get the number of the resource
 type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemUserAttributeAssignmentsCountRequestBuilderGetRequestConfiguration struct {

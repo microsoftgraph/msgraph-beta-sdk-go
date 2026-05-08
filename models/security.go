@@ -8,6 +8,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
+// Security security singleton providing access to audit log resources.
 type Security struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -477,7 +478,7 @@ func (m *Security) GetSubjectRightsRequests()([]SubjectRightsRequestable) {
     }
     return nil
 }
-// GetTiIndicators gets the tiIndicators property value. The tiIndicators property
+// GetTiIndicators gets the tiIndicators property value. Deprecated. The tiIndicator entity is deprecated and will be removed by April 2026.
 // returns a []TiIndicatorable when successful
 func (m *Security) GetTiIndicators()([]TiIndicatorable) {
     val, err := m.GetBackingStore().Get("tiIndicators")
@@ -807,7 +808,7 @@ func (m *Security) SetSubjectRightsRequests(value []SubjectRightsRequestable)() 
         panic(err)
     }
 }
-// SetTiIndicators sets the tiIndicators property value. The tiIndicators property
+// SetTiIndicators sets the tiIndicators property value. Deprecated. The tiIndicator entity is deprecated and will be removed by April 2026.
 func (m *Security) SetTiIndicators(value []TiIndicatorable)() {
     err := m.GetBackingStore().Set("tiIndicators", value)
     if err != nil {

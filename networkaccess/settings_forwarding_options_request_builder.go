@@ -24,9 +24,9 @@ type SettingsForwardingOptionsRequestBuilderDeleteRequestConfiguration struct {
 // SettingsForwardingOptionsRequestBuilderGetQueryParameters retrieve the forwarding options for the tenant, with a specific focus on the 'skipDnsLookupState' flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
 type SettingsForwardingOptionsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SettingsForwardingOptionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SettingsForwardingOptionsRequestBuilderGetRequestConfiguration struct {

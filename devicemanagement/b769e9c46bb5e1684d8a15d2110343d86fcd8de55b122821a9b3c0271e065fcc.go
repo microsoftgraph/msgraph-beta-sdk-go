@@ -17,9 +17,9 @@ type CloudCertificationAuthorityItemCloudCertificationAuthorityLeafCertificateCl
 // CloudCertificationAuthorityItemCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderGetQueryParameters required OData property to expose leaf certificate API.
 type CloudCertificationAuthorityItemCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudCertificationAuthorityItemCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudCertificationAuthorityItemCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderGetRequestConfiguration struct {

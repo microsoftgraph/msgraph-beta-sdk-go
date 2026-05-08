@@ -24,9 +24,9 @@ type ItemSettingsStorageQuotaRequestBuilderDeleteRequestConfiguration struct {
 // ItemSettingsStorageQuotaRequestBuilderGetQueryParameters read the properties and relationships of a unifiedStorageQuota object.
 type ItemSettingsStorageQuotaRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsStorageQuotaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsStorageQuotaRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type ItemSettingsPeopleInsightsRequestBuilderDeleteRequestConfiguration struct {
 // ItemSettingsPeopleInsightsRequestBuilderGetQueryParameters get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
 type ItemSettingsPeopleInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsPeopleInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsPeopleInsightsRequestBuilderGetRequestConfiguration struct {

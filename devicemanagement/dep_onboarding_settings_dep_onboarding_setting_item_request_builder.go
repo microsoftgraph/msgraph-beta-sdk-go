@@ -24,9 +24,9 @@ type DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderDeleteRequestCon
 // DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderGetQueryParameters this collections of multiple DEP tokens per-tenant.
 type DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderGetRequestConfiguration struct {
@@ -152,6 +152,11 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Patch(ctx 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DepOnboardingSettingable), nil
+}
+// ReleaseAppleDevices provides operations to call the releaseAppleDevices method.
+// returns a *DepOnboardingSettingsItemReleaseAppleDevicesRequestBuilder when successful
+func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ReleaseAppleDevices()(*DepOnboardingSettingsItemReleaseAppleDevicesRequestBuilder) {
+    return NewDepOnboardingSettingsItemReleaseAppleDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShareForSchoolDataSyncService provides operations to call the shareForSchoolDataSyncService method.
 // returns a *DepOnboardingSettingsItemShareForSchoolDataSyncServiceRequestBuilder when successful

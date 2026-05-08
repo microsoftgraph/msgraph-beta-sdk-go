@@ -21,12 +21,12 @@ type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters read the properties and relationships of a threatIntelligencePolicyLink object.
+// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters get a filteringPolicyLink object. The returned object can be a:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration struct {
@@ -57,11 +57,11 @@ func NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a threatIntelligencePolicyLink object.
+// Delete delete a filteringPolicyLink object. Use this operation to delete any derived type, including:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-delete?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-delete?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +76,12 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get read the properties and relationships of a threatIntelligencePolicyLink object.
+// Get get a filteringPolicyLink object. The returned object can be a:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-get?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +99,12 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx cont
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable), nil
 }
-// Patch update the properties of a threatIntelligencePolicyLink object.
+// Patch modify the properties of an existing filteringPolicyLink object to update its traffic rules. Use this operation to update any derived type, including:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-update?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Patch(ctx co
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Policy()(*FilteringProfilesItemPoliciesItemPolicyRequestBuilder) {
     return NewFilteringProfilesItemPoliciesItemPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a threatIntelligencePolicyLink object.
+// ToDeleteRequestInformation delete a filteringPolicyLink object. Use this operation to delete any derived type, including:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +138,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a threatIntelligencePolicyLink object.
+// ToGetRequestInformation get a filteringPolicyLink object. The returned object can be a:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,7 +152,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a threatIntelligencePolicyLink object.
+// ToPatchRequestInformation modify the properties of an existing filteringPolicyLink object to update its traffic rules. Use this operation to update any derived type, including:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

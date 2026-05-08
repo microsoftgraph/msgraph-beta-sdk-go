@@ -44,7 +44,7 @@ func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusP
 func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCertificationAuthorityStatus gets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.
+// GetCertificationAuthorityStatus gets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.
 // returns a *CloudCertificationAuthorityStatus when successful
 func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusPostRequestBody) GetCertificationAuthorityStatus()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCertificationAuthorityStatus) {
     val, err := m.GetBackingStore().Get("certificationAuthorityStatus")
@@ -128,7 +128,7 @@ func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusP
 func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCertificationAuthorityStatus sets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.
+// SetCertificationAuthorityStatus sets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.
 func (m *CloudCertificationAuthorityItemChangeCloudCertificationAuthorityStatusPostRequestBody) SetCertificationAuthorityStatus(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCertificationAuthorityStatus)() {
     err := m.GetBackingStore().Set("certificationAuthorityStatus", value)
     if err != nil {

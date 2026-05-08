@@ -17,9 +17,9 @@ type EntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageAssign
 // EntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageAssignmentRequestBuilderGetQueryParameters for a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, ApproverRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
 type EntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageAssignmentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageAssignmentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentRequestsItemAccessPackageAssignmentRequestBuilderGetRequestConfiguration struct {

@@ -21,12 +21,12 @@ type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters get authenticationEventListeners from identity
+// AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
 type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration struct {
@@ -76,9 +76,12 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     }
     return nil
 }
-// Get get authenticationEventListeners from identity
+// Get read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
 // returns a AuthenticationEventListenerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-beta
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventListenerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +133,7 @@ func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get authenticationEventListeners from identity
+// ToGetRequestInformation read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object. The following derived types are currently supported.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventListenersAuthenticationEventListenerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

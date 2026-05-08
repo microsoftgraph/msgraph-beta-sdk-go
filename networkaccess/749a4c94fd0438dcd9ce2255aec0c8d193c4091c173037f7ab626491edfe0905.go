@@ -14,20 +14,20 @@ import (
 type ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+// ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters returns a collection of discovered application segments based on aggregated traffic logs for a given period.
 type ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
     // Usage: userId='@userId'
-    UserId *string `uriparametername:"userId"`
+    UserId *string "uriparametername:\"userId\""
 }
 // ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetRequestConfiguration struct {
@@ -57,7 +57,7 @@ func NewReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportW
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+// Get returns a collection of discovered application segments based on aggregated traffic logs for a given period.
 // Deprecated: This method is obsolete. Use GetAsGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -81,7 +81,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReport
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdResponseable), nil
 }
-// GetAsGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+// GetAsGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponse returns a collection of discovered application segments based on aggregated traffic logs for a given period.
 // returns a ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -104,7 +104,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReport
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdGetResponseable), nil
 }
-// ToGetRequestInformation returns a collection of discoveredApplicationSegmentReport based on aggregated traffic logs for a given period.
+// ToGetRequestInformation returns a collection of discovered application segments based on aggregated traffic logs for a given period.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeuserIdUserIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

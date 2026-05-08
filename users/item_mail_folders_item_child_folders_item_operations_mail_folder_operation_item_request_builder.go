@@ -17,9 +17,9 @@ type ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequest
 // ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters the collection of long-running operations in the mailFolder.
 type ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration struct {

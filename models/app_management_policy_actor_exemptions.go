@@ -43,7 +43,7 @@ func (m *AppManagementPolicyActorExemptions) GetAdditionalData()(map[string]any)
 func (m *AppManagementPolicyActorExemptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomSecurityAttributes gets the customSecurityAttributes property value. The customSecurityAttributes property
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. The collection of customSecurityAttributeExemption to exempt from the policy enforcement. Limit of 5.
 // returns a []CustomSecurityAttributeExemptionable when successful
 func (m *AppManagementPolicyActorExemptions) GetCustomSecurityAttributes()([]CustomSecurityAttributeExemptionable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributes")
@@ -138,7 +138,7 @@ func (m *AppManagementPolicyActorExemptions) SetAdditionalData(value map[string]
 func (m *AppManagementPolicyActorExemptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomSecurityAttributes sets the customSecurityAttributes property value. The customSecurityAttributes property
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. The collection of customSecurityAttributeExemption to exempt from the policy enforcement. Limit of 5.
 func (m *AppManagementPolicyActorExemptions) SetCustomSecurityAttributes(value []CustomSecurityAttributeExemptionable)() {
     err := m.GetBackingStore().Set("customSecurityAttributes", value)
     if err != nil {

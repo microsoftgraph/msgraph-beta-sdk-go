@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookCommentsItemTaskCommentRequestBuilderDeleteRequestConf
 // ItemItemsItemWorkbookCommentsItemTaskCommentRequestBuilderGetQueryParameters the comment that the task is associated with.
 type ItemItemsItemWorkbookCommentsItemTaskCommentRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookCommentsItemTaskCommentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookCommentsItemTaskCommentRequestBuilderGetRequestConfiguration struct {

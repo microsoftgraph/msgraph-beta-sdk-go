@@ -24,9 +24,9 @@ type CrossTenantAccessPolicyDefaultRequestBuilderDeleteRequestConfiguration stru
 // CrossTenantAccessPolicyDefaultRequestBuilderGetQueryParameters read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Microsoft Entra ID (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
 type CrossTenantAccessPolicyDefaultRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CrossTenantAccessPolicyDefaultRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CrossTenantAccessPolicyDefaultRequestBuilderGetRequestConfiguration struct {
@@ -95,6 +95,11 @@ func (m *CrossTenantAccessPolicyDefaultRequestBuilder) Get(ctx context.Context, 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyConfigurationDefaultable), nil
+}
+// M365Capabilities provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationDefault entity.
+// returns a *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder when successful
+func (m *CrossTenantAccessPolicyDefaultRequestBuilder) M365Capabilities()(*CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) {
+    return NewCrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the default configuration of a cross-tenant access policy.
 // returns a CrossTenantAccessPolicyConfigurationDefaultable when successful

@@ -37,6 +37,18 @@ func (m *MacOSCompliancePolicy) GetAdvancedThreatProtectionRequiredSecurityLevel
     }
     return nil
 }
+// GetDeviceCompliancePolicyScript gets the deviceCompliancePolicyScript property value. Custom compliance configuration for the policy (script identifier and rules content). When set, custom compliance rules are evaluated and the device is marked noncompliant when any rule evaluates to noncompliant. When not set, no custom compliance rules are evaluated. Default is null, when set to default it is not evaluated.
+// returns a DeviceCompliancePolicyScriptable when successful
+func (m *MacOSCompliancePolicy) GetDeviceCompliancePolicyScript()(DeviceCompliancePolicyScriptable) {
+    val, err := m.GetBackingStore().Get("deviceCompliancePolicyScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceCompliancePolicyScriptable)
+    }
+    return nil
+}
 // GetDeviceThreatProtectionEnabled gets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
 // returns a *bool when successful
 func (m *MacOSCompliancePolicy) GetDeviceThreatProtectionEnabled()(*bool) {
@@ -72,6 +84,16 @@ func (m *MacOSCompliancePolicy) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetAdvancedThreatProtectionRequiredSecurityLevel(val.(*DeviceThreatProtectionLevel))
+        }
+        return nil
+    }
+    res["deviceCompliancePolicyScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceCompliancePolicyScriptFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceCompliancePolicyScript(val.(DeviceCompliancePolicyScriptable))
         }
         return nil
     }
@@ -507,6 +529,12 @@ func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("deviceCompliancePolicyScript", m.GetDeviceCompliancePolicyScript())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("deviceThreatProtectionEnabled", m.GetDeviceThreatProtectionEnabled())
         if err != nil {
             return err
@@ -634,6 +662,13 @@ func (m *MacOSCompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetAdvancedThreatProtectionRequiredSecurityLevel sets the advancedThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
 func (m *MacOSCompliancePolicy) SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)() {
     err := m.GetBackingStore().Set("advancedThreatProtectionRequiredSecurityLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceCompliancePolicyScript sets the deviceCompliancePolicyScript property value. Custom compliance configuration for the policy (script identifier and rules content). When set, custom compliance rules are evaluated and the device is marked noncompliant when any rule evaluates to noncompliant. When not set, no custom compliance rules are evaluated. Default is null, when set to default it is not evaluated.
+func (m *MacOSCompliancePolicy) SetDeviceCompliancePolicyScript(value DeviceCompliancePolicyScriptable)() {
+    err := m.GetBackingStore().Set("deviceCompliancePolicyScript", value)
     if err != nil {
         panic(err)
     }
@@ -782,6 +817,7 @@ type MacOSCompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdvancedThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
+    GetDeviceCompliancePolicyScript()(DeviceCompliancePolicyScriptable)
     GetDeviceThreatProtectionEnabled()(*bool)
     GetDeviceThreatProtectionRequiredSecurityLevel()(*DeviceThreatProtectionLevel)
     GetFirewallBlockAllIncoming()(*bool)
@@ -803,6 +839,7 @@ type MacOSCompliancePolicyable interface {
     GetStorageRequireEncryption()(*bool)
     GetSystemIntegrityProtectionEnabled()(*bool)
     SetAdvancedThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
+    SetDeviceCompliancePolicyScript(value DeviceCompliancePolicyScriptable)()
     SetDeviceThreatProtectionEnabled(value *bool)()
     SetDeviceThreatProtectionRequiredSecurityLevel(value *DeviceThreatProtectionLevel)()
     SetFirewallBlockAllIncoming(value *bool)()

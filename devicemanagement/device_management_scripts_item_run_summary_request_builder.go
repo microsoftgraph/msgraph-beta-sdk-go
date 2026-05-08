@@ -17,9 +17,9 @@ type DeviceManagementScriptsItemRunSummaryRequestBuilder struct {
 // DeviceManagementScriptsItemRunSummaryRequestBuilderGetQueryParameters run summary for device management script.
 type DeviceManagementScriptsItemRunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceManagementScriptsItemRunSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceManagementScriptsItemRunSummaryRequestBuilderGetRequestConfiguration struct {

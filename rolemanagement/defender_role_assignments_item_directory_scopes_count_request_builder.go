@@ -16,9 +16,9 @@ type DefenderRoleAssignmentsItemDirectoryScopesCountRequestBuilder struct {
 // DefenderRoleAssignmentsItemDirectoryScopesCountRequestBuilderGetQueryParameters get the number of the resource
 type DefenderRoleAssignmentsItemDirectoryScopesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // DefenderRoleAssignmentsItemDirectoryScopesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DefenderRoleAssignmentsItemDirectoryScopesCountRequestBuilderGetRequestConfiguration struct {

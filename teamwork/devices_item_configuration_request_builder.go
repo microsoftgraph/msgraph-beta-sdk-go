@@ -24,9 +24,9 @@ type DevicesItemConfigurationRequestBuilderDeleteRequestConfiguration struct {
 // DevicesItemConfigurationRequestBuilderGetQueryParameters get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
 type DevicesItemConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DevicesItemConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DevicesItemConfigurationRequestBuilderGetRequestConfiguration struct {

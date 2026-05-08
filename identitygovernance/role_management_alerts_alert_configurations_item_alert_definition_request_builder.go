@@ -17,9 +17,9 @@ type RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilder st
 // RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetQueryParameters the definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
 type RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementAlertsAlertConfigurationsItemAlertDefinitionRequestBuilderGetRequestConfiguration struct {

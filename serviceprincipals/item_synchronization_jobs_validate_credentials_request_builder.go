@@ -34,6 +34,7 @@ func NewItemSynchronizationJobsValidateCredentialsRequestBuilder(rawUrl string, 
     return NewItemSynchronizationJobsValidateCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action validateCredentials
+// Deprecated: Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsValidateCredentialsRequestBuilder) Post(ctx context.Context, body ItemSynchronizationJobsValidateCredentialsPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsValidateCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *ItemSynchronizationJobsValidateCredentialsRequestBuilder) Post(ctx cont
     return nil
 }
 // ToPostRequestInformation invoke action validateCredentials
+// Deprecated: Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsValidateCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsValidateCredentialsPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsValidateCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemSynchronizationJobsValidateCredentialsRequestBuilder) ToPostRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Use validateConnectivity instead. This action will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *ItemSynchronizationJobsValidateCredentialsRequestBuilder when successful
 func (m *ItemSynchronizationJobsValidateCredentialsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsValidateCredentialsRequestBuilder) {
     return NewItemSynchronizationJobsValidateCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

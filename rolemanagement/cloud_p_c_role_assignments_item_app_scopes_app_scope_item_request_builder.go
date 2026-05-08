@@ -24,9 +24,9 @@ type CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderDeleteRequestC
 // CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetQueryParameters read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
 type CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetRequestConfiguration struct {

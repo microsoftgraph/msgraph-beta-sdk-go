@@ -17,9 +17,9 @@ type DefenderRoleAssignmentsItemRoleDefinitionRequestBuilder struct {
 // DefenderRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
 type DefenderRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DefenderRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DefenderRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration struct {

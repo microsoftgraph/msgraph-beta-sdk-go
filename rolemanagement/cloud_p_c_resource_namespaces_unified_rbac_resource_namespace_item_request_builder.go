@@ -24,9 +24,9 @@ type CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDele
 // CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
 type CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CloudPCResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration struct {

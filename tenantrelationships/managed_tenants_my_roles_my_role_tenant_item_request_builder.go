@@ -24,9 +24,9 @@ type ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderDeleteRequestConfigurati
 // ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderGetQueryParameters the collection of role assignments to a signed-in user for a managed tenant.
 type ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ManagedTenantsMyRolesMyRoleTenantItemRequestBuilderGetRequestConfiguration struct {

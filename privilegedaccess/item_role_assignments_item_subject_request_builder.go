@@ -24,9 +24,9 @@ type ItemRoleAssignmentsItemSubjectRequestBuilderDeleteRequestConfiguration stru
 // ItemRoleAssignmentsItemSubjectRequestBuilderGetQueryParameters read-only. The subject associated with the role assignment.
 type ItemRoleAssignmentsItemSubjectRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleAssignmentsItemSubjectRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleAssignmentsItemSubjectRequestBuilderGetRequestConfiguration struct {

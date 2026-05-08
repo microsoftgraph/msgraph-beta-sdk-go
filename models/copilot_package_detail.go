@@ -150,16 +150,6 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["manifestVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManifestVersion(val)
-        }
-        return nil
-    }
     res["sensitivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -167,16 +157,6 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetSensitivity(val)
-        }
-        return nil
-    }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
         }
         return nil
     }
@@ -194,34 +174,10 @@ func (m *CopilotPackageDetail) GetLongDescription()(*string) {
     }
     return nil
 }
-// GetManifestVersion gets the manifestVersion property value. The manifestVersion property
-// returns a *string when successful
-func (m *CopilotPackageDetail) GetManifestVersion()(*string) {
-    val, err := m.GetBackingStore().Get("manifestVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetSensitivity gets the sensitivity property value. The sensitivity property
 // returns a *string when successful
 func (m *CopilotPackageDetail) GetSensitivity()(*string) {
     val, err := m.GetBackingStore().Get("sensitivity")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetVersion gets the version property value. The version property
-// returns a *string when successful
-func (m *CopilotPackageDetail) GetVersion()(*string) {
-    val, err := m.GetBackingStore().Get("version")
     if err != nil {
         panic(err)
     }
@@ -285,19 +241,7 @@ func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteStringValue("manifestVersion", m.GetManifestVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("sensitivity", m.GetSensitivity())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("version", m.GetVersion())
         if err != nil {
             return err
         }
@@ -339,23 +283,9 @@ func (m *CopilotPackageDetail) SetLongDescription(value *string)() {
         panic(err)
     }
 }
-// SetManifestVersion sets the manifestVersion property value. The manifestVersion property
-func (m *CopilotPackageDetail) SetManifestVersion(value *string)() {
-    err := m.GetBackingStore().Set("manifestVersion", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSensitivity sets the sensitivity property value. The sensitivity property
 func (m *CopilotPackageDetail) SetSensitivity(value *string)() {
     err := m.GetBackingStore().Set("sensitivity", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetVersion sets the version property value. The version property
-func (m *CopilotPackageDetail) SetVersion(value *string)() {
-    err := m.GetBackingStore().Set("version", value)
     if err != nil {
         panic(err)
     }
@@ -368,15 +298,11 @@ type CopilotPackageDetailable interface {
     GetCategories()([]string)
     GetElementDetails()([]PackageElementDetailable)
     GetLongDescription()(*string)
-    GetManifestVersion()(*string)
     GetSensitivity()(*string)
-    GetVersion()(*string)
     SetAcquireUsersAndGroups(value []PackageAccessEntityable)()
     SetAllowedUsersAndGroups(value []PackageAccessEntityable)()
     SetCategories(value []string)()
     SetElementDetails(value []PackageElementDetailable)()
     SetLongDescription(value *string)()
-    SetManifestVersion(value *string)()
     SetSensitivity(value *string)()
-    SetVersion(value *string)()
 }

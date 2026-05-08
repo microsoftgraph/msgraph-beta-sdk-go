@@ -24,9 +24,9 @@ type ItemOnPremisesSyncBehaviorRequestBuilderDeleteRequestConfiguration struct {
 // ItemOnPremisesSyncBehaviorRequestBuilderGetQueryParameters read the properties of an onPremisesSyncBehavior object. The isCloudManaged property indicates whether the object's source of authority is set to the cloud. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.
 type ItemOnPremisesSyncBehaviorRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemOnPremisesSyncBehaviorRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnPremisesSyncBehaviorRequestBuilderGetRequestConfiguration struct {

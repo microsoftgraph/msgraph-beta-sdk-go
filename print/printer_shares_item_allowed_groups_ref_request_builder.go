@@ -17,7 +17,7 @@ type PrinterSharesItemAllowedGroupsRefRequestBuilder struct {
 // PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters delete ref of navigation property allowedGroups for print
 type PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration s
 // PrinterSharesItemAllowedGroupsRefRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
 type PrinterSharesItemAllowedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // PrinterSharesItemAllowedGroupsRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrinterSharesItemAllowedGroupsRefRequestBuilderGetRequestConfiguration struct {

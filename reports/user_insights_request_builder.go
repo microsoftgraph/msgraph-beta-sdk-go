@@ -24,9 +24,9 @@ type UserInsightsRequestBuilderDeleteRequestConfiguration struct {
 // UserInsightsRequestBuilderGetQueryParameters represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.
 type UserInsightsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsRequestBuilderGetRequestConfiguration struct {

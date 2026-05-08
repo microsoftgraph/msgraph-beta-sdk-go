@@ -24,9 +24,9 @@ type SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskI
 // SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetQueryParameters get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 type SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetRequestConfiguration struct {

@@ -24,9 +24,9 @@ type SlaAzureADAuthenticationRequestBuilderDeleteRequestConfiguration struct {
 // SlaAzureADAuthenticationRequestBuilderGetQueryParameters read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant's actual performance against this commitment.
 type SlaAzureADAuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SlaAzureADAuthenticationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SlaAzureADAuthenticationRequestBuilderGetRequestConfiguration struct {
