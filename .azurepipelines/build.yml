@@ -45,7 +45,7 @@ extends:
               - task: GoTool@0
                 displayName: Set up Go
                 inputs:
-                  version: '1.23'
+                  version: '1.25.0'
 
               - script: go install
                 displayName: Install dependencies
