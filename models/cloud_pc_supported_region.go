@@ -48,6 +48,16 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["geographicLocationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcGeographicLocationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGeographicLocationType(val.(*CloudPcGeographicLocationType))
+        }
+        return nil
+    }
     res["regionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcRegionGroup)
         if err != nil {
@@ -90,6 +100,18 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Read-only.
+// returns a *CloudPcGeographicLocationType when successful
+func (m *CloudPcSupportedRegion) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
+    val, err := m.GetBackingStore().Get("geographicLocationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcGeographicLocationType)
+    }
+    return nil
+}
 // GetRegionGroup gets the regionGroup property value. The regionGroup property
 // returns a *CloudPcRegionGroup when successful
 func (m *CloudPcSupportedRegion) GetRegionGroup()(*CloudPcRegionGroup) {
@@ -102,7 +124,7 @@ func (m *CloudPcSupportedRegion) GetRegionGroup()(*CloudPcRegionGroup) {
     }
     return nil
 }
-// GetRegionRestrictionDetail gets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+// GetRegionRestrictionDetail gets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.
 // returns a CloudPcSupportedRegionRestrictionDetailable when successful
 func (m *CloudPcSupportedRegion) GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable) {
     val, err := m.GetBackingStore().Get("regionRestrictionDetail")
@@ -114,7 +136,7 @@ func (m *CloudPcSupportedRegion) GetRegionRestrictionDetail()(CloudPcSupportedRe
     }
     return nil
 }
-// GetRegionStatus gets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
+// GetRegionStatus gets the regionStatus property value. The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 // returns a *CloudPcSupportedRegionStatus when successful
 func (m *CloudPcSupportedRegion) GetRegionStatus()(*CloudPcSupportedRegionStatus) {
     val, err := m.GetBackingStore().Get("regionStatus")
@@ -146,6 +168,13 @@ func (m *CloudPcSupportedRegion) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGeographicLocationType() != nil {
+        cast := (*m.GetGeographicLocationType()).String()
+        err = writer.WriteStringValue("geographicLocationType", &cast)
         if err != nil {
             return err
         }
@@ -186,6 +215,13 @@ func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Read-only.
+func (m *CloudPcSupportedRegion) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
+    err := m.GetBackingStore().Set("geographicLocationType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegionGroup sets the regionGroup property value. The regionGroup property
 func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
@@ -193,14 +229,14 @@ func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
         panic(err)
     }
 }
-// SetRegionRestrictionDetail sets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+// SetRegionRestrictionDetail sets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to four properties: cPURestricted, gPURestricted, nestedVirtualizationRestricted and availabilityZoneRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, nestedVirtualizationRestricted indicates whether the region is available for nested virtualization, and availabilityZoneRestricted indicates whether the region is available for availability zone support. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)() {
     err := m.GetBackingStore().Set("regionRestrictionDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegionStatus sets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
+// SetRegionStatus sets the regionStatus property value. The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegionStatus)() {
     err := m.GetBackingStore().Set("regionStatus", value)
     if err != nil {
@@ -218,11 +254,13 @@ type CloudPcSupportedRegionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetGeographicLocationType()(*CloudPcGeographicLocationType)
     GetRegionGroup()(*CloudPcRegionGroup)
     GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable)
     GetRegionStatus()(*CloudPcSupportedRegionStatus)
     GetSupportedSolution()(*CloudPcManagementService)
     SetDisplayName(value *string)()
+    SetGeographicLocationType(value *CloudPcGeographicLocationType)()
     SetRegionGroup(value *CloudPcRegionGroup)()
     SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)()
     SetRegionStatus(value *CloudPcSupportedRegionStatus)()

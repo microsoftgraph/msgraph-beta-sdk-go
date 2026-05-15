@@ -135,7 +135,7 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetHealthCheckStatus gets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. Possible values are, unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
+// GetHealthCheckStatus gets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. The possible values are: unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
 // returns a *CloudPcSnapshotHealthCheckStatus when successful
 func (m *CloudPcSnapshot) GetHealthCheckStatus()(*CloudPcSnapshotHealthCheckStatus) {
     val, err := m.GetBackingStore().Get("healthCheckStatus")
@@ -159,7 +159,7 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: retention. The default value is automatic.
+// GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.
 // returns a *CloudPcSnapshotType when successful
 func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
     val, err := m.GetBackingStore().Get("snapshotType")
@@ -257,7 +257,7 @@ func (m *CloudPcSnapshot) SetExpirationDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetHealthCheckStatus sets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. Possible values are, unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
+// SetHealthCheckStatus sets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. The possible values are: unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
 func (m *CloudPcSnapshot) SetHealthCheckStatus(value *CloudPcSnapshotHealthCheckStatus)() {
     err := m.GetBackingStore().Set("healthCheckStatus", value)
     if err != nil {
@@ -271,7 +271,7 @@ func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: retention. The default value is automatic.
+// SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.
 func (m *CloudPcSnapshot) SetSnapshotType(value *CloudPcSnapshotType)() {
     err := m.GetBackingStore().Set("snapshotType", value)
     if err != nil {

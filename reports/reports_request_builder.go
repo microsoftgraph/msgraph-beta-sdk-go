@@ -19,9 +19,9 @@ type ReportsRequestBuilder struct {
 // ReportsRequestBuilderGetQueryParameters get reports
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ReportsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsRequestBuilderGetRequestConfiguration struct {
@@ -53,6 +53,11 @@ func (m *ReportsRequestBuilder) ApplicationSignInDetailedSummary()(*ApplicationS
 // returns a *AuthenticationMethodsRequestBuilder when successful
 func (m *ReportsRequestBuilder) AuthenticationMethods()(*AuthenticationMethodsRequestBuilder) {
     return NewAuthenticationMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AzureADPremiumLicenseInsight provides operations to manage the azureADPremiumLicenseInsight property of the microsoft.graph.reportRoot entity.
+// returns a *AzureADPremiumLicenseInsightRequestBuilder when successful
+func (m *ReportsRequestBuilder) AzureADPremiumLicenseInsight()(*AzureADPremiumLicenseInsightRequestBuilder) {
+    return NewAzureADPremiumLicenseInsightRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewReportsRequestBuilderInternal instantiates a new ReportsRequestBuilder and sets the default values.
 func NewReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ReportsRequestBuilder) {

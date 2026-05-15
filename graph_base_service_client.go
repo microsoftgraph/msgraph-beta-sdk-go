@@ -21,6 +21,7 @@ import (
     i14752cfec59ab915e7c63922270765abf65744437d9135c191cef3986f08c3bb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments"
     i15e329825c659329448e12b30278e3a09efd68996edb65e6eb37bbba528b21d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/agreementacceptances"
     i164b4c6703708dd1b0670a17a07a4dd64e49cb0c1cb66e50a3146217db57a57a "github.com/microsoftgraph/msgraph-beta-sdk-go/workplace"
+    i16fd556302214f51a8e3e8839a62de0010d4fe60b660313532b66bdd28382537 "github.com/microsoftgraph/msgraph-beta-sdk-go/agentregistry"
     i178f0aa4e5987fcbfe2e98cbb6dd777ebcdcdf124dd3478d2bf40f83912ca030 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontrols"
     i19717748912ff29c95998304f534371c35864a4579ea92608b32aeecf7d18cc4 "github.com/microsoftgraph/msgraph-beta-sdk-go/messageevents"
     i1b84a2c37ba0bbd175c6da40c8679db7d04dfcb044d8421d26d024db45218e4a "github.com/microsoftgraph/msgraph-beta-sdk-go/schemaextensions"
@@ -64,7 +65,6 @@ import (
     i5f794bd004f1cc95da776bcb1947ffabf97b71aae1f5c9f15255b24451e2929b "github.com/microsoftgraph/msgraph-beta-sdk-go/policies"
     i60392bb6eb86abe7a3079e3b2b1e202f7dcf3452adf026db62ec93e2fafe3957 "github.com/microsoftgraph/msgraph-beta-sdk-go/subscriptions"
     i613e9d4b5596faf0dba59087b1a65d06d17aab1ca9d69170b292a4e0d90063ab "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval"
-    i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e "github.com/microsoftgraph/msgraph-beta-sdk-go/placeswithplaceid"
     i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteringpolicies"
     i65ed27543dee9887d3df7d7d883303dfead48cba6be4e357fa7d5c21332b4626 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
@@ -132,6 +132,7 @@ import (
     if4a9faac580b9d5510ead8eac155e0cecb2222152b913f0bedc9a44bbe2ee79e "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders"
     if5cd0cf36bc86d9253920d73c41189ad8a30342e678d4f0138afa5095fd31538 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontroltypes"
     if7bcb57951e8f2ae550fcf781dc209ed777854429fcfe2465a71b03112dfc346 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications"
+    if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8 "github.com/microsoftgraph/msgraph-beta-sdk-go/agents"
     ifc2b4dc2959942f88a5b666d62b682ecb910ab6189042234241247fd57d38877 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroleswithroletemplateid"
     ifc59747dbaa83f8f51942823114f4abfa41e0c0a64d67957f17e6b60407ce219 "github.com/microsoftgraph/msgraph-beta-sdk-go/app"
     ifcac309012d761a79a74e6d79fad6979f2117e7af36ff6e5ad131093412afcc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/governancesubjects"
@@ -166,6 +167,16 @@ func (m *GraphBaseServiceClient) Admin()(*i65ed27543dee9887d3df7d7d883303dfead48
 // returns a *AdministrativeUnitsRequestBuilder when successful
 func (m *GraphBaseServiceClient) AdministrativeUnits()(*i895a6f3a85eea8558280363fb928ce992d75c89f1c602b57f1d6352b0af78e5f.AdministrativeUnitsRequestBuilder) {
     return i895a6f3a85eea8558280363fb928ce992d75c89f1c602b57f1d6352b0af78e5f.NewAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AgentRegistry provides operations to manage the agentRegistry singleton.
+// returns a *AgentRegistryRequestBuilder when successful
+func (m *GraphBaseServiceClient) AgentRegistry()(*i16fd556302214f51a8e3e8839a62de0010d4fe60b660313532b66bdd28382537.AgentRegistryRequestBuilder) {
+    return i16fd556302214f51a8e3e8839a62de0010d4fe60b660313532b66bdd28382537.NewAgentRegistryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Agents provides operations to manage the collection of agent entities.
+// returns a *AgentsRequestBuilder when successful
+func (m *GraphBaseServiceClient) Agents()(*if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8.AgentsRequestBuilder) {
+    return if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8.NewAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AgreementAcceptances provides operations to manage the collection of agreementAcceptance entities.
 // returns a *AgreementAcceptancesRequestBuilder when successful
@@ -561,15 +572,10 @@ func (m *GraphBaseServiceClient) PayloadResponse()(*i22f037221f506c5b5751f13095c
 func (m *GraphBaseServiceClient) PermissionGrants()(*i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.PermissionGrantsRequestBuilder) {
     return i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.NewPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Places the places property
+// Places provides operations to manage the collection of place entities.
 // returns a *PlacesRequestBuilder when successful
 func (m *GraphBaseServiceClient) Places()(*ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.PlacesRequestBuilder) {
     return ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.NewPlacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// PlacesWithPlaceId provides operations to manage the collection of place entities.
-// returns a *PlacesWithPlaceIdRequestBuilder when successful
-func (m *GraphBaseServiceClient) PlacesWithPlaceId(placeId *string)(*i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e.PlacesWithPlaceIdRequestBuilder) {
-    return i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e.NewPlacesWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
 }
 // Planner provides operations to manage the planner singleton.
 // returns a *PlannerRequestBuilder when successful

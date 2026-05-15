@@ -17,9 +17,9 @@ type UserInsightsDailyInactiveUsersByApplicationDailyInactiveUsersByApplicationM
 // UserInsightsDailyInactiveUsersByApplicationDailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters get inactiveUsersByApplication from reports
 type UserInsightsDailyInactiveUsersByApplicationDailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsDailyInactiveUsersByApplicationDailyInactiveUsersByApplicationMetricItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsDailyInactiveUsersByApplicationDailyInactiveUsersByApplicationMetricItemRequestBuilderGetRequestConfiguration struct {

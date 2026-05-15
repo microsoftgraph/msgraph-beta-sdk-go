@@ -35,7 +35,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     }
     return nil
 }
-// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
+// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, ApproverRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
 // returns a AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentRequest) GetAccessPackageAssignment()(AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignment")
@@ -397,7 +397,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
     }
     return nil
 }
-// GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, ApproverRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
 // returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
@@ -580,7 +580,7 @@ func (m *AccessPackageAssignmentRequest) SetAccessPackage(value AccessPackageabl
         panic(err)
     }
 }
-// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
+// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, ApproverRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackageAssignment(value AccessPackageAssignmentable)() {
     err := m.GetBackingStore().Set("accessPackageAssignment", value)
     if err != nil {
@@ -671,7 +671,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestStatus(value *string)() {
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
+// SetRequestType sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, ApproverRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *string)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {

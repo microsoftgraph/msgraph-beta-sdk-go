@@ -24,9 +24,9 @@ type ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderDeleteRequestConfigur
 // ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderGetQueryParameters get workspaces from places
 type ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderGetRequestConfiguration struct {
@@ -43,6 +43,16 @@ type ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderPatchRequestConfigura
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder when successful
+func (m *ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilder) CheckIns()(*ItemGraphRoomListWorkspacesItemCheckInsRequestBuilder) {
+    return NewItemGraphRoomListWorkspacesItemCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListWorkspacesItemChildrenRequestBuilder when successful
+func (m *ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilder) Children()(*ItemGraphRoomListWorkspacesItemChildrenRequestBuilder) {
+    return NewItemGraphRoomListWorkspacesItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderInternal instantiates a new ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilder and sets the default values.
 func NewItemGraphRoomListWorkspacesWorkspaceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListWorkspacesWorkspaceItemRequestBuilder) {

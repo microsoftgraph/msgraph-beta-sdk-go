@@ -17,9 +17,9 @@ type AdminRequestBuilder struct {
 // AdminRequestBuilderGetQueryParameters get admin
 type AdminRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AdminRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdminRequestBuilderGetRequestConfiguration struct {
@@ -41,6 +41,11 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
 // returns a *AppsAndServicesRequestBuilder when successful
 func (m *AdminRequestBuilder) AppsAndServices()(*AppsAndServicesRequestBuilder) {
     return NewAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CloudLicensing provides operations to manage the cloudLicensing property of the microsoft.graph.admin entity.
+// returns a *CloudLicensingRequestBuilder when successful
+func (m *AdminRequestBuilder) CloudLicensing()(*CloudLicensingRequestBuilder) {
+    return NewCloudLicensingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConfigurationManagement provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
 // returns a *ConfigurationManagementRequestBuilder when successful

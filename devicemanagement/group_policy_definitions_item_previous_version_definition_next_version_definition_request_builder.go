@@ -24,9 +24,9 @@ type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionReq
 // GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionRequestBuilderGetQueryParameters definition of the next version of this definition
 type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionRequestBuilderGetRequestConfiguration struct {

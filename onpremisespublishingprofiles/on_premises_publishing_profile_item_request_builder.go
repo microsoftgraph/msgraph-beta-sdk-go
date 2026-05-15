@@ -24,9 +24,9 @@ type OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration str
 // OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters get entity from onPremisesPublishingProfiles by key
 type OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration struct {
@@ -142,6 +142,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Contex
 // returns a *ItemPublishedResourcesRequestBuilder when successful
 func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*ItemPublishedResourcesRequestBuilder) {
     return NewItemPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sensors provides operations to manage the sensors property of the microsoft.graph.onPremisesPublishingProfile entity.
+// returns a *ItemSensorsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) Sensors()(*ItemSensorsRequestBuilder) {
+    return NewItemSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles
 // returns a *RequestInformation when successful

@@ -24,9 +24,9 @@ type InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderDel
 // InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters read the Microsoft Purview Information Protection labels for the user or organization.
 type InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration struct {

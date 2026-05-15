@@ -50,7 +50,7 @@ func (m *CloudPcDiscoveredApp) GetAppDetail()(CloudPcCloudAppDetailable) {
     }
     return nil
 }
-// GetAppName gets the appName property value. The appName property
+// GetAppName gets the appName property value. The name of the discovered app; for example, Paint. Read-only.
 // returns a *string when successful
 func (m *CloudPcDiscoveredApp) GetAppName()(*string) {
     val, err := m.GetBackingStore().Get("appName")
@@ -67,7 +67,7 @@ func (m *CloudPcDiscoveredApp) GetAppName()(*string) {
 func (m *CloudPcDiscoveredApp) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDiscoveredAppId gets the discoveredAppId property value. The discoveredAppId property
+// GetDiscoveredAppId gets the discoveredAppId property value. The unique identifier of the discovered app. Read-only.
 // returns a *string when successful
 func (m *CloudPcDiscoveredApp) GetDiscoveredAppId()(*string) {
     val, err := m.GetBackingStore().Get("discoveredAppId")
@@ -147,7 +147,7 @@ func (m *CloudPcDiscoveredApp) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourceId gets the sourceId property value. The sourceId property
+// GetSourceId gets the sourceId property value. The ID of the source of the discovered app. For example, if the source is a custom device image, the sourceId value is the ID of that image. For example, 3035e17f-c0f7-49c1-9502-5990afcaf86f. Read-only.
 // returns a *string when successful
 func (m *CloudPcDiscoveredApp) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
@@ -213,7 +213,7 @@ func (m *CloudPcDiscoveredApp) SetAppDetail(value CloudPcCloudAppDetailable)() {
         panic(err)
     }
 }
-// SetAppName sets the appName property value. The appName property
+// SetAppName sets the appName property value. The name of the discovered app; for example, Paint. Read-only.
 func (m *CloudPcDiscoveredApp) SetAppName(value *string)() {
     err := m.GetBackingStore().Set("appName", value)
     if err != nil {
@@ -224,7 +224,7 @@ func (m *CloudPcDiscoveredApp) SetAppName(value *string)() {
 func (m *CloudPcDiscoveredApp) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDiscoveredAppId sets the discoveredAppId property value. The discoveredAppId property
+// SetDiscoveredAppId sets the discoveredAppId property value. The unique identifier of the discovered app. Read-only.
 func (m *CloudPcDiscoveredApp) SetDiscoveredAppId(value *string)() {
     err := m.GetBackingStore().Set("discoveredAppId", value)
     if err != nil {
@@ -238,7 +238,7 @@ func (m *CloudPcDiscoveredApp) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourceId sets the sourceId property value. The sourceId property
+// SetSourceId sets the sourceId property value. The ID of the source of the discovered app. For example, if the source is a custom device image, the sourceId value is the ID of that image. For example, 3035e17f-c0f7-49c1-9502-5990afcaf86f. Read-only.
 func (m *CloudPcDiscoveredApp) SetSourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceId", value)
     if err != nil {

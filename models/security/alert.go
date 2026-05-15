@@ -84,6 +84,18 @@ func (m *Alert) GetAssignedTo()(*string) {
     }
     return nil
 }
+// GetCategories gets the categories property value. The categories property
+// returns a []string when successful
+func (m *Alert) GetCategories()([]string) {
+    val, err := m.GetBackingStore().Get("categories")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetCategory gets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 // returns a *string when successful
 func (m *Alert) GetCategory()(*string) {
@@ -96,7 +108,7 @@ func (m *Alert) GetCategory()(*string) {
     }
     return nil
 }
-// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
+// GetClassification gets the classification property value. Specifies whether the alert represents a true threat. The possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 // returns a *AlertClassification when successful
 func (m *Alert) GetClassification()(*AlertClassification) {
     val, err := m.GetBackingStore().Get("classification")
@@ -156,7 +168,7 @@ func (m *Alert) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence.
+// GetDetectionSource gets the detectionSource property value. Detection technology or sensor that identified the notable component or activity.
 // returns a *DetectionSource when successful
 func (m *Alert) GetDetectionSource()(*DetectionSource) {
     val, err := m.GetBackingStore().Get("detectionSource")
@@ -180,7 +192,7 @@ func (m *Alert) GetDetectorId()(*string) {
     }
     return nil
 }
-// GetDetermination gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// GetDetermination gets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 // returns a *AlertDetermination when successful
 func (m *Alert) GetDetermination()(*AlertDetermination) {
     val, err := m.GetBackingStore().Get("determination")
@@ -255,6 +267,22 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetAssignedTo(val)
+        }
+        return nil
+    }
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCategories(res)
         }
         return nil
     }
@@ -397,6 +425,16 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetIncidentWebUrl(val)
+        }
+        return nil
+    }
+    res["investigationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseInvestigationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInvestigationState(val.(*InvestigationState))
         }
         return nil
     }
@@ -597,6 +635,18 @@ func (m *Alert) GetIncidentWebUrl()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetInvestigationState gets the investigationState property value. Information on the current status of the investigation. The possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.
+// returns a *InvestigationState when successful
+func (m *Alert) GetInvestigationState()(*InvestigationState) {
+    val, err := m.GetBackingStore().Get("investigationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*InvestigationState)
     }
     return nil
 }
@@ -816,6 +866,12 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetCategories() != nil {
+        err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("category", m.GetCategory())
         if err != nil {
@@ -905,6 +961,13 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err = writer.WriteStringValue("incidentWebUrl", m.GetIncidentWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInvestigationState() != nil {
+        cast := (*m.GetInvestigationState()).String()
+        err = writer.WriteStringValue("investigationState", &cast)
         if err != nil {
             return err
         }
@@ -1039,6 +1102,13 @@ func (m *Alert) SetAssignedTo(value *string)() {
         panic(err)
     }
 }
+// SetCategories sets the categories property value. The categories property
+func (m *Alert) SetCategories(value []string)() {
+    err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCategory sets the category property value. The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&CK framework.
 func (m *Alert) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
@@ -1046,7 +1116,7 @@ func (m *Alert) SetCategory(value *string)() {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
+// SetClassification sets the classification property value. Specifies whether the alert represents a true threat. The possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
 func (m *Alert) SetClassification(value *AlertClassification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
@@ -1081,7 +1151,7 @@ func (m *Alert) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence.
+// SetDetectionSource sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity.
 func (m *Alert) SetDetectionSource(value *DetectionSource)() {
     err := m.GetBackingStore().Set("detectionSource", value)
     if err != nil {
@@ -1095,7 +1165,7 @@ func (m *Alert) SetDetectorId(value *string)() {
         panic(err)
     }
 }
-// SetDetermination sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
+// SetDetermination sets the determination property value. Specifies the result of the investigation, whether the alert represents a true attack, and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
 func (m *Alert) SetDetermination(value *AlertDetermination)() {
     err := m.GetBackingStore().Set("determination", value)
     if err != nil {
@@ -1126,6 +1196,13 @@ func (m *Alert) SetIncidentId(value *string)() {
 // SetIncidentWebUrl sets the incidentWebUrl property value. URL for the incident page in the Microsoft 365 Defender portal.
 func (m *Alert) SetIncidentWebUrl(value *string)() {
     err := m.GetBackingStore().Set("incidentWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetInvestigationState sets the investigationState property value. Information on the current status of the investigation. The possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.
+func (m *Alert) SetInvestigationState(value *InvestigationState)() {
+    err := m.GetBackingStore().Set("investigationState", value)
     if err != nil {
         panic(err)
     }
@@ -1243,6 +1320,7 @@ type Alertable interface {
     GetAlertPolicyId()(*string)
     GetAlertWebUrl()(*string)
     GetAssignedTo()(*string)
+    GetCategories()([]string)
     GetCategory()(*string)
     GetClassification()(*AlertClassification)
     GetComments()([]AlertCommentable)
@@ -1256,6 +1334,7 @@ type Alertable interface {
     GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIncidentId()(*string)
     GetIncidentWebUrl()(*string)
+    GetInvestigationState()(*InvestigationState)
     GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMitreTechniques()([]string)
@@ -1276,6 +1355,7 @@ type Alertable interface {
     SetAlertPolicyId(value *string)()
     SetAlertWebUrl(value *string)()
     SetAssignedTo(value *string)()
+    SetCategories(value []string)()
     SetCategory(value *string)()
     SetClassification(value *AlertClassification)()
     SetComments(value []AlertCommentable)()
@@ -1289,6 +1369,7 @@ type Alertable interface {
     SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIncidentId(value *string)()
     SetIncidentWebUrl(value *string)()
+    SetInvestigationState(value *InvestigationState)()
     SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMitreTechniques(value []string)()

@@ -24,9 +24,9 @@ type MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestB
 // MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestBuilderGetQueryParameters the list of content versions for this app. This property is read-only.
 type MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestBuilderGetRequestConfiguration struct {
@@ -122,6 +122,11 @@ func (m *MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable), nil
+}
+// Scripts provides operations to manage the scripts property of the microsoft.graph.mobileAppContent entity.
+// returns a *MobileAppsItemGraphAndroidLobAppContentVersionsItemScriptsRequestBuilder when successful
+func (m *MobileAppsItemGraphAndroidLobAppContentVersionsMobileAppContentItemRequestBuilder) Scripts()(*MobileAppsItemGraphAndroidLobAppContentVersionsItemScriptsRequestBuilder) {
+    return NewMobileAppsItemGraphAndroidLobAppContentVersionsItemScriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contentVersions for deviceAppManagement
 // returns a *RequestInformation when successful

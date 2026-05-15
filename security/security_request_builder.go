@@ -17,9 +17,9 @@ type SecurityRequestBuilder struct {
 // SecurityRequestBuilderGetQueryParameters get security
 type SecurityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SecurityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SecurityRequestBuilderGetRequestConfiguration struct {
@@ -215,6 +215,11 @@ func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
 func (m *SecurityRequestBuilder) SecurityActions()(*SecurityActionsRequestBuilder) {
     return NewSecurityActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SecurityCopilot provides operations to manage the securityCopilot property of the microsoft.graph.security entity.
+// returns a *SecurityCopilotRequestBuilder when successful
+func (m *SecurityRequestBuilder) SecurityCopilot()(*SecurityCopilotRequestBuilder) {
+    return NewSecurityCopilotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
 // returns a *SubjectRightsRequestsRequestBuilder when successful
 func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
@@ -283,4 +288,9 @@ func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UserSecurityProfilesReq
 // returns a *SecurityRequestBuilder when successful
 func (m *SecurityRequestBuilder) WithUrl(rawUrl string)(*SecurityRequestBuilder) {
     return NewSecurityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// Zones provides operations to manage the zones property of the microsoft.graph.security entity.
+// returns a *ZonesRequestBuilder when successful
+func (m *SecurityRequestBuilder) Zones()(*ZonesRequestBuilder) {
+    return NewZonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

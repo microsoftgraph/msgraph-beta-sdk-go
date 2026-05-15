@@ -24,9 +24,9 @@ type ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItem
 // ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderGetQueryParameters the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
 type ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilderGetRequestConfiguration struct {

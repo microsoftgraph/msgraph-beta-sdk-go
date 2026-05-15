@@ -24,9 +24,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitions
 // TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetQueryParameters the definitions of the roles in the schedule.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsShiftsRoleDefinitionItemRequestBuilderGetRequestConfiguration struct {

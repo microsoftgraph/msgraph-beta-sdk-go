@@ -24,9 +24,9 @@ type CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuild
 // CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderGetQueryParameters get item from financials
 type CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderGetRequestConfiguration struct {

@@ -50,6 +50,8 @@ func CreateAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i87
                         return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration":
                         return NewTemporaryAccessPassAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration":
+                        return NewVerifiableCredentialsAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.voiceAuthenticationMethodConfiguration":
                         return NewVoiceAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration":
@@ -104,7 +106,7 @@ func (m *AuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetState gets the state property value. The state of the policy. Possible values are: enabled, disabled.
+// GetState gets the state property value. The state of the policy. The possible values are: enabled, disabled.
 // returns a *AuthenticationMethodState when successful
 func (m *AuthenticationMethodConfiguration) GetState()(*AuthenticationMethodState) {
     val, err := m.GetBackingStore().Get("state")
@@ -150,7 +152,7 @@ func (m *AuthenticationMethodConfiguration) SetExcludeTargets(value []ExcludeTar
         panic(err)
     }
 }
-// SetState sets the state property value. The state of the policy. Possible values are: enabled, disabled.
+// SetState sets the state property value. The state of the policy. The possible values are: enabled, disabled.
 func (m *AuthenticationMethodConfiguration) SetState(value *AuthenticationMethodState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

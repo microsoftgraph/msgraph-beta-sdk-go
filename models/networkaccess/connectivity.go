@@ -101,7 +101,7 @@ func (m *Connectivity) GetRemoteNetworks()([]RemoteNetworkable) {
     }
     return nil
 }
-// GetWebCategories gets the webCategories property value. The webCategories property
+// GetWebCategories gets the webCategories property value. The URL category.
 // returns a []WebCategoryable when successful
 func (m *Connectivity) GetWebCategories()([]WebCategoryable) {
     val, err := m.GetBackingStore().Get("webCategories")
@@ -171,7 +171,7 @@ func (m *Connectivity) SetRemoteNetworks(value []RemoteNetworkable)() {
         panic(err)
     }
 }
-// SetWebCategories sets the webCategories property value. The webCategories property
+// SetWebCategories sets the webCategories property value. The URL category.
 func (m *Connectivity) SetWebCategories(value []WebCategoryable)() {
     err := m.GetBackingStore().Set("webCategories", value)
     if err != nil {

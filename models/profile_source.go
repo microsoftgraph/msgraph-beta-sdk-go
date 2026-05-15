@@ -132,7 +132,7 @@ func (m *ProfileSource) GetSourceId()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. Web URL of the profile source that directs users to the page view of profile data.
+// GetWebUrl gets the webUrl property value. Web URL of the profile source that directs users to the page view of the profile data.
 // returns a *string when successful
 func (m *ProfileSource) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -216,7 +216,7 @@ func (m *ProfileSource) SetSourceId(value *string)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. Web URL of the profile source that directs users to the page view of profile data.
+// SetWebUrl sets the webUrl property value. Web URL of the profile source that directs users to the page view of the profile data.
 func (m *ProfileSource) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

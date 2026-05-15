@@ -45,6 +45,30 @@ func CreateProtectionUnitBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return NewProtectionUnitBase(), nil
 }
+// GetBackupRetentionPeriodInDays gets the backupRetentionPeriodInDays property value. The retention period of the backup, in days.
+// returns a *int32 when successful
+func (m *ProtectionUnitBase) GetBackupRetentionPeriodInDays()(*int32) {
+    val, err := m.GetBackingStore().Get("backupRetentionPeriodInDays")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetBillingPolicyId gets the billingPolicyId property value. The unique identifier of the billing policy assigned to the protection unit for cost allocation.
+// returns a *string when successful
+func (m *ProtectionUnitBase) GetBillingPolicyId()(*string) {
+    val, err := m.GetBackingStore().Get("billingPolicyId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCreatedBy gets the createdBy property value. The identity of person who created the protection unit.
 // returns a IdentitySetable when successful
 func (m *ProtectionUnitBase) GetCreatedBy()(IdentitySetable) {
@@ -85,6 +109,26 @@ func (m *ProtectionUnitBase) GetError()(PublicErrorable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProtectionUnitBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["backupRetentionPeriodInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBackupRetentionPeriodInDays(val)
+        }
+        return nil
+    }
+    res["billingPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBillingPolicyId(val)
+        }
+        return nil
+    }
     res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -256,6 +300,18 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         return err
     }
     {
+        err = writer.WriteInt32Value("backupRetentionPeriodInDays", m.GetBackupRetentionPeriodInDays())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("billingPolicyId", m.GetBillingPolicyId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
         if err != nil {
             return err
@@ -312,6 +368,20 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     return nil
+}
+// SetBackupRetentionPeriodInDays sets the backupRetentionPeriodInDays property value. The retention period of the backup, in days.
+func (m *ProtectionUnitBase) SetBackupRetentionPeriodInDays(value *int32)() {
+    err := m.GetBackingStore().Set("backupRetentionPeriodInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBillingPolicyId sets the billingPolicyId property value. The unique identifier of the billing policy assigned to the protection unit for cost allocation.
+func (m *ProtectionUnitBase) SetBillingPolicyId(value *string)() {
+    err := m.GetBackingStore().Set("billingPolicyId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCreatedBy sets the createdBy property value. The identity of person who created the protection unit.
 func (m *ProtectionUnitBase) SetCreatedBy(value IdentitySetable)() {
@@ -379,6 +449,8 @@ func (m *ProtectionUnitBase) SetStatus(value *ProtectionUnitStatus)() {
 type ProtectionUnitBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackupRetentionPeriodInDays()(*int32)
+    GetBillingPolicyId()(*string)
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetError()(PublicErrorable)
@@ -388,6 +460,8 @@ type ProtectionUnitBaseable interface {
     GetPolicyId()(*string)
     GetProtectionSources()(*ProtectionSource)
     GetStatus()(*ProtectionUnitStatus)
+    SetBackupRetentionPeriodInDays(value *int32)()
+    SetBillingPolicyId(value *string)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetError(value PublicErrorable)()

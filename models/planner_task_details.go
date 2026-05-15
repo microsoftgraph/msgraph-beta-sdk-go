@@ -180,7 +180,7 @@ func (m *PlannerTaskDetails) GetNotes()(ItemBodyable) {
     }
     return nil
 }
-// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 // returns a *PlannerPreviewType when successful
 func (m *PlannerTaskDetails) GetPreviewType()(*PlannerPreviewType) {
     val, err := m.GetBackingStore().Get("previewType")
@@ -303,7 +303,7 @@ func (m *PlannerTaskDetails) SetNotes(value ItemBodyable)() {
         panic(err)
     }
 }
-// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
+// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
 func (m *PlannerTaskDetails) SetPreviewType(value *PlannerPreviewType)() {
     err := m.GetBackingStore().Set("previewType", value)
     if err != nil {

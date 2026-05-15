@@ -20,9 +20,29 @@ func NewMobilityManagementPolicy()(*MobilityManagementPolicy) {
 // CreateMobilityManagementPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.mobileAppManagementPolicy":
+                        return NewMobileAppManagementPolicy(), nil
+                    case "#microsoft.graph.mobileDeviceManagementPolicy":
+                        return NewMobileDeviceManagementPolicy(), nil
+                }
+            }
+        }
+    }
     return NewMobilityManagementPolicy(), nil
 }
-// GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. The possible values are: none, all, selected.
 // returns a *PolicyScope when successful
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -273,7 +293,7 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. The possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {

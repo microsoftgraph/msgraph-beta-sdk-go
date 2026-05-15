@@ -118,6 +118,18 @@ func (m *PolicyRoot) GetAuthorizationPolicy()([]AuthorizationPolicyable) {
     }
     return nil
 }
+// GetB2bManagementPolicies gets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
+// returns a []B2bManagementPolicyable when successful
+func (m *PolicyRoot) GetB2bManagementPolicies()([]B2bManagementPolicyable) {
+    val, err := m.GetBackingStore().Get("b2bManagementPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]B2bManagementPolicyable)
+    }
+    return nil
+}
 // GetB2cAuthenticationMethodsPolicy gets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 // returns a B2cAuthenticationMethodsPolicyable when successful
 func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable) {
@@ -142,6 +154,18 @@ func (m *PolicyRoot) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable) {
     }
     return nil
 }
+// GetConditionalAccessPolicies gets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
+// returns a []ConditionalAccessPolicyable when successful
+func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyable) {
+    val, err := m.GetBackingStore().Get("conditionalAccessPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConditionalAccessPolicyable)
+    }
+    return nil
+}
 // GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 // returns a CrossTenantAccessPolicyable when successful
 func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
@@ -163,6 +187,18 @@ func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyab
     }
     if val != nil {
         return val.(TenantAppManagementPolicyable)
+    }
+    return nil
+}
+// GetDeletedItems gets the deletedItems property value. Policies that support soft-delete functionality and can be restored within 30 days.
+// returns a PolicyDeletableRootable when successful
+func (m *PolicyRoot) GetDeletedItems()(PolicyDeletableRootable) {
+    val, err := m.GetBackingStore().Get("deletedItems")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PolicyDeletableRootable)
     }
     return nil
 }
@@ -334,6 +370,22 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["b2bManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateB2bManagementPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]B2bManagementPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(B2bManagementPolicyable)
+                }
+            }
+            m.SetB2bManagementPolicies(res)
+        }
+        return nil
+    }
     res["b2cAuthenticationMethodsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue)
         if err != nil {
@@ -360,6 +412,22 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["conditionalAccessPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConditionalAccessPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConditionalAccessPolicyable)
+                }
+            }
+            m.SetConditionalAccessPolicies(res)
+        }
+        return nil
+    }
     res["crossTenantAccessPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyFromDiscriminatorValue)
         if err != nil {
@@ -377,6 +445,16 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         if val != nil {
             m.SetDefaultAppManagementPolicy(val.(TenantAppManagementPolicyable))
+        }
+        return nil
+    }
+    res["deletedItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePolicyDeletableRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeletedItems(val.(PolicyDeletableRootable))
         }
         return nil
     }
@@ -463,15 +541,15 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["mobileAppManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobilityManagementPolicyFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateMobileAppManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobilityManagementPolicyable, len(val))
+            res := make([]MobileAppManagementPolicyable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(MobilityManagementPolicyable)
+                    res[i] = v.(MobileAppManagementPolicyable)
                 }
             }
             m.SetMobileAppManagementPolicies(res)
@@ -479,18 +557,44 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     res["mobileDeviceManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobilityManagementPolicyFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateMobileDeviceManagementPolicyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MobilityManagementPolicyable, len(val))
+            res := make([]MobileDeviceManagementPolicyable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(MobilityManagementPolicyable)
+                    res[i] = v.(MobileDeviceManagementPolicyable)
                 }
             }
             m.SetMobileDeviceManagementPolicies(res)
+        }
+        return nil
+    }
+    res["onPremAuthenticationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremAuthenticationPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremAuthenticationPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OnPremAuthenticationPolicyable)
+                }
+            }
+            m.SetOnPremAuthenticationPolicies(res)
+        }
+        return nil
+    }
+    res["ownerlessGroupPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOwnerlessGroupPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerlessGroupPolicy(val.(OwnerlessGroupPolicyable))
         }
         return nil
     }
@@ -633,26 +737,50 @@ func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecu
     return nil
 }
 // GetMobileAppManagementPolicies gets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
-// returns a []MobilityManagementPolicyable when successful
-func (m *PolicyRoot) GetMobileAppManagementPolicies()([]MobilityManagementPolicyable) {
+// returns a []MobileAppManagementPolicyable when successful
+func (m *PolicyRoot) GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable) {
     val, err := m.GetBackingStore().Get("mobileAppManagementPolicies")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MobilityManagementPolicyable)
+        return val.([]MobileAppManagementPolicyable)
     }
     return nil
 }
 // GetMobileDeviceManagementPolicies gets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
-// returns a []MobilityManagementPolicyable when successful
-func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobilityManagementPolicyable) {
+// returns a []MobileDeviceManagementPolicyable when successful
+func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable) {
     val, err := m.GetBackingStore().Get("mobileDeviceManagementPolicies")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MobilityManagementPolicyable)
+        return val.([]MobileDeviceManagementPolicyable)
+    }
+    return nil
+}
+// GetOnPremAuthenticationPolicies gets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
+// returns a []OnPremAuthenticationPolicyable when successful
+func (m *PolicyRoot) GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable) {
+    val, err := m.GetBackingStore().Get("onPremAuthenticationPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremAuthenticationPolicyable)
+    }
+    return nil
+}
+// GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
+// returns a OwnerlessGroupPolicyable when successful
+func (m *PolicyRoot) GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable) {
+    val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OwnerlessGroupPolicyable)
     }
     return nil
 }
@@ -818,6 +946,18 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetB2bManagementPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2bManagementPolicies()))
+        for i, v := range m.GetB2bManagementPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("b2bManagementPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
         if err != nil {
@@ -836,6 +976,18 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetConditionalAccessPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicies()))
+        for i, v := range m.GetConditionalAccessPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
         if err != nil {
@@ -844,6 +996,12 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     {
         err = writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
         if err != nil {
             return err
         }
@@ -922,6 +1080,24 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             }
         }
         err = writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOnPremAuthenticationPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremAuthenticationPolicies()))
+        for i, v := range m.GetOnPremAuthenticationPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("onPremAuthenticationPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("ownerlessGroupPolicy", m.GetOwnerlessGroupPolicy())
         if err != nil {
             return err
         }
@@ -1068,6 +1244,13 @@ func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable)() {
         panic(err)
     }
 }
+// SetB2bManagementPolicies sets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
+func (m *PolicyRoot) SetB2bManagementPolicies(value []B2bManagementPolicyable)() {
+    err := m.GetBackingStore().Set("b2bManagementPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetB2cAuthenticationMethodsPolicy sets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)() {
     err := m.GetBackingStore().Set("b2cAuthenticationMethodsPolicy", value)
@@ -1082,6 +1265,13 @@ func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
         panic(err)
     }
 }
+// SetConditionalAccessPolicies sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
+func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)() {
+    err := m.GetBackingStore().Set("conditionalAccessPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
     err := m.GetBackingStore().Set("crossTenantAccessPolicy", value)
@@ -1092,6 +1282,13 @@ func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyabl
 // SetDefaultAppManagementPolicy sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
 func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)() {
     err := m.GetBackingStore().Set("defaultAppManagementPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeletedItems sets the deletedItems property value. Policies that support soft-delete functionality and can be restored within 30 days.
+func (m *PolicyRoot) SetDeletedItems(value PolicyDeletableRootable)() {
+    err := m.GetBackingStore().Set("deletedItems", value)
     if err != nil {
         panic(err)
     }
@@ -1146,15 +1343,29 @@ func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value Identity
     }
 }
 // SetMobileAppManagementPolicies sets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
-func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)() {
+func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)() {
     err := m.GetBackingStore().Set("mobileAppManagementPolicies", value)
     if err != nil {
         panic(err)
     }
 }
 // SetMobileDeviceManagementPolicies sets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
-func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobilityManagementPolicyable)() {
+func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)() {
     err := m.GetBackingStore().Set("mobileDeviceManagementPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOnPremAuthenticationPolicies sets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
+func (m *PolicyRoot) SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)() {
+    err := m.GetBackingStore().Set("onPremAuthenticationPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
+func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)() {
+    err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
     if err != nil {
         panic(err)
     }
@@ -1219,10 +1430,13 @@ type PolicyRootable interface {
     GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable)
     GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable)
     GetAuthorizationPolicy()([]AuthorizationPolicyable)
+    GetB2bManagementPolicies()([]B2bManagementPolicyable)
     GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
+    GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
     GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable)
     GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable)
+    GetDeletedItems()(PolicyDeletableRootable)
     GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable)
     GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessReviewPolicyable)
     GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable)
@@ -1230,8 +1444,10 @@ type PolicyRootable interface {
     GetFederatedTokenValidationPolicy()(FederatedTokenValidationPolicyable)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
-    GetMobileAppManagementPolicies()([]MobilityManagementPolicyable)
-    GetMobileDeviceManagementPolicies()([]MobilityManagementPolicyable)
+    GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable)
+    GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable)
+    GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable)
+    GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
@@ -1247,10 +1463,13 @@ type PolicyRootable interface {
     SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)()
     SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)()
     SetAuthorizationPolicy(value []AuthorizationPolicyable)()
+    SetB2bManagementPolicies(value []B2bManagementPolicyable)()
     SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
+    SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
     SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)()
     SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)()
+    SetDeletedItems(value PolicyDeletableRootable)()
     SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)()
     SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable)()
     SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)()
@@ -1258,8 +1477,10 @@ type PolicyRootable interface {
     SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
-    SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)()
-    SetMobileDeviceManagementPolicies(value []MobilityManagementPolicyable)()
+    SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)()
+    SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)()
+    SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)()
+    SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()

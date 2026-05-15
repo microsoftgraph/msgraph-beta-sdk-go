@@ -170,7 +170,7 @@ func (m *ProductRevision) GetOsBuild()(BuildVersionDetailsable) {
     }
     return nil
 }
-// GetProduct gets the product property value. The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
+// GetProduct gets the product property value. The product of the revision. The possible values are: Windows 10, Windows 11. Read-only.
 // returns a *string when successful
 func (m *ProductRevision) GetProduct()(*string) {
     val, err := m.GetBackingStore().Get("product")
@@ -297,7 +297,7 @@ func (m *ProductRevision) SetOsBuild(value BuildVersionDetailsable)() {
         panic(err)
     }
 }
-// SetProduct sets the product property value. The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.
+// SetProduct sets the product property value. The product of the revision. The possible values are: Windows 10, Windows 11. Read-only.
 func (m *ProductRevision) SetProduct(value *string)() {
     err := m.GetBackingStore().Set("product", value)
     if err != nil {

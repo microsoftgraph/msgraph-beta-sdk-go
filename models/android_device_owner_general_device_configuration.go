@@ -573,6 +573,16 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["isKioskModeExitCodeSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsKioskModeExitCodeSet(val)
+        }
+        return nil
+    }
     res["kioskCustomizationDeviceSettingsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -778,6 +788,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
                 }
             }
             m.SetKioskModeManagedFolders(res)
+        }
+        return nil
+    }
+    res["kioskModeManagedHomeScreenAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidDeviceOwnerKioskModeAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerKioskModeAppable)
+                }
+            }
+            m.SetKioskModeManagedHomeScreenAppSettings(res)
         }
         return nil
     }
@@ -1787,6 +1813,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetGoogleAccountsBlocked(
     }
     return nil
 }
+// GetIsKioskModeExitCodeSet gets the isKioskModeExitCodeSet property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+// returns a *bool when successful
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetIsKioskModeExitCodeSet()(*bool) {
+    val, err := m.GetBackingStore().Get("isKioskModeExitCodeSet")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetKioskCustomizationDeviceSettingsBlocked gets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
 // returns a *bool when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationDeviceSettingsBlocked()(*bool) {
@@ -2012,6 +2050,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedFolder
     }
     if val != nil {
         return val.([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    }
+    return nil
+}
+// GetKioskModeManagedHomeScreenAppSettings gets the kioskModeManagedHomeScreenAppSettings property value. Indicates the list of managed applications and associated settings, which will be applied when android device is run on kiosk mode with Managed Home Screen. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerKioskModeAppable when successful
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenAppSettings()([]AndroidDeviceOwnerKioskModeAppable) {
+    val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenAppSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeAppable)
     }
     return nil
 }
@@ -3329,6 +3379,12 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
         }
     }
     {
+        err = writer.WriteBoolValue("isKioskModeExitCodeSet", m.GetIsKioskModeExitCodeSet())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("kioskCustomizationDeviceSettingsBlocked", m.GetKioskCustomizationDeviceSettingsBlocked())
         if err != nil {
             return err
@@ -3460,6 +3516,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
             }
         }
         err = writer.WriteCollectionOfObjectValues("kioskModeManagedFolders", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetKioskModeManagedHomeScreenAppSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeManagedHomeScreenAppSettings()))
+        for i, v := range m.GetKioskModeManagedHomeScreenAppSettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("kioskModeManagedHomeScreenAppSettings", cast)
         if err != nil {
             return err
         }
@@ -4236,6 +4304,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetGoogleAccountsBlocked(
         panic(err)
     }
 }
+// SetIsKioskModeExitCodeSet sets the isKioskModeExitCodeSet property value. Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetIsKioskModeExitCodeSet(value *bool)() {
+    err := m.GetBackingStore().Set("isKioskModeExitCodeSet", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetKioskCustomizationDeviceSettingsBlocked sets the kioskCustomizationDeviceSettingsBlocked property value. Indicates whether a user can access the device's Settings app while in Kiosk Mode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationDeviceSettingsBlocked(value *bool)() {
     err := m.GetBackingStore().Set("kioskCustomizationDeviceSettingsBlocked", value)
@@ -4365,6 +4440,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeLockHomeScree
 // SetKioskModeManagedFolders sets the kioskModeManagedFolders property value. A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedFolders(value []AndroidDeviceOwnerKioskModeManagedFolderable)() {
     err := m.GetBackingStore().Set("kioskModeManagedFolders", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetKioskModeManagedHomeScreenAppSettings sets the kioskModeManagedHomeScreenAppSettings property value. Indicates the list of managed applications and associated settings, which will be applied when android device is run on kiosk mode with Managed Home Screen. This collection can contain a maximum of 500 elements.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenAppSettings(value []AndroidDeviceOwnerKioskModeAppable)() {
+    err := m.GetBackingStore().Set("kioskModeManagedHomeScreenAppSettings", value)
     if err != nil {
         panic(err)
     }
@@ -5062,6 +5144,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetFactoryResetDeviceAdministratorEmails()([]string)
     GetGlobalProxy()(AndroidDeviceOwnerGlobalProxyable)
     GetGoogleAccountsBlocked()(*bool)
+    GetIsKioskModeExitCodeSet()(*bool)
     GetKioskCustomizationDeviceSettingsBlocked()(*bool)
     GetKioskCustomizationPowerButtonActionsBlocked()(*bool)
     GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar)
@@ -5081,6 +5164,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize)
     GetKioskModeLockHomeScreen()(*bool)
     GetKioskModeManagedFolders()([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    GetKioskModeManagedHomeScreenAppSettings()([]AndroidDeviceOwnerKioskModeAppable)
     GetKioskModeManagedHomeScreenAutoSignout()(*bool)
     GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds()(*int32)
     GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds()(*int32)
@@ -5201,6 +5285,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetFactoryResetDeviceAdministratorEmails(value []string)()
     SetGlobalProxy(value AndroidDeviceOwnerGlobalProxyable)()
     SetGoogleAccountsBlocked(value *bool)()
+    SetIsKioskModeExitCodeSet(value *bool)()
     SetKioskCustomizationDeviceSettingsBlocked(value *bool)()
     SetKioskCustomizationPowerButtonActionsBlocked(value *bool)()
     SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)()
@@ -5220,6 +5305,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)()
     SetKioskModeLockHomeScreen(value *bool)()
     SetKioskModeManagedFolders(value []AndroidDeviceOwnerKioskModeManagedFolderable)()
+    SetKioskModeManagedHomeScreenAppSettings(value []AndroidDeviceOwnerKioskModeAppable)()
     SetKioskModeManagedHomeScreenAutoSignout(value *bool)()
     SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds(value *int32)()
     SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds(value *int32)()

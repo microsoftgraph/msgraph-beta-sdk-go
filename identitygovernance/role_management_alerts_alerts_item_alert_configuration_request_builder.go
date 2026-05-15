@@ -17,9 +17,9 @@ type RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder struct {
 // RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetQueryParameters the configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
 type RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetRequestConfiguration struct {

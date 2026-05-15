@@ -24,9 +24,9 @@ type AccessReviewsRequestBuilderDeleteRequestConfiguration struct {
 // AccessReviewsRequestBuilderGetQueryParameters get accessReviews from identityGovernance
 type AccessReviewsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AccessReviewsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsRequestBuilderGetRequestConfiguration struct {
@@ -107,6 +107,11 @@ func (m *AccessReviewsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // returns a *AccessReviewsHistoryDefinitionsRequestBuilder when successful
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*AccessReviewsHistoryDefinitionsRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Instances provides operations to manage the instances property of the microsoft.graph.accessReviewSet entity.
+// returns a *AccessReviewsInstancesRequestBuilder when successful
+func (m *AccessReviewsRequestBuilder) Instances()(*AccessReviewsInstancesRequestBuilder) {
+    return NewAccessReviewsInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property accessReviews in identityGovernance
 // returns a AccessReviewSetable when successful

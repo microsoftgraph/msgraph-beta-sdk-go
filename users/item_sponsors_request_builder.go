@@ -14,24 +14,24 @@ import (
 type ItemSponsorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSponsorsRequestBuilderGetQueryParameters get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// ItemSponsorsRequestBuilderGetQueryParameters get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 type ItemSponsorsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemSponsorsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
@@ -42,7 +42,7 @@ type ItemSponsorsRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemSponsorsRequestBuilderGetQueryParameters
 }
-// ByDirectoryObjectId provides operations to manage the sponsors property of the microsoft.graph.user entity.
+// ByDirectoryObjectId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.users.item.sponsors.item collection
 // returns a *ItemSponsorsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemSponsorsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemSponsorsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -72,12 +72,12 @@ func NewItemSponsorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemSponsorsRequestBuilder) Count()(*ItemSponsorsCountRequestBuilder) {
     return NewItemSponsorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// Get get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-beta
 func (m *ItemSponsorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSponsorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +95,12 @@ func (m *ItemSponsorsRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation get a user's sponsors. Sponsors are users and groups that are responsible for this guest's privileges in the tenant and for keeping the guest's information and access up to date.
+// Ref provides operations to manage the collection of user entities.
+// returns a *ItemSponsorsRefRequestBuilder when successful
+func (m *ItemSponsorsRequestBuilder) Ref()(*ItemSponsorsRefRequestBuilder) {
+    return NewItemSponsorsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToGetRequestInformation get an agentUser's sponsors. Sponsors are users and groups that are responsible for this agent user's privileges in the tenant and for keeping the agent user's information and access up to date.
 // returns a *RequestInformation when successful
 func (m *ItemSponsorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSponsorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

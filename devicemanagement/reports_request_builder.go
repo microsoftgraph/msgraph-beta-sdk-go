@@ -24,9 +24,9 @@ type ReportsRequestBuilderDeleteRequestConfiguration struct {
 // ReportsRequestBuilderGetQueryParameters get reports from deviceManagement
 type ReportsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ReportsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsRequestBuilderGetRequestConfiguration struct {
@@ -443,11 +443,6 @@ func (m *ReportsRequestBuilder) GetWindowsUpdateAlertsPerPolicyPerDeviceReport()
 func (m *ReportsRequestBuilder) GetWindowsUpdateAlertSummaryReport()(*ReportsGetWindowsUpdateAlertSummaryReportRequestBuilder) {
     return NewReportsGetWindowsUpdateAlertSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetZebraFotaDeploymentReport provides operations to call the getZebraFotaDeploymentReport method.
-// returns a *ReportsGetZebraFotaDeploymentReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetZebraFotaDeploymentReport()(*ReportsGetZebraFotaDeploymentReportRequestBuilder) {
-    return NewReportsGetZebraFotaDeploymentReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Patch update the navigation property reports in deviceManagement
 // returns a DeviceManagementReportsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -497,6 +492,11 @@ func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateSummaryReport()(*
 // returns a *ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {
     return NewReportsRetrieveDeviceAppInstallationStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveEnrollmentTimeGroupingFailureReport provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.
+// returns a *ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveEnrollmentTimeGroupingFailureReport()(*ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder) {
+    return NewReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveSecurityTaskAppsReport provides operations to call the retrieveSecurityTaskAppsReport method.
 // returns a *ReportsRetrieveSecurityTaskAppsReportRequestBuilder when successful

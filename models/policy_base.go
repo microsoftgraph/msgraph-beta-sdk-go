@@ -40,6 +40,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewAppManagementPolicy(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.b2bManagementPolicy":
+                        return NewB2bManagementPolicy(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
                         return NewClaimsMappingPolicy(), nil
                     case "#microsoft.graph.crossTenantAccessPolicy":
@@ -50,6 +52,8 @@ func CreatePolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
+                    case "#microsoft.graph.onPremAuthenticationPolicy":
+                        return NewOnPremAuthenticationPolicy(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
                         return NewPermissionGrantPolicy(), nil
                     case "#microsoft.graph.servicePrincipalCreationPolicy":

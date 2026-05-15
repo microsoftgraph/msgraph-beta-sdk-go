@@ -38,6 +38,16 @@ func (m *SharePointIdentitySet) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["sharePointGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharePointGroupIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharePointGroup(val.(SharePointGroupIdentityable))
+        }
+        return nil
+    }
     res["siteGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharePointIdentityFromDiscriminatorValue)
         if err != nil {
@@ -72,7 +82,19 @@ func (m *SharePointIdentitySet) GetGroup()(Identityable) {
     }
     return nil
 }
-// GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action. Optional.
+// GetSharePointGroup gets the sharePointGroup property value. The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.
+// returns a SharePointGroupIdentityable when successful
+func (m *SharePointIdentitySet) GetSharePointGroup()(SharePointGroupIdentityable) {
+    val, err := m.GetBackingStore().Get("sharePointGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharePointGroupIdentityable)
+    }
+    return nil
+}
+// GetSiteGroup gets the siteGroup property value. The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.
 // returns a SharePointIdentityable when successful
 func (m *SharePointIdentitySet) GetSiteGroup()(SharePointIdentityable) {
     val, err := m.GetBackingStore().Get("siteGroup")
@@ -109,6 +131,12 @@ func (m *SharePointIdentitySet) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("sharePointGroup", m.GetSharePointGroup())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("siteGroup", m.GetSiteGroup())
         if err != nil {
             return err
@@ -129,7 +157,14 @@ func (m *SharePointIdentitySet) SetGroup(value Identityable)() {
         panic(err)
     }
 }
-// SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action. Optional.
+// SetSharePointGroup sets the sharePointGroup property value. The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.
+func (m *SharePointIdentitySet) SetSharePointGroup(value SharePointGroupIdentityable)() {
+    err := m.GetBackingStore().Set("sharePointGroup", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSiteGroup sets the siteGroup property value. The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.
 func (m *SharePointIdentitySet) SetSiteGroup(value SharePointIdentityable)() {
     err := m.GetBackingStore().Set("siteGroup", value)
     if err != nil {
@@ -147,9 +182,11 @@ type SharePointIdentitySetable interface {
     IdentitySetable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetGroup()(Identityable)
+    GetSharePointGroup()(SharePointGroupIdentityable)
     GetSiteGroup()(SharePointIdentityable)
     GetSiteUser()(SharePointIdentityable)
     SetGroup(value Identityable)()
+    SetSharePointGroup(value SharePointGroupIdentityable)()
     SetSiteGroup(value SharePointIdentityable)()
     SetSiteUser(value SharePointIdentityable)()
 }

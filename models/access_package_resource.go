@@ -21,6 +21,24 @@ func NewAccessPackageResource()(*AccessPackageResource) {
 // CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.customDataProvidedResource":
+                        return NewCustomDataProvidedResource(), nil
+                }
+            }
+        }
+    }
     return NewAccessPackageResource(), nil
 }
 // GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
@@ -116,6 +134,18 @@ func (m *AccessPackageResource) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetExternalOriginResourceConnector gets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
+// returns a ExternalOriginResourceConnectorable when successful
+func (m *AccessPackageResource) GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable) {
+    val, err := m.GetBackingStore().Get("externalOriginResourceConnector")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalOriginResourceConnectorable)
     }
     return nil
 }
@@ -221,6 +251,16 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["externalOriginResourceConnector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExternalOriginResourceConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalOriginResourceConnector(val.(ExternalOriginResourceConnectorable))
+        }
+        return nil
+    }
     res["isPendingOnboarding"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -261,6 +301,22 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["uploadSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomDataProvidedResourceUploadSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CustomDataProvidedResourceUploadSessionable)
+                }
+            }
+            m.SetUploadSessions(res)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -297,7 +353,7 @@ func (m *AccessPackageResource) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -318,6 +374,18 @@ func (m *AccessPackageResource) GetResourceType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUploadSessions gets the uploadSessions property value. The uploadSessions property
+// returns a []CustomDataProvidedResourceUploadSessionable when successful
+func (m *AccessPackageResource) GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable) {
+    val, err := m.GetBackingStore().Get("uploadSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomDataProvidedResourceUploadSessionable)
     }
     return nil
 }
@@ -406,6 +474,12 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("externalOriginResourceConnector", m.GetExternalOriginResourceConnector())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isPendingOnboarding", m.GetIsPendingOnboarding())
         if err != nil {
             return err
@@ -425,6 +499,18 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err = writer.WriteStringValue("resourceType", m.GetResourceType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUploadSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUploadSessions()))
+        for i, v := range m.GetUploadSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("uploadSessions", cast)
         if err != nil {
             return err
         }
@@ -493,6 +579,13 @@ func (m *AccessPackageResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetExternalOriginResourceConnector sets the externalOriginResourceConnector property value. The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.
+func (m *AccessPackageResource) SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)() {
+    err := m.GetBackingStore().Set("externalOriginResourceConnector", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
     err := m.GetBackingStore().Set("isPendingOnboarding", value)
@@ -507,7 +600,7 @@ func (m *AccessPackageResource) SetOriginId(value *string)() {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter and $expand (eq).
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {
@@ -517,6 +610,13 @@ func (m *AccessPackageResource) SetOriginSystem(value *string)() {
 // SetResourceType sets the resourceType property value. The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.
 func (m *AccessPackageResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUploadSessions sets the uploadSessions property value. The uploadSessions property
+func (m *AccessPackageResource) SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)() {
+    err := m.GetBackingStore().Set("uploadSessions", value)
     if err != nil {
         panic(err)
     }
@@ -539,10 +639,12 @@ type AccessPackageResourceable interface {
     GetAttributes()([]AccessPackageResourceAttributeable)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable)
     GetIsPendingOnboarding()(*bool)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResourceType()(*string)
+    GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable)
     GetUrl()(*string)
     SetAccessPackageResourceEnvironment(value AccessPackageResourceEnvironmentable)()
     SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)()
@@ -552,9 +654,11 @@ type AccessPackageResourceable interface {
     SetAttributes(value []AccessPackageResourceAttributeable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)()
     SetIsPendingOnboarding(value *bool)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetResourceType(value *string)()
+    SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)()
     SetUrl(value *string)()
 }

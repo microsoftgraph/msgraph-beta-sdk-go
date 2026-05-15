@@ -24,9 +24,9 @@ type ItemManagedDevicesManagedDeviceItemRequestBuilderDeleteRequestConfiguration
 // ItemManagedDevicesManagedDeviceItemRequestBuilderGetQueryParameters the managed devices associated with the user.
 type ItemManagedDevicesManagedDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemManagedDevicesManagedDeviceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemManagedDevicesManagedDeviceItemRequestBuilderGetRequestConfiguration struct {
@@ -293,15 +293,30 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteAssista
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ResetPasscode()(*ItemManagedDevicesItemResetPasscodeRequestBuilder) {
     return NewItemManagedDevicesItemResetPasscodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RestoreManagedHomeScreen provides operations to call the restoreManagedHomeScreen method.
+// returns a *ItemManagedDevicesItemRestoreManagedHomeScreenRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RestoreManagedHomeScreen()(*ItemManagedDevicesItemRestoreManagedHomeScreenRequestBuilder) {
+    return NewItemManagedDevicesItemRestoreManagedHomeScreenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Retire provides operations to call the retire method.
 // returns a *ItemManagedDevicesItemRetireRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Retire()(*ItemManagedDevicesItemRetireRequestBuilder) {
     return NewItemManagedDevicesItemRetireRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveDeviceLocalAdminAccountDetail provides operations to call the retrieveDeviceLocalAdminAccountDetail method.
+// returns a *ItemManagedDevicesItemRetrieveDeviceLocalAdminAccountDetailRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RetrieveDeviceLocalAdminAccountDetail()(*ItemManagedDevicesItemRetrieveDeviceLocalAdminAccountDetailRequestBuilder) {
+    return NewItemManagedDevicesItemRetrieveDeviceLocalAdminAccountDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveMacOSManagedDeviceLocalAdminAccountDetail provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.
 // returns a *ItemManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RetrieveMacOSManagedDeviceLocalAdminAccountDetail()(*ItemManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder) {
     return NewItemManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveRecoveryLockPasscode provides operations to call the retrieveRecoveryLockPasscode method.
+// returns a *ItemManagedDevicesItemRetrieveRecoveryLockPasscodeRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RetrieveRecoveryLockPasscode()(*ItemManagedDevicesItemRetrieveRecoveryLockPasscodeRequestBuilder) {
+    return NewItemManagedDevicesItemRetrieveRecoveryLockPasscodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RevokeAppleVppLicenses provides operations to call the revokeAppleVppLicenses method.
 // returns a *ItemManagedDevicesItemRevokeAppleVppLicensesRequestBuilder when successful
@@ -323,6 +338,11 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RotateFileVaultKey()
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RotateLocalAdminPassword()(*ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) {
     return NewItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RotateRecoveryLockPasscode provides operations to call the rotateRecoveryLockPasscode method.
+// returns a *ItemManagedDevicesItemRotateRecoveryLockPasscodeRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) RotateRecoveryLockPasscode()(*ItemManagedDevicesItemRotateRecoveryLockPasscodeRequestBuilder) {
+    return NewItemManagedDevicesItemRotateRecoveryLockPasscodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SecurityBaselineStates provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.
 // returns a *ItemManagedDevicesItemSecurityBaselineStatesRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SecurityBaselineStates()(*ItemManagedDevicesItemSecurityBaselineStatesRequestBuilder) {
@@ -342,6 +362,11 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SetDeviceName()(*Ite
 // returns a *ItemManagedDevicesItemShutDownRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ShutDown()(*ItemManagedDevicesItemShutDownRequestBuilder) {
     return NewItemManagedDevicesItemShutDownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SuspendManagedHomeScreen provides operations to call the suspendManagedHomeScreen method.
+// returns a *ItemManagedDevicesItemSuspendManagedHomeScreenRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SuspendManagedHomeScreen()(*ItemManagedDevicesItemSuspendManagedHomeScreenRequestBuilder) {
+    return NewItemManagedDevicesItemSuspendManagedHomeScreenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SyncDevice provides operations to call the syncDevice method.
 // returns a *ItemManagedDevicesItemSyncDeviceRequestBuilder when successful

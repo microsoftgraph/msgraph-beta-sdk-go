@@ -34,7 +34,7 @@ func (m *CloudPcFrontLineServicePlan) GetAllotmentLicensesCount()(*int32) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
+// GetDisplayName gets the displayName property value. The display name of the frontline service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 // returns a *string when successful
 func (m *CloudPcFrontLineServicePlan) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -92,7 +92,7 @@ func (m *CloudPcFrontLineServicePlan) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetTotalCount gets the totalCount property value. The total number of front-line service plans purchased by the customer.
+// GetTotalCount gets the totalCount property value. The total number of frontline service plans purchased by the customer.
 // returns a *int32 when successful
 func (m *CloudPcFrontLineServicePlan) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
@@ -155,14 +155,14 @@ func (m *CloudPcFrontLineServicePlan) SetAllotmentLicensesCount(value *int32)() 
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
+// SetDisplayName sets the displayName property value. The display name of the frontline service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.
 func (m *CloudPcFrontLineServicePlan) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalCount sets the totalCount property value. The total number of front-line service plans purchased by the customer.
+// SetTotalCount sets the totalCount property value. The total number of frontline service plans purchased by the customer.
 func (m *CloudPcFrontLineServicePlan) SetTotalCount(value *int32)() {
     err := m.GetBackingStore().Set("totalCount", value)
     if err != nil {

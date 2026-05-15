@@ -16,11 +16,11 @@ type GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder struc
 // GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderGetQueryParameters get the tenant and app API usage for Microsoft Graph services.
 type GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderGetQueryParameters struct {
     // Usage: appId='@appId'
-    AppId *string `uriparametername:"appId"`
+    AppId *string "uriparametername:\"appId\""
     // Usage: period='@period'
-    Period *string `uriparametername:"period"`
+    Period *string "uriparametername:\"period\""
     // Usage: serviceArea='@serviceArea'
-    ServiceArea *string `uriparametername:"serviceArea"`
+    ServiceArea *string "uriparametername:\"serviceArea\""
 }
 // GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderGetRequestConfiguration struct {

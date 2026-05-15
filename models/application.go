@@ -24,6 +24,24 @@ func NewApplication()(*Application) {
 // CreateApplicationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateApplicationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.agentIdentityBlueprint":
+                        return NewAgentIdentityBlueprint(), nil
+                }
+            }
+        }
+    }
     return NewApplication(), nil
 }
 // GetApi gets the api property value. Specifies settings for an application that implements a web API.
@@ -74,7 +92,7 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     }
     return nil
 }
-// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 // returns a AuthenticationBehaviorsable when successful
 func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
     val, err := m.GetBackingStore().Get("authenticationBehaviors")
@@ -107,6 +125,18 @@ func (m *Application) GetConnectorGroup()(ConnectorGroupable) {
     }
     if val != nil {
         return val.(ConnectorGroupable)
+    }
+    return nil
+}
+// GetCreatedByAppId gets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+// returns a *string when successful
+func (m *Application) GetCreatedByAppId()(*string) {
+    val, err := m.GetBackingStore().Get("createdByAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -158,7 +188,7 @@ func (m *Application) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 // returns a *string when successful
 func (m *Application) GetDisabledByMicrosoftStatus()(*string) {
     val, err := m.GetBackingStore().Get("disabledByMicrosoftStatus")
@@ -289,6 +319,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetConnectorGroup(val.(ConnectorGroupable))
+        }
+        return nil
+    }
+    res["createdByAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedByAppId(val)
         }
         return nil
     }
@@ -446,6 +486,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisabled(val)
+        }
+        return nil
+    }
     res["isFallbackPublicClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -479,6 +529,22 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetLogo(val)
+        }
+        return nil
+    }
+    res["managerApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("uuid")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
+            }
+            m.SetManagerApplications(res)
         }
         return nil
     }
@@ -647,6 +713,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetSignInAudience(val)
+        }
+        return nil
+    }
+    res["signInAudienceRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSignInAudienceRestrictionsBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInAudienceRestrictions(val.(SignInAudienceRestrictionsBaseable))
         }
         return nil
     }
@@ -830,6 +906,18 @@ func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     }
     return nil
 }
+// GetIsDisabled gets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+// returns a *bool when successful
+func (m *Application) GetIsDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsFallbackPublicClient gets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 // returns a *bool when successful
 func (m *Application) GetIsFallbackPublicClient()(*bool) {
@@ -863,6 +951,18 @@ func (m *Application) GetLogo()([]byte) {
     }
     if val != nil {
         return val.([]byte)
+    }
+    return nil
+}
+// GetManagerApplications gets the managerApplications property value. A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Requires $select to retrieve.
+// returns a []UUID when successful
+func (m *Application) GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("managerApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     }
     return nil
 }
@@ -1043,6 +1143,18 @@ func (m *Application) GetSignInAudience()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSignInAudienceRestrictions gets the signInAudienceRestrictions property value. The signInAudienceRestrictions property
+// returns a SignInAudienceRestrictionsBaseable when successful
+func (m *Application) GetSignInAudienceRestrictions()(SignInAudienceRestrictionsBaseable) {
+    val, err := m.GetBackingStore().Get("signInAudienceRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInAudienceRestrictionsBaseable)
     }
     return nil
 }
@@ -1227,6 +1339,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteStringValue("createdByAppId", m.GetCreatedByAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
             return err
@@ -1323,6 +1441,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isFallbackPublicClient", m.GetIsFallbackPublicClient())
         if err != nil {
             return err
@@ -1342,6 +1466,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteByteArrayValue("logo", m.GetLogo())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagerApplications() != nil {
+        err = writer.WriteCollectionOfUUIDValues("managerApplications", m.GetManagerApplications())
         if err != nil {
             return err
         }
@@ -1456,6 +1586,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("signInAudienceRestrictions", m.GetSignInAudienceRestrictions())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("spa", m.GetSpa())
         if err != nil {
             return err
@@ -1557,7 +1693,7 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         panic(err)
     }
 }
-// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Requires $select to retrieve.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 func (m *Application) SetAuthenticationBehaviors(value AuthenticationBehaviorsable)() {
     err := m.GetBackingStore().Set("authenticationBehaviors", value)
     if err != nil {
@@ -1574,6 +1710,13 @@ func (m *Application) SetCertification(value Certificationable)() {
 // SetConnectorGroup sets the connectorGroup property value. The connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
 func (m *Application) SetConnectorGroup(value ConnectorGroupable)() {
     err := m.GetBackingStore().Set("connectorGroup", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedByAppId sets the createdByAppId property value. The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.
+func (m *Application) SetCreatedByAppId(value *string)() {
+    err := m.GetBackingStore().Set("createdByAppId", value)
     if err != nil {
         panic(err)
     }
@@ -1606,7 +1749,7 @@ func (m *Application) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *Application) SetDisabledByMicrosoftStatus(value *string)() {
     err := m.GetBackingStore().Set("disabledByMicrosoftStatus", value)
     if err != nil {
@@ -1669,6 +1812,13 @@ func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
         panic(err)
     }
 }
+// SetIsDisabled sets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+func (m *Application) SetIsDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     err := m.GetBackingStore().Set("isFallbackPublicClient", value)
@@ -1686,6 +1836,13 @@ func (m *Application) SetKeyCredentials(value []KeyCredentialable)() {
 // SetLogo sets the logo property value. The main logo for the application. Not nullable.
 func (m *Application) SetLogo(value []byte)() {
     err := m.GetBackingStore().Set("logo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetManagerApplications sets the managerApplications property value. A collection of application IDs for applications designated as managers of this application. Manager applications can create service principals for the applications they manage. Currently, only Microsoft first-party application IDs can be set as values. Maximum of 10 values. Not nullable. Read-only for third-party (3P) callers; writes by 3P callers are rejected with a 400 Bad Request error. Requires $select to retrieve.
+func (m *Application) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("managerApplications", value)
     if err != nil {
         panic(err)
     }
@@ -1795,6 +1952,13 @@ func (m *Application) SetSignInAudience(value *string)() {
         panic(err)
     }
 }
+// SetSignInAudienceRestrictions sets the signInAudienceRestrictions property value. The signInAudienceRestrictions property
+func (m *Application) SetSignInAudienceRestrictions(value SignInAudienceRestrictionsBaseable)() {
+    err := m.GetBackingStore().Set("signInAudienceRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSpa sets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
 func (m *Application) SetSpa(value SpaApplicationable)() {
     err := m.GetBackingStore().Set("spa", value)
@@ -1875,6 +2039,7 @@ type Applicationable interface {
     GetAuthenticationBehaviors()(AuthenticationBehaviorsable)
     GetCertification()(Certificationable)
     GetConnectorGroup()(ConnectorGroupable)
+    GetCreatedByAppId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedOnBehalfOf()(DirectoryObjectable)
     GetDefaultRedirectUri()(*string)
@@ -1888,9 +2053,11 @@ type Applicationable interface {
     GetIdentifierUris()([]string)
     GetInfo()(InformationalUrlable)
     GetIsDeviceOnlyAuthSupported()(*bool)
+    GetIsDisabled()(*bool)
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
+    GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetNativeAuthenticationApisEnabled()(*NativeAuthenticationApisEnabled)
     GetNotes()(*string)
     GetOnPremisesPublishing()(OnPremisesPublishingable)
@@ -1906,6 +2073,7 @@ type Applicationable interface {
     GetServiceManagementReference()(*string)
     GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable)
     GetSignInAudience()(*string)
+    GetSignInAudienceRestrictions()(SignInAudienceRestrictionsBaseable)
     GetSpa()(SpaApplicationable)
     GetSynchronization()(Synchronizationable)
     GetTags()([]string)
@@ -1923,6 +2091,7 @@ type Applicationable interface {
     SetAuthenticationBehaviors(value AuthenticationBehaviorsable)()
     SetCertification(value Certificationable)()
     SetConnectorGroup(value ConnectorGroupable)()
+    SetCreatedByAppId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedOnBehalfOf(value DirectoryObjectable)()
     SetDefaultRedirectUri(value *string)()
@@ -1936,9 +2105,11 @@ type Applicationable interface {
     SetIdentifierUris(value []string)()
     SetInfo(value InformationalUrlable)()
     SetIsDeviceOnlyAuthSupported(value *bool)()
+    SetIsDisabled(value *bool)()
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()
+    SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetNativeAuthenticationApisEnabled(value *NativeAuthenticationApisEnabled)()
     SetNotes(value *string)()
     SetOnPremisesPublishing(value OnPremisesPublishingable)()
@@ -1954,6 +2125,7 @@ type Applicationable interface {
     SetServiceManagementReference(value *string)()
     SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)()
     SetSignInAudience(value *string)()
+    SetSignInAudienceRestrictions(value SignInAudienceRestrictionsBaseable)()
     SetSpa(value SpaApplicationable)()
     SetSynchronization(value Synchronizationable)()
     SetTags(value []string)()

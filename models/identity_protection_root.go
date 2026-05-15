@@ -38,6 +38,18 @@ func (m *IdentityProtectionRoot) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAgentRiskDetections gets the agentRiskDetections property value. The agentRiskDetections property
+// returns a []AgentRiskDetectionable when successful
+func (m *IdentityProtectionRoot) GetAgentRiskDetections()([]AgentRiskDetectionable) {
+    val, err := m.GetBackingStore().Get("agentRiskDetections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AgentRiskDetectionable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *IdentityProtectionRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -47,6 +59,22 @@ func (m *IdentityProtectionRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd0
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["agentRiskDetections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAgentRiskDetectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AgentRiskDetectionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AgentRiskDetectionable)
+                }
+            }
+            m.SetAgentRiskDetections(res)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -70,6 +98,22 @@ func (m *IdentityProtectionRoot) GetFieldDeserializers()(map[string]func(i878a80
                 }
             }
             m.SetRiskDetections(res)
+        }
+        return nil
+    }
+    res["riskyAgents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRiskyAgentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RiskyAgentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RiskyAgentable)
+                }
+            }
+            m.SetRiskyAgents(res)
         }
         return nil
     }
@@ -147,6 +191,18 @@ func (m *IdentityProtectionRoot) GetRiskDetections()([]RiskDetectionable) {
     }
     return nil
 }
+// GetRiskyAgents gets the riskyAgents property value. The riskyAgents property
+// returns a []RiskyAgentable when successful
+func (m *IdentityProtectionRoot) GetRiskyAgents()([]RiskyAgentable) {
+    val, err := m.GetBackingStore().Get("riskyAgents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RiskyAgentable)
+    }
+    return nil
+}
 // GetRiskyServicePrincipals gets the riskyServicePrincipals property value. Microsoft Entra service principals that are at risk.
 // returns a []RiskyServicePrincipalable when successful
 func (m *IdentityProtectionRoot) GetRiskyServicePrincipals()([]RiskyServicePrincipalable) {
@@ -185,6 +241,18 @@ func (m *IdentityProtectionRoot) GetServicePrincipalRiskDetections()([]ServicePr
 }
 // Serialize serializes information the current object
 func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAgentRiskDetections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAgentRiskDetections()))
+        for i, v := range m.GetAgentRiskDetections() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("agentRiskDetections", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -199,6 +267,18 @@ func (m *IdentityProtectionRoot) Serialize(writer i878a80d2330e89d26896388a3f487
             }
         }
         err := writer.WriteCollectionOfObjectValues("riskDetections", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRiskyAgents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRiskyAgents()))
+        for i, v := range m.GetRiskyAgents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("riskyAgents", cast)
         if err != nil {
             return err
         }
@@ -254,6 +334,13 @@ func (m *IdentityProtectionRoot) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetAgentRiskDetections sets the agentRiskDetections property value. The agentRiskDetections property
+func (m *IdentityProtectionRoot) SetAgentRiskDetections(value []AgentRiskDetectionable)() {
+    err := m.GetBackingStore().Set("agentRiskDetections", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *IdentityProtectionRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -268,6 +355,13 @@ func (m *IdentityProtectionRoot) SetOdataType(value *string)() {
 // SetRiskDetections sets the riskDetections property value. Risk detection in Microsoft Entra ID Protection and the associated information about the detection.
 func (m *IdentityProtectionRoot) SetRiskDetections(value []RiskDetectionable)() {
     err := m.GetBackingStore().Set("riskDetections", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRiskyAgents sets the riskyAgents property value. The riskyAgents property
+func (m *IdentityProtectionRoot) SetRiskyAgents(value []RiskyAgentable)() {
+    err := m.GetBackingStore().Set("riskyAgents", value)
     if err != nil {
         panic(err)
     }
@@ -297,15 +391,19 @@ type IdentityProtectionRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentRiskDetections()([]AgentRiskDetectionable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetRiskDetections()([]RiskDetectionable)
+    GetRiskyAgents()([]RiskyAgentable)
     GetRiskyServicePrincipals()([]RiskyServicePrincipalable)
     GetRiskyUsers()([]RiskyUserable)
     GetServicePrincipalRiskDetections()([]ServicePrincipalRiskDetectionable)
+    SetAgentRiskDetections(value []AgentRiskDetectionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetRiskDetections(value []RiskDetectionable)()
+    SetRiskyAgents(value []RiskyAgentable)()
     SetRiskyServicePrincipals(value []RiskyServicePrincipalable)()
     SetRiskyUsers(value []RiskyUserable)()
     SetServicePrincipalRiskDetections(value []ServicePrincipalRiskDetectionable)()

@@ -24,9 +24,9 @@ type ItemProfileWebAccountsWebAccountItemRequestBuilderDeleteRequestConfiguratio
 // ItemProfileWebAccountsWebAccountItemRequestBuilderGetQueryParameters represents web accounts the user has indicated they use or has added to their user profile.
 type ItemProfileWebAccountsWebAccountItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemProfileWebAccountsWebAccountItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemProfileWebAccountsWebAccountItemRequestBuilderGetRequestConfiguration struct {

@@ -16,9 +16,9 @@ type ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilder struct 
 // ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilderGetQueryParameters get the number of the resource
 type ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilderGetRequestConfiguration struct {

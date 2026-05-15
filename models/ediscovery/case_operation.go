@@ -54,7 +54,7 @@ func CreateCaseOperationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
     }
     return NewCaseOperation(), nil
 }
-// GetAction gets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+// GetAction gets the action property value. The type of action the operation represents. The possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
 // returns a *CaseAction when successful
 func (m *CaseOperation) GetAction()(*CaseAction) {
     val, err := m.GetBackingStore().Get("action")
@@ -202,7 +202,7 @@ func (m *CaseOperation) GetResultInfo()(ie233ee762e29b4ba6970aa2a2efce4b7fde1169
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
+// GetStatus gets the status property value. The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
 // returns a *CaseOperationStatus when successful
 func (m *CaseOperation) GetStatus()(*CaseOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -266,7 +266,7 @@ func (m *CaseOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAction sets the action property value. The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
+// SetAction sets the action property value. The type of action the operation represents. The possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData
 func (m *CaseOperation) SetAction(value *CaseAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -308,7 +308,7 @@ func (m *CaseOperation) SetResultInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
+// SetStatus sets the status property value. The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.
 func (m *CaseOperation) SetStatus(value *CaseOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

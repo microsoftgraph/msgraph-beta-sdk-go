@@ -82,7 +82,7 @@ func (m *EmergencyCallEvent) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetPolicyName gets the policyName property value. The policy name for emergency call event.
+// GetPolicyName gets the policyName property value. The policy name for the emergency call event.
 // returns a *string when successful
 func (m *EmergencyCallEvent) GetPolicyName()(*string) {
     val, err := m.GetBackingStore().Get("policyName")
@@ -134,7 +134,7 @@ func (m *EmergencyCallEvent) SetEmergencyNumberDialed(value *string)() {
         panic(err)
     }
 }
-// SetPolicyName sets the policyName property value. The policy name for emergency call event.
+// SetPolicyName sets the policyName property value. The policy name for the emergency call event.
 func (m *EmergencyCallEvent) SetPolicyName(value *string)() {
     err := m.GetBackingStore().Set("policyName", value)
     if err != nil {

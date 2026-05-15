@@ -105,7 +105,7 @@ func (m *RestorePoint) GetProtectionUnit()(ProtectionUnitBaseable) {
     }
     return nil
 }
-// GetTags gets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.
+// GetTags gets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue, includeNewerItems. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: includeNewerItems.
 // returns a *RestorePointTags when successful
 func (m *RestorePoint) GetTags()(*RestorePointTags) {
     val, err := m.GetBackingStore().Get("tags")
@@ -171,7 +171,7 @@ func (m *RestorePoint) SetProtectionUnit(value ProtectionUnitBaseable)() {
         panic(err)
     }
 }
-// SetTags sets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.
+// SetTags sets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue, includeNewerItems. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: includeNewerItems.
 func (m *RestorePoint) SetTags(value *RestorePointTags)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

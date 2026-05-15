@@ -24,9 +24,9 @@ type BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration str
 // BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters read the properties and relationships of a businessScenario object.
 type BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration struct {

@@ -97,7 +97,7 @@ func (m *NetworkLocationDetail) GetNetworkNames()([]string) {
     }
     return nil
 }
-// GetNetworkType gets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
+// GetNetworkType gets the networkType property value. Provides the type of network used when signing in. The possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
 // returns a *NetworkType when successful
 func (m *NetworkLocationDetail) GetNetworkType()(*NetworkType) {
     val, err := m.GetBackingStore().Get("networkType")
@@ -168,7 +168,7 @@ func (m *NetworkLocationDetail) SetNetworkNames(value []string)() {
         panic(err)
     }
 }
-// SetNetworkType sets the networkType property value. Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
+// SetNetworkType sets the networkType property value. Provides the type of network used when signing in. The possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.
 func (m *NetworkLocationDetail) SetNetworkType(value *NetworkType)() {
     err := m.GetBackingStore().Set("networkType", value)
     if err != nil {

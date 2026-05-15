@@ -17,9 +17,9 @@ type IdentityProtectionRequestBuilder struct {
 // IdentityProtectionRequestBuilderGetQueryParameters get identityProtection
 type IdentityProtectionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IdentityProtectionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityProtectionRequestBuilderGetRequestConfiguration struct {
@@ -36,6 +36,11 @@ type IdentityProtectionRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AgentRiskDetections provides operations to manage the agentRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
+// returns a *AgentRiskDetectionsRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) AgentRiskDetections()(*AgentRiskDetectionsRequestBuilder) {
+    return NewAgentRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewIdentityProtectionRequestBuilderInternal instantiates a new IdentityProtectionRequestBuilder and sets the default values.
 func NewIdentityProtectionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityProtectionRequestBuilder) {
@@ -94,6 +99,11 @@ func (m *IdentityProtectionRequestBuilder) Patch(ctx context.Context, body ie233
 // returns a *RiskDetectionsRequestBuilder when successful
 func (m *IdentityProtectionRequestBuilder) RiskDetections()(*RiskDetectionsRequestBuilder) {
     return NewRiskDetectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RiskyAgents provides operations to manage the riskyAgents property of the microsoft.graph.identityProtectionRoot entity.
+// returns a *RiskyAgentsRequestBuilder when successful
+func (m *IdentityProtectionRequestBuilder) RiskyAgents()(*RiskyAgentsRequestBuilder) {
+    return NewRiskyAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RiskyServicePrincipals provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
 // returns a *RiskyServicePrincipalsRequestBuilder when successful

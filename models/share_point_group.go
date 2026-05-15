@@ -64,6 +64,16 @@ func (m *SharePointGroup) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrincipalId(val)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -85,6 +95,18 @@ func (m *SharePointGroup) GetMembers()([]SharePointGroupMemberable) {
     }
     if val != nil {
         return val.([]SharePointGroupMemberable)
+    }
+    return nil
+}
+// GetPrincipalId gets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
+// returns a *string when successful
+func (m *SharePointGroup) GetPrincipalId()(*string) {
+    val, err := m.GetBackingStore().Get("principalId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -125,6 +147,12 @@ func (m *SharePointGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteStringValue("principalId", m.GetPrincipalId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("title", m.GetTitle())
         if err != nil {
             return err
@@ -146,6 +174,13 @@ func (m *SharePointGroup) SetMembers(value []SharePointGroupMemberable)() {
         panic(err)
     }
 }
+// SetPrincipalId sets the principalId property value. The principal ID of the SharePoint group in the tenant. Read-only.
+func (m *SharePointGroup) SetPrincipalId(value *string)() {
+    err := m.GetBackingStore().Set("principalId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTitle sets the title property value. The user-visible title of the sharePointGroup. Read-write.
 func (m *SharePointGroup) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
@@ -158,8 +193,10 @@ type SharePointGroupable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetMembers()([]SharePointGroupMemberable)
+    GetPrincipalId()(*string)
     GetTitle()(*string)
     SetDescription(value *string)()
     SetMembers(value []SharePointGroupMemberable)()
+    SetPrincipalId(value *string)()
     SetTitle(value *string)()
 }

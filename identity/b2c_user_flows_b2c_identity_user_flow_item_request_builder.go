@@ -24,9 +24,9 @@ type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration
 // B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a b2cUserFlow object.
 type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration struct {

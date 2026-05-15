@@ -17,9 +17,9 @@ type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPol
 // EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyAccessPackageRequestBuilderGetQueryParameters the access package with this policy. Read-only. Nullable. Supports $expand.
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyAccessPackageRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyAccessPackageRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentPolicyAccessPackageRequestBuilderGetRequestConfiguration struct {

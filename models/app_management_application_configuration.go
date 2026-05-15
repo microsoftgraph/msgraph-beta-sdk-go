@@ -60,6 +60,16 @@ func (m *AppManagementApplicationConfiguration) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["redirectUris"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRedirectUriConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRedirectUris(val.(RedirectUriConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // GetIdentifierUris gets the identifierUris property value. Configuration object for restrictions on identifierUris property for an application.
@@ -71,6 +81,18 @@ func (m *AppManagementApplicationConfiguration) GetIdentifierUris()(IdentifierUr
     }
     if val != nil {
         return val.(IdentifierUriConfigurationable)
+    }
+    return nil
+}
+// GetRedirectUris gets the redirectUris property value. The redirectUris property
+// returns a RedirectUriConfigurationable when successful
+func (m *AppManagementApplicationConfiguration) GetRedirectUris()(RedirectUriConfigurationable) {
+    val, err := m.GetBackingStore().Get("redirectUris")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RedirectUriConfigurationable)
     }
     return nil
 }
@@ -92,6 +114,12 @@ func (m *AppManagementApplicationConfiguration) Serialize(writer i878a80d2330e89
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("redirectUris", m.GetRedirectUris())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAudiences sets the audiences property value. Property to restrict creation or update of apps based on their target signInAudience types.
@@ -108,11 +136,20 @@ func (m *AppManagementApplicationConfiguration) SetIdentifierUris(value Identifi
         panic(err)
     }
 }
+// SetRedirectUris sets the redirectUris property value. The redirectUris property
+func (m *AppManagementApplicationConfiguration) SetRedirectUris(value RedirectUriConfigurationable)() {
+    err := m.GetBackingStore().Set("redirectUris", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AppManagementApplicationConfigurationable interface {
     AppManagementConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAudiences()(AudiencesConfigurationable)
     GetIdentifierUris()(IdentifierUriConfigurationable)
+    GetRedirectUris()(RedirectUriConfigurationable)
     SetAudiences(value AudiencesConfigurationable)()
     SetIdentifierUris(value IdentifierUriConfigurationable)()
+    SetRedirectUris(value RedirectUriConfigurationable)()
 }

@@ -22,7 +22,7 @@ func NewPresence()(*Presence) {
 func CreatePresenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPresence(), nil
 }
-// GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+// GetActivity gets the activity property value. The supplemental information to a user's availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
 // returns a *string when successful
 func (m *Presence) GetActivity()(*string) {
     val, err := m.GetBackingStore().Get("activity")
@@ -34,7 +34,7 @@ func (m *Presence) GetActivity()(*string) {
     }
     return nil
 }
-// GetAvailability gets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.
+// GetAvailability gets the availability property value. The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
 // returns a *string when successful
 func (m *Presence) GetAvailability()(*string) {
     val, err := m.GetBackingStore().Get("availability")
@@ -100,6 +100,16 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["workLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserWorkLocationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkLocation(val.(UserWorkLocationable))
+        }
+        return nil
+    }
     return res
 }
 // GetOutOfOfficeSettings gets the outOfOfficeSettings property value. The out of office settings for a user.
@@ -138,6 +148,18 @@ func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
     }
     return nil
 }
+// GetWorkLocation gets the workLocation property value. Represents the user’s aggregated work location state.
+// returns a UserWorkLocationable when successful
+func (m *Presence) GetWorkLocation()(UserWorkLocationable) {
+    val, err := m.GetBackingStore().Get("workLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserWorkLocationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -168,16 +190,22 @@ func (m *Presence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("workLocation", m.GetWorkLocation())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
+// SetActivity sets the activity property value. The supplemental information to a user's availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.
 func (m *Presence) SetActivity(value *string)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAvailability sets the availability property value. The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown.
+// SetAvailability sets the availability property value. The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.
 func (m *Presence) SetAvailability(value *string)() {
     err := m.GetBackingStore().Set("availability", value)
     if err != nil {
@@ -205,6 +233,13 @@ func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
         panic(err)
     }
 }
+// SetWorkLocation sets the workLocation property value. Represents the user’s aggregated work location state.
+func (m *Presence) SetWorkLocation(value UserWorkLocationable)() {
+    err := m.GetBackingStore().Set("workLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Presenceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -213,9 +248,11 @@ type Presenceable interface {
     GetOutOfOfficeSettings()(OutOfOfficeSettingsable)
     GetSequenceNumber()(*string)
     GetStatusMessage()(PresenceStatusMessageable)
+    GetWorkLocation()(UserWorkLocationable)
     SetActivity(value *string)()
     SetAvailability(value *string)()
     SetOutOfOfficeSettings(value OutOfOfficeSettingsable)()
     SetSequenceNumber(value *string)()
     SetStatusMessage(value PresenceStatusMessageable)()
+    SetWorkLocation(value UserWorkLocationable)()
 }

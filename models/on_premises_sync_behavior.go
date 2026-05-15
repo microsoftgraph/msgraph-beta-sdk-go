@@ -38,7 +38,7 @@ func (m *OnPremisesSyncBehavior) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsCloudManaged gets the isCloudManaged property value. Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.
+// GetIsCloudManaged gets the isCloudManaged property value. Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.
 // returns a *bool when successful
 func (m *OnPremisesSyncBehavior) GetIsCloudManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isCloudManaged")
@@ -64,7 +64,7 @@ func (m *OnPremisesSyncBehavior) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetIsCloudManaged sets the isCloudManaged property value. Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the object can be taken over by on-premises Active Directory.
+// SetIsCloudManaged sets the isCloudManaged property value. Indicates the state of synchronization for an object between the cloud and on-premises Active Directory. If true, updates from on-premises Active Directory are blocked in the cloud; if false, updates from on-premises Active Directory are allowed in the cloud and the on-premises Active Directory can take over the object.
 func (m *OnPremisesSyncBehavior) SetIsCloudManaged(value *bool)() {
     err := m.GetBackingStore().Set("isCloudManaged", value)
     if err != nil {

@@ -24,9 +24,9 @@ type SettingsRequestBuilderDeleteRequestConfiguration struct {
 // SettingsRequestBuilderGetQueryParameters global Secure Access settings.
 type SettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // SettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type SettingsRequestBuilderGetRequestConfiguration struct {
@@ -66,6 +66,11 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 // returns a *SettingsCrossTenantAccessRequestBuilder when successful
 func (m *SettingsRequestBuilder) CrossTenantAccess()(*SettingsCrossTenantAccessRequestBuilder) {
     return NewSettingsCrossTenantAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CustomBlockPage provides operations to manage the customBlockPage property of the microsoft.graph.networkaccess.settings entity.
+// returns a *SettingsCustomBlockPageRequestBuilder when successful
+func (m *SettingsRequestBuilder) CustomBlockPage()(*SettingsCustomBlockPageRequestBuilder) {
+    return NewSettingsCustomBlockPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property settings for networkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code

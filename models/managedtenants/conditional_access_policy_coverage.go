@@ -24,7 +24,7 @@ func NewConditionalAccessPolicyCoverage()(*ConditionalAccessPolicyCoverage) {
 func CreateConditionalAccessPolicyCoverageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConditionalAccessPolicyCoverage(), nil
 }
-// GetConditionalAccessPolicyState gets the conditionalAccessPolicyState property value. The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
+// GetConditionalAccessPolicyState gets the conditionalAccessPolicyState property value. The state for the conditional access policy. The possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
 // returns a *string when successful
 func (m *ConditionalAccessPolicyCoverage) GetConditionalAccessPolicyState()(*string) {
     val, err := m.GetBackingStore().Get("conditionalAccessPolicyState")
@@ -150,7 +150,7 @@ func (m *ConditionalAccessPolicyCoverage) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetConditionalAccessPolicyState sets the conditionalAccessPolicyState property value. The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
+// SetConditionalAccessPolicyState sets the conditionalAccessPolicyState property value. The state for the conditional access policy. The possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
 func (m *ConditionalAccessPolicyCoverage) SetConditionalAccessPolicyState(value *string)() {
     err := m.GetBackingStore().Set("conditionalAccessPolicyState", value)
     if err != nil {

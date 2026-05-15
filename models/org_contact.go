@@ -243,6 +243,16 @@ func (m *OrgContact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["onPremisesSyncBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSyncBehaviorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncBehavior(val.(OnPremisesSyncBehaviorable))
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -441,6 +451,18 @@ func (m *OrgContact) GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningE
     }
     return nil
 }
+// GetOnPremisesSyncBehavior gets the onPremisesSyncBehavior property value. Indicates the state of synchronization for an orgContact between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+// returns a OnPremisesSyncBehaviorable when successful
+func (m *OrgContact) GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable) {
+    val, err := m.GetBackingStore().Get("onPremisesSyncBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSyncBehaviorable)
+    }
+    return nil
+}
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).
 // returns a *bool when successful
 func (m *OrgContact) GetOnPremisesSyncEnabled()(*bool) {
@@ -634,6 +656,12 @@ func (m *OrgContact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesSyncBehavior", m.GetOnPremisesSyncBehavior())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -792,6 +820,13 @@ func (m *OrgContact) SetOnPremisesProvisioningErrors(value []OnPremisesProvision
         panic(err)
     }
 }
+// SetOnPremisesSyncBehavior sets the onPremisesSyncBehavior property value. Indicates the state of synchronization for an orgContact between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+func (m *OrgContact) SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)() {
+    err := m.GetBackingStore().Set("onPremisesSyncBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).
 func (m *OrgContact) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -857,6 +892,7 @@ type OrgContactable interface {
     GetMemberOf()([]DirectoryObjectable)
     GetOnPremisesLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
+    GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
     GetPhones()([]Phoneable)
     GetProxyAddresses()([]string)
@@ -877,6 +913,7 @@ type OrgContactable interface {
     SetMemberOf(value []DirectoryObjectable)()
     SetOnPremisesLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
+    SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetPhones(value []Phoneable)()
     SetProxyAddresses(value []string)()

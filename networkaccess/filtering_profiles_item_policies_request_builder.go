@@ -14,24 +14,24 @@ import (
 type FilteringProfilesItemPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FilteringProfilesItemPoliciesRequestBuilderGetQueryParameters get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+// FilteringProfilesItemPoliciesRequestBuilderGetQueryParameters get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
 type FilteringProfilesItemPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // FilteringProfilesItemPoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FilteringProfilesItemPoliciesRequestBuilderGetRequestConfiguration struct {
@@ -79,12 +79,12 @@ func NewFilteringProfilesItemPoliciesRequestBuilder(rawUrl string, requestAdapte
 func (m *FilteringProfilesItemPoliciesRequestBuilder) Count()(*FilteringProfilesItemPoliciesCountRequestBuilder) {
     return NewFilteringProfilesItemPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+// Get get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
 // returns a PolicyLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-list?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-list?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,12 +102,12 @@ func (m *FilteringProfilesItemPoliciesRequestBuilder) Get(ctx context.Context, r
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkCollectionResponseable), nil
 }
-// Post create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+// Post add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-post?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicylink-post?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +125,7 @@ func (m *FilteringProfilesItemPoliciesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable), nil
 }
-// ToGetRequestInformation get a list of the tlsInspectionPolicyLink objects on a filtering profile.
+// ToGetRequestInformation get a list of the filteringPolicyLink objects and their properties. The response can include one or more of the following objects:- cloudFirewallPolicyLink- threatIntelligencePolicyLink- tlsInspectionPolicyLink objects
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +139,7 @@ func (m *FilteringProfilesItemPoliciesRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new tlsInspectionPolicyLink to connect a filtering profile with a tlsInspectionPolicy. One 1 tlsInspectionPolicy is allowed for every filtering profile.
+// ToPostRequestInformation add a Global Secure Access network policy to a filteringProfile. The policy can be one of the following types:
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

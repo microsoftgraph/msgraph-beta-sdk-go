@@ -38,7 +38,7 @@ func (m *CloudPcAutopilotConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApplicationTimeoutInMinutes gets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 10 and 360. Required.
+// GetApplicationTimeoutInMinutes gets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 30 and 360. Required.
 // returns a *int32 when successful
 func (m *CloudPcAutopilotConfiguration) GetApplicationTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("applicationTimeoutInMinutes")
@@ -178,7 +178,7 @@ func (m *CloudPcAutopilotConfiguration) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetApplicationTimeoutInMinutes sets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 10 and 360. Required.
+// SetApplicationTimeoutInMinutes sets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 30 and 360. Required.
 func (m *CloudPcAutopilotConfiguration) SetApplicationTimeoutInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("applicationTimeoutInMinutes", value)
     if err != nil {

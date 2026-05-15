@@ -17,9 +17,9 @@ type PoliciesRequestBuilder struct {
 // PoliciesRequestBuilderGetQueryParameters get policies
 type PoliciesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PoliciesRequestBuilderGetRequestConfiguration struct {
@@ -77,6 +77,11 @@ func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*Authenticatio
 func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*AuthorizationPolicyRequestBuilder) {
     return NewAuthorizationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// B2bManagementPolicies provides operations to manage the b2bManagementPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *B2bManagementPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) B2bManagementPolicies()(*B2bManagementPoliciesRequestBuilder) {
+    return NewB2bManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // B2cAuthenticationMethodsPolicy provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
 // returns a *B2cAuthenticationMethodsPolicyRequestBuilder when successful
 func (m *PoliciesRequestBuilder) B2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicyRequestBuilder) {
@@ -86,6 +91,11 @@ func (m *PoliciesRequestBuilder) B2cAuthenticationMethodsPolicy()(*B2cAuthentica
 // returns a *ClaimsMappingPoliciesRequestBuilder when successful
 func (m *PoliciesRequestBuilder) ClaimsMappingPolicies()(*ClaimsMappingPoliciesRequestBuilder) {
     return NewClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ConditionalAccessPolicies provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *ConditionalAccessPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) ConditionalAccessPolicies()(*ConditionalAccessPoliciesRequestBuilder) {
+    return NewConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewPoliciesRequestBuilderInternal instantiates a new PoliciesRequestBuilder and sets the default values.
 func NewPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PoliciesRequestBuilder) {
@@ -109,6 +119,11 @@ func (m *PoliciesRequestBuilder) CrossTenantAccessPolicy()(*CrossTenantAccessPol
 // returns a *DefaultAppManagementPolicyRequestBuilder when successful
 func (m *PoliciesRequestBuilder) DefaultAppManagementPolicy()(*DefaultAppManagementPolicyRequestBuilder) {
     return NewDefaultAppManagementPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.policyRoot entity.
+// returns a *DeletedItemsRequestBuilder when successful
+func (m *PoliciesRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
+    return NewDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceRegistrationPolicy provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
 // returns a *DeviceRegistrationPolicyRequestBuilder when successful
@@ -174,6 +189,16 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPolicies()(*MobileAppManagem
 // returns a *MobileDeviceManagementPoliciesRequestBuilder when successful
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*MobileDeviceManagementPoliciesRequestBuilder) {
     return NewMobileDeviceManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OnPremAuthenticationPolicies provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *OnPremAuthenticationPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) OnPremAuthenticationPolicies()(*OnPremAuthenticationPoliciesRequestBuilder) {
+    return NewOnPremAuthenticationPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OwnerlessGroupPolicy provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.
+// returns a *OwnerlessGroupPolicyRequestBuilder when successful
+func (m *PoliciesRequestBuilder) OwnerlessGroupPolicy()(*OwnerlessGroupPolicyRequestBuilder) {
+    return NewOwnerlessGroupPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update policies
 // returns a PolicyRootable when successful

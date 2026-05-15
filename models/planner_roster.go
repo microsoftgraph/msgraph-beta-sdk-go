@@ -22,7 +22,7 @@ func NewPlannerRoster()(*PlannerRoster) {
 func CreatePlannerRosterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRoster(), nil
 }
-// GetAssignedSensitivityLabel gets the assignedSensitivityLabel property value. The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can't create the roster. Also, if labels are mandatory for the user, the user can't change the label of the roster to null. Possible values are: standard, privileged, auto, unknownFutureValue.
+// GetAssignedSensitivityLabel gets the assignedSensitivityLabel property value. The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can't create the roster. Also, if labels are mandatory for the user, the user can't change the label of the roster to null. The possible values are: standard, privileged, auto, unknownFutureValue.
 // returns a SensitivityLabelAssignmentable when successful
 func (m *PlannerRoster) GetAssignedSensitivityLabel()(SensitivityLabelAssignmentable) {
     val, err := m.GetBackingStore().Get("assignedSensitivityLabel")
@@ -144,7 +144,7 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetAssignedSensitivityLabel sets the assignedSensitivityLabel property value. The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can't create the roster. Also, if labels are mandatory for the user, the user can't change the label of the roster to null. Possible values are: standard, privileged, auto, unknownFutureValue.
+// SetAssignedSensitivityLabel sets the assignedSensitivityLabel property value. The sensitivity label applied to the roster. If mandatory labeling is enabled for the user and no label is specified, the user can't create the roster. Also, if labels are mandatory for the user, the user can't change the label of the roster to null. The possible values are: standard, privileged, auto, unknownFutureValue.
 func (m *PlannerRoster) SetAssignedSensitivityLabel(value SensitivityLabelAssignmentable)() {
     err := m.GetBackingStore().Set("assignedSensitivityLabel", value)
     if err != nil {

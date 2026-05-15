@@ -24,9 +24,9 @@ type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderDeleteReq
 // VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
 type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetRequestConfiguration struct {

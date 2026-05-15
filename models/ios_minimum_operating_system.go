@@ -148,6 +148,16 @@ func (m *IosMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["v26_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV260(val)
+        }
+        return nil
+    }
     res["v8_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -290,6 +300,18 @@ func (m *IosMinimumOperatingSystem) GetV180()(*bool) {
     }
     return nil
 }
+// GetV260 gets the v26_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 26.0 or later is required to install the app. If 'False', iOS Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *IosMinimumOperatingSystem) GetV260()(*bool) {
+    val, err := m.GetBackingStore().Get("v26_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetV80 gets the v8_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 8.0 or later is required to install the app. If 'False', iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 // returns a *bool when successful
 func (m *IosMinimumOperatingSystem) GetV80()(*bool) {
@@ -372,6 +394,12 @@ func (m *IosMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteBoolValue("v18_0", m.GetV180())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("v26_0", m.GetV260())
         if err != nil {
             return err
         }
@@ -477,6 +505,13 @@ func (m *IosMinimumOperatingSystem) SetV180(value *bool)() {
         panic(err)
     }
 }
+// SetV260 sets the v26_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 26.0 or later is required to install the app. If 'False', iOS Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *IosMinimumOperatingSystem) SetV260(value *bool)() {
+    err := m.GetBackingStore().Set("v26_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetV80 sets the v8_0 property value. Indicates the minimum iOS version support required for the managed device. When 'True', iOS with OS Version 8.0 or later is required to install the app. If 'False', iOS Version 8.0  is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *IosMinimumOperatingSystem) SetV80(value *bool)() {
     err := m.GetBackingStore().Set("v8_0", value)
@@ -506,6 +541,7 @@ type IosMinimumOperatingSystemable interface {
     GetV160()(*bool)
     GetV170()(*bool)
     GetV180()(*bool)
+    GetV260()(*bool)
     GetV80()(*bool)
     GetV90()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -519,6 +555,7 @@ type IosMinimumOperatingSystemable interface {
     SetV160(value *bool)()
     SetV170(value *bool)()
     SetV180(value *bool)()
+    SetV260(value *bool)()
     SetV80(value *bool)()
     SetV90(value *bool)()
 }

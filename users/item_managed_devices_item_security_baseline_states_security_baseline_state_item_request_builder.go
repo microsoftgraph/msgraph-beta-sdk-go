@@ -24,9 +24,9 @@ type ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemReques
 // ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderGetQueryParameters security baseline states for this device.
 type ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemManagedDevicesItemSecurityBaselineStatesSecurityBaselineStateItemRequestBuilderGetRequestConfiguration struct {

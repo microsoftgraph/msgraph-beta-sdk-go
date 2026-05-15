@@ -24,9 +24,9 @@ type ItemBrandingRequestBuilderDeleteRequestConfiguration struct {
 // ItemBrandingRequestBuilderGetQueryParameters retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
 type ItemBrandingRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemBrandingRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemBrandingRequestBuilderGetRequestConfiguration struct {
@@ -161,6 +161,11 @@ func (m *ItemBrandingRequestBuilder) SquareLogo()(*ItemBrandingSquareLogoRequest
 // returns a *ItemBrandingSquareLogoDarkRequestBuilder when successful
 func (m *ItemBrandingRequestBuilder) SquareLogoDark()(*ItemBrandingSquareLogoDarkRequestBuilder) {
     return NewItemBrandingSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Themes provides operations to manage the themes property of the microsoft.graph.organizationalBranding entity.
+// returns a *ItemBrandingThemesRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) Themes()(*ItemBrandingThemesRequestBuilder) {
+    return NewItemBrandingThemesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 // returns a *RequestInformation when successful

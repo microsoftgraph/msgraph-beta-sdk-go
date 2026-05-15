@@ -24,9 +24,9 @@ type PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemR
 // PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderGetQueryParameters read the properties and relationships of a permissionsRequestChange object.
 type PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderGetRequestConfiguration struct {

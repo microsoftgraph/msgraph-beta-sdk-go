@@ -222,7 +222,35 @@ func (m *PrivilegedAccessGroup) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["resources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGroupResourceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GroupResourceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(GroupResourceable)
+                }
+            }
+            m.SetResources(res)
+        }
+        return nil
+    }
     return res
+}
+// GetResources gets the resources property value. The privileged groups in PIM for Groups.
+// returns a []GroupResourceable when successful
+func (m *PrivilegedAccessGroup) GetResources()([]GroupResourceable) {
+    val, err := m.GetBackingStore().Get("resources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GroupResourceable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -314,6 +342,18 @@ func (m *PrivilegedAccessGroup) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetResources() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
+        for i, v := range m.GetResources() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("resources", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignmentApprovals sets the assignmentApprovals property value. The assignmentApprovals property
@@ -365,6 +405,13 @@ func (m *PrivilegedAccessGroup) SetEligibilitySchedules(value []PrivilegedAccess
         panic(err)
     }
 }
+// SetResources sets the resources property value. The privileged groups in PIM for Groups.
+func (m *PrivilegedAccessGroup) SetResources(value []GroupResourceable)() {
+    err := m.GetBackingStore().Set("resources", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type PrivilegedAccessGroupable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -375,6 +422,7 @@ type PrivilegedAccessGroupable interface {
     GetEligibilityScheduleInstances()([]PrivilegedAccessGroupEligibilityScheduleInstanceable)
     GetEligibilityScheduleRequests()([]PrivilegedAccessGroupEligibilityScheduleRequestable)
     GetEligibilitySchedules()([]PrivilegedAccessGroupEligibilityScheduleable)
+    GetResources()([]GroupResourceable)
     SetAssignmentApprovals(value []Approvalable)()
     SetAssignmentScheduleInstances(value []PrivilegedAccessGroupAssignmentScheduleInstanceable)()
     SetAssignmentScheduleRequests(value []PrivilegedAccessGroupAssignmentScheduleRequestable)()
@@ -382,4 +430,5 @@ type PrivilegedAccessGroupable interface {
     SetEligibilityScheduleInstances(value []PrivilegedAccessGroupEligibilityScheduleInstanceable)()
     SetEligibilityScheduleRequests(value []PrivilegedAccessGroupEligibilityScheduleRequestable)()
     SetEligibilitySchedules(value []PrivilegedAccessGroupEligibilityScheduleable)()
+    SetResources(value []GroupResourceable)()
 }

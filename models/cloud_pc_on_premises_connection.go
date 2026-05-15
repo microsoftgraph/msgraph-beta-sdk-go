@@ -58,7 +58,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainUsername()(*string) {
     }
     return nil
 }
-// GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+// GetAlternateResourceUrl gets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Requires $select to retrieve.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateResourceUrl")
@@ -70,7 +70,7 @@ func (m *CloudPcOnPremisesConnection) GetAlternateResourceUrl()(*string) {
     }
     return nil
 }
-// GetConnectionType gets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
+// GetConnectionType gets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
 // returns a *CloudPcOnPremisesConnectionType when successful
 func (m *CloudPcOnPremisesConnection) GetConnectionType()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("connectionType")
@@ -274,6 +274,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["subnetPrivateIpDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcOnPremisesConnectionSubnetIpDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubnetPrivateIpDetail(val.(CloudPcOnPremisesConnectionSubnetIpDetailable))
+        }
+        return nil
+    }
     res["subscriptionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -326,7 +336,7 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetHealthCheckPaused gets the healthCheckPaused property value. false if the regular health checks on the network/domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for 4 weeks. If you retry a health check on network/domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past 4 weeks, healthCheckPaused is set to false. Read-only. Default is false.
+// GetHealthCheckPaused gets the healthCheckPaused property value. Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.
 // returns a *bool when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckPaused()(*bool) {
     val, err := m.GetBackingStore().Get("healthCheckPaused")
@@ -434,7 +444,7 @@ func (m *CloudPcOnPremisesConnection) GetResourceGroupId()(*string) {
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID.
 // returns a []string when successful
 func (m *CloudPcOnPremisesConnection) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
@@ -455,6 +465,18 @@ func (m *CloudPcOnPremisesConnection) GetSubnetId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSubnetPrivateIpDetail gets the subnetPrivateIpDetail property value. Contains detailed information about the private IP addresses associated with the subnet. Returned only on $select. For an example that shows how to retrieve specific properties using $select, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// returns a CloudPcOnPremisesConnectionSubnetIpDetailable when successful
+func (m *CloudPcOnPremisesConnection) GetSubnetPrivateIpDetail()(CloudPcOnPremisesConnectionSubnetIpDetailable) {
+    val, err := m.GetBackingStore().Get("subnetPrivateIpDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcOnPremisesConnectionSubnetIpDetailable)
     }
     return nil
 }
@@ -482,7 +504,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
+// GetTypeEscaped gets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant, which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
 // returns a *CloudPcOnPremisesConnectionType when successful
 func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -630,6 +652,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("subnetPrivateIpDetail", m.GetSubnetPrivateIpDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("subscriptionId", m.GetSubscriptionId())
         if err != nil {
             return err
@@ -683,14 +711,14 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string)() {
         panic(err)
     }
 }
-// SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Returned only on $select.
+// SetAlternateResourceUrl sets the alternateResourceUrl property value. The interface URL of the partner service's resource that links to this Azure network connection. Requires $select to retrieve.
 func (m *CloudPcOnPremisesConnection) SetAlternateResourceUrl(value *string)() {
     err := m.GetBackingStore().Set("alternateResourceUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectionType sets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
+// SetConnectionType sets the connectionType property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.
 func (m *CloudPcOnPremisesConnection) SetConnectionType(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("connectionType", value)
     if err != nil {
@@ -704,7 +732,7 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetHealthCheckPaused sets the healthCheckPaused property value. false if the regular health checks on the network/domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for 4 weeks. If you retry a health check on network/domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past 4 weeks, healthCheckPaused is set to false. Read-only. Default is false.
+// SetHealthCheckPaused sets the healthCheckPaused property value. Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckPaused(value *bool)() {
     err := m.GetBackingStore().Set("healthCheckPaused", value)
     if err != nil {
@@ -767,7 +795,7 @@ func (m *CloudPcOnPremisesConnection) SetResourceGroupId(value *string)() {
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID.
 func (m *CloudPcOnPremisesConnection) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {
@@ -777,6 +805,13 @@ func (m *CloudPcOnPremisesConnection) SetScopeIds(value []string)() {
 // SetSubnetId sets the subnetId property value. The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.
 func (m *CloudPcOnPremisesConnection) SetSubnetId(value *string)() {
     err := m.GetBackingStore().Set("subnetId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSubnetPrivateIpDetail sets the subnetPrivateIpDetail property value. Contains detailed information about the private IP addresses associated with the subnet. Returned only on $select. For an example that shows how to retrieve specific properties using $select, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+func (m *CloudPcOnPremisesConnection) SetSubnetPrivateIpDetail(value CloudPcOnPremisesConnectionSubnetIpDetailable)() {
+    err := m.GetBackingStore().Set("subnetPrivateIpDetail", value)
     if err != nil {
         panic(err)
     }
@@ -795,7 +830,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
+// SetTypeEscaped sets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant, which results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
 func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
@@ -836,6 +871,7 @@ type CloudPcOnPremisesConnectionable interface {
     GetResourceGroupId()(*string)
     GetScopeIds()([]string)
     GetSubnetId()(*string)
+    GetSubnetPrivateIpDetail()(CloudPcOnPremisesConnectionSubnetIpDetailable)
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
     GetTypeEscaped()(*CloudPcOnPremisesConnectionType)
@@ -858,6 +894,7 @@ type CloudPcOnPremisesConnectionable interface {
     SetResourceGroupId(value *string)()
     SetScopeIds(value []string)()
     SetSubnetId(value *string)()
+    SetSubnetPrivateIpDetail(value CloudPcOnPremisesConnectionSubnetIpDetailable)()
     SetSubscriptionId(value *string)()
     SetSubscriptionName(value *string)()
     SetTypeEscaped(value *CloudPcOnPremisesConnectionType)()

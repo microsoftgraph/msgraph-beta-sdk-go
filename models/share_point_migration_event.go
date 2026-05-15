@@ -55,7 +55,7 @@ func CreateSharePointMigrationEventFromDiscriminatorValue(parseNode i878a80d2330
     }
     return NewSharePointMigrationEvent(), nil
 }
-// GetCorrelationId gets the correlationId property value. The correlationId property
+// GetCorrelationId gets the correlationId property value. The correlation ID of a migration job. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationEvent) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -67,7 +67,7 @@ func (m *SharePointMigrationEvent) GetCorrelationId()(*string) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+// GetEventDateTime gets the eventDateTime property value. The date and time when the job status changes. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *SharePointMigrationEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -115,7 +115,7 @@ func (m *SharePointMigrationEvent) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetJobId gets the jobId property value. The jobId property
+// GetJobId gets the jobId property value. The unique identifier of a migration job. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationEvent) GetJobId()(*string) {
     val, err := m.GetBackingStore().Get("jobId")
@@ -153,21 +153,21 @@ func (m *SharePointMigrationEvent) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCorrelationId sets the correlationId property value. The correlationId property
+// SetCorrelationId sets the correlationId property value. The correlation ID of a migration job. Read-only.
 func (m *SharePointMigrationEvent) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+// SetEventDateTime sets the eventDateTime property value. The date and time when the job status changes. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *SharePointMigrationEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobId sets the jobId property value. The jobId property
+// SetJobId sets the jobId property value. The unique identifier of a migration job. Read-only.
 func (m *SharePointMigrationEvent) SetJobId(value *string)() {
     err := m.GetBackingStore().Set("jobId", value)
     if err != nil {

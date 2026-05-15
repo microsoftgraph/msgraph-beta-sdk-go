@@ -109,6 +109,18 @@ func (m *DepMacOSEnrollmentProfile) GetChooseYourLockScreenDisabled()(*bool) {
     }
     return nil
 }
+// GetDepProfileAdminAccountPasswordRotationSetting gets the depProfileAdminAccountPasswordRotationSetting property value. Settings for local admin account password automatic rotation.
+// returns a DepProfileAdminAccountPasswordRotationSettingable when successful
+func (m *DepMacOSEnrollmentProfile) GetDepProfileAdminAccountPasswordRotationSetting()(DepProfileAdminAccountPasswordRotationSettingable) {
+    val, err := m.GetBackingStore().Get("depProfileAdminAccountPasswordRotationSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DepProfileAdminAccountPasswordRotationSettingable)
+    }
+    return nil
+}
 // GetDontAutoPopulatePrimaryAccountInfo gets the dontAutoPopulatePrimaryAccountInfo property value. Indicates whether Setup Assistant will auto populate the primary account information
 // returns a *bool when successful
 func (m *DepMacOSEnrollmentProfile) GetDontAutoPopulatePrimaryAccountInfo()(*bool) {
@@ -204,6 +216,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetChooseYourLockScreenDisabled(val)
+        }
+        return nil
+    }
+    res["depProfileAdminAccountPasswordRotationSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepProfileAdminAccountPasswordRotationSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDepProfileAdminAccountPasswordRotationSetting(val.(DepProfileAdminAccountPasswordRotationSettingable))
         }
         return nil
     }
@@ -334,6 +356,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetSkipPrimarySetupAccountCreation(val)
+        }
+        return nil
+    }
+    res["usePlatformSSODuringSetupAssistant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUsePlatformSSODuringSetupAssistant(val)
         }
         return nil
     }
@@ -481,6 +513,18 @@ func (m *DepMacOSEnrollmentProfile) GetSkipPrimarySetupAccountCreation()(*bool) 
     }
     return nil
 }
+// GetUsePlatformSSODuringSetupAssistant gets the usePlatformSSODuringSetupAssistant property value. Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.
+// returns a *bool when successful
+func (m *DepMacOSEnrollmentProfile) GetUsePlatformSSODuringSetupAssistant()(*bool) {
+    val, err := m.GetBackingStore().Get("usePlatformSSODuringSetupAssistant")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetZoomDisabled gets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 // returns a *bool when successful
 func (m *DepMacOSEnrollmentProfile) GetZoomDisabled()(*bool) {
@@ -537,6 +581,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteBoolValue("chooseYourLockScreenDisabled", m.GetChooseYourLockScreenDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("depProfileAdminAccountPasswordRotationSetting", m.GetDepProfileAdminAccountPasswordRotationSetting())
         if err != nil {
             return err
         }
@@ -620,6 +670,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteBoolValue("usePlatformSSODuringSetupAssistant", m.GetUsePlatformSSODuringSetupAssistant())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("zoomDisabled", m.GetZoomDisabled())
         if err != nil {
             return err
@@ -672,6 +728,13 @@ func (m *DepMacOSEnrollmentProfile) SetAutoUnlockWithWatchDisabled(value *bool)(
 // SetChooseYourLockScreenDisabled sets the chooseYourLockScreenDisabled property value. Indicates if iCloud Documents and Desktop screen is disabled
 func (m *DepMacOSEnrollmentProfile) SetChooseYourLockScreenDisabled(value *bool)() {
     err := m.GetBackingStore().Set("chooseYourLockScreenDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDepProfileAdminAccountPasswordRotationSetting sets the depProfileAdminAccountPasswordRotationSetting property value. Settings for local admin account password automatic rotation.
+func (m *DepMacOSEnrollmentProfile) SetDepProfileAdminAccountPasswordRotationSetting(value DepProfileAdminAccountPasswordRotationSettingable)() {
+    err := m.GetBackingStore().Set("depProfileAdminAccountPasswordRotationSetting", value)
     if err != nil {
         panic(err)
     }
@@ -767,6 +830,13 @@ func (m *DepMacOSEnrollmentProfile) SetSkipPrimarySetupAccountCreation(value *bo
         panic(err)
     }
 }
+// SetUsePlatformSSODuringSetupAssistant sets the usePlatformSSODuringSetupAssistant property value. Indicates whether Platform SSO is used as part of device enrollment during Setup Assistant. When TRUE, Platform SSO is used in device enrollment during Setup Assistant. When FALSE Platform SSO is not used in enrollment during Setup Assistant. Note: This value cannot be TRUE when configurationWebUrl is TRUE.
+func (m *DepMacOSEnrollmentProfile) SetUsePlatformSSODuringSetupAssistant(value *bool)() {
+    err := m.GetBackingStore().Set("usePlatformSSODuringSetupAssistant", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetZoomDisabled sets the zoomDisabled property value. Indicates if zoom setup pane is disabled
 func (m *DepMacOSEnrollmentProfile) SetZoomDisabled(value *bool)() {
     err := m.GetBackingStore().Set("zoomDisabled", value)
@@ -784,6 +854,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetAutoAdvanceSetupEnabled()(*bool)
     GetAutoUnlockWithWatchDisabled()(*bool)
     GetChooseYourLockScreenDisabled()(*bool)
+    GetDepProfileAdminAccountPasswordRotationSetting()(DepProfileAdminAccountPasswordRotationSettingable)
     GetDontAutoPopulatePrimaryAccountInfo()(*bool)
     GetEnableRestrictEditing()(*bool)
     GetFileVaultDisabled()(*bool)
@@ -797,6 +868,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetRequestRequiresNetworkTether()(*bool)
     GetSetPrimarySetupAccountAsRegularUser()(*bool)
     GetSkipPrimarySetupAccountCreation()(*bool)
+    GetUsePlatformSSODuringSetupAssistant()(*bool)
     GetZoomDisabled()(*bool)
     SetAccessibilityScreenDisabled(value *bool)()
     SetAdminAccountFullName(value *string)()
@@ -805,6 +877,7 @@ type DepMacOSEnrollmentProfileable interface {
     SetAutoAdvanceSetupEnabled(value *bool)()
     SetAutoUnlockWithWatchDisabled(value *bool)()
     SetChooseYourLockScreenDisabled(value *bool)()
+    SetDepProfileAdminAccountPasswordRotationSetting(value DepProfileAdminAccountPasswordRotationSettingable)()
     SetDontAutoPopulatePrimaryAccountInfo(value *bool)()
     SetEnableRestrictEditing(value *bool)()
     SetFileVaultDisabled(value *bool)()
@@ -818,5 +891,6 @@ type DepMacOSEnrollmentProfileable interface {
     SetRequestRequiresNetworkTether(value *bool)()
     SetSetPrimarySetupAccountAsRegularUser(value *bool)()
     SetSkipPrimarySetupAccountCreation(value *bool)()
+    SetUsePlatformSSODuringSetupAssistant(value *bool)()
     SetZoomDisabled(value *bool)()
 }

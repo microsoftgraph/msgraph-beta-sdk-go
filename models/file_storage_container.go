@@ -24,7 +24,7 @@ func NewFileStorageContainer()(*FileStorageContainer) {
 func CreateFileStorageContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainer(), nil
 }
-// GetArchivalDetails gets the archivalDetails property value. The archivalDetails property
+// GetArchivalDetails gets the archivalDetails property value. Archival details of the fileStorageContainer. Read-write.
 // returns a SiteArchivalDetailsable when successful
 func (m *FileStorageContainer) GetArchivalDetails()(SiteArchivalDetailsable) {
     val, err := m.GetBackingStore().Get("archivalDetails")
@@ -254,23 +254,13 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["isItemVersioningEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
+    res["informationBarrier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInformationBarrierFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetIsItemVersioningEnabled(val)
-        }
-        return nil
-    }
-    res["itemMajorVersionLimit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemMajorVersionLimit(val)
+            m.SetInformationBarrier(val.(InformationBarrierable))
         }
         return nil
     }
@@ -410,27 +400,15 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
-// returns a *bool when successful
-func (m *FileStorageContainer) GetIsItemVersioningEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
+// GetInformationBarrier gets the informationBarrier property value. Information barrier of a fileStorageContainer. Read-write.
+// returns a InformationBarrierable when successful
+func (m *FileStorageContainer) GetInformationBarrier()(InformationBarrierable) {
+    val, err := m.GetBackingStore().Get("informationBarrier")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*bool)
-    }
-    return nil
-}
-// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
-// returns a *int32 when successful
-func (m *FileStorageContainer) GetItemMajorVersionLimit()(*int32) {
-    val, err := m.GetBackingStore().Get("itemMajorVersionLimit")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
+        return val.(InformationBarrierable)
     }
     return nil
 }
@@ -446,7 +424,7 @@ func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     }
     return nil
 }
-// GetMigrationJobs gets the migrationJobs property value. The migrationJobs property
+// GetMigrationJobs gets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
 // returns a []SharePointMigrationJobable when successful
 func (m *FileStorageContainer) GetMigrationJobs()([]SharePointMigrationJobable) {
     val, err := m.GetBackingStore().Get("migrationJobs")
@@ -639,13 +617,7 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
-        err = writer.WriteBoolValue("isItemVersioningEnabled", m.GetIsItemVersioningEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("itemMajorVersionLimit", m.GetItemMajorVersionLimit())
+        err = writer.WriteObjectValue("informationBarrier", m.GetInformationBarrier())
         if err != nil {
             return err
         }
@@ -745,7 +717,7 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetArchivalDetails sets the archivalDetails property value. The archivalDetails property
+// SetArchivalDetails sets the archivalDetails property value. Archival details of the fileStorageContainer. Read-write.
 func (m *FileStorageContainer) SetArchivalDetails(value SiteArchivalDetailsable)() {
     err := m.GetBackingStore().Set("archivalDetails", value)
     if err != nil {
@@ -815,16 +787,9 @@ func (m *FileStorageContainer) SetExternalGroupId(value *i561e97a8befe7661a44c8f
         panic(err)
     }
 }
-// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
-func (m *FileStorageContainer) SetIsItemVersioningEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
-func (m *FileStorageContainer) SetItemMajorVersionLimit(value *int32)() {
-    err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
+// SetInformationBarrier sets the informationBarrier property value. Information barrier of a fileStorageContainer. Read-write.
+func (m *FileStorageContainer) SetInformationBarrier(value InformationBarrierable)() {
+    err := m.GetBackingStore().Set("informationBarrier", value)
     if err != nil {
         panic(err)
     }
@@ -836,7 +801,7 @@ func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
         panic(err)
     }
 }
-// SetMigrationJobs sets the migrationJobs property value. The migrationJobs property
+// SetMigrationJobs sets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
 func (m *FileStorageContainer) SetMigrationJobs(value []SharePointMigrationJobable)() {
     err := m.GetBackingStore().Set("migrationJobs", value)
     if err != nil {
@@ -919,8 +884,7 @@ type FileStorageContainerable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetExternalGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
-    GetIsItemVersioningEnabled()(*bool)
-    GetItemMajorVersionLimit()(*int32)
+    GetInformationBarrier()(InformationBarrierable)
     GetLockState()(*SiteLockState)
     GetMigrationJobs()([]SharePointMigrationJobable)
     GetOwners()([]UserIdentityable)
@@ -942,8 +906,7 @@ type FileStorageContainerable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetExternalGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
-    SetIsItemVersioningEnabled(value *bool)()
-    SetItemMajorVersionLimit(value *int32)()
+    SetInformationBarrier(value InformationBarrierable)()
     SetLockState(value *SiteLockState)()
     SetMigrationJobs(value []SharePointMigrationJobable)()
     SetOwners(value []UserIdentityable)()

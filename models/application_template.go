@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -22,7 +23,7 @@ func NewApplicationTemplate()(*ApplicationTemplate) {
 func CreateApplicationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationTemplate(), nil
 }
-// GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+// GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).
 // returns a []string when successful
 func (m *ApplicationTemplate) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
@@ -46,6 +47,18 @@ func (m *ApplicationTemplate) GetConfigurationUris()([]ConfigurationUriable) {
     }
     return nil
 }
+// GetDeprecationDate gets the deprecationDate property value. Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.
+// returns a *DateOnly when successful
+func (m *ApplicationTemplate) GetDeprecationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
+    val, err := m.GetBackingStore().Get("deprecationDate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
+}
 // GetDescription gets the description property value. A description of the application.
 // returns a *string when successful
 func (m *ApplicationTemplate) GetDescription()(*string) {
@@ -58,7 +71,7 @@ func (m *ApplicationTemplate) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the application.
+// GetDisplayName gets the displayName property value. The name of the application. Supports $filter (contains).
 // returns a *string when successful
 func (m *ApplicationTemplate) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -67,6 +80,18 @@ func (m *ApplicationTemplate) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetEndpoints gets the endpoints property value. A collection of string URLs representing various domains that are used by this application.
+// returns a []string when successful
+func (m *ApplicationTemplate) GetEndpoints()([]string) {
+    val, err := m.GetBackingStore().Get("endpoints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -106,6 +131,16 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["deprecationDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetDateOnlyValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeprecationDate(val)
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -123,6 +158,22 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["endpoints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetEndpoints(res)
         }
         return nil
     }
@@ -146,6 +197,26 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["isEntraIntegrated"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEntraIntegrated(val)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
     res["logoUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -163,6 +234,26 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetPublisher(val)
+        }
+        return nil
+    }
+    res["riskFactors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApplicationRiskFactorsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRiskFactors(val.(ApplicationRiskFactorsable))
+        }
+        return nil
+    }
+    res["riskScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApplicationRiskScoreFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRiskScore(val.(ApplicationRiskScoreable))
         }
         return nil
     }
@@ -234,6 +325,30 @@ func (m *ApplicationTemplate) GetInformationalUrls()(InformationalUrlsable) {
     }
     return nil
 }
+// GetIsEntraIntegrated gets the isEntraIntegrated property value. Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).
+// returns a *bool when successful
+func (m *ApplicationTemplate) GetIsEntraIntegrated()(*bool) {
+    val, err := m.GetBackingStore().Get("isEntraIntegrated")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.
+// returns a *Time when successful
+func (m *ApplicationTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetLogoUrl gets the logoUrl property value. The URL to get the logo for this application.
 // returns a *string when successful
 func (m *ApplicationTemplate) GetLogoUrl()(*string) {
@@ -255,6 +370,30 @@ func (m *ApplicationTemplate) GetPublisher()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetRiskFactors gets the riskFactors property value. General business and operational information about the application provider. Returned only when $select is used.
+// returns a ApplicationRiskFactorsable when successful
+func (m *ApplicationTemplate) GetRiskFactors()(ApplicationRiskFactorsable) {
+    val, err := m.GetBackingStore().Get("riskFactors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApplicationRiskFactorsable)
+    }
+    return nil
+}
+// GetRiskScore gets the riskScore property value. Represents the Microsoft-generated numerical risk score assessment for the application. Supported $orderby on total (for example, $orderBy=riskScore/total desc). Returned only when $select is used.
+// returns a ApplicationRiskScoreable when successful
+func (m *ApplicationTemplate) GetRiskScore()(ApplicationRiskScoreable) {
+    val, err := m.GetBackingStore().Get("riskScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApplicationRiskScoreable)
     }
     return nil
 }
@@ -319,6 +458,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteDateOnlyValue("deprecationDate", m.GetDeprecationDate())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -326,6 +471,12 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetEndpoints() != nil {
+        err = writer.WriteCollectionOfStringValues("endpoints", m.GetEndpoints())
         if err != nil {
             return err
         }
@@ -343,6 +494,18 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteBoolValue("isEntraIntegrated", m.GetIsEntraIntegrated())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("logoUrl", m.GetLogoUrl())
         if err != nil {
             return err
@@ -350,6 +513,18 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteStringValue("publisher", m.GetPublisher())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("riskFactors", m.GetRiskFactors())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("riskScore", m.GetRiskScore())
         if err != nil {
             return err
         }
@@ -374,7 +549,7 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+// SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).
 func (m *ApplicationTemplate) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {
@@ -388,6 +563,13 @@ func (m *ApplicationTemplate) SetConfigurationUris(value []ConfigurationUriable)
         panic(err)
     }
 }
+// SetDeprecationDate sets the deprecationDate property value. Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.
+func (m *ApplicationTemplate) SetDeprecationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
+    err := m.GetBackingStore().Set("deprecationDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. A description of the application.
 func (m *ApplicationTemplate) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -395,9 +577,16 @@ func (m *ApplicationTemplate) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the application.
+// SetDisplayName sets the displayName property value. The name of the application. Supports $filter (contains).
 func (m *ApplicationTemplate) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetEndpoints sets the endpoints property value. A collection of string URLs representing various domains that are used by this application.
+func (m *ApplicationTemplate) SetEndpoints(value []string)() {
+    err := m.GetBackingStore().Set("endpoints", value)
     if err != nil {
         panic(err)
     }
@@ -416,6 +605,20 @@ func (m *ApplicationTemplate) SetInformationalUrls(value InformationalUrlsable)(
         panic(err)
     }
 }
+// SetIsEntraIntegrated sets the isEntraIntegrated property value. Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).
+func (m *ApplicationTemplate) SetIsEntraIntegrated(value *bool)() {
+    err := m.GetBackingStore().Set("isEntraIntegrated", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.
+func (m *ApplicationTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLogoUrl sets the logoUrl property value. The URL to get the logo for this application.
 func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
     err := m.GetBackingStore().Set("logoUrl", value)
@@ -426,6 +629,20 @@ func (m *ApplicationTemplate) SetLogoUrl(value *string)() {
 // SetPublisher sets the publisher property value. The name of the publisher for this application.
 func (m *ApplicationTemplate) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRiskFactors sets the riskFactors property value. General business and operational information about the application provider. Returned only when $select is used.
+func (m *ApplicationTemplate) SetRiskFactors(value ApplicationRiskFactorsable)() {
+    err := m.GetBackingStore().Set("riskFactors", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRiskScore sets the riskScore property value. Represents the Microsoft-generated numerical risk score assessment for the application. Supported $orderby on total (for example, $orderBy=riskScore/total desc). Returned only when $select is used.
+func (m *ApplicationTemplate) SetRiskScore(value ApplicationRiskScoreable)() {
+    err := m.GetBackingStore().Set("riskScore", value)
     if err != nil {
         panic(err)
     }
@@ -456,23 +673,35 @@ type ApplicationTemplateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCategories()([]string)
     GetConfigurationUris()([]ConfigurationUriable)
+    GetDeprecationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetEndpoints()([]string)
     GetHomePageUrl()(*string)
     GetInformationalUrls()(InformationalUrlsable)
+    GetIsEntraIntegrated()(*bool)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogoUrl()(*string)
     GetPublisher()(*string)
+    GetRiskFactors()(ApplicationRiskFactorsable)
+    GetRiskScore()(ApplicationRiskScoreable)
     GetSupportedClaimConfiguration()(SupportedClaimConfigurationable)
     GetSupportedProvisioningTypes()([]string)
     GetSupportedSingleSignOnModes()([]string)
     SetCategories(value []string)()
     SetConfigurationUris(value []ConfigurationUriable)()
+    SetDeprecationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetEndpoints(value []string)()
     SetHomePageUrl(value *string)()
     SetInformationalUrls(value InformationalUrlsable)()
+    SetIsEntraIntegrated(value *bool)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogoUrl(value *string)()
     SetPublisher(value *string)()
+    SetRiskFactors(value ApplicationRiskFactorsable)()
+    SetRiskScore(value ApplicationRiskScoreable)()
     SetSupportedClaimConfiguration(value SupportedClaimConfigurationable)()
     SetSupportedProvisioningTypes(value []string)()
     SetSupportedSingleSignOnModes(value []string)()

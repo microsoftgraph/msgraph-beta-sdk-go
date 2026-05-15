@@ -24,9 +24,9 @@ type VirtualEndpointRequestBuilderDeleteRequestConfiguration struct {
 // VirtualEndpointRequestBuilderGetQueryParameters get virtualEndpoint from deviceManagement
 type VirtualEndpointRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,11 @@ func (m *VirtualEndpointRequestBuilder) BulkActions()(*VirtualEndpointBulkAction
 // returns a *VirtualEndpointCloudAppsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) CloudApps()(*VirtualEndpointCloudAppsRequestBuilder) {
     return NewVirtualEndpointCloudAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CloudPcPools provides operations to manage the cloudPcPools property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointCloudPcPoolsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) CloudPcPools()(*VirtualEndpointCloudPcPoolsRequestBuilder) {
+    return NewVirtualEndpointCloudPcPoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointCloudPCsRequestBuilder when successful
@@ -103,6 +108,11 @@ func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfi
 func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceImagesRequestBuilder) {
     return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalPartners provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointExternalPartnersRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ExternalPartners()(*VirtualEndpointExternalPartnersRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExternalPartnerSettings provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointExternalPartnerSettingsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettings()(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {
@@ -143,10 +153,20 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
 func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*VirtualEndpointGetEffectivePermissionsRequestBuilder) {
     return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ManagedLicenses provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointManagedLicensesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ManagedLicenses()(*VirtualEndpointManagedLicensesRequestBuilder) {
+    return NewVirtualEndpointManagedLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointOnPremisesConnectionsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
     return NewVirtualEndpointOnPremisesConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OrganizationAction provides operations to call the organizationAction method.
+// returns a *VirtualEndpointOrganizationActionRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) OrganizationAction()(*VirtualEndpointOrganizationActionRequestBuilder) {
+    return NewVirtualEndpointOrganizationActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OrganizationSettings provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointOrganizationSettingsRequestBuilder when successful
@@ -178,10 +198,20 @@ func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee7
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Report provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointReportRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) Report()(*VirtualEndpointReportRequestBuilder) {
+    return NewVirtualEndpointReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Reports provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointReportsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) Reports()(*VirtualEndpointReportsRequestBuilder) {
     return NewVirtualEndpointReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveOrganizationActionDetailWithActionType provides operations to call the retrieveOrganizationActionDetail method.
+// returns a *VirtualEndpointRetrieveOrganizationActionDetailWithActionTypeRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) RetrieveOrganizationActionDetailWithActionType(actionType *string)(*VirtualEndpointRetrieveOrganizationActionDetailWithActionTypeRequestBuilder) {
+    return NewVirtualEndpointRetrieveOrganizationActionDetailWithActionTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, actionType)
 }
 // RetrieveScopedPermissions provides operations to call the retrieveScopedPermissions method.
 // returns a *VirtualEndpointRetrieveScopedPermissionsRequestBuilder when successful

@@ -8,6 +8,12 @@ type OperationApprovalPolicyType int
 const (
     // Default. Indicates that the configured policy type is unknown. Not a valid policy type in an OperationApprovalPolicy.
     UNKNOWN_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
+    // Indicates that the configured policy type is for a Device Wipe Action.
+    DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
+    // Indicates that the configured policy type is for a Device Retire Action
+    DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
+    // Indicates that the configured policy type is for a Device Delete Action.
+    DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.
     APP_OPERATIONAPPROVALPOLICYTYPE
     // Indicates that the configured policy type is a script type, such as PowerShell scripts or remediation scripts.
@@ -16,16 +22,24 @@ const (
     ROLE_OPERATIONAPPROVALPOLICYTYPE
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
+    // Indicates that the configured policy type is for Tenant Configuration operations.
+    TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
 )
 
 func (i OperationApprovalPolicyType) String() string {
-    return []string{"unknown", "app", "script", "role", "unknownFutureValue"}[i]
+    return []string{"unknown", "deviceWipe", "deviceRetire", "deviceDelete", "app", "script", "role", "unknownFutureValue", "tenantConfiguration"}[i]
 }
 func ParseOperationApprovalPolicyType(v string) (any, error) {
     result := UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
     switch v {
         case "unknown":
             result = UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
+        case "deviceWipe":
+            result = DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
+        case "deviceRetire":
+            result = DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
+        case "deviceDelete":
+            result = DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
         case "app":
             result = APP_OPERATIONAPPROVALPOLICYTYPE
         case "script":
@@ -34,6 +48,8 @@ func ParseOperationApprovalPolicyType(v string) (any, error) {
             result = ROLE_OPERATIONAPPROVALPOLICYTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
+        case "tenantConfiguration":
+            result = TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
         default:
             return nil, nil
     }

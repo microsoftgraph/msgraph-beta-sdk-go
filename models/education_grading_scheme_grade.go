@@ -55,7 +55,7 @@ func (m *EducationGradingSchemeGrade) GetDefaultPercentage()(*float32) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the grading scheme.
+// GetDisplayName gets the displayName property value. The name of this individual grade.
 // returns a *string when successful
 func (m *EducationGradingSchemeGrade) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -189,7 +189,7 @@ func (m *EducationGradingSchemeGrade) SetDefaultPercentage(value *float32)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the grading scheme.
+// SetDisplayName sets the displayName property value. The name of this individual grade.
 func (m *EducationGradingSchemeGrade) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

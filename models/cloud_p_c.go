@@ -59,7 +59,7 @@ func (m *CloudPC) GetConnectionSetting()(CloudPcConnectionSettingable) {
     }
     return nil
 }
-// GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
+// GetConnectionSettings gets the connectionSettings property value. The connection settings of the Cloud PC. Possible values: enableSingleSignOn. Read-only. This property is deprecated and stopped retuning data on August 31, 2024. Going forward, use the connectionSetting property.
 // returns a CloudPcConnectionSettingsable when successful
 func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
     val, err := m.GetBackingStore().Get("connectionSettings")
@@ -242,6 +242,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetGracePeriodEndDateTime(val)
+        }
+        return nil
+    }
+    res["groupDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcEntraGroupDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupDetail(val.(CloudPcEntraGroupDetailable))
         }
         return nil
     }
@@ -497,6 +507,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["userDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcEntraUserDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserDetail(val.(CloudPcEntraUserDetailable))
+        }
+        return nil
+    }
     res["userExperienceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcUserExperienceType)
         if err != nil {
@@ -519,7 +539,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
+// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.
 // returns a *FrontlineCloudPcAvailability when successful
 func (m *CloudPC) GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability) {
     val, err := m.GetBackingStore().Get("frontlineCloudPcAvailability")
@@ -540,6 +560,18 @@ func (m *CloudPC) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetGroupDetail gets the groupDetail property value. The Microsoft Entra group details (for example, ID and display name) for the Entra ID group associated with the user's Reserve Cloud PC assignment. Read-only.
+// returns a CloudPcEntraGroupDetailable when successful
+func (m *CloudPC) GetGroupDetail()(CloudPcEntraGroupDetailable) {
+    val, err := m.GetBackingStore().Get("groupDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcEntraGroupDetailable)
     }
     return nil
 }
@@ -627,7 +659,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     }
     return nil
 }
-// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
+// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 // returns a *CloudPcOperatingSystem when successful
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     val, err := m.GetBackingStore().Get("osVersion")
@@ -711,7 +743,7 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     }
     return nil
 }
-// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByEntraGroup. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
+// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -771,7 +803,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     }
     return nil
 }
-// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 // returns a CloudPcFrontlineSharedDeviceDetailable when successful
 func (m *CloudPC) GetSharedDeviceDetail()(CloudPcFrontlineSharedDeviceDetailable) {
     val, err := m.GetBackingStore().Get("sharedDeviceDetail")
@@ -819,7 +851,7 @@ func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     }
     return nil
 }
-// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
+// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 // returns a *CloudPcUserAccountType when successful
 func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
@@ -831,7 +863,19 @@ func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     }
     return nil
 }
-// GetUserExperienceType gets the userExperienceType property value. The userExperienceType property
+// GetUserDetail gets the userDetail property value. The user details (for example, ID and display name) for the user associated with a Reserve Cloud PC assignment. Read-only.
+// returns a CloudPcEntraUserDetailable when successful
+func (m *CloudPC) GetUserDetail()(CloudPcEntraUserDetailable) {
+    val, err := m.GetBackingStore().Get("userDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcEntraUserDetailable)
+    }
+    return nil
+}
+// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.
 // returns a *CloudPcUserExperienceType when successful
 func (m *CloudPC) GetUserExperienceType()(*CloudPcUserExperienceType) {
     val, err := m.GetBackingStore().Get("userExperienceType")
@@ -925,6 +969,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteTimeValue("gracePeriodEndDateTime", m.GetGracePeriodEndDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("groupDetail", m.GetGroupDetail())
         if err != nil {
             return err
         }
@@ -1086,6 +1136,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("userDetail", m.GetUserDetail())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceType() != nil {
         cast := (*m.GetUserExperienceType()).String()
         err = writer.WriteStringValue("userExperienceType", &cast)
@@ -1122,7 +1178,7 @@ func (m *CloudPC) SetConnectionSetting(value CloudPcConnectionSettingable)() {
         panic(err)
     }
 }
-// SetConnectionSettings sets the connectionSettings property value. The connectionSettings property
+// SetConnectionSettings sets the connectionSettings property value. The connection settings of the Cloud PC. Possible values: enableSingleSignOn. Read-only. This property is deprecated and stopped retuning data on August 31, 2024. Going forward, use the connectionSetting property.
 func (m *CloudPC) SetConnectionSettings(value CloudPcConnectionSettingsable)() {
     err := m.GetBackingStore().Set("connectionSettings", value)
     if err != nil {
@@ -1164,7 +1220,7 @@ func (m *CloudPC) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
+// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.
 func (m *CloudPC) SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)() {
     err := m.GetBackingStore().Set("frontlineCloudPcAvailability", value)
     if err != nil {
@@ -1174,6 +1230,13 @@ func (m *CloudPC) SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailab
 // SetGracePeriodEndDateTime sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("gracePeriodEndDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetGroupDetail sets the groupDetail property value. The Microsoft Entra group details (for example, ID and display name) for the Entra ID group associated with the user's Reserve Cloud PC assignment. Read-only.
+func (m *CloudPC) SetGroupDetail(value CloudPcEntraGroupDetailable)() {
+    err := m.GetBackingStore().Set("groupDetail", value)
     if err != nil {
         panic(err)
     }
@@ -1227,7 +1290,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
         panic(err)
     }
 }
-// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
+// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     err := m.GetBackingStore().Set("osVersion", value)
     if err != nil {
@@ -1276,7 +1339,7 @@ func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByEntraGroup. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
+// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
@@ -1311,7 +1374,7 @@ func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
         panic(err)
     }
 }
-// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 func (m *CloudPC) SetSharedDeviceDetail(value CloudPcFrontlineSharedDeviceDetailable)() {
     err := m.GetBackingStore().Set("sharedDeviceDetail", value)
     if err != nil {
@@ -1339,14 +1402,21 @@ func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
         panic(err)
     }
 }
-// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
+// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPC) SetUserAccountType(value *CloudPcUserAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserExperienceType sets the userExperienceType property value. The userExperienceType property
+// SetUserDetail sets the userDetail property value. The user details (for example, ID and display name) for the user associated with a Reserve Cloud PC assignment. Read-only.
+func (m *CloudPC) SetUserDetail(value CloudPcEntraUserDetailable)() {
+    err := m.GetBackingStore().Set("userDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.
 func (m *CloudPC) SetUserExperienceType(value *CloudPcUserExperienceType)() {
     err := m.GetBackingStore().Set("userExperienceType", value)
     if err != nil {
@@ -1374,6 +1444,7 @@ type CloudPCable interface {
     GetDisplayName()(*string)
     GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability)
     GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetGroupDetail()(CloudPcEntraGroupDetailable)
     GetImageDisplayName()(*string)
     GetLastLoginResult()(CloudPcLoginResultable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1398,6 +1469,7 @@ type CloudPCable interface {
     GetStatusDetail()(CloudPcStatusDetailable)
     GetStatusDetails()(CloudPcStatusDetailsable)
     GetUserAccountType()(*CloudPcUserAccountType)
+    GetUserDetail()(CloudPcEntraUserDetailable)
     GetUserExperienceType()(*CloudPcUserExperienceType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
@@ -1411,6 +1483,7 @@ type CloudPCable interface {
     SetDisplayName(value *string)()
     SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)()
     SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetGroupDetail(value CloudPcEntraGroupDetailable)()
     SetImageDisplayName(value *string)()
     SetLastLoginResult(value CloudPcLoginResultable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -1435,6 +1508,7 @@ type CloudPCable interface {
     SetStatusDetail(value CloudPcStatusDetailable)()
     SetStatusDetails(value CloudPcStatusDetailsable)()
     SetUserAccountType(value *CloudPcUserAccountType)()
+    SetUserDetail(value CloudPcEntraUserDetailable)()
     SetUserExperienceType(value *CloudPcUserExperienceType)()
     SetUserPrincipalName(value *string)()
 }

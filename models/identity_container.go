@@ -285,6 +285,32 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["riskPrevention"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRiskPreventionContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRiskPrevention(val.(RiskPreventionContainerable))
+        }
+        return nil
+    }
+    res["signInIdentifiers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSignInIdentifierBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SignInIdentifierBaseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SignInIdentifierBaseable)
+                }
+            }
+            m.SetSignInIdentifiers(res)
+        }
+        return nil
+    }
     res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
@@ -317,6 +343,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["verifiedId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityVerifiedIdRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVerifiedId(val.(IdentityVerifiedIdRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetIdentityProviders gets the identityProviders property value. Represents entry point for identity provider base.
@@ -343,6 +379,30 @@ func (m *IdentityContainer) GetOdataType()(*string) {
     }
     return nil
 }
+// GetRiskPrevention gets the riskPrevention property value. Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
+// returns a RiskPreventionContainerable when successful
+func (m *IdentityContainer) GetRiskPrevention()(RiskPreventionContainerable) {
+    val, err := m.GetBackingStore().Get("riskPrevention")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RiskPreventionContainerable)
+    }
+    return nil
+}
+// GetSignInIdentifiers gets the signInIdentifiers property value. The signInIdentifiers property
+// returns a []SignInIdentifierBaseable when successful
+func (m *IdentityContainer) GetSignInIdentifiers()([]SignInIdentifierBaseable) {
+    val, err := m.GetBackingStore().Get("signInIdentifiers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SignInIdentifierBaseable)
+    }
+    return nil
+}
 // GetUserFlowAttributes gets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 // returns a []IdentityUserFlowAttributeable when successful
 func (m *IdentityContainer) GetUserFlowAttributes()([]IdentityUserFlowAttributeable) {
@@ -364,6 +424,18 @@ func (m *IdentityContainer) GetUserFlows()([]IdentityUserFlowable) {
     }
     if val != nil {
         return val.([]IdentityUserFlowable)
+    }
+    return nil
+}
+// GetVerifiedId gets the verifiedId property value. The verifiedId property
+// returns a IdentityVerifiedIdRootable when successful
+func (m *IdentityContainer) GetVerifiedId()(IdentityVerifiedIdRootable) {
+    val, err := m.GetBackingStore().Get("verifiedId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityVerifiedIdRootable)
     }
     return nil
 }
@@ -471,6 +543,24 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("riskPrevention", m.GetRiskPrevention())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSignInIdentifiers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInIdentifiers()))
+        for i, v := range m.GetSignInIdentifiers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("signInIdentifiers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserFlowAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
         for i, v := range m.GetUserFlowAttributes() {
@@ -491,6 +581,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err := writer.WriteCollectionOfObjectValues("userFlows", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("verifiedId", m.GetVerifiedId())
         if err != nil {
             return err
         }
@@ -584,6 +680,20 @@ func (m *IdentityContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRiskPrevention sets the riskPrevention property value. Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.
+func (m *IdentityContainer) SetRiskPrevention(value RiskPreventionContainerable)() {
+    err := m.GetBackingStore().Set("riskPrevention", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSignInIdentifiers sets the signInIdentifiers property value. The signInIdentifiers property
+func (m *IdentityContainer) SetSignInIdentifiers(value []SignInIdentifierBaseable)() {
+    err := m.GetBackingStore().Set("signInIdentifiers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
     err := m.GetBackingStore().Set("userFlowAttributes", value)
@@ -594,6 +704,13 @@ func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttrib
 // SetUserFlows sets the userFlows property value. The userFlows property
 func (m *IdentityContainer) SetUserFlows(value []IdentityUserFlowable)() {
     err := m.GetBackingStore().Set("userFlows", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetVerifiedId sets the verifiedId property value. The verifiedId property
+func (m *IdentityContainer) SetVerifiedId(value IdentityVerifiedIdRootable)() {
+    err := m.GetBackingStore().Set("verifiedId", value)
     if err != nil {
         panic(err)
     }
@@ -613,8 +730,11 @@ type IdentityContainerable interface {
     GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable)
     GetIdentityProviders()([]IdentityProviderBaseable)
     GetOdataType()(*string)
+    GetRiskPrevention()(RiskPreventionContainerable)
+    GetSignInIdentifiers()([]SignInIdentifierBaseable)
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
     GetUserFlows()([]IdentityUserFlowable)
+    GetVerifiedId()(IdentityVerifiedIdRootable)
     SetApiConnectors(value []IdentityApiConnectorable)()
     SetAuthenticationEventListeners(value []AuthenticationEventListenerable)()
     SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)()
@@ -626,6 +746,9 @@ type IdentityContainerable interface {
     SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)()
     SetIdentityProviders(value []IdentityProviderBaseable)()
     SetOdataType(value *string)()
+    SetRiskPrevention(value RiskPreventionContainerable)()
+    SetSignInIdentifiers(value []SignInIdentifierBaseable)()
     SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
     SetUserFlows(value []IdentityUserFlowable)()
+    SetVerifiedId(value IdentityVerifiedIdRootable)()
 }

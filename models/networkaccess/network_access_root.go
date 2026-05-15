@@ -35,6 +35,18 @@ func (m *NetworkAccessRoot) GetAlerts()([]Alertable) {
     }
     return nil
 }
+// GetCloudFirewallPolicies gets the cloudFirewallPolicies property value. A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
+// returns a []CloudFirewallPolicyable when successful
+func (m *NetworkAccessRoot) GetCloudFirewallPolicies()([]CloudFirewallPolicyable) {
+    val, err := m.GetBackingStore().Get("cloudFirewallPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudFirewallPolicyable)
+    }
+    return nil
+}
 // GetConnectivity gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 // returns a Connectivityable when successful
 func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
@@ -64,6 +76,22 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetAlerts(res)
+        }
+        return nil
+    }
+    res["cloudFirewallPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudFirewallPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudFirewallPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudFirewallPolicyable)
+                }
+            }
+            m.SetCloudFirewallPolicies(res)
         }
         return nil
     }
@@ -375,6 +403,18 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetCloudFirewallPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudFirewallPolicies()))
+        for i, v := range m.GetCloudFirewallPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudFirewallPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("connectivity", m.GetConnectivity())
         if err != nil {
@@ -492,6 +532,13 @@ func (m *NetworkAccessRoot) SetAlerts(value []Alertable)() {
         panic(err)
     }
 }
+// SetCloudFirewallPolicies sets the cloudFirewallPolicies property value. A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
+func (m *NetworkAccessRoot) SetCloudFirewallPolicies(value []CloudFirewallPolicyable)() {
+    err := m.GetBackingStore().Set("cloudFirewallPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectivity sets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable)() {
     err := m.GetBackingStore().Set("connectivity", value)
@@ -580,6 +627,7 @@ type NetworkAccessRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlerts()([]Alertable)
+    GetCloudFirewallPolicies()([]CloudFirewallPolicyable)
     GetConnectivity()(Connectivityable)
     GetFilteringPolicies()([]FilteringPolicyable)
     GetFilteringProfiles()([]FilteringProfileable)
@@ -593,6 +641,7 @@ type NetworkAccessRootable interface {
     GetTls()(TlsTerminationable)
     GetTlsInspectionPolicies()([]TlsInspectionPolicyable)
     SetAlerts(value []Alertable)()
+    SetCloudFirewallPolicies(value []CloudFirewallPolicyable)()
     SetConnectivity(value Connectivityable)()
     SetFilteringPolicies(value []FilteringPolicyable)()
     SetFilteringProfiles(value []FilteringProfileable)()

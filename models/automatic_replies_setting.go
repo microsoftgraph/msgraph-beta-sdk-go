@@ -43,7 +43,7 @@ func (m *AutomaticRepliesSetting) GetAdditionalData()(map[string]any) {
 func (m *AutomaticRepliesSetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
+// GetExternalAudience gets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
 // returns a *ExternalAudienceScope when successful
 func (m *AutomaticRepliesSetting) GetExternalAudience()(*ExternalAudienceScope) {
     val, err := m.GetBackingStore().Get("externalAudience")
@@ -191,7 +191,7 @@ func (m *AutomaticRepliesSetting) GetScheduledStartDateTime()(DateTimeTimeZoneab
     }
     return nil
 }
-// GetStatus gets the status property value. Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
+// GetStatus gets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
 // returns a *AutomaticRepliesStatus when successful
 func (m *AutomaticRepliesSetting) GetStatus()(*AutomaticRepliesStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -268,7 +268,7 @@ func (m *AutomaticRepliesSetting) SetAdditionalData(value map[string]any)() {
 func (m *AutomaticRepliesSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. Possible values are: none, contactsOnly, all.
+// SetExternalAudience sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
 func (m *AutomaticRepliesSetting) SetExternalAudience(value *ExternalAudienceScope)() {
     err := m.GetBackingStore().Set("externalAudience", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *AutomaticRepliesSetting) SetScheduledStartDateTime(value DateTimeTimeZo
         panic(err)
     }
 }
-// SetStatus sets the status property value. Configurations status for automatic replies. Possible values are: disabled, alwaysEnabled, scheduled.
+// SetStatus sets the status property value. Configurations status for automatic replies. The possible values are: disabled, alwaysEnabled, scheduled.
 func (m *AutomaticRepliesSetting) SetStatus(value *AutomaticRepliesStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

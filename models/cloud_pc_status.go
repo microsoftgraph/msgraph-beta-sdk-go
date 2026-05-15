@@ -20,11 +20,12 @@ const (
     RESIZEPENDINGLICENSE_CLOUDPCSTATUS
     UPDATINGSINGLESIGNON_CLOUDPCSTATUS
     MODIFYINGSINGLESIGNON_CLOUDPCSTATUS
+    REFRESHPOLICYCONFIGURATION_CLOUDPCSTATUS
     PREPARING_CLOUDPCSTATUS
 )
 
 func (i CloudPcStatus) String() string {
-    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense", "updatingSingleSignOn", "modifyingSingleSignOn", "preparing"}[i]
+    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense", "updatingSingleSignOn", "modifyingSingleSignOn", "refreshPolicyConfiguration", "preparing"}[i]
 }
 func ParseCloudPcStatus(v string) (any, error) {
     result := NOTPROVISIONED_CLOUDPCSTATUS
@@ -59,6 +60,8 @@ func ParseCloudPcStatus(v string) (any, error) {
             result = UPDATINGSINGLESIGNON_CLOUDPCSTATUS
         case "modifyingSingleSignOn":
             result = MODIFYINGSINGLESIGNON_CLOUDPCSTATUS
+        case "refreshPolicyConfiguration":
+            result = REFRESHPOLICYCONFIGURATION_CLOUDPCSTATUS
         case "preparing":
             result = PREPARING_CLOUDPCSTATUS
         default:

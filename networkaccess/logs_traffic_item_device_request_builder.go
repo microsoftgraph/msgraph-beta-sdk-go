@@ -17,9 +17,9 @@ type LogsTrafficItemDeviceRequestBuilder struct {
 // LogsTrafficItemDeviceRequestBuilderGetQueryParameters represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
 type LogsTrafficItemDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LogsTrafficItemDeviceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LogsTrafficItemDeviceRequestBuilderGetRequestConfiguration struct {

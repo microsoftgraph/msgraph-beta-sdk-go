@@ -24,7 +24,7 @@ func NewUser()(*User) {
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUser(), nil
 }
-// GetEmailAddress gets the emailAddress property value. The emailAddress property
+// GetEmailAddress gets the emailAddress property value. Email address of the user.
 // returns a *string when successful
 func (m *User) GetEmailAddress()(*string) {
     val, err := m.GetBackingStore().Get("emailAddress")
@@ -62,7 +62,7 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name.
 // returns a *string when successful
 func (m *User) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -94,14 +94,14 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetEmailAddress sets the emailAddress property value. The emailAddress property
+// SetEmailAddress sets the emailAddress property value. Email address of the user.
 func (m *User) SetEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("emailAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name.
 func (m *User) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

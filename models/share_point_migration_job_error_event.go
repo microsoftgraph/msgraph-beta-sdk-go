@@ -112,7 +112,7 @@ func (m *SharePointMigrationJobErrorEvent) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetObjectId gets the objectId property value. The objectId property
+// GetObjectId gets the objectId property value. The object ID. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationJobErrorEvent) GetObjectId()(*string) {
     val, err := m.GetBackingStore().Get("objectId")
@@ -136,7 +136,7 @@ func (m *SharePointMigrationJobErrorEvent) GetObjectType()(*SharePointMigrationO
     }
     return nil
 }
-// GetObjectUrl gets the objectUrl property value. The objectUrl property
+// GetObjectUrl gets the objectUrl property value. The object URL. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationJobErrorEvent) GetObjectUrl()(*string) {
     val, err := m.GetBackingStore().Get("objectUrl")
@@ -148,7 +148,7 @@ func (m *SharePointMigrationJobErrorEvent) GetObjectUrl()(*string) {
     }
     return nil
 }
-// GetTotalRetryCount gets the totalRetryCount property value. The totalRetryCount property
+// GetTotalRetryCount gets the totalRetryCount property value. The current retry count of the job. Read-only.
 // returns a *int32 when successful
 func (m *SharePointMigrationJobErrorEvent) GetTotalRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalRetryCount")
@@ -220,7 +220,7 @@ func (m *SharePointMigrationJobErrorEvent) SetErrorLevel(value *SharePointMigrat
         panic(err)
     }
 }
-// SetObjectId sets the objectId property value. The objectId property
+// SetObjectId sets the objectId property value. The object ID. Read-only.
 func (m *SharePointMigrationJobErrorEvent) SetObjectId(value *string)() {
     err := m.GetBackingStore().Set("objectId", value)
     if err != nil {
@@ -234,14 +234,14 @@ func (m *SharePointMigrationJobErrorEvent) SetObjectType(value *SharePointMigrat
         panic(err)
     }
 }
-// SetObjectUrl sets the objectUrl property value. The objectUrl property
+// SetObjectUrl sets the objectUrl property value. The object URL. Read-only.
 func (m *SharePointMigrationJobErrorEvent) SetObjectUrl(value *string)() {
     err := m.GetBackingStore().Set("objectUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalRetryCount sets the totalRetryCount property value. The totalRetryCount property
+// SetTotalRetryCount sets the totalRetryCount property value. The current retry count of the job. Read-only.
 func (m *SharePointMigrationJobErrorEvent) SetTotalRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("totalRetryCount", value)
     if err != nil {

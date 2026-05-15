@@ -43,7 +43,7 @@ func (m *CloudPcConnectionSettings) GetAdditionalData()(map[string]any) {
 func (m *CloudPcConnectionSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. Indicates whether single sign-on is enabled. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcConnectionSettings) GetEnableSingleSignOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOn")
@@ -126,7 +126,7 @@ func (m *CloudPcConnectionSettings) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcConnectionSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. Indicates whether single sign-on is enabled. The default value is false.
 func (m *CloudPcConnectionSettings) SetEnableSingleSignOn(value *bool)() {
     err := m.GetBackingStore().Set("enableSingleSignOn", value)
     if err != nil {

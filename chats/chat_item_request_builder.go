@@ -24,9 +24,9 @@ type ChatItemRequestBuilderDeleteRequestConfiguration struct {
 // ChatItemRequestBuilderGetQueryParameters retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 type ChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ChatItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ChatItemRequestBuilderGetRequestConfiguration struct {
@@ -187,10 +187,20 @@ func (m *ChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemRemoveAllAccessFo
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
     return NewItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemStartMigrationRequestBuilder when successful
+func (m *ChatItemRequestBuilder) StartMigration()(*ItemStartMigrationRequestBuilder) {
+    return NewItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemTabsRequestBuilder when successful
 func (m *ChatItemRequestBuilder) Tabs()(*ItemTabsRequestBuilder) {
     return NewItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TargetedMessages provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.
+// returns a *ItemTargetedMessagesRequestBuilder when successful
+func (m *ChatItemRequestBuilder) TargetedMessages()(*ItemTargetedMessagesRequestBuilder) {
+    return NewItemTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
 // returns a *RequestInformation when successful

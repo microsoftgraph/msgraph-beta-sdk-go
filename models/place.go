@@ -64,6 +64,30 @@ func (m *Place) GetAddress()(PhysicalAddressable) {
     }
     return nil
 }
+// GetCheckIns gets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
+// returns a []CheckInClaimable when successful
+func (m *Place) GetCheckIns()([]CheckInClaimable) {
+    val, err := m.GetBackingStore().Get("checkIns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CheckInClaimable)
+    }
+    return nil
+}
+// GetChildren gets the children property value. A collection of children places that is only used in the Upsert places API.
+// returns a []Placeable when successful
+func (m *Place) GetChildren()([]Placeable) {
+    val, err := m.GetBackingStore().Get("children")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Placeable)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The name that is associated with the place.
 // returns a *string when successful
 func (m *Place) GetDisplayName()(*string) {
@@ -87,6 +111,38 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetAddress(val.(PhysicalAddressable))
+        }
+        return nil
+    }
+    res["checkIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCheckInClaimFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CheckInClaimable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CheckInClaimable)
+                }
+            }
+            m.SetCheckIns(res)
+        }
+        return nil
+    }
+    res["children"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlaceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Placeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Placeable)
+                }
+            }
+            m.SetChildren(res)
         }
         return nil
     }
@@ -147,16 +203,6 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetPhone(val)
-        }
-        return nil
-    }
-    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPlaceId(val)
         }
         return nil
     }
@@ -238,18 +284,6 @@ func (m *Place) GetPhone()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the place. Read-only.
-// returns a *string when successful
-func (m *Place) GetPlaceId()(*string) {
-    val, err := m.GetBackingStore().Get("placeId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetTags gets the tags property value. Custom tags that are associated with the place for categorization or filtering.
 // returns a []string when successful
 func (m *Place) GetTags()([]string) {
@@ -270,6 +304,30 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     {
         err = writer.WriteObjectValue("address", m.GetAddress())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCheckIns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCheckIns()))
+        for i, v := range m.GetCheckIns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("checkIns", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetChildren() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetChildren()))
+        for i, v := range m.GetChildren() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("children", cast)
         if err != nil {
             return err
         }
@@ -310,12 +368,6 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("placeId", m.GetPlaceId())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetTags() != nil {
         err = writer.WriteCollectionOfStringValues("tags", m.GetTags())
         if err != nil {
@@ -327,6 +379,20 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 // SetAddress sets the address property value. The physical address of the place, including the street, city, state, country or region, and postal code.
 func (m *Place) SetAddress(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCheckIns sets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
+func (m *Place) SetCheckIns(value []CheckInClaimable)() {
+    err := m.GetBackingStore().Set("checkIns", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetChildren sets the children property value. A collection of children places that is only used in the Upsert places API.
+func (m *Place) SetChildren(value []Placeable)() {
+    err := m.GetBackingStore().Set("children", value)
     if err != nil {
         panic(err)
     }
@@ -373,13 +439,6 @@ func (m *Place) SetPhone(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the place. Read-only.
-func (m *Place) SetPlaceId(value *string)() {
-    err := m.GetBackingStore().Set("placeId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTags sets the tags property value. Custom tags that are associated with the place for categorization or filtering.
 func (m *Place) SetTags(value []string)() {
     err := m.GetBackingStore().Set("tags", value)
@@ -391,21 +450,23 @@ type Placeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PhysicalAddressable)
+    GetCheckIns()([]CheckInClaimable)
+    GetChildren()([]Placeable)
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
     GetIsWheelChairAccessible()(*bool)
     GetLabel()(*string)
     GetParentId()(*string)
     GetPhone()(*string)
-    GetPlaceId()(*string)
     GetTags()([]string)
     SetAddress(value PhysicalAddressable)()
+    SetCheckIns(value []CheckInClaimable)()
+    SetChildren(value []Placeable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
     SetIsWheelChairAccessible(value *bool)()
     SetLabel(value *string)()
     SetParentId(value *string)()
     SetPhone(value *string)()
-    SetPlaceId(value *string)()
     SetTags(value []string)()
 }

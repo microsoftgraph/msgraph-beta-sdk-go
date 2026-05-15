@@ -58,7 +58,7 @@ func (m *AttendeeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetTypeEscaped gets the type property value. The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+// GetTypeEscaped gets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 // returns a *AttendeeType when successful
 func (m *AttendeeBase) GetTypeEscaped()(*AttendeeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -85,7 +85,7 @@ func (m *AttendeeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetTypeEscaped sets the type property value. The type of attendee. Possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
+// SetTypeEscaped sets the type property value. The type of attendee. The possible values are: required, optional, resource. Currently if the attendee is a person, findMeetingTimes always considers the person is of the Required type.
 func (m *AttendeeBase) SetTypeEscaped(value *AttendeeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

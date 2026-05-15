@@ -154,7 +154,7 @@ func (m *QualityUpdateCatalogEntry) GetProductRevisions()([]ProductRevisionable)
     }
     return nil
 }
-// GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
+// GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. The possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
 // returns a *QualityUpdateCadence when successful
 func (m *QualityUpdateCatalogEntry) GetQualityUpdateCadence()(*QualityUpdateCadence) {
     val, err := m.GetBackingStore().Get("qualityUpdateCadence")
@@ -276,7 +276,7 @@ func (m *QualityUpdateCatalogEntry) SetProductRevisions(value []ProductRevisiona
         panic(err)
     }
 }
-// SetQualityUpdateCadence sets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
+// SetQualityUpdateCadence sets the qualityUpdateCadence property value. The publishing cadence of the quality update. The possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
 func (m *QualityUpdateCatalogEntry) SetQualityUpdateCadence(value *QualityUpdateCadence)() {
     err := m.GetBackingStore().Set("qualityUpdateCadence", value)
     if err != nil {

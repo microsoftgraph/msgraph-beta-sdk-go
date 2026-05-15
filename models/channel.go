@@ -83,6 +83,18 @@ func (m *Channel) GetEmail()(*string) {
     }
     return nil
 }
+// GetEnabledApps gets the enabledApps property value. A collection of enabled apps in the channel.
+// returns a []TeamsAppable when successful
+func (m *Channel) GetEnabledApps()([]TeamsAppable) {
+    val, err := m.GetBackingStore().Get("enabledApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsAppable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -140,6 +152,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetEmail(val)
+        }
+        return nil
+    }
+    res["enabledApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsAppable)
+                }
+            }
+            m.SetEnabledApps(res)
         }
         return nil
     }
@@ -225,6 +253,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["migrationMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMigrationMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMigrationMode(val.(*MigrationMode))
+        }
+        return nil
+    }
     res["moderationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateChannelModerationSettingsFromDiscriminatorValue)
         if err != nil {
@@ -232,6 +270,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetModerationSettings(val.(ChannelModerationSettingsable))
+        }
+        return nil
+    }
+    res["originalCreatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginalCreatedDateTime(val)
         }
         return nil
     }
@@ -345,7 +393,7 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     return nil
 }
-// GetLayoutType gets the layoutType property value. The layoutType property
+// GetLayoutType gets the layoutType property value. The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.
 // returns a *ChannelLayoutType when successful
 func (m *Channel) GetLayoutType()(*ChannelLayoutType) {
     val, err := m.GetBackingStore().Get("layoutType")
@@ -369,7 +417,7 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
     }
     return nil
 }
-// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: shared.
 // returns a *ChannelMembershipType when successful
 func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
     val, err := m.GetBackingStore().Get("membershipType")
@@ -393,6 +441,18 @@ func (m *Channel) GetMessages()([]ChatMessageable) {
     }
     return nil
 }
+// GetMigrationMode gets the migrationMode property value. Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.
+// returns a *MigrationMode when successful
+func (m *Channel) GetMigrationMode()(*MigrationMode) {
+    val, err := m.GetBackingStore().Get("migrationMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MigrationMode)
+    }
+    return nil
+}
 // GetModerationSettings gets the moderationSettings property value. Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
 // returns a ChannelModerationSettingsable when successful
 func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
@@ -402,6 +462,18 @@ func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
     }
     if val != nil {
         return val.(ChannelModerationSettingsable)
+    }
+    return nil
+}
+// GetOriginalCreatedDateTime gets the originalCreatedDateTime property value. Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
+// returns a *Time when successful
+func (m *Channel) GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("originalCreatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -519,6 +591,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetEnabledApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnabledApps()))
+        for i, v := range m.GetEnabledApps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("enabledApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("filesFolder", m.GetFilesFolder())
         if err != nil {
@@ -575,8 +659,21 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetMigrationMode() != nil {
+        cast := (*m.GetMigrationMode()).String()
+        err = writer.WriteStringValue("migrationMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("moderationSettings", m.GetModerationSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("originalCreatedDateTime", m.GetOriginalCreatedDateTime())
         if err != nil {
             return err
         }
@@ -666,6 +763,13 @@ func (m *Channel) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetEnabledApps sets the enabledApps property value. A collection of enabled apps in the channel.
+func (m *Channel) SetEnabledApps(value []TeamsAppable)() {
+    err := m.GetBackingStore().Set("enabledApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFilesFolder sets the filesFolder property value. Metadata for the location where the channel's files are stored.
 func (m *Channel) SetFilesFolder(value DriveItemable)() {
     err := m.GetBackingStore().Set("filesFolder", value)
@@ -687,7 +791,7 @@ func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
         panic(err)
     }
 }
-// SetLayoutType sets the layoutType property value. The layoutType property
+// SetLayoutType sets the layoutType property value. The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.
 func (m *Channel) SetLayoutType(value *ChannelLayoutType)() {
     err := m.GetBackingStore().Set("layoutType", value)
     if err != nil {
@@ -701,7 +805,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
         panic(err)
     }
 }
-// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: shared.
 func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
@@ -715,9 +819,23 @@ func (m *Channel) SetMessages(value []ChatMessageable)() {
         panic(err)
     }
 }
+// SetMigrationMode sets the migrationMode property value. Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.
+func (m *Channel) SetMigrationMode(value *MigrationMode)() {
+    err := m.GetBackingStore().Set("migrationMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetModerationSettings sets the moderationSettings property value. Settings to configure channel moderation to control who can start new posts and reply to posts in that channel.
 func (m *Channel) SetModerationSettings(value ChannelModerationSettingsable)() {
     err := m.GetBackingStore().Set("moderationSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOriginalCreatedDateTime sets the originalCreatedDateTime property value. Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.
+func (m *Channel) SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("originalCreatedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -772,6 +890,7 @@ type Channelable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEmail()(*string)
+    GetEnabledApps()([]TeamsAppable)
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
@@ -779,7 +898,9 @@ type Channelable interface {
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
+    GetMigrationMode()(*MigrationMode)
     GetModerationSettings()(ChannelModerationSettingsable)
+    GetOriginalCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPlanner()(TeamsChannelPlannerable)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetSummary()(ChannelSummaryable)
@@ -791,6 +912,7 @@ type Channelable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
+    SetEnabledApps(value []TeamsAppable)()
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
@@ -798,7 +920,9 @@ type Channelable interface {
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
+    SetMigrationMode(value *MigrationMode)()
     SetModerationSettings(value ChannelModerationSettingsable)()
+    SetOriginalCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPlanner(value TeamsChannelPlannerable)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetSummary(value ChannelSummaryable)()

@@ -24,9 +24,9 @@ type LogsRequestBuilderDeleteRequestConfiguration struct {
 // LogsRequestBuilderGetQueryParameters represents network connections that are routed through Global Secure Access.
 type LogsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LogsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LogsRequestBuilderGetRequestConfiguration struct {
@@ -77,6 +77,11 @@ func (m *LogsRequestBuilder) Delete(ctx context.Context, requestConfiguration *L
         return err
     }
     return nil
+}
+// GenerativeAIInsights provides operations to manage the generativeAIInsights property of the microsoft.graph.networkaccess.logs entity.
+// returns a *LogsGenerativeAIInsightsRequestBuilder when successful
+func (m *LogsRequestBuilder) GenerativeAIInsights()(*LogsGenerativeAIInsightsRequestBuilder) {
+    return NewLogsGenerativeAIInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents network connections that are routed through Global Secure Access.
 // returns a Logsable when successful

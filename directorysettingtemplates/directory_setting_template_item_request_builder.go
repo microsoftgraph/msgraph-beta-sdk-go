@@ -24,9 +24,9 @@ type DirectorySettingTemplateItemRequestBuilderDeleteRequestConfiguration struct
 // DirectorySettingTemplateItemRequestBuilderGetQueryParameters a directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
 type DirectorySettingTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DirectorySettingTemplateItemRequestBuilderGetRequestConfiguration struct {

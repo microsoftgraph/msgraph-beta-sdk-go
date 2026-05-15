@@ -24,6 +24,18 @@ func NewCloudCertificationAuthority()(*CloudCertificationAuthority) {
 func CreateCloudCertificationAuthorityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudCertificationAuthority(), nil
 }
+// GetActiveVersion gets the activeVersion property value. The currently active certification authority version. This navigation property provides direct access to the active version's details including certificate information, URLs, and validity periods. The active version is automatically included in the default response when retrieving a certification authority entity without requiring $expand. Read-only.
+// returns a CloudCertificationAuthorityVersionable when successful
+func (m *CloudCertificationAuthority) GetActiveVersion()(CloudCertificationAuthorityVersionable) {
+    val, err := m.GetBackingStore().Get("activeVersion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudCertificationAuthorityVersionable)
+    }
+    return nil
+}
 // GetCertificateDownloadUrl gets the certificateDownloadUrl property value. The URL to download the certification authority certificate. Read-only.
 // returns a *string when successful
 func (m *CloudCertificationAuthority) GetCertificateDownloadUrl()(*string) {
@@ -96,7 +108,7 @@ func (m *CloudCertificationAuthority) GetCertificationAuthorityIssuerUri()(*stri
     }
     return nil
 }
-// GetCertificationAuthorityStatus gets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.
+// GetCertificationAuthorityStatus gets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.
 // returns a *CloudCertificationAuthorityStatus when successful
 func (m *CloudCertificationAuthority) GetCertificationAuthorityStatus()(*CloudCertificationAuthorityStatus) {
     val, err := m.GetBackingStore().Get("certificationAuthorityStatus")
@@ -232,6 +244,16 @@ func (m *CloudCertificationAuthority) GetExtendedKeyUsages()([]ExtendedKeyUsagea
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudCertificationAuthority) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["activeVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudCertificationAuthorityVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveVersion(val.(CloudCertificationAuthorityVersionable))
+        }
+        return nil
+    }
     res["certificateDownloadUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -600,6 +622,22 @@ func (m *CloudCertificationAuthority) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["versions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudCertificationAuthorityVersionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudCertificationAuthorityVersionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudCertificationAuthorityVersionable)
+                }
+            }
+            m.SetVersions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetIssuerCommonName gets the issuerCommonName property value. The issuerCommonName property
@@ -818,11 +856,29 @@ func (m *CloudCertificationAuthority) GetVersionNumber()(*int32) {
     }
     return nil
 }
+// GetVersions gets the versions property value. The collection of all certification authority versions, including active, staged, retired, and expired versions. This navigation property provides access to the full version history of the certification authority. Use $expand=versions to include this collection in the response. Read-only.
+// returns a []CloudCertificationAuthorityVersionable when successful
+func (m *CloudCertificationAuthority) GetVersions()([]CloudCertificationAuthorityVersionable) {
+    val, err := m.GetBackingStore().Get("versions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudCertificationAuthorityVersionable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CloudCertificationAuthority) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteObjectValue("activeVersion", m.GetActiveVersion())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteStringValue("certificateDownloadUrl", m.GetCertificateDownloadUrl())
@@ -1051,7 +1107,26 @@ func (m *CloudCertificationAuthority) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetVersions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetVersions()))
+        for i, v := range m.GetVersions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("versions", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetActiveVersion sets the activeVersion property value. The currently active certification authority version. This navigation property provides direct access to the active version's details including certificate information, URLs, and validity periods. The active version is automatically included in the default response when retrieving a certification authority entity without requiring $expand. Read-only.
+func (m *CloudCertificationAuthority) SetActiveVersion(value CloudCertificationAuthorityVersionable)() {
+    err := m.GetBackingStore().Set("activeVersion", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetCertificateDownloadUrl sets the certificateDownloadUrl property value. The URL to download the certification authority certificate. Read-only.
 func (m *CloudCertificationAuthority) SetCertificateDownloadUrl(value *string)() {
@@ -1095,7 +1170,7 @@ func (m *CloudCertificationAuthority) SetCertificationAuthorityIssuerUri(value *
         panic(err)
     }
 }
-// SetCertificationAuthorityStatus sets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates or temporarily paused or permanently revoked.
+// SetCertificationAuthorityStatus sets the certificationAuthorityStatus property value. Enum type of possible certification authority statuses. These statuses indicate whether a certification authority is currently able to issue certificates, temporarily paused, pending signing, revoked, or expired.
 func (m *CloudCertificationAuthority) SetCertificationAuthorityStatus(value *CloudCertificationAuthorityStatus)() {
     err := m.GetBackingStore().Set("certificationAuthorityStatus", value)
     if err != nil {
@@ -1298,9 +1373,17 @@ func (m *CloudCertificationAuthority) SetVersionNumber(value *int32)() {
         panic(err)
     }
 }
+// SetVersions sets the versions property value. The collection of all certification authority versions, including active, staged, retired, and expired versions. This navigation property provides access to the full version history of the certification authority. Use $expand=versions to include this collection in the response. Read-only.
+func (m *CloudCertificationAuthority) SetVersions(value []CloudCertificationAuthorityVersionable)() {
+    err := m.GetBackingStore().Set("versions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CloudCertificationAuthorityable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveVersion()(CloudCertificationAuthorityVersionable)
     GetCertificateDownloadUrl()(*string)
     GetCertificateKeySize()(*CloudCertificationAuthorityCertificateKeySize)
     GetCertificateRevocationListUrl()(*string)
@@ -1336,6 +1419,8 @@ type CloudCertificationAuthorityable interface {
     GetValidityPeriodInYears()(*int32)
     GetValidityStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetVersionNumber()(*int32)
+    GetVersions()([]CloudCertificationAuthorityVersionable)
+    SetActiveVersion(value CloudCertificationAuthorityVersionable)()
     SetCertificateDownloadUrl(value *string)()
     SetCertificateKeySize(value *CloudCertificationAuthorityCertificateKeySize)()
     SetCertificateRevocationListUrl(value *string)()
@@ -1371,4 +1456,5 @@ type CloudCertificationAuthorityable interface {
     SetValidityPeriodInYears(value *int32)()
     SetValidityStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetVersionNumber(value *int32)()
+    SetVersions(value []CloudCertificationAuthorityVersionable)()
 }

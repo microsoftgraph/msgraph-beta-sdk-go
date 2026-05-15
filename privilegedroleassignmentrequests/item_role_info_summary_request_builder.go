@@ -24,9 +24,9 @@ type ItemRoleInfoSummaryRequestBuilderDeleteRequestConfiguration struct {
 // ItemRoleInfoSummaryRequestBuilderGetQueryParameters get summary from privilegedRoleAssignmentRequests
 type ItemRoleInfoSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleInfoSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleInfoSummaryRequestBuilderGetRequestConfiguration struct {

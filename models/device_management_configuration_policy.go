@@ -72,6 +72,18 @@ func (m *DeviceManagementConfigurationPolicy) GetDescription()(*string) {
     }
     return nil
 }
+// GetDisableEntraGroupPolicyAssignment gets the disableEntraGroupPolicyAssignment property value. Indicates whether Entra Group policy assignment is disabled
+// returns a *bool when successful
+func (m *DeviceManagementConfigurationPolicy) GetDisableEntraGroupPolicyAssignment()(*bool) {
+    val, err := m.GetBackingStore().Get("disableEntraGroupPolicyAssignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -119,6 +131,16 @@ func (m *DeviceManagementConfigurationPolicy) GetFieldDeserializers()(map[string
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["disableEntraGroupPolicyAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisableEntraGroupPolicyAssignment(val)
         }
         return nil
     }
@@ -393,6 +415,12 @@ func (m *DeviceManagementConfigurationPolicy) Serialize(writer i878a80d2330e89d2
         }
     }
     {
+        err = writer.WriteBoolValue("disableEntraGroupPolicyAssignment", m.GetDisableEntraGroupPolicyAssignment())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
@@ -484,6 +512,13 @@ func (m *DeviceManagementConfigurationPolicy) SetDescription(value *string)() {
         panic(err)
     }
 }
+// SetDisableEntraGroupPolicyAssignment sets the disableEntraGroupPolicyAssignment property value. Indicates whether Entra Group policy assignment is disabled
+func (m *DeviceManagementConfigurationPolicy) SetDisableEntraGroupPolicyAssignment(value *bool)() {
+    err := m.GetBackingStore().Set("disableEntraGroupPolicyAssignment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsAssigned sets the isAssigned property value. Policy assignment status. This property is read-only.
 func (m *DeviceManagementConfigurationPolicy) SetIsAssigned(value *bool)() {
     err := m.GetBackingStore().Set("isAssigned", value)
@@ -561,6 +596,7 @@ type DeviceManagementConfigurationPolicyable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreationSource()(*string)
     GetDescription()(*string)
+    GetDisableEntraGroupPolicyAssignment()(*bool)
     GetIsAssigned()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
@@ -575,6 +611,7 @@ type DeviceManagementConfigurationPolicyable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreationSource(value *string)()
     SetDescription(value *string)()
+    SetDisableEntraGroupPolicyAssignment(value *bool)()
     SetIsAssigned(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()

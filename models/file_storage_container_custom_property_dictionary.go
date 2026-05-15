@@ -15,6 +15,8 @@ func NewFileStorageContainerCustomPropertyDictionary()(*FileStorageContainerCust
     m := &FileStorageContainerCustomPropertyDictionary{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.fileStorageContainerCustomPropertyDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateFileStorageContainerCustomPropertyDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

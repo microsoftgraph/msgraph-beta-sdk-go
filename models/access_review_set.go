@@ -98,6 +98,22 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["instances"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessReviewInstanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessReviewInstanceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessReviewInstanceable)
+                }
+            }
+            m.SetInstances(res)
+        }
+        return nil
+    }
     res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessReviewPolicyFromDiscriminatorValue)
         if err != nil {
@@ -119,6 +135,18 @@ func (m *AccessReviewSet) GetHistoryDefinitions()([]AccessReviewHistoryDefinitio
     }
     if val != nil {
         return val.([]AccessReviewHistoryDefinitionable)
+    }
+    return nil
+}
+// GetInstances gets the instances property value. Represents the instance of a review.
+// returns a []AccessReviewInstanceable when successful
+func (m *AccessReviewSet) GetInstances()([]AccessReviewInstanceable) {
+    val, err := m.GetBackingStore().Get("instances")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessReviewInstanceable)
     }
     return nil
 }
@@ -176,6 +204,18 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetInstances() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInstances()))
+        for i, v := range m.GetInstances() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("instances", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("policy", m.GetPolicy())
         if err != nil {
@@ -205,6 +245,13 @@ func (m *AccessReviewSet) SetHistoryDefinitions(value []AccessReviewHistoryDefin
         panic(err)
     }
 }
+// SetInstances sets the instances property value. Represents the instance of a review.
+func (m *AccessReviewSet) SetInstances(value []AccessReviewInstanceable)() {
+    err := m.GetBackingStore().Set("instances", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicy sets the policy property value. Resource that enables administrators to manage directory-level access review policies in their tenant.
 func (m *AccessReviewSet) SetPolicy(value AccessReviewPolicyable)() {
     err := m.GetBackingStore().Set("policy", value)
@@ -218,9 +265,11 @@ type AccessReviewSetable interface {
     GetDecisions()([]AccessReviewInstanceDecisionItemable)
     GetDefinitions()([]AccessReviewScheduleDefinitionable)
     GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable)
+    GetInstances()([]AccessReviewInstanceable)
     GetPolicy()(AccessReviewPolicyable)
     SetDecisions(value []AccessReviewInstanceDecisionItemable)()
     SetDefinitions(value []AccessReviewScheduleDefinitionable)()
     SetHistoryDefinitions(value []AccessReviewHistoryDefinitionable)()
+    SetInstances(value []AccessReviewInstanceable)()
     SetPolicy(value AccessReviewPolicyable)()
 }

@@ -40,8 +40,12 @@ func CreateCustomAuthenticationExtensionFromDiscriminatorValue(parseNode i878a80
                         return NewOnAttributeCollectionSubmitCustomExtension(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
+                    case "#microsoft.graph.onPasswordSubmitCustomExtension":
+                        return NewOnPasswordSubmitCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
                         return NewOnTokenIssuanceStartCustomExtension(), nil
+                    case "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension":
+                        return NewOnVerifiedIdClaimValidationCustomExtension(), nil
                 }
             }
         }

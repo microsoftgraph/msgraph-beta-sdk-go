@@ -14,12 +14,12 @@ import (
 type ItemGraphRoomListRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphRoomListRequestBuilderGetQueryParameters get the item of type microsoft.graph.place as microsoft.graph.roomList
+// ItemGraphRoomListRequestBuilderGetQueryParameters read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 type ItemGraphRoomListRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphRoomListRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphRoomListRequestBuilderGetRequestConfiguration struct {
@@ -29,6 +29,16 @@ type ItemGraphRoomListRequestBuilderGetRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
     // Request query parameters
     QueryParameters *ItemGraphRoomListRequestBuilderGetQueryParameters
+}
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListCheckInsRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) CheckIns()(*ItemGraphRoomListCheckInsRequestBuilder) {
+    return NewItemGraphRoomListCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListChildrenRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) Children()(*ItemGraphRoomListChildrenRequestBuilder) {
+    return NewItemGraphRoomListChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemGraphRoomListRequestBuilderInternal instantiates a new ItemGraphRoomListRequestBuilder and sets the default values.
 func NewItemGraphRoomListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListRequestBuilder) {
@@ -43,9 +53,12 @@ func NewItemGraphRoomListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphRoomListRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the item of type microsoft.graph.place as microsoft.graph.roomList
+// Get read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 // returns a RoomListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-get?view=graph-rest-beta
 func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoomListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -68,12 +81,7 @@ func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemGraphRoomListRequestBuilder) Rooms()(*ItemGraphRoomListRoomsRequestBuilder) {
     return NewItemGraphRoomListRoomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoomsWithPlaceId provides operations to manage the rooms property of the microsoft.graph.roomList entity.
-// returns a *ItemGraphRoomListRoomsWithPlaceIdRequestBuilder when successful
-func (m *ItemGraphRoomListRequestBuilder) RoomsWithPlaceId(placeId *string)(*ItemGraphRoomListRoomsWithPlaceIdRequestBuilder) {
-    return NewItemGraphRoomListRoomsWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
-}
-// ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.roomList
+// ToGetRequestInformation read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -96,9 +104,4 @@ func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomL
 // returns a *ItemGraphRoomListWorkspacesRequestBuilder when successful
 func (m *ItemGraphRoomListRequestBuilder) Workspaces()(*ItemGraphRoomListWorkspacesRequestBuilder) {
     return NewItemGraphRoomListWorkspacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WorkspacesWithPlaceId provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
-// returns a *ItemGraphRoomListWorkspacesWithPlaceIdRequestBuilder when successful
-func (m *ItemGraphRoomListRequestBuilder) WorkspacesWithPlaceId(placeId *string)(*ItemGraphRoomListWorkspacesWithPlaceIdRequestBuilder) {
-    return NewItemGraphRoomListWorkspacesWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
 }

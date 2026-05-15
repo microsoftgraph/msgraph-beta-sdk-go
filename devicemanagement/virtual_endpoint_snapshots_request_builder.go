@@ -17,21 +17,21 @@ type VirtualEndpointSnapshotsRequestBuilder struct {
 // VirtualEndpointSnapshotsRequestBuilderGetQueryParameters cloud PC snapshots.
 type VirtualEndpointSnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // VirtualEndpointSnapshotsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointSnapshotsRequestBuilderGetRequestConfiguration struct {
@@ -109,6 +109,11 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) GetStorageAccountsWithSubscript
 func (m *VirtualEndpointSnapshotsRequestBuilder) GetSubscriptions()(*VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) {
     return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ImportSnapshot provides operations to call the importSnapshot method.
+// returns a *VirtualEndpointSnapshotsImportSnapshotRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) ImportSnapshot()(*VirtualEndpointSnapshotsImportSnapshotRequestBuilder) {
+    return NewVirtualEndpointSnapshotsImportSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to snapshots for deviceManagement
 // returns a CloudPcSnapshotable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -128,6 +133,16 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) Post(ctx context.Context, body 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable), nil
+}
+// PurgeImportedSnapshot provides operations to call the purgeImportedSnapshot method.
+// returns a *VirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) PurgeImportedSnapshot()(*VirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilder) {
+    return NewVirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveSnapshotImportResultsWithSnapshotId provides operations to call the retrieveSnapshotImportResults method.
+// returns a *VirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) RetrieveSnapshotImportResultsWithSnapshotId(snapshotId *string)(*VirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder) {
+    return NewVirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, snapshotId)
 }
 // ToGetRequestInformation cloud PC snapshots.
 // returns a *RequestInformation when successful

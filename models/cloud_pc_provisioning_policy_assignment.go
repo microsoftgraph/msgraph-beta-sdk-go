@@ -64,6 +64,16 @@ func (m *CloudPcProvisioningPolicyAssignment) GetFieldDeserializers()(map[string
         }
         return nil
     }
+    res["userSettingsPersistenceDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPCUserSettingsPersistenceDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserSettingsPersistenceDetail(val.(CloudPCUserSettingsPersistenceDetailable))
+        }
+        return nil
+    }
     return res
 }
 // GetTarget gets the target property value. The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.
@@ -75,6 +85,18 @@ func (m *CloudPcProvisioningPolicyAssignment) GetTarget()(CloudPcManagementAssig
     }
     if val != nil {
         return val.(CloudPcManagementAssignmentTargetable)
+    }
+    return nil
+}
+// GetUserSettingsPersistenceDetail gets the userSettingsPersistenceDetail property value. The assignment targeted user settings persistence for the provisioning policy. It allows user application data and Windows settings to be saved and applied between sessions.
+// returns a CloudPCUserSettingsPersistenceDetailable when successful
+func (m *CloudPcProvisioningPolicyAssignment) GetUserSettingsPersistenceDetail()(CloudPCUserSettingsPersistenceDetailable) {
+    val, err := m.GetBackingStore().Get("userSettingsPersistenceDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPCUserSettingsPersistenceDetailable)
     }
     return nil
 }
@@ -102,6 +124,12 @@ func (m *CloudPcProvisioningPolicyAssignment) Serialize(writer i878a80d2330e89d2
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("userSettingsPersistenceDetail", m.GetUserSettingsPersistenceDetail())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignedUsers sets the assignedUsers property value. The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
@@ -118,11 +146,20 @@ func (m *CloudPcProvisioningPolicyAssignment) SetTarget(value CloudPcManagementA
         panic(err)
     }
 }
+// SetUserSettingsPersistenceDetail sets the userSettingsPersistenceDetail property value. The assignment targeted user settings persistence for the provisioning policy. It allows user application data and Windows settings to be saved and applied between sessions.
+func (m *CloudPcProvisioningPolicyAssignment) SetUserSettingsPersistenceDetail(value CloudPCUserSettingsPersistenceDetailable)() {
+    err := m.GetBackingStore().Set("userSettingsPersistenceDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CloudPcProvisioningPolicyAssignmentable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignedUsers()([]Userable)
     GetTarget()(CloudPcManagementAssignmentTargetable)
+    GetUserSettingsPersistenceDetail()(CloudPCUserSettingsPersistenceDetailable)
     SetAssignedUsers(value []Userable)()
     SetTarget(value CloudPcManagementAssignmentTargetable)()
+    SetUserSettingsPersistenceDetail(value CloudPCUserSettingsPersistenceDetailable)()
 }

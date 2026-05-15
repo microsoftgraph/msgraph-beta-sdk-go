@@ -16,9 +16,9 @@ type PermissionGrantPreApprovalPoliciesCountRequestBuilder struct {
 // PermissionGrantPreApprovalPoliciesCountRequestBuilderGetQueryParameters get the number of the resource
 type PermissionGrantPreApprovalPoliciesCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // PermissionGrantPreApprovalPoliciesCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PermissionGrantPreApprovalPoliciesCountRequestBuilderGetRequestConfiguration struct {

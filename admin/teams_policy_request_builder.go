@@ -21,12 +21,12 @@ type TeamsPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsPolicyRequestBuilderGetQueryParameters get policy from admin
+// TeamsPolicyRequestBuilderGetQueryParameters represents a navigation property to the Teams policy assignment object.
 type TeamsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamsPolicyRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamsPolicyRequestBuilderGetRequestConfiguration struct {
@@ -73,7 +73,7 @@ func (m *TeamsPolicyRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get get policy from admin
+// Get represents a navigation property to the Teams policy assignment object.
 // returns a TeamsPolicyAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsPolicyRequestBuilderGetRequestConfiguration)(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyAssignmentable, error) {
@@ -92,6 +92,11 @@ func (m *TeamsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguratio
         return nil, nil
     }
     return res.(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyAssignmentable), nil
+}
+// MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName provides operations to call the getPolicyId method.
+// returns a *TeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder when successful
+func (m *TeamsPolicyRequestBuilder) MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName(name *string, typeEscaped *string)(*TeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder) {
+    return NewTeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name, typeEscaped)
 }
 // Patch update the navigation property policy in admin
 // returns a TeamsPolicyAssignmentable when successful
@@ -124,7 +129,7 @@ func (m *TeamsPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get policy from admin
+// ToGetRequestInformation represents a navigation property to the Teams policy assignment object.
 // returns a *RequestInformation when successful
 func (m *TeamsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,11 @@ func (m *TeamsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Contex
         return nil, err
     }
     return requestInfo, nil
+}
+// UserAssignments provides operations to manage the userAssignments property of the microsoft.graph.teamsAdministration.teamsPolicyAssignment entity.
+// returns a *TeamsPolicyUserAssignmentsRequestBuilder when successful
+func (m *TeamsPolicyRequestBuilder) UserAssignments()(*TeamsPolicyUserAssignmentsRequestBuilder) {
+    return NewTeamsPolicyUserAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *TeamsPolicyRequestBuilder when successful

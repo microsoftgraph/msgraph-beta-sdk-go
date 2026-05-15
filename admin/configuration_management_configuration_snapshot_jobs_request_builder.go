@@ -14,24 +14,24 @@ import (
 type ConfigurationManagementConfigurationSnapshotJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetQueryParameters get configurationSnapshotJobs from admin
+// ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetQueryParameters get a list of the configurationSnapshotJob objects and their properties.
 type ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetRequestConfiguration struct {
@@ -79,9 +79,12 @@ func NewConfigurationManagementConfigurationSnapshotJobsRequestBuilder(rawUrl st
 func (m *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder) Count()(*ConfigurationManagementConfigurationSnapshotJobsCountRequestBuilder) {
     return NewConfigurationManagementConfigurationSnapshotJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get configurationSnapshotJobs from admin
+// Get get a list of the configurationSnapshotJob objects and their properties.
 // returns a ConfigurationSnapshotJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationsnapshotjobs?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationSnapshotJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationSnapshotJobable), nil
 }
-// ToGetRequestInformation get configurationSnapshotJobs from admin
+// ToGetRequestInformation get a list of the configurationSnapshotJob objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationSnapshotJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

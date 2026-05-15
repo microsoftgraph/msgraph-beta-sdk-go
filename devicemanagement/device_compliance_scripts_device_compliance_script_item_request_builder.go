@@ -24,9 +24,9 @@ type DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderDeleteReques
 // DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetQueryParameters the list of device compliance scripts associated with the tenant.
 type DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilderGetRequestConfiguration struct {

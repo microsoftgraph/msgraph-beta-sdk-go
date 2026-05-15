@@ -71,6 +71,16 @@ func (m *EmployeeExperienceUser) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["storyline"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateStorylineFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStoryline(val.(Storylineable))
+        }
+        return nil
+    }
     return res
 }
 // GetLearningCourseActivities gets the learningCourseActivities property value. The learningCourseActivities property
@@ -82,6 +92,18 @@ func (m *EmployeeExperienceUser) GetLearningCourseActivities()([]LearningCourseA
     }
     if val != nil {
         return val.([]LearningCourseActivityable)
+    }
+    return nil
+}
+// GetStoryline gets the storyline property value. The storyline property
+// returns a Storylineable when successful
+func (m *EmployeeExperienceUser) GetStoryline()(Storylineable) {
+    val, err := m.GetBackingStore().Get("storyline")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Storylineable)
     }
     return nil
 }
@@ -115,6 +137,12 @@ func (m *EmployeeExperienceUser) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("storyline", m.GetStoryline())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAssignedRoles sets the assignedRoles property value. Represents the collection of Viva Engage roles assigned to a user.
@@ -131,11 +159,20 @@ func (m *EmployeeExperienceUser) SetLearningCourseActivities(value []LearningCou
         panic(err)
     }
 }
+// SetStoryline sets the storyline property value. The storyline property
+func (m *EmployeeExperienceUser) SetStoryline(value Storylineable)() {
+    err := m.GetBackingStore().Set("storyline", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type EmployeeExperienceUserable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssignedRoles()([]EngagementRoleable)
     GetLearningCourseActivities()([]LearningCourseActivityable)
+    GetStoryline()(Storylineable)
     SetAssignedRoles(value []EngagementRoleable)()
     SetLearningCourseActivities(value []LearningCourseActivityable)()
+    SetStoryline(value Storylineable)()
 }

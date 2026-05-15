@@ -313,7 +313,7 @@ func (m *SecurityAction) GetStates()([]SecurityActionStateable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
+// GetStatus gets the status property value. Status of the action. The possible values are: NotStarted, Running, Completed, Failed.
 // returns a *OperationStatus when successful
 func (m *SecurityAction) GetStatus()(*OperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -531,7 +531,7 @@ func (m *SecurityAction) SetStates(value []SecurityActionStateable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the action. Possible values are: NotStarted, Running, Completed, Failed.
+// SetStatus sets the status property value. Status of the action. The possible values are: NotStarted, Running, Completed, Failed.
 func (m *SecurityAction) SetStatus(value *OperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

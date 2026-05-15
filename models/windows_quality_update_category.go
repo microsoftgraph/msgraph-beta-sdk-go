@@ -12,10 +12,14 @@ const (
     SECURITY_WINDOWSQUALITYUPDATECATEGORY
     // Non security only update type
     NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
+    // Quick machine recovery update type
+    QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
 )
 
 func (i WindowsQualityUpdateCategory) String() string {
-    return []string{"all", "security", "nonSecurity"}[i]
+    return []string{"all", "security", "nonSecurity", "unknownFutureValue", "quickMachineRecovery"}[i]
 }
 func ParseWindowsQualityUpdateCategory(v string) (any, error) {
     result := ALL_WINDOWSQUALITYUPDATECATEGORY
@@ -26,6 +30,10 @@ func ParseWindowsQualityUpdateCategory(v string) (any, error) {
             result = SECURITY_WINDOWSQUALITYUPDATECATEGORY
         case "nonSecurity":
             result = NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
+        case "quickMachineRecovery":
+            result = QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
         default:
             return nil, nil
     }

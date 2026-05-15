@@ -35,7 +35,7 @@ func (m *EducationAssignment) GetAddedStudentAction()(*EducationAddedStudentActi
     }
     return nil
 }
-// GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+// GetAddToCalendarAction gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: studentsOnly. The default value is none.
 // returns a *EducationAddToCalendarOptions when successful
 func (m *EducationAssignment) GetAddToCalendarAction()(*EducationAddToCalendarOptions) {
     val, err := m.GetBackingStore().Get("addToCalendarAction")
@@ -551,7 +551,7 @@ func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable)
     }
     return nil
 }
-// GetGradingScheme gets the gradingScheme property value. The gradingScheme property
+// GetGradingScheme gets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 // returns a EducationGradingSchemeable when successful
 func (m *EducationAssignment) GetGradingScheme()(EducationGradingSchemeable) {
     val, err := m.GetBackingStore().Get("gradingScheme")
@@ -671,7 +671,7 @@ func (m *EducationAssignment) GetRubric()(EducationRubricable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
+// GetStatus gets the status property value. Status of the assignment. You can't PATCH this value. The possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.
 // returns a *EducationAssignmentStatus when successful
 func (m *EducationAssignment) GetStatus()(*EducationAssignmentStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -862,7 +862,7 @@ func (m *EducationAssignment) SetAddedStudentAction(value *EducationAddedStudent
         panic(err)
     }
 }
-// SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
+// SetAddToCalendarAction sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: studentsOnly. The default value is none.
 func (m *EducationAssignment) SetAddToCalendarAction(value *EducationAddToCalendarOptions)() {
     err := m.GetBackingStore().Set("addToCalendarAction", value)
     if err != nil {
@@ -974,7 +974,7 @@ func (m *EducationAssignment) SetGradingCategory(value EducationGradingCategorya
         panic(err)
     }
 }
-// SetGradingScheme sets the gradingScheme property value. The gradingScheme property
+// SetGradingScheme sets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 func (m *EducationAssignment) SetGradingScheme(value EducationGradingSchemeable)() {
     err := m.GetBackingStore().Set("gradingScheme", value)
     if err != nil {
@@ -1044,7 +1044,7 @@ func (m *EducationAssignment) SetRubric(value EducationRubricable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the assignment. You can't PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
+// SetStatus sets the status property value. Status of the assignment. You can't PATCH this value. The possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.
 func (m *EducationAssignment) SetStatus(value *EducationAssignmentStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -38,7 +38,7 @@ func (m *SharePointMigrationFinishManifestFileUploadEvent) GetFieldDeserializers
     }
     return res
 }
-// GetManifestFileName gets the manifestFileName property value. The manifestFileName property
+// GetManifestFileName gets the manifestFileName property value. The exported manifest file name. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationFinishManifestFileUploadEvent) GetManifestFileName()(*string) {
     val, err := m.GetBackingStore().Get("manifestFileName")
@@ -64,7 +64,7 @@ func (m *SharePointMigrationFinishManifestFileUploadEvent) Serialize(writer i878
     }
     return nil
 }
-// SetManifestFileName sets the manifestFileName property value. The manifestFileName property
+// SetManifestFileName sets the manifestFileName property value. The exported manifest file name. Read-only.
 func (m *SharePointMigrationFinishManifestFileUploadEvent) SetManifestFileName(value *string)() {
     err := m.GetBackingStore().Set("manifestFileName", value)
     if err != nil {

@@ -102,7 +102,7 @@ func (m *ReferenceAttachment) GetIsFolder()(*bool) {
     }
     return nil
 }
-// GetPermission gets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
+// GetPermission gets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. The possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
 // returns a *ReferenceAttachmentPermission when successful
 func (m *ReferenceAttachment) GetPermission()(*ReferenceAttachmentPermission) {
     val, err := m.GetBackingStore().Get("permission")
@@ -126,7 +126,7 @@ func (m *ReferenceAttachment) GetPreviewUrl()(*string) {
     }
     return nil
 }
-// GetProviderType gets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
+// GetProviderType gets the providerType property value. The type of provider that supports an attachment of this contentType. The possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
 // returns a *ReferenceAttachmentProvider when successful
 func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
     val, err := m.GetBackingStore().Get("providerType")
@@ -215,7 +215,7 @@ func (m *ReferenceAttachment) SetIsFolder(value *bool)() {
         panic(err)
     }
 }
-// SetPermission sets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
+// SetPermission sets the permission property value. Specifies the permissions granted for the attachment by the type of provider in providerType. The possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.
 func (m *ReferenceAttachment) SetPermission(value *ReferenceAttachmentPermission)() {
     err := m.GetBackingStore().Set("permission", value)
     if err != nil {
@@ -229,7 +229,7 @@ func (m *ReferenceAttachment) SetPreviewUrl(value *string)() {
         panic(err)
     }
 }
-// SetProviderType sets the providerType property value. The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
+// SetProviderType sets the providerType property value. The type of provider that supports an attachment of this contentType. The possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.
 func (m *ReferenceAttachment) SetProviderType(value *ReferenceAttachmentProvider)() {
     err := m.GetBackingStore().Set("providerType", value)
     if err != nil {

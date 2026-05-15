@@ -104,7 +104,7 @@ func (m *CloudPcTenantEncryptionSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantDiskEncryptionType gets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. Possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
+// GetTenantDiskEncryptionType gets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. The possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
 // returns a *CloudPcDiskEncryptionType when successful
 func (m *CloudPcTenantEncryptionSetting) GetTenantDiskEncryptionType()(*CloudPcDiskEncryptionType) {
     val, err := m.GetBackingStore().Get("tenantDiskEncryptionType")
@@ -170,7 +170,7 @@ func (m *CloudPcTenantEncryptionSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantDiskEncryptionType sets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. Possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
+// SetTenantDiskEncryptionType sets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. The possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
 func (m *CloudPcTenantEncryptionSetting) SetTenantDiskEncryptionType(value *CloudPcDiskEncryptionType)() {
     err := m.GetBackingStore().Set("tenantDiskEncryptionType", value)
     if err != nil {

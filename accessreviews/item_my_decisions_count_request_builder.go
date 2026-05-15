@@ -16,9 +16,9 @@ type ItemMyDecisionsCountRequestBuilder struct {
 // ItemMyDecisionsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemMyDecisionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemMyDecisionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMyDecisionsCountRequestBuilderGetRequestConfiguration struct {

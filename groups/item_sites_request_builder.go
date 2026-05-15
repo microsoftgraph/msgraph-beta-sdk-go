@@ -17,21 +17,21 @@ type ItemSitesRequestBuilder struct {
 // ItemSitesRequestBuilderGetQueryParameters the list of SharePoint sites in this group. Access the default site with /sites/root.
 type ItemSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ItemSitesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesRequestBuilderGetRequestConfiguration struct {
@@ -106,6 +106,11 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // returns a *ItemSitesGetAllSitesRequestBuilder when successful
 func (m *ItemSitesRequestBuilder) GetAllSites()(*ItemSitesGetAllSitesRequestBuilder) {
     return NewItemSitesGetAllSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetOperationStatusWithOperationId provides operations to call the getOperationStatus method.
+// returns a *ItemSitesGetOperationStatusWithOperationIdRequestBuilder when successful
+func (m *ItemSitesRequestBuilder) GetOperationStatusWithOperationId(operationId *string)(*ItemSitesGetOperationStatusWithOperationIdRequestBuilder) {
+    return NewItemSitesGetOperationStatusWithOperationIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, operationId)
 }
 // Remove provides operations to call the remove method.
 // returns a *ItemSitesRemoveRequestBuilder when successful

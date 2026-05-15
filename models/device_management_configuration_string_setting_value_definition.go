@@ -109,7 +109,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes
     }
     return nil
 }
-// GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
+// GetFormat gets the format property value. Pre-defined format of the string. The possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
 // returns a *DeviceManagementConfigurationStringFormat when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
     val, err := m.GetBackingStore().Get("format")
@@ -221,7 +221,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes
         panic(err)
     }
 }
-// SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
+// SetFormat sets the format property value. Pre-defined format of the string. The possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {

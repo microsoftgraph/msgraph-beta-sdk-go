@@ -24,9 +24,9 @@ type ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration st
 // ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters represents the details of awards or honors associated with a person.
 type ItemProfileAwardsPersonAwardItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration struct {

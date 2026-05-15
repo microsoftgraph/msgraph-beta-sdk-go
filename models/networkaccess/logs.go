@@ -55,6 +55,22 @@ func (m *Logs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["generativeAIInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateGenerativeAIInsightFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]GenerativeAIInsightable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(GenerativeAIInsightable)
+                }
+            }
+            m.SetGenerativeAIInsights(res)
+        }
+        return nil
+    }
     res["remoteNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteNetworkHealthEventFromDiscriminatorValue)
         if err != nil {
@@ -88,6 +104,18 @@ func (m *Logs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     return res
+}
+// GetGenerativeAIInsights gets the generativeAIInsights property value. The generativeAIInsights property
+// returns a []GenerativeAIInsightable when successful
+func (m *Logs) GetGenerativeAIInsights()([]GenerativeAIInsightable) {
+    val, err := m.GetBackingStore().Get("generativeAIInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]GenerativeAIInsightable)
+    }
+    return nil
 }
 // GetRemoteNetworks gets the remoteNetworks property value. A collection of remote network health events.
 // returns a []RemoteNetworkHealthEventable when successful
@@ -131,6 +159,18 @@ func (m *Logs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetGenerativeAIInsights() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGenerativeAIInsights()))
+        for i, v := range m.GetGenerativeAIInsights() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("generativeAIInsights", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteNetworks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteNetworks()))
         for i, v := range m.GetRemoteNetworks() {
@@ -164,6 +204,13 @@ func (m *Logs) SetConnections(value []Connectionable)() {
         panic(err)
     }
 }
+// SetGenerativeAIInsights sets the generativeAIInsights property value. The generativeAIInsights property
+func (m *Logs) SetGenerativeAIInsights(value []GenerativeAIInsightable)() {
+    err := m.GetBackingStore().Set("generativeAIInsights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemoteNetworks sets the remoteNetworks property value. A collection of remote network health events.
 func (m *Logs) SetRemoteNetworks(value []RemoteNetworkHealthEventable)() {
     err := m.GetBackingStore().Set("remoteNetworks", value)
@@ -182,9 +229,11 @@ type Logsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConnections()([]Connectionable)
+    GetGenerativeAIInsights()([]GenerativeAIInsightable)
     GetRemoteNetworks()([]RemoteNetworkHealthEventable)
     GetTraffic()([]NetworkAccessTrafficable)
     SetConnections(value []Connectionable)()
+    SetGenerativeAIInsights(value []GenerativeAIInsightable)()
     SetRemoteNetworks(value []RemoteNetworkHealthEventable)()
     SetTraffic(value []NetworkAccessTrafficable)()
 }

@@ -169,7 +169,7 @@ func (m *RecurrenceRange) GetStartDate()(*i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+// GetTypeEscaped gets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
 // returns a *RecurrenceRangeType when successful
 func (m *RecurrenceRange) GetTypeEscaped()(*RecurrenceRangeType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -274,7 +274,7 @@ func (m *RecurrenceRange) SetStartDate(value *i878a80d2330e89d26896388a3f487eef2
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The recurrence range. Possible values are: endDate, noEnd, numbered. Required.
+// SetTypeEscaped sets the type property value. The recurrence range. The possible values are: endDate, noEnd, numbered. Required.
 func (m *RecurrenceRange) SetTypeEscaped(value *RecurrenceRangeType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

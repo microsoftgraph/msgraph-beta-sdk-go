@@ -24,9 +24,9 @@ type PrivilegedAccessGroupRequestBuilderDeleteRequestConfiguration struct {
 // PrivilegedAccessGroupRequestBuilderGetQueryParameters a group that's governed through Privileged Identity Management (PIM).
 type PrivilegedAccessGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrivilegedAccessGroupRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrivilegedAccessGroupRequestBuilderGetRequestConfiguration struct {
@@ -147,6 +147,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) Patch(ctx context.Context, body ie
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupable), nil
+}
+// Resources provides operations to manage the resources property of the microsoft.graph.privilegedAccessGroup entity.
+// returns a *PrivilegedAccessGroupResourcesRequestBuilder when successful
+func (m *PrivilegedAccessGroupRequestBuilder) Resources()(*PrivilegedAccessGroupResourcesRequestBuilder) {
+    return NewPrivilegedAccessGroupResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property group for identityGovernance
 // returns a *RequestInformation when successful

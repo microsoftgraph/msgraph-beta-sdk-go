@@ -304,7 +304,7 @@ func (m *LegalHold) GetSiteSources()([]SiteSourceable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
+// GetStatus gets the status property value. The status of the legal hold. The possible values are: Pending, Error, Success, UnknownFutureValue.
 // returns a *LegalHoldStatus when successful
 func (m *LegalHold) GetStatus()(*LegalHoldStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -515,7 +515,7 @@ func (m *LegalHold) SetSiteSources(value []SiteSourceable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.
+// SetStatus sets the status property value. The status of the legal hold. The possible values are: Pending, Error, Success, UnknownFutureValue.
 func (m *LegalHold) SetStatus(value *LegalHoldStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

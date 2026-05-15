@@ -22,19 +22,7 @@ func NewConfigurationManagement()(*ConfigurationManagement) {
 func CreateConfigurationManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationManagement(), nil
 }
-// GetConfigurationApplications gets the configurationApplications property value. The configurationApplications property
-// returns a []ConfigurationApplicationable when successful
-func (m *ConfigurationManagement) GetConfigurationApplications()([]ConfigurationApplicationable) {
-    val, err := m.GetBackingStore().Get("configurationApplications")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConfigurationApplicationable)
-    }
-    return nil
-}
-// GetConfigurationDrifts gets the configurationDrifts property value. The configurationDrifts property
+// GetConfigurationDrifts gets the configurationDrifts property value. A container for configuration drift resources.
 // returns a []ConfigurationDriftable when successful
 func (m *ConfigurationManagement) GetConfigurationDrifts()([]ConfigurationDriftable) {
     val, err := m.GetBackingStore().Get("configurationDrifts")
@@ -46,7 +34,7 @@ func (m *ConfigurationManagement) GetConfigurationDrifts()([]ConfigurationDrifta
     }
     return nil
 }
-// GetConfigurationMonitoringResults gets the configurationMonitoringResults property value. The configurationMonitoringResults property
+// GetConfigurationMonitoringResults gets the configurationMonitoringResults property value. A container for configuration monitoring results resources.
 // returns a []ConfigurationMonitoringResultable when successful
 func (m *ConfigurationManagement) GetConfigurationMonitoringResults()([]ConfigurationMonitoringResultable) {
     val, err := m.GetBackingStore().Get("configurationMonitoringResults")
@@ -58,7 +46,7 @@ func (m *ConfigurationManagement) GetConfigurationMonitoringResults()([]Configur
     }
     return nil
 }
-// GetConfigurationMonitors gets the configurationMonitors property value. The configurationMonitors property
+// GetConfigurationMonitors gets the configurationMonitors property value. A container for configuration monitor resources.
 // returns a []ConfigurationMonitorable when successful
 func (m *ConfigurationManagement) GetConfigurationMonitors()([]ConfigurationMonitorable) {
     val, err := m.GetBackingStore().Get("configurationMonitors")
@@ -70,7 +58,7 @@ func (m *ConfigurationManagement) GetConfigurationMonitors()([]ConfigurationMoni
     }
     return nil
 }
-// GetConfigurationSnapshotJobs gets the configurationSnapshotJobs property value. The configurationSnapshotJobs property
+// GetConfigurationSnapshotJobs gets the configurationSnapshotJobs property value. A container for snapshot job resources.
 // returns a []ConfigurationSnapshotJobable when successful
 func (m *ConfigurationManagement) GetConfigurationSnapshotJobs()([]ConfigurationSnapshotJobable) {
     val, err := m.GetBackingStore().Get("configurationSnapshotJobs")
@@ -82,7 +70,7 @@ func (m *ConfigurationManagement) GetConfigurationSnapshotJobs()([]Configuration
     }
     return nil
 }
-// GetConfigurationSnapshots gets the configurationSnapshots property value. The configurationSnapshots property
+// GetConfigurationSnapshots gets the configurationSnapshots property value. A container for configuration snapshot baselines.
 // returns a []ConfigurationBaselineable when successful
 func (m *ConfigurationManagement) GetConfigurationSnapshots()([]ConfigurationBaselineable) {
     val, err := m.GetBackingStore().Get("configurationSnapshots")
@@ -98,22 +86,6 @@ func (m *ConfigurationManagement) GetConfigurationSnapshots()([]ConfigurationBas
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConfigurationManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["configurationApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConfigurationApplicationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConfigurationApplicationable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConfigurationApplicationable)
-                }
-            }
-            m.SetConfigurationApplications(res)
-        }
-        return nil
-    }
     res["configurationDrifts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConfigurationDriftFromDiscriminatorValue)
         if err != nil {
@@ -202,18 +174,6 @@ func (m *ConfigurationManagement) Serialize(writer i878a80d2330e89d26896388a3f48
     if err != nil {
         return err
     }
-    if m.GetConfigurationApplications() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConfigurationApplications()))
-        for i, v := range m.GetConfigurationApplications() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("configurationApplications", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetConfigurationDrifts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConfigurationDrifts()))
         for i, v := range m.GetConfigurationDrifts() {
@@ -276,42 +236,35 @@ func (m *ConfigurationManagement) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetConfigurationApplications sets the configurationApplications property value. The configurationApplications property
-func (m *ConfigurationManagement) SetConfigurationApplications(value []ConfigurationApplicationable)() {
-    err := m.GetBackingStore().Set("configurationApplications", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetConfigurationDrifts sets the configurationDrifts property value. The configurationDrifts property
+// SetConfigurationDrifts sets the configurationDrifts property value. A container for configuration drift resources.
 func (m *ConfigurationManagement) SetConfigurationDrifts(value []ConfigurationDriftable)() {
     err := m.GetBackingStore().Set("configurationDrifts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationMonitoringResults sets the configurationMonitoringResults property value. The configurationMonitoringResults property
+// SetConfigurationMonitoringResults sets the configurationMonitoringResults property value. A container for configuration monitoring results resources.
 func (m *ConfigurationManagement) SetConfigurationMonitoringResults(value []ConfigurationMonitoringResultable)() {
     err := m.GetBackingStore().Set("configurationMonitoringResults", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationMonitors sets the configurationMonitors property value. The configurationMonitors property
+// SetConfigurationMonitors sets the configurationMonitors property value. A container for configuration monitor resources.
 func (m *ConfigurationManagement) SetConfigurationMonitors(value []ConfigurationMonitorable)() {
     err := m.GetBackingStore().Set("configurationMonitors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationSnapshotJobs sets the configurationSnapshotJobs property value. The configurationSnapshotJobs property
+// SetConfigurationSnapshotJobs sets the configurationSnapshotJobs property value. A container for snapshot job resources.
 func (m *ConfigurationManagement) SetConfigurationSnapshotJobs(value []ConfigurationSnapshotJobable)() {
     err := m.GetBackingStore().Set("configurationSnapshotJobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationSnapshots sets the configurationSnapshots property value. The configurationSnapshots property
+// SetConfigurationSnapshots sets the configurationSnapshots property value. A container for configuration snapshot baselines.
 func (m *ConfigurationManagement) SetConfigurationSnapshots(value []ConfigurationBaselineable)() {
     err := m.GetBackingStore().Set("configurationSnapshots", value)
     if err != nil {
@@ -321,13 +274,11 @@ func (m *ConfigurationManagement) SetConfigurationSnapshots(value []Configuratio
 type ConfigurationManagementable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetConfigurationApplications()([]ConfigurationApplicationable)
     GetConfigurationDrifts()([]ConfigurationDriftable)
     GetConfigurationMonitoringResults()([]ConfigurationMonitoringResultable)
     GetConfigurationMonitors()([]ConfigurationMonitorable)
     GetConfigurationSnapshotJobs()([]ConfigurationSnapshotJobable)
     GetConfigurationSnapshots()([]ConfigurationBaselineable)
-    SetConfigurationApplications(value []ConfigurationApplicationable)()
     SetConfigurationDrifts(value []ConfigurationDriftable)()
     SetConfigurationMonitoringResults(value []ConfigurationMonitoringResultable)()
     SetConfigurationMonitors(value []ConfigurationMonitorable)()

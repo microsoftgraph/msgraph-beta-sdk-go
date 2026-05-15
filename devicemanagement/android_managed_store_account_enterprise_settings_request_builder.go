@@ -24,9 +24,9 @@ type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteRequestConf
 // AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters the singleton Android managed store account enterprise settings entity.
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderGetRequestConfiguration struct {
@@ -133,15 +133,30 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidManagedStoreAccountEnterpriseSettingsable), nil
 }
+// RequestEnterpriseUpgradeUrl provides operations to call the requestEnterpriseUpgradeUrl method.
+// returns a *AndroidManagedStoreAccountEnterpriseSettingsRequestEnterpriseUpgradeUrlRequestBuilder when successful
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) RequestEnterpriseUpgradeUrl()(*AndroidManagedStoreAccountEnterpriseSettingsRequestEnterpriseUpgradeUrlRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsRequestEnterpriseUpgradeUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RequestSignupUrl provides operations to call the requestSignupUrl method.
 // returns a *AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) RequestSignupUrl()(*AndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilder) {
     return NewAndroidManagedStoreAccountEnterpriseSettingsRequestSignupUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveStoreLayout provides operations to call the retrieveStoreLayout method.
+// returns a *AndroidManagedStoreAccountEnterpriseSettingsRetrieveStoreLayoutRequestBuilder when successful
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) RetrieveStoreLayout()(*AndroidManagedStoreAccountEnterpriseSettingsRetrieveStoreLayoutRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsRetrieveStoreLayoutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SetAndroidDeviceOwnerFullyManagedEnrollmentState provides operations to call the setAndroidDeviceOwnerFullyManagedEnrollmentState method.
 // returns a *AndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder when successful
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) SetAndroidDeviceOwnerFullyManagedEnrollmentState()(*AndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder) {
     return NewAndroidManagedStoreAccountEnterpriseSettingsSetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetStoreLayout provides operations to call the setStoreLayout method.
+// returns a *AndroidManagedStoreAccountEnterpriseSettingsSetStoreLayoutRequestBuilder when successful
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) SetStoreLayout()(*AndroidManagedStoreAccountEnterpriseSettingsSetStoreLayoutRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsSetStoreLayoutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SyncApps provides operations to call the syncApps method.
 // returns a *AndroidManagedStoreAccountEnterpriseSettingsSyncAppsRequestBuilder when successful

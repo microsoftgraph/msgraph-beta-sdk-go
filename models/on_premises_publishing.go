@@ -79,7 +79,7 @@ func (m *OnPremisesPublishing) GetApplicationType()(*string) {
 func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
+// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
 // returns a *ExternalAuthenticationType when successful
 func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
     val, err := m.GetBackingStore().Get("externalAuthenticationType")
@@ -184,6 +184,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetIsBackendCertificateValidationEnabled(val)
+        }
+        return nil
+    }
+    res["isContinuousAccessEvaluationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsContinuousAccessEvaluationEnabled(val)
         }
         return nil
     }
@@ -313,6 +323,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["trafficRoutingMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTrafficRoutingMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTrafficRoutingMethod(val.(*TrafficRoutingMethod))
+        }
+        return nil
+    }
     res["useAlternateUrlForTranslationAndRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -419,6 +439,18 @@ func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsContinuousAccessEvaluationEnabled gets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
+// returns a *bool when successful
+func (m *OnPremisesPublishing) GetIsContinuousAccessEvaluationEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isContinuousAccessEvaluationEnabled")
     if err != nil {
         panic(err)
     }
@@ -571,6 +603,18 @@ func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSin
     }
     return nil
 }
+// GetTrafficRoutingMethod gets the trafficRoutingMethod property value. The trafficRoutingMethod property
+// returns a *TrafficRoutingMethod when successful
+func (m *OnPremisesPublishing) GetTrafficRoutingMethod()(*TrafficRoutingMethod) {
+    val, err := m.GetBackingStore().Get("trafficRoutingMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TrafficRoutingMethod)
+    }
+    return nil
+}
 // GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
@@ -707,6 +751,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", m.GetIsContinuousAccessEvaluationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isDnsResolutionEnabled", m.GetIsDnsResolutionEnabled())
         if err != nil {
             return err
@@ -780,6 +830,13 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteObjectValue("singleSignOnSettings", m.GetSingleSignOnSettings())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTrafficRoutingMethod() != nil {
+        cast := (*m.GetTrafficRoutingMethod()).String()
+        err := writer.WriteStringValue("trafficRoutingMethod", &cast)
         if err != nil {
             return err
         }
@@ -872,7 +929,7 @@ func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
 func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
+// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
     err := m.GetBackingStore().Set("externalAuthenticationType", value)
     if err != nil {
@@ -903,6 +960,13 @@ func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool)() {
 // SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
 func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBackendCertificateValidationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsContinuousAccessEvaluationEnabled sets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
+func (m *OnPremisesPublishing) SetIsContinuousAccessEvaluationEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isContinuousAccessEvaluationEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -991,6 +1055,13 @@ func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishin
         panic(err)
     }
 }
+// SetTrafficRoutingMethod sets the trafficRoutingMethod property value. The trafficRoutingMethod property
+func (m *OnPremisesPublishing) SetTrafficRoutingMethod(value *TrafficRoutingMethod)() {
+    err := m.GetBackingStore().Set("trafficRoutingMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool)() {
     err := m.GetBackingStore().Set("useAlternateUrlForTranslationAndRedirect", value)
@@ -1053,6 +1124,7 @@ type OnPremisesPublishingable interface {
     GetInternalUrl()(*string)
     GetIsAccessibleViaZTNAClient()(*bool)
     GetIsBackendCertificateValidationEnabled()(*bool)
+    GetIsContinuousAccessEvaluationEnabled()(*bool)
     GetIsDnsResolutionEnabled()(*bool)
     GetIsHttpOnlyCookieEnabled()(*bool)
     GetIsOnPremPublishingEnabled()(*bool)
@@ -1065,6 +1137,7 @@ type OnPremisesPublishingable interface {
     GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable)
     GetSegmentsConfiguration()(SegmentConfigurationable)
     GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable)
+    GetTrafficRoutingMethod()(*TrafficRoutingMethod)
     GetUseAlternateUrlForTranslationAndRedirect()(*bool)
     GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable)
     GetVerifiedCustomDomainKeyCredential()(KeyCredentialable)
@@ -1081,6 +1154,7 @@ type OnPremisesPublishingable interface {
     SetInternalUrl(value *string)()
     SetIsAccessibleViaZTNAClient(value *bool)()
     SetIsBackendCertificateValidationEnabled(value *bool)()
+    SetIsContinuousAccessEvaluationEnabled(value *bool)()
     SetIsDnsResolutionEnabled(value *bool)()
     SetIsHttpOnlyCookieEnabled(value *bool)()
     SetIsOnPremPublishingEnabled(value *bool)()
@@ -1093,6 +1167,7 @@ type OnPremisesPublishingable interface {
     SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)()
     SetSegmentsConfiguration(value SegmentConfigurationable)()
     SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)()
+    SetTrafficRoutingMethod(value *TrafficRoutingMethod)()
     SetUseAlternateUrlForTranslationAndRedirect(value *bool)()
     SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)()
     SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)()

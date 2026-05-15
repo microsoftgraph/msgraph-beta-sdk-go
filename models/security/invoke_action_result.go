@@ -25,7 +25,7 @@ func NewInvokeActionResult()(*InvokeActionResult) {
 func CreateInvokeActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInvokeActionResult(), nil
 }
-// GetAccountId gets the accountId property value. The accountId property
+// GetAccountId gets the accountId property value. The account ID.
 // returns a *string when successful
 func (m *InvokeActionResult) GetAccountId()(*string) {
     val, err := m.GetBackingStore().Get("accountId")
@@ -67,7 +67,7 @@ func (m *InvokeActionResult) GetAdditionalData()(map[string]any) {
 func (m *InvokeActionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCorrelationId gets the correlationId property value. The correlationId property
+// GetCorrelationId gets the correlationId property value. The unique identifier for tracking the request.
 // returns a *string when successful
 func (m *InvokeActionResult) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -201,7 +201,7 @@ func (m *InvokeActionResult) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAccountId sets the accountId property value. The accountId property
+// SetAccountId sets the accountId property value. The account ID.
 func (m *InvokeActionResult) SetAccountId(value *string)() {
     err := m.GetBackingStore().Set("accountId", value)
     if err != nil {
@@ -226,7 +226,7 @@ func (m *InvokeActionResult) SetAdditionalData(value map[string]any)() {
 func (m *InvokeActionResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCorrelationId sets the correlationId property value. The correlationId property
+// SetCorrelationId sets the correlationId property value. The unique identifier for tracking the request.
 func (m *InvokeActionResult) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {

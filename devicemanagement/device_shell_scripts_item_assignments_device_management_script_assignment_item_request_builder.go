@@ -24,9 +24,9 @@ type DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemReques
 // DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderGetQueryParameters the list of group assignments for the device management script.
 type DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceShellScriptsItemAssignmentsDeviceManagementScriptAssignmentItemRequestBuilderGetRequestConfiguration struct {

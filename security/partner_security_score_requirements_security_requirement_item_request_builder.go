@@ -24,9 +24,9 @@ type PartnerSecurityScoreRequirementsSecurityRequirementItemRequestBuilderDelete
 // PartnerSecurityScoreRequirementsSecurityRequirementItemRequestBuilderGetQueryParameters read the properties and relationships of a securityRequirement object.
 type PartnerSecurityScoreRequirementsSecurityRequirementItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PartnerSecurityScoreRequirementsSecurityRequirementItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PartnerSecurityScoreRequirementsSecurityRequirementItemRequestBuilderGetRequestConfiguration struct {

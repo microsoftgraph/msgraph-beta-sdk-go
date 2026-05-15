@@ -24,9 +24,9 @@ type ItemPlannerPlansPlannerPlanItemRequestBuilderDeleteRequestConfiguration str
 // ItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters get plans from users
 type ItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct {
@@ -107,6 +107,11 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context,
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
+}
+// GetUsageRights provides operations to call the getUsageRights method.
+// returns a *ItemPlannerPlansItemGetUsageRightsRequestBuilder when successful
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*ItemPlannerPlansItemGetUsageRightsRequestBuilder) {
+    return NewItemPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MoveToContainer provides operations to call the moveToContainer method.
 // returns a *ItemPlannerPlansItemMoveToContainerRequestBuilder when successful

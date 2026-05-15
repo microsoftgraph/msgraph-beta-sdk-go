@@ -24,9 +24,9 @@ type ExchangeRequestBuilderDeleteRequestConfiguration struct {
 // ExchangeRequestBuilderGetQueryParameters a container for the Exchange admin functionality. Read-only.
 type ExchangeRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ExchangeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExchangeRequestBuilderGetRequestConfiguration struct {
@@ -168,6 +168,11 @@ func (m *ExchangeRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
         return nil, err
     }
     return requestInfo, nil
+}
+// Tracing provides operations to manage the tracing property of the microsoft.graph.exchangeAdmin entity.
+// returns a *ExchangeTracingRequestBuilder when successful
+func (m *ExchangeRequestBuilder) Tracing()(*ExchangeTracingRequestBuilder) {
+    return NewExchangeTracingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15

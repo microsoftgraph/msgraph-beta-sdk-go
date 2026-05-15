@@ -24,9 +24,9 @@ type ItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderDeleteRequ
 // ItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetQueryParameters the list of recent activities that took place on this item.
 type ItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration struct {

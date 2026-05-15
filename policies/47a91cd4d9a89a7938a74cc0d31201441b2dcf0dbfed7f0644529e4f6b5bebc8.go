@@ -16,9 +16,9 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsC
 // MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderGetRequestConfiguration struct {
@@ -32,7 +32,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsC
 // NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

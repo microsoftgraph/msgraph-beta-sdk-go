@@ -34,6 +34,7 @@ func NewItemResourcesRegisterRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemResourcesRegisterRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action register
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesRegisterRequestBuilder) Post(ctx context.Context, body ItemResourcesRegisterPostRequestBodyable, requestConfiguration *ItemResourcesRegisterRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *ItemResourcesRegisterRequestBuilder) Post(ctx context.Context, body Ite
     return nil
 }
 // ToPostRequestInformation invoke action register
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesRegisterRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemResourcesRegisterPostRequestBodyable, requestConfiguration *ItemResourcesRegisterRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemResourcesRegisterRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *ItemResourcesRegisterRequestBuilder when successful
 func (m *ItemResourcesRegisterRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesRegisterRequestBuilder) {
     return NewItemResourcesRegisterRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

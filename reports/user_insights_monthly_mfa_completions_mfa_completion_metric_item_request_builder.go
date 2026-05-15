@@ -17,9 +17,9 @@ type UserInsightsMonthlyMfaCompletionsMfaCompletionMetricItemRequestBuilder stru
 // UserInsightsMonthlyMfaCompletionsMfaCompletionMetricItemRequestBuilderGetQueryParameters insights for MFA usage on apps registered in the tenant for a specified period.
 type UserInsightsMonthlyMfaCompletionsMfaCompletionMetricItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // UserInsightsMonthlyMfaCompletionsMfaCompletionMetricItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type UserInsightsMonthlyMfaCompletionsMfaCompletionMetricItemRequestBuilderGetRequestConfiguration struct {

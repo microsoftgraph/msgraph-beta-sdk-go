@@ -24,7 +24,7 @@ func NewCloudPcDevice()(*CloudPcDevice) {
 func CreateCloudPcDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcDevice(), nil
 }
-// GetCloudPcStatus gets the cloudPcStatus property value. The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
+// GetCloudPcStatus gets the cloudPcStatus property value. The status of the cloud PC. The possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
 // returns a *string when successful
 func (m *CloudPcDevice) GetCloudPcStatus()(*string) {
     val, err := m.GetBackingStore().Get("cloudPcStatus")
@@ -374,7 +374,7 @@ func (m *CloudPcDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetCloudPcStatus sets the cloudPcStatus property value. The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
+// SetCloudPcStatus sets the cloudPcStatus property value. The status of the cloud PC. The possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.
 func (m *CloudPcDevice) SetCloudPcStatus(value *string)() {
     err := m.GetBackingStore().Set("cloudPcStatus", value)
     if err != nil {

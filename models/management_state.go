@@ -30,10 +30,12 @@ const (
     RETIRECANCELED_MANAGEMENTSTATE
     // The device is discovered but not fully enrolled.
     DISCOVERED_MANAGEMENTSTATE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MANAGEMENTSTATE
 )
 
 func (i ManagementState) String() string {
-    return []string{"managed", "retirePending", "retireFailed", "wipePending", "wipeFailed", "unhealthy", "deletePending", "retireIssued", "wipeIssued", "wipeCanceled", "retireCanceled", "discovered"}[i]
+    return []string{"managed", "retirePending", "retireFailed", "wipePending", "wipeFailed", "unhealthy", "deletePending", "retireIssued", "wipeIssued", "wipeCanceled", "retireCanceled", "discovered", "unknownFutureValue"}[i]
 }
 func ParseManagementState(v string) (any, error) {
     result := MANAGED_MANAGEMENTSTATE
@@ -62,6 +64,8 @@ func ParseManagementState(v string) (any, error) {
             result = RETIRECANCELED_MANAGEMENTSTATE
         case "discovered":
             result = DISCOVERED_MANAGEMENTSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MANAGEMENTSTATE
         default:
             return nil, nil
     }

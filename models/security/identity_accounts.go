@@ -41,7 +41,7 @@ func CreateIdentityAccountsFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     }
     return NewIdentityAccounts(), nil
 }
-// GetAccounts gets the accounts property value. The accounts property
+// GetAccounts gets the accounts property value. Collection of accounts of the identity in different identity providers.
 // returns a []Accountable when successful
 func (m *IdentityAccounts) GetAccounts()([]Accountable) {
     val, err := m.GetBackingStore().Get("accounts")
@@ -53,7 +53,7 @@ func (m *IdentityAccounts) GetAccounts()([]Accountable) {
     }
     return nil
 }
-// GetCloudSecurityIdentifier gets the cloudSecurityIdentifier property value. The cloudSecurityIdentifier property
+// GetCloudSecurityIdentifier gets the cloudSecurityIdentifier property value. The cloud security identifier of the identityAccount.
 // returns a *string when successful
 func (m *IdentityAccounts) GetCloudSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("cloudSecurityIdentifier")
@@ -65,7 +65,7 @@ func (m *IdentityAccounts) GetCloudSecurityIdentifier()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The  Active Directory display name of the identityAccount.
 // returns a *string when successful
 func (m *IdentityAccounts) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -77,7 +77,7 @@ func (m *IdentityAccounts) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomain gets the domain property value. The domain property
+// GetDomain gets the domain property value. The Active Directory domain name of the identityAccount.
 // returns a *string when successful
 func (m *IdentityAccounts) GetDomain()(*string) {
     val, err := m.GetBackingStore().Get("domain")
@@ -161,7 +161,7 @@ func (m *IdentityAccounts) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Boolean indicating if the identityAccounts is enabled.
 // returns a *bool when successful
 func (m *IdentityAccounts) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -173,7 +173,7 @@ func (m *IdentityAccounts) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. The on-premises security identifier of the identityAccount.
 // returns a *string when successful
 func (m *IdentityAccounts) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
@@ -235,42 +235,42 @@ func (m *IdentityAccounts) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetAccounts sets the accounts property value. The accounts property
+// SetAccounts sets the accounts property value. Collection of accounts of the identity in different identity providers.
 func (m *IdentityAccounts) SetAccounts(value []Accountable)() {
     err := m.GetBackingStore().Set("accounts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCloudSecurityIdentifier sets the cloudSecurityIdentifier property value. The cloudSecurityIdentifier property
+// SetCloudSecurityIdentifier sets the cloudSecurityIdentifier property value. The cloud security identifier of the identityAccount.
 func (m *IdentityAccounts) SetCloudSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("cloudSecurityIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The  Active Directory display name of the identityAccount.
 func (m *IdentityAccounts) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomain sets the domain property value. The domain property
+// SetDomain sets the domain property value. The Active Directory domain name of the identityAccount.
 func (m *IdentityAccounts) SetDomain(value *string)() {
     err := m.GetBackingStore().Set("domain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Boolean indicating if the identityAccounts is enabled.
 func (m *IdentityAccounts) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The onPremisesSecurityIdentifier property
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. The on-premises security identifier of the identityAccount.
 func (m *IdentityAccounts) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {

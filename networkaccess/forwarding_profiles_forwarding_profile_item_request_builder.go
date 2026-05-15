@@ -24,9 +24,9 @@ type ForwardingProfilesForwardingProfileItemRequestBuilderDeleteRequestConfigura
 // ForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters retrieve information about a specific forwarding profile.
 type ForwardingProfilesForwardingProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ForwardingProfilesForwardingProfileItemRequestBuilderGetRequestConfiguration struct {
@@ -124,7 +124,7 @@ func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Patch(ctx contex
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) Policies()(*ForwardingProfilesItemPoliciesRequestBuilder) {
     return NewForwardingProfilesItemPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfile entity.
+// ServicePrincipal provides operations to manage the servicePrincipal property of the microsoft.graph.networkaccess.forwardingProfileBase entity.
 // returns a *ForwardingProfilesItemServicePrincipalRequestBuilder when successful
 func (m *ForwardingProfilesForwardingProfileItemRequestBuilder) ServicePrincipal()(*ForwardingProfilesItemServicePrincipalRequestBuilder) {
     return NewForwardingProfilesItemServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

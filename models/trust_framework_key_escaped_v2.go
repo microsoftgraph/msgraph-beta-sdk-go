@@ -415,7 +415,7 @@ func (m *TrustFrameworkKey_v2) GetStatus()(*TrustFrameworkKeyStatus) {
     }
     return nil
 }
-// GetUse gets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).
+// GetUse gets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. The possible values are: sig (signature), enc (encryption).
 // returns a *string when successful
 func (m *TrustFrameworkKey_v2) GetUse()(*string) {
     val, err := m.GetBackingStore().Get("use")
@@ -686,7 +686,7 @@ func (m *TrustFrameworkKey_v2) SetStatus(value *TrustFrameworkKeyStatus)() {
         panic(err)
     }
 }
-// SetUse sets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).
+// SetUse sets the use property value. The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. The possible values are: sig (signature), enc (encryption).
 func (m *TrustFrameworkKey_v2) SetUse(value *string)() {
     err := m.GetBackingStore().Set("use", value)
     if err != nil {

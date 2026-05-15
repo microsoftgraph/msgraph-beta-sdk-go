@@ -8,10 +8,12 @@ const (
     SCHEDULED_WORKFLOWEXECUTIONTYPE WorkflowExecutionType = iota
     ONDEMAND_WORKFLOWEXECUTIONTYPE
     UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
+    ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
+    PREVIEW_WORKFLOWEXECUTIONTYPE
 )
 
 func (i WorkflowExecutionType) String() string {
-    return []string{"scheduled", "onDemand", "unknownFutureValue"}[i]
+    return []string{"scheduled", "onDemand", "unknownFutureValue", "activatedWithScope", "preview"}[i]
 }
 func ParseWorkflowExecutionType(v string) (any, error) {
     result := SCHEDULED_WORKFLOWEXECUTIONTYPE
@@ -22,6 +24,10 @@ func ParseWorkflowExecutionType(v string) (any, error) {
             result = ONDEMAND_WORKFLOWEXECUTIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKFLOWEXECUTIONTYPE
+        case "activatedWithScope":
+            result = ACTIVATEDWITHSCOPE_WORKFLOWEXECUTIONTYPE
+        case "preview":
+            result = PREVIEW_WORKFLOWEXECUTIONTYPE
         default:
             return nil, nil
     }

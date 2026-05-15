@@ -17,9 +17,9 @@ type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder struct {
 // LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters read the properties and relationships of a run object.
 type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilderGetRequestConfiguration struct {
@@ -65,6 +65,11 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) Get(ctx conte
         return nil, nil
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable), nil
+}
+// ReprocessedRuns provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.run entity.
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsItemRunsRunItemRequestBuilder) ReprocessedRuns()(*LifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemReprocessedRunsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskProcessingResults provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.run entity.
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemTaskProcessingResultsRequestBuilder when successful

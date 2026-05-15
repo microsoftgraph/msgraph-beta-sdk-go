@@ -6,17 +6,18 @@ package networkaccess
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type Profile struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    BaseEntity
 }
 // NewProfile instantiates a new Profile and sets the default values.
 func NewProfile()(*Profile) {
     m := &Profile{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+        BaseEntity: *NewBaseEntity(),
     }
+    odataTypeValue := "#microsoft.graph.networkaccess.profile"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +39,8 @@ func CreateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
                         return NewFilteringProfile(), nil
                     case "#microsoft.graph.networkaccess.forwardingProfile":
                         return NewForwardingProfile(), nil
+                    case "#microsoft.graph.networkaccess.forwardingProfileBase":
+                        return NewForwardingProfileBase(), nil
                 }
             }
         }
@@ -59,7 +62,7 @@ func (m *Profile) GetDescription()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := m.BaseEntity.GetFieldDeserializers()
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -77,16 +80,6 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetName(val)
         }
         return nil
     }
@@ -140,18 +133,6 @@ func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetName gets the name property value. The name of the profile.
-// returns a *string when successful
-func (m *Profile) GetName()(*string) {
-    val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetPolicies gets the policies property value. The traffic forwarding policies associated with this profile.
 // returns a []PolicyLinkable when successful
 func (m *Profile) GetPolicies()([]PolicyLinkable) {
@@ -190,7 +171,7 @@ func (m *Profile) GetVersion()(*string) {
 }
 // Serialize serializes information the current object
 func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
+    err := m.BaseEntity.Serialize(writer)
     if err != nil {
         return err
     }
@@ -202,12 +183,6 @@ func (m *Profile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
         }
@@ -253,13 +228,6 @@ func (m *Profile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97
         panic(err)
     }
 }
-// SetName sets the name property value. The name of the profile.
-func (m *Profile) SetName(value *string)() {
-    err := m.GetBackingStore().Set("name", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetPolicies sets the policies property value. The traffic forwarding policies associated with this profile.
 func (m *Profile) SetPolicies(value []PolicyLinkable)() {
     err := m.GetBackingStore().Set("policies", value)
@@ -282,17 +250,15 @@ func (m *Profile) SetVersion(value *string)() {
     }
 }
 type Profileable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    BaseEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDescription()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetName()(*string)
     GetPolicies()([]PolicyLinkable)
     GetState()(*Status)
     GetVersion()(*string)
     SetDescription(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetName(value *string)()
     SetPolicies(value []PolicyLinkable)()
     SetState(value *Status)()
     SetVersion(value *string)()

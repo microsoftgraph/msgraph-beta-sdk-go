@@ -14,18 +14,18 @@ import (
 type ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters get counts of the visits to the top destination aggregations.
+// ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters get counts of the visits to the top destination aggregations as logged in Global Secure Access.
 type ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetRequestConfiguration struct {
@@ -58,7 +58,7 @@ func NewReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTi
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderInternal(urlParams, requestAdapter, nil, nil, nil)
 }
-// Get get counts of the visits to the top destination aggregations.
+// Get get counts of the visits to the top destination aggregations as logged in Global Secure Access.
 // Deprecated: This method is obsolete. Use GetAsGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -79,7 +79,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateT
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponseable), nil
 }
-// GetAsGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse get counts of the visits to the top destination aggregations.
+// GetAsGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse get counts of the visits to the top destination aggregations as logged in Global Secure Access.
 // returns a ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder) GetAsGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseable, error) {
@@ -99,7 +99,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateT
     }
     return res.(ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponseable), nil
 }
-// ToGetRequestInformation get counts of the visits to the top destination aggregations.
+// ToGetRequestInformation get counts of the visits to the top destination aggregations as logged in Global Secure Access.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

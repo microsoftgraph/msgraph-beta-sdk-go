@@ -24,9 +24,9 @@ type FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderDeleteRe
 // FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetQueryParameters get a fileStorageContainerType using its ID.
 type FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetRequestConfiguration struct {
@@ -121,6 +121,11 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Pa
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable), nil
+}
+// Permissions provides operations to manage the permissions property of the microsoft.graph.fileStorageContainerType entity.
+// returns a *FileStorageContainerTypesItemPermissionsRequestBuilder when successful
+func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Permissions()(*FileStorageContainerTypesItemPermissionsRequestBuilder) {
+    return NewFileStorageContainerTypesItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a fileStorageContainerType object from the tenant. A fileStorageContainerType can only be deleted if no registrations are associated with it in any tenant.
 // returns a *RequestInformation when successful

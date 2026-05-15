@@ -24,9 +24,9 @@ type ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestCo
 // ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 type ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilderGetRequestConfiguration struct {

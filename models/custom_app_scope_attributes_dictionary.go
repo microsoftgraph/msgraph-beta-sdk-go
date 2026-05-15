@@ -15,6 +15,8 @@ func NewCustomAppScopeAttributesDictionary()(*CustomAppScopeAttributesDictionary
     m := &CustomAppScopeAttributesDictionary{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.customAppScopeAttributesDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomAppScopeAttributesDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

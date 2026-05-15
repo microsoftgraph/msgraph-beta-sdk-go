@@ -24,7 +24,7 @@ func NewVirtualEventTownhall()(*VirtualEventTownhall) {
 func CreateVirtualEventTownhallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventTownhall(), nil
 }
-// GetAudience gets the audience property value. The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.
+// GetAudience gets the audience property value. The audience to whom the town hall is visible. The possible values are: everyone, organization, unknownFutureValue.
 // returns a *MeetingAudience when successful
 func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     val, err := m.GetBackingStore().Get("audience")
@@ -33,6 +33,18 @@ func (m *VirtualEventTownhall) GetAudience()(*MeetingAudience) {
     }
     if val != nil {
         return val.(*MeetingAudience)
+    }
+    return nil
+}
+// GetCapacity gets the capacity property value. The capacity property
+// returns a *int32 when successful
+func (m *VirtualEventTownhall) GetCapacity()(*int32) {
+    val, err := m.GetBackingStore().Get("capacity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -59,6 +71,16 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetAudience(val.(*MeetingAudience))
+        }
+        return nil
+    }
+    res["capacity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCapacity(val)
         }
         return nil
     }
@@ -143,6 +165,12 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteInt32Value("capacity", m.GetCapacity())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCoOrganizers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCoOrganizers()))
         for i, v := range m.GetCoOrganizers() {
@@ -175,9 +203,16 @@ func (m *VirtualEventTownhall) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAudience sets the audience property value. The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.
+// SetAudience sets the audience property value. The audience to whom the town hall is visible. The possible values are: everyone, organization, unknownFutureValue.
 func (m *VirtualEventTownhall) SetAudience(value *MeetingAudience)() {
     err := m.GetBackingStore().Set("audience", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCapacity sets the capacity property value. The capacity property
+func (m *VirtualEventTownhall) SetCapacity(value *int32)() {
+    err := m.GetBackingStore().Set("capacity", value)
     if err != nil {
         panic(err)
     }
@@ -207,10 +242,12 @@ type VirtualEventTownhallable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     VirtualEventable
     GetAudience()(*MeetingAudience)
+    GetCapacity()(*int32)
     GetCoOrganizers()([]CommunicationsUserIdentityable)
     GetInvitedAttendees()([]Identityable)
     GetIsInviteOnly()(*bool)
     SetAudience(value *MeetingAudience)()
+    SetCapacity(value *int32)()
     SetCoOrganizers(value []CommunicationsUserIdentityable)()
     SetInvitedAttendees(value []Identityable)()
     SetIsInviteOnly(value *bool)()

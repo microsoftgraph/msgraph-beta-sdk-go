@@ -24,9 +24,9 @@ type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderDeleteR
 // RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetQueryParameters represents operations on resources that take a long time to complete and can run in the background until completion.
 type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration struct {

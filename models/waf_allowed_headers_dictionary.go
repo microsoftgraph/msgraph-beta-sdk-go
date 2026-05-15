@@ -15,6 +15,8 @@ func NewWafAllowedHeadersDictionary()(*WafAllowedHeadersDictionary) {
     m := &WafAllowedHeadersDictionary{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.wafAllowedHeadersDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateWafAllowedHeadersDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

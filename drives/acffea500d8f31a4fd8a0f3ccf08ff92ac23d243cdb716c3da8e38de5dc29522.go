@@ -24,9 +24,9 @@ type ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookD
 // ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters a collection of task change histories.
 type ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemItemsItemWorkbookCommentsItemRepliesItemTaskCommentTaskChangesWorkbookDocumentTaskChangeItemRequestBuilderGetRequestConfiguration struct {

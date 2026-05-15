@@ -24,9 +24,9 @@ type ItemSettingsRequestBuilderDeleteRequestConfiguration struct {
 // ItemSettingsRequestBuilderGetQueryParameters get settings from users
 type ItemSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemSettingsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSettingsRequestBuilderGetRequestConfiguration struct {
@@ -192,4 +192,9 @@ func (m *ItemSettingsRequestBuilder) Windows()(*ItemSettingsWindowsRequestBuilde
 // returns a *ItemSettingsRequestBuilder when successful
 func (m *ItemSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRequestBuilder) {
     return NewItemSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// WorkHoursAndLocations provides operations to manage the workHoursAndLocations property of the microsoft.graph.userSettings entity.
+// returns a *ItemSettingsWorkHoursAndLocationsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) WorkHoursAndLocations()(*ItemSettingsWorkHoursAndLocationsRequestBuilder) {
+    return NewItemSettingsWorkHoursAndLocationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

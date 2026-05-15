@@ -6,17 +6,18 @@ package networkaccess
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type RemoteNetwork struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+    BaseEntity
 }
 // NewRemoteNetwork instantiates a new RemoteNetwork and sets the default values.
 func NewRemoteNetwork()(*RemoteNetwork) {
     m := &RemoteNetwork{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+        BaseEntity: *NewBaseEntity(),
     }
+    odataTypeValue := "#microsoft.graph.networkaccess.remoteNetwork"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateRemoteNetworkFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +52,7 @@ func (m *RemoteNetwork) GetDeviceLinks()([]DeviceLinkable) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RemoteNetwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := m.BaseEntity.GetFieldDeserializers()
     res["connectivityConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateRemoteNetworkConnectivityConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -104,16 +105,6 @@ func (m *RemoteNetwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetName(val)
-        }
-        return nil
-    }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRegion)
         if err != nil {
@@ -160,18 +151,6 @@ func (m *RemoteNetwork) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
-// GetName gets the name property value. Name.
-// returns a *string when successful
-func (m *RemoteNetwork) GetName()(*string) {
-    val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRegion gets the region property value. The region property
 // returns a *Region when successful
 func (m *RemoteNetwork) GetRegion()(*Region) {
@@ -198,7 +177,7 @@ func (m *RemoteNetwork) GetVersion()(*string) {
 }
 // Serialize serializes information the current object
 func (m *RemoteNetwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
+    err := m.BaseEntity.Serialize(writer)
     if err != nil {
         return err
     }
@@ -234,12 +213,6 @@ func (m *RemoteNetwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
         }
@@ -287,13 +260,6 @@ func (m *RemoteNetwork) SetLastModifiedDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetName sets the name property value. Name.
-func (m *RemoteNetwork) SetName(value *string)() {
-    err := m.GetBackingStore().Set("name", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRegion sets the region property value. The region property
 func (m *RemoteNetwork) SetRegion(value *Region)() {
     err := m.GetBackingStore().Set("region", value)
@@ -309,20 +275,18 @@ func (m *RemoteNetwork) SetVersion(value *string)() {
     }
 }
 type RemoteNetworkable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    BaseEntityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConnectivityConfiguration()(RemoteNetworkConnectivityConfigurationable)
     GetDeviceLinks()([]DeviceLinkable)
     GetForwardingProfiles()([]ForwardingProfileable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetName()(*string)
     GetRegion()(*Region)
     GetVersion()(*string)
     SetConnectivityConfiguration(value RemoteNetworkConnectivityConfigurationable)()
     SetDeviceLinks(value []DeviceLinkable)()
     SetForwardingProfiles(value []ForwardingProfileable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetName(value *string)()
     SetRegion(value *Region)()
     SetVersion(value *string)()
 }

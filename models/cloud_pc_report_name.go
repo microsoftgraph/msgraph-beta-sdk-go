@@ -32,10 +32,12 @@ const (
     TROUBLESHOOTISSUECOUNTREPORT_CLOUDPCREPORTNAME
     CLOUDPCINSIGHTREPORT_CLOUDPCREPORTNAME
     REGIONALINACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCREPORTNAME
+    CLOUDPCUSAGECATEGORYREPORT_CLOUDPCREPORTNAME
+    CLOUDPCINVENTORYREPORT_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport", "frontlineLicenseHourlyUsageReport", "frontlineRealtimeUserConnectionsReport", "bulkActionStatusReport", "troubleshootDetailsReport", "troubleshootTrendCountReport", "troubleshootRegionalReport", "troubleshootIssueCountReport", "cloudPcInsightReport", "regionalInaccessibleCloudPcTrendReport"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport", "frontlineLicenseHourlyUsageReport", "frontlineRealtimeUserConnectionsReport", "bulkActionStatusReport", "troubleshootDetailsReport", "troubleshootTrendCountReport", "troubleshootRegionalReport", "troubleshootIssueCountReport", "cloudPcInsightReport", "regionalInaccessibleCloudPcTrendReport", "cloudPcUsageCategoryReport", "cloudPCInventoryReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -94,6 +96,10 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = CLOUDPCINSIGHTREPORT_CLOUDPCREPORTNAME
         case "regionalInaccessibleCloudPcTrendReport":
             result = REGIONALINACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCREPORTNAME
+        case "cloudPcUsageCategoryReport":
+            result = CLOUDPCUSAGECATEGORYREPORT_CLOUDPCREPORTNAME
+        case "cloudPCInventoryReport":
+            result = CLOUDPCINVENTORYREPORT_CLOUDPCREPORTNAME
         default:
             return nil, nil
     }

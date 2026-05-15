@@ -24,9 +24,9 @@ type CompaniesItemSalesOrderLinesItemItem_EscapedPicturePictureItemRequestBuilde
 // CompaniesItemSalesOrderLinesItemItem_EscapedPicturePictureItemRequestBuilderGetQueryParameters get picture from financials
 type CompaniesItemSalesOrderLinesItemItem_EscapedPicturePictureItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CompaniesItemSalesOrderLinesItemItem_EscapedPicturePictureItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CompaniesItemSalesOrderLinesItemItem_EscapedPicturePictureItemRequestBuilderGetRequestConfiguration struct {

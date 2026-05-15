@@ -188,7 +188,7 @@ func (m *TimeCard) GetOriginalEntry()(TimeCardEntryable) {
     }
     return nil
 }
-// GetState gets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
+// GetState gets the state property value. The current state of the timeCard during its life cycle. The possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
 // returns a *TimeCardState when successful
 func (m *TimeCard) GetState()(*TimeCardState) {
     val, err := m.GetBackingStore().Get("state")
@@ -318,7 +318,7 @@ func (m *TimeCard) SetOriginalEntry(value TimeCardEntryable)() {
         panic(err)
     }
 }
-// SetState sets the state property value. The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
+// SetState sets the state property value. The current state of the timeCard during its life cycle. The possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.
 func (m *TimeCard) SetState(value *TimeCardState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

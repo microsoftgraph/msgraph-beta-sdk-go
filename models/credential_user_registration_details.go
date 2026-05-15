@@ -22,7 +22,7 @@ func NewCredentialUserRegistrationDetails()(*CredentialUserRegistrationDetails) 
 func CreateCredentialUserRegistrationDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCredentialUserRegistrationDetails(), nil
 }
-// GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+// GetAuthMethods gets the authMethods property value. Represents the authentication method that the user has registered. The possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 // returns a []RegistrationAuthMethod when successful
 func (m *CredentialUserRegistrationDetails) GetAuthMethods()([]RegistrationAuthMethod) {
     val, err := m.GetBackingStore().Get("authMethods")
@@ -238,7 +238,7 @@ func (m *CredentialUserRegistrationDetails) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetAuthMethods sets the authMethods property value. Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
+// SetAuthMethods sets the authMethods property value. Represents the authentication method that the user has registered. The possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.
 func (m *CredentialUserRegistrationDetails) SetAuthMethods(value []RegistrationAuthMethod)() {
     err := m.GetBackingStore().Set("authMethods", value)
     if err != nil {

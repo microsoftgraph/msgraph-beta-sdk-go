@@ -68,7 +68,7 @@ func (m *DetonationDetails) GetCompromiseIndicators()([]CompromiseIndicatorable)
     }
     return nil
 }
-// GetDetonationBehaviourDetails gets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
+// GetDetonationBehaviourDetails gets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation. This property is deprecated and still stop returning data in March 2026. Use the detonationBehaviourDetailsV2 property instead.
 // returns a DetonationBehaviourDetailsable when successful
 func (m *DetonationDetails) GetDetonationBehaviourDetails()(DetonationBehaviourDetailsable) {
     val, err := m.GetBackingStore().Get("detonationBehaviourDetails")
@@ -77,6 +77,18 @@ func (m *DetonationDetails) GetDetonationBehaviourDetails()(DetonationBehaviourD
     }
     if val != nil {
         return val.(DetonationBehaviourDetailsable)
+    }
+    return nil
+}
+// GetDetonationBehaviourDetailsV2 gets the detonationBehaviourDetailsV2 property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.
+// returns a *string when successful
+func (m *DetonationDetails) GetDetonationBehaviourDetailsV2()(*string) {
+    val, err := m.GetBackingStore().Get("detonationBehaviourDetailsV2")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -140,6 +152,18 @@ func (m *DetonationDetails) GetDetonationVerdictReason()(*string) {
     }
     return nil
 }
+// GetEntityMetadata gets the entityMetadata property value. Additional metadata about the entity in JSON format.
+// returns a *string when successful
+func (m *DetonationDetails) GetEntityMetadata()(*string) {
+    val, err := m.GetBackingStore().Get("entityMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -177,6 +201,16 @@ func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetDetonationBehaviourDetails(val.(DetonationBehaviourDetailsable))
+        }
+        return nil
+    }
+    res["detonationBehaviourDetailsV2"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDetonationBehaviourDetailsV2(val)
         }
         return nil
     }
@@ -230,6 +264,26 @@ func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["entityMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEntityMetadata(val)
+        }
+        return nil
+    }
+    res["mitreTechniques"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMitreTechniques(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -240,12 +294,68 @@ func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["staticAnalysis"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStaticAnalysis(val)
+        }
+        return nil
+    }
+    res["submissionSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubmissionSource(val)
+        }
+        return nil
+    }
     return res
+}
+// GetMitreTechniques gets the mitreTechniques property value. The attack techniques, as aligned with the MITRE ATT&CK framework.
+// returns a *string when successful
+func (m *DetonationDetails) GetMitreTechniques()(*string) {
+    val, err := m.GetBackingStore().Get("mitreTechniques")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *DetonationDetails) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetStaticAnalysis gets the staticAnalysis property value. The results of static analysis performed on the file or URL.
+// returns a *string when successful
+func (m *DetonationDetails) GetStaticAnalysis()(*string) {
+    val, err := m.GetBackingStore().Get("staticAnalysis")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSubmissionSource gets the submissionSource property value. The source of the submission.
+// returns a *string when successful
+func (m *DetonationDetails) GetSubmissionSource()(*string) {
+    val, err := m.GetBackingStore().Get("submissionSource")
     if err != nil {
         panic(err)
     }
@@ -281,6 +391,12 @@ func (m *DetonationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err := writer.WriteStringValue("detonationBehaviourDetailsV2", m.GetDetonationBehaviourDetailsV2())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("detonationChain", m.GetDetonationChain())
         if err != nil {
             return err
@@ -311,7 +427,31 @@ func (m *DetonationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err := writer.WriteStringValue("entityMetadata", m.GetEntityMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("mitreTechniques", m.GetMitreTechniques())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("staticAnalysis", m.GetStaticAnalysis())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("submissionSource", m.GetSubmissionSource())
         if err != nil {
             return err
         }
@@ -349,9 +489,16 @@ func (m *DetonationDetails) SetCompromiseIndicators(value []CompromiseIndicatora
         panic(err)
     }
 }
-// SetDetonationBehaviourDetails sets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
+// SetDetonationBehaviourDetails sets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation. This property is deprecated and still stop returning data in March 2026. Use the detonationBehaviourDetailsV2 property instead.
 func (m *DetonationDetails) SetDetonationBehaviourDetails(value DetonationBehaviourDetailsable)() {
     err := m.GetBackingStore().Set("detonationBehaviourDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetonationBehaviourDetailsV2 sets the detonationBehaviourDetailsV2 property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation in a JSON format.
+func (m *DetonationDetails) SetDetonationBehaviourDetailsV2(value *string)() {
+    err := m.GetBackingStore().Set("detonationBehaviourDetailsV2", value)
     if err != nil {
         panic(err)
     }
@@ -391,9 +538,37 @@ func (m *DetonationDetails) SetDetonationVerdictReason(value *string)() {
         panic(err)
     }
 }
+// SetEntityMetadata sets the entityMetadata property value. Additional metadata about the entity in JSON format.
+func (m *DetonationDetails) SetEntityMetadata(value *string)() {
+    err := m.GetBackingStore().Set("entityMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMitreTechniques sets the mitreTechniques property value. The attack techniques, as aligned with the MITRE ATT&CK framework.
+func (m *DetonationDetails) SetMitreTechniques(value *string)() {
+    err := m.GetBackingStore().Set("mitreTechniques", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DetonationDetails) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetStaticAnalysis sets the staticAnalysis property value. The results of static analysis performed on the file or URL.
+func (m *DetonationDetails) SetStaticAnalysis(value *string)() {
+    err := m.GetBackingStore().Set("staticAnalysis", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSubmissionSource sets the submissionSource property value. The source of the submission.
+func (m *DetonationDetails) SetSubmissionSource(value *string)() {
+    err := m.GetBackingStore().Set("submissionSource", value)
     if err != nil {
         panic(err)
     }
@@ -406,20 +581,30 @@ type DetonationDetailsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCompromiseIndicators()([]CompromiseIndicatorable)
     GetDetonationBehaviourDetails()(DetonationBehaviourDetailsable)
+    GetDetonationBehaviourDetailsV2()(*string)
     GetDetonationChain()(DetonationChainable)
     GetDetonationObservables()(DetonationObservablesable)
     GetDetonationScreenshotUri()(*string)
     GetDetonationVerdict()(*string)
     GetDetonationVerdictReason()(*string)
+    GetEntityMetadata()(*string)
+    GetMitreTechniques()(*string)
     GetOdataType()(*string)
+    GetStaticAnalysis()(*string)
+    GetSubmissionSource()(*string)
     SetAnalysisDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCompromiseIndicators(value []CompromiseIndicatorable)()
     SetDetonationBehaviourDetails(value DetonationBehaviourDetailsable)()
+    SetDetonationBehaviourDetailsV2(value *string)()
     SetDetonationChain(value DetonationChainable)()
     SetDetonationObservables(value DetonationObservablesable)()
     SetDetonationScreenshotUri(value *string)()
     SetDetonationVerdict(value *string)()
     SetDetonationVerdictReason(value *string)()
+    SetEntityMetadata(value *string)()
+    SetMitreTechniques(value *string)()
     SetOdataType(value *string)()
+    SetStaticAnalysis(value *string)()
+    SetSubmissionSource(value *string)()
 }

@@ -2,6 +2,7 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+// Specifies the type of audit log record.
 type AuditLogRecordType int
 
 const (
@@ -292,11 +293,169 @@ const (
     CPSOPERATION_AUDITLOGRECORDTYPE
     COMPLIANCEDLPEXCHANGEDISCOVERY_AUDITLOGRECORDTYPE
     PURVIEWMCRECOMMENDATION_AUDITLOGRECORDTYPE
+    COMPLIANCEDLPENDPOINTDISCOVERY_AUDITLOGRECORDTYPE
+    INSIDERRISKSCOPEDUSERINSIGHTS_AUDITLOGRECORDTYPE
+    MICROSOFTTEAMSRETENTIONLABELACTION_AUDITLOGRECORDTYPE
+    AADRISKDETECTION_AUDITLOGRECORDTYPE
+    AUDITSEARCH_AUDITLOGRECORDTYPE
+    AUDITRETENTIONPOLICY_AUDITLOGRECORDTYPE
+    AUDITCONFIG_AUDITLOGRECORDTYPE
+    MICROSOFT365BACKUPBACKUPPOLICY_AUDITLOGRECORDTYPE
+    MICROSOFT365BACKUPRESTORETASK_AUDITLOGRECORDTYPE
+    MICROSOFT365BACKUPRESTOREITEM_AUDITLOGRECORDTYPE
+    MICROSOFT365BACKUPBACKUPITEM_AUDITLOGRECORDTYPE
+    URBACASSIGNMENT_AUDITLOGRECORDTYPE
+    URBACROLE_AUDITLOGRECORDTYPE
+    URBACENABLESTATE_AUDITLOGRECORDTYPE
+    IRMSECURITYALERT_AUDITLOGRECORDTYPE
+    PURVIEWINSIDERRISKCASES_AUDITLOGRECORDTYPE
+    PURVIEWINSIDERRISKALERTS_AUDITLOGRECORDTYPE
+    INSIDERRISKSCOPEDUSERS_AUDITLOGRECORDTYPE
+    CDPCONSUMPTIONRESOURCE_AUDITLOGRECORDTYPE
+    CREATECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+    UPDATECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+    DELETECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+    ENABLECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+    DISABLECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+    CREATECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+    UPDATECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+    DELETECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+    ENABLECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+    DISABLECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+    CREATECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+    UPDATECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+    DELETECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+    ENABLECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+    DISABLECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+    UPDATECOPILOTSETTINGS_AUDITLOGRECORDTYPE
+    P4AIASSESSMENTRECORD_AUDITLOGRECORDTYPE
+    P4AIASSESSMENTLOCATIONRESULTRECORD_AUDITLOGRECORDTYPE
+    CONNECTEDAIAPPINTERACTION_AUDITLOGRECORDTYPE
+    PRIVAPRIVACYCONSENTOPERATION_AUDITLOGRECORDTYPE
+    PRIVAPRIVACYASSESSMENTOPERATION_AUDITLOGRECORDTYPE
+    DATACATALOGACCESSREQUESTS_AUDITLOGRECORDTYPE
+    COMPLIANCESETTINGSCHANGE_AUDITLOGRECORDTYPE
+    DATASECURITYINVESTIGATION_AUDITLOGRECORDTYPE
+    TEAMCOPILOTINTERACTION_AUDITLOGRECORDTYPE
+    IRMACTIVITYAUDITTRAIL_AUDITLOGRECORDTYPE
+    SHAREPOINTCONTENTSECURITYPOLICY_AUDITLOGRECORDTYPE
+    CLOUDUPDATEPROFILECONFIG_AUDITLOGRECORDTYPE
+    CLOUDUPDATETENANTCONFIG_AUDITLOGRECORDTYPE
+    CLOUDUPDATEDEVICECONFIG_AUDITLOGRECORDTYPE
+    DEFENDERPREVIEWFEATURES_AUDITLOGRECORDTYPE
+    DEVICEDISCOVERYSETTINGSEXCLUSION_AUDITLOGRECORDTYPE
+    DEVICEDISCOVERYSETTINGSAUTHENTICATEDSCANS_AUDITLOGRECORDTYPE
+    CRITICALASSETMANAGEMENTCLASSIFICATION_AUDITLOGRECORDTYPE
+    DEVICEDISCOVERYSETTINGS_AUDITLOGRECORDTYPE
+    USXWORKSPACEONBOARDING_AUDITLOGRECORDTYPE
+    VIVAGLINTADVANCEDCONFIGURATION_AUDITLOGRECORDTYPE
+    VIVAGLINTPULSEPROGRAM_AUDITLOGRECORDTYPE
+    VIVAGLINTPULSEPROGRAMRESPONDENTRATE_AUDITLOGRECORDTYPE
+    VIVAGLINTQUESTION_AUDITLOGRECORDTYPE
+    VIVAGLINTROLE_AUDITLOGRECORDTYPE
+    VIVAGLINTRUBICON_AUDITLOGRECORDTYPE
+    VIVAGLINTSUPPORTACCESS_AUDITLOGRECORDTYPE
+    VIVAGLINTSYSTEM_AUDITLOGRECORDTYPE
+    VIVAGLINTUSER_AUDITLOGRECORDTYPE
+    VIVAGLINTUSERGROUP_AUDITLOGRECORDTYPE
+    VIVAGLINTFEEDBACKPROGRAM_AUDITLOGRECORDTYPE
+    FABRICAUDIT_AUDITLOGRECORDTYPE
+    TRAINABLECLASSIFIER_AUDITLOGRECORDTYPE
+    WEBCONTENTFILTERING_AUDITLOGRECORDTYPE
+    NOISYALERTPOLICY_AUDITLOGRECORDTYPE
+    ONDEMANDSHAREPOINTCLASSIFICATION_AUDITLOGRECORDTYPE
+    AIINTERACTIONSEXPORT_AUDITLOGRECORDTYPE
+    MICROSOFT365COPILOTSCHEDULEDPROMPT_AUDITLOGRECORDTYPE
+    PLACESDIRECTORY_AUDITLOGRECORDTYPE
+    MDAAUDIT_AUDITLOGRECORDTYPE
+    OPTICALCHARACTERRECOGNITION_AUDITLOGRECORDTYPE
+    M365SEARCHSECTIONS_AUDITLOGRECORDTYPE
+    OFFICECLIENTRESTRICTEDMODEACTION_AUDITLOGRECORDTYPE
+    CROSSTENANTACCESSPOLICY_AUDITLOGRECORDTYPE
+    OUTLOOKCOPILOTAUTOMATION_AUDITLOGRECORDTYPE
+    VIVAENGAGENETWORKASSOCIATION_AUDITLOGRECORDTYPE
+    APPADMINACTIVITY_AUDITLOGRECORDTYPE
+    APPSETTINGSADMINACTIVITY_AUDITLOGRECORDTYPE
+    UNIVERSALPRINTPRINTJOB_AUDITLOGRECORDTYPE
+    SENTINELNOTEBOOKONLAKE_AUDITLOGRECORDTYPE
+    SENTINELJOB_AUDITLOGRECORDTYPE
+    SENTINELGRAPH_AUDITLOGRECORDTYPE
+    SENTINELKQLONLAKE_AUDITLOGRECORDTYPE
+    SENTINELPACKAGE_AUDITLOGRECORDTYPE
+    VIVAAMPLIFYOUTLOOKSENSITIVITYLABEL_AUDITLOGRECORDTYPE
+    COPILOTACTIONS_AUDITLOGRECORDTYPE
+    AIINTERACTIONSSUBSCRIPTION_AUDITLOGRECORDTYPE
+    AIINTERACTIONSCHANGENOTIFICATION_AUDITLOGRECORDTYPE
+    FILTERINGMAILMETADATAEXTENDED_AUDITLOGRECORDTYPE
+    SENTINELLAKEONBOARDING_AUDITLOGRECORDTYPE
+    SENTINELLAKEDATAONBOARDING_AUDITLOGRECORDTYPE
+    OFFICERESTRICTEDMODEACTION_AUDITLOGRECORDTYPE
+    COPILOTFORSECURITYTRIGGER_AUDITLOGRECORDTYPE
+    COPILOTAGENTMANAGEMENT_AUDITLOGRECORDTYPE
+    P4AIASSESSMENTFABRICSCANNERRECORD_AUDITLOGRECORDTYPE
+    PLANNERGOAL_AUDITLOGRECORDTYPE
+    PLANNERGOALLIST_AUDITLOGRECORDTYPE
+    THREATINTELLIGENCEOBJECT_AUDITLOGRECORDTYPE
+    THREATINTELLIGENCEEXPORT_AUDITLOGRECORDTYPE
+    SUBMISSIONAGENTICGRADINGRESULT_AUDITLOGRECORDTYPE
+    AGENTADMINACTIVITY_AUDITLOGRECORDTYPE
+    DEPLOYFEATUREACTIVITY_AUDITLOGRECORDTYPE
+    AGENTSETTINGSADMINACTIVITY_AUDITLOGRECORDTYPE
+    ORGANIZATIONALDATAINM365_AUDITLOGRECORDTYPE
+    PLANNERCHATMESSAGE_AUDITLOGRECORDTYPE
+    PLANNERCHATMESSAGELIST_AUDITLOGRECORDTYPE
+    SENTINELAITOOL_AUDITLOGRECORDTYPE
+    M365ODSPASSETMETADATA_AUDITLOGRECORDTYPE
+    AIEXECUTETOOL_AUDITLOGRECORDTYPE
+    AIINVOKEAGENT_AUDITLOGRECORDTYPE
+    AIINFERENCECALL_AUDITLOGRECORDTYPE
+    CDPCLASSIFIERHEALTHRECORD_AUDITLOGRECORDTYPE
+    SENSITIVEINFOREMEDIATIONAGENTDATA_AUDITLOGRECORDTYPE
+    COMPLIANCEDLPENFORCEMENT_AUDITLOGRECORDTYPE
+    A365AIEXECUTETOOL_AUDITLOGRECORDTYPE
+    A365AIINVOKEAGENT_AUDITLOGRECORDTYPE
+    A365AIINFERENCECALL_AUDITLOGRECORDTYPE
+    VIVAENGAGESEGMENT_AUDITLOGRECORDTYPE
+    RTIOPERATIONSAGENT_AUDITLOGRECORDTYPE
+    CONTENTSTOREMETADATA_AUDITLOGRECORDTYPE
+    CCRAIPOLICYVIOLATION_AUDITLOGRECORDTYPE
+    PLANNERPLANSENSITIVITYLABEL_AUDITLOGRECORDTYPE
+    MOSAGENTINFORECORD_AUDITLOGRECORDTYPE
+    A365AIRUNSUMMARY_AUDITLOGRECORDTYPE
+    UNIFIEDCATALOGCONCEPTACTION_AUDITLOGRECORDTYPE
+    DEFENDERCASEMANAGEMENT_AUDITLOGRECORDTYPE
+    COPILOTFORSECURITYLOGGING_AUDITLOGRECORDTYPE
+    VIVAENGAGEEVENTS_AUDITLOGRECORDTYPE
+    CALLACTIVITYEVENT_AUDITLOGRECORDTYPE
+    SONARDETONATIONCONTENTMETADATA_AUDITLOGRECORDTYPE
+    UNIVERSALPRINTMANAGEMENT_AUDITLOGRECORDTYPE
+    YAMMERUSERHIDING_AUDITLOGRECORDTYPE
+    MICROSOFT365BACKUPGRANULARBROWSETASK_AUDITLOGRECORDTYPE
+    PURVIEWPOSTUREAGENT_AUDITLOGRECORDTYPE
+    MSDECUSTOMCOLLECTION_AUDITLOGRECORDTYPE
+    SCPUSAGEEVENT_AUDITLOGRECORDTYPE
+    SCPCONFIGURATIONEVENT_AUDITLOGRECORDTYPE
+    MDCCONFIGURATIONEVENT_AUDITLOGRECORDTYPE
+    MDCUSAGEEVENT_AUDITLOGRECORDTYPE
+    A365SPANOUTPUTS_AUDITLOGRECORDTYPE
+    POWERPLATFORMTENANTISOLATION_AUDITLOGRECORDTYPE
+    CDPDLMAIINTERACTIONINSIGHTS_AUDITLOGRECORDTYPE
+    P4AIASSESSMENTCATEGORYRECORD_AUDITLOGRECORDTYPE
+    SENTINELLAKEENCRYPTION_AUDITLOGRECORDTYPE
+    AZFWNETWORKRULE_AUDITLOGRECORDTYPE
+    AZFWDNSQUERY_AUDITLOGRECORDTYPE
+    AZFWAPPLICATIONRULEAGGREGATION_AUDITLOGRECORDTYPE
+    TEAMSEVALDATAHUBDATAACCESS_AUDITLOGRECORDTYPE
+    TEAMSEVALDATAHUBPERMISSIONCHANGE_AUDITLOGRECORDTYPE
+    TEAMSEVALDATAHUBADMINOPERATION_AUDITLOGRECORDTYPE
+    VIVAGLINTORGANIZATIONALDATA_AUDITLOGRECORDTYPE
+    REPORTSUBMISSION_AUDITLOGRECORDTYPE
+    REPORTSUBMISSIONRESULTDETAIL_AUDITLOGRECORDTYPE
     UNKNOWNFUTUREVALUE_AUDITLOGRECORDTYPE
 )
 
 func (i AuditLogRecordType) String() string {
-    return []string{"ExchangeAdmin", "ExchangeItem", "ExchangeItemGroup", "SharePoint", "SyntheticProbe", "SharePointFileOperation", "OneDrive", "AzureActiveDirectory", "AzureActiveDirectoryAccountLogon", "DataCenterSecurityCmdlet", "ComplianceDLPSharePoint", "Sway", "ComplianceDLPExchange", "SharePointSharingOperation", "AzureActiveDirectoryStsLogon", "SkypeForBusinessPSTNUsage", "SkypeForBusinessUsersBlocked", "SecurityComplianceCenterEOPCmdlet", "ExchangeAggregatedOperation", "PowerBIAudit", "CRM", "Yammer", "SkypeForBusinessCmdlets", "Discovery", "MicrosoftTeams", "ThreatIntelligence", "MailSubmission", "MicrosoftFlow", "AeD", "MicrosoftStream", "ComplianceDLPSharePointClassification", "ThreatFinder", "Project", "SharePointListOperation", "SharePointCommentOperation", "DataGovernance", "Kaizala", "SecurityComplianceAlerts", "ThreatIntelligenceUrl", "SecurityComplianceInsights", "MIPLabel", "WorkplaceAnalytics", "PowerAppsApp", "PowerAppsPlan", "ThreatIntelligenceAtpContent", "LabelContentExplorer", "TeamsHealthcare", "ExchangeItemAggregated", "HygieneEvent", "DataInsightsRestApiAudit", "InformationBarrierPolicyApplication", "SharePointListItemOperation", "SharePointContentTypeOperation", "SharePointFieldOperation", "MicrosoftTeamsAdmin", "HRSignal", "MicrosoftTeamsDevice", "MicrosoftTeamsAnalytics", "InformationWorkerProtection", "Campaign", "DLPEndpoint", "AirInvestigation", "Quarantine", "MicrosoftForms", "ApplicationAudit", "ComplianceSupervisionExchange", "CustomerKeyServiceEncryption", "OfficeNative", "MipAutoLabelSharePointItem", "MipAutoLabelSharePointPolicyLocation", "MicrosoftTeamsShifts", "SecureScore", "MipAutoLabelExchangeItem", "CortanaBriefing", "Search", "WDATPAlerts", "PowerPlatformAdminDlp", "PowerPlatformAdminEnvironment", "MDATPAudit", "SensitivityLabelPolicyMatch", "SensitivityLabelAction", "SensitivityLabeledFileAction", "AttackSim", "AirManualInvestigation", "SecurityComplianceRBAC", "UserTraining", "AirAdminActionInvestigation", "MSTIC", "PhysicalBadgingSignal", "TeamsEasyApprovals", "AipDiscover", "AipSensitivityLabelAction", "AipProtectionAction", "AipFileDeleted", "AipHeartBeat", "MCASAlerts", "OnPremisesFileShareScannerDlp", "OnPremisesSharePointScannerDlp", "ExchangeSearch", "SharePointSearch", "PrivacyDataMinimization", "LabelAnalyticsAggregate", "MyAnalyticsSettings", "SecurityComplianceUserChange", "ComplianceDLPExchangeClassification", "ComplianceDLPEndpoint", "MipExactDataMatch", "MSDEResponseActions", "MSDEGeneralSettings", "MSDEIndicatorsSettings", "MS365DCustomDetection", "MSDERolesSettings", "MAPGAlerts", "MAPGPolicy", "MAPGRemediation", "PrivacyRemediationAction", "PrivacyDigestEmail", "MipAutoLabelSimulationProgress", "MipAutoLabelSimulationCompletion", "MipAutoLabelProgressFeedback", "DlpSensitiveInformationType", "MipAutoLabelSimulationStatistics", "LargeContentMetadata", "Microsoft365Group", "CDPMlInferencingResult", "FilteringMailMetadata", "CDPClassificationMailItem", "CDPClassificationDocument", "OfficeScriptsRunAction", "FilteringPostMailDeliveryAction", "CDPUnifiedFeedback", "TenantAllowBlockList", "ConsumptionResource", "HealthcareSignal", "DlpImportResult", "CDPCompliancePolicyExecution", "MultiStageDisposition", "PrivacyDataMatch", "FilteringDocMetadata", "FilteringEmailFeatures", "PowerBIDlp", "FilteringUrlInfo", "FilteringAttachmentInfo", "CoreReportingSettings", "ComplianceConnector", "PowerPlatformLockboxResourceAccessRequest", "PowerPlatformLockboxResourceCommand", "CDPPredictiveCodingLabel", "CDPCompliancePolicyUserFeedback", "WebpageActivityEndpoint", "OMEPortal", "CMImprovementActionChange", "FilteringUrlClick", "MipLabelAnalyticsAuditRecord", "FilteringEntityEvent", "FilteringRuleHits", "FilteringMailSubmission", "LabelExplorer", "MicrosoftManagedServicePlatform", "PowerPlatformServiceActivity", "ScorePlatformGenericAuditRecord", "FilteringTimeTravelDocMetadata", "Alert", "AlertStatus", "AlertIncident", "IncidentStatus", "Case", "CaseInvestigation", "RecordsManagement", "PrivacyRemediation", "DataShareOperation", "CdpDlpSensitive", "EHRConnector", "FilteringMailGradingResult", "PublicFolder", "PrivacyTenantAuditHistoryRecord", "AipScannerDiscoverEvent", "EduDataLakeDownloadOperation", "M365ComplianceConnector", "MicrosoftGraphDataConnectOperation", "MicrosoftPurview", "FilteringEmailContentFeatures", "PowerPagesSite", "PowerAppsResource", "PlannerPlan", "PlannerCopyPlan", "PlannerTask", "PlannerRoster", "PlannerPlanList", "PlannerTaskList", "PlannerTenantSettings", "ProjectForTheWebProject", "ProjectForTheWebTask", "ProjectForTheWebRoadmap", "ProjectForTheWebRoadmapItem", "ProjectForTheWebProjectSettings", "ProjectForTheWebRoadmapSettings", "QuarantineMetadata", "MicrosoftTodoAudit", "TimeTravelFilteringDocMetadata", "TeamsQuarantineMetadata", "SharePointAppPermissionOperation", "MicrosoftTeamsSensitivityLabelAction", "FilteringTeamsMetadata", "FilteringTeamsUrlInfo", "FilteringTeamsPostDeliveryAction", "MDCAssessments", "MDCRegulatoryComplianceStandards", "MDCRegulatoryComplianceControls", "MDCRegulatoryComplianceAssessments", "MDCSecurityConnectors", "MDADataSecuritySignal", "VivaGoals", "FilteringRuntimeInfo", "AttackSimAdmin", "MicrosoftGraphDataConnectConsent", "FilteringAtpDetonationInfo", "PrivacyPortal", "ManagedTenants", "UnifiedSimulationMatchedItem", "UnifiedSimulationSummary", "UpdateQuarantineMetadata", "MS365DSuppressionRule", "PurviewDataMapOperation", "FilteringUrlPostClickAction", "IrmUserDefinedDetectionSignal", "TeamsUpdates", "PlannerRosterSensitivityLabel", "MS365DIncident", "FilteringDelistingMetadata", "ComplianceDLPSharePointClassificationExtended", "MicrosoftDefenderForIdentityAudit", "SupervisoryReviewDayXInsight", "DefenderExpertsforXDRAdmin", "CDPEdgeBlockedMessage", "HostedRpa", "CdpContentExplorerAggregateRecord", "CDPHygieneAttachmentInfo", "CDPHygieneSummary", "CDPPostMailDeliveryAction", "CDPEmailFeatures", "CDPHygieneUrlInfo", "CDPUrlClick", "CDPPackageManagerHygieneEvent", "FilteringDocScan", "TimeTravelFilteringDocScan", "MAPGOnboard", "VfamCreatePolicy", "VfamUpdatePolicy", "VfamDeletePolicy", "M365DAAD", "CdpColdCrawlStatus", "PowerPlatformAdministratorActivity", "Windows365CustomerLockbox", "CdpResourceScopeChangeEvent", "ComplianceCCExchangeExecutionResult", "CdpOcrCostEstimatorRecord", "CopilotInteraction", "CdpOcrBillingRecord", "ComplianceDLPApplications", "UAMOperation", "VivaLearning", "VivaLearningAdmin", "PurviewPolicyOperation", "PurviewMetadataPolicyOperation", "PeopleAdminSettings", "CdpComplianceDLPExchangeClassification", "CdpComplianceDLPSharePointClassification", "FilteringBulkSenderInsightData", "FilteringBulkThresholdInsightData", "PrivacyOpenAccess", "OWAAuth", "ComplianceDLPApplicationsClassification", "SharePointESignature", "Dynamics365BusinessCentral", "MeshWorlds", "VivaPulseResponse", "VivaPulseOrganizer", "VivaPulseAdmin", "VivaPulseReport", "AIAppInteraction", "ComplianceDLMExchange", "ComplianceDLMSharePoint", "ProjectForTheWebAssignedToMeSettings", "CPSOperation", "ComplianceDLPExchangeDiscovery", "PurviewMCRecommendation", "unknownFutureValue"}[i]
+    return []string{"ExchangeAdmin", "ExchangeItem", "ExchangeItemGroup", "SharePoint", "SyntheticProbe", "SharePointFileOperation", "OneDrive", "AzureActiveDirectory", "AzureActiveDirectoryAccountLogon", "DataCenterSecurityCmdlet", "ComplianceDLPSharePoint", "Sway", "ComplianceDLPExchange", "SharePointSharingOperation", "AzureActiveDirectoryStsLogon", "SkypeForBusinessPSTNUsage", "SkypeForBusinessUsersBlocked", "SecurityComplianceCenterEOPCmdlet", "ExchangeAggregatedOperation", "PowerBIAudit", "CRM", "Yammer", "SkypeForBusinessCmdlets", "Discovery", "MicrosoftTeams", "ThreatIntelligence", "MailSubmission", "MicrosoftFlow", "AeD", "MicrosoftStream", "ComplianceDLPSharePointClassification", "ThreatFinder", "Project", "SharePointListOperation", "SharePointCommentOperation", "DataGovernance", "Kaizala", "SecurityComplianceAlerts", "ThreatIntelligenceUrl", "SecurityComplianceInsights", "MIPLabel", "WorkplaceAnalytics", "PowerAppsApp", "PowerAppsPlan", "ThreatIntelligenceAtpContent", "LabelContentExplorer", "TeamsHealthcare", "ExchangeItemAggregated", "HygieneEvent", "DataInsightsRestApiAudit", "InformationBarrierPolicyApplication", "SharePointListItemOperation", "SharePointContentTypeOperation", "SharePointFieldOperation", "MicrosoftTeamsAdmin", "HRSignal", "MicrosoftTeamsDevice", "MicrosoftTeamsAnalytics", "InformationWorkerProtection", "Campaign", "DLPEndpoint", "AirInvestigation", "Quarantine", "MicrosoftForms", "ApplicationAudit", "ComplianceSupervisionExchange", "CustomerKeyServiceEncryption", "OfficeNative", "MipAutoLabelSharePointItem", "MipAutoLabelSharePointPolicyLocation", "MicrosoftTeamsShifts", "SecureScore", "MipAutoLabelExchangeItem", "CortanaBriefing", "Search", "WDATPAlerts", "PowerPlatformAdminDlp", "PowerPlatformAdminEnvironment", "MDATPAudit", "SensitivityLabelPolicyMatch", "SensitivityLabelAction", "SensitivityLabeledFileAction", "AttackSim", "AirManualInvestigation", "SecurityComplianceRBAC", "UserTraining", "AirAdminActionInvestigation", "MSTIC", "PhysicalBadgingSignal", "TeamsEasyApprovals", "AipDiscover", "AipSensitivityLabelAction", "AipProtectionAction", "AipFileDeleted", "AipHeartBeat", "MCASAlerts", "OnPremisesFileShareScannerDlp", "OnPremisesSharePointScannerDlp", "ExchangeSearch", "SharePointSearch", "PrivacyDataMinimization", "LabelAnalyticsAggregate", "MyAnalyticsSettings", "SecurityComplianceUserChange", "ComplianceDLPExchangeClassification", "ComplianceDLPEndpoint", "MipExactDataMatch", "MSDEResponseActions", "MSDEGeneralSettings", "MSDEIndicatorsSettings", "MS365DCustomDetection", "MSDERolesSettings", "MAPGAlerts", "MAPGPolicy", "MAPGRemediation", "PrivacyRemediationAction", "PrivacyDigestEmail", "MipAutoLabelSimulationProgress", "MipAutoLabelSimulationCompletion", "MipAutoLabelProgressFeedback", "DlpSensitiveInformationType", "MipAutoLabelSimulationStatistics", "LargeContentMetadata", "Microsoft365Group", "CDPMlInferencingResult", "FilteringMailMetadata", "CDPClassificationMailItem", "CDPClassificationDocument", "OfficeScriptsRunAction", "FilteringPostMailDeliveryAction", "CDPUnifiedFeedback", "TenantAllowBlockList", "ConsumptionResource", "HealthcareSignal", "DlpImportResult", "CDPCompliancePolicyExecution", "MultiStageDisposition", "PrivacyDataMatch", "FilteringDocMetadata", "FilteringEmailFeatures", "PowerBIDlp", "FilteringUrlInfo", "FilteringAttachmentInfo", "CoreReportingSettings", "ComplianceConnector", "PowerPlatformLockboxResourceAccessRequest", "PowerPlatformLockboxResourceCommand", "CDPPredictiveCodingLabel", "CDPCompliancePolicyUserFeedback", "WebpageActivityEndpoint", "OMEPortal", "CMImprovementActionChange", "FilteringUrlClick", "MipLabelAnalyticsAuditRecord", "FilteringEntityEvent", "FilteringRuleHits", "FilteringMailSubmission", "LabelExplorer", "MicrosoftManagedServicePlatform", "PowerPlatformServiceActivity", "ScorePlatformGenericAuditRecord", "FilteringTimeTravelDocMetadata", "Alert", "AlertStatus", "AlertIncident", "IncidentStatus", "Case", "CaseInvestigation", "RecordsManagement", "PrivacyRemediation", "DataShareOperation", "CdpDlpSensitive", "EHRConnector", "FilteringMailGradingResult", "PublicFolder", "PrivacyTenantAuditHistoryRecord", "AipScannerDiscoverEvent", "EduDataLakeDownloadOperation", "M365ComplianceConnector", "MicrosoftGraphDataConnectOperation", "MicrosoftPurview", "FilteringEmailContentFeatures", "PowerPagesSite", "PowerAppsResource", "PlannerPlan", "PlannerCopyPlan", "PlannerTask", "PlannerRoster", "PlannerPlanList", "PlannerTaskList", "PlannerTenantSettings", "ProjectForTheWebProject", "ProjectForTheWebTask", "ProjectForTheWebRoadmap", "ProjectForTheWebRoadmapItem", "ProjectForTheWebProjectSettings", "ProjectForTheWebRoadmapSettings", "QuarantineMetadata", "MicrosoftTodoAudit", "TimeTravelFilteringDocMetadata", "TeamsQuarantineMetadata", "SharePointAppPermissionOperation", "MicrosoftTeamsSensitivityLabelAction", "FilteringTeamsMetadata", "FilteringTeamsUrlInfo", "FilteringTeamsPostDeliveryAction", "MDCAssessments", "MDCRegulatoryComplianceStandards", "MDCRegulatoryComplianceControls", "MDCRegulatoryComplianceAssessments", "MDCSecurityConnectors", "MDADataSecuritySignal", "VivaGoals", "FilteringRuntimeInfo", "AttackSimAdmin", "MicrosoftGraphDataConnectConsent", "FilteringAtpDetonationInfo", "PrivacyPortal", "ManagedTenants", "UnifiedSimulationMatchedItem", "UnifiedSimulationSummary", "UpdateQuarantineMetadata", "MS365DSuppressionRule", "PurviewDataMapOperation", "FilteringUrlPostClickAction", "IrmUserDefinedDetectionSignal", "TeamsUpdates", "PlannerRosterSensitivityLabel", "MS365DIncident", "FilteringDelistingMetadata", "ComplianceDLPSharePointClassificationExtended", "MicrosoftDefenderForIdentityAudit", "SupervisoryReviewDayXInsight", "DefenderExpertsforXDRAdmin", "CDPEdgeBlockedMessage", "HostedRpa", "CdpContentExplorerAggregateRecord", "CDPHygieneAttachmentInfo", "CDPHygieneSummary", "CDPPostMailDeliveryAction", "CDPEmailFeatures", "CDPHygieneUrlInfo", "CDPUrlClick", "CDPPackageManagerHygieneEvent", "FilteringDocScan", "TimeTravelFilteringDocScan", "MAPGOnboard", "VfamCreatePolicy", "VfamUpdatePolicy", "VfamDeletePolicy", "M365DAAD", "CdpColdCrawlStatus", "PowerPlatformAdministratorActivity", "Windows365CustomerLockbox", "CdpResourceScopeChangeEvent", "ComplianceCCExchangeExecutionResult", "CdpOcrCostEstimatorRecord", "CopilotInteraction", "CdpOcrBillingRecord", "ComplianceDLPApplications", "UAMOperation", "VivaLearning", "VivaLearningAdmin", "PurviewPolicyOperation", "PurviewMetadataPolicyOperation", "PeopleAdminSettings", "CdpComplianceDLPExchangeClassification", "CdpComplianceDLPSharePointClassification", "FilteringBulkSenderInsightData", "FilteringBulkThresholdInsightData", "PrivacyOpenAccess", "OWAAuth", "ComplianceDLPApplicationsClassification", "SharePointESignature", "Dynamics365BusinessCentral", "MeshWorlds", "VivaPulseResponse", "VivaPulseOrganizer", "VivaPulseAdmin", "VivaPulseReport", "AIAppInteraction", "ComplianceDLMExchange", "ComplianceDLMSharePoint", "ProjectForTheWebAssignedToMeSettings", "CPSOperation", "ComplianceDLPExchangeDiscovery", "PurviewMCRecommendation", "ComplianceDLPEndpointDiscovery", "InsiderRiskScopedUserInsights", "MicrosoftTeamsRetentionLabelAction", "AadRiskDetection", "AuditSearch", "AuditRetentionPolicy", "AuditConfig", "Microsoft365BackupBackupPolicy", "Microsoft365BackupRestoreTask", "Microsoft365BackupRestoreItem", "Microsoft365BackupBackupItem", "URBACAssignment", "URBACRole", "URBACEnableState", "IRMSecurityAlert", "PurviewInsiderRiskCases", "PurviewInsiderRiskAlerts", "InsiderRiskScopedUsers", "CdpConsumptionResource", "CreateCopilotPlugin", "UpdateCopilotPlugin", "DeleteCopilotPlugin", "EnableCopilotPlugin", "DisableCopilotPlugin", "CreateCopilotWorkspace", "UpdateCopilotWorkspace", "DeleteCopilotWorkspace", "EnableCopilotWorkspace", "DisableCopilotWorkspace", "CreateCopilotPromptBook", "UpdateCopilotPromptBook", "DeleteCopilotPromptBook", "EnableCopilotPromptBook", "DisableCopilotPromptBook", "UpdateCopilotSettings", "P4AIAssessmentRecord", "P4AIAssessmentLocationResultRecord", "ConnectedAIAppInteraction", "PrivaPrivacyConsentOperation", "PrivaPrivacyAssessmentOperation", "DataCatalogAccessRequests", "ComplianceSettingsChange", "DataSecurityInvestigation", "TeamCopilotInteraction", "IRMActivityAuditTrail", "SharePointContentSecurityPolicy", "CloudUpdateProfileConfig", "CloudUpdateTenantConfig", "CloudUpdateDeviceConfig", "DefenderPreviewFeatures", "DeviceDiscoverySettingsExclusion", "DeviceDiscoverySettingsAuthenticatedScans", "CriticalAssetManagementClassification", "DeviceDiscoverySettings", "USXWorkspaceOnboarding", "VivaGlintAdvancedConfiguration", "VivaGlintPulseProgram", "VivaGlintPulseProgramRespondentRate", "VivaGlintQuestion", "VivaGlintRole", "VivaGlintRubicon", "VivaGlintSupportAccess", "VivaGlintSystem", "VivaGlintUser", "VivaGlintUserGroup", "VivaGlintFeedbackProgram", "FabricAudit", "TrainableClassifier", "WebContentFiltering", "NoisyAlertPolicy", "OnDemandSharePointClassification", "AIInteractionsExport", "Microsoft365CopilotScheduledPrompt", "PlacesDirectory", "MDAAudit", "OpticalCharacterRecognition", "M365SearchSections", "OfficeClientRestrictedModeAction", "CrossTenantAccessPolicy", "OutlookCopilotAutomation", "VivaEngageNetworkAssociation", "AppAdminActivity", "AppSettingsAdminActivity", "UniversalPrintPrintJob", "SentinelNotebookOnLake", "SentinelJob", "SentinelGraph", "SentinelKQLOnLake", "SentinelPackage", "VivaAmplifyOutlookSensitivityLabel", "CopilotActions", "AIInteractionsSubscription", "AIInteractionsChangeNotification", "FilteringMailMetadataExtended", "SentinelLakeOnboarding", "SentinelLakeDataOnboarding", "OfficeRestrictedModeAction", "CopilotForSecurityTrigger", "CopilotAgentManagement", "P4AIAssessmentFabricScannerRecord", "PlannerGoal", "PlannerGoalList", "ThreatIntelligenceObject", "ThreatIntelligenceExport", "SubmissionAgenticGradingResult", "AgentAdminActivity", "DeployFeatureActivity", "AgentSettingsAdminActivity", "OrganizationalDataInM365", "PlannerChatMessage", "PlannerChatMessageList", "SentinelAITool", "M365ODSPAssetMetadata", "AIExecuteTool", "AIInvokeAgent", "AIInferenceCall", "CdpClassifierHealthRecord", "SensitiveInfoRemediationAgentData", "ComplianceDLPEnforcement", "A365AIExecuteTool", "A365AIInvokeAgent", "A365AIInferenceCall", "VivaEngageSegment", "RTIOperationsAgent", "ContentStoreMetadata", "CCRAIPolicyViolation", "PlannerPlanSensitivityLabel", "MosAgentInfoRecord", "A365AIRunSummary", "UnifiedCatalogConceptAction", "DefenderCaseManagement", "CopilotForSecurityLogging", "VivaEngageEvents", "CallActivityEvent", "SonarDetonationContentMetadata", "UniversalPrintManagement", "YammerUserHiding", "Microsoft365BackupGranularBrowseTask", "PurviewPostureAgent", "MSDECustomCollection", "SCPUsageEvent", "SCPConfigurationEvent", "MDCConfigurationEvent", "MDCUsageEvent", "A365SpanOutputs", "PowerPlatformTenantIsolation", "CDPDLMAIInteractionInsights", "P4AIAssessmentCategoryRecord", "SentinelLakeEncryption", "AZFWNetworkRule", "AZFWDnsQuery", "AZFWApplicationRuleAggregation", "TeamsEvalDataHubDataAccess", "TeamsEvalDataHubPermissionChange", "TeamsEvalDataHubAdminOperation", "VivaGlintOrganizationalData", "ReportSubmission", "ReportSubmissionResultDetail", "unknownFutureValue"}[i]
 }
 func ParseAuditLogRecordType(v string) (any, error) {
     result := EXCHANGEADMIN_AUDITLOGRECORDTYPE
@@ -875,6 +1034,322 @@ func ParseAuditLogRecordType(v string) (any, error) {
             result = COMPLIANCEDLPEXCHANGEDISCOVERY_AUDITLOGRECORDTYPE
         case "PurviewMCRecommendation":
             result = PURVIEWMCRECOMMENDATION_AUDITLOGRECORDTYPE
+        case "ComplianceDLPEndpointDiscovery":
+            result = COMPLIANCEDLPENDPOINTDISCOVERY_AUDITLOGRECORDTYPE
+        case "InsiderRiskScopedUserInsights":
+            result = INSIDERRISKSCOPEDUSERINSIGHTS_AUDITLOGRECORDTYPE
+        case "MicrosoftTeamsRetentionLabelAction":
+            result = MICROSOFTTEAMSRETENTIONLABELACTION_AUDITLOGRECORDTYPE
+        case "AadRiskDetection":
+            result = AADRISKDETECTION_AUDITLOGRECORDTYPE
+        case "AuditSearch":
+            result = AUDITSEARCH_AUDITLOGRECORDTYPE
+        case "AuditRetentionPolicy":
+            result = AUDITRETENTIONPOLICY_AUDITLOGRECORDTYPE
+        case "AuditConfig":
+            result = AUDITCONFIG_AUDITLOGRECORDTYPE
+        case "Microsoft365BackupBackupPolicy":
+            result = MICROSOFT365BACKUPBACKUPPOLICY_AUDITLOGRECORDTYPE
+        case "Microsoft365BackupRestoreTask":
+            result = MICROSOFT365BACKUPRESTORETASK_AUDITLOGRECORDTYPE
+        case "Microsoft365BackupRestoreItem":
+            result = MICROSOFT365BACKUPRESTOREITEM_AUDITLOGRECORDTYPE
+        case "Microsoft365BackupBackupItem":
+            result = MICROSOFT365BACKUPBACKUPITEM_AUDITLOGRECORDTYPE
+        case "URBACAssignment":
+            result = URBACASSIGNMENT_AUDITLOGRECORDTYPE
+        case "URBACRole":
+            result = URBACROLE_AUDITLOGRECORDTYPE
+        case "URBACEnableState":
+            result = URBACENABLESTATE_AUDITLOGRECORDTYPE
+        case "IRMSecurityAlert":
+            result = IRMSECURITYALERT_AUDITLOGRECORDTYPE
+        case "PurviewInsiderRiskCases":
+            result = PURVIEWINSIDERRISKCASES_AUDITLOGRECORDTYPE
+        case "PurviewInsiderRiskAlerts":
+            result = PURVIEWINSIDERRISKALERTS_AUDITLOGRECORDTYPE
+        case "InsiderRiskScopedUsers":
+            result = INSIDERRISKSCOPEDUSERS_AUDITLOGRECORDTYPE
+        case "CdpConsumptionResource":
+            result = CDPCONSUMPTIONRESOURCE_AUDITLOGRECORDTYPE
+        case "CreateCopilotPlugin":
+            result = CREATECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+        case "UpdateCopilotPlugin":
+            result = UPDATECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+        case "DeleteCopilotPlugin":
+            result = DELETECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+        case "EnableCopilotPlugin":
+            result = ENABLECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+        case "DisableCopilotPlugin":
+            result = DISABLECOPILOTPLUGIN_AUDITLOGRECORDTYPE
+        case "CreateCopilotWorkspace":
+            result = CREATECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+        case "UpdateCopilotWorkspace":
+            result = UPDATECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+        case "DeleteCopilotWorkspace":
+            result = DELETECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+        case "EnableCopilotWorkspace":
+            result = ENABLECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+        case "DisableCopilotWorkspace":
+            result = DISABLECOPILOTWORKSPACE_AUDITLOGRECORDTYPE
+        case "CreateCopilotPromptBook":
+            result = CREATECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+        case "UpdateCopilotPromptBook":
+            result = UPDATECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+        case "DeleteCopilotPromptBook":
+            result = DELETECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+        case "EnableCopilotPromptBook":
+            result = ENABLECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+        case "DisableCopilotPromptBook":
+            result = DISABLECOPILOTPROMPTBOOK_AUDITLOGRECORDTYPE
+        case "UpdateCopilotSettings":
+            result = UPDATECOPILOTSETTINGS_AUDITLOGRECORDTYPE
+        case "P4AIAssessmentRecord":
+            result = P4AIASSESSMENTRECORD_AUDITLOGRECORDTYPE
+        case "P4AIAssessmentLocationResultRecord":
+            result = P4AIASSESSMENTLOCATIONRESULTRECORD_AUDITLOGRECORDTYPE
+        case "ConnectedAIAppInteraction":
+            result = CONNECTEDAIAPPINTERACTION_AUDITLOGRECORDTYPE
+        case "PrivaPrivacyConsentOperation":
+            result = PRIVAPRIVACYCONSENTOPERATION_AUDITLOGRECORDTYPE
+        case "PrivaPrivacyAssessmentOperation":
+            result = PRIVAPRIVACYASSESSMENTOPERATION_AUDITLOGRECORDTYPE
+        case "DataCatalogAccessRequests":
+            result = DATACATALOGACCESSREQUESTS_AUDITLOGRECORDTYPE
+        case "ComplianceSettingsChange":
+            result = COMPLIANCESETTINGSCHANGE_AUDITLOGRECORDTYPE
+        case "DataSecurityInvestigation":
+            result = DATASECURITYINVESTIGATION_AUDITLOGRECORDTYPE
+        case "TeamCopilotInteraction":
+            result = TEAMCOPILOTINTERACTION_AUDITLOGRECORDTYPE
+        case "IRMActivityAuditTrail":
+            result = IRMACTIVITYAUDITTRAIL_AUDITLOGRECORDTYPE
+        case "SharePointContentSecurityPolicy":
+            result = SHAREPOINTCONTENTSECURITYPOLICY_AUDITLOGRECORDTYPE
+        case "CloudUpdateProfileConfig":
+            result = CLOUDUPDATEPROFILECONFIG_AUDITLOGRECORDTYPE
+        case "CloudUpdateTenantConfig":
+            result = CLOUDUPDATETENANTCONFIG_AUDITLOGRECORDTYPE
+        case "CloudUpdateDeviceConfig":
+            result = CLOUDUPDATEDEVICECONFIG_AUDITLOGRECORDTYPE
+        case "DefenderPreviewFeatures":
+            result = DEFENDERPREVIEWFEATURES_AUDITLOGRECORDTYPE
+        case "DeviceDiscoverySettingsExclusion":
+            result = DEVICEDISCOVERYSETTINGSEXCLUSION_AUDITLOGRECORDTYPE
+        case "DeviceDiscoverySettingsAuthenticatedScans":
+            result = DEVICEDISCOVERYSETTINGSAUTHENTICATEDSCANS_AUDITLOGRECORDTYPE
+        case "CriticalAssetManagementClassification":
+            result = CRITICALASSETMANAGEMENTCLASSIFICATION_AUDITLOGRECORDTYPE
+        case "DeviceDiscoverySettings":
+            result = DEVICEDISCOVERYSETTINGS_AUDITLOGRECORDTYPE
+        case "USXWorkspaceOnboarding":
+            result = USXWORKSPACEONBOARDING_AUDITLOGRECORDTYPE
+        case "VivaGlintAdvancedConfiguration":
+            result = VIVAGLINTADVANCEDCONFIGURATION_AUDITLOGRECORDTYPE
+        case "VivaGlintPulseProgram":
+            result = VIVAGLINTPULSEPROGRAM_AUDITLOGRECORDTYPE
+        case "VivaGlintPulseProgramRespondentRate":
+            result = VIVAGLINTPULSEPROGRAMRESPONDENTRATE_AUDITLOGRECORDTYPE
+        case "VivaGlintQuestion":
+            result = VIVAGLINTQUESTION_AUDITLOGRECORDTYPE
+        case "VivaGlintRole":
+            result = VIVAGLINTROLE_AUDITLOGRECORDTYPE
+        case "VivaGlintRubicon":
+            result = VIVAGLINTRUBICON_AUDITLOGRECORDTYPE
+        case "VivaGlintSupportAccess":
+            result = VIVAGLINTSUPPORTACCESS_AUDITLOGRECORDTYPE
+        case "VivaGlintSystem":
+            result = VIVAGLINTSYSTEM_AUDITLOGRECORDTYPE
+        case "VivaGlintUser":
+            result = VIVAGLINTUSER_AUDITLOGRECORDTYPE
+        case "VivaGlintUserGroup":
+            result = VIVAGLINTUSERGROUP_AUDITLOGRECORDTYPE
+        case "VivaGlintFeedbackProgram":
+            result = VIVAGLINTFEEDBACKPROGRAM_AUDITLOGRECORDTYPE
+        case "FabricAudit":
+            result = FABRICAUDIT_AUDITLOGRECORDTYPE
+        case "TrainableClassifier":
+            result = TRAINABLECLASSIFIER_AUDITLOGRECORDTYPE
+        case "WebContentFiltering":
+            result = WEBCONTENTFILTERING_AUDITLOGRECORDTYPE
+        case "NoisyAlertPolicy":
+            result = NOISYALERTPOLICY_AUDITLOGRECORDTYPE
+        case "OnDemandSharePointClassification":
+            result = ONDEMANDSHAREPOINTCLASSIFICATION_AUDITLOGRECORDTYPE
+        case "AIInteractionsExport":
+            result = AIINTERACTIONSEXPORT_AUDITLOGRECORDTYPE
+        case "Microsoft365CopilotScheduledPrompt":
+            result = MICROSOFT365COPILOTSCHEDULEDPROMPT_AUDITLOGRECORDTYPE
+        case "PlacesDirectory":
+            result = PLACESDIRECTORY_AUDITLOGRECORDTYPE
+        case "MDAAudit":
+            result = MDAAUDIT_AUDITLOGRECORDTYPE
+        case "OpticalCharacterRecognition":
+            result = OPTICALCHARACTERRECOGNITION_AUDITLOGRECORDTYPE
+        case "M365SearchSections":
+            result = M365SEARCHSECTIONS_AUDITLOGRECORDTYPE
+        case "OfficeClientRestrictedModeAction":
+            result = OFFICECLIENTRESTRICTEDMODEACTION_AUDITLOGRECORDTYPE
+        case "CrossTenantAccessPolicy":
+            result = CROSSTENANTACCESSPOLICY_AUDITLOGRECORDTYPE
+        case "OutlookCopilotAutomation":
+            result = OUTLOOKCOPILOTAUTOMATION_AUDITLOGRECORDTYPE
+        case "VivaEngageNetworkAssociation":
+            result = VIVAENGAGENETWORKASSOCIATION_AUDITLOGRECORDTYPE
+        case "AppAdminActivity":
+            result = APPADMINACTIVITY_AUDITLOGRECORDTYPE
+        case "AppSettingsAdminActivity":
+            result = APPSETTINGSADMINACTIVITY_AUDITLOGRECORDTYPE
+        case "UniversalPrintPrintJob":
+            result = UNIVERSALPRINTPRINTJOB_AUDITLOGRECORDTYPE
+        case "SentinelNotebookOnLake":
+            result = SENTINELNOTEBOOKONLAKE_AUDITLOGRECORDTYPE
+        case "SentinelJob":
+            result = SENTINELJOB_AUDITLOGRECORDTYPE
+        case "SentinelGraph":
+            result = SENTINELGRAPH_AUDITLOGRECORDTYPE
+        case "SentinelKQLOnLake":
+            result = SENTINELKQLONLAKE_AUDITLOGRECORDTYPE
+        case "SentinelPackage":
+            result = SENTINELPACKAGE_AUDITLOGRECORDTYPE
+        case "VivaAmplifyOutlookSensitivityLabel":
+            result = VIVAAMPLIFYOUTLOOKSENSITIVITYLABEL_AUDITLOGRECORDTYPE
+        case "CopilotActions":
+            result = COPILOTACTIONS_AUDITLOGRECORDTYPE
+        case "AIInteractionsSubscription":
+            result = AIINTERACTIONSSUBSCRIPTION_AUDITLOGRECORDTYPE
+        case "AIInteractionsChangeNotification":
+            result = AIINTERACTIONSCHANGENOTIFICATION_AUDITLOGRECORDTYPE
+        case "FilteringMailMetadataExtended":
+            result = FILTERINGMAILMETADATAEXTENDED_AUDITLOGRECORDTYPE
+        case "SentinelLakeOnboarding":
+            result = SENTINELLAKEONBOARDING_AUDITLOGRECORDTYPE
+        case "SentinelLakeDataOnboarding":
+            result = SENTINELLAKEDATAONBOARDING_AUDITLOGRECORDTYPE
+        case "OfficeRestrictedModeAction":
+            result = OFFICERESTRICTEDMODEACTION_AUDITLOGRECORDTYPE
+        case "CopilotForSecurityTrigger":
+            result = COPILOTFORSECURITYTRIGGER_AUDITLOGRECORDTYPE
+        case "CopilotAgentManagement":
+            result = COPILOTAGENTMANAGEMENT_AUDITLOGRECORDTYPE
+        case "P4AIAssessmentFabricScannerRecord":
+            result = P4AIASSESSMENTFABRICSCANNERRECORD_AUDITLOGRECORDTYPE
+        case "PlannerGoal":
+            result = PLANNERGOAL_AUDITLOGRECORDTYPE
+        case "PlannerGoalList":
+            result = PLANNERGOALLIST_AUDITLOGRECORDTYPE
+        case "ThreatIntelligenceObject":
+            result = THREATINTELLIGENCEOBJECT_AUDITLOGRECORDTYPE
+        case "ThreatIntelligenceExport":
+            result = THREATINTELLIGENCEEXPORT_AUDITLOGRECORDTYPE
+        case "SubmissionAgenticGradingResult":
+            result = SUBMISSIONAGENTICGRADINGRESULT_AUDITLOGRECORDTYPE
+        case "AgentAdminActivity":
+            result = AGENTADMINACTIVITY_AUDITLOGRECORDTYPE
+        case "DeployFeatureActivity":
+            result = DEPLOYFEATUREACTIVITY_AUDITLOGRECORDTYPE
+        case "AgentSettingsAdminActivity":
+            result = AGENTSETTINGSADMINACTIVITY_AUDITLOGRECORDTYPE
+        case "OrganizationalDataInM365":
+            result = ORGANIZATIONALDATAINM365_AUDITLOGRECORDTYPE
+        case "PlannerChatMessage":
+            result = PLANNERCHATMESSAGE_AUDITLOGRECORDTYPE
+        case "PlannerChatMessageList":
+            result = PLANNERCHATMESSAGELIST_AUDITLOGRECORDTYPE
+        case "SentinelAITool":
+            result = SENTINELAITOOL_AUDITLOGRECORDTYPE
+        case "M365ODSPAssetMetadata":
+            result = M365ODSPASSETMETADATA_AUDITLOGRECORDTYPE
+        case "AIExecuteTool":
+            result = AIEXECUTETOOL_AUDITLOGRECORDTYPE
+        case "AIInvokeAgent":
+            result = AIINVOKEAGENT_AUDITLOGRECORDTYPE
+        case "AIInferenceCall":
+            result = AIINFERENCECALL_AUDITLOGRECORDTYPE
+        case "CdpClassifierHealthRecord":
+            result = CDPCLASSIFIERHEALTHRECORD_AUDITLOGRECORDTYPE
+        case "SensitiveInfoRemediationAgentData":
+            result = SENSITIVEINFOREMEDIATIONAGENTDATA_AUDITLOGRECORDTYPE
+        case "ComplianceDLPEnforcement":
+            result = COMPLIANCEDLPENFORCEMENT_AUDITLOGRECORDTYPE
+        case "A365AIExecuteTool":
+            result = A365AIEXECUTETOOL_AUDITLOGRECORDTYPE
+        case "A365AIInvokeAgent":
+            result = A365AIINVOKEAGENT_AUDITLOGRECORDTYPE
+        case "A365AIInferenceCall":
+            result = A365AIINFERENCECALL_AUDITLOGRECORDTYPE
+        case "VivaEngageSegment":
+            result = VIVAENGAGESEGMENT_AUDITLOGRECORDTYPE
+        case "RTIOperationsAgent":
+            result = RTIOPERATIONSAGENT_AUDITLOGRECORDTYPE
+        case "ContentStoreMetadata":
+            result = CONTENTSTOREMETADATA_AUDITLOGRECORDTYPE
+        case "CCRAIPolicyViolation":
+            result = CCRAIPOLICYVIOLATION_AUDITLOGRECORDTYPE
+        case "PlannerPlanSensitivityLabel":
+            result = PLANNERPLANSENSITIVITYLABEL_AUDITLOGRECORDTYPE
+        case "MosAgentInfoRecord":
+            result = MOSAGENTINFORECORD_AUDITLOGRECORDTYPE
+        case "A365AIRunSummary":
+            result = A365AIRUNSUMMARY_AUDITLOGRECORDTYPE
+        case "UnifiedCatalogConceptAction":
+            result = UNIFIEDCATALOGCONCEPTACTION_AUDITLOGRECORDTYPE
+        case "DefenderCaseManagement":
+            result = DEFENDERCASEMANAGEMENT_AUDITLOGRECORDTYPE
+        case "CopilotForSecurityLogging":
+            result = COPILOTFORSECURITYLOGGING_AUDITLOGRECORDTYPE
+        case "VivaEngageEvents":
+            result = VIVAENGAGEEVENTS_AUDITLOGRECORDTYPE
+        case "CallActivityEvent":
+            result = CALLACTIVITYEVENT_AUDITLOGRECORDTYPE
+        case "SonarDetonationContentMetadata":
+            result = SONARDETONATIONCONTENTMETADATA_AUDITLOGRECORDTYPE
+        case "UniversalPrintManagement":
+            result = UNIVERSALPRINTMANAGEMENT_AUDITLOGRECORDTYPE
+        case "YammerUserHiding":
+            result = YAMMERUSERHIDING_AUDITLOGRECORDTYPE
+        case "Microsoft365BackupGranularBrowseTask":
+            result = MICROSOFT365BACKUPGRANULARBROWSETASK_AUDITLOGRECORDTYPE
+        case "PurviewPostureAgent":
+            result = PURVIEWPOSTUREAGENT_AUDITLOGRECORDTYPE
+        case "MSDECustomCollection":
+            result = MSDECUSTOMCOLLECTION_AUDITLOGRECORDTYPE
+        case "SCPUsageEvent":
+            result = SCPUSAGEEVENT_AUDITLOGRECORDTYPE
+        case "SCPConfigurationEvent":
+            result = SCPCONFIGURATIONEVENT_AUDITLOGRECORDTYPE
+        case "MDCConfigurationEvent":
+            result = MDCCONFIGURATIONEVENT_AUDITLOGRECORDTYPE
+        case "MDCUsageEvent":
+            result = MDCUSAGEEVENT_AUDITLOGRECORDTYPE
+        case "A365SpanOutputs":
+            result = A365SPANOUTPUTS_AUDITLOGRECORDTYPE
+        case "PowerPlatformTenantIsolation":
+            result = POWERPLATFORMTENANTISOLATION_AUDITLOGRECORDTYPE
+        case "CDPDLMAIInteractionInsights":
+            result = CDPDLMAIINTERACTIONINSIGHTS_AUDITLOGRECORDTYPE
+        case "P4AIAssessmentCategoryRecord":
+            result = P4AIASSESSMENTCATEGORYRECORD_AUDITLOGRECORDTYPE
+        case "SentinelLakeEncryption":
+            result = SENTINELLAKEENCRYPTION_AUDITLOGRECORDTYPE
+        case "AZFWNetworkRule":
+            result = AZFWNETWORKRULE_AUDITLOGRECORDTYPE
+        case "AZFWDnsQuery":
+            result = AZFWDNSQUERY_AUDITLOGRECORDTYPE
+        case "AZFWApplicationRuleAggregation":
+            result = AZFWAPPLICATIONRULEAGGREGATION_AUDITLOGRECORDTYPE
+        case "TeamsEvalDataHubDataAccess":
+            result = TEAMSEVALDATAHUBDATAACCESS_AUDITLOGRECORDTYPE
+        case "TeamsEvalDataHubPermissionChange":
+            result = TEAMSEVALDATAHUBPERMISSIONCHANGE_AUDITLOGRECORDTYPE
+        case "TeamsEvalDataHubAdminOperation":
+            result = TEAMSEVALDATAHUBADMINOPERATION_AUDITLOGRECORDTYPE
+        case "VivaGlintOrganizationalData":
+            result = VIVAGLINTORGANIZATIONALDATA_AUDITLOGRECORDTYPE
+        case "ReportSubmission":
+            result = REPORTSUBMISSION_AUDITLOGRECORDTYPE
+        case "ReportSubmissionResultDetail":
+            result = REPORTSUBMISSIONRESULTDETAIL_AUDITLOGRECORDTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDITLOGRECORDTYPE
         default:

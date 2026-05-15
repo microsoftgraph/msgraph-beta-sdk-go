@@ -50,7 +50,7 @@ func (m *LogonUser) GetAccountName()(*string) {
     }
     return nil
 }
-// GetAccountType gets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
+// GetAccountType gets the accountType property value. User Account type, per Windows definition. The possible values are: unknown, standard, power, administrator.
 // returns a *UserAccountSecurityType when successful
 func (m *LogonUser) GetAccountType()(*UserAccountSecurityType) {
     val, err := m.GetBackingStore().Get("accountType")
@@ -208,7 +208,7 @@ func (m *LogonUser) GetLogonId()(*string) {
     }
     return nil
 }
-// GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 // returns a []LogonType when successful
 func (m *LogonUser) GetLogonTypes()([]LogonType) {
     val, err := m.GetBackingStore().Get("logonTypes")
@@ -305,7 +305,7 @@ func (m *LogonUser) SetAccountName(value *string)() {
         panic(err)
     }
 }
-// SetAccountType sets the accountType property value. User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.
+// SetAccountType sets the accountType property value. User Account type, per Windows definition. The possible values are: unknown, standard, power, administrator.
 func (m *LogonUser) SetAccountType(value *UserAccountSecurityType)() {
     err := m.GetBackingStore().Set("accountType", value)
     if err != nil {
@@ -344,7 +344,7 @@ func (m *LogonUser) SetLogonId(value *string)() {
         panic(err)
     }
 }
-// SetLogonTypes sets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
+// SetLogonTypes sets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 func (m *LogonUser) SetLogonTypes(value []LogonType)() {
     err := m.GetBackingStore().Set("logonTypes", value)
     if err != nil {

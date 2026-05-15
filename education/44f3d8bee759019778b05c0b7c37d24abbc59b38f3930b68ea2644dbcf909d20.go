@@ -21,12 +21,12 @@ type ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmen
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters get dependentResources from education
+// ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters a collection of assignment resources that depend on the parent educationAssignmentResource.
 type ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration struct {
@@ -73,7 +73,7 @@ func (m *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssig
     }
     return nil
 }
-// Get get dependentResources from education
+// Get a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a EducationAssignmentResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceable, error) {
@@ -124,7 +124,7 @@ func (m *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssig
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get dependentResources from education
+// ToGetRequestInformation a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -24,9 +24,9 @@ type HardwareConfigurationsItemRunSummaryRequestBuilderDeleteRequestConfiguratio
 // HardwareConfigurationsItemRunSummaryRequestBuilderGetQueryParameters a summary of the results from an attempt to configure hardware settings. Read-Only.
 type HardwareConfigurationsItemRunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // HardwareConfigurationsItemRunSummaryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type HardwareConfigurationsItemRunSummaryRequestBuilderGetRequestConfiguration struct {

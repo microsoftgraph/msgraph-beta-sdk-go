@@ -23,6 +23,26 @@ func NewCloudPcCloudAppDetail()(*CloudPcCloudAppDetail) {
 // CreateCloudPcCloudAppDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateCloudPcCloudAppDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.cloudPcAutomaticDiscoveredAppDetail":
+                        return NewCloudPcAutomaticDiscoveredAppDetail(), nil
+                    case "#microsoft.graph.cloudPcFilePathAppDetail":
+                        return NewCloudPcFilePathAppDetail(), nil
+                }
+            }
+        }
+    }
     return NewCloudPcCloudAppDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -43,7 +63,7 @@ func (m *CloudPcCloudAppDetail) GetAdditionalData()(map[string]any) {
 func (m *CloudPcCloudAppDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCommandLineArguments gets the commandLineArguments property value. The commandLineArguments property
+// GetCommandLineArguments gets the commandLineArguments property value. Specifies the command-line arguments for the cloud app. These parameters are passed to the cloud app when it's launched. The maximum allowed length for this property is 2,048 characters. For example, -fullscreen -loop.
 // returns a *string when successful
 func (m *CloudPcCloudAppDetail) GetCommandLineArguments()(*string) {
     val, err := m.GetBackingStore().Get("commandLineArguments")
@@ -111,7 +131,7 @@ func (m *CloudPcCloudAppDetail) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetFilePath gets the filePath property value. The filePath property
+// GetFilePath gets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.
 // returns a *string when successful
 func (m *CloudPcCloudAppDetail) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
@@ -123,7 +143,7 @@ func (m *CloudPcCloudAppDetail) GetFilePath()(*string) {
     }
     return nil
 }
-// GetIconIndex gets the iconIndex property value. The iconIndex property
+// GetIconIndex gets the iconIndex property value. Specifies the index of the icon within the file specified by the iconPath property. For example, if iconPath is set to C:/Program Files/MyApp/myapp.ico and iconIndex is set to 0, the system uses the first icon in the myapp.ico file. The default value is 0.
 // returns a *int32 when successful
 func (m *CloudPcCloudAppDetail) GetIconIndex()(*int32) {
     val, err := m.GetBackingStore().Get("iconIndex")
@@ -135,7 +155,7 @@ func (m *CloudPcCloudAppDetail) GetIconIndex()(*int32) {
     }
     return nil
 }
-// GetIconPath gets the iconPath property value. The iconPath property
+// GetIconPath gets the iconPath property value. Specifies the path to the icon file for the application within the OS of the hosting Cloud PC. When an admin updates the path of a cloud app, the value should be a rooted absolute path. For example, C:/Windows/system32/WindowsPowerShell/v1.0/powershell_ise.exe. If this property isn't defined, a default icon is used.
 // returns a *string when successful
 func (m *CloudPcCloudAppDetail) GetIconPath()(*string) {
     val, err := m.GetBackingStore().Get("iconPath")
@@ -210,28 +230,28 @@ func (m *CloudPcCloudAppDetail) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcCloudAppDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCommandLineArguments sets the commandLineArguments property value. The commandLineArguments property
+// SetCommandLineArguments sets the commandLineArguments property value. Specifies the command-line arguments for the cloud app. These parameters are passed to the cloud app when it's launched. The maximum allowed length for this property is 2,048 characters. For example, -fullscreen -loop.
 func (m *CloudPcCloudAppDetail) SetCommandLineArguments(value *string)() {
     err := m.GetBackingStore().Set("commandLineArguments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilePath sets the filePath property value. The filePath property
+// SetFilePath sets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.
 func (m *CloudPcCloudAppDetail) SetFilePath(value *string)() {
     err := m.GetBackingStore().Set("filePath", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIconIndex sets the iconIndex property value. The iconIndex property
+// SetIconIndex sets the iconIndex property value. Specifies the index of the icon within the file specified by the iconPath property. For example, if iconPath is set to C:/Program Files/MyApp/myapp.ico and iconIndex is set to 0, the system uses the first icon in the myapp.ico file. The default value is 0.
 func (m *CloudPcCloudAppDetail) SetIconIndex(value *int32)() {
     err := m.GetBackingStore().Set("iconIndex", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIconPath sets the iconPath property value. The iconPath property
+// SetIconPath sets the iconPath property value. Specifies the path to the icon file for the application within the OS of the hosting Cloud PC. When an admin updates the path of a cloud app, the value should be a rooted absolute path. For example, C:/Windows/system32/WindowsPowerShell/v1.0/powershell_ise.exe. If this property isn't defined, a default icon is used.
 func (m *CloudPcCloudAppDetail) SetIconPath(value *string)() {
     err := m.GetBackingStore().Set("iconPath", value)
     if err != nil {

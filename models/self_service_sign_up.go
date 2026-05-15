@@ -143,6 +143,16 @@ func (m *SelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["fraudProtectionDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFraudProtectionDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFraudProtectionDetails(val.(FraudProtectionDetailsable))
+        }
+        return nil
+    }
     res["signUpIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignUpIdentityFromDiscriminatorValue)
         if err != nil {
@@ -194,6 +204,18 @@ func (m *SelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetFraudProtectionDetails gets the fraudProtectionDetails property value. The fraudProtectionDetails property
+// returns a FraudProtectionDetailsable when successful
+func (m *SelfServiceSignUp) GetFraudProtectionDetails()(FraudProtectionDetailsable) {
+    val, err := m.GetBackingStore().Get("fraudProtectionDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FraudProtectionDetailsable)
+    }
+    return nil
 }
 // GetSignUpIdentity gets the signUpIdentity property value. Unique identifier for self-service sign-up user. Supports $filter (eq) on the signUpIdentifierType.
 // returns a SignUpIdentityable when successful
@@ -298,6 +320,12 @@ func (m *SelfServiceSignUp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteObjectValue("fraudProtectionDetails", m.GetFraudProtectionDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("signUpIdentity", m.GetSignUpIdentity())
         if err != nil {
             return err
@@ -365,6 +393,13 @@ func (m *SelfServiceSignUp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe
         panic(err)
     }
 }
+// SetFraudProtectionDetails sets the fraudProtectionDetails property value. The fraudProtectionDetails property
+func (m *SelfServiceSignUp) SetFraudProtectionDetails(value FraudProtectionDetailsable)() {
+    err := m.GetBackingStore().Set("fraudProtectionDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignUpIdentity sets the signUpIdentity property value. Unique identifier for self-service sign-up user. Supports $filter (eq) on the signUpIdentifierType.
 func (m *SelfServiceSignUp) SetSignUpIdentity(value SignUpIdentityable)() {
     err := m.GetBackingStore().Set("signUpIdentity", value)
@@ -408,6 +443,7 @@ type SelfServiceSignUpable interface {
     GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetFraudProtectionDetails()(FraudProtectionDetailsable)
     GetSignUpIdentity()(SignUpIdentityable)
     GetSignUpIdentityProvider()(*string)
     GetSignUpStage()(*SignUpStage)
@@ -418,6 +454,7 @@ type SelfServiceSignUpable interface {
     SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetFraudProtectionDetails(value FraudProtectionDetailsable)()
     SetSignUpIdentity(value SignUpIdentityable)()
     SetSignUpIdentityProvider(value *string)()
     SetSignUpStage(value *SignUpStage)()

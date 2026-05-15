@@ -121,7 +121,7 @@ func (m *CloudPcPartnerAgentInstallResult) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetInstallStatus gets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
+// GetInstallStatus gets the installStatus property value. The status of a partner agent installation. The possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 // returns a *CloudPcPartnerAgentInstallStatus when successful
 func (m *CloudPcPartnerAgentInstallResult) GetInstallStatus()(*CloudPcPartnerAgentInstallStatus) {
     val, err := m.GetBackingStore().Get("installStatus")
@@ -247,7 +247,7 @@ func (m *CloudPcPartnerAgentInstallResult) SetErrorMessage(value *string)() {
         panic(err)
     }
 }
-// SetInstallStatus sets the installStatus property value. The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
+// SetInstallStatus sets the installStatus property value. The status of a partner agent installation. The possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
 func (m *CloudPcPartnerAgentInstallResult) SetInstallStatus(value *CloudPcPartnerAgentInstallStatus)() {
     err := m.GetBackingStore().Set("installStatus", value)
     if err != nil {

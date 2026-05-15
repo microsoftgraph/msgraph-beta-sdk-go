@@ -17,9 +17,9 @@ type ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilder struct {
 // ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilderGetQueryParameters get the item of type microsoft.graph.directoryObject as microsoft.graph.user
 type ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemDevicesItemRegisteredUsersItemGraphUserRequestBuilderGetRequestConfiguration struct {

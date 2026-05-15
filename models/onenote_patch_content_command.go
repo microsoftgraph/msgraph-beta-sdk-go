@@ -135,7 +135,7 @@ func (m *OnenotePatchContentCommand) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.
+// GetPosition gets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
 // returns a *OnenotePatchInsertPosition when successful
 func (m *OnenotePatchContentCommand) GetPosition()(*OnenotePatchInsertPosition) {
     val, err := m.GetBackingStore().Get("position")
@@ -233,7 +233,7 @@ func (m *OnenotePatchContentCommand) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPosition sets the position property value. The location to add the supplied content, relative to the target element. Possible values are: after (default) or before.
+// SetPosition sets the position property value. The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
 func (m *OnenotePatchContentCommand) SetPosition(value *OnenotePatchInsertPosition)() {
     err := m.GetBackingStore().Set("position", value)
     if err != nil {

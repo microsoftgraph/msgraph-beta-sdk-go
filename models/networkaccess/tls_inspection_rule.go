@@ -82,7 +82,7 @@ func (m *TlsInspectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetMatchingConditions gets the matchingConditions property value. The matchingConditions property
+// GetMatchingConditions gets the matchingConditions property value. The conditions that determine when this rule should be applied to traffic.
 // returns a TlsInspectionMatchingConditionsable when successful
 func (m *TlsInspectionRule) GetMatchingConditions()(TlsInspectionMatchingConditionsable) {
     val, err := m.GetBackingStore().Get("matchingConditions")
@@ -157,7 +157,7 @@ func (m *TlsInspectionRule) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetMatchingConditions sets the matchingConditions property value. The matchingConditions property
+// SetMatchingConditions sets the matchingConditions property value. The conditions that determine when this rule should be applied to traffic.
 func (m *TlsInspectionRule) SetMatchingConditions(value TlsInspectionMatchingConditionsable)() {
     err := m.GetBackingStore().Set("matchingConditions", value)
     if err != nil {

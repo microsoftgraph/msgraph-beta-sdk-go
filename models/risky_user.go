@@ -155,7 +155,7 @@ func (m *RiskyUser) GetHistory()([]RiskyUserHistoryItemable) {
     }
     return nil
 }
-// GetIsDeleted gets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
+// GetIsDeleted gets the isDeleted property value. Indicates whether the user is deleted. The possible values are: true, false.
 // returns a *bool when successful
 func (m *RiskyUser) GetIsDeleted()(*bool) {
     val, err := m.GetBackingStore().Get("isDeleted")
@@ -179,7 +179,7 @@ func (m *RiskyUser) GetIsProcessing()(*bool) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 // returns a *RiskDetail when successful
 func (m *RiskyUser) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
@@ -215,7 +215,7 @@ func (m *RiskyUser) GetRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetRiskState gets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// GetRiskState gets the riskState property value. State of the user's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 // returns a *RiskState when successful
 func (m *RiskyUser) GetRiskState()(*RiskState) {
     val, err := m.GetBackingStore().Get("riskState")
@@ -329,7 +329,7 @@ func (m *RiskyUser) SetHistory(value []RiskyUserHistoryItemable)() {
         panic(err)
     }
 }
-// SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
+// SetIsDeleted sets the isDeleted property value. Indicates whether the user is deleted. The possible values are: true, false.
 func (m *RiskyUser) SetIsDeleted(value *bool)() {
     err := m.GetBackingStore().Set("isDeleted", value)
     if err != nil {
@@ -343,7 +343,7 @@ func (m *RiskyUser) SetIsProcessing(value *bool)() {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal, m365DAdminDismissedDetection, userChangedPasswordOnPremises, adminDismissedRiskForSignIn, adminConfirmedAccountSafe.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.
 func (m *RiskyUser) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
@@ -364,7 +364,7 @@ func (m *RiskyUser) SetRiskLevel(value *RiskLevel)() {
         panic(err)
     }
 }
-// SetRiskState sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+// SetRiskState sets the riskState property value. State of the user's risk. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
 func (m *RiskyUser) SetRiskState(value *RiskState)() {
     err := m.GetBackingStore().Set("riskState", value)
     if err != nil {

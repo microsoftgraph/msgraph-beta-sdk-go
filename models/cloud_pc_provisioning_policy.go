@@ -95,7 +95,7 @@ func (m *CloudPcProvisioningPolicy) GetCloudPcNamingTemplate()(*string) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The unique ID of the user who created this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.
 // returns a *string when successful
 func (m *CloudPcProvisioningPolicy) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -107,7 +107,7 @@ func (m *CloudPcProvisioningPolicy) GetCreatedBy()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The timestamp when this provisioning policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.
 // returns a *Time when successful
 func (m *CloudPcProvisioningPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -429,6 +429,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["userSettingsPersistenceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcUserSettingsPersistenceConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserSettingsPersistenceConfiguration(val.(CloudPcUserSettingsPersistenceConfigurationable))
+        }
+        return nil
+    }
     res["windowsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingFromDiscriminatorValue)
         if err != nil {
@@ -499,7 +509,7 @@ func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyIma
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The unique ID of the user who last updated this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.
 // returns a *string when successful
 func (m *CloudPcProvisioningPolicy) GetLastModifiedBy()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -511,7 +521,7 @@ func (m *CloudPcProvisioningPolicy) GetLastModifiedBy()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The timestamp when this provisioning policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.
 // returns a *Time when successful
 func (m *CloudPcProvisioningPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -559,7 +569,7 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManage
     }
     return nil
 }
-// GetProvisioningType gets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
+// GetProvisioningType gets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -583,7 +593,7 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     return nil
 }
-// GetUserExperienceType gets the userExperienceType property value. The userExperienceType property
+// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
 // returns a *CloudPcUserExperienceType when successful
 func (m *CloudPcProvisioningPolicy) GetUserExperienceType()(*CloudPcUserExperienceType) {
     val, err := m.GetBackingStore().Get("userExperienceType")
@@ -592,6 +602,18 @@ func (m *CloudPcProvisioningPolicy) GetUserExperienceType()(*CloudPcUserExperien
     }
     if val != nil {
         return val.(*CloudPcUserExperienceType)
+    }
+    return nil
+}
+// GetUserSettingsPersistenceConfiguration gets the userSettingsPersistenceConfiguration property value. Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.
+// returns a CloudPcUserSettingsPersistenceConfigurationable when successful
+func (m *CloudPcProvisioningPolicy) GetUserSettingsPersistenceConfiguration()(CloudPcUserSettingsPersistenceConfigurationable) {
+    val, err := m.GetBackingStore().Get("userSettingsPersistenceConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcUserSettingsPersistenceConfigurationable)
     }
     return nil
 }
@@ -786,6 +808,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("userSettingsPersistenceConfiguration", m.GetUserSettingsPersistenceConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsSetting", m.GetWindowsSetting())
         if err != nil {
             return err
@@ -841,14 +869,14 @@ func (m *CloudPcProvisioningPolicy) SetCloudPcNamingTemplate(value *string)() {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The unique ID of the user who created this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetCreatedBy(value *string)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The timestamp when this provisioning policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.
 func (m *CloudPcProvisioningPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -911,14 +939,14 @@ func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolic
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The unique ID of the user who last updated this policy. For example, 5ccb8d35-dd04-473e-a287-69bb4473208b. Read-only. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetLastModifiedBy(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The timestamp when this provisioning policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $select and $orderBy.
 func (m *CloudPcProvisioningPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -946,7 +974,7 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
+// SetProvisioningType sets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
 func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
@@ -960,9 +988,16 @@ func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
         panic(err)
     }
 }
-// SetUserExperienceType sets the userExperienceType property value. The userExperienceType property
+// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
 func (m *CloudPcProvisioningPolicy) SetUserExperienceType(value *CloudPcUserExperienceType)() {
     err := m.GetBackingStore().Set("userExperienceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserSettingsPersistenceConfiguration sets the userSettingsPersistenceConfiguration property value. Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.
+func (m *CloudPcProvisioningPolicy) SetUserSettingsPersistenceConfiguration(value CloudPcUserSettingsPersistenceConfigurationable)() {
+    err := m.GetBackingStore().Set("userSettingsPersistenceConfiguration", value)
     if err != nil {
         panic(err)
     }
@@ -1008,6 +1043,7 @@ type CloudPcProvisioningPolicyable interface {
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
     GetUserExperienceType()(*CloudPcUserExperienceType)
+    GetUserSettingsPersistenceConfiguration()(CloudPcUserSettingsPersistenceConfigurationable)
     GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
@@ -1034,6 +1070,7 @@ type CloudPcProvisioningPolicyable interface {
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
     SetUserExperienceType(value *CloudPcUserExperienceType)()
+    SetUserSettingsPersistenceConfiguration(value CloudPcUserSettingsPersistenceConfigurationable)()
     SetWindowsSetting(value CloudPcWindowsSettingable)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

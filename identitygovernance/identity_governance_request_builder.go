@@ -17,9 +17,9 @@ type IdentityGovernanceRequestBuilder struct {
 // IdentityGovernanceRequestBuilderGetQueryParameters get identityGovernance
 type IdentityGovernanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IdentityGovernanceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentityGovernanceRequestBuilderGetRequestConfiguration struct {
@@ -46,6 +46,17 @@ func (m *IdentityGovernanceRequestBuilder) AccessReviews()(*AccessReviewsRequest
 // returns a *AppConsentRequestBuilder when successful
 func (m *IdentityGovernanceRequestBuilder) AppConsent()(*AppConsentRequestBuilder) {
     return NewAppConsentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Catalogs provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+// returns a *CatalogsRequestBuilder when successful
+func (m *IdentityGovernanceRequestBuilder) Catalogs()(*CatalogsRequestBuilder) {
+    return NewCatalogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CatalogsWithUniqueName provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
+// returns a *CatalogsWithUniqueNameRequestBuilder when successful
+func (m *IdentityGovernanceRequestBuilder) CatalogsWithUniqueName(uniqueName *string)(*CatalogsWithUniqueNameRequestBuilder) {
+    return NewCatalogsWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
 }
 // NewIdentityGovernanceRequestBuilderInternal instantiates a new IdentityGovernanceRequestBuilder and sets the default values.
 func NewIdentityGovernanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityGovernanceRequestBuilder) {

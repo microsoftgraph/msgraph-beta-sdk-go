@@ -268,7 +268,7 @@ func (m *CloudAppDiscoveryReport) GetLastModifiedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetLogDataProvider gets the logDataProvider property value. The applicable log data provider. Possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.
+// GetLogDataProvider gets the logDataProvider property value. The applicable log data provider. The possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.
 // returns a *LogDataProvider when successful
 func (m *CloudAppDiscoveryReport) GetLogDataProvider()(*LogDataProvider) {
     val, err := m.GetBackingStore().Get("logDataProvider")
@@ -292,7 +292,7 @@ func (m *CloudAppDiscoveryReport) GetLogFileCount()(*int32) {
     }
     return nil
 }
-// GetReceiverProtocol gets the receiverProtocol property value. The applicable receiver protocol. Possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.
+// GetReceiverProtocol gets the receiverProtocol property value. The applicable receiver protocol. The possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.
 // returns a *ReceiverProtocol when successful
 func (m *CloudAppDiscoveryReport) GetReceiverProtocol()(*ReceiverProtocol) {
     val, err := m.GetBackingStore().Get("receiverProtocol")
@@ -304,7 +304,7 @@ func (m *CloudAppDiscoveryReport) GetReceiverProtocol()(*ReceiverProtocol) {
     }
     return nil
 }
-// GetSupportedEntityTypes gets the supportedEntityTypes property value. The supported entity type. Possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.
+// GetSupportedEntityTypes gets the supportedEntityTypes property value. The supported entity type. The possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.
 // returns a []EntityType when successful
 func (m *CloudAppDiscoveryReport) GetSupportedEntityTypes()([]EntityType) {
     val, err := m.GetBackingStore().Get("supportedEntityTypes")
@@ -316,7 +316,7 @@ func (m *CloudAppDiscoveryReport) GetSupportedEntityTypes()([]EntityType) {
     }
     return nil
 }
-// GetSupportedTrafficTypes gets the supportedTrafficTypes property value. The supported traffic type. Possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.
+// GetSupportedTrafficTypes gets the supportedTrafficTypes property value. The supported traffic type. The possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.
 // returns a []TrafficType when successful
 func (m *CloudAppDiscoveryReport) GetSupportedTrafficTypes()([]TrafficType) {
     val, err := m.GetBackingStore().Get("supportedTrafficTypes")
@@ -472,7 +472,7 @@ func (m *CloudAppDiscoveryReport) SetLastModifiedDateTime(value *i336074805fc853
         panic(err)
     }
 }
-// SetLogDataProvider sets the logDataProvider property value. The applicable log data provider. Possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.
+// SetLogDataProvider sets the logDataProvider property value. The applicable log data provider. The possible values are: barracuda, bluecoat, checkpoint, ciscoAsa, ciscoIronportProxy, fortigate, paloAlto, squid, zscaler, mcafeeSwg, ciscoScanSafe, juniperSrx, sophosSg, websenseV75, websenseSiemCef, machineZoneMeraki, squidNative, ciscoFwsm, microsoftIsaW3C, sonicwall, sophosCyberoam, clavister, customParser, juniperSsg, zscalerQradar, juniperSrxSd, juniperSrxWelf, microsoftConditionalAppAccess, ciscoAsaFirepower, genericCef, genericLeef, genericW3C, iFilter, checkpointXml, checkpointSmartViewTracker, barracudaNextGenFw, barracudaNextGenFwWeblog, microsoftDefenderForEndpoint, zscalerCef, sophosXg, iboss, forcepoint, fortios, ciscoIronportWsaIi, paloAltoLeef, forcepointLeef, stormshield, contentkeeper, ciscoIronportWsaIii, checkpointCef, corrata, ciscoFirepowerV6, menloSecurityCef, watchguardXtm, openSystemsSecureWebGateway, wandera, unknownFutureValue.
 func (m *CloudAppDiscoveryReport) SetLogDataProvider(value *LogDataProvider)() {
     err := m.GetBackingStore().Set("logDataProvider", value)
     if err != nil {
@@ -486,21 +486,21 @@ func (m *CloudAppDiscoveryReport) SetLogFileCount(value *int32)() {
         panic(err)
     }
 }
-// SetReceiverProtocol sets the receiverProtocol property value. The applicable receiver protocol. Possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.
+// SetReceiverProtocol sets the receiverProtocol property value. The applicable receiver protocol. The possible values are: ftp, ftps, syslogUdp, syslogTcp, syslogTls, unknownFutureValue.
 func (m *CloudAppDiscoveryReport) SetReceiverProtocol(value *ReceiverProtocol)() {
     err := m.GetBackingStore().Set("receiverProtocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupportedEntityTypes sets the supportedEntityTypes property value. The supported entity type. Possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.
+// SetSupportedEntityTypes sets the supportedEntityTypes property value. The supported entity type. The possible values are: userName, ipAddress, machineName, other, unknown, unknownFutureValue.
 func (m *CloudAppDiscoveryReport) SetSupportedEntityTypes(value []EntityType)() {
     err := m.GetBackingStore().Set("supportedEntityTypes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSupportedTrafficTypes sets the supportedTrafficTypes property value. The supported traffic type. Possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.
+// SetSupportedTrafficTypes sets the supportedTrafficTypes property value. The supported traffic type. The possible values are: downloadedBytes, uploadedBytes, unknown, unknownFutureValue.
 func (m *CloudAppDiscoveryReport) SetSupportedTrafficTypes(value []TrafficType)() {
     err := m.GetBackingStore().Set("supportedTrafficTypes", value)
     if err != nil {

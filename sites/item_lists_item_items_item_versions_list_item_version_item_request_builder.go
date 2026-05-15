@@ -24,9 +24,9 @@ type ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderDeleteReques
 // ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetQueryParameters the list of previous versions of the list item.
 type ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListsItemItemsItemVersionsListItemVersionItemRequestBuilderGetRequestConfiguration struct {

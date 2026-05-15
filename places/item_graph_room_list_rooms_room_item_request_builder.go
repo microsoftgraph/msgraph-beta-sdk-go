@@ -24,9 +24,9 @@ type ItemGraphRoomListRoomsRoomItemRequestBuilderDeleteRequestConfiguration stru
 // ItemGraphRoomListRoomsRoomItemRequestBuilderGetQueryParameters get rooms from places
 type ItemGraphRoomListRoomsRoomItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemGraphRoomListRoomsRoomItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemGraphRoomListRoomsRoomItemRequestBuilderGetRequestConfiguration struct {
@@ -43,6 +43,16 @@ type ItemGraphRoomListRoomsRoomItemRequestBuilderPatchRequestConfiguration struc
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// CheckIns provides operations to manage the checkIns property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListRoomsItemCheckInsRequestBuilder when successful
+func (m *ItemGraphRoomListRoomsRoomItemRequestBuilder) CheckIns()(*ItemGraphRoomListRoomsItemCheckInsRequestBuilder) {
+    return NewItemGraphRoomListRoomsItemCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListRoomsItemChildrenRequestBuilder when successful
+func (m *ItemGraphRoomListRoomsRoomItemRequestBuilder) Children()(*ItemGraphRoomListRoomsItemChildrenRequestBuilder) {
+    return NewItemGraphRoomListRoomsItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemGraphRoomListRoomsRoomItemRequestBuilderInternal instantiates a new ItemGraphRoomListRoomsRoomItemRequestBuilder and sets the default values.
 func NewItemGraphRoomListRoomsRoomItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListRoomsRoomItemRequestBuilder) {

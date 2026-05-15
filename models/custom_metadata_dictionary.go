@@ -15,6 +15,8 @@ func NewCustomMetadataDictionary()(*CustomMetadataDictionary) {
     m := &CustomMetadataDictionary{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.customMetadataDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateCustomMetadataDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -323,7 +323,7 @@ func (m *WindowsWifiConfiguration) GetSsid()(*string) {
     }
     return nil
 }
-// GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise, unknownFutureValue, wpa3Personal.
 // returns a *WiFiSecurityType when successful
 func (m *WindowsWifiConfiguration) GetWifiSecurityType()(*WiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wifiSecurityType")
@@ -508,7 +508,7 @@ func (m *WindowsWifiConfiguration) SetSsid(value *string)() {
         panic(err)
     }
 }
-// SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise, unknownFutureValue, wpa3Personal.
 func (m *WindowsWifiConfiguration) SetWifiSecurityType(value *WiFiSecurityType)() {
     err := m.GetBackingStore().Set("wifiSecurityType", value)
     if err != nil {

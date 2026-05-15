@@ -24,9 +24,9 @@ type ConnectivityRequestBuilderDeleteRequestConfiguration struct {
 // ConnectivityRequestBuilderGetQueryParameters connectivity represents all the connectivity components in Global Secure Access.
 type ConnectivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConnectivityRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConnectivityRequestBuilderGetRequestConfiguration struct {
@@ -97,6 +97,11 @@ func (m *ConnectivityRequestBuilder) Get(ctx context.Context, requestConfigurati
         return nil, nil
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Connectivityable), nil
+}
+// MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl provides operations to call the getWebCategoryByUrl method.
+// returns a *ConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder when successful
+func (m *ConnectivityRequestBuilder) MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl(url *string)(*ConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder) {
+    return NewConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, url)
 }
 // Patch update the navigation property connectivity in networkAccess
 // returns a Connectivityable when successful

@@ -23,7 +23,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteReq
 // NewMobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref", pathParameters),
     }
     return m
 }

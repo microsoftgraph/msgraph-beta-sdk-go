@@ -24,9 +24,9 @@ type BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestB
 // BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderGetQueryParameters the list of Exchange protection policies in the tenant.
 type BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -92,6 +92,16 @@ func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequ
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeProtectionPolicyable), nil
+}
+// MailboxExclusionUnits provides operations to manage the mailboxExclusionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.
+// returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder when successful
+func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder) MailboxExclusionUnits()(*BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder) {
+    return NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MailboxExclusionUnitsBulkAdditionJobs provides operations to manage the mailboxExclusionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.
+// returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsBulkAdditionJobsRequestBuilder when successful
+func (m *BackupRestoreExchangeProtectionPoliciesExchangeProtectionPolicyItemRequestBuilder) MailboxExclusionUnitsBulkAdditionJobs()(*BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsBulkAdditionJobsRequestBuilder) {
+    return NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsBulkAdditionJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MailboxInclusionRules provides operations to manage the mailboxInclusionRules property of the microsoft.graph.exchangeProtectionPolicy entity.
 // returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesRequestBuilder when successful

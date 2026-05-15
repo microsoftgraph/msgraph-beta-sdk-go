@@ -17,9 +17,9 @@ type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionCat
 // GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionCategoryRequestBuilderGetQueryParameters the group policy category associated with the definition.
 type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionCategoryRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionCategoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyDefinitionsItemPreviousVersionDefinitionNextVersionDefinitionCategoryRequestBuilderGetRequestConfiguration struct {

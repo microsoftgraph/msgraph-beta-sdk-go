@@ -40,6 +40,8 @@ func CreateCatalogEntryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                         return NewFeatureUpdateCatalogEntry(), nil
                     case "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry":
                         return NewQualityUpdateCatalogEntry(), nil
+                    case "#microsoft.graph.windowsUpdates.recoveryUpdateCatalogEntry":
+                        return NewRecoveryUpdateCatalogEntry(), nil
                     case "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry":
                         return NewSoftwareUpdateCatalogEntry(), nil
                 }

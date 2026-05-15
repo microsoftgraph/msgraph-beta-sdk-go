@@ -24,9 +24,9 @@ type ConfigurationManagementRequestBuilderDeleteRequestConfiguration struct {
 // ConfigurationManagementRequestBuilderGetQueryParameters get configurationManagement from admin
 type ConfigurationManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ConfigurationManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ConfigurationManagementRequestBuilderGetRequestConfiguration struct {
@@ -43,11 +43,6 @@ type ConfigurationManagementRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
-// ConfigurationApplications provides operations to manage the configurationApplications property of the microsoft.graph.configurationManagement entity.
-// returns a *ConfigurationManagementConfigurationApplicationsRequestBuilder when successful
-func (m *ConfigurationManagementRequestBuilder) ConfigurationApplications()(*ConfigurationManagementConfigurationApplicationsRequestBuilder) {
-    return NewConfigurationManagementConfigurationApplicationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConfigurationDrifts provides operations to manage the configurationDrifts property of the microsoft.graph.configurationManagement entity.
 // returns a *ConfigurationManagementConfigurationDriftsRequestBuilder when successful

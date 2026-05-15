@@ -24,9 +24,9 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSe
 // BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters the list of OneDrive for Business restore sessions available in the tenant.
 type BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilderGetRequestConfiguration struct {
@@ -102,6 +102,11 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessResto
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessRestoreSessionable), nil
+}
+// GranularDriveRestoreArtifacts provides operations to manage the granularDriveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
+// returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilder when successful
+func (m *BackupRestoreOneDriveForBusinessRestoreSessionsOneDriveForBusinessRestoreSessionItemRequestBuilder) GranularDriveRestoreArtifacts()(*BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilder) {
+    return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a oneDriveForBusinessRestoreSession object.
 // returns a OneDriveForBusinessRestoreSessionable when successful

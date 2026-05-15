@@ -22,7 +22,7 @@ func NewCertificateBasedAuthConfiguration()(*CertificateBasedAuthConfiguration) 
 func CreateCertificateBasedAuthConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCertificateBasedAuthConfiguration(), nil
 }
-// GetCertificateAuthorities gets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
+// GetCertificateAuthorities gets the certificateAuthorities property value. Collection of certificate authorities that creates a trusted certificate chain.
 // returns a []CertificateAuthorityable when successful
 func (m *CertificateBasedAuthConfiguration) GetCertificateAuthorities()([]CertificateAuthorityable) {
     val, err := m.GetBackingStore().Get("certificateAuthorities")
@@ -76,7 +76,7 @@ func (m *CertificateBasedAuthConfiguration) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetCertificateAuthorities sets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
+// SetCertificateAuthorities sets the certificateAuthorities property value. Collection of certificate authorities that creates a trusted certificate chain.
 func (m *CertificateBasedAuthConfiguration) SetCertificateAuthorities(value []CertificateAuthorityable)() {
     err := m.GetBackingStore().Set("certificateAuthorities", value)
     if err != nil {

@@ -135,7 +135,7 @@ func (m *ChannelModerationSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
+// GetReplyRestriction gets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. The possible values are: everyone, authorAndModerators, unknownFutureValue.
 // returns a *ReplyRestriction when successful
 func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
     val, err := m.GetBackingStore().Get("replyRestriction")
@@ -147,7 +147,7 @@ func (m *ChannelModerationSettings) GetReplyRestriction()(*ReplyRestriction) {
     }
     return nil
 }
-// GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
+// GetUserNewMessageRestriction gets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. The possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
 // returns a *UserNewMessageRestriction when successful
 func (m *ChannelModerationSettings) GetUserNewMessageRestriction()(*UserNewMessageRestriction) {
     val, err := m.GetBackingStore().Get("userNewMessageRestriction")
@@ -233,14 +233,14 @@ func (m *ChannelModerationSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.
+// SetReplyRestriction sets the replyRestriction property value. Indicates who is allowed to reply to the teams channel. The possible values are: everyone, authorAndModerators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetReplyRestriction(value *ReplyRestriction)() {
     err := m.GetBackingStore().Set("replyRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserNewMessageRestriction sets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
+// SetUserNewMessageRestriction sets the userNewMessageRestriction property value. Indicates who is allowed to post messages to teams channel. The possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.
 func (m *ChannelModerationSettings) SetUserNewMessageRestriction(value *UserNewMessageRestriction)() {
     err := m.GetBackingStore().Set("userNewMessageRestriction", value)
     if err != nil {

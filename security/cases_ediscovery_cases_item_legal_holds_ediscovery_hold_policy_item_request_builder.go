@@ -24,9 +24,9 @@ type CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderDel
 // CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters returns a list of case eDiscoveryHoldPolicy objects for this case.
 type CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -92,6 +92,11 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
         return nil, nil
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable), nil
+}
+// MicrosoftGraphSecurityRetryPolicy provides operations to call the retryPolicy method.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) MicrosoftGraphSecurityRetryPolicy()(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property legalHolds in security
 // returns a EdiscoveryHoldPolicyable when successful

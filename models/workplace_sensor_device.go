@@ -236,7 +236,7 @@ func (m *WorkplaceSensorDevice) GetPlaceId()(*string) {
     }
     return nil
 }
-// GetSensors gets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.
+// GetSensors gets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, Wi-Fi, and more.
 // returns a []WorkplaceSensorable when successful
 func (m *WorkplaceSensorDevice) GetSensors()([]WorkplaceSensorable) {
     val, err := m.GetBackingStore().Get("sensors")
@@ -390,7 +390,7 @@ func (m *WorkplaceSensorDevice) SetPlaceId(value *string)() {
         panic(err)
     }
 }
-// SetSensors sets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.
+// SetSensors sets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, Wi-Fi, and more.
 func (m *WorkplaceSensorDevice) SetSensors(value []WorkplaceSensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
     if err != nil {

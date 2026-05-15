@@ -701,7 +701,7 @@ func (m *Event) GetICalUId()(*string) {
     }
     return nil
 }
-// GetImportance gets the importance property value. The importance of the event. Possible values are: low, normal, high.
+// GetImportance gets the importance property value. The importance of the event. The possible values are: low, normal, high.
 // returns a *Importance when successful
 func (m *Event) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
@@ -977,7 +977,7 @@ func (m *Event) GetResponseStatus()(ResponseStatusable) {
     }
     return nil
 }
-// GetSensitivity gets the sensitivity property value. Possible values are: normal, personal, private, confidential.
+// GetSensitivity gets the sensitivity property value. The possible values are: normal, personal, private, confidential.
 // returns a *Sensitivity when successful
 func (m *Event) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
@@ -1001,7 +1001,7 @@ func (m *Event) GetSeriesMasterId()(*string) {
     }
     return nil
 }
-// GetShowAs gets the showAs property value. The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetShowAs gets the showAs property value. The status to show. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 // returns a *FreeBusyStatus when successful
 func (m *Event) GetShowAs()(*FreeBusyStatus) {
     val, err := m.GetBackingStore().Get("showAs")
@@ -1061,7 +1061,7 @@ func (m *Event) GetTransactionId()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
+// GetTypeEscaped gets the type property value. The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
 // returns a *EventType when successful
 func (m *Event) GetTypeEscaped()(*EventType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -1525,7 +1525,7 @@ func (m *Event) SetICalUId(value *string)() {
         panic(err)
     }
 }
-// SetImportance sets the importance property value. The importance of the event. Possible values are: low, normal, high.
+// SetImportance sets the importance property value. The importance of the event. The possible values are: low, normal, high.
 func (m *Event) SetImportance(value *Importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
@@ -1686,7 +1686,7 @@ func (m *Event) SetResponseStatus(value ResponseStatusable)() {
         panic(err)
     }
 }
-// SetSensitivity sets the sensitivity property value. Possible values are: normal, personal, private, confidential.
+// SetSensitivity sets the sensitivity property value. The possible values are: normal, personal, private, confidential.
 func (m *Event) SetSensitivity(value *Sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
@@ -1700,7 +1700,7 @@ func (m *Event) SetSeriesMasterId(value *string)() {
         panic(err)
     }
 }
-// SetShowAs sets the showAs property value. The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetShowAs sets the showAs property value. The status to show. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *Event) SetShowAs(value *FreeBusyStatus)() {
     err := m.GetBackingStore().Set("showAs", value)
     if err != nil {
@@ -1735,7 +1735,7 @@ func (m *Event) SetTransactionId(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
+// SetTypeEscaped sets the type property value. The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only
 func (m *Event) SetTypeEscaped(value *EventType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

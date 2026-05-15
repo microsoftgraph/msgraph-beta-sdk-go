@@ -44,6 +44,18 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePos
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetClassifyText gets the classifyText property value. The classifyText property
+// returns a TextClassificationRequestable when successful
+func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) GetClassifyText()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable) {
+    val, err := m.GetBackingStore().Get("classifyText")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable)
+    }
+    return nil
+}
 // GetEvaluationInput gets the evaluationInput property value. The evaluationInput property
 // returns a DlpEvaluationInputable when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) GetEvaluationInput()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable) {
@@ -60,6 +72,16 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePos
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["classifyText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTextClassificationRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClassifyText(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable))
+        }
+        return nil
+    }
     res["evaluationInput"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDlpEvaluationInputFromDiscriminatorValue)
         if err != nil {
@@ -119,6 +141,12 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePos
 // Serialize serializes information the current object
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("classifyText", m.GetClassifyText())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("evaluationInput", m.GetEvaluationInput())
         if err != nil {
             return err
@@ -155,6 +183,13 @@ func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePos
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetClassifyText sets the classifyText property value. The classifyText property
+func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) SetClassifyText(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable)() {
+    err := m.GetBackingStore().Set("classifyText", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEvaluationInput sets the evaluationInput property value. The evaluationInput property
 func (m *ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBody) SetEvaluationInput(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable)() {
     err := m.GetBackingStore().Set("evaluationInput", value)
@@ -181,10 +216,12 @@ type ItemSitesItemInformationProtectionDataLossPreventionPoliciesEvaluatePostReq
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetClassifyText()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable)
     GetEvaluationInput()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable)
     GetNotificationInfo()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable)
     GetTarget()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetClassifyText(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TextClassificationRequestable)()
     SetEvaluationInput(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluationInputable)()
     SetNotificationInfo(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpNotificationable)()
     SetTarget(value *string)()

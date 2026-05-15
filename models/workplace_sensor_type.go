@@ -17,10 +17,12 @@ const (
     BADGE_WORKPLACESENSORTYPE
     // The unknown feature value.
     UNKNOWNFUTUREVALUE_WORKPLACESENSORTYPE
+    // The Wifi sensor type.
+    WIFI_WORKPLACESENSORTYPE
 )
 
 func (i WorkplaceSensorType) String() string {
-    return []string{"occupancy", "peopleCount", "inferredOccupancy", "heartbeat", "badge", "unknownFutureValue"}[i]
+    return []string{"occupancy", "peopleCount", "inferredOccupancy", "heartbeat", "badge", "unknownFutureValue", "wifi"}[i]
 }
 func ParseWorkplaceSensorType(v string) (any, error) {
     result := OCCUPANCY_WORKPLACESENSORTYPE
@@ -37,6 +39,8 @@ func ParseWorkplaceSensorType(v string) (any, error) {
             result = BADGE_WORKPLACESENSORTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKPLACESENSORTYPE
+        case "wifi":
+            result = WIFI_WORKPLACESENSORTYPE
         default:
             return nil, nil
     }

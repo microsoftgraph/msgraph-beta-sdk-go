@@ -62,7 +62,7 @@ func (m *TypedEmailAddress) GetOtherLabel()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+// GetTypeEscaped gets the type property value. The type of email address. The possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
 // returns a *EmailType when successful
 func (m *TypedEmailAddress) GetTypeEscaped()(*EmailType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -102,7 +102,7 @@ func (m *TypedEmailAddress) SetOtherLabel(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
+// SetTypeEscaped sets the type property value. The type of email address. The possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.
 func (m *TypedEmailAddress) SetTypeEscaped(value *EmailType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

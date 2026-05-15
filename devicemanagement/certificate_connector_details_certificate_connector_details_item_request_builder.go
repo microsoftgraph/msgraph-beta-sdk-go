@@ -24,9 +24,9 @@ type CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderDel
 // CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderGetQueryParameters collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
 type CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderGetRequestConfiguration struct {

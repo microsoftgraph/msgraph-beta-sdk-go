@@ -36,6 +36,8 @@ func CreateFilteringRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                 switch *mappingValue {
                     case "#microsoft.graph.networkaccess.fqdnFilteringRule":
                         return NewFqdnFilteringRule(), nil
+                    case "#microsoft.graph.networkaccess.urlDestinationFilteringRule":
+                        return NewUrlDestinationFilteringRule(), nil
                     case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                         return NewWebCategoryFilteringRule(), nil
                 }

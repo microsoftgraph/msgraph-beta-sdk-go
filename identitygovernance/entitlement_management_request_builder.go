@@ -24,9 +24,9 @@ type EntitlementManagementRequestBuilderDeleteRequestConfiguration struct {
 // EntitlementManagementRequestBuilderGetQueryParameters get entitlementManagement from identityGovernance
 type EntitlementManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementRequestBuilderGetRequestConfiguration struct {
@@ -105,6 +105,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResources()(*Entitlem
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AccessPackageSuggestions provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAccessPackageSuggestionsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AccessPackageSuggestions()(*EntitlementManagementAccessPackageSuggestionsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageSuggestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AccessPackagesWithUniqueName provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AccessPackagesWithUniqueName(uniqueName *string)(*EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) {
@@ -114,6 +119,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesWithUniqueName(uniqu
 // returns a *EntitlementManagementAssignmentRequestsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AvailableAccessPackages provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAvailableAccessPackagesRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AvailableAccessPackages()(*EntitlementManagementAvailableAccessPackagesRequestBuilder) {
+    return NewEntitlementManagementAvailableAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConnectedOrganizations provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementConnectedOrganizationsRequestBuilder when successful
@@ -133,6 +143,11 @@ func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
+// ControlConfigurations provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementControlConfigurationsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) ControlConfigurations()(*EntitlementManagementControlConfigurationsRequestBuilder) {
+    return NewEntitlementManagementControlConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property entitlementManagement for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementRequestBuilderDeleteRequestConfiguration)(error) {
@@ -148,6 +163,11 @@ func (m *EntitlementManagementRequestBuilder) Delete(ctx context.Context, reques
         return err
     }
     return nil
+}
+// ExternalOriginResourceConnectors provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) ExternalOriginResourceConnectors()(*EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) {
+    return NewEntitlementManagementExternalOriginResourceConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get entitlementManagement from identityGovernance
 // returns a EntitlementManagementable when successful

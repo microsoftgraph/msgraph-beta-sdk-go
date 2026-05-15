@@ -24,9 +24,9 @@ type ItemChatsChatItemRequestBuilderDeleteRequestConfiguration struct {
 // ItemChatsChatItemRequestBuilderGetQueryParameters retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
 type ItemChatsChatItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemChatsChatItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemChatsChatItemRequestBuilderGetRequestConfiguration struct {
@@ -181,10 +181,20 @@ func (m *ItemChatsChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemChatsIte
 func (m *ItemChatsChatItemRequestBuilder) SendActivityNotification()(*ItemChatsItemSendActivityNotificationRequestBuilder) {
     return NewItemChatsItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemChatsItemStartMigrationRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) StartMigration()(*ItemChatsItemStartMigrationRequestBuilder) {
+    return NewItemChatsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemChatsItemTabsRequestBuilder when successful
 func (m *ItemChatsChatItemRequestBuilder) Tabs()(*ItemChatsItemTabsRequestBuilder) {
     return NewItemChatsItemTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TargetedMessages provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.
+// returns a *ItemChatsItemTargetedMessagesRequestBuilder when successful
+func (m *ItemChatsChatItemRequestBuilder) TargetedMessages()(*ItemChatsItemTargetedMessagesRequestBuilder) {
+    return NewItemChatsItemTargetedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property chats for users
 // returns a *RequestInformation when successful

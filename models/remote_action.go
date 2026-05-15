@@ -84,10 +84,14 @@ const (
     CHANGEASSIGNMENTS_REMOTEACTION
     // Indicates remote device action to delete a device from Intune portal.
     DELETE_REMOTEACTION
+    // Indicates remote device action to temporarily suspend the Managed Home Screen kiosk app.
+    SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
+    // Indicates remote device action to restore the Managed Home Screen kiosk app.
+    RESTOREMANAGEDHOMESCREEN_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete", "suspendManagedHomeScreen", "restoreManagedHomeScreen"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -170,6 +174,10 @@ func ParseRemoteAction(v string) (any, error) {
             result = CHANGEASSIGNMENTS_REMOTEACTION
         case "delete":
             result = DELETE_REMOTEACTION
+        case "suspendManagedHomeScreen":
+            result = SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
+        case "restoreManagedHomeScreen":
+            result = RESTOREMANAGEDHOMESCREEN_REMOTEACTION
         default:
             return nil, nil
     }

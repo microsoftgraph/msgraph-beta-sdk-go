@@ -17,9 +17,9 @@ type GroupPolicyConfigurationsItemDefinitionValuesItemDefinitionRequestBuilder s
 // GroupPolicyConfigurationsItemDefinitionValuesItemDefinitionRequestBuilderGetQueryParameters the associated group policy definition with the value.
 type GroupPolicyConfigurationsItemDefinitionValuesItemDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // GroupPolicyConfigurationsItemDefinitionValuesItemDefinitionRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GroupPolicyConfigurationsItemDefinitionValuesItemDefinitionRequestBuilderGetRequestConfiguration struct {

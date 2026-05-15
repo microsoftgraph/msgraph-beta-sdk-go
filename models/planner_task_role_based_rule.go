@@ -43,7 +43,7 @@ func (m *PlannerTaskRoleBasedRule) GetAdditionalData()(map[string]any) {
 func (m *PlannerTaskRoleBasedRule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDefaultRule gets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
+// GetDefaultRule gets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. The possible values are: Allow, Block
 // returns a *string when successful
 func (m *PlannerTaskRoleBasedRule) GetDefaultRule()(*string) {
     val, err := m.GetBackingStore().Get("defaultRule")
@@ -182,7 +182,7 @@ func (m *PlannerTaskRoleBasedRule) SetAdditionalData(value map[string]any)() {
 func (m *PlannerTaskRoleBasedRule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDefaultRule sets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
+// SetDefaultRule sets the defaultRule property value. Default rule that applies when a property or action-specific rule is not provided. The possible values are: Allow, Block
 func (m *PlannerTaskRoleBasedRule) SetDefaultRule(value *string)() {
     err := m.GetBackingStore().Set("defaultRule", value)
     if err != nil {

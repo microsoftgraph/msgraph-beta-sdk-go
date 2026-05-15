@@ -357,6 +357,16 @@ func (m *AccessPackageCatalog) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["privilegeLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePrivilegeLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivilegeLevel(val.(*PrivilegeLevel))
+        }
+        return nil
+    }
     res["uniqueName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -402,6 +412,18 @@ func (m *AccessPackageCatalog) GetModifiedDateTime()(*i336074805fc853987abe6f7fe
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetPrivilegeLevel gets the privilegeLevel property value. The privilegeLevel property
+// returns a *PrivilegeLevel when successful
+func (m *AccessPackageCatalog) GetPrivilegeLevel()(*PrivilegeLevel) {
+    val, err := m.GetBackingStore().Get("privilegeLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PrivilegeLevel)
     }
     return nil
 }
@@ -549,6 +571,13 @@ func (m *AccessPackageCatalog) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetPrivilegeLevel() != nil {
+        cast := (*m.GetPrivilegeLevel()).String()
+        err = writer.WriteStringValue("privilegeLevel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("uniqueName", m.GetUniqueName())
         if err != nil {
@@ -662,6 +691,13 @@ func (m *AccessPackageCatalog) SetModifiedDateTime(value *i336074805fc853987abe6
         panic(err)
     }
 }
+// SetPrivilegeLevel sets the privilegeLevel property value. The privilegeLevel property
+func (m *AccessPackageCatalog) SetPrivilegeLevel(value *PrivilegeLevel)() {
+    err := m.GetBackingStore().Set("privilegeLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUniqueName sets the uniqueName property value. The uniqueName property
 func (m *AccessPackageCatalog) SetUniqueName(value *string)() {
     err := m.GetBackingStore().Set("uniqueName", value)
@@ -687,6 +723,7 @@ type AccessPackageCatalogable interface {
     GetIsExternallyVisible()(*bool)
     GetModifiedBy()(*string)
     GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPrivilegeLevel()(*PrivilegeLevel)
     GetUniqueName()(*string)
     SetAccessPackageCustomWorkflowExtensions(value []CustomCalloutExtensionable)()
     SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)()
@@ -703,5 +740,6 @@ type AccessPackageCatalogable interface {
     SetIsExternallyVisible(value *bool)()
     SetModifiedBy(value *string)()
     SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPrivilegeLevel(value *PrivilegeLevel)()
     SetUniqueName(value *string)()
 }

@@ -43,7 +43,7 @@ func (m *MeetingTimeSuggestionsResult) GetAdditionalData()(map[string]any) {
 func (m *MeetingTimeSuggestionsResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEmptySuggestionsReason gets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. Possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
+// GetEmptySuggestionsReason gets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
 // returns a *string when successful
 func (m *MeetingTimeSuggestionsResult) GetEmptySuggestionsReason()(*string) {
     val, err := m.GetBackingStore().Get("emptySuggestionsReason")
@@ -166,7 +166,7 @@ func (m *MeetingTimeSuggestionsResult) SetAdditionalData(value map[string]any)()
 func (m *MeetingTimeSuggestionsResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEmptySuggestionsReason sets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. Possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
+// SetEmptySuggestionsReason sets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
 func (m *MeetingTimeSuggestionsResult) SetEmptySuggestionsReason(value *string)() {
     err := m.GetBackingStore().Set("emptySuggestionsReason", value)
     if err != nil {

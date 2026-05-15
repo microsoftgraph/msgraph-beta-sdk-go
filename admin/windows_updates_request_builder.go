@@ -24,9 +24,9 @@ type WindowsUpdatesRequestBuilderDeleteRequestConfiguration struct {
 // WindowsUpdatesRequestBuilderGetQueryParameters entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
 type WindowsUpdatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // WindowsUpdatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type WindowsUpdatesRequestBuilderGetRequestConfiguration struct {
@@ -127,6 +127,11 @@ func (m *WindowsUpdatesRequestBuilder) Patch(ctx context.Context, body ie233ee76
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminWindowsUpdatesable), nil
+}
+// Policies provides operations to manage the policies property of the microsoft.graph.adminWindowsUpdates entity.
+// returns a *WindowsUpdatesPoliciesRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) Policies()(*WindowsUpdatesPoliciesRequestBuilder) {
+    return NewWindowsUpdatesPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Products provides operations to manage the products property of the microsoft.graph.adminWindowsUpdates entity.
 // returns a *WindowsUpdatesProductsRequestBuilder when successful

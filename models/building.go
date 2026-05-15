@@ -38,6 +38,16 @@ func (m *Building) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["map"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBuildingMapFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMapEscaped(val.(BuildingMapable))
+        }
+        return nil
+    }
     res["resourceLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceLinkFromDiscriminatorValue)
         if err != nil {
@@ -51,6 +61,16 @@ func (m *Building) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
                 }
             }
             m.SetResourceLinks(res)
+        }
+        return nil
+    }
+    res["wifiState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePlaceFeatureEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWifiState(val.(*PlaceFeatureEnablement))
         }
         return nil
     }
@@ -68,6 +88,18 @@ func (m *Building) GetHasWiFi()(*bool) {
     }
     return nil
 }
+// GetMapEscaped gets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
+// returns a BuildingMapable when successful
+func (m *Building) GetMapEscaped()(BuildingMapable) {
+    val, err := m.GetBackingStore().Get("mapEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BuildingMapable)
+    }
+    return nil
+}
 // GetResourceLinks gets the resourceLinks property value. A set of links to external resources that are associated with the building. Inherited from place.
 // returns a []ResourceLinkable when successful
 func (m *Building) GetResourceLinks()([]ResourceLinkable) {
@@ -80,6 +112,18 @@ func (m *Building) GetResourceLinks()([]ResourceLinkable) {
     }
     return nil
 }
+// GetWifiState gets the wifiState property value. The wifiState property
+// returns a *PlaceFeatureEnablement when successful
+func (m *Building) GetWifiState()(*PlaceFeatureEnablement) {
+    val, err := m.GetBackingStore().Get("wifiState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlaceFeatureEnablement)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Building) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Place.Serialize(writer)
@@ -88,6 +132,12 @@ func (m *Building) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteBoolValue("hasWiFi", m.GetHasWiFi())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("map", m.GetMapEscaped())
         if err != nil {
             return err
         }
@@ -104,11 +154,25 @@ func (m *Building) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetWifiState() != nil {
+        cast := (*m.GetWifiState()).String()
+        err = writer.WriteStringValue("wifiState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHasWiFi sets the hasWiFi property value. Indicates whether the building has a wireless network.
 func (m *Building) SetHasWiFi(value *bool)() {
     err := m.GetBackingStore().Set("hasWiFi", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMapEscaped sets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
+func (m *Building) SetMapEscaped(value BuildingMapable)() {
+    err := m.GetBackingStore().Set("mapEscaped", value)
     if err != nil {
         panic(err)
     }
@@ -120,11 +184,22 @@ func (m *Building) SetResourceLinks(value []ResourceLinkable)() {
         panic(err)
     }
 }
+// SetWifiState sets the wifiState property value. The wifiState property
+func (m *Building) SetWifiState(value *PlaceFeatureEnablement)() {
+    err := m.GetBackingStore().Set("wifiState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Buildingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
     GetHasWiFi()(*bool)
+    GetMapEscaped()(BuildingMapable)
     GetResourceLinks()([]ResourceLinkable)
+    GetWifiState()(*PlaceFeatureEnablement)
     SetHasWiFi(value *bool)()
+    SetMapEscaped(value BuildingMapable)()
     SetResourceLinks(value []ResourceLinkable)()
+    SetWifiState(value *PlaceFeatureEnablement)()
 }

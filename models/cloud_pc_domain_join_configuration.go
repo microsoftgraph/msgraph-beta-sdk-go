@@ -43,7 +43,7 @@ func (m *CloudPcDomainJoinConfiguration) GetAdditionalData()(map[string]any) {
 func (m *CloudPcDomainJoinConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDomainJoinType gets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// GetDomainJoinType gets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 // returns a *CloudPcDomainJoinType when successful
 func (m *CloudPcDomainJoinConfiguration) GetDomainJoinType()(*CloudPcDomainJoinType) {
     val, err := m.GetBackingStore().Get("domainJoinType")
@@ -66,6 +66,16 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetDomainJoinType(val.(*CloudPcDomainJoinType))
+        }
+        return nil
+    }
+    res["geographicLocationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcGeographicLocationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGeographicLocationType(val.(*CloudPcGeographicLocationType))
         }
         return nil
     }
@@ -121,6 +131,18 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     }
     return res
 }
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Read-only.
+// returns a *CloudPcGeographicLocationType when successful
+func (m *CloudPcDomainJoinConfiguration) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
+    val, err := m.GetBackingStore().Get("geographicLocationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcGeographicLocationType)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *CloudPcDomainJoinConfiguration) GetOdataType()(*string) {
@@ -145,7 +167,7 @@ func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     }
     return nil
 }
-// GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Read-only.
+// GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.
 // returns a *CloudPcRegionGroup when successful
 func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
     val, err := m.GetBackingStore().Get("regionGroup")
@@ -186,6 +208,13 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
     if m.GetDomainJoinType() != nil {
         cast := (*m.GetDomainJoinType()).String()
         err := writer.WriteStringValue("domainJoinType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetGeographicLocationType() != nil {
+        cast := (*m.GetGeographicLocationType()).String()
+        err := writer.WriteStringValue("geographicLocationType", &cast)
         if err != nil {
             return err
         }
@@ -241,9 +270,16 @@ func (m *CloudPcDomainJoinConfiguration) SetAdditionalData(value map[string]any)
 func (m *CloudPcDomainJoinConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDomainJoinType sets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
+// SetDomainJoinType sets the domainJoinType property value. Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
 func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJoinType)() {
     err := m.GetBackingStore().Set("domainJoinType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Read-only.
+func (m *CloudPcDomainJoinConfiguration) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
+    err := m.GetBackingStore().Set("geographicLocationType", value)
     if err != nil {
         panic(err)
     }
@@ -262,7 +298,7 @@ func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string
         panic(err)
     }
 }
-// SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Read-only.
+// SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.
 func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
     if err != nil {
@@ -289,6 +325,7 @@ type CloudPcDomainJoinConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDomainJoinType()(*CloudPcDomainJoinType)
+    GetGeographicLocationType()(*CloudPcGeographicLocationType)
     GetOdataType()(*string)
     GetOnPremisesConnectionId()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
@@ -296,6 +333,7 @@ type CloudPcDomainJoinConfigurationable interface {
     GetTypeEscaped()(*CloudPcDomainJoinType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDomainJoinType(value *CloudPcDomainJoinType)()
+    SetGeographicLocationType(value *CloudPcGeographicLocationType)()
     SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()

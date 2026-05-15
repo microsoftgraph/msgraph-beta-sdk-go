@@ -23,9 +23,27 @@ func NewUser()(*User) {
 // CreateUserFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.agentUser":
+                        return NewAgentUser(), nil
+                }
+            }
+        }
+    }
     return NewUser(), nil
 }
-// GetAboutMe gets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
+// GetAboutMe gets the aboutMe property value. A freeform text entry field for users to describe themselves. Requires $select to retrieve.
 // returns a *string when successful
 func (m *User) GetAboutMe()(*string) {
     val, err := m.GetBackingStore().Get("aboutMe")
@@ -37,7 +55,7 @@ func (m *User) GetAboutMe()(*string) {
     }
     return nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
+// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).
 // returns a *bool when successful
 func (m *User) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
@@ -58,6 +76,18 @@ func (m *User) GetActivities()([]UserActivityable) {
     }
     if val != nil {
         return val.([]UserActivityable)
+    }
+    return nil
+}
+// GetAdhocCalls gets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+// returns a []AdhocCallable when successful
+func (m *User) GetAdhocCalls()([]AdhocCallable) {
+    val, err := m.GetBackingStore().Get("adhocCalls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdhocCallable)
     }
     return nil
 }
@@ -193,7 +223,7 @@ func (m *User) GetAuthorizationInfo()(AuthorizationInfoable) {
     }
     return nil
 }
-// GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+// GetBirthday gets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Requires $select to retrieve.
 // returns a *Time when successful
 func (m *User) GetBirthday()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("birthday")
@@ -301,7 +331,19 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
-// GetCloudPCs gets the cloudPCs property value. The cloudPCs property
+// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// returns a []CloudPcPoolable when successful
+func (m *User) GetCloudPcPools()([]CloudPcPoolable) {
+    val, err := m.GetBackingStore().Get("cloudPcPools")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcPoolable)
+    }
+    return nil
+}
+// GetCloudPCs gets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 // returns a []CloudPCable when successful
 func (m *User) GetCloudPCs()([]CloudPCable) {
     val, err := m.GetBackingStore().Get("cloudPCs")
@@ -433,7 +475,7 @@ func (m *User) GetCreationType()(*string) {
     }
     return nil
 }
-// GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).
+// GetCustomSecurityAttributes gets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).
 // returns a CustomSecurityAttributeValueable when successful
 func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     val, err := m.GetBackingStore().Get("customSecurityAttributes")
@@ -577,7 +619,7 @@ func (m *User) GetDrives()([]Driveable) {
     }
     return nil
 }
-// GetEmployeeExperience gets the employeeExperience property value. The employeeExperience property
+// GetEmployeeExperience gets the employeeExperience property value. The employee experience resources for the user. Read-only. Nullable.
 // returns a EmployeeExperienceUserable when successful
 func (m *User) GetEmployeeExperience()(EmployeeExperienceUserable) {
     val, err := m.GetBackingStore().Get("employeeExperience")
@@ -746,6 +788,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetActivities(res)
+        }
+        return nil
+    }
+    res["adhocCalls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdhocCallFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdhocCallable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AdhocCallable)
+                }
+            }
+            m.SetAdhocCalls(res)
         }
         return nil
     }
@@ -1018,6 +1076,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCloudClipboard(val.(CloudClipboardRootable))
+        }
+        return nil
+    }
+    res["cloudPcPools"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcPoolFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcPoolable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcPoolable)
+                }
+            }
+            m.SetCloudPcPools(res)
         }
         return nil
     }
@@ -1482,6 +1556,26 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetIdentities(res)
+        }
+        return nil
+    }
+    res["identityGovernance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityGovernanceUserSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityGovernance(val.(IdentityGovernanceUserSettingsable))
+        }
+        return nil
+    }
+    res["identityParentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityParentId(val)
         }
         return nil
     }
@@ -2046,6 +2140,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetOnPremisesSipInfo(val.(OnPremisesSipInfoable))
+        }
+        return nil
+    }
+    res["onPremisesSyncBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSyncBehaviorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncBehavior(val.(OnPremisesSyncBehaviorable))
         }
         return nil
     }
@@ -2711,7 +2815,7 @@ func (m *User) GetGivenName()(*string) {
     }
     return nil
 }
-// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+// GetHireDate gets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Requires $select to retrieve.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 // returns a *Time when successful
 func (m *User) GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("hireDate")
@@ -2732,6 +2836,30 @@ func (m *User) GetIdentities()([]ObjectIdentityable) {
     }
     if val != nil {
         return val.([]ObjectIdentityable)
+    }
+    return nil
+}
+// GetIdentityGovernance gets the identityGovernance property value. The identityGovernance property
+// returns a IdentityGovernanceUserSettingsable when successful
+func (m *User) GetIdentityGovernance()(IdentityGovernanceUserSettingsable) {
+    val, err := m.GetBackingStore().Get("identityGovernance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityGovernanceUserSettingsable)
+    }
+    return nil
+}
+// GetIdentityParentId gets the identityParentId property value. The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.
+// returns a *string when successful
+func (m *User) GetIdentityParentId()(*string) {
+    val, err := m.GetBackingStore().Get("identityParentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -2795,7 +2923,7 @@ func (m *User) GetInsights()(ItemInsightsable) {
     }
     return nil
 }
-// GetInterests gets the interests property value. A list for users to describe their interests. Returned only on $select.
+// GetInterests gets the interests property value. A list for users to describe their interests. Requires $select to retrieve.
 // returns a []string when successful
 func (m *User) GetInterests()([]string) {
     val, err := m.GetBackingStore().Get("interests")
@@ -2891,7 +3019,7 @@ func (m *User) GetJoinedTeams()([]Teamable) {
     }
     return nil
 }
-// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+// GetLastPasswordChangeDateTime gets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Requires $select to retrieve.
 // returns a *Time when successful
 func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastPasswordChangeDateTime")
@@ -2903,7 +3031,7 @@ func (m *User) GetLastPasswordChangeDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+// GetLegalAgeGroupClassification gets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve.
 // returns a *string when successful
 func (m *User) GetLegalAgeGroupClassification()(*string) {
     val, err := m.GetBackingStore().Get("legalAgeGroupClassification")
@@ -2915,7 +3043,7 @@ func (m *User) GetLegalAgeGroupClassification()(*string) {
     }
     return nil
 }
-// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
+// GetLicenseAssignmentStates gets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Requires $select to retrieve.
 // returns a []LicenseAssignmentStateable when successful
 func (m *User) GetLicenseAssignmentStates()([]LicenseAssignmentStateable) {
     val, err := m.GetBackingStore().Get("licenseAssignmentStates")
@@ -2951,7 +3079,7 @@ func (m *User) GetMail()(*string) {
     }
     return nil
 }
-// GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+// GetMailboxSettings gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
 // returns a MailboxSettingsable when successful
 func (m *User) GetMailboxSettings()(MailboxSettingsable) {
     val, err := m.GetBackingStore().Get("mailboxSettings")
@@ -3095,7 +3223,7 @@ func (m *User) GetMobilePhone()(*string) {
     }
     return nil
 }
-// GetMySite gets the mySite property value. The URL for the user's site. Returned only on $select.
+// GetMySite gets the mySite property value. The URL for the user's site. Requires $select to retrieve.
 // returns a *string when successful
 func (m *User) GetMySite()(*string) {
     val, err := m.GetBackingStore().Get("mySite")
@@ -3275,6 +3403,18 @@ func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
     }
     return nil
 }
+// GetOnPremisesSyncBehavior gets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+// returns a OnPremisesSyncBehaviorable when successful
+func (m *User) GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable) {
+    val, err := m.GetBackingStore().Get("onPremisesSyncBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSyncBehaviorable)
+    }
+    return nil
+}
 // GetOnPremisesSyncEnabled gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 // returns a *bool when successful
 func (m *User) GetOnPremisesSyncEnabled()(*bool) {
@@ -3371,7 +3511,7 @@ func (m *User) GetPasswordProfile()(PasswordProfileable) {
     }
     return nil
 }
-// GetPastProjects gets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
+// GetPastProjects gets the pastProjects property value. A list for users to enumerate their past projects. Requires $select to retrieve.
 // returns a []string when successful
 func (m *User) GetPastProjects()([]string) {
     val, err := m.GetBackingStore().Get("pastProjects")
@@ -3491,7 +3631,7 @@ func (m *User) GetPreferredLanguage()(*string) {
     }
     return nil
 }
-// GetPreferredName gets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
+// GetPreferredName gets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Requires $select to retrieve.
 // returns a *string when successful
 func (m *User) GetPreferredName()(*string) {
     val, err := m.GetBackingStore().Get("preferredName")
@@ -3587,7 +3727,7 @@ func (m *User) GetRegisteredDevices()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
+// GetResponsibilities gets the responsibilities property value. A list for the user to enumerate their responsibilities. Requires $select to retrieve.
 // returns a []string when successful
 func (m *User) GetResponsibilities()([]string) {
     val, err := m.GetBackingStore().Get("responsibilities")
@@ -3599,7 +3739,7 @@ func (m *User) GetResponsibilities()([]string) {
     }
     return nil
 }
-// GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
+// GetSchools gets the schools property value. A list for the user to enumerate the schools they have attended. Requires $select to retrieve.
 // returns a []string when successful
 func (m *User) GetSchools()([]string) {
     val, err := m.GetBackingStore().Get("schools")
@@ -3671,7 +3811,7 @@ func (m *User) GetShowInAddressList()(*bool) {
     }
     return nil
 }
-// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// GetSignInActivity gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
 // returns a SignInActivityable when successful
 func (m *User) GetSignInActivity()(SignInActivityable) {
     val, err := m.GetBackingStore().Get("signInActivity")
@@ -3695,7 +3835,7 @@ func (m *User) GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSkills gets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
+// GetSkills gets the skills property value. A list for the user to enumerate their skills. Requires $select to retrieve.
 // returns a []string when successful
 func (m *User) GetSkills()([]string) {
     val, err := m.GetBackingStore().Get("skills")
@@ -3917,6 +4057,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetAdhocCalls() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdhocCalls()))
+        for i, v := range m.GetAdhocCalls() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("adhocCalls", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("ageGroup", m.GetAgeGroup())
         if err != nil {
@@ -4099,6 +4251,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteObjectValue("cloudClipboard", m.GetCloudClipboard())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCloudPcPools() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPcPools()))
+        for i, v := range m.GetCloudPcPools() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudPcPools", cast)
         if err != nil {
             return err
         }
@@ -4411,6 +4575,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("identities", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("identityGovernance", m.GetIdentityGovernance())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("identityParentId", m.GetIdentityParentId())
         if err != nil {
             return err
         }
@@ -4777,6 +4953,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteObjectValue("onPremisesSipInfo", m.GetOnPremisesSipInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("onPremisesSyncBehavior", m.GetOnPremisesSyncBehavior())
         if err != nil {
             return err
         }
@@ -5179,14 +5361,14 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAboutMe sets the aboutMe property value. A freeform text entry field for users to describe themselves. Returned only on $select.
+// SetAboutMe sets the aboutMe property value. A freeform text entry field for users to describe themselves. Requires $select to retrieve.
 func (m *User) SetAboutMe(value *string)() {
     err := m.GetBackingStore().Set("aboutMe", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
+// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAccountEnabled(value *bool)() {
     err := m.GetBackingStore().Set("accountEnabled", value)
     if err != nil {
@@ -5196,6 +5378,13 @@ func (m *User) SetAccountEnabled(value *bool)() {
 // SetActivities sets the activities property value. The user's activities across devices. Read-only. Nullable.
 func (m *User) SetActivities(value []UserActivityable)() {
     err := m.GetBackingStore().Set("activities", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdhocCalls sets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+func (m *User) SetAdhocCalls(value []AdhocCallable)() {
+    err := m.GetBackingStore().Set("adhocCalls", value)
     if err != nil {
         panic(err)
     }
@@ -5277,7 +5466,7 @@ func (m *User) SetAuthorizationInfo(value AuthorizationInfoable)() {
         panic(err)
     }
 }
-// SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.
+// SetBirthday sets the birthday property value. The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Requires $select to retrieve.
 func (m *User) SetBirthday(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("birthday", value)
     if err != nil {
@@ -5340,7 +5529,14 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
-// SetCloudPCs sets the cloudPCs property value. The cloudPCs property
+// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+func (m *User) SetCloudPcPools(value []CloudPcPoolable)() {
+    err := m.GetBackingStore().Set("cloudPcPools", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCloudPCs sets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 func (m *User) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
     if err != nil {
@@ -5417,7 +5613,7 @@ func (m *User) SetCreationType(value *string)() {
         panic(err)
     }
 }
-// SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).
+// SetCustomSecurityAttributes sets the customSecurityAttributes property value. An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Requires $select to retrieve. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive. To read this property, the calling app must be assigned the CustomSecAttributeAssignment.Read.All permission. To write this property, the calling app must be assigned the CustomSecAttributeAssignment.ReadWrite.All permissions. To read or write this property in delegated scenarios, the admin must be assigned the Attribute Assignment Administrator role. Supports $filter (eq, ne, not , ge, le, in).
 func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)() {
     err := m.GetBackingStore().Set("customSecurityAttributes", value)
     if err != nil {
@@ -5501,7 +5697,7 @@ func (m *User) SetDrives(value []Driveable)() {
         panic(err)
     }
 }
-// SetEmployeeExperience sets the employeeExperience property value. The employeeExperience property
+// SetEmployeeExperience sets the employeeExperience property value. The employee experience resources for the user. Read-only. Nullable.
 func (m *User) SetEmployeeExperience(value EmployeeExperienceUserable)() {
     err := m.GetBackingStore().Set("employeeExperience", value)
     if err != nil {
@@ -5592,7 +5788,7 @@ func (m *User) SetGivenName(value *string)() {
         panic(err)
     }
 }
-// SetHireDate sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
+// SetHireDate sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Requires $select to retrieve.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
 func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("hireDate", value)
     if err != nil {
@@ -5602,6 +5798,20 @@ func (m *User) SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391
 // SetIdentities sets the identities property value. Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value.  Supports $filter (eq) with limitations.
 func (m *User) SetIdentities(value []ObjectIdentityable)() {
     err := m.GetBackingStore().Set("identities", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIdentityGovernance sets the identityGovernance property value. The identityGovernance property
+func (m *User) SetIdentityGovernance(value IdentityGovernanceUserSettingsable)() {
+    err := m.GetBackingStore().Set("identityGovernance", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIdentityParentId sets the identityParentId property value. The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.
+func (m *User) SetIdentityParentId(value *string)() {
+    err := m.GetBackingStore().Set("identityParentId", value)
     if err != nil {
         panic(err)
     }
@@ -5641,7 +5851,7 @@ func (m *User) SetInsights(value ItemInsightsable)() {
         panic(err)
     }
 }
-// SetInterests sets the interests property value. A list for users to describe their interests. Returned only on $select.
+// SetInterests sets the interests property value. A list for users to describe their interests. Requires $select to retrieve.
 func (m *User) SetInterests(value []string)() {
     err := m.GetBackingStore().Set("interests", value)
     if err != nil {
@@ -5697,21 +5907,21 @@ func (m *User) SetJoinedTeams(value []Teamable)() {
         panic(err)
     }
 }
-// SetLastPasswordChangeDateTime sets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+// SetLastPasswordChangeDateTime sets the lastPasswordChangeDateTime property value. When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Requires $select to retrieve.
 func (m *User) SetLastPasswordChangeDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastPasswordChangeDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLegalAgeGroupClassification sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.
+// SetLegalAgeGroupClassification sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, Undefined, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Requires $select to retrieve.
 func (m *User) SetLegalAgeGroupClassification(value *string)() {
     err := m.GetBackingStore().Set("legalAgeGroupClassification", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.
+// SetLicenseAssignmentStates sets the licenseAssignmentStates property value. State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Requires $select to retrieve.
 func (m *User) SetLicenseAssignmentStates(value []LicenseAssignmentStateable)() {
     err := m.GetBackingStore().Set("licenseAssignmentStates", value)
     if err != nil {
@@ -5732,7 +5942,7 @@ func (m *User) SetMail(value *string)() {
         panic(err)
     }
 }
-// SetMailboxSettings sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
+// SetMailboxSettings sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
 func (m *User) SetMailboxSettings(value MailboxSettingsable)() {
     err := m.GetBackingStore().Set("mailboxSettings", value)
     if err != nil {
@@ -5816,7 +6026,7 @@ func (m *User) SetMobilePhone(value *string)() {
         panic(err)
     }
 }
-// SetMySite sets the mySite property value. The URL for the user's site. Returned only on $select.
+// SetMySite sets the mySite property value. The URL for the user's site. Requires $select to retrieve.
 func (m *User) SetMySite(value *string)() {
     err := m.GetBackingStore().Set("mySite", value)
     if err != nil {
@@ -5921,6 +6131,13 @@ func (m *User) SetOnPremisesSipInfo(value OnPremisesSipInfoable)() {
         panic(err)
     }
 }
+// SetOnPremisesSyncBehavior sets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+func (m *User) SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)() {
+    err := m.GetBackingStore().Set("onPremisesSyncBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -5977,7 +6194,7 @@ func (m *User) SetPasswordProfile(value PasswordProfileable)() {
         panic(err)
     }
 }
-// SetPastProjects sets the pastProjects property value. A list for users to enumerate their past projects. Returned only on $select.
+// SetPastProjects sets the pastProjects property value. A list for users to enumerate their past projects. Requires $select to retrieve.
 func (m *User) SetPastProjects(value []string)() {
     err := m.GetBackingStore().Set("pastProjects", value)
     if err != nil {
@@ -6047,7 +6264,7 @@ func (m *User) SetPreferredLanguage(value *string)() {
         panic(err)
     }
 }
-// SetPreferredName sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
+// SetPreferredName sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Requires $select to retrieve.
 func (m *User) SetPreferredName(value *string)() {
     err := m.GetBackingStore().Set("preferredName", value)
     if err != nil {
@@ -6103,14 +6320,14 @@ func (m *User) SetRegisteredDevices(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetResponsibilities sets the responsibilities property value. A list for the user to enumerate their responsibilities. Returned only on $select.
+// SetResponsibilities sets the responsibilities property value. A list for the user to enumerate their responsibilities. Requires $select to retrieve.
 func (m *User) SetResponsibilities(value []string)() {
     err := m.GetBackingStore().Set("responsibilities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchools sets the schools property value. A list for the user to enumerate the schools they have attended. Returned only on $select.
+// SetSchools sets the schools property value. A list for the user to enumerate the schools they have attended. Requires $select to retrieve.
 func (m *User) SetSchools(value []string)() {
     err := m.GetBackingStore().Set("schools", value)
     if err != nil {
@@ -6152,7 +6369,7 @@ func (m *User) SetShowInAddressList(value *bool)() {
         panic(err)
     }
 }
-// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+// SetSignInActivity sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Requires $select to retrieve. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require a Microsoft Entra ID P1 or P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
 func (m *User) SetSignInActivity(value SignInActivityable)() {
     err := m.GetBackingStore().Set("signInActivity", value)
     if err != nil {
@@ -6166,7 +6383,7 @@ func (m *User) SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetSkills sets the skills property value. A list for the user to enumerate their skills. Returned only on $select.
+// SetSkills sets the skills property value. A list for the user to enumerate their skills. Requires $select to retrieve.
 func (m *User) SetSkills(value []string)() {
     err := m.GetBackingStore().Set("skills", value)
     if err != nil {
@@ -6284,6 +6501,7 @@ type Userable interface {
     GetAboutMe()(*string)
     GetAccountEnabled()(*bool)
     GetActivities()([]UserActivityable)
+    GetAdhocCalls()([]AdhocCallable)
     GetAgeGroup()(*string)
     GetAgreementAcceptances()([]AgreementAcceptanceable)
     GetAnalytics()(UserAnalyticsable)
@@ -6304,6 +6522,7 @@ type Userable interface {
     GetChats()([]Chatable)
     GetCity()(*string)
     GetCloudClipboard()(CloudClipboardRootable)
+    GetCloudPcPools()([]CloudPcPoolable)
     GetCloudPCs()([]CloudPCable)
     GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable)
     GetCommunications()(UserCloudCommunicationable)
@@ -6342,6 +6561,8 @@ type Userable interface {
     GetGivenName()(*string)
     GetHireDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIdentities()([]ObjectIdentityable)
+    GetIdentityGovernance()(IdentityGovernanceUserSettingsable)
+    GetIdentityParentId()(*string)
     GetImAddresses()([]string)
     GetInferenceClassification()(InferenceClassificationable)
     GetInfoCatalogs()([]string)
@@ -6387,6 +6608,7 @@ type Userable interface {
     GetOnPremisesSamAccountName()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSipInfo()(OnPremisesSipInfoable)
+    GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
     GetOnPremisesUserPrincipalName()(*string)
     GetOtherMails()([]string)
@@ -6441,6 +6663,7 @@ type Userable interface {
     SetAboutMe(value *string)()
     SetAccountEnabled(value *bool)()
     SetActivities(value []UserActivityable)()
+    SetAdhocCalls(value []AdhocCallable)()
     SetAgeGroup(value *string)()
     SetAgreementAcceptances(value []AgreementAcceptanceable)()
     SetAnalytics(value UserAnalyticsable)()
@@ -6461,6 +6684,7 @@ type Userable interface {
     SetChats(value []Chatable)()
     SetCity(value *string)()
     SetCloudClipboard(value CloudClipboardRootable)()
+    SetCloudPcPools(value []CloudPcPoolable)()
     SetCloudPCs(value []CloudPCable)()
     SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)()
     SetCommunications(value UserCloudCommunicationable)()
@@ -6499,6 +6723,8 @@ type Userable interface {
     SetGivenName(value *string)()
     SetHireDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIdentities(value []ObjectIdentityable)()
+    SetIdentityGovernance(value IdentityGovernanceUserSettingsable)()
+    SetIdentityParentId(value *string)()
     SetImAddresses(value []string)()
     SetInferenceClassification(value InferenceClassificationable)()
     SetInfoCatalogs(value []string)()
@@ -6544,6 +6770,7 @@ type Userable interface {
     SetOnPremisesSamAccountName(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSipInfo(value OnPremisesSipInfoable)()
+    SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOnPremisesUserPrincipalName(value *string)()
     SetOtherMails(value []string)()

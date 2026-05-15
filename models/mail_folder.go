@@ -372,7 +372,7 @@ func (m *MailFolder) GetUnreadItemCount()(*int32) {
     }
     return nil
 }
-// GetUserConfigurations gets the userConfigurations property value. The userConfigurations property
+// GetUserConfigurations gets the userConfigurations property value. The user configuration objects associated to the mailFolder.
 // returns a []UserConfigurationable when successful
 func (m *MailFolder) GetUserConfigurations()([]UserConfigurationable) {
     val, err := m.GetBackingStore().Get("userConfigurations")
@@ -614,7 +614,7 @@ func (m *MailFolder) SetUnreadItemCount(value *int32)() {
         panic(err)
     }
 }
-// SetUserConfigurations sets the userConfigurations property value. The userConfigurations property
+// SetUserConfigurations sets the userConfigurations property value. The user configuration objects associated to the mailFolder.
 func (m *MailFolder) SetUserConfigurations(value []UserConfigurationable)() {
     err := m.GetBackingStore().Set("userConfigurations", value)
     if err != nil {

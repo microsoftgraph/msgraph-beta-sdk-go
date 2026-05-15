@@ -24,9 +24,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlann
 // TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters a collection of plannerPlan objects owned by the Teams channel. Currently, only shared channels are supported. Read-only. Nullable.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlannerPlanItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlannerPlanItemRequestBuilderGetRequestConfiguration struct {
@@ -107,6 +107,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansP
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
+}
+// GetUsageRights provides operations to call the getUsageRights method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansItemGetUsageRightsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansItemGetUsageRightsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MoveToContainer provides operations to call the moveToContainer method.
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemPlannerPlansItemMoveToContainerRequestBuilder when successful

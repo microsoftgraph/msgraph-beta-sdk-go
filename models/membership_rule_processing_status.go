@@ -126,7 +126,7 @@ func (m *MembershipRuleProcessingStatus) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
+// GetStatus gets the status property value. Current status of a dynamic group processing. The possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
 // returns a *MembershipRuleProcessingStatusDetails when successful
 func (m *MembershipRuleProcessingStatus) GetStatus()(*MembershipRuleProcessingStatusDetails) {
     val, err := m.GetBackingStore().Get("status")
@@ -205,7 +205,7 @@ func (m *MembershipRuleProcessingStatus) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
+// SetStatus sets the status property value. Current status of a dynamic group processing. The possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.
 func (m *MembershipRuleProcessingStatus) SetStatus(value *MembershipRuleProcessingStatusDetails)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

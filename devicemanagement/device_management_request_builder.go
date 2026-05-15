@@ -17,9 +17,9 @@ type DeviceManagementRequestBuilder struct {
 // DeviceManagementRequestBuilderGetQueryParameters get deviceManagement
 type DeviceManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // DeviceManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeviceManagementRequestBuilderGetRequestConfiguration struct {
@@ -41,6 +41,11 @@ type DeviceManagementRequestBuilderPatchRequestConfiguration struct {
 // returns a *AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) AdvancedThreatProtectionOnboardingStateSummary()(*AdvancedThreatProtectionOnboardingStateSummaryRequestBuilder) {
     return NewAdvancedThreatProtectionOnboardingStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AndroidAppConfigurationSchema provides operations to manage the androidAppConfigurationSchema property of the microsoft.graph.deviceManagement entity.
+// returns a *AndroidAppConfigurationSchemaRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) AndroidAppConfigurationSchema()(*AndroidAppConfigurationSchemaRequestBuilder) {
+    return NewAndroidAppConfigurationSchemaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AndroidDeviceOwnerEnrollmentProfiles provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
 // returns a *AndroidDeviceOwnerEnrollmentProfilesRequestBuilder when successful
@@ -704,11 +709,6 @@ func (m *DeviceManagementRequestBuilder) SettingDefinitions()(*SettingDefinition
 // returns a *SoftwareUpdateStatusSummaryRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummaryRequestBuilder) {
     return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
-// returns a *TelecomExpenseManagementPartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomExpenseManagementPartnersRequestBuilder) {
-    return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TemplateInsights provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
 // returns a *TemplateInsightsRequestBuilder when successful

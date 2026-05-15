@@ -43,7 +43,7 @@ func (m *DriftedProperty) GetAdditionalData()(map[string]any) {
 func (m *DriftedProperty) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCurrentValue gets the currentValue property value. The currentValue property
+// GetCurrentValue gets the currentValue property value. The current value of the property.
 // returns a UntypedNodeable when successful
 func (m *DriftedProperty) GetCurrentValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("currentValue")
@@ -55,7 +55,7 @@ func (m *DriftedProperty) GetCurrentValue()(i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// GetDesiredValue gets the desiredValue property value. The desiredValue property
+// GetDesiredValue gets the desiredValue property value. The desired value of the property as specified by admins in the baseline of the monitor body.
 // returns a UntypedNodeable when successful
 func (m *DriftedProperty) GetDesiredValue()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("desiredValue")
@@ -125,7 +125,7 @@ func (m *DriftedProperty) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPropertyName gets the propertyName property value. The propertyName property
+// GetPropertyName gets the propertyName property value. The name of the property.
 // returns a *string when successful
 func (m *DriftedProperty) GetPropertyName()(*string) {
     val, err := m.GetBackingStore().Get("propertyName")
@@ -164,14 +164,14 @@ func (m *DriftedProperty) SetAdditionalData(value map[string]any)() {
 func (m *DriftedProperty) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCurrentValue sets the currentValue property value. The currentValue property
+// SetCurrentValue sets the currentValue property value. The current value of the property.
 func (m *DriftedProperty) SetCurrentValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("currentValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDesiredValue sets the desiredValue property value. The desiredValue property
+// SetDesiredValue sets the desiredValue property value. The desired value of the property as specified by admins in the baseline of the monitor body.
 func (m *DriftedProperty) SetDesiredValue(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("desiredValue", value)
     if err != nil {
@@ -185,7 +185,7 @@ func (m *DriftedProperty) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPropertyName sets the propertyName property value. The propertyName property
+// SetPropertyName sets the propertyName property value. The name of the property.
 func (m *DriftedProperty) SetPropertyName(value *string)() {
     err := m.GetBackingStore().Set("propertyName", value)
     if err != nil {

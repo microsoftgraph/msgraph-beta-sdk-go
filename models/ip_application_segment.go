@@ -24,6 +24,18 @@ func NewIpApplicationSegment()(*IpApplicationSegment) {
 func CreateIpApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpApplicationSegment(), nil
 }
+// GetAction gets the action property value. The action property
+// returns a *ActionType when successful
+func (m *IpApplicationSegment) GetAction()(*ActionType) {
+    val, err := m.GetBackingStore().Get("action")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ActionType)
+    }
+    return nil
+}
 // GetApplication gets the application property value. The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.
 // returns a Applicationable when successful
 func (m *IpApplicationSegment) GetApplication()(Applicationable) {
@@ -64,6 +76,16 @@ func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationTy
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApplicationSegment.GetFieldDeserializers()
+    res["action"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseActionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAction(val.(*ActionType))
+        }
+        return nil
+    }
     res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateApplicationFromDiscriminatorValue)
         if err != nil {
@@ -174,6 +196,13 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
+    if m.GetAction() != nil {
+        cast := (*m.GetAction()).String()
+        err = writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("application", m.GetApplication())
         if err != nil {
@@ -213,6 +242,13 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetAction sets the action property value. The action property
+func (m *IpApplicationSegment) SetAction(value *ActionType)() {
+    err := m.GetBackingStore().Set("action", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplication sets the application property value. The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.
 func (m *IpApplicationSegment) SetApplication(value Applicationable)() {
@@ -259,12 +295,14 @@ func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
 type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAction()(*ActionType)
     GetApplication()(Applicationable)
     GetDestinationHost()(*string)
     GetDestinationType()(*PrivateNetworkDestinationType)
     GetPort()(*int32)
     GetPorts()([]string)
     GetProtocol()(*PrivateNetworkProtocol)
+    SetAction(value *ActionType)()
     SetApplication(value Applicationable)()
     SetDestinationHost(value *string)()
     SetDestinationType(value *PrivateNetworkDestinationType)()

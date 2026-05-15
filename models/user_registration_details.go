@@ -333,7 +333,7 @@ func (m *UserRegistrationDetails) GetMethodsRegistered()([]string) {
     }
     return nil
 }
-// GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
+// GetSystemPreferredAuthenticationMethods gets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 // returns a []string when successful
 func (m *UserRegistrationDetails) GetSystemPreferredAuthenticationMethods()([]string) {
     val, err := m.GetBackingStore().Get("systemPreferredAuthenticationMethods")
@@ -357,7 +357,7 @@ func (m *UserRegistrationDetails) GetUserDisplayName()(*string) {
     }
     return nil
 }
-// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+// GetUserPreferredMethodForSecondaryAuthentication gets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 // returns a *UserDefaultAuthenticationMethod when successful
 func (m *UserRegistrationDetails) GetUserPreferredMethodForSecondaryAuthentication()(*UserDefaultAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("userPreferredMethodForSecondaryAuthentication")
@@ -577,7 +577,7 @@ func (m *UserRegistrationDetails) SetMethodsRegistered(value []string)() {
         panic(err)
     }
 }
-// SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
+// SetSystemPreferredAuthenticationMethods sets the systemPreferredAuthenticationMethods property value. Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
 func (m *UserRegistrationDetails) SetSystemPreferredAuthenticationMethods(value []string)() {
     err := m.GetBackingStore().Set("systemPreferredAuthenticationMethods", value)
     if err != nil {
@@ -591,7 +591,7 @@ func (m *UserRegistrationDetails) SetUserDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+// SetUserPreferredMethodForSecondaryAuthentication sets the userPreferredMethodForSecondaryAuthentication property value. The method the user selected as the default second-factor for performing multifactor authentication. The possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
 func (m *UserRegistrationDetails) SetUserPreferredMethodForSecondaryAuthentication(value *UserDefaultAuthenticationMethod)() {
     err := m.GetBackingStore().Set("userPreferredMethodForSecondaryAuthentication", value)
     if err != nil {

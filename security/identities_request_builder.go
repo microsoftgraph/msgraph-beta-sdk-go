@@ -24,9 +24,9 @@ type IdentitiesRequestBuilderDeleteRequestConfiguration struct {
 // IdentitiesRequestBuilderGetQueryParameters a container for security identities APIs.
 type IdentitiesRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // IdentitiesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type IdentitiesRequestBuilderGetRequestConfiguration struct {
@@ -123,10 +123,30 @@ func (m *IdentitiesRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IdentityContainerable), nil
 }
+// SensorCandidateActivationConfiguration provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidateActivationConfigurationRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidateActivationConfiguration()(*IdentitiesSensorCandidateActivationConfigurationRequestBuilder) {
+    return NewIdentitiesSensorCandidateActivationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SensorCandidates provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorCandidatesRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorCandidates()(*IdentitiesSensorCandidatesRequestBuilder) {
+    return NewIdentitiesSensorCandidatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SensorMigration provides operations to manage the sensorMigration property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSensorMigrationRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) SensorMigration()(*IdentitiesSensorMigrationRequestBuilder) {
+    return NewIdentitiesSensorMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sensors provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.
 // returns a *IdentitiesSensorsRequestBuilder when successful
 func (m *IdentitiesRequestBuilder) Sensors()(*IdentitiesSensorsRequestBuilder) {
     return NewIdentitiesSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Settings provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.
+// returns a *IdentitiesSettingsRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) Settings()(*IdentitiesSettingsRequestBuilder) {
+    return NewIdentitiesSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property identities for security
 // returns a *RequestInformation when successful

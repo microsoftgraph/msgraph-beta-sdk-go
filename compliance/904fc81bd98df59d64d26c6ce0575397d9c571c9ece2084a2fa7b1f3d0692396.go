@@ -17,9 +17,9 @@ type EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperatio
 // EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
 type EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EdiscoveryCasesItemOperationsItemMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderGetRequestConfiguration struct {

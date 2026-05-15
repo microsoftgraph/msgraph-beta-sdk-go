@@ -24,7 +24,7 @@ func NewManagementTemplate()(*ManagementTemplate) {
 func CreateManagementTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagementTemplate(), nil
 }
-// GetCategory gets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// GetCategory gets the category property value. The management category for the management template. The possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 // returns a *ManagementCategory when successful
 func (m *ManagementTemplate) GetCategory()(*ManagementCategory) {
     val, err := m.GetBackingStore().Get("category")
@@ -548,7 +548,7 @@ func (m *ManagementTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetCategory sets the category property value. The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
+// SetCategory sets the category property value. The management category for the management template. The possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
 func (m *ManagementTemplate) SetCategory(value *ManagementCategory)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {

@@ -24,9 +24,9 @@ type PrinterSharesPrinterShareItemRequestBuilderDeleteRequestConfiguration struc
 // PrinterSharesPrinterShareItemRequestBuilderGetQueryParameters get printerShares from print
 type PrinterSharesPrinterShareItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PrinterSharesPrinterShareItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PrinterSharesPrinterShareItemRequestBuilderGetRequestConfiguration struct {

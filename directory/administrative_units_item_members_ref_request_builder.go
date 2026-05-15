@@ -17,7 +17,7 @@ type AdministrativeUnitsItemMembersRefRequestBuilder struct {
 // AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for directory
 type AdministrativeUnitsItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
-    Id *string `uriparametername:"%40id"`
+    Id *string "uriparametername:\"%40id\""
 }
 // AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration struct {
@@ -31,17 +31,17 @@ type AdministrativeUnitsItemMembersRefRequestBuilderDeleteRequestConfiguration s
 // AdministrativeUnitsItemMembersRefRequestBuilderGetQueryParameters users and groups that are members of this administrative unit. Supports $expand.
 type AdministrativeUnitsItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
-    Count *bool `uriparametername:"%24count"`
+    Count *bool "uriparametername:\"%24count\""
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Order items by property values
-    Orderby []string `uriparametername:"%24orderby"`
+    Orderby []string "uriparametername:\"%24orderby\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int32 "uriparametername:\"%24skip\""
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int32 "uriparametername:\"%24top\""
 }
 // AdministrativeUnitsItemMembersRefRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdministrativeUnitsItemMembersRefRequestBuilderGetRequestConfiguration struct {

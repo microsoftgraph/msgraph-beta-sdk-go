@@ -16,9 +16,9 @@ type ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestB
 // ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
-    Filter *string `uriparametername:"%24filter"`
+    Filter *string "uriparametername:\"%24filter\""
     // Search items by search phrases
-    Search *string `uriparametername:"%24search"`
+    Search *string "uriparametername:\"%24search\""
 }
 // ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemOnlineMeetingsItemMeetingAttendanceReportAttendanceRecordsCountRequestBuilderGetRequestConfiguration struct {

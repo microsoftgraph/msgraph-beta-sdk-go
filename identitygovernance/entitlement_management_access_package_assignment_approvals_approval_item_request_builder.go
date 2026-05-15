@@ -24,9 +24,9 @@ type EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBui
 // EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetQueryParameters retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
 type EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentApprovalsApprovalItemRequestBuilderGetRequestConfiguration struct {

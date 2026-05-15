@@ -236,7 +236,7 @@ func (m *CloudPcGalleryImage) GetOffer()(*string) {
     }
     return nil
 }
-// GetOfferDisplayName gets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
+// GetOfferDisplayName gets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("offerDisplayName")
@@ -368,7 +368,7 @@ func (m *CloudPcGalleryImage) GetStartDate()(*i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.
+// GetStatus gets the status property value. The status of the gallery image on the Cloud PC. The possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.
 // returns a *CloudPcGalleryImageStatus when successful
 func (m *CloudPcGalleryImage) GetStatus()(*CloudPcGalleryImageStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -513,7 +513,7 @@ func (m *CloudPcGalleryImage) SetOffer(value *string)() {
         panic(err)
     }
 }
-// SetOfferDisplayName sets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
+// SetOfferDisplayName sets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 11 Enterprise. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
 func (m *CloudPcGalleryImage) SetOfferDisplayName(value *string)() {
     err := m.GetBackingStore().Set("offerDisplayName", value)
     if err != nil {
@@ -590,7 +590,7 @@ func (m *CloudPcGalleryImage) SetStartDate(value *i878a80d2330e89d26896388a3f487
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.
+// SetStatus sets the status property value. The status of the gallery image on the Cloud PC. The possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.
 func (m *CloudPcGalleryImage) SetStatus(value *CloudPcGalleryImageStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

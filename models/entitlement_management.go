@@ -154,6 +154,18 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     }
     return nil
 }
+// GetAccessPackageSuggestions gets the accessPackageSuggestions property value. The accessPackageSuggestions property
+// returns a []AccessPackageSuggestionable when successful
+func (m *EntitlementManagement) GetAccessPackageSuggestions()([]AccessPackageSuggestionable) {
+    val, err := m.GetBackingStore().Get("accessPackageSuggestions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageSuggestionable)
+    }
+    return nil
+}
 // GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 // returns a []AccessPackageAssignmentRequestable when successful
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
@@ -166,6 +178,18 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
     }
     return nil
 }
+// GetAvailableAccessPackages gets the availableAccessPackages property value. The availableAccessPackages property
+// returns a []AvailableAccessPackageable when successful
+func (m *EntitlementManagement) GetAvailableAccessPackages()([]AvailableAccessPackageable) {
+    val, err := m.GetBackingStore().Get("availableAccessPackages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AvailableAccessPackageable)
+    }
+    return nil
+}
 // GetConnectedOrganizations gets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 // returns a []ConnectedOrganizationable when successful
 func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizationable) {
@@ -175,6 +199,30 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
     }
     if val != nil {
         return val.([]ConnectedOrganizationable)
+    }
+    return nil
+}
+// GetControlConfigurations gets the controlConfigurations property value. Represents the policies that control lifecycle and access to access packages across the organization.
+// returns a []ControlConfigurationable when successful
+func (m *EntitlementManagement) GetControlConfigurations()([]ControlConfigurationable) {
+    val, err := m.GetBackingStore().Get("controlConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ControlConfigurationable)
+    }
+    return nil
+}
+// GetExternalOriginResourceConnectors gets the externalOriginResourceConnectors property value. Represents the connectors used to communicate with external resource systems.
+// returns a []ExternalOriginResourceConnectorable when successful
+func (m *EntitlementManagement) GetExternalOriginResourceConnectors()([]ExternalOriginResourceConnectorable) {
+    val, err := m.GetBackingStore().Get("externalOriginResourceConnectors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ExternalOriginResourceConnectorable)
     }
     return nil
 }
@@ -358,6 +406,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["accessPackageSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageSuggestionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageSuggestionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageSuggestionable)
+                }
+            }
+            m.SetAccessPackageSuggestions(res)
+        }
+        return nil
+    }
     res["assignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
@@ -374,6 +438,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["availableAccessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAvailableAccessPackageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AvailableAccessPackageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AvailableAccessPackageable)
+                }
+            }
+            m.SetAvailableAccessPackages(res)
+        }
+        return nil
+    }
     res["connectedOrganizations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConnectedOrganizationFromDiscriminatorValue)
         if err != nil {
@@ -387,6 +467,38 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
                 }
             }
             m.SetConnectedOrganizations(res)
+        }
+        return nil
+    }
+    res["controlConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateControlConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ControlConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ControlConfigurationable)
+                }
+            }
+            m.SetControlConfigurations(res)
+        }
+        return nil
+    }
+    res["externalOriginResourceConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExternalOriginResourceConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ExternalOriginResourceConnectorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ExternalOriginResourceConnectorable)
+                }
+            }
+            m.SetExternalOriginResourceConnectors(res)
         }
         return nil
     }
@@ -580,6 +692,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetAccessPackageSuggestions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageSuggestions()))
+        for i, v := range m.GetAccessPackageSuggestions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("accessPackageSuggestions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignmentRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
@@ -592,6 +716,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetAvailableAccessPackages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAvailableAccessPackages()))
+        for i, v := range m.GetAvailableAccessPackages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("availableAccessPackages", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectedOrganizations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectedOrganizations()))
         for i, v := range m.GetConnectedOrganizations() {
@@ -600,6 +736,30 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             }
         }
         err = writer.WriteCollectionOfObjectValues("connectedOrganizations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetControlConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetControlConfigurations()))
+        for i, v := range m.GetControlConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("controlConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetExternalOriginResourceConnectors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalOriginResourceConnectors()))
+        for i, v := range m.GetExternalOriginResourceConnectors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalOriginResourceConnectors", cast)
         if err != nil {
             return err
         }
@@ -701,6 +861,13 @@ func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
         panic(err)
     }
 }
+// SetAccessPackageSuggestions sets the accessPackageSuggestions property value. The accessPackageSuggestions property
+func (m *EntitlementManagement) SetAccessPackageSuggestions(value []AccessPackageSuggestionable)() {
+    err := m.GetBackingStore().Set("accessPackageSuggestions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
     err := m.GetBackingStore().Set("assignmentRequests", value)
@@ -708,9 +875,30 @@ func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssig
         panic(err)
     }
 }
+// SetAvailableAccessPackages sets the availableAccessPackages property value. The availableAccessPackages property
+func (m *EntitlementManagement) SetAvailableAccessPackages(value []AvailableAccessPackageable)() {
+    err := m.GetBackingStore().Set("availableAccessPackages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectedOrganizations sets the connectedOrganizations property value. Represents references to a directory or domain of another organization whose users can request access.
 func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrganizationable)() {
     err := m.GetBackingStore().Set("connectedOrganizations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetControlConfigurations sets the controlConfigurations property value. Represents the policies that control lifecycle and access to access packages across the organization.
+func (m *EntitlementManagement) SetControlConfigurations(value []ControlConfigurationable)() {
+    err := m.GetBackingStore().Set("controlConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetExternalOriginResourceConnectors sets the externalOriginResourceConnectors property value. Represents the connectors used to communicate with external resource systems.
+func (m *EntitlementManagement) SetExternalOriginResourceConnectors(value []ExternalOriginResourceConnectorable)() {
+    err := m.GetBackingStore().Set("externalOriginResourceConnectors", value)
     if err != nil {
         panic(err)
     }
@@ -743,8 +931,12 @@ type EntitlementManagementable interface {
     GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
     GetAccessPackageResources()([]AccessPackageResourceable)
     GetAccessPackages()([]AccessPackageable)
+    GetAccessPackageSuggestions()([]AccessPackageSuggestionable)
     GetAssignmentRequests()([]AccessPackageAssignmentRequestable)
+    GetAvailableAccessPackages()([]AvailableAccessPackageable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
+    GetControlConfigurations()([]ControlConfigurationable)
+    GetExternalOriginResourceConnectors()([]ExternalOriginResourceConnectorable)
     GetSettings()(EntitlementManagementSettingsable)
     GetSubjects()([]AccessPackageSubjectable)
     SetAccessPackageAssignmentApprovals(value []Approvalable)()
@@ -758,8 +950,12 @@ type EntitlementManagementable interface {
     SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
     SetAccessPackageResources(value []AccessPackageResourceable)()
     SetAccessPackages(value []AccessPackageable)()
+    SetAccessPackageSuggestions(value []AccessPackageSuggestionable)()
     SetAssignmentRequests(value []AccessPackageAssignmentRequestable)()
+    SetAvailableAccessPackages(value []AvailableAccessPackageable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
+    SetControlConfigurations(value []ControlConfigurationable)()
+    SetExternalOriginResourceConnectors(value []ExternalOriginResourceConnectorable)()
     SetSettings(value EntitlementManagementSettingsable)()
     SetSubjects(value []AccessPackageSubjectable)()
 }

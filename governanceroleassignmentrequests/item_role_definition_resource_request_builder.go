@@ -17,9 +17,9 @@ type ItemRoleDefinitionResourceRequestBuilder struct {
 // ItemRoleDefinitionResourceRequestBuilderGetQueryParameters read-only. The associated resource for the role definition.
 type ItemRoleDefinitionResourceRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ItemRoleDefinitionResourceRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemRoleDefinitionResourceRequestBuilderGetRequestConfiguration struct {

@@ -16,10 +16,13 @@ const (
     UNKNOWNFUTUREVALUE_CONDITIONCATEGORY
     FRONTLINEBUFFERUSAGEDURATION_CONDITIONCATEGORY
     FRONTLINEBUFFERUSAGETHRESHOLD_CONDITIONCATEGORY
+    CLOUDPCUSERSETTINGSPERSISTENCEUSAGETHRESHOLD_CONDITIONCATEGORY
+    CLOUDPCDEPROVISIONEDTHRESHOLD_CONDITIONCATEGORY
+    CLOUDPCRESERVEDEPROVISIONFAILEDTHRESHOLD_CONDITIONCATEGORY
 )
 
 func (i ConditionCategory) String() string {
-    return []string{"provisionFailures", "imageUploadFailures", "azureNetworkConnectionCheckFailures", "cloudPcInGracePeriod", "frontlineInsufficientLicenses", "cloudPcConnectionErrors", "cloudPcHostHealthCheckFailures", "cloudPcZoneOutage", "unknownFutureValue", "frontlineBufferUsageDuration", "frontlineBufferUsageThreshold"}[i]
+    return []string{"provisionFailures", "imageUploadFailures", "azureNetworkConnectionCheckFailures", "cloudPcInGracePeriod", "frontlineInsufficientLicenses", "cloudPcConnectionErrors", "cloudPcHostHealthCheckFailures", "cloudPcZoneOutage", "unknownFutureValue", "frontlineBufferUsageDuration", "frontlineBufferUsageThreshold", "cloudPcUserSettingsPersistenceUsageThreshold", "cloudPcDeprovisionedThreshold", "cloudPcReserveDeprovisionFailedThreshold"}[i]
 }
 func ParseConditionCategory(v string) (any, error) {
     result := PROVISIONFAILURES_CONDITIONCATEGORY
@@ -46,6 +49,12 @@ func ParseConditionCategory(v string) (any, error) {
             result = FRONTLINEBUFFERUSAGEDURATION_CONDITIONCATEGORY
         case "frontlineBufferUsageThreshold":
             result = FRONTLINEBUFFERUSAGETHRESHOLD_CONDITIONCATEGORY
+        case "cloudPcUserSettingsPersistenceUsageThreshold":
+            result = CLOUDPCUSERSETTINGSPERSISTENCEUSAGETHRESHOLD_CONDITIONCATEGORY
+        case "cloudPcDeprovisionedThreshold":
+            result = CLOUDPCDEPROVISIONEDTHRESHOLD_CONDITIONCATEGORY
+        case "cloudPcReserveDeprovisionFailedThreshold":
+            result = CLOUDPCRESERVEDEPROVISIONFAILEDTHRESHOLD_CONDITIONCATEGORY
         default:
             return nil, nil
     }

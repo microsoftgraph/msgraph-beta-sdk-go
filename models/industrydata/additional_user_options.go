@@ -125,7 +125,7 @@ func (m *AdditionalUserOptions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStudentAgeGroup gets the studentAgeGroup property value. Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+// GetStudentAgeGroup gets the studentAgeGroup property value. Indicates the age group classification for students. The possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
 // returns a *StudentAgeGroup when successful
 func (m *AdditionalUserOptions) GetStudentAgeGroup()(*StudentAgeGroup) {
     val, err := m.GetBackingStore().Get("studentAgeGroup")
@@ -204,7 +204,7 @@ func (m *AdditionalUserOptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStudentAgeGroup sets the studentAgeGroup property value. Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+// SetStudentAgeGroup sets the studentAgeGroup property value. Indicates the age group classification for students. The possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
 func (m *AdditionalUserOptions) SetStudentAgeGroup(value *StudentAgeGroup)() {
     err := m.GetBackingStore().Set("studentAgeGroup", value)
     if err != nil {

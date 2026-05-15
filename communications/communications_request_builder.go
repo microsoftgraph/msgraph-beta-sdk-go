@@ -17,9 +17,9 @@ type CommunicationsRequestBuilder struct {
 // CommunicationsRequestBuilderGetQueryParameters get communications
 type CommunicationsRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // CommunicationsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CommunicationsRequestBuilderGetRequestConfiguration struct {
@@ -36,6 +36,11 @@ type CommunicationsRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// AdhocCalls provides operations to manage the adhocCalls property of the microsoft.graph.cloudCommunications entity.
+// returns a *AdhocCallsRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) AdhocCalls()(*AdhocCallsRequestBuilder) {
+    return NewAdhocCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CallRecords provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
 // returns a *CallRecordsRequestBuilder when successful

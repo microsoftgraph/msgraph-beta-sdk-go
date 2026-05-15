@@ -24,9 +24,9 @@ type MessageTraceItemRequestBuilderDeleteRequestConfiguration struct {
 // MessageTraceItemRequestBuilderGetQueryParameters get entity from messageTraces by key
 type MessageTraceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // MessageTraceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MessageTraceItemRequestBuilderGetRequestConfiguration struct {

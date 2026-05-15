@@ -24,9 +24,9 @@ type PermissionsManagementRequestBuilderDeleteRequestConfiguration struct {
 // PermissionsManagementRequestBuilderGetQueryParameters get permissionsManagement from identityGovernance
 type PermissionsManagementRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PermissionsManagementRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PermissionsManagementRequestBuilderGetRequestConfiguration struct {

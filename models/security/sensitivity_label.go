@@ -171,7 +171,7 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetHasProtection gets the hasProtection property value. Indicates whether the label has protection actions configured.
+// GetHasProtection gets the hasProtection property value. Indicates whether the label has protection actions (such as encryption or do not forward) configured.
 // returns a *bool when successful
 func (m *SensitivityLabel) GetHasProtection()(*bool) {
     val, err := m.GetBackingStore().Get("hasProtection")
@@ -344,7 +344,7 @@ func (m *SensitivityLabel) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetHasProtection sets the hasProtection property value. Indicates whether the label has protection actions configured.
+// SetHasProtection sets the hasProtection property value. Indicates whether the label has protection actions (such as encryption or do not forward) configured.
 func (m *SensitivityLabel) SetHasProtection(value *bool)() {
     err := m.GetBackingStore().Set("hasProtection", value)
     if err != nil {

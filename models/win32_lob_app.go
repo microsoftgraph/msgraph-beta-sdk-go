@@ -43,6 +43,30 @@ func CreateWin32LobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     }
     return NewWin32LobApp(), nil
 }
+// GetActiveInstallScript gets the activeInstallScript property value. Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.
+// returns a MobileAppScriptReferenceable when successful
+func (m *Win32LobApp) GetActiveInstallScript()(MobileAppScriptReferenceable) {
+    val, err := m.GetBackingStore().Get("activeInstallScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppScriptReferenceable)
+    }
+    return nil
+}
+// GetActiveUninstallScript gets the activeUninstallScript property value. Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.
+// returns a MobileAppScriptReferenceable when successful
+func (m *Win32LobApp) GetActiveUninstallScript()(MobileAppScriptReferenceable) {
+    val, err := m.GetBackingStore().Get("activeUninstallScript")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileAppScriptReferenceable)
+    }
+    return nil
+}
 // GetAllowAvailableUninstall gets the allowAvailableUninstall property value. Indicates whether the uninstall is supported from the company portal for the Win32 app with an available assignment. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
 // returns a *bool when successful
 func (m *Win32LobApp) GetAllowAvailableUninstall()(*bool) {
@@ -107,6 +131,26 @@ func (m *Win32LobApp) GetDisplayVersion()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
+    res["activeInstallScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMobileAppScriptReferenceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveInstallScript(val.(MobileAppScriptReferenceable))
+        }
+        return nil
+    }
+    res["activeUninstallScript"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMobileAppScriptReferenceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveUninstallScript(val.(MobileAppScriptReferenceable))
+        }
+        return nil
+    }
     res["allowAvailableUninstall"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -498,6 +542,18 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         return err
     }
     {
+        err = writer.WriteObjectValue("activeInstallScript", m.GetActiveInstallScript())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("activeUninstallScript", m.GetActiveUninstallScript())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowAvailableUninstall", m.GetAllowAvailableUninstall())
         if err != nil {
             return err
@@ -639,6 +695,20 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
+// SetActiveInstallScript sets the activeInstallScript property value. Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.
+func (m *Win32LobApp) SetActiveInstallScript(value MobileAppScriptReferenceable)() {
+    err := m.GetBackingStore().Set("activeInstallScript", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetActiveUninstallScript sets the activeUninstallScript property value. Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.
+func (m *Win32LobApp) SetActiveUninstallScript(value MobileAppScriptReferenceable)() {
+    err := m.GetBackingStore().Set("activeUninstallScript", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowAvailableUninstall sets the allowAvailableUninstall property value. Indicates whether the uninstall is supported from the company portal for the Win32 app with an available assignment. When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.
 func (m *Win32LobApp) SetAllowAvailableUninstall(value *bool)() {
     err := m.GetBackingStore().Set("allowAvailableUninstall", value)
@@ -775,6 +845,8 @@ func (m *Win32LobApp) SetUninstallCommandLine(value *string)() {
 type Win32LobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActiveInstallScript()(MobileAppScriptReferenceable)
+    GetActiveUninstallScript()(MobileAppScriptReferenceable)
     GetAllowAvailableUninstall()(*bool)
     GetAllowedArchitectures()(*WindowsArchitecture)
     GetApplicableArchitectures()(*WindowsArchitecture)
@@ -794,6 +866,8 @@ type Win32LobAppable interface {
     GetRules()([]Win32LobAppRuleable)
     GetSetupFilePath()(*string)
     GetUninstallCommandLine()(*string)
+    SetActiveInstallScript(value MobileAppScriptReferenceable)()
+    SetActiveUninstallScript(value MobileAppScriptReferenceable)()
     SetAllowAvailableUninstall(value *bool)()
     SetAllowedArchitectures(value *WindowsArchitecture)()
     SetApplicableArchitectures(value *WindowsArchitecture)()

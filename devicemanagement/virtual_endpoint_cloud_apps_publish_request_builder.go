@@ -33,8 +33,11 @@ func NewVirtualEndpointCloudAppsPublishRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudAppsPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action publish
+// Post publish a cloudPcCloudApp object to make it available to end users through their portal, such as the Windows App. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-publish?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsPublishRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudAppsPublishPostRequestBodyable, requestConfiguration *VirtualEndpointCloudAppsPublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointCloudAppsPublishRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation invoke action publish
+// ToPostRequestInformation publish a cloudPcCloudApp object to make it available to end users through their portal, such as the Windows App. 
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudAppsPublishPostRequestBodyable, requestConfiguration *VirtualEndpointCloudAppsPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

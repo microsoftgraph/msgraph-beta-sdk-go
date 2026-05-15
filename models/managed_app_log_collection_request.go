@@ -60,16 +60,6 @@ func (m *ManagedAppLogCollectionRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["requestedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRequestedBy(val)
-        }
-        return nil
-    }
     res["requestedByUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -87,16 +77,6 @@ func (m *ManagedAppLogCollectionRequest) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetRequestedDateTime(val)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val)
         }
         return nil
     }
@@ -150,18 +130,6 @@ func (m *ManagedAppLogCollectionRequest) GetManagedAppRegistrationId()(*string) 
     }
     return nil
 }
-// GetRequestedBy gets the requestedBy property value. The user principal name associated with the request for the managed application log collection. Read-only.
-// returns a *string when successful
-func (m *ManagedAppLogCollectionRequest) GetRequestedBy()(*string) {
-    val, err := m.GetBackingStore().Get("requestedBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRequestedByUserPrincipalName gets the requestedByUserPrincipalName property value. The user principal name associated with the request for the managed application log collection. Read-only.
 // returns a *string when successful
 func (m *ManagedAppLogCollectionRequest) GetRequestedByUserPrincipalName()(*string) {
@@ -183,18 +151,6 @@ func (m *ManagedAppLogCollectionRequest) GetRequestedDateTime()(*i336074805fc853
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetStatus gets the status property value. Indicates the status for the app log collection request - pending, completed or failed. Default is pending.
-// returns a *string when successful
-func (m *ManagedAppLogCollectionRequest) GetStatus()(*string) {
-    val, err := m.GetBackingStore().Get("status")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -253,12 +209,6 @@ func (m *ManagedAppLogCollectionRequest) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteStringValue("requestedBy", m.GetRequestedBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("requestedByUserPrincipalName", m.GetRequestedByUserPrincipalName())
         if err != nil {
             return err
@@ -266,12 +216,6 @@ func (m *ManagedAppLogCollectionRequest) Serialize(writer i878a80d2330e89d268963
     }
     {
         err = writer.WriteTimeValue("requestedDateTime", m.GetRequestedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("status", m.GetStatus())
         if err != nil {
             return err
         }
@@ -317,13 +261,6 @@ func (m *ManagedAppLogCollectionRequest) SetManagedAppRegistrationId(value *stri
         panic(err)
     }
 }
-// SetRequestedBy sets the requestedBy property value. The user principal name associated with the request for the managed application log collection. Read-only.
-func (m *ManagedAppLogCollectionRequest) SetRequestedBy(value *string)() {
-    err := m.GetBackingStore().Set("requestedBy", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRequestedByUserPrincipalName sets the requestedByUserPrincipalName property value. The user principal name associated with the request for the managed application log collection. Read-only.
 func (m *ManagedAppLogCollectionRequest) SetRequestedByUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("requestedByUserPrincipalName", value)
@@ -334,13 +271,6 @@ func (m *ManagedAppLogCollectionRequest) SetRequestedByUserPrincipalName(value *
 // SetRequestedDateTime sets the requestedDateTime property value. DateTime of when the log upload request was received. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only.
 func (m *ManagedAppLogCollectionRequest) SetRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetStatus sets the status property value. Indicates the status for the app log collection request - pending, completed or failed. Default is pending.
-func (m *ManagedAppLogCollectionRequest) SetStatus(value *string)() {
-    err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
@@ -371,19 +301,15 @@ type ManagedAppLogCollectionRequestable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagedAppRegistrationId()(*string)
-    GetRequestedBy()(*string)
     GetRequestedByUserPrincipalName()(*string)
     GetRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetStatus()(*string)
     GetUploadedLogs()([]ManagedAppLogUploadable)
     GetUserLogUploadConsent()(*ManagedAppLogUploadConsent)
     GetVersion()(*string)
     SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagedAppRegistrationId(value *string)()
-    SetRequestedBy(value *string)()
     SetRequestedByUserPrincipalName(value *string)()
     SetRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetStatus(value *string)()
     SetUploadedLogs(value []ManagedAppLogUploadable)()
     SetUserLogUploadConsent(value *ManagedAppLogUploadConsent)()
     SetVersion(value *string)()

@@ -170,6 +170,16 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["workHoursAndLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkHoursAndLocationsSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWorkHoursAndLocations(val.(WorkHoursAndLocationsSettingable))
+        }
+        return nil
+    }
     return res
 }
 // GetItemInsights gets the itemInsights property value. The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.
@@ -229,6 +239,18 @@ func (m *UserSettings) GetWindows()([]WindowsSettingable) {
     }
     if val != nil {
         return val.([]WindowsSettingable)
+    }
+    return nil
+}
+// GetWorkHoursAndLocations gets the workHoursAndLocations property value. The user's settings for work hours and location preferences for scheduling and availability management.
+// returns a WorkHoursAndLocationsSettingable when successful
+func (m *UserSettings) GetWorkHoursAndLocations()(WorkHoursAndLocationsSettingable) {
+    val, err := m.GetBackingStore().Get("workHoursAndLocations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkHoursAndLocationsSettingable)
     }
     return nil
 }
@@ -298,6 +320,12 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("workHoursAndLocations", m.GetWorkHoursAndLocations())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetContactMergeSuggestions sets the contactMergeSuggestions property value. The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
@@ -363,6 +391,13 @@ func (m *UserSettings) SetWindows(value []WindowsSettingable)() {
         panic(err)
     }
 }
+// SetWorkHoursAndLocations sets the workHoursAndLocations property value. The user's settings for work hours and location preferences for scheduling and availability management.
+func (m *UserSettings) SetWorkHoursAndLocations(value WorkHoursAndLocationsSettingable)() {
+    err := m.GetBackingStore().Set("workHoursAndLocations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -375,6 +410,7 @@ type UserSettingsable interface {
     GetShiftPreferences()(ShiftPreferencesable)
     GetStorage()(UserStorageable)
     GetWindows()([]WindowsSettingable)
+    GetWorkHoursAndLocations()(WorkHoursAndLocationsSettingable)
     SetContactMergeSuggestions(value ContactMergeSuggestionsable)()
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
     SetContributionToContentDiscoveryDisabled(value *bool)()
@@ -384,4 +420,5 @@ type UserSettingsable interface {
     SetShiftPreferences(value ShiftPreferencesable)()
     SetStorage(value UserStorageable)()
     SetWindows(value []WindowsSettingable)()
+    SetWorkHoursAndLocations(value WorkHoursAndLocationsSettingable)()
 }

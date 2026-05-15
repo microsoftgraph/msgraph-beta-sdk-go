@@ -300,7 +300,7 @@ func (m *OutlookTask) GetHasAttachments()(*bool) {
     }
     return nil
 }
-// GetImportance gets the importance property value. The importance of the event. Possible values are: low, normal, high.
+// GetImportance gets the importance property value. The importance of the event. The possible values are: low, normal, high.
 // returns a *Importance when successful
 func (m *OutlookTask) GetImportance()(*Importance) {
     val, err := m.GetBackingStore().Get("importance")
@@ -384,7 +384,7 @@ func (m *OutlookTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetSensitivity gets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
+// GetSensitivity gets the sensitivity property value. Indicates the level of privacy for the task. The possible values are: normal, personal, private, confidential.
 // returns a *Sensitivity when successful
 func (m *OutlookTask) GetSensitivity()(*Sensitivity) {
     val, err := m.GetBackingStore().Get("sensitivity")
@@ -420,7 +420,7 @@ func (m *OutlookTask) GetStartDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetStatus gets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+// GetStatus gets the status property value. Indicates the state or progress of the task. The possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
 // returns a *TaskStatus when successful
 func (m *OutlookTask) GetStatus()(*TaskStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -623,7 +623,7 @@ func (m *OutlookTask) SetHasAttachments(value *bool)() {
         panic(err)
     }
 }
-// SetImportance sets the importance property value. The importance of the event. Possible values are: low, normal, high.
+// SetImportance sets the importance property value. The importance of the event. The possible values are: low, normal, high.
 func (m *OutlookTask) SetImportance(value *Importance)() {
     err := m.GetBackingStore().Set("importance", value)
     if err != nil {
@@ -672,7 +672,7 @@ func (m *OutlookTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetSensitivity sets the sensitivity property value. Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.
+// SetSensitivity sets the sensitivity property value. Indicates the level of privacy for the task. The possible values are: normal, personal, private, confidential.
 func (m *OutlookTask) SetSensitivity(value *Sensitivity)() {
     err := m.GetBackingStore().Set("sensitivity", value)
     if err != nil {
@@ -693,7 +693,7 @@ func (m *OutlookTask) SetStartDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
+// SetStatus sets the status property value. Indicates the state or progress of the task. The possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.
 func (m *OutlookTask) SetStatus(value *TaskStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

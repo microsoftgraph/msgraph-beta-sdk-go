@@ -47,6 +47,18 @@ func (m *Settings) GetCrossTenantAccess()(CrossTenantAccessSettingsable) {
     }
     return nil
 }
+// GetCustomBlockPage gets the customBlockPage property value. The customBlockPage property
+// returns a CustomBlockPageable when successful
+func (m *Settings) GetCustomBlockPage()(CustomBlockPageable) {
+    val, err := m.GetBackingStore().Get("customBlockPage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomBlockPageable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -68,6 +80,16 @@ func (m *Settings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetCrossTenantAccess(val.(CrossTenantAccessSettingsable))
+        }
+        return nil
+    }
+    res["customBlockPage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomBlockPageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomBlockPage(val.(CustomBlockPageable))
         }
         return nil
     }
@@ -114,6 +136,12 @@ func (m *Settings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteObjectValue("customBlockPage", m.GetCustomBlockPage())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("forwardingOptions", m.GetForwardingOptions())
         if err != nil {
             return err
@@ -135,6 +163,13 @@ func (m *Settings) SetCrossTenantAccess(value CrossTenantAccessSettingsable)() {
         panic(err)
     }
 }
+// SetCustomBlockPage sets the customBlockPage property value. The customBlockPage property
+func (m *Settings) SetCustomBlockPage(value CustomBlockPageable)() {
+    err := m.GetBackingStore().Set("customBlockPage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetForwardingOptions sets the forwardingOptions property value. The forwardingOptions property
 func (m *Settings) SetForwardingOptions(value ForwardingOptionsable)() {
     err := m.GetBackingStore().Set("forwardingOptions", value)
@@ -147,8 +182,10 @@ type Settingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConditionalAccess()(ConditionalAccessSettingsable)
     GetCrossTenantAccess()(CrossTenantAccessSettingsable)
+    GetCustomBlockPage()(CustomBlockPageable)
     GetForwardingOptions()(ForwardingOptionsable)
     SetConditionalAccess(value ConditionalAccessSettingsable)()
     SetCrossTenantAccess(value CrossTenantAccessSettingsable)()
+    SetCustomBlockPage(value CustomBlockPageable)()
     SetForwardingOptions(value ForwardingOptionsable)()
 }

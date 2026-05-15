@@ -24,9 +24,9 @@ type AuthenticationMethodsUserEventsSummaryUserEventsSummaryItemRequestBuilderDe
 // AuthenticationMethodsUserEventsSummaryUserEventsSummaryItemRequestBuilderGetQueryParameters represents a specific user MFA/SSPR registration or reset event, including whether the event was successful, which authentication method was targeted, and failure reason if any.
 type AuthenticationMethodsUserEventsSummaryUserEventsSummaryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // AuthenticationMethodsUserEventsSummaryUserEventsSummaryItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AuthenticationMethodsUserEventsSummaryUserEventsSummaryItemRequestBuilderGetRequestConfiguration struct {

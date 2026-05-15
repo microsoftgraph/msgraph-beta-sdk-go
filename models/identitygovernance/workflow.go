@@ -6,6 +6,7 @@ package identitygovernance
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type Workflow struct {
@@ -37,7 +38,7 @@ func (m *Workflow) GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetExecutionScope gets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// GetExecutionScope gets the executionScope property value. The list of users that meet the workflowExecutionConditions of a workflow.
 // returns a []UserProcessingResultable when successful
 func (m *Workflow) GetExecutionScope()([]UserProcessingResultable) {
     val, err := m.GetBackingStore().Get("executionScope")
@@ -96,6 +97,22 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         if val != nil {
             m.SetNextScheduleRunDateTime(val)
+        }
+        return nil
+    }
+    res["previewScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)
+                }
+            }
+            m.SetPreviewScope(res)
         }
         return nil
     }
@@ -199,6 +216,18 @@ func (m *Workflow) GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
+// GetPreviewScope gets the previewScope property value. A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
+// returns a []DirectoryObjectable when successful
+func (m *Workflow) GetPreviewScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("previewScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)
+    }
+    return nil
+}
 // GetRuns gets the runs property value. Workflow runs.
 // returns a []Runable when successful
 func (m *Workflow) GetRuns()([]Runable) {
@@ -295,6 +324,18 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    if m.GetPreviewScope() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPreviewScope()))
+        for i, v := range m.GetPreviewScope() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("previewScope", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRuns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
@@ -358,7 +399,7 @@ func (m *Workflow) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         panic(err)
     }
 }
-// SetExecutionScope sets the executionScope property value. The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// SetExecutionScope sets the executionScope property value. The list of users that meet the workflowExecutionConditions of a workflow.
 func (m *Workflow) SetExecutionScope(value []UserProcessingResultable)() {
     err := m.GetBackingStore().Set("executionScope", value)
     if err != nil {
@@ -375,6 +416,13 @@ func (m *Workflow) SetId(value *string)() {
 // SetNextScheduleRunDateTime sets the nextScheduleRunDateTime property value. The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
 func (m *Workflow) SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextScheduleRunDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreviewScope sets the previewScope property value. A read-only collection of directory objects that are currently in-scope for the workflow based on its execution conditions. This property helps preview which users would be affected before running the workflow. Nullable. Read-only. Returned only on $expand. Supports $expand.
+func (m *Workflow) SetPreviewScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("previewScope", value)
     if err != nil {
         panic(err)
     }
@@ -421,6 +469,7 @@ type Workflowable interface {
     GetExecutionScope()([]UserProcessingResultable)
     GetId()(*string)
     GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPreviewScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)
     GetRuns()([]Runable)
     GetTaskReports()([]TaskReportable)
     GetUserProcessingResults()([]UserProcessingResultable)
@@ -430,6 +479,7 @@ type Workflowable interface {
     SetExecutionScope(value []UserProcessingResultable)()
     SetId(value *string)()
     SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPreviewScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)()
     SetRuns(value []Runable)()
     SetTaskReports(value []TaskReportable)()
     SetUserProcessingResults(value []UserProcessingResultable)()

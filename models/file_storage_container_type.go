@@ -158,6 +158,22 @@ func (m *FileStorageContainerType) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Permissionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Permissionable)
+                }
+            }
+            m.SetPermissions(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateFileStorageContainerTypeSettingsFromDiscriminatorValue)
         if err != nil {
@@ -191,6 +207,18 @@ func (m *FileStorageContainerType) GetOwningAppId()(*i561e97a8befe7661a44c8f5460
     }
     if val != nil {
         return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
+// GetPermissions gets the permissions property value. The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.
+// returns a []Permissionable when successful
+func (m *FileStorageContainerType) GetPermissions()([]Permissionable) {
+    val, err := m.GetBackingStore().Get("permissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Permissionable)
     }
     return nil
 }
@@ -256,6 +284,18 @@ func (m *FileStorageContainerType) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    if m.GetPermissions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
+        for i, v := range m.GetPermissions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -313,6 +353,13 @@ func (m *FileStorageContainerType) SetOwningAppId(value *i561e97a8befe7661a44c8f
         panic(err)
     }
 }
+// SetPermissions sets the permissions property value. The set of permissions for users in the container type. The permissions collection defines who has access to manage the container type. Use the owner role to grant management access.
+func (m *FileStorageContainerType) SetPermissions(value []Permissionable)() {
+    err := m.GetBackingStore().Set("permissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *FileStorageContainerType) SetSettings(value FileStorageContainerTypeSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -330,6 +377,7 @@ type FileStorageContainerTypeable interface {
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetOwningAppId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetPermissions()([]Permissionable)
     GetSettings()(FileStorageContainerTypeSettingsable)
     SetBillingClassification(value *FileStorageContainerBillingClassification)()
     SetBillingStatus(value *FileStorageContainerBillingStatus)()
@@ -338,5 +386,6 @@ type FileStorageContainerTypeable interface {
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetOwningAppId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetPermissions(value []Permissionable)()
     SetSettings(value FileStorageContainerTypeSettingsable)()
 }

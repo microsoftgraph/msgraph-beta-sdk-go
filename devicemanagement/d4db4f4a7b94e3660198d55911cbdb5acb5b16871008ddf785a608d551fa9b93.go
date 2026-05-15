@@ -24,9 +24,9 @@ type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationI
 // ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters entity representing the configuration of a cached report.
 type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurationItemRequestBuilderGetRequestConfiguration struct {

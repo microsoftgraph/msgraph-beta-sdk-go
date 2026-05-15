@@ -22,10 +22,48 @@ func NewCopilotAdmin()(*CopilotAdmin) {
 func CreateCopilotAdminFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCopilotAdmin(), nil
 }
+// GetCatalog gets the catalog property value. The catalog property
+// returns a CopilotAdminCatalogable when successful
+func (m *CopilotAdmin) GetCatalog()(CopilotAdminCatalogable) {
+    val, err := m.GetBackingStore().Get("catalog")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CopilotAdminCatalogable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CopilotAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["catalog"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCopilotAdminCatalogFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCatalog(val.(CopilotAdminCatalogable))
+        }
+        return nil
+    }
+    res["policySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCopilotPolicySettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CopilotPolicySettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CopilotPolicySettingable)
+                }
+            }
+            m.SetPolicySettings(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCopilotAdminSettingFromDiscriminatorValue)
         if err != nil {
@@ -37,6 +75,18 @@ func (m *CopilotAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetPolicySettings gets the policySettings property value. The policySettings property
+// returns a []CopilotPolicySettingable when successful
+func (m *CopilotAdmin) GetPolicySettings()([]CopilotPolicySettingable) {
+    val, err := m.GetBackingStore().Get("policySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CopilotPolicySettingable)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 // returns a CopilotAdminSettingable when successful
@@ -57,12 +107,44 @@ func (m *CopilotAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         return err
     }
     {
+        err = writer.WriteObjectValue("catalog", m.GetCatalog())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPolicySettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicySettings()))
+        for i, v := range m.GetPolicySettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("policySettings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetCatalog sets the catalog property value. The catalog property
+func (m *CopilotAdmin) SetCatalog(value CopilotAdminCatalogable)() {
+    err := m.GetBackingStore().Set("catalog", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPolicySettings sets the policySettings property value. The policySettings property
+func (m *CopilotAdmin) SetPolicySettings(value []CopilotPolicySettingable)() {
+    err := m.GetBackingStore().Set("policySettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSettings sets the settings property value. The settings property
 func (m *CopilotAdmin) SetSettings(value CopilotAdminSettingable)() {
@@ -74,6 +156,10 @@ func (m *CopilotAdmin) SetSettings(value CopilotAdminSettingable)() {
 type CopilotAdminable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCatalog()(CopilotAdminCatalogable)
+    GetPolicySettings()([]CopilotPolicySettingable)
     GetSettings()(CopilotAdminSettingable)
+    SetCatalog(value CopilotAdminCatalogable)()
+    SetPolicySettings(value []CopilotPolicySettingable)()
     SetSettings(value CopilotAdminSettingable)()
 }

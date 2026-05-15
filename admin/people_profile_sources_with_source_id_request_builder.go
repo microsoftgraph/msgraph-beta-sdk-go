@@ -24,9 +24,9 @@ type PeopleProfileSourcesWithSourceIdRequestBuilderDeleteRequestConfiguration st
 // PeopleProfileSourcesWithSourceIdRequestBuilderGetQueryParameters a collection of profile source settings configured by an administrator in an organization.
 type PeopleProfileSourcesWithSourceIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // PeopleProfileSourcesWithSourceIdRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type PeopleProfileSourcesWithSourceIdRequestBuilderGetRequestConfiguration struct {

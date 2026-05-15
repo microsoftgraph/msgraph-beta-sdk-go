@@ -67,7 +67,7 @@ func (m *WorkbookSortField) GetColor()(*string) {
     }
     return nil
 }
-// GetDataOption gets the dataOption property value. Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
+// GetDataOption gets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
 // returns a *string when successful
 func (m *WorkbookSortField) GetDataOption()(*string) {
     val, err := m.GetBackingStore().Get("dataOption")
@@ -191,7 +191,7 @@ func (m *WorkbookSortField) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
+// GetSortOn gets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 // returns a *string when successful
 func (m *WorkbookSortField) GetSortOn()(*string) {
     val, err := m.GetBackingStore().Get("sortOn")
@@ -280,7 +280,7 @@ func (m *WorkbookSortField) SetColor(value *string)() {
         panic(err)
     }
 }
-// SetDataOption sets the dataOption property value. Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
+// SetDataOption sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
 func (m *WorkbookSortField) SetDataOption(value *string)() {
     err := m.GetBackingStore().Set("dataOption", value)
     if err != nil {
@@ -308,7 +308,7 @@ func (m *WorkbookSortField) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
+// SetSortOn sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 func (m *WorkbookSortField) SetSortOn(value *string)() {
     err := m.GetBackingStore().Set("sortOn", value)
     if err != nil {

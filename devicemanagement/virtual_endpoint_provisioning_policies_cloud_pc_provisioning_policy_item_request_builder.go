@@ -24,9 +24,9 @@ type VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuil
 // VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcProvisioningPolicy object.
 type VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderGetRequestConfiguration struct {
@@ -146,6 +146,11 @@ func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequest
 // returns a *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) RetrievePolicyApplySchedule()(*VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Retry provides operations to call the retry method.
+// returns a *VirtualEndpointProvisioningPoliciesItemRetryRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) Retry()(*VirtualEndpointProvisioningPoliciesItemRetryRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemRetryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SchedulePolicyApplyTask provides operations to call the schedulePolicyApplyTask method.
 // returns a *VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilder when successful

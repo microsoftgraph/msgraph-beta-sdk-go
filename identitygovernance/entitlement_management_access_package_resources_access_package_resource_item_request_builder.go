@@ -24,9 +24,9 @@ type EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequest
 // EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters a reference to a resource associated with an access package catalog.
 type EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilderGetRequestConfiguration struct {
@@ -87,6 +87,11 @@ func (m *EntitlementManagementAccessPackageResourcesAccessPackageResourceItemReq
         return err
     }
     return nil
+}
+// ExternalOriginResourceConnector provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilder) ExternalOriginResourceConnector()(*EntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder) {
+    return NewEntitlementManagementAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a reference to a resource associated with an access package catalog.
 // returns a AccessPackageResourceable when successful
@@ -172,6 +177,11 @@ func (m *EntitlementManagementAccessPackageResourcesAccessPackageResourceItemReq
         return nil, err
     }
     return requestInfo, nil
+}
+// UploadSessions provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.
+// returns a *EntitlementManagementAccessPackageResourcesItemUploadSessionsRequestBuilder when successful
+func (m *EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilder) UploadSessions()(*EntitlementManagementAccessPackageResourcesItemUploadSessionsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *EntitlementManagementAccessPackageResourcesAccessPackageResourceItemRequestBuilder when successful

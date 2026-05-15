@@ -22,7 +22,7 @@ func NewWorkbookCommentReply()(*WorkbookCommentReply) {
 func CreateWorkbookCommentReplyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookCommentReply(), nil
 }
-// GetContent gets the content property value. The content of the reply.
+// GetContent gets the content property value. The content of the reply that is the displayed to end-users.
 // returns a *string when successful
 func (m *WorkbookCommentReply) GetContent()(*string) {
     val, err := m.GetBackingStore().Get("content")
@@ -34,7 +34,7 @@ func (m *WorkbookCommentReply) GetContent()(*string) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. The content type for the reply.
+// GetContentType gets the contentType property value. The content type for the reply. Supported values are: plain, mention.
 // returns a *string when successful
 func (m *WorkbookCommentReply) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -70,6 +70,32 @@ func (m *WorkbookCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["mentions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentMentionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WorkbookCommentMentionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WorkbookCommentMentionable)
+                }
+            }
+            m.SetMentions(res)
+        }
+        return nil
+    }
+    res["richContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRichContent(val)
+        }
+        return nil
+    }
     res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWorkbookDocumentTaskFromDiscriminatorValue)
         if err != nil {
@@ -81,6 +107,30 @@ func (m *WorkbookCommentReply) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetMentions gets the mentions property value. A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.
+// returns a []WorkbookCommentMentionable when successful
+func (m *WorkbookCommentReply) GetMentions()([]WorkbookCommentMentionable) {
+    val, err := m.GetBackingStore().Get("mentions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WorkbookCommentMentionable)
+    }
+    return nil
+}
+// GetRichContent gets the richContent property value. The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.
+// returns a *string when successful
+func (m *WorkbookCommentReply) GetRichContent()(*string) {
+    val, err := m.GetBackingStore().Get("richContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTask gets the task property value. The task associated with the comment thread.
 // returns a WorkbookDocumentTaskable when successful
@@ -112,6 +162,24 @@ func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetMentions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMentions()))
+        for i, v := range m.GetMentions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mentions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("richContent", m.GetRichContent())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("task", m.GetTask())
         if err != nil {
@@ -120,16 +188,30 @@ func (m *WorkbookCommentReply) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetContent sets the content property value. The content of the reply.
+// SetContent sets the content property value. The content of the reply that is the displayed to end-users.
 func (m *WorkbookCommentReply) SetContent(value *string)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. The content type for the reply.
+// SetContentType sets the contentType property value. The content type for the reply. Supported values are: plain, mention.
 func (m *WorkbookCommentReply) SetContentType(value *string)() {
     err := m.GetBackingStore().Set("contentType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMentions sets the mentions property value. A collection that contains all the people mentioned within the reply. When contentType is plain, this property is an empty array. Read-only.
+func (m *WorkbookCommentReply) SetMentions(value []WorkbookCommentMentionable)() {
+    err := m.GetBackingStore().Set("mentions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRichContent sets the richContent property value. The rich content of the reply (for example, reply content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.
+func (m *WorkbookCommentReply) SetRichContent(value *string)() {
+    err := m.GetBackingStore().Set("richContent", value)
     if err != nil {
         panic(err)
     }
@@ -146,8 +228,12 @@ type WorkbookCommentReplyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContent()(*string)
     GetContentType()(*string)
+    GetMentions()([]WorkbookCommentMentionable)
+    GetRichContent()(*string)
     GetTask()(WorkbookDocumentTaskable)
     SetContent(value *string)()
     SetContentType(value *string)()
+    SetMentions(value []WorkbookCommentMentionable)()
+    SetRichContent(value *string)()
     SetTask(value WorkbookDocumentTaskable)()
 }

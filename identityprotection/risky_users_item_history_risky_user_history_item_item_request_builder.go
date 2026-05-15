@@ -24,9 +24,9 @@ type RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderDeleteRequestCon
 // RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderGetQueryParameters get a riskyUserHistoryItem object of a riskyUser.
 type RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
-    Expand []string `uriparametername:"%24expand"`
+    Expand []string "uriparametername:\"%24expand\""
     // Select properties to be returned
-    Select []string `uriparametername:"%24select"`
+    Select []string "uriparametername:\"%24select\""
 }
 // RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type RiskyUsersItemHistoryRiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration struct {

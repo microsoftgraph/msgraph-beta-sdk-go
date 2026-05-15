@@ -11,10 +11,11 @@ const (
     FQDN_PRIVATENETWORKDESTINATIONTYPE
     DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
     UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
+    SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
 )
 
 func (i PrivateNetworkDestinationType) String() string {
-    return []string{"ipAddress", "ipRange", "ipRangeCidr", "fqdn", "dnsSuffix", "unknownFutureValue"}[i]
+    return []string{"ipAddress", "ipRange", "ipRangeCidr", "fqdn", "dnsSuffix", "unknownFutureValue", "servicePrincipalName"}[i]
 }
 func ParsePrivateNetworkDestinationType(v string) (any, error) {
     result := IPADDRESS_PRIVATENETWORKDESTINATIONTYPE
@@ -31,6 +32,8 @@ func ParsePrivateNetworkDestinationType(v string) (any, error) {
             result = DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
+        case "servicePrincipalName":
+            result = SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
         default:
             return nil, nil
     }

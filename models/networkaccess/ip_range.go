@@ -8,12 +8,12 @@ import (
 )
 
 type IpRange struct {
-    RuleDestination
+    IpDestination
 }
 // NewIpRange instantiates a new IpRange and sets the default values.
 func NewIpRange()(*IpRange) {
     m := &IpRange{
-        RuleDestination: *NewRuleDestination(),
+        IpDestination: *NewIpDestination(),
     }
     odataTypeValue := "#microsoft.graph.networkaccess.ipRange"
     m.SetOdataType(&odataTypeValue)
@@ -51,7 +51,7 @@ func (m *IpRange) GetEndAddress()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.RuleDestination.GetFieldDeserializers()
+    res := m.IpDestination.GetFieldDeserializers()
     res["beginAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -76,7 +76,7 @@ func (m *IpRange) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
 }
 // Serialize serializes information the current object
 func (m *IpRange) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.RuleDestination.Serialize(writer)
+    err := m.IpDestination.Serialize(writer)
     if err != nil {
         return err
     }
@@ -109,8 +109,8 @@ func (m *IpRange) SetEndAddress(value *string)() {
     }
 }
 type IpRangeable interface {
+    IpDestinationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    RuleDestinationable
     GetBeginAddress()(*string)
     GetEndAddress()(*string)
     SetBeginAddress(value *string)()

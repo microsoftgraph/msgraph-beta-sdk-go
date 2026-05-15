@@ -6,26 +6,29 @@ type AgentType int
 
 const (
     NOTAGENTIC_AGENTTYPE AgentType = iota
-    AGENTICAPPBUILDER_AGENTTYPE
     AGENTICAPP_AGENTTYPE
     AGENTICAPPINSTANCE_AGENTTYPE
+    AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
+    AGENTIDUSER_AGENTTYPE
     UNKNOWNFUTUREVALUE_AGENTTYPE
 )
 
 func (i AgentType) String() string {
-    return []string{"notAgentic", "agenticAppBuilder", "agenticApp", "agenticAppInstance", "unknownFutureValue"}[i]
+    return []string{"notAgentic", "agenticApp", "agenticAppInstance", "agentIdentityBlueprintPrincipal", "agentIDuser", "unknownFutureValue"}[i]
 }
 func ParseAgentType(v string) (any, error) {
     result := NOTAGENTIC_AGENTTYPE
     switch v {
         case "notAgentic":
             result = NOTAGENTIC_AGENTTYPE
-        case "agenticAppBuilder":
-            result = AGENTICAPPBUILDER_AGENTTYPE
         case "agenticApp":
             result = AGENTICAPP_AGENTTYPE
         case "agenticAppInstance":
             result = AGENTICAPPINSTANCE_AGENTTYPE
+        case "agentIdentityBlueprintPrincipal":
+            result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
+        case "agentIDuser":
+            result = AGENTIDUSER_AGENTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AGENTTYPE
         default:

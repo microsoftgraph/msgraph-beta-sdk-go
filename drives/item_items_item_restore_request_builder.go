@@ -34,7 +34,7 @@ func NewItemItemsItemRestoreRequestBuilder(rawUrl string, requestAdapter i2ae418
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a driveItem that has been deleted and is currently in the recycle bin.
+// Post restore a deleted driveItem that is currently in the recycle bin.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,7 +57,7 @@ func (m *ItemItemsItemRestoreRequestBuilder) Post(ctx context.Context, body Item
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToPostRequestInformation restore a driveItem that has been deleted and is currently in the recycle bin.
+// ToPostRequestInformation restore a deleted driveItem that is currently in the recycle bin.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemRestorePostRequestBodyable, requestConfiguration *ItemItemsItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
