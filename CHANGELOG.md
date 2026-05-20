@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.162.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.161.0...v0.162.0) (2026-05-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([#637](https://github.com/microsoftgraph/msgraph-beta-sdk-go/issues/637)) ([12dff92](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/12dff9239f32ad8166c82904279d8eac0057e930))
+
+
+### Bug Fixes
+
+* add missing image and enable Go module proxy in daily CI build ([#636](https://github.com/microsoftgraph/msgraph-beta-sdk-go/issues/636)) ([ce443a0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/ce443a080263d2b77b70caf822afe4655ffd9b02))
+
 ## [0.161.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.160.0...v0.161.0) (2026-05-05)
 
 
