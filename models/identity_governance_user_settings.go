@@ -38,7 +38,7 @@ func (m *IdentityGovernanceUserSettings) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApproverDelegate gets the approverDelegate property value. The approverDelegate property
+// GetApproverDelegate gets the approverDelegate property value. The approver delegate configuration for the user, including the delegate identity and delegation schedule. Nullable.
 // returns a ApproverDelegateable when successful
 func (m *IdentityGovernanceUserSettings) GetApproverDelegate()(ApproverDelegateable) {
     val, err := m.GetBackingStore().Get("approverDelegate")
@@ -122,7 +122,7 @@ func (m *IdentityGovernanceUserSettings) SetAdditionalData(value map[string]any)
         panic(err)
     }
 }
-// SetApproverDelegate sets the approverDelegate property value. The approverDelegate property
+// SetApproverDelegate sets the approverDelegate property value. The approver delegate configuration for the user, including the delegate identity and delegation schedule. Nullable.
 func (m *IdentityGovernanceUserSettings) SetApproverDelegate(value ApproverDelegateable)() {
     err := m.GetBackingStore().Set("approverDelegate", value)
     if err != nil {

@@ -56,7 +56,7 @@ func (m *IdentifierUriRestriction) GetExcludeActors()(AppManagementPolicyActorEx
     }
     return nil
 }
-// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn't enforced for those applications.
+// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction is enforced for those applications.
 // returns a *bool when successful
 func (m *IdentifierUriRestriction) GetExcludeAppsReceivingV2Tokens()(*bool) {
     val, err := m.GetBackingStore().Get("excludeAppsReceivingV2Tokens")
@@ -269,7 +269,7 @@ func (m *IdentifierUriRestriction) SetExcludeActors(value AppManagementPolicyAct
         panic(err)
     }
 }
-// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn't enforced for those applications.
+// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction is enforced for those applications.
 func (m *IdentifierUriRestriction) SetExcludeAppsReceivingV2Tokens(value *bool)() {
     err := m.GetBackingStore().Set("excludeAppsReceivingV2Tokens", value)
     if err != nil {

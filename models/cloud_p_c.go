@@ -755,7 +755,7 @@ func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID. Read-only.
 // returns a []string when successful
 func (m *CloudPC) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
@@ -1346,7 +1346,7 @@ func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The scope IDs of the corresponding permission. Currently, it's the Intune scope tag ID. Read-only.
 func (m *CloudPC) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {

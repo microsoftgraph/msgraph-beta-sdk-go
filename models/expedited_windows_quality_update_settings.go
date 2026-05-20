@@ -80,6 +80,16 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["qualityUpdateCatalogItemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQualityUpdateCatalogItemId(val)
+        }
+        return nil
+    }
     res["qualityUpdateRelease"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -96,6 +106,18 @@ func (m *ExpeditedWindowsQualityUpdateSettings) GetFieldDeserializers()(map[stri
 // returns a *string when successful
 func (m *ExpeditedWindowsQualityUpdateSettings) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetQualityUpdateCatalogItemId gets the qualityUpdateCatalogItemId property value. The unique identifier for the quality update catalog item targeted by the expedite.
+// returns a *string when successful
+func (m *ExpeditedWindowsQualityUpdateSettings) GetQualityUpdateCatalogItemId()(*string) {
+    val, err := m.GetBackingStore().Get("qualityUpdateCatalogItemId")
     if err != nil {
         panic(err)
     }
@@ -126,6 +148,12 @@ func (m *ExpeditedWindowsQualityUpdateSettings) Serialize(writer i878a80d2330e89
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("qualityUpdateCatalogItemId", m.GetQualityUpdateCatalogItemId())
         if err != nil {
             return err
         }
@@ -169,6 +197,13 @@ func (m *ExpeditedWindowsQualityUpdateSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetQualityUpdateCatalogItemId sets the qualityUpdateCatalogItemId property value. The unique identifier for the quality update catalog item targeted by the expedite.
+func (m *ExpeditedWindowsQualityUpdateSettings) SetQualityUpdateCatalogItemId(value *string)() {
+    err := m.GetBackingStore().Set("qualityUpdateCatalogItemId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetQualityUpdateRelease sets the qualityUpdateRelease property value. The release date to identify a quality update.
 func (m *ExpeditedWindowsQualityUpdateSettings) SetQualityUpdateRelease(value *string)() {
     err := m.GetBackingStore().Set("qualityUpdateRelease", value)
@@ -183,9 +218,11 @@ type ExpeditedWindowsQualityUpdateSettingsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDaysUntilForcedReboot()(*int32)
     GetOdataType()(*string)
+    GetQualityUpdateCatalogItemId()(*string)
     GetQualityUpdateRelease()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDaysUntilForcedReboot(value *int32)()
     SetOdataType(value *string)()
+    SetQualityUpdateCatalogItemId(value *string)()
     SetQualityUpdateRelease(value *string)()
 }

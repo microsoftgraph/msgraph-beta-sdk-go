@@ -40,7 +40,7 @@ func (m *PersonalTeamsAppInstallationScopeInfo) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The ID of the user for whom the Teams app is installed.
 // returns a *string when successful
 func (m *PersonalTeamsAppInstallationScopeInfo) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -66,7 +66,7 @@ func (m *PersonalTeamsAppInstallationScopeInfo) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The ID of the user for whom the Teams app is installed.
 func (m *PersonalTeamsAppInstallationScopeInfo) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

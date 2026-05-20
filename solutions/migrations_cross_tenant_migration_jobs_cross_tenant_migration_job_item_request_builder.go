@@ -103,6 +103,11 @@ func (m *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
 }
+// Migrate provides operations to call the migrate method.
+// returns a *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder when successful
+func (m *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder) Migrate()(*MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) {
+    return NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the completeAfterDateTime of a crossTenantMigrationJob object. Only updates to the completeAfterDateTime are supported. Use this function to change when the crossTenantMigrationJob starts processing. If completeAfterDateTime is set to the past, the crossTenantMigrationJob starts processing.
 // Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
@@ -174,6 +179,11 @@ func (m *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBui
 // returns a *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder) Users()(*MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) {
     return NewMigrationsCrossTenantMigrationJobsItemUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Validate provides operations to call the validate method.
+// returns a *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder when successful
+func (m *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder) Validate()(*MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) {
+    return NewMigrationsCrossTenantMigrationJobsItemValidateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09

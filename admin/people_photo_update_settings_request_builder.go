@@ -21,7 +21,7 @@ type PeoplePhotoUpdateSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PeoplePhotoUpdateSettingsRequestBuilderGetQueryParameters read the properties and relationships of a photoUpdateSettings object.
+// PeoplePhotoUpdateSettingsRequestBuilderGetQueryParameters get the properties of a photoUpdateSettings object.
 type PeoplePhotoUpdateSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,11 +57,8 @@ func NewPeoplePhotoUpdateSettingsRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewPeoplePhotoUpdateSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a photoUpdateSettings object.
+// Delete delete navigation property photoUpdateSettings for admin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-delete-photoupdatesettings?view=graph-rest-beta
 func (m *PeoplePhotoUpdateSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *PeoplePhotoUpdateSettingsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,12 @@ func (m *PeoplePhotoUpdateSettingsRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get read the properties and relationships of a photoUpdateSettings object.
+// Get get the properties of a photoUpdateSettings object.
 // returns a PhotoUpdateSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/photoupdatesettings-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-list-photoupdatesettings?view=graph-rest-beta
 func (m *PeoplePhotoUpdateSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *PeoplePhotoUpdateSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhotoUpdateSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *PeoplePhotoUpdateSettingsRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhotoUpdateSettingsable), nil
 }
-// ToDeleteRequestInformation delete a photoUpdateSettings object.
+// ToDeleteRequestInformation delete navigation property photoUpdateSettings for admin
 // returns a *RequestInformation when successful
 func (m *PeoplePhotoUpdateSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PeoplePhotoUpdateSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +130,7 @@ func (m *PeoplePhotoUpdateSettingsRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a photoUpdateSettings object.
+// ToGetRequestInformation get the properties of a photoUpdateSettings object.
 // returns a *RequestInformation when successful
 func (m *PeoplePhotoUpdateSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeoplePhotoUpdateSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -103,7 +103,7 @@ func (m *TeamsAppInstallationScopeInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScope gets the scope property value. The scope property
+// GetScope gets the scope property value. The scope in which the Teams app is installed. The possible values are: team, groupChat, personal, unknownFutureValue.
 // returns a *TeamsAppInstallationScopes when successful
 func (m *TeamsAppInstallationScopeInfo) GetScope()(*TeamsAppInstallationScopes) {
     val, err := m.GetBackingStore().Get("scope")
@@ -156,7 +156,7 @@ func (m *TeamsAppInstallationScopeInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScope sets the scope property value. The scope property
+// SetScope sets the scope property value. The scope in which the Teams app is installed. The possible values are: team, groupChat, personal, unknownFutureValue.
 func (m *TeamsAppInstallationScopeInfo) SetScope(value *TeamsAppInstallationScopes)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

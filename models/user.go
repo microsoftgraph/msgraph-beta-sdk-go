@@ -2839,7 +2839,7 @@ func (m *User) GetIdentities()([]ObjectIdentityable) {
     }
     return nil
 }
-// GetIdentityGovernance gets the identityGovernance property value. The identityGovernance property
+// GetIdentityGovernance gets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.
 // returns a IdentityGovernanceUserSettingsable when successful
 func (m *User) GetIdentityGovernance()(IdentityGovernanceUserSettingsable) {
     val, err := m.GetBackingStore().Get("identityGovernance")
@@ -2971,7 +2971,7 @@ func (m *User) GetIsManagementRestricted()(*bool) {
     }
     return nil
 }
-// GetIsResourceAccount gets the isResourceAccount property value. Do not use – reserved for future use.
+// GetIsResourceAccount gets the isResourceAccount property value. Do not use. Reserved for future use.
 // returns a *bool when successful
 func (m *User) GetIsResourceAccount()(*bool) {
     val, err := m.GetBackingStore().Get("isResourceAccount")
@@ -5802,7 +5802,7 @@ func (m *User) SetIdentities(value []ObjectIdentityable)() {
         panic(err)
     }
 }
-// SetIdentityGovernance sets the identityGovernance property value. The identityGovernance property
+// SetIdentityGovernance sets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.
 func (m *User) SetIdentityGovernance(value IdentityGovernanceUserSettingsable)() {
     err := m.GetBackingStore().Set("identityGovernance", value)
     if err != nil {
@@ -5879,7 +5879,7 @@ func (m *User) SetIsManagementRestricted(value *bool)() {
         panic(err)
     }
 }
-// SetIsResourceAccount sets the isResourceAccount property value. Do not use – reserved for future use.
+// SetIsResourceAccount sets the isResourceAccount property value. Do not use. Reserved for future use.
 func (m *User) SetIsResourceAccount(value *bool)() {
     err := m.GetBackingStore().Set("isResourceAccount", value)
     if err != nil {

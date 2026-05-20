@@ -189,6 +189,16 @@ func (m *ProtectionUnitBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["pendingRetentionPeriodChange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRetentionPeriodChangeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPendingRetentionPeriodChange(val.(RetentionPeriodChangeable))
+        }
+        return nil
+    }
     res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -254,6 +264,18 @@ func (m *ProtectionUnitBase) GetOffboardRequestedDateTime()(*i336074805fc853987a
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetPendingRetentionPeriodChange gets the pendingRetentionPeriodChange property value. The pendingRetentionPeriodChange property
+// returns a RetentionPeriodChangeable when successful
+func (m *ProtectionUnitBase) GetPendingRetentionPeriodChange()(RetentionPeriodChangeable) {
+    val, err := m.GetBackingStore().Get("pendingRetentionPeriodChange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RetentionPeriodChangeable)
     }
     return nil
 }
@@ -425,6 +447,13 @@ func (m *ProtectionUnitBase) SetOffboardRequestedDateTime(value *i336074805fc853
         panic(err)
     }
 }
+// SetPendingRetentionPeriodChange sets the pendingRetentionPeriodChange property value. The pendingRetentionPeriodChange property
+func (m *ProtectionUnitBase) SetPendingRetentionPeriodChange(value RetentionPeriodChangeable)() {
+    err := m.GetBackingStore().Set("pendingRetentionPeriodChange", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyId sets the policyId property value. The unique identifier of the protection policy based on which protection unit was created.
 func (m *ProtectionUnitBase) SetPolicyId(value *string)() {
     err := m.GetBackingStore().Set("policyId", value)
@@ -457,6 +486,7 @@ type ProtectionUnitBaseable interface {
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetPendingRetentionPeriodChange()(RetentionPeriodChangeable)
     GetPolicyId()(*string)
     GetProtectionSources()(*ProtectionSource)
     GetStatus()(*ProtectionUnitStatus)
@@ -468,6 +498,7 @@ type ProtectionUnitBaseable interface {
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetPendingRetentionPeriodChange(value RetentionPeriodChangeable)()
     SetPolicyId(value *string)()
     SetProtectionSources(value *ProtectionSource)()
     SetStatus(value *ProtectionUnitStatus)()

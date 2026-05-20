@@ -215,6 +215,22 @@ func (m *AndroidWorkProfileVpnConfiguration) GetFieldDeserializers()(map[string]
         }
         return nil
     }
+    res["lockdownExclusionList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetLockdownExclusionList(res)
+        }
+        return nil
+    }
     res["microsoftTunnelSiteId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -342,6 +358,18 @@ func (m *AndroidWorkProfileVpnConfiguration) GetIdentityCertificate()(AndroidWor
     }
     if val != nil {
         return val.(AndroidWorkProfileCertificateProfileBaseable)
+    }
+    return nil
+}
+// GetLockdownExclusionList gets the lockdownExclusionList property value. List of app package names that will be able to access the network directly when VPN is in lockdown mode but not connected.
+// returns a []string when successful
+func (m *AndroidWorkProfileVpnConfiguration) GetLockdownExclusionList()([]string) {
+    val, err := m.GetBackingStore().Get("lockdownExclusionList")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -515,6 +543,12 @@ func (m *AndroidWorkProfileVpnConfiguration) Serialize(writer i878a80d2330e89d26
             return err
         }
     }
+    if m.GetLockdownExclusionList() != nil {
+        err = writer.WriteCollectionOfStringValues("lockdownExclusionList", m.GetLockdownExclusionList())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("microsoftTunnelSiteId", m.GetMicrosoftTunnelSiteId())
         if err != nil {
@@ -640,6 +674,13 @@ func (m *AndroidWorkProfileVpnConfiguration) SetIdentityCertificate(value Androi
         panic(err)
     }
 }
+// SetLockdownExclusionList sets the lockdownExclusionList property value. List of app package names that will be able to access the network directly when VPN is in lockdown mode but not connected.
+func (m *AndroidWorkProfileVpnConfiguration) SetLockdownExclusionList(value []string)() {
+    err := m.GetBackingStore().Set("lockdownExclusionList", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMicrosoftTunnelSiteId sets the microsoftTunnelSiteId property value. Microsoft Tunnel site ID.
 func (m *AndroidWorkProfileVpnConfiguration) SetMicrosoftTunnelSiteId(value *string)() {
     err := m.GetBackingStore().Set("microsoftTunnelSiteId", value)
@@ -708,6 +749,7 @@ type AndroidWorkProfileVpnConfigurationable interface {
     GetCustomKeyValueData()([]KeyValuePairable)
     GetFingerprint()(*string)
     GetIdentityCertificate()(AndroidWorkProfileCertificateProfileBaseable)
+    GetLockdownExclusionList()([]string)
     GetMicrosoftTunnelSiteId()(*string)
     GetProxyExclusionList()([]string)
     GetProxyServer()(VpnProxyServerable)
@@ -725,6 +767,7 @@ type AndroidWorkProfileVpnConfigurationable interface {
     SetCustomKeyValueData(value []KeyValuePairable)()
     SetFingerprint(value *string)()
     SetIdentityCertificate(value AndroidWorkProfileCertificateProfileBaseable)()
+    SetLockdownExclusionList(value []string)()
     SetMicrosoftTunnelSiteId(value *string)()
     SetProxyExclusionList(value []string)()
     SetProxyServer(value VpnProxyServerable)()

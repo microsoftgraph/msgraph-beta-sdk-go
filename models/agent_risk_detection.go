@@ -83,6 +83,18 @@ func (m *AgentRiskDetection) GetBlueprintId()(*string) {
     }
     return nil
 }
+// GetClientSessionId gets the clientSessionId property value. The clientSessionId property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetClientSessionId()(*string) {
+    val, err := m.GetBackingStore().Get("clientSessionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDetectedDateTime gets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, le, and ge).
 // returns a *Time when successful
 func (m *AgentRiskDetection) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -158,6 +170,16 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetBlueprintId(val)
+        }
+        return nil
+    }
+    res["clientSessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientSessionId(val)
         }
         return nil
     }
@@ -248,6 +270,36 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetRiskState(val.(*RiskState))
+        }
+        return nil
+    }
+    res["signInClientDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInClientDisplayName(val)
+        }
+        return nil
+    }
+    res["signInCorrelationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInCorrelationId(val)
+        }
+        return nil
+    }
+    res["signInRequestId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInRequestId(val)
         }
         return nil
     }
@@ -347,6 +399,42 @@ func (m *AgentRiskDetection) GetRiskState()(*RiskState) {
     }
     return nil
 }
+// GetSignInClientDisplayName gets the signInClientDisplayName property value. The signInClientDisplayName property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetSignInClientDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("signInClientDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSignInCorrelationId gets the signInCorrelationId property value. The signInCorrelationId property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetSignInCorrelationId()(*string) {
+    val, err := m.GetBackingStore().Get("signInCorrelationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSignInRequestId gets the signInRequestId property value. The signInRequestId property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetSignInRequestId()(*string) {
+    val, err := m.GetBackingStore().Get("signInRequestId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetSource gets the source property value. The source system that generated the risk detection. Nullable.
 // returns a *string when successful
 func (m *AgentRiskDetection) GetSource()(*string) {
@@ -391,6 +479,12 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("blueprintId", m.GetBlueprintId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("clientSessionId", m.GetClientSessionId())
         if err != nil {
             return err
         }
@@ -455,6 +549,24 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("signInClientDisplayName", m.GetSignInClientDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("signInCorrelationId", m.GetSignInCorrelationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("signInRequestId", m.GetSignInRequestId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("source", m.GetSource())
         if err != nil {
             return err
@@ -493,6 +605,13 @@ func (m *AgentRiskDetection) SetAgentId(value *string)() {
 // SetBlueprintId sets the blueprintId property value. The identifier of the blueprint associated with the agent. Nullable.
 func (m *AgentRiskDetection) SetBlueprintId(value *string)() {
     err := m.GetBackingStore().Set("blueprintId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientSessionId sets the clientSessionId property value. The clientSessionId property
+func (m *AgentRiskDetection) SetClientSessionId(value *string)() {
+    err := m.GetBackingStore().Set("clientSessionId", value)
     if err != nil {
         panic(err)
     }
@@ -560,6 +679,27 @@ func (m *AgentRiskDetection) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
+// SetSignInClientDisplayName sets the signInClientDisplayName property value. The signInClientDisplayName property
+func (m *AgentRiskDetection) SetSignInClientDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("signInClientDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSignInCorrelationId sets the signInCorrelationId property value. The signInCorrelationId property
+func (m *AgentRiskDetection) SetSignInCorrelationId(value *string)() {
+    err := m.GetBackingStore().Set("signInCorrelationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSignInRequestId sets the signInRequestId property value. The signInRequestId property
+func (m *AgentRiskDetection) SetSignInRequestId(value *string)() {
+    err := m.GetBackingStore().Set("signInRequestId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSource sets the source property value. The source system that generated the risk detection. Nullable.
 func (m *AgentRiskDetection) SetSource(value *string)() {
     err := m.GetBackingStore().Set("source", value)
@@ -575,6 +715,7 @@ type AgentRiskDetectionable interface {
     GetAgentDisplayName()(*string)
     GetAgentId()(*string)
     GetBlueprintId()(*string)
+    GetClientSessionId()(*string)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDetectionTimingType()(*RiskDetectionTimingType)
     GetIdentityType()(*AgentIdentityType)
@@ -584,12 +725,16 @@ type AgentRiskDetectionable interface {
     GetRiskEvidence()(*string)
     GetRiskLevel()(*RiskLevel)
     GetRiskState()(*RiskState)
+    GetSignInClientDisplayName()(*string)
+    GetSignInCorrelationId()(*string)
+    GetSignInRequestId()(*string)
     GetSource()(*string)
     SetActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAdditionalInfo(value *string)()
     SetAgentDisplayName(value *string)()
     SetAgentId(value *string)()
     SetBlueprintId(value *string)()
+    SetClientSessionId(value *string)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDetectionTimingType(value *RiskDetectionTimingType)()
     SetIdentityType(value *AgentIdentityType)()
@@ -599,5 +744,8 @@ type AgentRiskDetectionable interface {
     SetRiskEvidence(value *string)()
     SetRiskLevel(value *RiskLevel)()
     SetRiskState(value *RiskState)()
+    SetSignInClientDisplayName(value *string)()
+    SetSignInCorrelationId(value *string)()
+    SetSignInRequestId(value *string)()
     SetSource(value *string)()
 }

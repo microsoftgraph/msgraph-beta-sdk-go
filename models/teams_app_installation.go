@@ -98,7 +98,7 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetScopeInfo gets the scopeInfo property value. The scopeInfo property
+// GetScopeInfo gets the scopeInfo property value. The details of the scope in which the app is installed.
 // returns a TeamsAppInstallationScopeInfoable when successful
 func (m *TeamsAppInstallation) GetScopeInfo()(TeamsAppInstallationScopeInfoable) {
     val, err := m.GetBackingStore().Get("scopeInfo")
@@ -173,7 +173,7 @@ func (m *TeamsAppInstallation) SetConsentedPermissionSet(value TeamsAppPermissio
         panic(err)
     }
 }
-// SetScopeInfo sets the scopeInfo property value. The scopeInfo property
+// SetScopeInfo sets the scopeInfo property value. The details of the scope in which the app is installed.
 func (m *TeamsAppInstallation) SetScopeInfo(value TeamsAppInstallationScopeInfoable)() {
     err := m.GetBackingStore().Set("scopeInfo", value)
     if err != nil {

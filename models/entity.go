@@ -37,8 +37,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                 switch *mappingValue {
                     case "#microsoft.graph.aadUserConversationMember":
                         return NewAadUserConversationMember(), nil
-                    case "#microsoft.graph.accessDriftReport":
-                        return NewAccessDriftReport(), nil
                     case "#microsoft.graph.accessPackage":
                         return NewAccessPackage(), nil
                     case "#microsoft.graph.accessPackageAssignment":
@@ -3541,6 +3539,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewVirtualEventsRoot(), nil
                     case "#microsoft.graph.virtualEventTownhall":
                         return NewVirtualEventTownhall(), nil
+                    case "#microsoft.graph.virtualEventTownhallRegistrationConfiguration":
+                        return NewVirtualEventTownhallRegistrationConfiguration(), nil
                     case "#microsoft.graph.virtualEventWebinar":
                         return NewVirtualEventWebinar(), nil
                     case "#microsoft.graph.virtualEventWebinarRegistrationConfiguration":

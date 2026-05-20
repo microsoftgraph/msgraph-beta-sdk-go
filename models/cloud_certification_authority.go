@@ -436,6 +436,16 @@ func (m *CloudCertificationAuthority) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["geographicRegion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGeographicRegion(val)
+        }
+        return nil
+    }
     res["issuerCommonName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -639,6 +649,18 @@ func (m *CloudCertificationAuthority) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetGeographicRegion gets the geographicRegion property value. The geographic region where a cloud certification authority (CA) is hosted. Read-only.
+// returns a *string when successful
+func (m *CloudCertificationAuthority) GetGeographicRegion()(*string) {
+    val, err := m.GetBackingStore().Get("geographicRegion")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIssuerCommonName gets the issuerCommonName property value. The issuerCommonName property
 // returns a *string when successful
@@ -999,6 +1021,12 @@ func (m *CloudCertificationAuthority) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("geographicRegion", m.GetGeographicRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("issuerCommonName", m.GetIssuerCommonName())
         if err != nil {
             return err
@@ -1247,6 +1275,13 @@ func (m *CloudCertificationAuthority) SetExtendedKeyUsages(value []ExtendedKeyUs
         panic(err)
     }
 }
+// SetGeographicRegion sets the geographicRegion property value. The geographic region where a cloud certification authority (CA) is hosted. Read-only.
+func (m *CloudCertificationAuthority) SetGeographicRegion(value *string)() {
+    err := m.GetBackingStore().Set("geographicRegion", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIssuerCommonName sets the issuerCommonName property value. The issuerCommonName property
 func (m *CloudCertificationAuthority) SetIssuerCommonName(value *string)() {
     err := m.GetBackingStore().Set("issuerCommonName", value)
@@ -1401,6 +1436,7 @@ type CloudCertificationAuthorityable interface {
     GetDisplayName()(*string)
     GetETag()(*string)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
+    GetGeographicRegion()(*string)
     GetIssuerCommonName()(*string)
     GetKeyPlatform()(*CloudCertificationAuthorityKeyPlatformType)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1438,6 +1474,7 @@ type CloudCertificationAuthorityable interface {
     SetDisplayName(value *string)()
     SetETag(value *string)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
+    SetGeographicRegion(value *string)()
     SetIssuerCommonName(value *string)()
     SetKeyPlatform(value *CloudCertificationAuthorityKeyPlatformType)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

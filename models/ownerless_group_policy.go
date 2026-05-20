@@ -34,7 +34,7 @@ func (m *OwnerlessGroupPolicy) GetEmailInfo()(EmailDetailsable) {
     }
     return nil
 }
-// GetEnabledGroupIds gets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled.
+// GetEnabledGroupIds gets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.
 // returns a []string when successful
 func (m *OwnerlessGroupPolicy) GetEnabledGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("enabledGroupIds")
@@ -245,7 +245,7 @@ func (m *OwnerlessGroupPolicy) SetEmailInfo(value EmailDetailsable)() {
         panic(err)
     }
 }
-// SetEnabledGroupIds sets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled.
+// SetEnabledGroupIds sets the enabledGroupIds property value. The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.
 func (m *OwnerlessGroupPolicy) SetEnabledGroupIds(value []string)() {
     err := m.GetBackingStore().Set("enabledGroupIds", value)
     if err != nil {
