@@ -33,8 +33,11 @@ func NewVirtualEndpointBulkActionsItemRetryRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointBulkActionsItemRetryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action retry
+// Post retry a cloudPcBulkAction object with selected Cloud PCs.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcbulkaction-retry?view=graph-rest-beta
 func (m *VirtualEndpointBulkActionsItemRetryRequestBuilder) Post(ctx context.Context, body VirtualEndpointBulkActionsItemRetryPostRequestBodyable, requestConfiguration *VirtualEndpointBulkActionsItemRetryRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointBulkActionsItemRetryRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation invoke action retry
+// ToPostRequestInformation retry a cloudPcBulkAction object with selected Cloud PCs.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsItemRetryRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointBulkActionsItemRetryPostRequestBodyable, requestConfiguration *VirtualEndpointBulkActionsItemRetryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

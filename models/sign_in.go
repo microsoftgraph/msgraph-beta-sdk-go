@@ -83,7 +83,7 @@ func (m *SignIn) GetAppOwnerTenantId()(*string) {
     }
     return nil
 }
-// GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
+// GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
 // returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("appTokenProtectionStatus")
@@ -248,6 +248,18 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     }
     if val != nil {
         return val.(*ClientCredentialType)
+    }
+    return nil
+}
+// GetClientSessionId gets the clientSessionId property value. The clientSessionId property
+// returns a *string when successful
+func (m *SignIn) GetClientSessionId()(*string) {
+    val, err := m.GetBackingStore().Get("clientSessionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -574,6 +586,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetClientCredentialType(val.(*ClientCredentialType))
+        }
+        return nil
+    }
+    res["clientSessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientSessionId(val)
         }
         return nil
     }
@@ -1603,7 +1625,7 @@ func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     }
     return nil
 }
-// GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+// GetSignInTokenProtectionStatus gets the signInTokenProtectionStatus property value. Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the sign-in token was bound to the device. The possible values are: none, bound, unbound, unknownFutureValue.
 // returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetSignInTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("signInTokenProtectionStatus")
@@ -1651,7 +1673,7 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     }
     return nil
 }
-// GetTokenProtectionStatusDetails gets the tokenProtectionStatusDetails property value. The tokenProtectionStatusDetails property
+// GetTokenProtectionStatusDetails gets the tokenProtectionStatusDetails property value. The status of the token protection for a request in the sign-in logs. For more information, see Conditional Access: Token Protection.
 // returns a TokenProtectionStatusDetailsable when successful
 func (m *SignIn) GetTokenProtectionStatusDetails()(TokenProtectionStatusDetailsable) {
     val, err := m.GetBackingStore().Get("tokenProtectionStatusDetails")
@@ -1896,6 +1918,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     if m.GetClientCredentialType() != nil {
         cast := (*m.GetClientCredentialType()).String()
         err = writer.WriteStringValue("clientCredentialType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("clientSessionId", m.GetClientSessionId())
         if err != nil {
             return err
         }
@@ -2291,7 +2319,7 @@ func (m *SignIn) SetAppOwnerTenantId(value *string)() {
         panic(err)
     }
 }
-// SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
+// SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
 func (m *SignIn) SetAppTokenProtectionStatus(value *TokenProtectionStatus)() {
     err := m.GetBackingStore().Set("appTokenProtectionStatus", value)
     if err != nil {
@@ -2385,6 +2413,13 @@ func (m *SignIn) SetClientAppUsed(value *string)() {
 // SetClientCredentialType sets the clientCredentialType property value. Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You can review this property to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.
 func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
     err := m.GetBackingStore().Set("clientCredentialType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientSessionId sets the clientSessionId property value. The clientSessionId property
+func (m *SignIn) SetClientSessionId(value *string)() {
+    err := m.GetBackingStore().Set("clientSessionId", value)
     if err != nil {
         panic(err)
     }
@@ -2697,7 +2732,7 @@ func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
         panic(err)
     }
 }
-// SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+// SetSignInTokenProtectionStatus sets the signInTokenProtectionStatus property value. Deprecated. Use tokenProtectionStatusDetails instead. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the sign-in token was bound to the device. The possible values are: none, bound, unbound, unknownFutureValue.
 func (m *SignIn) SetSignInTokenProtectionStatus(value *TokenProtectionStatus)() {
     err := m.GetBackingStore().Set("signInTokenProtectionStatus", value)
     if err != nil {
@@ -2725,7 +2760,7 @@ func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
         panic(err)
     }
 }
-// SetTokenProtectionStatusDetails sets the tokenProtectionStatusDetails property value. The tokenProtectionStatusDetails property
+// SetTokenProtectionStatusDetails sets the tokenProtectionStatusDetails property value. The status of the token protection for a request in the sign-in logs. For more information, see Conditional Access: Token Protection.
 func (m *SignIn) SetTokenProtectionStatusDetails(value TokenProtectionStatusDetailsable)() {
     err := m.GetBackingStore().Set("tokenProtectionStatusDetails", value)
     if err != nil {
@@ -2796,6 +2831,7 @@ type SignInable interface {
     GetAzureResourceId()(*string)
     GetClientAppUsed()(*string)
     GetClientCredentialType()(*ClientCredentialType)
+    GetClientSessionId()(*string)
     GetConditionalAccessAudiences()([]string)
     GetConditionalAccessStatus()(*ConditionalAccessStatus)
     GetCorrelationId()(*string)
@@ -2870,6 +2906,7 @@ type SignInable interface {
     SetAzureResourceId(value *string)()
     SetClientAppUsed(value *string)()
     SetClientCredentialType(value *ClientCredentialType)()
+    SetClientSessionId(value *string)()
     SetConditionalAccessAudiences(value []string)()
     SetConditionalAccessStatus(value *ConditionalAccessStatus)()
     SetCorrelationId(value *string)()

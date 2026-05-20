@@ -24,7 +24,7 @@ func NewGroupChatTeamsAppInstallationScopeInfo()(*GroupChatTeamsAppInstallationS
 func CreateGroupChatTeamsAppInstallationScopeInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGroupChatTeamsAppInstallationScopeInfo(), nil
 }
-// GetChatId gets the chatId property value. The chatId property
+// GetChatId gets the chatId property value. The ID of the chat where the Teams app is installed.
 // returns a *string when successful
 func (m *GroupChatTeamsAppInstallationScopeInfo) GetChatId()(*string) {
     val, err := m.GetBackingStore().Get("chatId")
@@ -66,7 +66,7 @@ func (m *GroupChatTeamsAppInstallationScopeInfo) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetChatId sets the chatId property value. The chatId property
+// SetChatId sets the chatId property value. The ID of the chat where the Teams app is installed.
 func (m *GroupChatTeamsAppInstallationScopeInfo) SetChatId(value *string)() {
     err := m.GetBackingStore().Set("chatId", value)
     if err != nil {

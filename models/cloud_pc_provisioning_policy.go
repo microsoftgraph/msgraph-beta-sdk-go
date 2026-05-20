@@ -581,7 +581,7 @@ func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningTy
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The list of scope tag IDs for this resource. Read-only.
 // returns a []string when successful
 func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
@@ -981,7 +981,7 @@ func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioni
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The list of scope tag IDs for this resource. Read-only.
 func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {

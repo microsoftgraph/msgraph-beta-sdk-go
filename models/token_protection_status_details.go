@@ -91,7 +91,7 @@ func (m *TokenProtectionStatusDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignInSessionStatus gets the signInSessionStatus property value. The signInSessionStatus property
+// GetSignInSessionStatus gets the signInSessionStatus property value. The token protection status of the sign-in session. The possible values are: none, bound, unbound, unknownFutureValue.
 // returns a *TokenProtectionStatus when successful
 func (m *TokenProtectionStatusDetails) GetSignInSessionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("signInSessionStatus")
@@ -103,7 +103,7 @@ func (m *TokenProtectionStatusDetails) GetSignInSessionStatus()(*TokenProtection
     }
     return nil
 }
-// GetSignInSessionStatusCode gets the signInSessionStatusCode property value. The signInSessionStatusCode property
+// GetSignInSessionStatusCode gets the signInSessionStatusCode property value. Additional information about the status.
 // returns a *int32 when successful
 func (m *TokenProtectionStatusDetails) GetSignInSessionStatusCode()(*int32) {
     val, err := m.GetBackingStore().Get("signInSessionStatusCode")
@@ -162,14 +162,14 @@ func (m *TokenProtectionStatusDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignInSessionStatus sets the signInSessionStatus property value. The signInSessionStatus property
+// SetSignInSessionStatus sets the signInSessionStatus property value. The token protection status of the sign-in session. The possible values are: none, bound, unbound, unknownFutureValue.
 func (m *TokenProtectionStatusDetails) SetSignInSessionStatus(value *TokenProtectionStatus)() {
     err := m.GetBackingStore().Set("signInSessionStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInSessionStatusCode sets the signInSessionStatusCode property value. The signInSessionStatusCode property
+// SetSignInSessionStatusCode sets the signInSessionStatusCode property value. Additional information about the status.
 func (m *TokenProtectionStatusDetails) SetSignInSessionStatusCode(value *int32)() {
     err := m.GetBackingStore().Set("signInSessionStatusCode", value)
     if err != nil {

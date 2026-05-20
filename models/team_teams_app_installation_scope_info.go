@@ -40,7 +40,7 @@ func (m *TeamTeamsAppInstallationScopeInfo) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetTeamId gets the teamId property value. The teamId property
+// GetTeamId gets the teamId property value. The ID of the team where the Teams app is installed.
 // returns a *string when successful
 func (m *TeamTeamsAppInstallationScopeInfo) GetTeamId()(*string) {
     val, err := m.GetBackingStore().Get("teamId")
@@ -66,7 +66,7 @@ func (m *TeamTeamsAppInstallationScopeInfo) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetTeamId sets the teamId property value. The teamId property
+// SetTeamId sets the teamId property value. The ID of the team where the Teams app is installed.
 func (m *TeamTeamsAppInstallationScopeInfo) SetTeamId(value *string)() {
     err := m.GetBackingStore().Set("teamId", value)
     if err != nil {

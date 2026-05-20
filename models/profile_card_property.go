@@ -88,7 +88,7 @@ func (m *ProfileCardProperty) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsVisible gets the isVisible property value. The isVisible property
+// GetIsVisible gets the isVisible property value. Indicates whether the given directory property should be shown on a user’s profile card.
 // returns a *bool when successful
 func (m *ProfileCardProperty) GetIsVisible()(*bool) {
     val, err := m.GetBackingStore().Get("isVisible")
@@ -146,7 +146,7 @@ func (m *ProfileCardProperty) SetDirectoryPropertyName(value *string)() {
         panic(err)
     }
 }
-// SetIsVisible sets the isVisible property value. The isVisible property
+// SetIsVisible sets the isVisible property value. Indicates whether the given directory property should be shown on a user’s profile card.
 func (m *ProfileCardProperty) SetIsVisible(value *bool)() {
     err := m.GetBackingStore().Set("isVisible", value)
     if err != nil {

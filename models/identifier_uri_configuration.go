@@ -103,7 +103,7 @@ func (m *IdentifierUriConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUriAdditionWithoutUniqueTenantIdentifier gets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenatId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
+// GetUriAdditionWithoutUniqueTenantIdentifier gets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
 // returns a IdentifierUriRestrictionable when successful
 func (m *IdentifierUriConfiguration) GetUriAdditionWithoutUniqueTenantIdentifier()(IdentifierUriRestrictionable) {
     val, err := m.GetBackingStore().Get("uriAdditionWithoutUniqueTenantIdentifier")
@@ -168,7 +168,7 @@ func (m *IdentifierUriConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUriAdditionWithoutUniqueTenantIdentifier sets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenatId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
+// SetUriAdditionWithoutUniqueTenantIdentifier sets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenantId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
 func (m *IdentifierUriConfiguration) SetUriAdditionWithoutUniqueTenantIdentifier(value IdentifierUriRestrictionable)() {
     err := m.GetBackingStore().Set("uriAdditionWithoutUniqueTenantIdentifier", value)
     if err != nil {

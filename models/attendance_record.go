@@ -46,6 +46,18 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
     }
     return nil
 }
+// GetEngagements gets the engagements property value. The list of real-time participant interaction behaviors during a meeting.
+// returns a []MeetingEngagementable when successful
+func (m *AttendanceRecord) GetEngagements()([]MeetingEngagementable) {
+    val, err := m.GetBackingStore().Get("engagements")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MeetingEngagementable)
+    }
+    return nil
+}
 // GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The external information for a virtual event registration.
 // returns a VirtualEventExternalRegistrationInformationable when successful
 func (m *AttendanceRecord) GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable) {
@@ -85,6 +97,22 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetEmailAddress(val)
+        }
+        return nil
+    }
+    res["engagements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMeetingEngagementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MeetingEngagementable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MeetingEngagementable)
+                }
+            }
+            m.SetEngagements(res)
         }
         return nil
     }
@@ -234,6 +262,18 @@ func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetEngagements() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEngagements()))
+        for i, v := range m.GetEngagements() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("engagements", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("externalRegistrationInformation", m.GetExternalRegistrationInformation())
         if err != nil {
@@ -286,6 +326,13 @@ func (m *AttendanceRecord) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
+// SetEngagements sets the engagements property value. The list of real-time participant interaction behaviors during a meeting.
+func (m *AttendanceRecord) SetEngagements(value []MeetingEngagementable)() {
+    err := m.GetBackingStore().Set("engagements", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The external information for a virtual event registration.
 func (m *AttendanceRecord) SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)() {
     err := m.GetBackingStore().Set("externalRegistrationInformation", value)
@@ -333,6 +380,7 @@ type AttendanceRecordable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttendanceIntervals()([]AttendanceIntervalable)
     GetEmailAddress()(*string)
+    GetEngagements()([]MeetingEngagementable)
     GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable)
     GetIdentity()(Identityable)
     GetRegistrantId()(*string)
@@ -341,6 +389,7 @@ type AttendanceRecordable interface {
     GetTotalAttendanceInSeconds()(*int32)
     SetAttendanceIntervals(value []AttendanceIntervalable)()
     SetEmailAddress(value *string)()
+    SetEngagements(value []MeetingEngagementable)()
     SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)()
     SetIdentity(value Identityable)()
     SetRegistrantId(value *string)()

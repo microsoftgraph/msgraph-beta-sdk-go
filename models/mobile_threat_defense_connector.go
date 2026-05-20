@@ -182,6 +182,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["grantMobileThreatDefensePartnerRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGrantMobileThreatDefensePartnerRole(val)
+        }
+        return nil
+    }
     res["iosDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -219,6 +229,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetLastHeartbeatDateTime(val)
+        }
+        return nil
+    }
+    res["launchMobileThreatDefensePartnerOnSetupEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLaunchMobileThreatDefensePartnerOnSetupEnabled(val)
         }
         return nil
     }
@@ -314,6 +334,18 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
+// GetGrantMobileThreatDefensePartnerRole gets the grantMobileThreatDefensePartnerRole property value. When TRUE, indicates that the Mobile Threat Defense partner is granted the Mobile Threat Defense role on enrolled Android Corporate Owned Business Only and Corporate Owned Personally Enabled devices. When FALSE, indicates that the Mobile Threat Defense partner is not granted the Mobile Threat Defense role. Default value is FALSE.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetGrantMobileThreatDefensePartnerRole()(*bool) {
+    val, err := m.GetBackingStore().Get("grantMobileThreatDefensePartnerRole")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
 // returns a *bool when successful
 func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
@@ -359,6 +391,18 @@ func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc8
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLaunchMobileThreatDefensePartnerOnSetupEnabled gets the launchMobileThreatDefensePartnerOnSetupEnabled property value. When TRUE, indicates that the Mobile Threat Defense partner will be automatically launched during Android Corporate Owned Business Only and Corporate Owned Personally Enabled device setup. When FALSE, indicates that the Mobile Threat Defense partner will not be automatically launched during setup. Default value is FALSE.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetLaunchMobileThreatDefensePartnerOnSetupEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("launchMobileThreatDefensePartnerOnSetupEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -519,6 +563,12 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteBoolValue("grantMobileThreatDefensePartnerRole", m.GetGrantMobileThreatDefensePartnerRole())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("iosDeviceBlockedOnMissingPartnerData", m.GetIosDeviceBlockedOnMissingPartnerData())
         if err != nil {
             return err
@@ -538,6 +588,12 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err = writer.WriteTimeValue("lastHeartbeatDateTime", m.GetLastHeartbeatDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("launchMobileThreatDefensePartnerOnSetupEnabled", m.GetLaunchMobileThreatDefensePartnerOnSetupEnabled())
         if err != nil {
             return err
         }
@@ -648,6 +704,13 @@ func (m *MobileThreatDefenseConnector) SetAndroidMobileApplicationManagementEnab
         panic(err)
     }
 }
+// SetGrantMobileThreatDefensePartnerRole sets the grantMobileThreatDefensePartnerRole property value. When TRUE, indicates that the Mobile Threat Defense partner is granted the Mobile Threat Defense role on enrolled Android Corporate Owned Business Only and Corporate Owned Personally Enabled devices. When FALSE, indicates that the Mobile Threat Defense partner is not granted the Mobile Threat Defense role. Default value is FALSE.
+func (m *MobileThreatDefenseConnector) SetGrantMobileThreatDefensePartnerRole(value *bool)() {
+    err := m.GetBackingStore().Set("grantMobileThreatDefensePartnerRole", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIosDeviceBlockedOnMissingPartnerData sets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetIosDeviceBlockedOnMissingPartnerData(value *bool)() {
     err := m.GetBackingStore().Set("iosDeviceBlockedOnMissingPartnerData", value)
@@ -672,6 +735,13 @@ func (m *MobileThreatDefenseConnector) SetIosMobileApplicationManagementEnabled(
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
 func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastHeartbeatDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLaunchMobileThreatDefensePartnerOnSetupEnabled sets the launchMobileThreatDefensePartnerOnSetupEnabled property value. When TRUE, indicates that the Mobile Threat Defense partner will be automatically launched during Android Corporate Owned Business Only and Corporate Owned Personally Enabled device setup. When FALSE, indicates that the Mobile Threat Defense partner will not be automatically launched during setup. Default value is FALSE.
+func (m *MobileThreatDefenseConnector) SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("launchMobileThreatDefensePartnerOnSetupEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -749,10 +819,12 @@ type MobileThreatDefenseConnectorable interface {
     GetAndroidDeviceBlockedOnMissingPartnerData()(*bool)
     GetAndroidEnabled()(*bool)
     GetAndroidMobileApplicationManagementEnabled()(*bool)
+    GetGrantMobileThreatDefensePartnerRole()(*bool)
     GetIosDeviceBlockedOnMissingPartnerData()(*bool)
     GetIosEnabled()(*bool)
     GetIosMobileApplicationManagementEnabled()(*bool)
     GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLaunchMobileThreatDefensePartnerOnSetupEnabled()(*bool)
     GetMacDeviceBlockedOnMissingPartnerData()(*bool)
     GetMacEnabled()(*bool)
     GetMicrosoftDefenderForEndpointAttachEnabled()(*bool)
@@ -769,10 +841,12 @@ type MobileThreatDefenseConnectorable interface {
     SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)()
     SetAndroidEnabled(value *bool)()
     SetAndroidMobileApplicationManagementEnabled(value *bool)()
+    SetGrantMobileThreatDefensePartnerRole(value *bool)()
     SetIosDeviceBlockedOnMissingPartnerData(value *bool)()
     SetIosEnabled(value *bool)()
     SetIosMobileApplicationManagementEnabled(value *bool)()
     SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool)()
     SetMacDeviceBlockedOnMissingPartnerData(value *bool)()
     SetMacEnabled(value *bool)()
     SetMicrosoftDefenderForEndpointAttachEnabled(value *bool)()
