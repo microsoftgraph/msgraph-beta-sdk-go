@@ -67,7 +67,7 @@ func (m *GranularRestoreArtifactBase) GetCompletionDateTime()(*i336074805fc85398
     }
     return nil
 }
-// GetDestinationType gets the destinationType property value. The destinationType property
+// GetDestinationType gets the destinationType property value. The restoration destination. The possible values are: new, inPlace, unknownFutureValue.
 // returns a *DestinationType when successful
 func (m *GranularRestoreArtifactBase) GetDestinationType()(*DestinationType) {
     val, err := m.GetBackingStore().Get("destinationType")
@@ -209,7 +209,7 @@ func (m *GranularRestoreArtifactBase) GetRestoredItemPath()(*string) {
     }
     return nil
 }
-// GetRestoredItemWebUrl gets the restoredItemWebUrl property value. The web url of the restord artifact.
+// GetRestoredItemWebUrl gets the restoredItemWebUrl property value. The web url of the restored artifact.
 // returns a *string when successful
 func (m *GranularRestoreArtifactBase) GetRestoredItemWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("restoredItemWebUrl")
@@ -353,7 +353,7 @@ func (m *GranularRestoreArtifactBase) SetCompletionDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// SetDestinationType sets the destinationType property value. The destinationType property
+// SetDestinationType sets the destinationType property value. The restoration destination. The possible values are: new, inPlace, unknownFutureValue.
 func (m *GranularRestoreArtifactBase) SetDestinationType(value *DestinationType)() {
     err := m.GetBackingStore().Set("destinationType", value)
     if err != nil {
@@ -374,7 +374,7 @@ func (m *GranularRestoreArtifactBase) SetRestoredItemPath(value *string)() {
         panic(err)
     }
 }
-// SetRestoredItemWebUrl sets the restoredItemWebUrl property value. The web url of the restord artifact.
+// SetRestoredItemWebUrl sets the restoredItemWebUrl property value. The web url of the restored artifact.
 func (m *GranularRestoreArtifactBase) SetRestoredItemWebUrl(value *string)() {
     err := m.GetBackingStore().Set("restoredItemWebUrl", value)
     if err != nil {

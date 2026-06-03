@@ -64,7 +64,7 @@ func (m *ItemBrandingThemesItemLocalizationsRequestBuilder) ByOrganizationalBran
 // NewItemBrandingThemesItemLocalizationsRequestBuilderInternal instantiates a new ItemBrandingThemesItemLocalizationsRequestBuilder and sets the default values.
 func NewItemBrandingThemesItemLocalizationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingThemesItemLocalizationsRequestBuilder) {
     m := &ItemBrandingThemesItemLocalizationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}/localizations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

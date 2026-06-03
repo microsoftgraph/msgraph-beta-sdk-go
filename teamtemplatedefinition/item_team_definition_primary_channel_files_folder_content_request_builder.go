@@ -45,7 +45,7 @@ type ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderPutRequestC
 // NewItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderInternal instantiates a new ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder) {
     m := &ItemTeamDefinitionPrimaryChannelFilesFolderContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/filesFolder/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/filesFolder/content", pathParameters),
     }
     return m
 }

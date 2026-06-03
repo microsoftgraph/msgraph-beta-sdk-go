@@ -47,7 +47,7 @@ type UserFlowsIdentityUserFlowItemRequestBuilderPatchRequestConfiguration struct
 // NewUserFlowsIdentityUserFlowItemRequestBuilderInternal instantiates a new UserFlowsIdentityUserFlowItemRequestBuilder and sets the default values.
 func NewUserFlowsIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserFlowsIdentityUserFlowItemRequestBuilder) {
     m := &UserFlowsIdentityUserFlowItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/userFlows/{identityUserFlow%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/userFlows/{identityUserFlow%2Did}", pathParameters),
     }
     return m
 }

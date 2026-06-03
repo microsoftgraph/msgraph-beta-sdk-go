@@ -9,13 +9,13 @@ const (
     RUNNING_SNAPSHOTJOBSTATUS
     SUCCEEDED_SNAPSHOTJOBSTATUS
     FAILED_SNAPSHOTJOBSTATUS
+    PARTIALLYSUCCESSFUL_SNAPSHOTJOBSTATUS
     // A marker value for members added after the release of this API.
     UNKNOWNFUTUREVALUE_SNAPSHOTJOBSTATUS
-    PARTIALLYSUCCESSFUL_SNAPSHOTJOBSTATUS
 )
 
 func (i SnapshotJobStatus) String() string {
-    return []string{"notStarted", "running", "succeeded", "failed", "unknownFutureValue", "partiallySuccessful"}[i]
+    return []string{"notStarted", "running", "succeeded", "failed", "partiallySuccessful", "unknownFutureValue"}[i]
 }
 func ParseSnapshotJobStatus(v string) (any, error) {
     result := NOTSTARTED_SNAPSHOTJOBSTATUS
@@ -28,10 +28,10 @@ func ParseSnapshotJobStatus(v string) (any, error) {
             result = SUCCEEDED_SNAPSHOTJOBSTATUS
         case "failed":
             result = FAILED_SNAPSHOTJOBSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SNAPSHOTJOBSTATUS
         case "partiallySuccessful":
             result = PARTIALLYSUCCESSFUL_SNAPSHOTJOBSTATUS
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_SNAPSHOTJOBSTATUS
         default:
             return nil, nil
     }

@@ -47,7 +47,7 @@ type ItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesP
 // NewItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &ItemTeamDefinitionChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }

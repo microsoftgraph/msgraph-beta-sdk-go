@@ -76,7 +76,7 @@ func (m *CompaniesItemPictureRequestBuilder) ByPictureIdGuid(pictureId i561e97a8
 // NewCompaniesItemPictureRequestBuilderInternal instantiates a new CompaniesItemPictureRequestBuilder and sets the default values.
 func NewCompaniesItemPictureRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPictureRequestBuilder) {
     m := &CompaniesItemPictureRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/picture{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

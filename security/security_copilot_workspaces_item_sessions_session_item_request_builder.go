@@ -47,7 +47,7 @@ type SecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilderPatchRequestC
 // NewSecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilderInternal instantiates a new SecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilder and sets the default values.
 func NewSecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilder) {
     m := &SecurityCopilotWorkspacesItemSessionsSessionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/sessions/{session%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/sessions/{session%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type ItemClaimsPolicyRequestBuilderPutRequestConfiguration struct {
 // NewItemClaimsPolicyRequestBuilderInternal instantiates a new ItemClaimsPolicyRequestBuilder and sets the default values.
 func NewItemClaimsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemClaimsPolicyRequestBuilder) {
     m := &ItemClaimsPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsPolicy", pathParameters),
     }
     return m
 }

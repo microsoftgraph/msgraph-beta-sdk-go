@@ -64,7 +64,7 @@ func (m *EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder) B
 // NewEntitlementManagementAccessPackageResourceEnvironmentsRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageResourceEnvironmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder) {
     m := &EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageResourceEnvironments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

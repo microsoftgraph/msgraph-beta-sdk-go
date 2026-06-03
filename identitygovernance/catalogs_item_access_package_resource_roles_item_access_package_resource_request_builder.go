@@ -62,7 +62,7 @@ func (m *CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestB
 // NewCatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestBuilderInternal instantiates a new CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestBuilder and sets the default values.
 func NewCatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestBuilder) {
     m := &CatalogsItemAccessPackageResourceRolesItemAccessPackageResourceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/catalogs/{accessPackageCatalog%2Did}/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/catalogs/{accessPackageCatalog%2Did}/accessPackageResourceRoles/{accessPackageResourceRole%2Did}/accessPackageResource", pathParameters),
     }
     return m
 }

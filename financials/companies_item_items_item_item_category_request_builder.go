@@ -47,7 +47,7 @@ type CompaniesItemItemsItemItemCategoryRequestBuilderPatchRequestConfiguration s
 // NewCompaniesItemItemsItemItemCategoryRequestBuilderInternal instantiates a new CompaniesItemItemsItemItemCategoryRequestBuilder and sets the default values.
 func NewCompaniesItemItemsItemItemCategoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemItemsItemItemCategoryRequestBuilder) {
     m := &CompaniesItemItemsItemItemCategoryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/items/{item%2Did}/itemCategory{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/items/{item%2Did}/itemCategory", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemR
 // NewItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderInternal instantiates a new ItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder and sets the default values.
 func NewItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder) {
     m := &ItemHardwareOathDevicesHardwareOathTokenAuthenticationMethodDeviceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}/hardwareOathDevices/{hardwareOathTokenAuthenticationMethodDevice%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/authenticationMethodDevices/{authenticationMethodDevice%2Did}/hardwareOathDevices/{hardwareOathTokenAuthenticationMethodDevice%2Did}", pathParameters),
     }
     return m
 }

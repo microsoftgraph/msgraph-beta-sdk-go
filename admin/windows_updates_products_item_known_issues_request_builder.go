@@ -64,7 +64,7 @@ func (m *WindowsUpdatesProductsItemKnownIssuesRequestBuilder) ByKnownIssueId(kno
 // NewWindowsUpdatesProductsItemKnownIssuesRequestBuilderInternal instantiates a new WindowsUpdatesProductsItemKnownIssuesRequestBuilder and sets the default values.
 func NewWindowsUpdatesProductsItemKnownIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesProductsItemKnownIssuesRequestBuilder) {
     m := &WindowsUpdatesProductsItemKnownIssuesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/knownIssues{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

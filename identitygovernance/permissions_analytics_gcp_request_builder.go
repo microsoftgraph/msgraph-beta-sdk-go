@@ -47,7 +47,7 @@ type PermissionsAnalyticsGcpRequestBuilderPatchRequestConfiguration struct {
 // NewPermissionsAnalyticsGcpRequestBuilderInternal instantiates a new PermissionsAnalyticsGcpRequestBuilder and sets the default values.
 func NewPermissionsAnalyticsGcpRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionsAnalyticsGcpRequestBuilder) {
     m := &PermissionsAnalyticsGcpRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics/gcp{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics/gcp", pathParameters),
     }
     return m
 }

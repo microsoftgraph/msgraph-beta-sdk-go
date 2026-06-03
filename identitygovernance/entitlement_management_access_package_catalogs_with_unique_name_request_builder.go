@@ -47,7 +47,7 @@ type EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilderPatch
 // NewEntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilderInternal instantiates a new EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilder and sets the default values.
 func NewEntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, uniqueName *string)(*EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilder) {
     m := &EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs(uniqueName='{uniqueName}')", pathParameters),
     }
     if uniqueName != nil {
         m.BaseRequestBuilder.PathParameters["uniqueName"] = *uniqueName

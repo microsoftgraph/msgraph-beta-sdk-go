@@ -47,7 +47,7 @@ type TasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRequestConfig
 // NewTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }

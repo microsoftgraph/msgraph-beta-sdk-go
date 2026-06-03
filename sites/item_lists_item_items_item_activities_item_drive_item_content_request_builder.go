@@ -38,7 +38,7 @@ type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutReques
 // NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal instantiates a new ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder and sets the default values.
 func NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) {
     m := &ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}/driveItem/content{?%24format*}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type WindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApp
 // NewWindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilderInternal instantiates a new WindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder) {
     m := &WindowsUpdatesDeploymentsItemAudienceApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices/{applicableContentDeviceMatch%2DdeviceId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices/{applicableContentDeviceMatch%2DdeviceId}", pathParameters),
     }
     return m
 }

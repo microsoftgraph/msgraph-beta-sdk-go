@@ -47,7 +47,7 @@ type AzureADPremiumLicenseInsightRequestBuilderPatchRequestConfiguration struct 
 // NewAzureADPremiumLicenseInsightRequestBuilderInternal instantiates a new AzureADPremiumLicenseInsightRequestBuilder and sets the default values.
 func NewAzureADPremiumLicenseInsightRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AzureADPremiumLicenseInsightRequestBuilder) {
     m := &AzureADPremiumLicenseInsightRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/azureADPremiumLicenseInsight{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/azureADPremiumLicenseInsight", pathParameters),
     }
     return m
 }

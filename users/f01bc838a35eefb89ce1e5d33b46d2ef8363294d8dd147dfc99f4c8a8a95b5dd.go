@@ -40,7 +40,7 @@ type ItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssig
 // NewItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssignToMailboxSettingsRequestBuilderInternal instantiates a new ItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssignToMailboxSettingsRequestBuilder and sets the default values.
 func NewItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssignToMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssignToMailboxSettingsRequestBuilder) {
     m := &ItemAuthenticationHardwareOathMethodsItemDeviceHardwareOathDevicesItemAssignToMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/hardwareOathMethods/{hardwareOathAuthenticationMethod%2Did}/device/hardwareOathDevices/{hardwareOathTokenAuthenticationMethodDevice%2Did}/assignTo/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

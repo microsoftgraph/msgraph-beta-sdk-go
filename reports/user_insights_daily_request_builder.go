@@ -57,7 +57,7 @@ func (m *UserInsightsDailyRequestBuilder) Authentications()(*UserInsightsDailyAu
 // NewUserInsightsDailyRequestBuilderInternal instantiates a new UserInsightsDailyRequestBuilder and sets the default values.
 func NewUserInsightsDailyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsDailyRequestBuilder) {
     m := &UserInsightsDailyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily", pathParameters),
     }
     return m
 }

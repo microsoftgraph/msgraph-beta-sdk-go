@@ -52,7 +52,7 @@ type ItemGetByPathWithPathContentModelsRequestBuilderPostRequestConfiguration st
 // NewItemGetByPathWithPathContentModelsRequestBuilderInternal instantiates a new ItemGetByPathWithPathContentModelsRequestBuilder and sets the default values.
 func NewItemGetByPathWithPathContentModelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGetByPathWithPathContentModelsRequestBuilder) {
     m := &ItemGetByPathWithPathContentModelsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/getByPath(path='{path}')/contentModels{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

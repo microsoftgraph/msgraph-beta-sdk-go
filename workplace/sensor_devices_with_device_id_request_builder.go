@@ -47,7 +47,7 @@ type SensorDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration struct {
 // NewSensorDevicesWithDeviceIdRequestBuilderInternal instantiates a new SensorDevicesWithDeviceIdRequestBuilder and sets the default values.
 func NewSensorDevicesWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceId *string)(*SensorDevicesWithDeviceIdRequestBuilder) {
     m := &SensorDevicesWithDeviceIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices(deviceId='{deviceId}')", pathParameters),
     }
     if deviceId != nil {
         m.BaseRequestBuilder.PathParameters["deviceId"] = *deviceId

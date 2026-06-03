@@ -201,6 +201,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["joinedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
+            }
+            m.SetJoinedUsers(res)
+        }
+        return nil
+    }
     res["layoutType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseChannelLayoutType)
         if err != nil {
@@ -390,6 +406,18 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetJoinedUsers gets the joinedUsers property value. The joinedUsers property
+// returns a []ConversationMemberable when successful
+func (m *Channel) GetJoinedUsers()([]ConversationMemberable) {
+    val, err := m.GetBackingStore().Get("joinedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
     }
     return nil
 }
@@ -621,6 +649,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetJoinedUsers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJoinedUsers()))
+        for i, v := range m.GetJoinedUsers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("joinedUsers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLayoutType() != nil {
         cast := (*m.GetLayoutType()).String()
         err = writer.WriteStringValue("layoutType", &cast)
@@ -791,6 +831,13 @@ func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
         panic(err)
     }
 }
+// SetJoinedUsers sets the joinedUsers property value. The joinedUsers property
+func (m *Channel) SetJoinedUsers(value []ConversationMemberable)() {
+    err := m.GetBackingStore().Set("joinedUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLayoutType sets the layoutType property value. The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.
 func (m *Channel) SetLayoutType(value *ChannelLayoutType)() {
     err := m.GetBackingStore().Set("layoutType", value)
@@ -894,6 +941,7 @@ type Channelable interface {
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
+    GetJoinedUsers()([]ConversationMemberable)
     GetLayoutType()(*ChannelLayoutType)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
@@ -916,6 +964,7 @@ type Channelable interface {
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
+    SetJoinedUsers(value []ConversationMemberable)()
     SetLayoutType(value *ChannelLayoutType)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()

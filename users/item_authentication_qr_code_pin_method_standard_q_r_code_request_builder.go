@@ -47,7 +47,7 @@ type ItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilderPatchRequestCo
 // NewItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilderInternal instantiates a new ItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilder and sets the default values.
 func NewItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilder) {
     m := &ItemAuthenticationQrCodePinMethodStandardQRCodeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/qrCodePinMethod/standardQRCode{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/qrCodePinMethod/standardQRCode", pathParameters),
     }
     return m
 }

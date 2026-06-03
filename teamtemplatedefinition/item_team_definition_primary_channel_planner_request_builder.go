@@ -47,7 +47,7 @@ type ItemTeamDefinitionPrimaryChannelPlannerRequestBuilderPatchRequestConfigurat
 // NewItemTeamDefinitionPrimaryChannelPlannerRequestBuilderInternal instantiates a new ItemTeamDefinitionPrimaryChannelPlannerRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelPlannerRequestBuilder) {
     m := &ItemTeamDefinitionPrimaryChannelPlannerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/planner{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/planner", pathParameters),
     }
     return m
 }

@@ -64,7 +64,7 @@ func (m *ItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequest
 // NewItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequestBuilderInternal instantiates a new ItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequestBuilder and sets the default values.
 func NewItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequestBuilder) {
     m := &ItemTeamChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

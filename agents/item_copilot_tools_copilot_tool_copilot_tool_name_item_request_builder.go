@@ -47,7 +47,7 @@ type ItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilderPatchRequestCon
 // NewItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilderInternal instantiates a new ItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilder and sets the default values.
 func NewItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilder) {
     m := &ItemCopilotToolsCopilotToolCopilotToolNameItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agents/{agent%2Did}/copilotTools/{copilotTool%2DcopilotToolName}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agents/{agent%2Did}/copilotTools/{copilotTool%2DcopilotToolName}", pathParameters),
     }
     return m
 }

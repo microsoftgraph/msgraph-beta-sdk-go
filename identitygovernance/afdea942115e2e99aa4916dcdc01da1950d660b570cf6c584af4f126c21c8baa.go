@@ -64,7 +64,7 @@ func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedRevie
 // NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedReviewersRequestBuilderInternal instantiates a new AccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedReviewersRequestBuilder and sets the default values.
 func NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedReviewersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedReviewersRequestBuilder) {
     m := &AccessReviewsInstancesItemStagesItemDecisionsItemInstanceContactedReviewersRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/contactedReviewers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

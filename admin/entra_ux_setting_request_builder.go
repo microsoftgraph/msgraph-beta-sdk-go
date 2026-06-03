@@ -47,7 +47,7 @@ type EntraUxSettingRequestBuilderPatchRequestConfiguration struct {
 // NewEntraUxSettingRequestBuilderInternal instantiates a new EntraUxSettingRequestBuilder and sets the default values.
 func NewEntraUxSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntraUxSettingRequestBuilder) {
     m := &EntraUxSettingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/entra/uxSetting{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/entra/uxSetting", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type AgentInstancesItemAgentCardManifestRequestBuilderPatchRequestConfiguration 
 // NewAgentInstancesItemAgentCardManifestRequestBuilderInternal instantiates a new AgentInstancesItemAgentCardManifestRequestBuilder and sets the default values.
 func NewAgentInstancesItemAgentCardManifestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgentInstancesItemAgentCardManifestRequestBuilder) {
     m := &AgentInstancesItemAgentCardManifestRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentInstances/{agentInstance%2Did}/agentCardManifest{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentInstances/{agentInstance%2Did}/agentCardManifest", pathParameters),
     }
     return m
 }

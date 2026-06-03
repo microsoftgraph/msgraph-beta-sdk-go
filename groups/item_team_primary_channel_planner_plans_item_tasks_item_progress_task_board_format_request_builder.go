@@ -47,7 +47,7 @@ type ItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatReque
 // NewItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal instantiates a new ItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     m := &ItemTeamPrimaryChannelPlannerPlansItemTasksItemProgressTaskBoardFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat", pathParameters),
     }
     return m
 }

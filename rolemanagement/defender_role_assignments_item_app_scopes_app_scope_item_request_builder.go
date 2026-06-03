@@ -47,7 +47,7 @@ type DefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatchRequestC
 // NewDefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal instantiates a new DefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder and sets the default values.
 func NewDefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     m := &DefenderRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}", pathParameters),
     }
     return m
 }

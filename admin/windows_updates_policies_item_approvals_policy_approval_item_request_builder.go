@@ -52,7 +52,7 @@ func (m *WindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilder) Ca
 // NewWindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilderInternal instantiates a new WindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilder) {
     m := &WindowsUpdatesPoliciesItemApprovalsPolicyApprovalItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/approvals/{policyApproval%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/approvals/{policyApproval%2Did}", pathParameters),
     }
     return m
 }

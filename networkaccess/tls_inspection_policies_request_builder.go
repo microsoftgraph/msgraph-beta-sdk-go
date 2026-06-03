@@ -64,7 +64,7 @@ func (m *TlsInspectionPoliciesRequestBuilder) ByTlsInspectionPolicyId(tlsInspect
 // NewTlsInspectionPoliciesRequestBuilderInternal instantiates a new TlsInspectionPoliciesRequestBuilder and sets the default values.
 func NewTlsInspectionPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TlsInspectionPoliciesRequestBuilder) {
     m := &TlsInspectionPoliciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/tlsInspectionPolicies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

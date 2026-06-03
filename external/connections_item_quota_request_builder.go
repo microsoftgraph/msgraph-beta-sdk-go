@@ -47,7 +47,7 @@ type ConnectionsItemQuotaRequestBuilderPatchRequestConfiguration struct {
 // NewConnectionsItemQuotaRequestBuilderInternal instantiates a new ConnectionsItemQuotaRequestBuilder and sets the default values.
 func NewConnectionsItemQuotaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemQuotaRequestBuilder) {
     m := &ConnectionsItemQuotaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/quota{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/quota", pathParameters),
     }
     return m
 }

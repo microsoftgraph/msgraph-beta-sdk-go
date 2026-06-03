@@ -47,7 +47,7 @@ type SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMa
 // NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderInternal instantiates a new SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder and sets the default values.
 func NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) {
     m := &SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationGroupMappings/{sharePointGroupIdentityMapping%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationGroupMappings/{sharePointGroupIdentityMapping%2Did}", pathParameters),
     }
     return m
 }

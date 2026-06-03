@@ -47,7 +47,7 @@ type PartnerSecurityScoreRequestBuilderPatchRequestConfiguration struct {
 // NewPartnerSecurityScoreRequestBuilderInternal instantiates a new PartnerSecurityScoreRequestBuilder and sets the default values.
 func NewPartnerSecurityScoreRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnerSecurityScoreRequestBuilder) {
     m := &PartnerSecurityScoreRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore", pathParameters),
     }
     return m
 }

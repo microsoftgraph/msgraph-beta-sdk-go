@@ -47,7 +47,7 @@ type ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilderPatchR
 // NewManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilderInternal instantiates a new ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder and sets the default values.
 func NewManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder) {
     m := &ManagedTenantsManagementTemplatesManagementTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementTemplates/{managementTemplate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementTemplates/{managementTemplate%2Did}", pathParameters),
     }
     return m
 }

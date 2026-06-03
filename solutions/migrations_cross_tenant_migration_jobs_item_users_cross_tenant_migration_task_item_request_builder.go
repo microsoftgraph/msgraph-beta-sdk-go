@@ -52,7 +52,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItem
 // NewMigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilderInternal instantiates a new MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilder and sets the default values.
 func NewMigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilder) {
     m := &MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/users/{crossTenantMigrationTask%2Did}", pathParameters),
     }
     return m
 }

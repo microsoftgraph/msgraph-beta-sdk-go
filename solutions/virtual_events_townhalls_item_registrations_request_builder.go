@@ -14,7 +14,7 @@ import (
 type VirtualEventsTownhallsItemRegistrationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsTownhallsItemRegistrationsRequestBuilderGetQueryParameters get registrations from solutions
+// VirtualEventsTownhallsItemRegistrationsRequestBuilderGetQueryParameters registration records of the town hall.
 type VirtualEventsTownhallsItemRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -64,7 +64,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsRequestBuilder) ByVirtualEventRe
 // NewVirtualEventsTownhallsItemRegistrationsRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemRegistrationsRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemRegistrationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemRegistrationsRequestBuilder) {
     m := &VirtualEventsTownhallsItemRegistrationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -79,7 +79,7 @@ func NewVirtualEventsTownhallsItemRegistrationsRequestBuilder(rawUrl string, req
 func (m *VirtualEventsTownhallsItemRegistrationsRequestBuilder) Count()(*VirtualEventsTownhallsItemRegistrationsCountRequestBuilder) {
     return NewVirtualEventsTownhallsItemRegistrationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get registrations from solutions
+// Get registration records of the town hall.
 // returns a VirtualEventRegistrationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsRequestBuilder) Post(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
-// ToGetRequestInformation get registrations from solutions
+// ToGetRequestInformation registration records of the town hall.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemRegistrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

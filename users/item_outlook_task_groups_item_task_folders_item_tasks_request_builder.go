@@ -65,7 +65,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) ByOutlookT
 // NewItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal instantiates a new ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder and sets the default values.
 func NewItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) {
     m := &ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders/{outlookTaskFolder%2Did}/tasks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

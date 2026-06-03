@@ -21,7 +21,7 @@ type BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get siteExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters the list of bulk addition jobs for site exclusion units in the tenant.
 type BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditi
 // NewBackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderInternal instantiates a new BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder and sets the default values.
 func NewBackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder) {
     m := &BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnitsBulkAdditionJobs/{siteExclusionUnitsBulkAdditionJob%2Did}", pathParameters),
     }
     return m
 }
@@ -73,7 +73,7 @@ func (m *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAd
     }
     return nil
 }
-// Get get siteExclusionUnitsBulkAdditionJobs from solutions
+// Get the list of bulk addition jobs for site exclusion units in the tenant.
 // returns a SiteExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitsBulkAdditionJobable, error) {
@@ -124,7 +124,7 @@ func (m *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAd
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get siteExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation the list of bulk addition jobs for site exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

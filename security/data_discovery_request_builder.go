@@ -52,7 +52,7 @@ func (m *DataDiscoveryRequestBuilder) CloudAppDiscovery()(*DataDiscoveryCloudApp
 // NewDataDiscoveryRequestBuilderInternal instantiates a new DataDiscoveryRequestBuilder and sets the default values.
 func NewDataDiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataDiscoveryRequestBuilder) {
     m := &DataDiscoveryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataDiscovery{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataDiscovery", pathParameters),
     }
     return m
 }

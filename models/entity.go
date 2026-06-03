@@ -887,6 +887,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCopilotReportRoot(), nil
                     case "#microsoft.graph.copilotSetting":
                         return NewCopilotSetting(), nil
+                    case "#microsoft.graph.correlatedIdentity":
+                        return NewCorrelatedIdentity(), nil
                     case "#microsoft.graph.corsConfiguration_v2":
                         return NewCorsConfiguration_v2(), nil
                     case "#microsoft.graph.credentialUsageSummary":
@@ -1715,6 +1717,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewIdentityApiConnector(), nil
                     case "#microsoft.graph.identityBuiltInUserFlowAttribute":
                         return NewIdentityBuiltInUserFlowAttribute(), nil
+                    case "#microsoft.graph.identityCorrelation":
+                        return NewIdentityCorrelation(), nil
                     case "#microsoft.graph.identityCustomUserFlowAttribute":
                         return NewIdentityCustomUserFlowAttribute(), nil
                     case "#microsoft.graph.identityFinding":
@@ -2989,6 +2993,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSharePointMigrationTask(), nil
                     case "#microsoft.graph.sharePointProtectionPolicy":
                         return NewSharePointProtectionPolicy(), nil
+                    case "#microsoft.graph.sharePointReportSettings":
+                        return NewSharePointReportSettings(), nil
                     case "#microsoft.graph.sharePointRestoreSession":
                         return NewSharePointRestoreSession(), nil
                     case "#microsoft.graph.sharePointRoot":

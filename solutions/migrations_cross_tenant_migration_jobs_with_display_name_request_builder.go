@@ -52,7 +52,7 @@ func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder) Cancel
 // NewMigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilderInternal instantiates a new MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder and sets the default values.
 func NewMigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, displayName *string)(*MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder) {
     m := &MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs(displayName='{displayName}')", pathParameters),
     }
     if displayName != nil {
         m.BaseRequestBuilder.PathParameters["displayName"] = *displayName

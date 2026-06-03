@@ -47,7 +47,7 @@ type HardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateIt
 // NewHardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateItemRequestBuilderInternal instantiates a new HardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateItemRequestBuilder and sets the default values.
 func NewHardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateItemRequestBuilder) {
     m := &HardwareConfigurationsItemDeviceRunStatesHardwareConfigurationDeviceStateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/deviceRunStates/{hardwareConfigurationDeviceState%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/deviceRunStates/{hardwareConfigurationDeviceState%2Did}", pathParameters),
     }
     return m
 }

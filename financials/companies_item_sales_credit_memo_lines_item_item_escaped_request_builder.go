@@ -47,7 +47,7 @@ type CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilderPatchRequest
 // NewCompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item", pathParameters),
     }
     return m
 }

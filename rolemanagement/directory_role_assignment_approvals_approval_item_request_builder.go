@@ -47,7 +47,7 @@ type DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilderPatchRequestConfi
 // NewDirectoryRoleAssignmentApprovalsApprovalItemRequestBuilderInternal instantiates a new DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder and sets the default values.
 func NewDirectoryRoleAssignmentApprovalsApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder) {
     m := &DirectoryRoleAssignmentApprovalsApprovalItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/directory/roleAssignmentApprovals/{approval%2Did}", pathParameters),
     }
     return m
 }

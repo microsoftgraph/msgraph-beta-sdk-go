@@ -47,7 +47,7 @@ type AgentCollectionsAgentCollectionItemRequestBuilderPatchRequestConfiguration 
 // NewAgentCollectionsAgentCollectionItemRequestBuilderInternal instantiates a new AgentCollectionsAgentCollectionItemRequestBuilder and sets the default values.
 func NewAgentCollectionsAgentCollectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgentCollectionsAgentCollectionItemRequestBuilder) {
     m := &AgentCollectionsAgentCollectionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentCollections/{agentCollection%2Did}", pathParameters),
     }
     return m
 }

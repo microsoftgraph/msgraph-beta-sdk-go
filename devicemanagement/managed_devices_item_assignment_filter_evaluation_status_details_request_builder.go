@@ -64,7 +64,7 @@ func (m *ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder
 // NewManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal instantiates a new ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder and sets the default values.
 func NewManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder) {
     m := &ManagedDevicesItemAssignmentFilterEvaluationStatusDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/assignmentFilterEvaluationStatusDetails{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

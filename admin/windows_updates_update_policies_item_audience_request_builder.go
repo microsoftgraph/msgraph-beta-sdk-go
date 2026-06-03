@@ -52,7 +52,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceRequestBuilder) ApplicableConte
 // NewWindowsUpdatesUpdatePoliciesItemAudienceRequestBuilderInternal instantiates a new WindowsUpdatesUpdatePoliciesItemAudienceRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemAudienceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemAudienceRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesItemAudienceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience", pathParameters),
     }
     return m
 }

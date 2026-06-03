@@ -47,7 +47,7 @@ type MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderPatchRequ
 // NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal instantiates a new MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder and sets the default values.
 func NewMonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     m := &MonthlyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleReq
 // NewWindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderInternal instantiates a new WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilder and sets the default values.
 func NewWindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilder) {
     m := &WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/knownIssues/{knownIssue%2Did}/originatingKnowledgeBaseArticle{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/knownIssues/{knownIssue%2Did}/originatingKnowledgeBaseArticle", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ConnectivityConfigura
 // NewConnectivityBranchesBranchSiteItemRequestBuilderInternal instantiates a new ConnectivityBranchesBranchSiteItemRequestBuilder and sets the default values.
 func NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
     m := &ConnectivityBranchesBranchSiteItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderPa
 // NewOutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderInternal instantiates a new OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder and sets the default values.
 func NewOutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) {
     m := &OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}", pathParameters),
     }
     return m
 }

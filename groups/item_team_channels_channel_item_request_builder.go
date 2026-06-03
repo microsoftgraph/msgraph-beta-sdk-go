@@ -62,7 +62,7 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) CompleteMigration()(*ItemTea
 // NewItemTeamChannelsChannelItemRequestBuilderInternal instantiates a new ItemTeamChannelsChannelItemRequestBuilder and sets the default values.
 func NewItemTeamChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamChannelsChannelItemRequestBuilder) {
     m := &ItemTeamChannelsChannelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}", pathParameters),
     }
     return m
 }
@@ -122,6 +122,11 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) Get(ctx context.Context, req
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
+}
+// JoinedUsers provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.
+// returns a *ItemTeamChannelsItemJoinedUsersRequestBuilder when successful
+func (m *ItemTeamChannelsChannelItemRequestBuilder) JoinedUsers()(*ItemTeamChannelsItemJoinedUsersRequestBuilder) {
+    return NewItemTeamChannelsItemJoinedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *ItemTeamChannelsItemMembersRequestBuilder when successful

@@ -47,7 +47,7 @@ type MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppConte
 // NewMobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderInternal instantiates a new MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder) {
     m := &MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}", pathParameters),
     }
     return m
 }

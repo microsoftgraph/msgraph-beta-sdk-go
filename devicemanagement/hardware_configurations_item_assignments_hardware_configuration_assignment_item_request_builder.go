@@ -47,7 +47,7 @@ type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemReq
 // NewHardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderInternal instantiates a new HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilder and sets the default values.
 func NewHardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilder) {
     m := &HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/assignments/{hardwareConfigurationAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/assignments/{hardwareConfigurationAssignment%2Did}", pathParameters),
     }
     return m
 }

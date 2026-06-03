@@ -64,7 +64,7 @@ func (m *ManagedDeviceWindowsOSImagesRequestBuilder) ByManagedDeviceWindowsOpera
 // NewManagedDeviceWindowsOSImagesRequestBuilderInternal instantiates a new ManagedDeviceWindowsOSImagesRequestBuilder and sets the default values.
 func NewManagedDeviceWindowsOSImagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ManagedDeviceWindowsOSImagesRequestBuilder) {
     m := &ManagedDeviceWindowsOSImagesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/managedDeviceWindowsOSImages{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

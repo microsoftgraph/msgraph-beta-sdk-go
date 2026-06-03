@@ -47,7 +47,7 @@ type TlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCert
 // NewTlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCertificateItemRequestBuilderInternal instantiates a new TlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCertificateItemRequestBuilder and sets the default values.
 func NewTlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCertificateItemRequestBuilder) {
     m := &TlsExternalCertificateAuthorityCertificatesExternalCertificateAuthorityCertificateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/tls/externalCertificateAuthorityCertificates/{externalCertificateAuthorityCertificate%2Did}", pathParameters),
     }
     return m
 }

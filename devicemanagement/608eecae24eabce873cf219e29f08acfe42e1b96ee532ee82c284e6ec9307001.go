@@ -52,7 +52,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersi
 // NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilderInternal instantiates a new VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilder and sets the default values.
 func NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilder) {
     m := &VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}/userSettingsPersistenceDetail{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments/{cloudPcProvisioningPolicyAssignment%2Did}/userSettingsPersistenceDetail", pathParameters),
     }
     return m
 }

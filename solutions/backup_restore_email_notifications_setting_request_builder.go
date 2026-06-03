@@ -47,7 +47,7 @@ type BackupRestoreEmailNotificationsSettingRequestBuilderPatchRequestConfigurati
 // NewBackupRestoreEmailNotificationsSettingRequestBuilderInternal instantiates a new BackupRestoreEmailNotificationsSettingRequestBuilder and sets the default values.
 func NewBackupRestoreEmailNotificationsSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreEmailNotificationsSettingRequestBuilder) {
     m := &BackupRestoreEmailNotificationsSettingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/emailNotificationsSetting", pathParameters),
     }
     return m
 }

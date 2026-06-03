@@ -47,7 +47,7 @@ type CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilderPatchRequestConfi
 // NewCompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrderLines/{salesOrderLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrderLines/{salesOrderLine%2Did}/item", pathParameters),
     }
     return m
 }

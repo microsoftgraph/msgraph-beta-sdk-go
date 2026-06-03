@@ -60,7 +60,7 @@ func (m *SiteExclusionUnit) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetSiteId gets the siteId property value. The siteId property
+// GetSiteId gets the siteId property value. The unique identifier of the SharePoint site.
 // returns a *string when successful
 func (m *SiteExclusionUnit) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
@@ -72,7 +72,7 @@ func (m *SiteExclusionUnit) GetSiteId()(*string) {
     }
     return nil
 }
-// GetSiteName gets the siteName property value. The siteName property
+// GetSiteName gets the siteName property value. The display name of the SharePoint site.
 // returns a *string when successful
 func (m *SiteExclusionUnit) GetSiteName()(*string) {
     val, err := m.GetBackingStore().Get("siteName")
@@ -84,7 +84,7 @@ func (m *SiteExclusionUnit) GetSiteName()(*string) {
     }
     return nil
 }
-// GetSiteWebUrl gets the siteWebUrl property value. The siteWebUrl property
+// GetSiteWebUrl gets the siteWebUrl property value. The URL of the SharePoint site.
 // returns a *string when successful
 func (m *SiteExclusionUnit) GetSiteWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("siteWebUrl")
@@ -110,21 +110,21 @@ func (m *SiteExclusionUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetSiteId sets the siteId property value. The siteId property
+// SetSiteId sets the siteId property value. The unique identifier of the SharePoint site.
 func (m *SiteExclusionUnit) SetSiteId(value *string)() {
     err := m.GetBackingStore().Set("siteId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteName sets the siteName property value. The siteName property
+// SetSiteName sets the siteName property value. The display name of the SharePoint site.
 func (m *SiteExclusionUnit) SetSiteName(value *string)() {
     err := m.GetBackingStore().Set("siteName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteWebUrl sets the siteWebUrl property value. The siteWebUrl property
+// SetSiteWebUrl sets the siteWebUrl property value. The URL of the SharePoint site.
 func (m *SiteExclusionUnit) SetSiteWebUrl(value *string)() {
     err := m.GetBackingStore().Set("siteWebUrl", value)
     if err != nil {

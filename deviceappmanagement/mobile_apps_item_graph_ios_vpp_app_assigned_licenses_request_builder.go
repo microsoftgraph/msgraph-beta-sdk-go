@@ -64,7 +64,7 @@ func (m *MobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilder) ByIosVppApp
 // NewMobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilderInternal instantiates a new MobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilder) {
     m := &MobileAppsItemGraphIosVppAppAssignedLicensesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -52,7 +52,7 @@ func (m *ApprovalRequestBuilder) ApprovalItems()(*ApprovalApprovalItemsRequestBu
 // NewApprovalRequestBuilderInternal instantiates a new ApprovalRequestBuilder and sets the default values.
 func NewApprovalRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalRequestBuilder) {
     m := &ApprovalRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/approval{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/approval", pathParameters),
     }
     return m
 }

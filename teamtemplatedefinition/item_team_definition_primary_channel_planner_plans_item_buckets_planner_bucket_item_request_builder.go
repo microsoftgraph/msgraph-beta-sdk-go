@@ -47,7 +47,7 @@ type ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemReq
 // NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal instantiates a new ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemRequestBuilder) {
     m := &ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsPlannerBucketItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/primaryChannel/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}", pathParameters),
     }
     return m
 }

@@ -40,7 +40,7 @@ type ItemTeamDefinitionPhotoRequestBuilderPatchRequestConfiguration struct {
 // NewItemTeamDefinitionPhotoRequestBuilderInternal instantiates a new ItemTeamDefinitionPhotoRequestBuilder and sets the default values.
 func NewItemTeamDefinitionPhotoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionPhotoRequestBuilder) {
     m := &ItemTeamDefinitionPhotoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/photo{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderPatchRequestConfigurat
 // NewWindowsUpdatesPoliciesItemRingsRingItemRequestBuilderInternal instantiates a new WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesPoliciesItemRingsRingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) {
     m := &WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/rings/{ring%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/rings/{ring%2Did}", pathParameters),
     }
     return m
 }

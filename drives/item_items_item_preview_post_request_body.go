@@ -18,6 +18,10 @@ func NewItemItemsItemPreviewPostRequestBody()(*ItemItemsItemPreviewPostRequestBo
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
+    allowEditValue := false
+    m.SetAllowEdit(&allowEditValue)
+    chromelessValue := false
+    m.SetChromeless(&chromelessValue)
     return m
 }
 // CreateItemItemsItemPreviewPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

@@ -47,7 +47,7 @@ type MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderPatchRequestConfig
 // NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal instantiates a new MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder and sets the default values.
 func NewMicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder) {
     m := &MicrosoftTunnelSitesMicrosoftTunnelSiteItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite%2Did}", pathParameters),
     }
     return m
 }

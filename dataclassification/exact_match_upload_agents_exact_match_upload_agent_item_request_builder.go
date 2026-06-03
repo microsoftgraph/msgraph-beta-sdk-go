@@ -47,7 +47,7 @@ type ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderPatchRequestCo
 // NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal instantiates a new ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder and sets the default values.
 func NewExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder) {
     m := &ExactMatchUploadAgentsExactMatchUploadAgentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchUploadAgents/{exactMatchUploadAgent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/exactMatchUploadAgents/{exactMatchUploadAgent%2Did}", pathParameters),
     }
     return m
 }

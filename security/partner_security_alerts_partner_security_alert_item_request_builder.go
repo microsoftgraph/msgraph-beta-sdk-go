@@ -47,7 +47,7 @@ type PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderPatchRequestConf
 // NewPartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderInternal instantiates a new PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder and sets the default values.
 func NewPartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) {
     m := &PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityAlerts/{partnerSecurityAlert%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityAlerts/{partnerSecurityAlert%2Did}", pathParameters),
     }
     return m
 }

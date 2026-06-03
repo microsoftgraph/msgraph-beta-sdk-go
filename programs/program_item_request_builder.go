@@ -47,7 +47,7 @@ type ProgramItemRequestBuilderPatchRequestConfiguration struct {
 // NewProgramItemRequestBuilderInternal instantiates a new ProgramItemRequestBuilder and sets the default values.
 func NewProgramItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ProgramItemRequestBuilder) {
     m := &ProgramItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}", pathParameters),
     }
     return m
 }

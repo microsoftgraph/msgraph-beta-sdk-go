@@ -64,7 +64,7 @@ func (m *HardwareConfigurationsItemUserRunStatesRequestBuilder) ByHardwareConfig
 // NewHardwareConfigurationsItemUserRunStatesRequestBuilderInternal instantiates a new HardwareConfigurationsItemUserRunStatesRequestBuilder and sets the default values.
 func NewHardwareConfigurationsItemUserRunStatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwareConfigurationsItemUserRunStatesRequestBuilder) {
     m := &HardwareConfigurationsItemUserRunStatesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/userRunStates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

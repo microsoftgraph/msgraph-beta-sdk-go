@@ -64,7 +64,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) By
 // NewEntitlementManagementExternalOriginResourceConnectorsRequestBuilderInternal instantiates a new EntitlementManagementExternalOriginResourceConnectorsRequestBuilder and sets the default values.
 func NewEntitlementManagementExternalOriginResourceConnectorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) {
     m := &EntitlementManagementExternalOriginResourceConnectorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/externalOriginResourceConnectors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

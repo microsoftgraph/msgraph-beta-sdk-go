@@ -52,7 +52,7 @@ func (m *PolicySetsPolicySetItemRequestBuilder) Assignments()(*PolicySetsItemAss
 // NewPolicySetsPolicySetItemRequestBuilderInternal instantiates a new PolicySetsPolicySetItemRequestBuilder and sets the default values.
 func NewPolicySetsPolicySetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsPolicySetItemRequestBuilder) {
     m := &PolicySetsPolicySetItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}", pathParameters),
     }
     return m
 }

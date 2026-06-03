@@ -47,7 +47,7 @@ type RecoveryJobsRecoveryJobBaseItemRequestBuilderPatchRequestConfiguration stru
 // NewRecoveryJobsRecoveryJobBaseItemRequestBuilderInternal instantiates a new RecoveryJobsRecoveryJobBaseItemRequestBuilder and sets the default values.
 func NewRecoveryJobsRecoveryJobBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RecoveryJobsRecoveryJobBaseItemRequestBuilder) {
     m := &RecoveryJobsRecoveryJobBaseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/recovery/jobs/{recoveryJobBase%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/recovery/jobs/{recoveryJobBase%2Did}", pathParameters),
     }
     return m
 }

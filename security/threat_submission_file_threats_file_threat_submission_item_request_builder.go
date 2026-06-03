@@ -47,7 +47,7 @@ type ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderPatchReque
 // NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal instantiates a new ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder and sets the default values.
 func NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
     m := &ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}", pathParameters),
     }
     return m
 }

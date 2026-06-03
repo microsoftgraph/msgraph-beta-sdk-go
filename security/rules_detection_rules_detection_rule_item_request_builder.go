@@ -47,7 +47,7 @@ type RulesDetectionRulesDetectionRuleItemRequestBuilderPatchRequestConfiguration
 // NewRulesDetectionRulesDetectionRuleItemRequestBuilderInternal instantiates a new RulesDetectionRulesDetectionRuleItemRequestBuilder and sets the default values.
 func NewRulesDetectionRulesDetectionRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RulesDetectionRulesDetectionRuleItemRequestBuilder) {
     m := &RulesDetectionRulesDetectionRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/rules/detectionRules/{detectionRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/rules/detectionRules/{detectionRule%2Did}", pathParameters),
     }
     return m
 }

@@ -67,7 +67,7 @@ func (m *AccessReviewsDecisionsItemInstanceRequestBuilder) BatchRecordDecisions(
 // NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal instantiates a new AccessReviewsDecisionsItemInstanceRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceRequestBuilder) {
     m := &AccessReviewsDecisionsItemInstanceRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance", pathParameters),
     }
     return m
 }

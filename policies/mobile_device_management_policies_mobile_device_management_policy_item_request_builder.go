@@ -47,7 +47,7 @@ type MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilde
 // NewMobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilderInternal instantiates a new MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilder) {
     m := &MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}", pathParameters),
     }
     return m
 }

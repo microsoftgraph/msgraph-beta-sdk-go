@@ -47,7 +47,7 @@ type DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPla
 // NewDeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }

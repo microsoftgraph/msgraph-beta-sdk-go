@@ -52,7 +52,7 @@ func (m *PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCre
 // NewPermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilderInternal instantiates a new PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilder and sets the default values.
 func NewPermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilder) {
     m := &PermissionsAnalyticsAwsPermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics/aws/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}", pathParameters),
     }
     return m
 }

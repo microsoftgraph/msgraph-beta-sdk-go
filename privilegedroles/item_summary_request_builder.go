@@ -47,7 +47,7 @@ type ItemSummaryRequestBuilderPatchRequestConfiguration struct {
 // NewItemSummaryRequestBuilderInternal instantiates a new ItemSummaryRequestBuilder and sets the default values.
 func NewItemSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSummaryRequestBuilder) {
     m := &ItemSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/summary{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedRoles/{privilegedRole%2Did}/summary", pathParameters),
     }
     return m
 }

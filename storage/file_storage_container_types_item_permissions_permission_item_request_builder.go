@@ -47,7 +47,7 @@ type FileStorageContainerTypesItemPermissionsPermissionItemRequestBuilderPatchRe
 // NewFileStorageContainerTypesItemPermissionsPermissionItemRequestBuilderInternal instantiates a new FileStorageContainerTypesItemPermissionsPermissionItemRequestBuilder and sets the default values.
 func NewFileStorageContainerTypesItemPermissionsPermissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainerTypesItemPermissionsPermissionItemRequestBuilder) {
     m := &FileStorageContainerTypesItemPermissionsPermissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypes/{fileStorageContainerType%2Did}/permissions/{permission%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypes/{fileStorageContainerType%2Did}/permissions/{permission%2Did}", pathParameters),
     }
     return m
 }

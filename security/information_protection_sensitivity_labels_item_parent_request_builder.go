@@ -47,7 +47,7 @@ type InformationProtectionSensitivityLabelsItemParentRequestBuilderPatchRequestC
 // NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal instantiates a new InformationProtectionSensitivityLabelsItemParentRequestBuilder and sets the default values.
 func NewInformationProtectionSensitivityLabelsItemParentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InformationProtectionSensitivityLabelsItemParentRequestBuilder) {
     m := &InformationProtectionSensitivityLabelsItemParentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}/parent", pathParameters),
     }
     return m
 }

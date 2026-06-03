@@ -47,7 +47,7 @@ type SecurityCopilotRequestBuilderPatchRequestConfiguration struct {
 // NewSecurityCopilotRequestBuilderInternal instantiates a new SecurityCopilotRequestBuilder and sets the default values.
 func NewSecurityCopilotRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityCopilotRequestBuilder) {
     m := &SecurityCopilotRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot", pathParameters),
     }
     return m
 }

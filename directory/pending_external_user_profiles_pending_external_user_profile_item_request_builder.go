@@ -47,7 +47,7 @@ type PendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilderPatc
 // NewPendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilderInternal instantiates a new PendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilder and sets the default values.
 func NewPendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilder) {
     m := &PendingExternalUserProfilesPendingExternalUserProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/pendingExternalUserProfiles/{pendingExternalUserProfile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/pendingExternalUserProfiles/{pendingExternalUserProfile%2Did}", pathParameters),
     }
     return m
 }

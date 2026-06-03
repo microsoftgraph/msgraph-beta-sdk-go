@@ -47,7 +47,7 @@ type CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderPatchRequestConfi
 // NewCompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item", pathParameters),
     }
     return m
 }

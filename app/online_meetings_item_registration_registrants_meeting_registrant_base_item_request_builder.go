@@ -47,7 +47,7 @@ type OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBu
 // NewOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderInternal instantiates a new OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder and sets the default values.
 func NewOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) {
     m := &OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/registration/registrants/{meetingRegistrantBase%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/registration/registrants/{meetingRegistrantBase%2Did}", pathParameters),
     }
     return m
 }

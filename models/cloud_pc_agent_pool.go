@@ -82,7 +82,7 @@ func (m *CloudPcAgentPool) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetPoolUrl gets the poolUrl property value. The poolUrl property
+// GetPoolUrl gets the poolUrl property value. The endpoint URL used to check out and check in agent sessions. This value becomes available after the pool reaches the active status. Read-only.
 // returns a *string when successful
 func (m *CloudPcAgentPool) GetPoolUrl()(*string) {
     val, err := m.GetBackingStore().Get("poolUrl")
@@ -157,7 +157,7 @@ func (m *CloudPcAgentPool) SetBillingConfiguration(value CloudPcAgentPoolBilling
         panic(err)
     }
 }
-// SetPoolUrl sets the poolUrl property value. The poolUrl property
+// SetPoolUrl sets the poolUrl property value. The endpoint URL used to check out and check in agent sessions. This value becomes available after the pool reaches the active status. Read-only.
 func (m *CloudPcAgentPool) SetPoolUrl(value *string)() {
     err := m.GetBackingStore().Set("poolUrl", value)
     if err != nil {

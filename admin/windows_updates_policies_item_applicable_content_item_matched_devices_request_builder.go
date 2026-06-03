@@ -64,7 +64,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBui
 // NewWindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBuilderInternal instantiates a new WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBuilder and sets the default values.
 func NewWindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBuilder) {
     m := &WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatchRequestCo
 // NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal instantiates a new CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder and sets the default values.
 func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     m := &CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/cloudPC/roleAssignments/{unifiedRoleAssignmentMultiple%2Did}/appScopes/{appScope%2Did}", pathParameters),
     }
     return m
 }

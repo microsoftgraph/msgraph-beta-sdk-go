@@ -47,7 +47,7 @@ type PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItem
 // NewPermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderInternal instantiates a new PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder and sets the default values.
 func NewPermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) {
     m := &PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/scheduledPermissionsApprovals/{approval%2Did}/steps/{approvalStep%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/scheduledPermissionsApprovals/{approval%2Did}/steps/{approvalStep%2Did}", pathParameters),
     }
     return m
 }

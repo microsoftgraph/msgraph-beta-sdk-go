@@ -57,7 +57,7 @@ func (m *ItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizat
 // NewItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizationLocaleItemRequestBuilderInternal instantiates a new ItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizationLocaleItemRequestBuilder and sets the default values.
 func NewItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizationLocaleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizationLocaleItemRequestBuilder) {
     m := &ItemBrandingThemesItemLocalizationsOrganizationalBrandingThemeLocalizationLocaleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}/localizations/{organizationalBrandingThemeLocalization%2Dlocale}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}/localizations/{organizationalBrandingThemeLocalization%2Dlocale}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewTenantGovernanceSettingsRequestBuilderInternal instantiates a new TenantGovernanceSettingsRequestBuilder and sets the default values.
 func NewTenantGovernanceSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceSettingsRequestBuilder) {
     m := &TenantGovernanceSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/settings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/settings", pathParameters),
     }
     return m
 }

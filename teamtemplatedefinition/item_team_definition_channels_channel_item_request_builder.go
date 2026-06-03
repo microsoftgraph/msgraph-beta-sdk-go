@@ -62,7 +62,7 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) CompleteMigration(
 // NewItemTeamDefinitionChannelsChannelItemRequestBuilderInternal instantiates a new ItemTeamDefinitionChannelsChannelItemRequestBuilder and sets the default values.
 func NewItemTeamDefinitionChannelsChannelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamDefinitionChannelsChannelItemRequestBuilder) {
     m := &ItemTeamDefinitionChannelsChannelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/channels/{channel%2Did}", pathParameters),
     }
     return m
 }
@@ -122,6 +122,11 @@ func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) Get(ctx context.Co
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
+}
+// JoinedUsers provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.
+// returns a *ItemTeamDefinitionChannelsItemJoinedUsersRequestBuilder when successful
+func (m *ItemTeamDefinitionChannelsChannelItemRequestBuilder) JoinedUsers()(*ItemTeamDefinitionChannelsItemJoinedUsersRequestBuilder) {
+    return NewItemTeamDefinitionChannelsItemJoinedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *ItemTeamDefinitionChannelsItemMembersRequestBuilder when successful

@@ -47,7 +47,7 @@ type DefenderRequestBuilderPatchRequestConfiguration struct {
 // NewDefenderRequestBuilderInternal instantiates a new DefenderRequestBuilder and sets the default values.
 func NewDefenderRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefenderRequestBuilder) {
     m := &DefenderRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender", pathParameters),
     }
     return m
 }

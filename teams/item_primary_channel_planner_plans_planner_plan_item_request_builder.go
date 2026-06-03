@@ -57,7 +57,7 @@ func (m *ItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) Buckets()(
 // NewItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilderInternal instantiates a new ItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder and sets the default values.
 func NewItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) {
     m := &ItemPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/planner/plans/{plannerPlan%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/planner/plans/{plannerPlan%2Did}", pathParameters),
     }
     return m
 }

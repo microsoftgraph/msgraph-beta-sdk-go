@@ -47,7 +47,7 @@ type ExternalUserProfilesExternalUserProfileItemRequestBuilderPatchRequestConfig
 // NewExternalUserProfilesExternalUserProfileItemRequestBuilderInternal instantiates a new ExternalUserProfilesExternalUserProfileItemRequestBuilder and sets the default values.
 func NewExternalUserProfilesExternalUserProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExternalUserProfilesExternalUserProfileItemRequestBuilder) {
     m := &ExternalUserProfilesExternalUserProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/externalUserProfiles/{externalUserProfile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/externalUserProfiles/{externalUserProfile%2Did}", pathParameters),
     }
     return m
 }

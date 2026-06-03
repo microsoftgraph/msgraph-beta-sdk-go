@@ -52,7 +52,7 @@ func (m *EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemReq
 // NewEnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal instantiates a new EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder and sets the default values.
 func NewEnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     m := &EnterpriseAppsItemTransitiveRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/transitiveRoleAssignments/{unifiedRoleAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/enterpriseApps/{rbacApplication%2Did}/transitiveRoleAssignments/{unifiedRoleAssignment%2Did}", pathParameters),
     }
     return m
 }

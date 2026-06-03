@@ -47,7 +47,7 @@ type SecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilderPatchReques
 // NewSecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilderInternal instantiates a new SecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilder and sets the default values.
 func NewSecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilder) {
     m := &SecurityCopilotWorkspacesItemPluginsPluginNameItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/plugins/{plugin%2Dname}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/plugins/{plugin%2Dname}", pathParameters),
     }
     return m
 }

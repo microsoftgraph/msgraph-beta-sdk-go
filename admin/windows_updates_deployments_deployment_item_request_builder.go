@@ -52,7 +52,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Audience()(*Wind
 // NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal instantiates a new WindowsUpdatesDeploymentsDeploymentItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) {
     m := &WindowsUpdatesDeploymentsDeploymentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}", pathParameters),
     }
     return m
 }

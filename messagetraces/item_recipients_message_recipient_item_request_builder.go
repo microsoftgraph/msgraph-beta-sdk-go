@@ -47,7 +47,7 @@ type ItemRecipientsMessageRecipientItemRequestBuilderPatchRequestConfiguration s
 // NewItemRecipientsMessageRecipientItemRequestBuilderInternal instantiates a new ItemRecipientsMessageRecipientItemRequestBuilder and sets the default values.
 func NewItemRecipientsMessageRecipientItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsMessageRecipientItemRequestBuilder) {
     m := &ItemRecipientsMessageRecipientItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type ItemChannelsItemPlannerRequestBuilderPatchRequestConfiguration struct {
 // NewItemChannelsItemPlannerRequestBuilderInternal instantiates a new ItemChannelsItemPlannerRequestBuilder and sets the default values.
 func NewItemChannelsItemPlannerRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChannelsItemPlannerRequestBuilder) {
     m := &ItemChannelsItemPlannerRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/planner{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}/planner", pathParameters),
     }
     return m
 }

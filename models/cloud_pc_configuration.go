@@ -99,7 +99,7 @@ func (m *CloudPcConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetImageDisplayName gets the imageDisplayName property value. The imageDisplayName property
+// GetImageDisplayName gets the imageDisplayName property value. The display name of the image. Read-only.
 // returns a *string when successful
 func (m *CloudPcConfiguration) GetImageDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("imageDisplayName")
@@ -111,7 +111,7 @@ func (m *CloudPcConfiguration) GetImageDisplayName()(*string) {
     }
     return nil
 }
-// GetImageId gets the imageId property value. The imageId property
+// GetImageId gets the imageId property value. The unique identifier of the operating system image used for provisioning new Cloud PCs. The format for a gallery type image is: {publisherNameofferNameskuName}.
 // returns a *string when successful
 func (m *CloudPcConfiguration) GetImageId()(*string) {
     val, err := m.GetBackingStore().Get("imageId")
@@ -147,7 +147,7 @@ func (m *CloudPcConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOsLocale gets the osLocale property value. The osLocale property
+// GetOsLocale gets the osLocale property value. The operating system locale for the Cloud PC.
 // returns a *string when successful
 func (m *CloudPcConfiguration) GetOsLocale()(*string) {
     val, err := m.GetBackingStore().Get("osLocale")
@@ -211,14 +211,14 @@ func (m *CloudPcConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetImageDisplayName sets the imageDisplayName property value. The imageDisplayName property
+// SetImageDisplayName sets the imageDisplayName property value. The display name of the image. Read-only.
 func (m *CloudPcConfiguration) SetImageDisplayName(value *string)() {
     err := m.GetBackingStore().Set("imageDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImageId sets the imageId property value. The imageId property
+// SetImageId sets the imageId property value. The unique identifier of the operating system image used for provisioning new Cloud PCs. The format for a gallery type image is: {publisherNameofferNameskuName}.
 func (m *CloudPcConfiguration) SetImageId(value *string)() {
     err := m.GetBackingStore().Set("imageId", value)
     if err != nil {
@@ -239,7 +239,7 @@ func (m *CloudPcConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOsLocale sets the osLocale property value. The osLocale property
+// SetOsLocale sets the osLocale property value. The operating system locale for the Cloud PC.
 func (m *CloudPcConfiguration) SetOsLocale(value *string)() {
     err := m.GetBackingStore().Set("osLocale", value)
     if err != nil {

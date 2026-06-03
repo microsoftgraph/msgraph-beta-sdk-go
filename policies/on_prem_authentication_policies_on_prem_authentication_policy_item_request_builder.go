@@ -52,7 +52,7 @@ func (m *OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilde
 // NewOnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilderInternal instantiates a new OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder and sets the default values.
 func NewOnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder) {
     m := &OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy%2Did}", pathParameters),
     }
     return m
 }

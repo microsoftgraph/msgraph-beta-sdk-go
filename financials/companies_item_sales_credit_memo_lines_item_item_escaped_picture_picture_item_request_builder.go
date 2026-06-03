@@ -47,7 +47,7 @@ type CompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestB
 // NewCompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestBuilderInternal instantiates a new CompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestBuilder) {
     m := &CompaniesItemSalesCreditMemoLinesItemItem_EscapedPicturePictureItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item/picture/{picture%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesCreditMemoLines/{salesCreditMemoLine%2Did}/item/picture/{picture%2Did}", pathParameters),
     }
     return m
 }

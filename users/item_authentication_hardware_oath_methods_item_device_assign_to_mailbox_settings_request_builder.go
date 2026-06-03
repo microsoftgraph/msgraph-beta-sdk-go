@@ -40,7 +40,7 @@ type ItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsReque
 // NewItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsRequestBuilderInternal instantiates a new ItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsRequestBuilder and sets the default values.
 func NewItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsRequestBuilder) {
     m := &ItemAuthenticationHardwareOathMethodsItemDeviceAssignToMailboxSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/hardwareOathMethods/{hardwareOathAuthenticationMethod%2Did}/device/assignTo/mailboxSettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

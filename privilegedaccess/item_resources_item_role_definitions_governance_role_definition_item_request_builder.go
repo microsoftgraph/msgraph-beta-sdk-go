@@ -47,7 +47,7 @@ type ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderP
 // NewItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal instantiates a new ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder and sets the default values.
 func NewItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder) {
     m := &ItemResourcesItemRoleDefinitionsGovernanceRoleDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}", pathParameters),
     }
     return m
 }

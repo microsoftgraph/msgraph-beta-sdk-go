@@ -47,7 +47,7 @@ type BackupRestoreReportsRequestBuilderPatchRequestConfiguration struct {
 // NewBackupRestoreReportsRequestBuilderInternal instantiates a new BackupRestoreReportsRequestBuilder and sets the default values.
 func NewBackupRestoreReportsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreReportsRequestBuilder) {
     m := &BackupRestoreReportsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/reports{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/reports", pathParameters),
     }
     return m
 }

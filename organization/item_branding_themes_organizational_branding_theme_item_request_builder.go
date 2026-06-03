@@ -47,7 +47,7 @@ type ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderPatchRequest
 // NewItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderInternal instantiates a new ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder and sets the default values.
 func NewItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder) {
     m := &ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}", pathParameters),
     }
     return m
 }

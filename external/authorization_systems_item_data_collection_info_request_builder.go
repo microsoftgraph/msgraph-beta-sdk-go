@@ -47,7 +47,7 @@ type AuthorizationSystemsItemDataCollectionInfoRequestBuilderPatchRequestConfigu
 // NewAuthorizationSystemsItemDataCollectionInfoRequestBuilderInternal instantiates a new AuthorizationSystemsItemDataCollectionInfoRequestBuilder and sets the default values.
 func NewAuthorizationSystemsItemDataCollectionInfoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationSystemsItemDataCollectionInfoRequestBuilder) {
     m := &AuthorizationSystemsItemDataCollectionInfoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo", pathParameters),
     }
     return m
 }

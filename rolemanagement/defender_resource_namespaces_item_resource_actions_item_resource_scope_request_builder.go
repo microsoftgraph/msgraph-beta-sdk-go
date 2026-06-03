@@ -47,7 +47,7 @@ type DefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilde
 // NewDefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal instantiates a new DefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder and sets the default values.
 func NewDefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) {
     m := &DefenderResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/roleManagement/defender/resourceNamespaces/{unifiedRbacResourceNamespace%2Did}/resourceActions/{unifiedRbacResourceAction%2Did}/resourceScope", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type B2cUserFlowsB2cIdentityUserFlowItemRequestBuilderPatchRequestConfiguration 
 // NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal instantiates a new B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder and sets the default values.
 func NewB2cUserFlowsB2cIdentityUserFlowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder) {
     m := &B2cUserFlowsB2cIdentityUserFlowItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}", pathParameters),
     }
     return m
 }

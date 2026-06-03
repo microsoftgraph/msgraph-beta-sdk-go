@@ -21,7 +21,7 @@ type VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters get cloudPcPools from deviceManagement
+// VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcPool object.
 type VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -52,7 +52,7 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Assignments()
 // NewVirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderInternal instantiates a new VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) {
     m := &VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool%2Did}", pathParameters),
     }
     return m
 }
@@ -62,8 +62,11 @@ func NewVirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property cloudPcPools for deviceManagement
+// Delete delete a cloudPcPool object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcpool-delete?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get get cloudPcPools from deviceManagement
+// Get read the properties and relationships of a cloudPcPool object.
 // returns a CloudPcPoolable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcpool-get?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,9 +104,12 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable), nil
 }
-// Patch update the navigation property cloudPcPools in deviceManagement
+// Patch update the properties of a cloudPcPool object.
 // returns a CloudPcPoolable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcpool-update?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) Patch(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable), nil
 }
-// ToDeleteRequestInformation delete navigation property cloudPcPools for deviceManagement
+// ToDeleteRequestInformation delete a cloudPcPool object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) ToDeleteReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get cloudPcPools from deviceManagement
+// ToGetRequestInformation read the properties and relationships of a cloudPcPool object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) ToGetRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property cloudPcPools in deviceManagement
+// ToPatchRequestInformation update the properties of a cloudPcPool object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, requestConfiguration *VirtualEndpointCloudPcPoolsCloudPcPoolItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

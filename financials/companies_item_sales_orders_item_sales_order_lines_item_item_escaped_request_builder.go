@@ -47,7 +47,7 @@ type CompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilderPa
 // NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesOrdersItemSalesOrderLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesOrders/{salesOrder%2Did}/salesOrderLines/{salesOrderLine%2Did}/item", pathParameters),
     }
     return m
 }

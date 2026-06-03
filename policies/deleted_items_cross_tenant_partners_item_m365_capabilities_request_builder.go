@@ -64,7 +64,7 @@ func (m *DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder) ByM3
 // NewDeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilderInternal instantiates a new DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder and sets the default values.
 func NewDeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder) {
     m := &DeletedItemsCrossTenantPartnersItemM365CapabilitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/m365Capabilities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

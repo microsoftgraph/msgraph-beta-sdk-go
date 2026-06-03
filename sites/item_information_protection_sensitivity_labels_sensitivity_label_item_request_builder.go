@@ -47,7 +47,7 @@ type ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilde
 // NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal instantiates a new ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder and sets the default values.
 func NewItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder) {
     m := &ItemInformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityLabels/{sensitivityLabel%2Did}", pathParameters),
     }
     return m
 }

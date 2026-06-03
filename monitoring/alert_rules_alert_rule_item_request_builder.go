@@ -47,7 +47,7 @@ type AlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration struct {
 // NewAlertRulesAlertRuleItemRequestBuilderInternal instantiates a new AlertRulesAlertRuleItemRequestBuilder and sets the default values.
 func NewAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRulesAlertRuleItemRequestBuilder) {
     m := &AlertRulesAlertRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRules/{alertRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRules/{alertRule%2Did}", pathParameters),
     }
     return m
 }

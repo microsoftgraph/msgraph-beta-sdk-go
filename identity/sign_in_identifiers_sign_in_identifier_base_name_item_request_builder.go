@@ -47,7 +47,7 @@ type SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderPatchRequestConf
 // NewSignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderInternal instantiates a new SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder and sets the default values.
 func NewSignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder) {
     m := &SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/signInIdentifiers/{signInIdentifierBase%2Dname}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/signInIdentifiers/{signInIdentifierBase%2Dname}", pathParameters),
     }
     return m
 }

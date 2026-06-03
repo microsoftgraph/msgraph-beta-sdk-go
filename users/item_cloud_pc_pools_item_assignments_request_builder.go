@@ -14,7 +14,7 @@ import (
 type ItemCloudPcPoolsItemAssignmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudPcPoolsItemAssignmentsRequestBuilderGetQueryParameters get assignments from users
+// ItemCloudPcPoolsItemAssignmentsRequestBuilderGetQueryParameters the collection of assignments that grant user or service principal identities access to this pool.
 type ItemCloudPcPoolsItemAssignmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -64,7 +64,7 @@ func (m *ItemCloudPcPoolsItemAssignmentsRequestBuilder) ByCloudPcPoolAssignmentI
 // NewItemCloudPcPoolsItemAssignmentsRequestBuilderInternal instantiates a new ItemCloudPcPoolsItemAssignmentsRequestBuilder and sets the default values.
 func NewItemCloudPcPoolsItemAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPcPoolsItemAssignmentsRequestBuilder) {
     m := &ItemCloudPcPoolsItemAssignmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPcPools/{cloudPcPool%2Did}/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -79,7 +79,7 @@ func NewItemCloudPcPoolsItemAssignmentsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCloudPcPoolsItemAssignmentsRequestBuilder) Count()(*ItemCloudPcPoolsItemAssignmentsCountRequestBuilder) {
     return NewItemCloudPcPoolsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get assignments from users
+// Get the collection of assignments that grant user or service principal identities access to this pool.
 // returns a CloudPcPoolAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPcPoolsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPcPoolsItemAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolAssignmentCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemCloudPcPoolsItemAssignmentsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolAssignmentable), nil
 }
-// ToGetRequestInformation get assignments from users
+// ToGetRequestInformation the collection of assignments that grant user or service principal identities access to this pool.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPcPoolsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPcPoolsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

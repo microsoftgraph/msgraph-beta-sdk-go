@@ -76,7 +76,7 @@ func (m *CompaniesItemCurrenciesRequestBuilder) ByCurrencyIdGuid(currencyId i561
 // NewCompaniesItemCurrenciesRequestBuilderInternal instantiates a new CompaniesItemCurrenciesRequestBuilder and sets the default values.
 func NewCompaniesItemCurrenciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCurrenciesRequestBuilder) {
     m := &CompaniesItemCurrenciesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/currencies{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

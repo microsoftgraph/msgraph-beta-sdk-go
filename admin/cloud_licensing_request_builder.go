@@ -62,7 +62,7 @@ func (m *CloudLicensingRequestBuilder) Assignments()(*CloudLicensingAssignmentsR
 // NewCloudLicensingRequestBuilderInternal instantiates a new CloudLicensingRequestBuilder and sets the default values.
 func NewCloudLicensingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudLicensingRequestBuilder) {
     m := &CloudLicensingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/cloudLicensing{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/cloudLicensing", pathParameters),
     }
     return m
 }

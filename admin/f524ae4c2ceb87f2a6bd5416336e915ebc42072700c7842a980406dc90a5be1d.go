@@ -52,7 +52,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableCont
 // NewWindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderInternal instantiates a new WindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilder) {
     m := &WindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableContentCatalogEntryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience/applicableContent/{applicableContent%2DcatalogEntryId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/audience/applicableContent/{applicableContent%2DcatalogEntryId}", pathParameters),
     }
     return m
 }

@@ -47,7 +47,7 @@ type CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuild
 // NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item", pathParameters),
     }
     return m
 }

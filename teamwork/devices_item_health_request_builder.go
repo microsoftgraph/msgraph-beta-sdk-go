@@ -47,7 +47,7 @@ type DevicesItemHealthRequestBuilderPatchRequestConfiguration struct {
 // NewDevicesItemHealthRequestBuilderInternal instantiates a new DevicesItemHealthRequestBuilder and sets the default values.
 func NewDevicesItemHealthRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemHealthRequestBuilder) {
     m := &DevicesItemHealthRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/health{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/health", pathParameters),
     }
     return m
 }

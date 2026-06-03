@@ -47,7 +47,7 @@ type ItemControlsItemProgramRequestBuilderPatchRequestConfiguration struct {
 // NewItemControlsItemProgramRequestBuilderInternal instantiates a new ItemControlsItemProgramRequestBuilder and sets the default values.
 func NewItemControlsItemProgramRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemControlsItemProgramRequestBuilder) {
     m := &ItemControlsItemProgramRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}/program", pathParameters),
     }
     return m
 }

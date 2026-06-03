@@ -52,7 +52,7 @@ func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTags()(*EdiscoveryCa
 // NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal instantiates a new EdiscoveryCasesItemTagsTagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {
     m := &EdiscoveryCasesItemTagsTagItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}", pathParameters),
     }
     return m
 }

@@ -24,7 +24,7 @@ func NewOneDriveForBusinessProtectionPolicy()(*OneDriveForBusinessProtectionPoli
 func CreateOneDriveForBusinessProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessProtectionPolicy(), nil
 }
-// GetDriveExclusionUnits gets the driveExclusionUnits property value. The driveExclusionUnits property
+// GetDriveExclusionUnits gets the driveExclusionUnits property value. The drive exclusion units associated with the OneDrive for work or school protection policy.
 // returns a []DriveExclusionUnitable when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetDriveExclusionUnits()([]DriveExclusionUnitable) {
     val, err := m.GetBackingStore().Get("driveExclusionUnits")
@@ -36,7 +36,7 @@ func (m *OneDriveForBusinessProtectionPolicy) GetDriveExclusionUnits()([]DriveEx
     }
     return nil
 }
-// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for drive exclusion units associated with the OneDrive for work or school protection policy.
 // returns a []DriveExclusionUnitsBulkAdditionJobable when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("driveExclusionUnitsBulkAdditionJobs")
@@ -238,14 +238,14 @@ func (m *OneDriveForBusinessProtectionPolicy) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetDriveExclusionUnits sets the driveExclusionUnits property value. The driveExclusionUnits property
+// SetDriveExclusionUnits sets the driveExclusionUnits property value. The drive exclusion units associated with the OneDrive for work or school protection policy.
 func (m *OneDriveForBusinessProtectionPolicy) SetDriveExclusionUnits(value []DriveExclusionUnitable)() {
     err := m.GetBackingStore().Set("driveExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for drive exclusion units associated with the OneDrive for work or school protection policy.
 func (m *OneDriveForBusinessProtectionPolicy) SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("driveExclusionUnitsBulkAdditionJobs", value)
     if err != nil {

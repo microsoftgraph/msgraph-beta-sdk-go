@@ -47,7 +47,7 @@ type VirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilderPatchRequestConf
 // NewVirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilderInternal instantiates a new VirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewVirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, joinWebUrl *string)(*VirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilder) {
     m := &VirtualEventsEventsItemSessionsWithJoinWebUrlRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions(joinWebUrl='{joinWebUrl}')", pathParameters),
     }
     if joinWebUrl != nil {
         m.BaseRequestBuilder.PathParameters["joinWebUrl"] = *joinWebUrl

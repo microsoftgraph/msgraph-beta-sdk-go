@@ -57,7 +57,7 @@ func (m *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 // NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal instantiates a new BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
     m := &BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/tasks/{businessScenarioTask%2Did}", pathParameters),
     }
     return m
 }

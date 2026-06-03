@@ -47,7 +47,7 @@ type HardwareConfigurationsItemRunSummaryRequestBuilderPatchRequestConfiguration
 // NewHardwareConfigurationsItemRunSummaryRequestBuilderInternal instantiates a new HardwareConfigurationsItemRunSummaryRequestBuilder and sets the default values.
 func NewHardwareConfigurationsItemRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwareConfigurationsItemRunSummaryRequestBuilder) {
     m := &HardwareConfigurationsItemRunSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/runSummary{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/runSummary", pathParameters),
     }
     return m
 }

@@ -40,7 +40,7 @@ type ItemAuthenticationRequirementsRequestBuilderPatchRequestConfiguration struc
 // NewItemAuthenticationRequirementsRequestBuilderInternal instantiates a new ItemAuthenticationRequirementsRequestBuilder and sets the default values.
 func NewItemAuthenticationRequirementsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationRequirementsRequestBuilder) {
     m := &ItemAuthenticationRequirementsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/requirements{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }

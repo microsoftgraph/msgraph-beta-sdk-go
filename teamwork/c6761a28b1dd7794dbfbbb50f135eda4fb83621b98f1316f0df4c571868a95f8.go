@@ -47,7 +47,7 @@ type DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTas
 // NewDeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilderInternal instantiates a new DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder and sets the default values.
 func NewDeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder) {
     m := &DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksItemProgressTaskBoardFormatRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/planner/plans/{plannerPlan%2Did}/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/progressTaskBoardFormat", pathParameters),
     }
     return m
 }

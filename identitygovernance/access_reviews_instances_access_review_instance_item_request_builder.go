@@ -67,7 +67,7 @@ func (m *AccessReviewsInstancesAccessReviewInstanceItemRequestBuilder) BatchReco
 // NewAccessReviewsInstancesAccessReviewInstanceItemRequestBuilderInternal instantiates a new AccessReviewsInstancesAccessReviewInstanceItemRequestBuilder and sets the default values.
 func NewAccessReviewsInstancesAccessReviewInstanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesAccessReviewInstanceItemRequestBuilder) {
     m := &AccessReviewsInstancesAccessReviewInstanceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}", pathParameters),
     }
     return m
 }
