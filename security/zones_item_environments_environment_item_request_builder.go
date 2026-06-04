@@ -40,7 +40,7 @@ type ZonesItemEnvironmentsEnvironmentItemRequestBuilderGetRequestConfiguration s
 // NewZonesItemEnvironmentsEnvironmentItemRequestBuilderInternal instantiates a new ZonesItemEnvironmentsEnvironmentItemRequestBuilder and sets the default values.
 func NewZonesItemEnvironmentsEnvironmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZonesItemEnvironmentsEnvironmentItemRequestBuilder) {
     m := &ZonesItemEnvironmentsEnvironmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/zones/{zone%2Did}/environments/{environment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -92,7 +92,7 @@ func (m *ZonesItemEnvironmentsEnvironmentItemRequestBuilder) Get(ctx context.Con
 // ToDeleteRequestInformation delete an environment object from a zone object by providing the environment ID. The environment ID should be URL-encoded.
 // returns a *RequestInformation when successful
 func (m *ZonesItemEnvironmentsEnvironmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ZonesItemEnvironmentsEnvironmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/zones/{zone%2Did}/environments/{environment%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -103,7 +103,7 @@ func (m *ZonesItemEnvironmentsEnvironmentItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation collection of attached environments. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ZonesItemEnvironmentsEnvironmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ZonesItemEnvironmentsEnvironmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/zones/{zone%2Did}/environments/{environment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

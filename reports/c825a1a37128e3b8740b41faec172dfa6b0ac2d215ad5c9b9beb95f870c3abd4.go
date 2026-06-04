@@ -47,7 +47,7 @@ type AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsA
 // NewAuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderInternal instantiates a new AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilder and sets the default values.
 func NewAuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilder) {
     m := &AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/authenticationMethods/userPasswordResetsAndChangesSummary/{userPasswordResetsAndChangesSummary%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/authenticationMethods/userPasswordResetsAndChangesSummary/{userPasswordResetsAndChangesSummary%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordRes
 // ToGetRequestInformation represents the summary of password resets and changes for a specific day. This includes the number of password resets that were self-service and those triggered by an administrator.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsUserPasswordResetsAndChangesSummaryUserPasswordResetsAndChangesSummaryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/authenticationMethods/userPasswordResetsAndChangesSummary/{userPasswordResetsAndChangesSummary%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

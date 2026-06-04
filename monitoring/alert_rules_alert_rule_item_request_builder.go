@@ -47,7 +47,7 @@ type AlertRulesAlertRuleItemRequestBuilderPatchRequestConfiguration struct {
 // NewAlertRulesAlertRuleItemRequestBuilderInternal instantiates a new AlertRulesAlertRuleItemRequestBuilder and sets the default values.
 func NewAlertRulesAlertRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRulesAlertRuleItemRequestBuilder) {
     m := &AlertRulesAlertRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRules/{alertRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRules/{alertRule%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) ToDeleteRequestInformation(ctx c
 // ToGetRequestInformation the collection of alert rules.
 // returns a *RequestInformation when successful
 func (m *AlertRulesAlertRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertRulesAlertRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/monitoring/alertRules/{alertRule%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

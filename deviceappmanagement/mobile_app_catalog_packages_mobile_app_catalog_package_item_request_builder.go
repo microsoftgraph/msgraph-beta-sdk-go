@@ -47,7 +47,7 @@ type MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilderPatchReque
 // NewMobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilderInternal instantiates a new MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilder and sets the default values.
 func NewMobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilder) {
     m := &MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileAppCatalogPackages/{mobileAppCatalogPackage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileAppCatalogPackages/{mobileAppCatalogPackage%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilder) ToDe
 // ToGetRequestInformation mobileAppCatalogPackage entities.
 // returns a *RequestInformation when successful
 func (m *MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppCatalogPackagesMobileAppCatalogPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/mobileAppCatalogPackages/{mobileAppCatalogPackage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

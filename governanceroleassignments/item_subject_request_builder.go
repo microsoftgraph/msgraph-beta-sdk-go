@@ -47,7 +47,7 @@ type ItemSubjectRequestBuilderPatchRequestConfiguration struct {
 // NewItemSubjectRequestBuilderInternal instantiates a new ItemSubjectRequestBuilder and sets the default values.
 func NewItemSubjectRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSubjectRequestBuilder) {
     m := &ItemSubjectRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/subject{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/subject", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemSubjectRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
 // ToGetRequestInformation read-only. The subject associated with the role assignment.
 // returns a *RequestInformation when successful
 func (m *ItemSubjectRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSubjectRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/subject{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

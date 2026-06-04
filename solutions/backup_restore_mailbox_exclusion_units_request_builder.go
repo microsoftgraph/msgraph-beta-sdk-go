@@ -14,7 +14,7 @@ import (
 type BackupRestoreMailboxExclusionUnitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreMailboxExclusionUnitsRequestBuilderGetQueryParameters get mailboxExclusionUnits from solutions
+// BackupRestoreMailboxExclusionUnitsRequestBuilderGetQueryParameters the list of mailbox exclusion units in the tenant.
 type BackupRestoreMailboxExclusionUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -64,7 +64,7 @@ func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) ByMailboxExclusionUni
 // NewBackupRestoreMailboxExclusionUnitsRequestBuilderInternal instantiates a new BackupRestoreMailboxExclusionUnitsRequestBuilder and sets the default values.
 func NewBackupRestoreMailboxExclusionUnitsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreMailboxExclusionUnitsRequestBuilder) {
     m := &BackupRestoreMailboxExclusionUnitsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -79,7 +79,7 @@ func NewBackupRestoreMailboxExclusionUnitsRequestBuilder(rawUrl string, requestA
 func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) Count()(*BackupRestoreMailboxExclusionUnitsCountRequestBuilder) {
     return NewBackupRestoreMailboxExclusionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mailboxExclusionUnits from solutions
+// Get the list of mailbox exclusion units in the tenant.
 // returns a MailboxExclusionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitCollectionResponseable, error) {
@@ -119,10 +119,10 @@ func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) Post(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitable), nil
 }
-// ToGetRequestInformation get mailboxExclusionUnits from solutions
+// ToGetRequestInformation the list of mailbox exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -136,7 +136,7 @@ func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) ToGetRequestInformati
 // ToPostRequestInformation create new navigation property to mailboxExclusionUnits for solutions
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitable, requestConfiguration *BackupRestoreMailboxExclusionUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

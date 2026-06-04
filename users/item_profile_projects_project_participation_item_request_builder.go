@@ -47,7 +47,7 @@ type ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfig
 // NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal instantiates a new ItemProfileProjectsProjectParticipationItemRequestBuilder and sets the default values.
 func NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
     m := &ItemProfileProjectsProjectParticipationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/projects/{projectParticipation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/projects/{projectParticipation%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation represents detailed information about projects associated with a user.
 // returns a *RequestInformation when successful
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/projects/{projectParticipation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

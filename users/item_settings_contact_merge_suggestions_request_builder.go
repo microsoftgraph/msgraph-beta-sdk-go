@@ -47,7 +47,7 @@ type ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration 
 // NewItemSettingsContactMergeSuggestionsRequestBuilderInternal instantiates a new ItemSettingsContactMergeSuggestionsRequestBuilder and sets the default values.
 func NewItemSettingsContactMergeSuggestionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSettingsContactMergeSuggestionsRequestBuilder) {
     m := &ItemSettingsContactMergeSuggestionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInfor
 // ToGetRequestInformation the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

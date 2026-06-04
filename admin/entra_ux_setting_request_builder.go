@@ -47,7 +47,7 @@ type EntraUxSettingRequestBuilderPatchRequestConfiguration struct {
 // NewEntraUxSettingRequestBuilderInternal instantiates a new EntraUxSettingRequestBuilder and sets the default values.
 func NewEntraUxSettingRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EntraUxSettingRequestBuilder) {
     m := &EntraUxSettingRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/entra/uxSetting{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/entra/uxSetting", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *EntraUxSettingRequestBuilder) ToDeleteRequestInformation(ctx context.Co
 // ToGetRequestInformation get the properties and relationships of a uxSetting object.
 // returns a *RequestInformation when successful
 func (m *EntraUxSettingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntraUxSettingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/entra/uxSetting{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

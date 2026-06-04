@@ -47,7 +47,7 @@ type CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureIt
 // NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilderInternal instantiates a new CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilder) {
     m := &CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item/picture/{picture%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item/picture/{picture%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictu
 // ToGetRequestInformation get picture from financials
 // returns a *RequestInformation when successful
 func (m *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesQuotesItemSalesQuoteLinesItemItem_EscapedPicturePictureItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}/salesQuoteLines/{salesQuoteLine%2Did}/item/picture/{picture%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

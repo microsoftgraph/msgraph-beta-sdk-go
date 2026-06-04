@@ -64,7 +64,7 @@ func (m *FileStorageContainerTypesItemPermissionsRequestBuilder) ByPermissionId(
 // NewFileStorageContainerTypesItemPermissionsRequestBuilderInternal instantiates a new FileStorageContainerTypesItemPermissionsRequestBuilder and sets the default values.
 func NewFileStorageContainerTypesItemPermissionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FileStorageContainerTypesItemPermissionsRequestBuilder) {
     m := &FileStorageContainerTypesItemPermissionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypes/{fileStorageContainerType%2Did}/permissions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -128,7 +128,7 @@ func (m *FileStorageContainerTypesItemPermissionsRequestBuilder) Post(ctx contex
 // ToGetRequestInformation get the list of permission objects associated with a fileStorageContainerType. Each permission represents a user with management rights to the container type. The calling user must be listed in the permissions collection for the container type with the owner role, or be a SharePoint Embedded Administrator or Global Administrator.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypesItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/storage/fileStorage/containerTypes/{fileStorageContainerType%2Did}/permissions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -142,7 +142,7 @@ func (m *FileStorageContainerTypesItemPermissionsRequestBuilder) ToGetRequestInf
 // ToPostRequestInformation create a user permission object, which adds this permission to a fileStorageContainerType. Only existing owners (users with the owner role in the permissions collection of the container type), SharePoint Embedded Administrators, or Global Administrators can add permissions. The following constraints apply:- A maximum of 3 permissions per container type is allowed. Adding a fourth permission returns a 400 Bad Request error.- Duplicate permissions are treated as idempotent. If the specified user already has a permission on the container type, the service makes no changes and returns the existing permission resource in the response body with a 201 Created status, even though no new permission is created.- Currently only the owner role is supported.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesItemPermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *FileStorageContainerTypesItemPermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/storage/fileStorage/containerTypes/{fileStorageContainerType%2Did}/permissions", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

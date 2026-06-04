@@ -47,7 +47,7 @@ type PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration struct {
 // NewPrivilegedApprovalItemRequestBuilderInternal instantiates a new PrivilegedApprovalItemRequestBuilder and sets the default values.
 func NewPrivilegedApprovalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedApprovalItemRequestBuilder) {
     m := &PrivilegedApprovalItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *PrivilegedApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx co
 // ToGetRequestInformation get entity from privilegedApproval by key
 // returns a *RequestInformation when successful
 func (m *PrivilegedApprovalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedApprovalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

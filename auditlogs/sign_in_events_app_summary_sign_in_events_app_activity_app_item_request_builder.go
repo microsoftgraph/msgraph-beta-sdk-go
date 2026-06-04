@@ -52,7 +52,7 @@ func (m *SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder) App
 // NewSignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilderInternal instantiates a new SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder and sets the default values.
 func NewSignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder) {
     m := &SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signInEventsAppSummary/{signInEventsAppActivity%2DappId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/signInEventsAppSummary/{signInEventsAppActivity%2DappId}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder) ToD
 // ToGetRequestInformation represents the number of sign-in events for a specific application.
 // returns a *RequestInformation when successful
 func (m *SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SignInEventsAppSummarySignInEventsAppActivityAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/auditLogs/signInEventsAppSummary/{signInEventsAppActivity%2DappId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

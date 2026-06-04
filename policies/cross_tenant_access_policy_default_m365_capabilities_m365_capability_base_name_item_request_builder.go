@@ -47,7 +47,7 @@ type CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemReq
 // NewCrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderInternal instantiates a new CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) {
     m := &CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameIte
 // ToGetRequestInformation defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyDefaultM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities/{m365CapabilityBase%2Dname}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

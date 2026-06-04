@@ -47,7 +47,7 @@ type PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRequ
 // NewPlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewPlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToD
 // ToGetRequestInformation read-only. Nullable. Chat messages associated with the task.
 // returns a *RequestInformation when successful
 func (m *PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlansItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

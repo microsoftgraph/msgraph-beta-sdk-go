@@ -47,7 +47,7 @@ type HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderPatchRequest
 // NewHardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderInternal instantiates a new HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilder and sets the default values.
 func NewHardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilder) {
     m := &HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwarePasswordDetails/{hardwarePasswordDetail%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwarePasswordDetails/{hardwarePasswordDetail%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilder) ToDele
 // ToGetRequestInformation device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.
 // returns a *RequestInformation when successful
 func (m *HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwarePasswordDetailsHardwarePasswordDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/hardwarePasswordDetails/{hardwarePasswordDetail%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

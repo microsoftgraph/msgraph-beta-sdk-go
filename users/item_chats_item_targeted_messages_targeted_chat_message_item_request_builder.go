@@ -47,7 +47,7 @@ type ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderPatchRequ
 // NewItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderInternal instantiates a new ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder and sets the default values.
 func NewItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) {
     m := &ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/targetedMessages/{targetedChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/targetedMessages/{targetedChatMessage%2Did}", pathParameters),
     }
     return m
 }
@@ -140,7 +140,7 @@ func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) ToD
 // ToGetRequestInformation a collection of targeted messages in the chat that are visible only to specific users. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemTargetedMessagesTargetedChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/targetedMessages/{targetedChatMessage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

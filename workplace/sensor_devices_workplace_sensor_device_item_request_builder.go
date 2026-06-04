@@ -47,7 +47,7 @@ type SensorDevicesWorkplaceSensorDeviceItemRequestBuilderPatchRequestConfigurati
 // NewSensorDevicesWorkplaceSensorDeviceItemRequestBuilderInternal instantiates a new SensorDevicesWorkplaceSensorDeviceItemRequestBuilder and sets the default values.
 func NewSensorDevicesWorkplaceSensorDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensorDevicesWorkplaceSensorDeviceItemRequestBuilder) {
     m := &SensorDevicesWorkplaceSensorDeviceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices/{workplaceSensorDevice%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices/{workplaceSensorDevice%2Did}", pathParameters),
     }
     return m
 }
@@ -136,7 +136,7 @@ func (m *SensorDevicesWorkplaceSensorDeviceItemRequestBuilder) ToDeleteRequestIn
 // ToGetRequestInformation get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesWorkplaceSensorDeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SensorDevicesWorkplaceSensorDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/workplace/sensorDevices/{workplaceSensorDevice%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

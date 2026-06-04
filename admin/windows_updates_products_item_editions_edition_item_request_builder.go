@@ -47,7 +47,7 @@ type WindowsUpdatesProductsItemEditionsEditionItemRequestBuilderPatchRequestConf
 // NewWindowsUpdatesProductsItemEditionsEditionItemRequestBuilderInternal instantiates a new WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesProductsItemEditionsEditionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder) {
     m := &WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/editions/{edition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/editions/{edition%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder) ToDeleteRe
 // ToGetRequestInformation represents an edition of a particular Windows product.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesProductsItemEditionsEditionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/windows/updates/products/{product%2Did}/editions/{edition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type ItemProfilePositionsWorkPositionItemRequestBuilderPatchRequestConfiguration
 // NewItemProfilePositionsWorkPositionItemRequestBuilderInternal instantiates a new ItemProfilePositionsWorkPositionItemRequestBuilder and sets the default values.
 func NewItemProfilePositionsWorkPositionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePositionsWorkPositionItemRequestBuilder) {
     m := &ItemProfilePositionsWorkPositionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation represents detailed information about work positions associated with a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfilePositionsWorkPositionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsWorkPositionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

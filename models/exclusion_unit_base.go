@@ -45,7 +45,7 @@ func CreateExclusionUnitBaseFromDiscriminatorValue(parseNode i878a80d2330e89d268
     }
     return NewExclusionUnitBase(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of the person who created the exclusion unit.
 // returns a IdentitySetable when successful
 func (m *ExclusionUnitBase) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -57,7 +57,7 @@ func (m *ExclusionUnitBase) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the exclusion unit was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ExclusionUnitBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -69,7 +69,7 @@ func (m *ExclusionUnitBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Contains error details if the exclusion unit is in a failed state.
 // returns a PublicErrorable when successful
 func (m *ExclusionUnitBase) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -147,7 +147,7 @@ func (m *ExclusionUnitBase) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the person who last modified the exclusion unit.
 // returns a IdentitySetable when successful
 func (m *ExclusionUnitBase) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -159,7 +159,7 @@ func (m *ExclusionUnitBase) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the exclusion unit was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ExclusionUnitBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -171,7 +171,7 @@ func (m *ExclusionUnitBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetPolicyId gets the policyId property value. The policyId property
+// GetPolicyId gets the policyId property value. The unique identifier of the protection policy that contains this exclusion unit.
 // returns a *string when successful
 func (m *ExclusionUnitBase) GetPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("policyId")
@@ -227,42 +227,42 @@ func (m *ExclusionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of the person who created the exclusion unit.
 func (m *ExclusionUnitBase) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the exclusion unit was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExclusionUnitBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Contains error details if the exclusion unit is in a failed state.
 func (m *ExclusionUnitBase) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the person who last modified the exclusion unit.
 func (m *ExclusionUnitBase) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the exclusion unit was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExclusionUnitBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyId sets the policyId property value. The policyId property
+// SetPolicyId sets the policyId property value. The unique identifier of the protection policy that contains this exclusion unit.
 func (m *ExclusionUnitBase) SetPolicyId(value *string)() {
     err := m.GetBackingStore().Set("policyId", value)
     if err != nil {

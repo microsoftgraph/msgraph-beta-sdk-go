@@ -47,7 +47,7 @@ type DeviceComplianceScriptsItemRunSummaryRequestBuilderPatchRequestConfiguratio
 // NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal instantiates a new DeviceComplianceScriptsItemRunSummaryRequestBuilder and sets the default values.
 func NewDeviceComplianceScriptsItemRunSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceComplianceScriptsItemRunSummaryRequestBuilder) {
     m := &DeviceComplianceScriptsItemRunSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/runSummary{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/runSummary", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *DeviceComplianceScriptsItemRunSummaryRequestBuilder) ToDeleteRequestInf
 // ToGetRequestInformation high level run summary for device compliance script.
 // returns a *RequestInformation when successful
 func (m *DeviceComplianceScriptsItemRunSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceComplianceScriptsItemRunSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/deviceComplianceScripts/{deviceComplianceScript%2Did}/runSummary{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuild
 // NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal instantiates a new DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder and sets the default values.
 func NewDerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) {
     m := &DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/derivedCredentials/{deviceManagementDerivedCredentialSettings%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/derivedCredentials/{deviceManagementDerivedCredentialSettings%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestB
 // ToGetRequestInformation collection of Derived credential settings associated with account.
 // returns a *RequestInformation when successful
 func (m *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DerivedCredentialsDeviceManagementDerivedCredentialSettingsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/derivedCredentials/{deviceManagementDerivedCredentialSettings%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

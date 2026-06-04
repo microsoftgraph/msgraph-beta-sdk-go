@@ -47,7 +47,7 @@ type ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration
 // NewItemProfileWebsitesPersonWebsiteItemRequestBuilderInternal instantiates a new ItemProfileWebsitesPersonWebsiteItemRequestBuilder and sets the default values.
 func NewItemProfileWebsitesPersonWebsiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileWebsitesPersonWebsiteItemRequestBuilder) {
     m := &ItemProfileWebsitesPersonWebsiteItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/websites/{personWebsite%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/websites/{personWebsite%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation represents detailed information about websites associated with a user in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/websites/{personWebsite%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

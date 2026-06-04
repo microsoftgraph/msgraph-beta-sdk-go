@@ -47,7 +47,7 @@ type MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderPatchRequ
 // NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal instantiates a new MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder and sets the default values.
 func NewMobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) {
     m := &MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/relationships/{mobileAppRelationship%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/relationships/{mobileAppRelationship%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) ToD
 // ToGetRequestInformation the set of direct relationships for this app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/relationships/{mobileAppRelationship%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

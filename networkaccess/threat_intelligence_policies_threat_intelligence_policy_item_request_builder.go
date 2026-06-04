@@ -47,7 +47,7 @@ type ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderPatchRe
 // NewThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderInternal instantiates a new ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder and sets the default values.
 func NewThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) {
     m := &ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/threatIntelligencePolicies/{threatIntelligencePolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/threatIntelligencePolicies/{threatIntelligencePolicy%2Did}", pathParameters),
     }
     return m
 }
@@ -141,7 +141,7 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) T
 // ToGetRequestInformation read the properties and relationships of a threatIntelligencePolicy object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/networkAccess/threatIntelligencePolicies/{threatIntelligencePolicy%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

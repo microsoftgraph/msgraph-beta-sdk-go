@@ -47,7 +47,7 @@ type ItemRecipientsItemEventsMessageEventItemRequestBuilderPatchRequestConfigura
 // NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal instantiates a new ItemRecipientsItemEventsMessageEventItemRequestBuilder and sets the default values.
 func NewItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRecipientsItemEventsMessageEventItemRequestBuilder) {
     m := &ItemRecipientsItemEventsMessageEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemRecipientsItemEventsMessageEventItemRequestBuilder) ToDeleteRequest
 // ToGetRequestInformation get events from messageTraces
 // returns a *RequestInformation when successful
 func (m *ItemRecipientsItemEventsMessageEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRecipientsItemEventsMessageEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/messageTraces/{messageTrace%2Did}/recipients/{messageRecipient%2Did}/events/{messageEvent%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

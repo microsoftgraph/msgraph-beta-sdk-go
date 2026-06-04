@@ -47,7 +47,7 @@ type TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderPatchR
 // NewTeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderInternal instantiates a new TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder and sets the default values.
 func NewTeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) {
     m := &TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/outlineIcon/hostedContent{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/outlineIcon/hostedContent", pathParameters),
     }
     return m
 }
@@ -135,7 +135,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) 
 // ToGetRequestInformation retrieve the hosted content in an app's icon.
 // returns a *RequestInformation when successful
 func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/outlineIcon/hostedContent{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

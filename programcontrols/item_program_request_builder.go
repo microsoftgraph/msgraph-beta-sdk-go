@@ -47,7 +47,7 @@ type ItemProgramRequestBuilderPatchRequestConfiguration struct {
 // NewItemProgramRequestBuilderInternal instantiates a new ItemProgramRequestBuilder and sets the default values.
 func NewItemProgramRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProgramRequestBuilder) {
     m := &ItemProgramRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programControls/{programControl%2Did}/program{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programControls/{programControl%2Did}/program", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *ItemProgramRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
 // ToGetRequestInformation the program this control is part of.
 // returns a *RequestInformation when successful
 func (m *ItemProgramRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProgramRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/programControls/{programControl%2Did}/program{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

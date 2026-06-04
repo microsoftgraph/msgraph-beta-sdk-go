@@ -47,7 +47,7 @@ type MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppConte
 // NewMobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderInternal instantiates a new MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder) {
     m := &MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppC
 // ToGetRequestInformation the list of scripts for this app content version.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedIOSLobAppContentVersionsItemScriptsMobileAppContentScriptItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.managedIOSLobApp/contentVersions/{mobileAppContent%2Did}/scripts/{mobileAppContentScript%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

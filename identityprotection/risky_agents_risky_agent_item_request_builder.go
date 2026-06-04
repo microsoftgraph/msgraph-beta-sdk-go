@@ -47,7 +47,7 @@ type RiskyAgentsRiskyAgentItemRequestBuilderPatchRequestConfiguration struct {
 // NewRiskyAgentsRiskyAgentItemRequestBuilderInternal instantiates a new RiskyAgentsRiskyAgentItemRequestBuilder and sets the default values.
 func NewRiskyAgentsRiskyAgentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyAgentsRiskyAgentItemRequestBuilder) {
     m := &RiskyAgentsRiskyAgentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityProtection/riskyAgents/{riskyAgent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityProtection/riskyAgents/{riskyAgent%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *RiskyAgentsRiskyAgentItemRequestBuilder) ToDeleteRequestInformation(ctx
 // ToGetRequestInformation read the properties and relationships of riskyAgent object.
 // returns a *RequestInformation when successful
 func (m *RiskyAgentsRiskyAgentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyAgentsRiskyAgentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityProtection/riskyAgents/{riskyAgent%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -52,7 +52,7 @@ func (m *OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilde
 // NewOnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilderInternal instantiates a new OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder and sets the default values.
 func NewOnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder) {
     m := &OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy%2Did}", pathParameters),
     }
     return m
 }
@@ -141,7 +141,7 @@ func (m *OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilde
 // ToGetRequestInformation read the properties and relationships of onPremAuthenticationPolicy object.
 // returns a *RequestInformation when successful
 func (m *OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnPremAuthenticationPoliciesOnPremAuthenticationPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/onPremAuthenticationPolicies/{onPremAuthenticationPolicy%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

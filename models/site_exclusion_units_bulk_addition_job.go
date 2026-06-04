@@ -46,7 +46,7 @@ func (m *SiteExclusionUnitsBulkAdditionJob) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetSiteWebUrls gets the siteWebUrls property value. The siteWebUrls property
+// GetSiteWebUrls gets the siteWebUrls property value. The URLs of SharePoint sites to be added as exclusion units to the protection policy.
 // returns a []string when successful
 func (m *SiteExclusionUnitsBulkAdditionJob) GetSiteWebUrls()([]string) {
     val, err := m.GetBackingStore().Get("siteWebUrls")
@@ -72,7 +72,7 @@ func (m *SiteExclusionUnitsBulkAdditionJob) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetSiteWebUrls sets the siteWebUrls property value. The siteWebUrls property
+// SetSiteWebUrls sets the siteWebUrls property value. The URLs of SharePoint sites to be added as exclusion units to the protection policy.
 func (m *SiteExclusionUnitsBulkAdditionJob) SetSiteWebUrls(value []string)() {
     err := m.GetBackingStore().Set("siteWebUrls", value)
     if err != nil {

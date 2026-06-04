@@ -14,7 +14,7 @@ import (
 type BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get siteExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get a site exclusion units bulk addition job associated with a SharePoint protection policy.
 type BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,9 +43,12 @@ func NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAddit
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get siteExclusionUnitsBulkAdditionJobs from solutions
+// Get get a site exclusion units bulk addition job associated with a SharePoint protection policy.
 // returns a SiteExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/siteexclusionunitsbulkadditionjob-get?view=graph-rest-beta
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitsBulkAdditionJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAddi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitsBulkAdditionJobable), nil
 }
-// ToGetRequestInformation get siteExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation get a site exclusion units bulk addition job associated with a SharePoint protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsBulkAdditionJobsSiteExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

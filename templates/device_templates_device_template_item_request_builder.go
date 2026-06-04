@@ -47,7 +47,7 @@ type DeviceTemplatesDeviceTemplateItemRequestBuilderPatchRequestConfiguration st
 // NewDeviceTemplatesDeviceTemplateItemRequestBuilderInternal instantiates a new DeviceTemplatesDeviceTemplateItemRequestBuilder and sets the default values.
 func NewDeviceTemplatesDeviceTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeviceTemplatesDeviceTemplateItemRequestBuilder) {
     m := &DeviceTemplatesDeviceTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/templates/deviceTemplates/{deviceTemplate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/templates/deviceTemplates/{deviceTemplate%2Did}", pathParameters),
     }
     return m
 }
@@ -147,7 +147,7 @@ func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) ToDeleteRequestInforma
 // ToGetRequestInformation defines the templates that are common to a set of device objects, such as IoT devices.
 // returns a *RequestInformation when successful
 func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceTemplatesDeviceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/templates/deviceTemplates/{deviceTemplate%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

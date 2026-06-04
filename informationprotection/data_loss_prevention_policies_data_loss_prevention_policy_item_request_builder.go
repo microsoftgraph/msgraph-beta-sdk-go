@@ -47,7 +47,7 @@ type DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderPatchRe
 // NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal instantiates a new DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder and sets the default values.
 func NewDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     m := &DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) T
 // ToGetRequestInformation get dataLossPreventionPolicies from informationProtection
 // returns a *RequestInformation when successful
 func (m *DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/informationProtection/dataLossPreventionPolicies/{dataLossPreventionPolicy%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

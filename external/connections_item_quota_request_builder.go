@@ -47,7 +47,7 @@ type ConnectionsItemQuotaRequestBuilderPatchRequestConfiguration struct {
 // NewConnectionsItemQuotaRequestBuilderInternal instantiates a new ConnectionsItemQuotaRequestBuilder and sets the default values.
 func NewConnectionsItemQuotaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectionsItemQuotaRequestBuilder) {
     m := &ConnectionsItemQuotaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/quota{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/quota", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ConnectionsItemQuotaRequestBuilder) ToDeleteRequestInformation(ctx cont
 // ToGetRequestInformation retrieve the properties and relationships of a connectionQuota object.
 // returns a *RequestInformation when successful
 func (m *ConnectionsItemQuotaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsItemQuotaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/external/connections/{externalConnection%2Did}/quota{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

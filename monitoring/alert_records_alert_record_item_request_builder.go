@@ -47,7 +47,7 @@ type AlertRecordsAlertRecordItemRequestBuilderPatchRequestConfiguration struct {
 // NewAlertRecordsAlertRecordItemRequestBuilderInternal instantiates a new AlertRecordsAlertRecordItemRequestBuilder and sets the default values.
 func NewAlertRecordsAlertRecordItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AlertRecordsAlertRecordItemRequestBuilder) {
     m := &AlertRecordsAlertRecordItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) ToDeleteRequestInformation(c
 // ToGetRequestInformation the collection of records of alert events.
 // returns a *RequestInformation when successful
 func (m *AlertRecordsAlertRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/monitoring/alertRecords/{alertRecord%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

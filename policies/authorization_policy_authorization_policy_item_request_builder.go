@@ -47,7 +47,7 @@ type AuthorizationPolicyAuthorizationPolicyItemRequestBuilderPatchRequestConfigu
 // NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal instantiates a new AuthorizationPolicyAuthorizationPolicyItemRequestBuilder and sets the default values.
 func NewAuthorizationPolicyAuthorizationPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) {
     m := &AuthorizationPolicyAuthorizationPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) ToDeleteReque
 // ToGetRequestInformation the policy that controls Microsoft Entra authorization settings.
 // returns a *RequestInformation when successful
 func (m *AuthorizationPolicyAuthorizationPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationPolicyAuthorizationPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/authorizationPolicy/{authorizationPolicy%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

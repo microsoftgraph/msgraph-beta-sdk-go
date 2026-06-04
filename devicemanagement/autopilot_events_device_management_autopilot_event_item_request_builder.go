@@ -47,7 +47,7 @@ type AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderPatchRequest
 // NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal instantiates a new AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder and sets the default values.
 func NewAutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) {
     m := &AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToDele
 // ToGetRequestInformation the list of autopilot events for the tenant.
 // returns a *RequestInformation when successful
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/autopilotEvents/{deviceManagementAutopilotEvent%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

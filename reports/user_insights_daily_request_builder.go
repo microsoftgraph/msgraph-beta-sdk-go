@@ -57,7 +57,7 @@ func (m *UserInsightsDailyRequestBuilder) Authentications()(*UserInsightsDailyAu
 // NewUserInsightsDailyRequestBuilderInternal instantiates a new UserInsightsDailyRequestBuilder and sets the default values.
 func NewUserInsightsDailyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsDailyRequestBuilder) {
     m := &UserInsightsDailyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/daily", pathParameters),
     }
     return m
 }
@@ -167,7 +167,7 @@ func (m *UserInsightsDailyRequestBuilder) ToDeleteRequestInformation(ctx context
 // ToGetRequestInformation summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/userInsights/daily{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

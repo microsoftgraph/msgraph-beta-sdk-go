@@ -14,7 +14,7 @@ import (
 type VirtualEndpointCloudPcPoolsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointCloudPcPoolsRequestBuilderGetQueryParameters get cloudPcPools from deviceManagement
+// VirtualEndpointCloudPcPoolsRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcPool objects.
 type VirtualEndpointCloudPcPoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -64,7 +64,7 @@ func (m *VirtualEndpointCloudPcPoolsRequestBuilder) ByCloudPcPoolId(cloudPcPoolI
 // NewVirtualEndpointCloudPcPoolsRequestBuilderInternal instantiates a new VirtualEndpointCloudPcPoolsRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPcPoolsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPcPoolsRequestBuilder) {
     m := &VirtualEndpointCloudPcPoolsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -79,9 +79,12 @@ func NewVirtualEndpointCloudPcPoolsRequestBuilder(rawUrl string, requestAdapter 
 func (m *VirtualEndpointCloudPcPoolsRequestBuilder) Count()(*VirtualEndpointCloudPcPoolsCountRequestBuilder) {
     return NewVirtualEndpointCloudPcPoolsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get cloudPcPools from deviceManagement
+// Get list the properties and relationships of the cloudPcPool objects.
 // returns a CloudPcPoolCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-cloudpcpools?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *VirtualEndpointCloudPcPoolsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolCollectionResponseable), nil
 }
-// Post create new navigation property to cloudPcPools for deviceManagement
+// Post create a new cloudPcPool object.
 // returns a CloudPcPoolable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-cloudpcpools?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, requestConfiguration *VirtualEndpointCloudPcPoolsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,10 +125,10 @@ func (m *VirtualEndpointCloudPcPoolsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable), nil
 }
-// ToGetRequestInformation get cloudPcPools from deviceManagement
+// ToGetRequestInformation list the properties and relationships of the cloudPcPool objects.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -133,10 +139,10 @@ func (m *VirtualEndpointCloudPcPoolsRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to cloudPcPools for deviceManagement
+// ToPostRequestInformation create a new cloudPcPool object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, requestConfiguration *VirtualEndpointCloudPcPoolsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

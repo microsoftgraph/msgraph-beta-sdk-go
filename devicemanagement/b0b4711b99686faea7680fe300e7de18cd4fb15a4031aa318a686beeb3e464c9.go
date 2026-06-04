@@ -47,7 +47,7 @@ type TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagem
 // NewTemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal instantiates a new TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder and sets the default values.
 func NewTemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
     m := &TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}/categories/{deviceManagementTemplateSettingCategory%2Did}/recommendedSettings/{deviceManagementSettingInstance%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}/categories/{deviceManagementTemplateSettingCategory%2Did}/recommendedSettings/{deviceManagementSettingInstance%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceMan
 // ToGetRequestInformation the settings this category contains
 // returns a *RequestInformation when successful
 func (m *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesItemMigratableToItemCategoriesItemRecommendedSettingsDeviceManagementSettingInstanceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/migratableTo/{deviceManagementTemplate%2Did1}/categories/{deviceManagementTemplateSettingCategory%2Did}/recommendedSettings/{deviceManagementSettingInstance%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

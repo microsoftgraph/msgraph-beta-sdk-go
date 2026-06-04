@@ -40,7 +40,7 @@ type AuditLogQueriesAuditLogQueryItemRequestBuilderGetRequestConfiguration struc
 // NewAuditLogQueriesAuditLogQueryItemRequestBuilderInternal instantiates a new AuditLogQueriesAuditLogQueryItemRequestBuilder and sets the default values.
 func NewAuditLogQueriesAuditLogQueryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditLogQueriesAuditLogQueryItemRequestBuilder) {
     m := &AuditLogQueriesAuditLogQueryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -97,7 +97,7 @@ func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) Records()(*AuditLogQuer
 // ToDeleteRequestInformation delete navigation property queries for security
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesAuditLogQueryItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -108,7 +108,7 @@ func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) ToDeleteRequestInformat
 // ToGetRequestInformation read the properties and relationships of an auditLogQuery object.
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesAuditLogQueryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/auditLog/queries/{auditLogQuery%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

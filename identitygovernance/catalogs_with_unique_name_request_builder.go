@@ -47,7 +47,7 @@ type CatalogsWithUniqueNameRequestBuilderPatchRequestConfiguration struct {
 // NewCatalogsWithUniqueNameRequestBuilderInternal instantiates a new CatalogsWithUniqueNameRequestBuilder and sets the default values.
 func NewCatalogsWithUniqueNameRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, uniqueName *string)(*CatalogsWithUniqueNameRequestBuilder) {
     m := &CatalogsWithUniqueNameRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/catalogs(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/catalogs(uniqueName='{uniqueName}')", pathParameters),
     }
     if uniqueName != nil {
         m.BaseRequestBuilder.PathParameters["uniqueName"] = *uniqueName
@@ -135,7 +135,7 @@ func (m *CatalogsWithUniqueNameRequestBuilder) ToDeleteRequestInformation(ctx co
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a *RequestInformation when successful
 func (m *CatalogsWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CatalogsWithUniqueNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/catalogs(uniqueName='{uniqueName}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

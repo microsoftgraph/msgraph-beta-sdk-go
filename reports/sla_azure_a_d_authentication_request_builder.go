@@ -47,7 +47,7 @@ type SlaAzureADAuthenticationRequestBuilderPatchRequestConfiguration struct {
 // NewSlaAzureADAuthenticationRequestBuilderInternal instantiates a new SlaAzureADAuthenticationRequestBuilder and sets the default values.
 func NewSlaAzureADAuthenticationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SlaAzureADAuthenticationRequestBuilder) {
     m := &SlaAzureADAuthenticationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *SlaAzureADAuthenticationRequestBuilder) ToDeleteRequestInformation(ctx 
 // ToGetRequestInformation read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant's actual performance against this commitment.
 // returns a *RequestInformation when successful
 func (m *SlaAzureADAuthenticationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SlaAzureADAuthenticationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

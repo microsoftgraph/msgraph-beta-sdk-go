@@ -47,7 +47,7 @@ type ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfigu
 // NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal instantiates a new ItemProfilePublicationsItemPublicationItemRequestBuilder and sets the default values.
 func NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
     m := &ItemProfilePublicationsItemPublicationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteReque
 // ToGetRequestInformation represents details of any publications a user has added to their profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerIte
 // NewAccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderInternal instantiates a new AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder and sets the default values.
 func NewAccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) {
     m := &AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/contactedReviewers/{accessReviewReviewer%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/contactedReviewers/{accessReviewReviewer%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewe
 // ToGetRequestInformation returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceContactedReviewersAccessReviewReviewerItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/accessReviews/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/contactedReviewers/{accessReviewReviewer%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type AgentInstancesItemAgentCardManifestRequestBuilderPatchRequestConfiguration 
 // NewAgentInstancesItemAgentCardManifestRequestBuilderInternal instantiates a new AgentInstancesItemAgentCardManifestRequestBuilder and sets the default values.
 func NewAgentInstancesItemAgentCardManifestRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AgentInstancesItemAgentCardManifestRequestBuilder) {
     m := &AgentInstancesItemAgentCardManifestRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentInstances/{agentInstance%2Did}/agentCardManifest{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/agentRegistry/agentInstances/{agentInstance%2Did}/agentCardManifest", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *AgentInstancesItemAgentCardManifestRequestBuilder) ToDeleteRequestInfor
 // ToGetRequestInformation list the agent card manifest referenced by the agent instance.
 // returns a *RequestInformation when successful
 func (m *AgentInstancesItemAgentCardManifestRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AgentInstancesItemAgentCardManifestRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/agentRegistry/agentInstances/{agentInstance%2Did}/agentCardManifest{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

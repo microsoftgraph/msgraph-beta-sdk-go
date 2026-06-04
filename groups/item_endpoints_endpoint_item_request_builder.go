@@ -47,7 +47,7 @@ type ItemEndpointsEndpointItemRequestBuilderPatchRequestConfiguration struct {
 // NewItemEndpointsEndpointItemRequestBuilderInternal instantiates a new ItemEndpointsEndpointItemRequestBuilder and sets the default values.
 func NewItemEndpointsEndpointItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemEndpointsEndpointItemRequestBuilder) {
     m := &ItemEndpointsEndpointItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/endpoints/{endpoint%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/endpoints/{endpoint%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ItemEndpointsEndpointItemRequestBuilder) ToDeleteRequestInformation(ctx
 // ToGetRequestInformation retrieve the properties and relationships of a specific endpoint object.
 // returns a *RequestInformation when successful
 func (m *ItemEndpointsEndpointItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEndpointsEndpointItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/groups/{group%2Did}/endpoints/{endpoint%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

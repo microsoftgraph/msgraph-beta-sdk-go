@@ -47,7 +47,7 @@ type AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderPatchReq
 // NewAccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderInternal instantiates a new AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder and sets the default values.
 func NewAccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     m := &AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) To
 // ToGetRequestInformation if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

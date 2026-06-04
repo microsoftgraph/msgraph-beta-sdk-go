@@ -47,7 +47,7 @@ type ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder
 // NewComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal instantiates a new ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder and sets the default values.
 func NewComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) {
     m := &ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/complianceCategories/{deviceManagementConfigurationCategory%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/complianceCategories/{deviceManagementConfigurationCategory%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBui
 // ToGetRequestInformation list of all compliance categories
 // returns a *RequestInformation when successful
 func (m *ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ComplianceCategoriesDeviceManagementConfigurationCategoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/complianceCategories/{deviceManagementConfigurationCategory%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

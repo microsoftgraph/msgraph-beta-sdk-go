@@ -47,7 +47,7 @@ type BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRe
 // NewBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewBucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) T
 // ToGetRequestInformation read-only. Nullable. Chat messages associated with the task.
 // returns a *RequestInformation when successful
 func (m *BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BucketsItemTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/planner/buckets/{plannerBucket%2Did}/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

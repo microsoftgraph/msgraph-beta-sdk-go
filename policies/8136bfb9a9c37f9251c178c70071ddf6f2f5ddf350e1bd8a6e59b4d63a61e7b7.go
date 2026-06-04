@@ -47,7 +47,7 @@ type DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerT
 // NewDeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal instantiates a new DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder and sets the default values.
 func NewDeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) {
     m := &DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}", pathParameters),
     }
     return m
 }
@@ -148,7 +148,7 @@ func (m *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPart
 // ToGetRequestInformation read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a *RequestInformation when successful
 func (m *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsCrossTenantPartnersCrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/deletedItems/crossTenantPartners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

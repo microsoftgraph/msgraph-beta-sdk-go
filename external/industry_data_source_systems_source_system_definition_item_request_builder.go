@@ -47,7 +47,7 @@ type IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderPatchReque
 // NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal instantiates a new IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder and sets the default values.
 func NewIndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) {
     m := &IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}", pathParameters),
     }
     return m
 }
@@ -136,7 +136,7 @@ func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToDe
 // ToGetRequestInformation read the properties and relationships of a sourceSystemDefinition object.
 // returns a *RequestInformation when successful
 func (m *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataSourceSystemsSourceSystemDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/external/industryData/sourceSystems/{sourceSystemDefinition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

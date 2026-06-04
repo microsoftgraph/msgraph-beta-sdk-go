@@ -64,7 +64,7 @@ func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) ByM365Cap
 // NewCrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderInternal instantiates a new CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder and sets the default values.
 func NewCrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) {
     m := &CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -128,7 +128,7 @@ func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) Post(ctx 
 // ToGetRequestInformation get a list of Microsoft 365 cross-tenant capabilities configured for the default cross-tenant access policy. The returned collection is a heterogeneous collection of derived types of m365CapabilityBase, differentiated by their @odata.type property.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -142,7 +142,7 @@ func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) ToGetRequ
 // ToPostRequestInformation create a new Microsoft 365 cross-tenant capability for the default cross-tenant access policy. The @odata.type property in the request body is required to specify which type of capability to create.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable, requestConfiguration *CrossTenantAccessPolicyDefaultM365CapabilitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/crossTenantAccessPolicy/default/m365Capabilities", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

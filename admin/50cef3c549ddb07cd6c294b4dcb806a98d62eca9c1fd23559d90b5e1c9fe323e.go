@@ -52,7 +52,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntr
 // NewWindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderInternal instantiates a new WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder) {
     m := &WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntr
 // ToGetRequestInformation represents content applicable for offering to the related collection of devices.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

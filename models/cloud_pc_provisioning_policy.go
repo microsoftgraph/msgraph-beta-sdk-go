@@ -47,7 +47,7 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
     }
     return nil
 }
-// GetAutopatch gets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
+// GetAutopatch gets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.
 // returns a CloudPcProvisioningPolicyAutopatchable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAutopatchable) {
     val, err := m.GetBackingStore().Get("autopatch")
@@ -59,7 +59,7 @@ func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAuto
     }
     return nil
 }
-// GetAutopilotConfiguration gets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
+// GetAutopilotConfiguration gets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.
 // returns a CloudPcAutopilotConfigurationable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopilotConfiguration()(CloudPcAutopilotConfigurationable) {
     val, err := m.GetBackingStore().Get("autopilotConfiguration")
@@ -841,14 +841,14 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         panic(err)
     }
 }
-// SetAutopatch sets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
+// SetAutopatch sets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)() {
     err := m.GetBackingStore().Set("autopatch", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAutopilotConfiguration sets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
+// SetAutopilotConfiguration sets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopilotConfiguration(value CloudPcAutopilotConfigurationable)() {
     err := m.GetBackingStore().Set("autopilotConfiguration", value)
     if err != nil {

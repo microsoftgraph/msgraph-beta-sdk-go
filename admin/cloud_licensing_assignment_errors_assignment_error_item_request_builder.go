@@ -52,7 +52,7 @@ func (m *CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder) Assign
 // NewCloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilderInternal instantiates a new CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder and sets the default values.
 func NewCloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder) {
     m := &CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignmentErrors/{assignmentError%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignmentErrors/{assignmentError%2Did}", pathParameters),
     }
     return m
 }
@@ -135,7 +135,7 @@ func (m *CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder) ToDele
 // ToGetRequestInformation read the properties and relationships of an assignmentError object.
 // returns a *RequestInformation when successful
 func (m *CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudLicensingAssignmentErrorsAssignmentErrorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/cloudLicensing/assignmentErrors/{assignmentError%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -64,7 +64,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ByGovernanceInvita
 // NewTenantGovernanceGovernanceInvitationsRequestBuilderInternal instantiates a new TenantGovernanceGovernanceInvitationsRequestBuilder and sets the default values.
 func NewTenantGovernanceGovernanceInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceGovernanceInvitationsRequestBuilder) {
     m := &TenantGovernanceGovernanceInvitationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/governanceInvitations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -128,7 +128,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.C
 // ToGetRequestInformation get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directory/tenantGovernance/governanceInvitations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -142,7 +142,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToGetRequestInform
 // ToPostRequestInformation create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/directory/tenantGovernance/governanceInvitations", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

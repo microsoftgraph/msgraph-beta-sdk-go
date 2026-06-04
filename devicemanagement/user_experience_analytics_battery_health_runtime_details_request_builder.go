@@ -47,7 +47,7 @@ type UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderPatchReques
 // NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal instantiates a new UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder and sets the default values.
 func NewUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) {
     m := &UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthRuntimeDetails{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthRuntimeDetails", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) ToDel
 // ToGetRequestInformation user Experience Analytics Battery Health Runtime Details
 // returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthRuntimeDetails{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

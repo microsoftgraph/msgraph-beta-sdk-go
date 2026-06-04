@@ -47,7 +47,7 @@ type CompaniesItemCustomersItemPaymentMethodRequestBuilderPatchRequestConfigurat
 // NewCompaniesItemCustomersItemPaymentMethodRequestBuilderInternal instantiates a new CompaniesItemCustomersItemPaymentMethodRequestBuilder and sets the default values.
 func NewCompaniesItemCustomersItemPaymentMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemCustomersItemPaymentMethodRequestBuilder) {
     m := &CompaniesItemCustomersItemPaymentMethodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/paymentMethod{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/paymentMethod", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *CompaniesItemCustomersItemPaymentMethodRequestBuilder) ToDeleteRequestI
 // ToGetRequestInformation get paymentMethod from financials
 // returns a *RequestInformation when successful
 func (m *CompaniesItemCustomersItemPaymentMethodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemCustomersItemPaymentMethodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/financials/companies/{company%2Did}/customers/{customer%2Did}/paymentMethod{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

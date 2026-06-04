@@ -47,7 +47,7 @@ type MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequest
 // NewMobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal instantiates a new MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilder) {
     m := &MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp/assignments/{mobileAppAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp/assignments/{mobileAppAssignment%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemReq
 // ToGetRequestInformation the list of group assignments for this mobile app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsStoreAppAssignmentsMobileAppAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp/assignments/{mobileAppAssignment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type ItemRoleSettingsItemRoleDefinitionRequestBuilderPatchRequestConfiguration s
 // NewItemRoleSettingsItemRoleDefinitionRequestBuilderInternal instantiates a new ItemRoleSettingsItemRoleDefinitionRequestBuilder and sets the default values.
 func NewItemRoleSettingsItemRoleDefinitionRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleSettingsItemRoleDefinitionRequestBuilder) {
     m := &ItemRoleSettingsItemRoleDefinitionRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}/roleDefinition{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}/roleDefinition", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) ToDeleteRequestInform
 // ToGetRequestInformation read-only. The role definition that is enforced with this role setting.
 // returns a *RequestInformation when successful
 func (m *ItemRoleSettingsItemRoleDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleSettingsItemRoleDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleSettings/{governanceRoleSetting%2Did}/roleDefinition{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

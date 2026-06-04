@@ -47,7 +47,7 @@ type UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderPatch
 // NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal instantiates a new UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder and sets the default values.
 func NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
     m := &UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userCredentialUsageDetails/{userCredentialUsageDetails%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userCredentialUsageDetails/{userCredentialUsageDetails%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
 // Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/userCredentialUsageDetails/{userCredentialUsageDetails%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

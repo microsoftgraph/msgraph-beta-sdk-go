@@ -62,7 +62,7 @@ func (m *ItemPrimaryChannelRequestBuilder) CompleteMigration()(*ItemPrimaryChann
 // NewItemPrimaryChannelRequestBuilderInternal instantiates a new ItemPrimaryChannelRequestBuilder and sets the default values.
 func NewItemPrimaryChannelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelRequestBuilder) {
     m := &ItemPrimaryChannelRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel", pathParameters),
     }
     return m
 }
@@ -125,6 +125,11 @@ func (m *ItemPrimaryChannelRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
+}
+// JoinedUsers provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.
+// returns a *ItemPrimaryChannelJoinedUsersRequestBuilder when successful
+func (m *ItemPrimaryChannelRequestBuilder) JoinedUsers()(*ItemPrimaryChannelJoinedUsersRequestBuilder) {
+    return NewItemPrimaryChannelJoinedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *ItemPrimaryChannelMembersRequestBuilder when successful
@@ -200,7 +205,7 @@ func (m *ItemPrimaryChannelRequestBuilder) ToDeleteRequestInformation(ctx contex
 // ToGetRequestInformation get the default channel, General, of a team.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teams/{team%2Did}/primaryChannel{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

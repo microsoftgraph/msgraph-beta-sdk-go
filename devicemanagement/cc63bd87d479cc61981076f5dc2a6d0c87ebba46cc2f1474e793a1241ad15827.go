@@ -47,7 +47,7 @@ type WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssign
 // NewWindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilderInternal instantiates a new WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilder and sets the default values.
 func NewWindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilder) {
     m := &WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsQualityUpdatePolicies/{windowsQualityUpdatePolicy%2Did}/assignments/{windowsQualityUpdatePolicyAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsQualityUpdatePolicies/{windowsQualityUpdatePolicy%2Did}/assignments/{windowsQualityUpdatePolicyAssignment%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAs
 // ToGetRequestInformation list of the groups this profile is assgined to.
 // returns a *RequestInformation when successful
 func (m *WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsQualityUpdatePoliciesItemAssignmentsWindowsQualityUpdatePolicyAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/windowsQualityUpdatePolicies/{windowsQualityUpdatePolicy%2Did}/assignments/{windowsQualityUpdatePolicyAssignment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

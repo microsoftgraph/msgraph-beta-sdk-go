@@ -47,7 +47,7 @@ type CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuild
 // NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestB
 // ToGetRequestInformation get item from financials
 // returns a *RequestInformation when successful
 func (m *CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemSalesInvoicesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssig
 // NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal instantiates a new WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder and sets the default values.
 func NewWindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) {
     m := &WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileA
 // ToGetRequestInformation the list of group assignments of the profile.
 // returns a *RequestInformation when successful
 func (m *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsFeatureUpdateProfilesItemAssignmentsWindowsFeatureUpdateProfileAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile%2Did}/assignments/{windowsFeatureUpdateProfileAssignment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

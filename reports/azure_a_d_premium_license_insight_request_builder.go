@@ -47,7 +47,7 @@ type AzureADPremiumLicenseInsightRequestBuilderPatchRequestConfiguration struct 
 // NewAzureADPremiumLicenseInsightRequestBuilderInternal instantiates a new AzureADPremiumLicenseInsightRequestBuilder and sets the default values.
 func NewAzureADPremiumLicenseInsightRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AzureADPremiumLicenseInsightRequestBuilder) {
     m := &AzureADPremiumLicenseInsightRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/azureADPremiumLicenseInsight{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/azureADPremiumLicenseInsight", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *AzureADPremiumLicenseInsightRequestBuilder) ToDeleteRequestInformation(
 // ToGetRequestInformation get the premium license utilization insight for the tenant. This API returns data about how many premium licenses are entitled and how the associated P1 and P2 features are being used. The calling tenant must have at least one Microsoft Entra ID P1 or P2 license. Tenants without a premium license receive a 403 Forbidden response with the missingLicense error code.
 // returns a *RequestInformation when successful
 func (m *AzureADPremiumLicenseInsightRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AzureADPremiumLicenseInsightRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/azureADPremiumLicenseInsight{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

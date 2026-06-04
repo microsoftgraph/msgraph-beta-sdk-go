@@ -47,7 +47,7 @@ type ItemInformationProtectionSensitivityPolicySettingsRequestBuilderPatchReques
 // NewItemInformationProtectionSensitivityPolicySettingsRequestBuilderInternal instantiates a new ItemInformationProtectionSensitivityPolicySettingsRequestBuilder and sets the default values.
 func NewItemInformationProtectionSensitivityPolicySettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInformationProtectionSensitivityPolicySettingsRequestBuilder) {
     m := &ItemInformationProtectionSensitivityPolicySettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemInformationProtectionSensitivityPolicySettingsRequestBuilder) ToDel
 // ToGetRequestInformation get sensitivityPolicySettings from sites
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionSensitivityPolicySettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityPolicySettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/sites/{site%2Did}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

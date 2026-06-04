@@ -47,7 +47,7 @@ type UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilderPa
 // NewUserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilderInternal instantiates a new UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilder and sets the default values.
 func NewUserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilder) {
     m := &UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly/mfaRegisteredUsers/{mfaUserCountMetric%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/reports/userInsights/monthly/mfaRegisteredUsers/{mfaUserCountMetric%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuild
 // ToGetRequestInformation get mfaRegisteredUsers from reports
 // returns a *RequestInformation when successful
 func (m *UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlyMfaRegisteredUsersMfaUserCountMetricItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/reports/userInsights/monthly/mfaRegisteredUsers/{mfaUserCountMetric%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

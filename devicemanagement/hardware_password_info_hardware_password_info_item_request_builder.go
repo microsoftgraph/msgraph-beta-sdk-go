@@ -47,7 +47,7 @@ type HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderPatchRequestConfi
 // NewHardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderInternal instantiates a new HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilder and sets the default values.
 func NewHardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilder) {
     m := &HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwarePasswordInfo/{hardwarePasswordInfo%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwarePasswordInfo/{hardwarePasswordInfo%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilder) ToDeleteReq
 // ToGetRequestInformation intune will provide customer the ability to configure BIOS configuration settings on the enrolled Windows 10 and Windows 11 Microsoft Entra joined devices. Starting from June, 2024, customers should start using hardwarePasswordDetail resource type - Microsoft Graph beta | Microsoft Learn. HardwarePasswordInfo will be marked as deprecated with Intune Release 2409
 // returns a *RequestInformation when successful
 func (m *HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwarePasswordInfoHardwarePasswordInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/hardwarePasswordInfo/{hardwarePasswordInfo%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

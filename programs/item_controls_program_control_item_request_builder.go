@@ -47,7 +47,7 @@ type ItemControlsProgramControlItemRequestBuilderPatchRequestConfiguration struc
 // NewItemControlsProgramControlItemRequestBuilderInternal instantiates a new ItemControlsProgramControlItemRequestBuilder and sets the default values.
 func NewItemControlsProgramControlItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemControlsProgramControlItemRequestBuilder) {
     m := &ItemControlsProgramControlItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *ItemControlsProgramControlItemRequestBuilder) ToDeleteRequestInformatio
 // ToGetRequestInformation controls associated with the program.
 // returns a *RequestInformation when successful
 func (m *ItemControlsProgramControlItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemControlsProgramControlItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/programs/{program%2Did}/controls/{programControl%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

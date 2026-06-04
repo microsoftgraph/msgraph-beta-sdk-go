@@ -331,7 +331,7 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
-// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// GetCloudPcPools gets the cloudPcPools property value. The user's Cloud PC pools. Read-only. Nullable.
 // returns a []CloudPcPoolable when successful
 func (m *User) GetCloudPcPools()([]CloudPcPoolable) {
     val, err := m.GetBackingStore().Get("cloudPcPools")
@@ -5529,7 +5529,7 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
-// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+// SetCloudPcPools sets the cloudPcPools property value. The user's Cloud PC pools. Read-only. Nullable.
 func (m *User) SetCloudPcPools(value []CloudPcPoolable)() {
     err := m.GetBackingStore().Set("cloudPcPools", value)
     if err != nil {

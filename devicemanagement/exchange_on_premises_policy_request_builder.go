@@ -52,7 +52,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) ConditionalAccessSettings()(*Ex
 // NewExchangeOnPremisesPolicyRequestBuilderInternal instantiates a new ExchangeOnPremisesPolicyRequestBuilder and sets the default values.
 func NewExchangeOnPremisesPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ExchangeOnPremisesPolicyRequestBuilder) {
     m := &ExchangeOnPremisesPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) ToDeleteRequestInformation(ctx 
 // ToGetRequestInformation the policy which controls mobile device access to Exchange On Premises
 // returns a *RequestInformation when successful
 func (m *ExchangeOnPremisesPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeOnPremisesPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

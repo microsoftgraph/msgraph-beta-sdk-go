@@ -47,7 +47,7 @@ type SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderPatchR
 // NewSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal instantiates a new SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder and sets the default values.
 func NewSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
     m := &SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/settingDefinitions/{deviceManagementSettingDefinition%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) 
 // ToGetRequestInformation the device management intent setting definitions
 // returns a *RequestInformation when successful
 func (m *SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

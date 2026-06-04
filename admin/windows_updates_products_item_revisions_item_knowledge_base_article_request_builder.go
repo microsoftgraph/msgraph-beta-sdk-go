@@ -47,7 +47,7 @@ type WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilderPa
 // NewWindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilderInternal instantiates a new WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder and sets the default values.
 func NewWindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder) {
     m := &WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/revisions/{productRevision%2Did}/knowledgeBaseArticle{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/products/{product%2Did}/revisions/{productRevision%2Did}/knowledgeBaseArticle", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuild
 // ToGetRequestInformation the knowledge base article associated with the product revision.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/windows/updates/products/{product%2Did}/revisions/{productRevision%2Did}/knowledgeBaseArticle{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

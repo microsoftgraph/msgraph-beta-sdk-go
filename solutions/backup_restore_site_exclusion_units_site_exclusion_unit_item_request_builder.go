@@ -21,7 +21,7 @@ type BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters get siteExclusionUnits from solutions
+// BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters the list of site exclusion units in the tenant.
 type BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderPatchRequ
 // NewBackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderInternal instantiates a new BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder and sets the default values.
 func NewBackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) {
     m := &BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnits/{siteExclusionUnit%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/siteExclusionUnits/{siteExclusionUnit%2Did}", pathParameters),
     }
     return m
 }
@@ -73,7 +73,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Del
     }
     return nil
 }
-// Get get siteExclusionUnits from solutions
+// Get the list of site exclusion units in the tenant.
 // returns a SiteExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, error) {
@@ -124,10 +124,10 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get siteExclusionUnits from solutions
+// ToGetRequestInformation the list of site exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/siteExclusionUnits/{siteExclusionUnit%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

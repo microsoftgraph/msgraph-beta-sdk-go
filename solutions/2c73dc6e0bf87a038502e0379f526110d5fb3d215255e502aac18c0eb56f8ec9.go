@@ -52,7 +52,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
 // NewSharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderInternal instantiates a new SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder and sets the default values.
 func NewSharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) {
     m := &SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationMigrationTasks/{sharePointMigrationTask%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationMigrationTasks/{sharePointMigrationTask%2Did}", pathParameters),
     }
     return m
 }
@@ -135,7 +135,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
 // ToGetRequestInformation get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationMigrationTasks/{sharePointMigrationTask%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

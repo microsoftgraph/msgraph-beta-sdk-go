@@ -47,7 +47,7 @@ type BusinessScenariosItemPlannerPlanConfigurationRequestBuilderPatchRequestConf
 // NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal instantiates a new BusinessScenariosItemPlannerPlanConfigurationRequestBuilder and sets the default values.
 func NewBusinessScenariosItemPlannerPlanConfigurationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) {
     m := &BusinessScenariosItemPlannerPlanConfigurationRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration", pathParameters),
     }
     return m
 }
@@ -138,7 +138,7 @@ func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToDeleteRe
 // ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object.
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerPlanConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerPlanConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

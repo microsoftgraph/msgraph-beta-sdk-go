@@ -47,7 +47,7 @@ type CompaniesItemEmployeesItemPicturePictureItemRequestBuilderPatchRequestConfi
 // NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal instantiates a new CompaniesItemEmployeesItemPicturePictureItemRequestBuilder and sets the default values.
 func NewCompaniesItemEmployeesItemPicturePictureItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) {
     m := &CompaniesItemEmployeesItemPicturePictureItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}/picture/{picture%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}/picture/{picture%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) ToDeleteReq
 // ToGetRequestInformation get picture from financials
 // returns a *RequestInformation when successful
 func (m *CompaniesItemEmployeesItemPicturePictureItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemEmployeesItemPicturePictureItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/financials/companies/{company%2Did}/employees/{employee%2Did}/picture/{picture%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfigurati
 // NewItemProfileInterestsPersonInterestItemRequestBuilderInternal instantiates a new ItemProfileInterestsPersonInterestItemRequestBuilder and sets the default values.
 func NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileInterestsPersonInterestItemRequestBuilder) {
     m := &ItemProfileInterestsPersonInterestItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/interests/{personInterest%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/interests/{personInterest%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestIn
 // ToGetRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/interests/{personInterest%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type SensitivityPolicySettingsRequestBuilderPatchRequestConfiguration struct {
 // NewSensitivityPolicySettingsRequestBuilderInternal instantiates a new SensitivityPolicySettingsRequestBuilder and sets the default values.
 func NewSensitivityPolicySettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitivityPolicySettingsRequestBuilder) {
     m := &SensitivityPolicySettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/informationProtection/sensitivityPolicySettings", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *SensitivityPolicySettingsRequestBuilder) ToDeleteRequestInformation(ctx
 // ToGetRequestInformation get sensitivityPolicySettings from informationProtection
 // returns a *RequestInformation when successful
 func (m *SensitivityPolicySettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SensitivityPolicySettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/informationProtection/sensitivityPolicySettings{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -21,7 +21,7 @@ type ItemCloudPcPoolsCloudPcPoolItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters get cloudPcPools from users
+// ItemCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters the user's Cloud PC pools. Read-only. Nullable.
 type ItemCloudPcPoolsCloudPcPoolItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -52,7 +52,7 @@ func (m *ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) Assignments()(*ItemCloud
 // NewItemCloudPcPoolsCloudPcPoolItemRequestBuilderInternal instantiates a new ItemCloudPcPoolsCloudPcPoolItemRequestBuilder and sets the default values.
 func NewItemCloudPcPoolsCloudPcPoolItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) {
     m := &ItemCloudPcPoolsCloudPcPoolItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPcPools/{cloudPcPool%2Did}", pathParameters),
     }
     return m
 }
@@ -78,7 +78,7 @@ func (m *ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get cloudPcPools from users
+// Get the user's Cloud PC pools. Read-only. Nullable.
 // returns a CloudPcPoolable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPcPoolsCloudPcPoolItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable, error) {
@@ -129,10 +129,10 @@ func (m *ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get cloudPcPools from users
+// ToGetRequestInformation the user's Cloud PC pools. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPcPoolsCloudPcPoolItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPcPoolsCloudPcPoolItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/cloudPcPools/{cloudPcPool%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

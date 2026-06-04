@@ -47,7 +47,7 @@ type DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderPatchRequestC
 // NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal instantiates a new DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder and sets the default values.
 func NewDevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) {
     m := &DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToDelet
 // ToGetRequestInformation get the details of an async, long-running operation on a Microsoft Teams-enabled device.
 // returns a *RequestInformation when successful
 func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teamwork/devices/{teamworkDevice%2Did}/operations/{teamworkDeviceOperation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

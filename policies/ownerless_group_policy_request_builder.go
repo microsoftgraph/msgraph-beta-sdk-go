@@ -40,7 +40,7 @@ type OwnerlessGroupPolicyRequestBuilderPatchRequestConfiguration struct {
 // NewOwnerlessGroupPolicyRequestBuilderInternal instantiates a new OwnerlessGroupPolicyRequestBuilder and sets the default values.
 func NewOwnerlessGroupPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OwnerlessGroupPolicyRequestBuilder) {
     m := &OwnerlessGroupPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/ownerlessGroupPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -99,7 +99,7 @@ func (m *OwnerlessGroupPolicyRequestBuilder) Patch(ctx context.Context, body ie2
 // ToGetRequestInformation read the properties of an ownerlessGroupPolicy object.
 // returns a *RequestInformation when successful
 func (m *OwnerlessGroupPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OwnerlessGroupPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/ownerlessGroupPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -113,7 +113,7 @@ func (m *OwnerlessGroupPolicyRequestBuilder) ToGetRequestInformation(ctx context
 // ToPatchRequestInformation create or update the ownerlessGroupPolicy for the tenant. If the policy doesn't exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
 // returns a *RequestInformation when successful
 func (m *OwnerlessGroupPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OwnerlessGroupPolicyable, requestConfiguration *OwnerlessGroupPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/policies/ownerlessGroupPolicy", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequest
 // NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal instantiates a new IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder and sets the default values.
 func NewIntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) {
     m := &IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/categories/{deviceManagementIntentSettingCategory%2Did}/settings/{deviceManagementSettingInstance%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/categories/{deviceManagementIntentSettingCategory%2Did}/settings/{deviceManagementSettingInstance%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemReq
 // ToGetRequestInformation the settings this category contains
 // returns a *RequestInformation when successful
 func (m *IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IntentsItemCategoriesItemSettingsDeviceManagementSettingInstanceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/categories/{deviceManagementIntentSettingCategory%2Did}/settings/{deviceManagementSettingInstance%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

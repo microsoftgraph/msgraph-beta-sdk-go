@@ -47,7 +47,7 @@ type SensorDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration struct {
 // NewSensorDevicesWithDeviceIdRequestBuilderInternal instantiates a new SensorDevicesWithDeviceIdRequestBuilder and sets the default values.
 func NewSensorDevicesWithDeviceIdRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, deviceId *string)(*SensorDevicesWithDeviceIdRequestBuilder) {
     m := &SensorDevicesWithDeviceIdRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/workplace/sensorDevices(deviceId='{deviceId}')", pathParameters),
     }
     if deviceId != nil {
         m.BaseRequestBuilder.PathParameters["deviceId"] = *deviceId
@@ -139,7 +139,7 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx
 // ToGetRequestInformation get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/workplace/sensorDevices(deviceId='{deviceId}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

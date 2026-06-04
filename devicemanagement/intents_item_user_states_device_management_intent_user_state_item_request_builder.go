@@ -47,7 +47,7 @@ type IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderPatch
 // NewIntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderInternal instantiates a new IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder and sets the default values.
 func NewIntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) {
     m := &IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStates/{deviceManagementIntentUserState%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStates/{deviceManagementIntentUserState%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder)
 // ToGetRequestInformation collection of states of all users that the intent is applied to
 // returns a *RequestInformation when successful
 func (m *IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/intents/{deviceManagementIntent%2Did}/userStates/{deviceManagementIntentUserState%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

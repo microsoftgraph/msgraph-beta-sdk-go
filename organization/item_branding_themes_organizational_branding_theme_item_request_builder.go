@@ -47,7 +47,7 @@ type ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderPatchRequest
 // NewItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderInternal instantiates a new ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder and sets the default values.
 func NewItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder) {
     m := &ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}", pathParameters),
     }
     return m
 }
@@ -141,7 +141,7 @@ func (m *ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder) ToDele
 // ToGetRequestInformation read the properties and relationships of organizationalBrandingTheme object.
 // returns a *RequestInformation when successful
 func (m *ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingThemesOrganizationalBrandingThemeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/organization/{organization%2Did}/branding/themes/{organizationalBrandingTheme%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

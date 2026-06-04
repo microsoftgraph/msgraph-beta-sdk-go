@@ -47,7 +47,7 @@ type ItemClaimsPolicyRequestBuilderPutRequestConfiguration struct {
 // NewItemClaimsPolicyRequestBuilderInternal instantiates a new ItemClaimsPolicyRequestBuilder and sets the default values.
 func NewItemClaimsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemClaimsPolicyRequestBuilder) {
     m := &ItemClaimsPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsPolicy", pathParameters),
     }
     return m
 }
@@ -129,7 +129,7 @@ func (m *ItemClaimsPolicyRequestBuilder) Put(ctx context.Context, body ie233ee76
 // ToGetRequestInformation get the properties and relationships of a customClaimsPolicy object.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/claimsPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

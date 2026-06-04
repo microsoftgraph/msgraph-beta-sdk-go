@@ -47,7 +47,7 @@ type ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuild
 // NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal instantiates a new ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder and sets the default values.
 func NewItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) {
     m := &ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestB
 // ToGetRequestInformation get sharedEmailDomainInvitations from domains
 // returns a *RequestInformation when successful
 func (m *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSharedEmailDomainInvitationsSharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/domains/{domain%2Did}/sharedEmailDomainInvitations/{sharedEmailDomainInvitation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -21,7 +21,7 @@ type BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAddi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get driveExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters the list of bulk addition jobs for drive exclusion units in the tenant.
 type BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAddi
 // NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderInternal instantiates a new BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder and sets the default values.
 func NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) {
     m := &BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs/{driveExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs/{driveExclusionUnitsBulkAdditionJob%2Did}", pathParameters),
     }
     return m
 }
@@ -73,7 +73,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     }
     return nil
 }
-// Get get driveExclusionUnitsBulkAdditionJobs from solutions
+// Get the list of bulk addition jobs for drive exclusion units in the tenant.
 // returns a DriveExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable, error) {
@@ -124,10 +124,10 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get driveExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation the list of bulk addition jobs for drive exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/driveExclusionUnitsBulkAdditionJobs/{driveExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

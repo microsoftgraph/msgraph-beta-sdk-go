@@ -21,7 +21,7 @@ type VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderGetQueryParameters get assignments from deviceManagement
+// VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderGetQueryParameters read the properties of a cloudPcPoolAssignment object.
 type VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestB
 // NewVirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderInternal instantiates a new VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder) {
     m := &VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}", pathParameters),
     }
     return m
 }
@@ -57,8 +57,11 @@ func NewVirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemReque
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property assignments for deviceManagement
+// Delete delete a cloudPcPoolAssignment object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcpoolassignment-delete?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequ
     }
     return nil
 }
-// Get get assignments from deviceManagement
+// Get read the properties of a cloudPcPoolAssignment object.
 // returns a CloudPcPoolAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcpoolassignment-get?view=graph-rest-beta
 func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolAssignmentable), nil
 }
-// ToDeleteRequestInformation delete navigation property assignments for deviceManagement
+// ToDeleteRequestInformation delete a cloudPcPoolAssignment object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,10 +130,10 @@ func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get assignments from deviceManagement
+// ToGetRequestInformation read the properties of a cloudPcPoolAssignment object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPcPoolsItemAssignmentsCloudPcPoolAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPcPools/{cloudPcPool%2Did}/assignments/{cloudPcPoolAssignment%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

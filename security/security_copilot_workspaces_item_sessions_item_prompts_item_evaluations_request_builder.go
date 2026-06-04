@@ -64,7 +64,7 @@ func (m *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestB
 // NewSecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilderInternal instantiates a new SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilder and sets the default values.
 func NewSecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilder) {
     m := &SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/sessions/{session%2Did}/prompts/{prompt%2Did}/evaluations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -122,7 +122,7 @@ func (m *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestB
 // ToGetRequestInformation collection of evaluations
 // returns a *RequestInformation when successful
 func (m *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/sessions/{session%2Did}/prompts/{prompt%2Did}/evaluations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -136,7 +136,7 @@ func (m *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestB
 // ToPostRequestInformation create new navigation property to evaluations for security
 // returns a *RequestInformation when successful
 func (m *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i740ba735e7d17bc7fd0881298b7561db9b67f033e8711f0cf45535619088aad8.Evaluationable, requestConfiguration *SecurityCopilotWorkspacesItemSessionsItemPromptsItemEvaluationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/securityCopilot/workspaces/{workspace%2Did}/sessions/{session%2Did}/prompts/{prompt%2Did}/evaluations", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

@@ -47,7 +47,7 @@ type LogsConnectionsConnectionItemRequestBuilderPatchRequestConfiguration struct
 // NewLogsConnectionsConnectionItemRequestBuilderInternal instantiates a new LogsConnectionsConnectionItemRequestBuilder and sets the default values.
 func NewLogsConnectionsConnectionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsConnectionsConnectionItemRequestBuilder) {
     m := &LogsConnectionsConnectionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/connections/{connection%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/logs/connections/{connection%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *LogsConnectionsConnectionItemRequestBuilder) ToDeleteRequestInformation
 // ToGetRequestInformation read the properties and relationships of a connection object.
 // returns a *RequestInformation when successful
 func (m *LogsConnectionsConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsConnectionsConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/networkAccess/logs/connections/{connection%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

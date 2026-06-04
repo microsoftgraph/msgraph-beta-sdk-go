@@ -119,6 +119,18 @@ func (m *AgentRiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) 
     }
     return nil
 }
+// GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -200,6 +212,26 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDetectionTimingType(val.(*RiskDetectionTimingType))
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["identityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityId(val)
         }
         return nil
     }
@@ -314,6 +346,18 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     return res
+}
+// GetIdentityId gets the identityId property value. The identityId property
+// returns a *string when successful
+func (m *AgentRiskDetection) GetIdentityId()(*string) {
+    val, err := m.GetBackingStore().Get("identityId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetIdentityType gets the identityType property value. The identityType property
 // returns a *AgentIdentityType when successful
@@ -502,6 +546,18 @@ func (m *AgentRiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("identityId", m.GetIdentityId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIdentityType() != nil {
         cast := (*m.GetIdentityType()).String()
         err = writer.WriteStringValue("identityType", &cast)
@@ -630,6 +686,20 @@ func (m *AgentRiskDetection) SetDetectionTimingType(value *RiskDetectionTimingTy
         panic(err)
     }
 }
+// SetDisplayName sets the displayName property value. The displayName property
+func (m *AgentRiskDetection) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIdentityId sets the identityId property value. The identityId property
+func (m *AgentRiskDetection) SetIdentityId(value *string)() {
+    err := m.GetBackingStore().Set("identityId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIdentityType sets the identityType property value. The identityType property
 func (m *AgentRiskDetection) SetIdentityType(value *AgentIdentityType)() {
     err := m.GetBackingStore().Set("identityType", value)
@@ -718,6 +788,8 @@ type AgentRiskDetectionable interface {
     GetClientSessionId()(*string)
     GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDetectionTimingType()(*RiskDetectionTimingType)
+    GetDisplayName()(*string)
+    GetIdentityId()(*string)
     GetIdentityType()(*AgentIdentityType)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRiskDetail()(*RiskDetail)
@@ -737,6 +809,8 @@ type AgentRiskDetectionable interface {
     SetClientSessionId(value *string)()
     SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDetectionTimingType(value *RiskDetectionTimingType)()
+    SetDisplayName(value *string)()
+    SetIdentityId(value *string)()
     SetIdentityType(value *AgentIdentityType)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRiskDetail(value *RiskDetail)()

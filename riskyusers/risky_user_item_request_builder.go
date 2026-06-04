@@ -47,7 +47,7 @@ type RiskyUserItemRequestBuilderPatchRequestConfiguration struct {
 // NewRiskyUserItemRequestBuilderInternal instantiates a new RiskyUserItemRequestBuilder and sets the default values.
 func NewRiskyUserItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RiskyUserItemRequestBuilder) {
     m := &RiskyUserItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/riskyUsers/{riskyUser%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/riskyUsers/{riskyUser%2Did}", pathParameters),
     }
     return m
 }
@@ -135,7 +135,7 @@ func (m *RiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Con
 // ToGetRequestInformation retrieve the properties and relationships of a riskyUser object.
 // returns a *RequestInformation when successful
 func (m *RiskyUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/riskyUsers/{riskyUser%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

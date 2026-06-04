@@ -47,7 +47,7 @@ type ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderPatchReque
 // NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal instantiates a new ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder and sets the default values.
 func NewThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) {
     m := &ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) ToDe
 // ToGetRequestInformation read the properties and relationships of a fileThreatSubmission object.
 // returns a *RequestInformation when successful
 func (m *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionFileThreatsFileThreatSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/threatSubmission/fileThreats/{fileThreatSubmission%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

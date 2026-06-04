@@ -57,7 +57,7 @@ func (m *ZebraFotaConnectorRequestBuilder) Connect()(*ZebraFotaConnectorConnectR
 // NewZebraFotaConnectorRequestBuilderInternal instantiates a new ZebraFotaConnectorRequestBuilder and sets the default values.
 func NewZebraFotaConnectorRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ZebraFotaConnectorRequestBuilder) {
     m := &ZebraFotaConnectorRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector", pathParameters),
     }
     return m
 }
@@ -152,7 +152,7 @@ func (m *ZebraFotaConnectorRequestBuilder) ToDeleteRequestInformation(ctx contex
 // ToGetRequestInformation the singleton ZebraFotaConnector associated with account.
 // returns a *RequestInformation when successful
 func (m *ZebraFotaConnectorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ZebraFotaConnectorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

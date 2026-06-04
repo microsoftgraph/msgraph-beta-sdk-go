@@ -47,7 +47,7 @@ type PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilderPatchReque
 // NewPartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilderInternal instantiates a new PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilder and sets the default values.
 func NewPartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilder) {
     m := &PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore/history/{securityScoreHistory%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore/history/{securityScoreHistory%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilder) ToDe
 // ToGetRequestInformation read the properties and relationships of a securityScoreHistory object.
 // returns a *RequestInformation when successful
 func (m *PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnerSecurityScoreHistorySecurityScoreHistoryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/partner/securityScore/history/{securityScoreHistory%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

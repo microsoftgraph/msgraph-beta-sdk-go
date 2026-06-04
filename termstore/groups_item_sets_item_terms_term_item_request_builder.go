@@ -52,7 +52,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) Children()(*GroupsItemSe
 // NewGroupsItemSetsItemTermsTermItemRequestBuilderInternal instantiates a new GroupsItemSetsItemTermsTermItemRequestBuilder and sets the default values.
 func NewGroupsItemSetsItemTermsTermItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupsItemSetsItemTermsTermItemRequestBuilder) {
     m := &GroupsItemSetsItemTermsTermItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}", pathParameters),
     }
     return m
 }
@@ -145,7 +145,7 @@ func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) ToDeleteRequestInformati
 // ToGetRequestInformation read the properties and relationships of a term object.
 // returns a *RequestInformation when successful
 func (m *GroupsItemSetsItemTermsTermItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupsItemSetsItemTermsTermItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/termStore/groups/{group%2Did}/sets/{set%2Did}/terms/{term%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

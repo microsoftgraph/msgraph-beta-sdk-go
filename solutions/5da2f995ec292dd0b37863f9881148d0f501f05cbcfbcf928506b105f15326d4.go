@@ -21,7 +21,7 @@ type BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulk
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters get mailboxExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters the list of bulk addition jobs for mailbox exclusion units in the tenant.
 type BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulk
 // NewBackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderInternal instantiates a new BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder and sets the default values.
 func NewBackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) {
     m := &BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs/{mailboxExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs/{mailboxExclusionUnitsBulkAdditionJob%2Did}", pathParameters),
     }
     return m
 }
@@ -73,7 +73,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     }
     return nil
 }
-// Get get mailboxExclusionUnitsBulkAdditionJobs from solutions
+// Get the list of bulk addition jobs for mailbox exclusion units in the tenant.
 // returns a MailboxExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable, error) {
@@ -124,10 +124,10 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get mailboxExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation the list of bulk addition jobs for mailbox exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnitsBulkAdditionJobs/{mailboxExclusionUnitsBulkAdditionJob%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

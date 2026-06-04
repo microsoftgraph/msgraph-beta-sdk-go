@@ -21,7 +21,7 @@ type VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderGetQueryParameters get registrations from solutions
+// VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderGetQueryParameters registration records of the town hall.
 type VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -52,7 +52,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) Cancel(
 // NewVirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, email *string)(*VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) {
     m := &VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(email='{email}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(email='{email}')", pathParameters),
     }
     if email != nil {
         m.BaseRequestBuilder.PathParameters["email"] = *email
@@ -81,7 +81,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) Delete(
     }
     return nil
 }
-// Get get registrations from solutions
+// Get registration records of the town hall.
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
@@ -132,10 +132,10 @@ func (m *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get registrations from solutions
+// ToGetRequestInformation registration records of the town hall.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(email='{email}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

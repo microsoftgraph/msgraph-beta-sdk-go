@@ -52,7 +52,7 @@ func (m *B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder) AppliesTo()
 // NewB2bManagementPoliciesB2bManagementPolicyItemRequestBuilderInternal instantiates a new B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder and sets the default values.
 func NewB2bManagementPoliciesB2bManagementPolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder) {
     m := &B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/b2bManagementPolicies/{b2bManagementPolicy%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/b2bManagementPolicies/{b2bManagementPolicy%2Did}", pathParameters),
     }
     return m
 }
@@ -141,7 +141,7 @@ func (m *B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder) ToDeleteReq
 // ToGetRequestInformation read the properties and relationships of b2bManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *B2bManagementPoliciesB2bManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2bManagementPoliciesB2bManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/b2bManagementPolicies/{b2bManagementPolicy%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

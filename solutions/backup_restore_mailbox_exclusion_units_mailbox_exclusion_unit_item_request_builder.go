@@ -21,7 +21,7 @@ type BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters get mailboxExclusionUnits from solutions
+// BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters the list of mailbox exclusion units in the tenant.
 type BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -47,7 +47,7 @@ type BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderPat
 // NewBackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderInternal instantiates a new BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder and sets the default values.
 func NewBackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder) {
     m := &BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits/{mailboxExclusionUnit%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits/{mailboxExclusionUnit%2Did}", pathParameters),
     }
     return m
 }
@@ -73,7 +73,7 @@ func (m *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilde
     }
     return nil
 }
-// Get get mailboxExclusionUnits from solutions
+// Get the list of mailbox exclusion units in the tenant.
 // returns a MailboxExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitable, error) {
@@ -124,10 +124,10 @@ func (m *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get mailboxExclusionUnits from solutions
+// ToGetRequestInformation the list of mailbox exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/backupRestore/mailboxExclusionUnits/{mailboxExclusionUnit%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

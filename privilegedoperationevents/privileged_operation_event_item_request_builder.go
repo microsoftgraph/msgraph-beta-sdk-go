@@ -47,7 +47,7 @@ type PrivilegedOperationEventItemRequestBuilderPatchRequestConfiguration struct 
 // NewPrivilegedOperationEventItemRequestBuilderInternal instantiates a new PrivilegedOperationEventItemRequestBuilder and sets the default values.
 func NewPrivilegedOperationEventItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedOperationEventItemRequestBuilder) {
     m := &PrivilegedOperationEventItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *PrivilegedOperationEventItemRequestBuilder) ToDeleteRequestInformation(
 // ToGetRequestInformation get entity from privilegedOperationEvents by key
 // returns a *RequestInformation when successful
 func (m *PrivilegedOperationEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedOperationEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/privilegedOperationEvents/{privilegedOperationEvent%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

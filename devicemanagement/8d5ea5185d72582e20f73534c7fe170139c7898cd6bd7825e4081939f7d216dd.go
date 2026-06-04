@@ -52,7 +52,7 @@ func (m *CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLe
 // NewCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderInternal instantiates a new CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilder and sets the default values.
 func NewCloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilder) {
     m := &CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/cloudCertificationAuthorityLeafCertificate/{cloudCertificationAuthorityLeafCertificate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/cloudCertificationAuthorityLeafCertificate/{cloudCertificationAuthorityLeafCertificate%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLe
 // ToGetRequestInformation collection of CloudCertificationAuthorityLeafCertificate records associated with account.
 // returns a *RequestInformation when successful
 func (m *CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudCertificationAuthorityLeafCertificateCloudCertificationAuthorityLeafCertificateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/cloudCertificationAuthorityLeafCertificate/{cloudCertificationAuthorityLeafCertificate%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

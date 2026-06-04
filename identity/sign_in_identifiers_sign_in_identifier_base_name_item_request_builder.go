@@ -47,7 +47,7 @@ type SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderPatchRequestConf
 // NewSignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderInternal instantiates a new SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder and sets the default values.
 func NewSignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder) {
     m := &SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/signInIdentifiers/{signInIdentifierBase%2Dname}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identity/signInIdentifiers/{signInIdentifierBase%2Dname}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder) ToDeleteRe
 // Deprecated:  as of 2025-03/SignInWithAlias on 2025-03-26 and will be removed 2025-12-25
 // returns a *RequestInformation when successful
 func (m *SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SignInIdentifiersSignInIdentifierBaseNameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identity/signInIdentifiers/{signInIdentifierBase%2Dname}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

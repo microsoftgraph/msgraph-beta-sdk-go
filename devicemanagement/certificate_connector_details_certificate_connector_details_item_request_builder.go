@@ -47,7 +47,7 @@ type CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderPat
 // NewCertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderInternal instantiates a new CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder and sets the default values.
 func NewCertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder) {
     m := &CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilde
 // ToGetRequestInformation collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
 // returns a *RequestInformation when successful
 func (m *CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/certificateConnectorDetails/{certificateConnectorDetails%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

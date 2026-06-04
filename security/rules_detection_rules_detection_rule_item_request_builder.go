@@ -47,7 +47,7 @@ type RulesDetectionRulesDetectionRuleItemRequestBuilderPatchRequestConfiguration
 // NewRulesDetectionRulesDetectionRuleItemRequestBuilderInternal instantiates a new RulesDetectionRulesDetectionRuleItemRequestBuilder and sets the default values.
 func NewRulesDetectionRulesDetectionRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RulesDetectionRulesDetectionRuleItemRequestBuilder) {
     m := &RulesDetectionRulesDetectionRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/rules/detectionRules/{detectionRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/rules/detectionRules/{detectionRule%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation get detectionRules from security
 // returns a *RequestInformation when successful
 func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RulesDetectionRulesDetectionRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/rules/detectionRules/{detectionRule%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

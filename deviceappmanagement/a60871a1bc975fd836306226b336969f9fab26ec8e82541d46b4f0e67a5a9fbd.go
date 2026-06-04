@@ -47,7 +47,7 @@ type MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemReq
 // NewMobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilderInternal instantiates a new MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilder and sets the default values.
 func NewMobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilder) {
     m := &MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseIte
 // ToGetRequestInformation the licenses assigned to this app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.iosVppApp/assignedLicenses/{iosVppAppAssignedLicense%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

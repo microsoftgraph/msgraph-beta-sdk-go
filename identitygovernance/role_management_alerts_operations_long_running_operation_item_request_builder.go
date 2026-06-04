@@ -47,7 +47,7 @@ type RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderPatchRe
 // NewRoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderInternal instantiates a new RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder and sets the default values.
 func NewRoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) {
     m := &RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/operations/{longRunningOperation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/operations/{longRunningOperation%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) T
 // ToGetRequestInformation represents operations on resources that take a long time to complete and can run in the background until completion.
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/roleManagementAlerts/operations/{longRunningOperation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

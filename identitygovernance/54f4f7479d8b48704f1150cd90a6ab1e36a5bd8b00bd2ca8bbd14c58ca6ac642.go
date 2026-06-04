@@ -47,7 +47,7 @@ type RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncid
 // NewRoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilderInternal instantiates a new RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder and sets the default values.
 func NewRoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder) {
     m := &RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}/alertIncidents/{unifiedRoleManagementAlertIncident%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}/alertIncidents/{unifiedRoleManagementAlertIncident%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertI
 // ToGetRequestInformation represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts/{unifiedRoleManagementAlert%2Did}/alertIncidents/{unifiedRoleManagementAlertIncident%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

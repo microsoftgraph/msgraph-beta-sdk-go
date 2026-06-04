@@ -52,7 +52,7 @@ func (m *DataDiscoveryRequestBuilder) CloudAppDiscovery()(*DataDiscoveryCloudApp
 // NewDataDiscoveryRequestBuilderInternal instantiates a new DataDiscoveryRequestBuilder and sets the default values.
 func NewDataDiscoveryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataDiscoveryRequestBuilder) {
     m := &DataDiscoveryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataDiscovery{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataDiscovery", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *DataDiscoveryRequestBuilder) ToDeleteRequestInformation(ctx context.Con
 // ToGetRequestInformation get dataDiscovery from security
 // returns a *RequestInformation when successful
 func (m *DataDiscoveryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataDiscoveryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/dataDiscovery{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type OnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration struct 
 // NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal instantiates a new OnlineMeetingsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, joinWebUrl *string)(*OnlineMeetingsWithJoinWebUrlRequestBuilder) {
     m := &OnlineMeetingsWithJoinWebUrlRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/communications/onlineMeetings(joinWebUrl='{joinWebUrl}')", pathParameters),
     }
     if joinWebUrl != nil {
         m.BaseRequestBuilder.PathParameters["joinWebUrl"] = *joinWebUrl
@@ -145,7 +145,7 @@ func (m *OnlineMeetingsWithJoinWebUrlRequestBuilder) ToDeleteRequestInformation(
 // ToGetRequestInformation get onlineMeetings from communications
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsWithJoinWebUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/communications/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

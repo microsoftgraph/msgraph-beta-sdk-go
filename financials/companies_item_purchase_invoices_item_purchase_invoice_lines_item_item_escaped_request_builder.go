@@ -47,7 +47,7 @@ type CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedReques
 // NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilderInternal instantiates a new CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder and sets the default values.
 func NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder) {
     m := &CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/item{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/item", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRe
 // ToGetRequestInformation get item from financials
 // returns a *RequestInformation when successful
 func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/financials/companies/{company%2Did}/purchaseInvoices/{purchaseInvoice%2Did}/purchaseInvoiceLines/{purchaseInvoiceLine%2Did}/item{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

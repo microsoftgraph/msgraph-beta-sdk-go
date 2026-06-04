@@ -215,6 +215,16 @@ func (m *SummarizedSignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["tokenIssuerType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseTokenIssuerType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenIssuerType(val.(*TokenIssuerType))
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -347,6 +357,18 @@ func (m *SummarizedSignIn) GetTenantId()(*string) {
     }
     return nil
 }
+// GetTokenIssuerType gets the tokenIssuerType property value. The tokenIssuerType property
+// returns a *TokenIssuerType when successful
+func (m *SummarizedSignIn) GetTokenIssuerType()(*TokenIssuerType) {
+    val, err := m.GetBackingStore().Get("tokenIssuerType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*TokenIssuerType)
+    }
+    return nil
+}
 // GetUserPrincipalName gets the userPrincipalName property value. User principal name of the user that initiated the sign-in. This value is always in lowercase. For guest users whose values in the user object typically contain #EXT# before the domain part, this property stores the value in both lowercase and the 'true' format. For example, while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com, the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq).
 // returns a *string when successful
 func (m *SummarizedSignIn) GetUserPrincipalName()(*string) {
@@ -446,6 +468,13 @@ func (m *SummarizedSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTokenIssuerType() != nil {
+        cast := (*m.GetTokenIssuerType()).String()
+        err = writer.WriteStringValue("tokenIssuerType", &cast)
         if err != nil {
             return err
         }
@@ -556,6 +585,13 @@ func (m *SummarizedSignIn) SetTenantId(value *string)() {
         panic(err)
     }
 }
+// SetTokenIssuerType sets the tokenIssuerType property value. The tokenIssuerType property
+func (m *SummarizedSignIn) SetTokenIssuerType(value *TokenIssuerType)() {
+    err := m.GetBackingStore().Set("tokenIssuerType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. User principal name of the user that initiated the sign-in. This value is always in lowercase. For guest users whose values in the user object typically contain #EXT# before the domain part, this property stores the value in both lowercase and the 'true' format. For example, while the user object stores AdeleVance_fabrikam.com#EXT#@contoso.com, the sign-in logs store adelevance@fabrikam.com. Supports $filter (eq).
 func (m *SummarizedSignIn) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -580,6 +616,7 @@ type SummarizedSignInable interface {
     GetSignInCount()(*int64)
     GetStatus()(SignInStatusable)
     GetTenantId()(*string)
+    GetTokenIssuerType()(*TokenIssuerType)
     GetUserPrincipalName()(*string)
     SetAggregationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAppDisplayName(value *string)()
@@ -595,5 +632,6 @@ type SummarizedSignInable interface {
     SetSignInCount(value *int64)()
     SetStatus(value SignInStatusable)()
     SetTenantId(value *string)()
+    SetTokenIssuerType(value *TokenIssuerType)()
     SetUserPrincipalName(value *string)()
 }

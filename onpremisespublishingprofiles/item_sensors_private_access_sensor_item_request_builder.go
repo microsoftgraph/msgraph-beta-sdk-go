@@ -47,7 +47,7 @@ type ItemSensorsPrivateAccessSensorItemRequestBuilderPatchRequestConfiguration s
 // NewItemSensorsPrivateAccessSensorItemRequestBuilderInternal instantiates a new ItemSensorsPrivateAccessSensorItemRequestBuilder and sets the default values.
 func NewItemSensorsPrivateAccessSensorItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemSensorsPrivateAccessSensorItemRequestBuilder) {
     m := &ItemSensorsPrivateAccessSensorItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/sensors/{privateAccessSensor%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/sensors/{privateAccessSensor%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemSensorsPrivateAccessSensorItemRequestBuilder) ToDeleteRequestInform
 // ToGetRequestInformation a lightweight agent installed on domain controllers that helps secure access and enforce MFA to on-premise resources.
 // returns a *RequestInformation when successful
 func (m *ItemSensorsPrivateAccessSensorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSensorsPrivateAccessSensorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/sensors/{privateAccessSensor%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

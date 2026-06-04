@@ -47,7 +47,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration struc
 // NewB2cAuthenticationMethodsPolicyRequestBuilderInternal instantiates a new B2cAuthenticationMethodsPolicyRequestBuilder and sets the default values.
 func NewB2cAuthenticationMethodsPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*B2cAuthenticationMethodsPolicyRequestBuilder) {
     m := &B2cAuthenticationMethodsPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/b2cAuthenticationMethodsPolicy", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToDeleteRequestInformatio
 // ToGetRequestInformation read the properties of a b2cAuthenticationMethodsPolicy object.
 // returns a *RequestInformation when successful
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/b2cAuthenticationMethodsPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

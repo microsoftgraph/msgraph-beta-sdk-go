@@ -47,7 +47,7 @@ type SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMa
 // NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderInternal instantiates a new SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder and sets the default values.
 func NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) {
     m := &SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationGroupMappings/{sharePointGroupIdentityMapping%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationGroupMappings/{sharePointGroupIdentityMapping%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
 // ToGetRequestInformation collection of group identity mappings for cross-organization migration.
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/sharePoint/migrations/crossOrganizationGroupMappings/{sharePointGroupIdentityMapping%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

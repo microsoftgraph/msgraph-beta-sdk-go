@@ -47,7 +47,7 @@ type TasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRequestConfig
 // NewTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal instantiates a new TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder and sets the default values.
 func NewTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     m := &TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}", pathParameters),
     }
     return m
 }
@@ -138,7 +138,7 @@ func (m *TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation read-only. Nullable. Chat messages associated with the task.
 // returns a *RequestInformation when successful
 func (m *TasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemMessagesPlannerTaskChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/planner/tasks/{plannerTask%2Did}/messages/{plannerTaskChatMessage%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

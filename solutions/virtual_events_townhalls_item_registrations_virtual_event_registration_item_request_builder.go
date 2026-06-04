@@ -21,7 +21,7 @@ type VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters get registrations from solutions
+// VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters registration records of the town hall.
 type VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -52,7 +52,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequ
 // NewVirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) {
     m := &VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}", pathParameters),
     }
     return m
 }
@@ -78,7 +78,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequ
     }
     return nil
 }
-// Get get registrations from solutions
+// Get registration records of the town hall.
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
@@ -139,10 +139,10 @@ func (m *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get registrations from solutions
+// ToGetRequestInformation registration records of the town hall.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations/{virtualEventRegistration%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

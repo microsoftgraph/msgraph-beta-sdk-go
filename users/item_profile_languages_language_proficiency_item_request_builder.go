@@ -47,7 +47,7 @@ type ItemProfileLanguagesLanguageProficiencyItemRequestBuilderPatchRequestConfig
 // NewItemProfileLanguagesLanguageProficiencyItemRequestBuilderInternal instantiates a new ItemProfileLanguagesLanguageProficiencyItemRequestBuilder and sets the default values.
 func NewItemProfileLanguagesLanguageProficiencyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) {
     m := &ItemProfileLanguagesLanguageProficiencyItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation represents detailed information about languages that a user has added to their profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileLanguagesLanguageProficiencyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

@@ -47,7 +47,7 @@ type AuthorizationSystemsItemDataCollectionInfoRequestBuilderPatchRequestConfigu
 // NewAuthorizationSystemsItemDataCollectionInfoRequestBuilderInternal instantiates a new AuthorizationSystemsItemDataCollectionInfoRequestBuilder and sets the default values.
 func NewAuthorizationSystemsItemDataCollectionInfoRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationSystemsItemDataCollectionInfoRequestBuilder) {
     m := &AuthorizationSystemsItemDataCollectionInfoRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AuthorizationSystemsItemDataCollectionInfoRequestBuilder) ToDeleteReque
 // ToGetRequestInformation defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.
 // returns a *RequestInformation when successful
 func (m *AuthorizationSystemsItemDataCollectionInfoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationSystemsItemDataCollectionInfoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}/dataCollectionInfo{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

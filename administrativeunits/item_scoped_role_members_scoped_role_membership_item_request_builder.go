@@ -47,7 +47,7 @@ type ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderPatchRequestConf
 // NewItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal instantiates a new ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder and sets the default values.
 func NewItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) {
     m := &ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) ToDeleteRe
 // ToGetRequestInformation get a Microsoft Entra role assignment with administrative unit scope.
 // returns a *RequestInformation when successful
 func (m *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScopedRoleMembersScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

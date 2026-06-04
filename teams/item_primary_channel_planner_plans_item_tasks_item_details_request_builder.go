@@ -47,7 +47,7 @@ type ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilderPatchReques
 // NewItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilderInternal instantiates a new ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilder and sets the default values.
 func NewItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilder) {
     m := &ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilder) ToDel
 // ToGetRequestInformation read-only. Nullable. More details about the task.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelPlannerPlansItemTasksItemDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/teams/{team%2Did}/primaryChannel/planner/plans/{plannerPlan%2Did}/tasks/{plannerTask%2Did}/details{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

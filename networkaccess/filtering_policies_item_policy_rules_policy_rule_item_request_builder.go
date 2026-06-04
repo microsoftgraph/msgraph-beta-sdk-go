@@ -47,7 +47,7 @@ type FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderPatchRequestCon
 // NewFilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderInternal instantiates a new FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder and sets the default values.
 func NewFilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) {
     m := &FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) ToDeleteR
 // ToGetRequestInformation represents the definition of the policy ruleset that makes up the core definition of a policy.
 // returns a *RequestInformation when successful
 func (m *FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringPoliciesItemPolicyRulesPolicyRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/networkAccess/filteringPolicies/{filteringPolicy%2Did}/policyRules/{policyRule%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

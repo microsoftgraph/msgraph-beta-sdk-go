@@ -47,7 +47,7 @@ type WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderPatchReq
 // NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal instantiates a new WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder and sets the default values.
 func NewWindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) {
     m := &WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsUpdateCatalogItems/{windowsUpdateCatalogItem%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsUpdateCatalogItems/{windowsUpdateCatalogItem%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) To
 // ToGetRequestInformation a collection of windows update catalog items (fetaure updates item , quality updates item)
 // returns a *RequestInformation when successful
 func (m *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdateCatalogItemsWindowsUpdateCatalogItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/windowsUpdateCatalogItems/{windowsUpdateCatalogItem%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

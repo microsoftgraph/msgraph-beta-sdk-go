@@ -47,7 +47,7 @@ type PrivilegedSignupStatusItemRequestBuilderPatchRequestConfiguration struct {
 // NewPrivilegedSignupStatusItemRequestBuilderInternal instantiates a new PrivilegedSignupStatusItemRequestBuilder and sets the default values.
 func NewPrivilegedSignupStatusItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrivilegedSignupStatusItemRequestBuilder) {
     m := &PrivilegedSignupStatusItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *PrivilegedSignupStatusItemRequestBuilder) ToDeleteRequestInformation(ct
 // ToGetRequestInformation get entity from privilegedSignupStatus by key
 // returns a *RequestInformation when successful
 func (m *PrivilegedSignupStatusItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedSignupStatusItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/privilegedSignupStatus/{privilegedSignupStatus%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

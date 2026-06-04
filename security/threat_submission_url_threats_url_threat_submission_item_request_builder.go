@@ -47,7 +47,7 @@ type ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderPatchRequest
 // NewThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal instantiates a new ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder and sets the default values.
 func NewThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) {
     m := &ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/threatSubmission/urlThreats/{urlThreatSubmission%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) ToDele
 // ToGetRequestInformation read the properties and relationships of an urlThreatSubmission object.
 // returns a *RequestInformation when successful
 func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/threatSubmission/urlThreats/{urlThreatSubmission%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

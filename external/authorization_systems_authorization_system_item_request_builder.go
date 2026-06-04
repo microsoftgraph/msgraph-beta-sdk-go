@@ -47,7 +47,7 @@ type AuthorizationSystemsAuthorizationSystemItemRequestBuilderPatchRequestConfig
 // NewAuthorizationSystemsAuthorizationSystemItemRequestBuilderInternal instantiates a new AuthorizationSystemsAuthorizationSystemItemRequestBuilder and sets the default values.
 func NewAuthorizationSystemsAuthorizationSystemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuthorizationSystemsAuthorizationSystemItemRequestBuilder) {
     m := &AuthorizationSystemsAuthorizationSystemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 // returns a *RequestInformation when successful
 func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/external/authorizationSystems/{authorizationSystem%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

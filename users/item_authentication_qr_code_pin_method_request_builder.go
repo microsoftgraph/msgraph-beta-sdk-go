@@ -40,7 +40,7 @@ type ItemAuthenticationQrCodePinMethodRequestBuilderGetRequestConfiguration stru
 // NewItemAuthenticationQrCodePinMethodRequestBuilderInternal instantiates a new ItemAuthenticationQrCodePinMethodRequestBuilder and sets the default values.
 func NewItemAuthenticationQrCodePinMethodRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAuthenticationQrCodePinMethodRequestBuilder) {
     m := &ItemAuthenticationQrCodePinMethodRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/qrCodePinMethod{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -110,7 +110,7 @@ func (m *ItemAuthenticationQrCodePinMethodRequestBuilder) TemporaryQRCode()(*Ite
 // ToDeleteRequestInformation deletes user's qrCodePinAuthenticationMethod object. Once the object is deleted, it can't be retrieved. The user won't be able to sign-in with any QR codes associated with the deleted object. 
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationQrCodePinMethodRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationQrCodePinMethodRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/authentication/qrCodePinMethod", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +121,7 @@ func (m *ItemAuthenticationQrCodePinMethodRequestBuilder) ToDeleteRequestInforma
 // ToGetRequestInformation retrieve a user's qrCodePinAuthenticationMethod object.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationQrCodePinMethodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationQrCodePinMethodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/authentication/qrCodePinMethod{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

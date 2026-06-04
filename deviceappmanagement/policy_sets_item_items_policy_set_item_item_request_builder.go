@@ -47,7 +47,7 @@ type PolicySetsItemItemsPolicySetItemItemRequestBuilderPatchRequestConfiguration
 // NewPolicySetsItemItemsPolicySetItemItemRequestBuilderInternal instantiates a new PolicySetsItemItemsPolicySetItemItemRequestBuilder and sets the default values.
 func NewPolicySetsItemItemsPolicySetItemItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PolicySetsItemItemsPolicySetItemItemRequestBuilder) {
     m := &PolicySetsItemItemsPolicySetItemItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/items/{policySetItem%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/items/{policySetItem%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *PolicySetsItemItemsPolicySetItemItemRequestBuilder) ToDeleteRequestInfo
 // ToGetRequestInformation items of the PolicySet with maximum count 100.
 // returns a *RequestInformation when successful
 func (m *PolicySetsItemItemsPolicySetItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PolicySetsItemItemsPolicySetItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/items/{policySetItem%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

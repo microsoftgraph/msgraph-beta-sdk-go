@@ -47,7 +47,7 @@ type AccessReviewPolicyRequestBuilderPatchRequestConfiguration struct {
 // NewAccessReviewPolicyRequestBuilderInternal instantiates a new AccessReviewPolicyRequestBuilder and sets the default values.
 func NewAccessReviewPolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewPolicyRequestBuilder) {
     m := &AccessReviewPolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/accessReviewPolicy{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/accessReviewPolicy", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *AccessReviewPolicyRequestBuilder) ToDeleteRequestInformation(ctx contex
 // ToGetRequestInformation read the properties and relationships of an accessReviewPolicy object.
 // returns a *RequestInformation when successful
 func (m *AccessReviewPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/accessReviewPolicy{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

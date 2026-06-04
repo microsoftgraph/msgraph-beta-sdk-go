@@ -47,7 +47,7 @@ type BusinessFlowTemplateItemRequestBuilderPatchRequestConfiguration struct {
 // NewBusinessFlowTemplateItemRequestBuilderInternal instantiates a new BusinessFlowTemplateItemRequestBuilder and sets the default values.
 func NewBusinessFlowTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BusinessFlowTemplateItemRequestBuilder) {
     m := &BusinessFlowTemplateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/businessFlowTemplates/{businessFlowTemplate%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/businessFlowTemplates/{businessFlowTemplate%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *BusinessFlowTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx 
 // ToGetRequestInformation get entity from businessFlowTemplates by key
 // returns a *RequestInformation when successful
 func (m *BusinessFlowTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessFlowTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/businessFlowTemplates/{businessFlowTemplate%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

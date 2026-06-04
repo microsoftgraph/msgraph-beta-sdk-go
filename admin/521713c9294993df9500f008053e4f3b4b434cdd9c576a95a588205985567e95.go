@@ -47,7 +47,7 @@ type WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableCont
 // NewWindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilderInternal instantiates a new WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder) {
     m := &WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices/{applicableContentDeviceMatch%2DdeviceId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices/{applicableContentDeviceMatch%2DdeviceId}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicable
 // ToGetRequestInformation collection of devices and recommendations for applicable catalog content.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemApplicableContentItemMatchedDevicesApplicableContentDeviceMatchDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/windows/updates/policies/{policy%2Did}/applicableContent/{applicableContent%2DcatalogEntryId}/matchedDevices/{applicableContentDeviceMatch%2DdeviceId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

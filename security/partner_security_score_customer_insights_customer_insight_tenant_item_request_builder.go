@@ -47,7 +47,7 @@ type PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilder
 // NewPartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilderInternal instantiates a new PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilder and sets the default values.
 func NewPartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilder) {
     m := &PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore/customerInsights/{customerInsight%2DtenantId}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/partner/securityScore/customerInsights/{customerInsight%2DtenantId}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBui
 // ToGetRequestInformation contains customer-specific information for certain requirements.
 // returns a *RequestInformation when successful
 func (m *PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnerSecurityScoreCustomerInsightsCustomerInsightTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/partner/securityScore/customerInsights/{customerInsight%2DtenantId}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

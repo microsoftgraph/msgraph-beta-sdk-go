@@ -47,7 +47,7 @@ type ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration struc
 // NewItemProfilePhonesItemPhoneItemRequestBuilderInternal instantiates a new ItemProfilePhonesItemPhoneItemRequestBuilder and sets the default values.
 func NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     m := &ItemProfilePhonesItemPhoneItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToDeleteRequestInformatio
 // ToGetRequestInformation represents detailed information about phone numbers associated with a user in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/profile/phones/{itemPhone%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

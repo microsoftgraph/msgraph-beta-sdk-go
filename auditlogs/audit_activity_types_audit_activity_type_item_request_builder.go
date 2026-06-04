@@ -47,7 +47,7 @@ type AuditActivityTypesAuditActivityTypeItemRequestBuilderPatchRequestConfigurat
 // NewAuditActivityTypesAuditActivityTypeItemRequestBuilderInternal instantiates a new AuditActivityTypesAuditActivityTypeItemRequestBuilder and sets the default values.
 func NewAuditActivityTypesAuditActivityTypeItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditActivityTypesAuditActivityTypeItemRequestBuilder) {
     m := &AuditActivityTypesAuditActivityTypeItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *AuditActivityTypesAuditActivityTypeItemRequestBuilder) ToDeleteRequestI
 // ToGetRequestInformation represents an audit activity type which includes the associated service and category for a specific activity.
 // returns a *RequestInformation when successful
 func (m *AuditActivityTypesAuditActivityTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditActivityTypesAuditActivityTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/auditLogs/auditActivityTypes/{auditActivityType%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

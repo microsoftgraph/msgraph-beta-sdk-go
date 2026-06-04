@@ -47,7 +47,7 @@ type TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration struct {
 // NewTenantGovernanceSettingsRequestBuilderInternal instantiates a new TenantGovernanceSettingsRequestBuilder and sets the default values.
 func NewTenantGovernanceSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceSettingsRequestBuilder) {
     m := &TenantGovernanceSettingsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/settings{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/settings", pathParameters),
     }
     return m
 }
@@ -138,7 +138,7 @@ func (m *TenantGovernanceSettingsRequestBuilder) ToDeleteRequestInformation(ctx 
 // ToGetRequestInformation read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directory/tenantGovernance/settings{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

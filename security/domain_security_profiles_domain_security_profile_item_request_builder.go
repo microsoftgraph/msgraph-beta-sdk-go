@@ -47,7 +47,7 @@ type DomainSecurityProfilesDomainSecurityProfileItemRequestBuilderPatchRequestCo
 // NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal instantiates a new DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder and sets the default values.
 func NewDomainSecurityProfilesDomainSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) {
     m := &DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) ToDelete
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *RequestInformation when successful
 func (m *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DomainSecurityProfilesDomainSecurityProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/domainSecurityProfiles/{domainSecurityProfile%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

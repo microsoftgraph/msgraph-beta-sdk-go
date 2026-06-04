@@ -47,7 +47,7 @@ type CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderPatchReque
 // NewCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderInternal instantiates a new CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder and sets the default values.
 func NewCloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
     m := &CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) ToDe
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *RequestInformation when successful
 func (m *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/cloudAppSecurityProfiles/{cloudAppSecurityProfile%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

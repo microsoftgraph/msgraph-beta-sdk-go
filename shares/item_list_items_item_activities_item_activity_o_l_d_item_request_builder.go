@@ -47,7 +47,7 @@ type ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilderPatchRequestCon
 // NewItemListItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal instantiates a new ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder and sets the default values.
 func NewItemListItemsItemActivitiesItemActivityOLDItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder) {
     m := &ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}", pathParameters),
     }
     return m
 }
@@ -137,7 +137,7 @@ func (m *ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder) ToDeleteR
 // ToGetRequestInformation the list of recent activities that took place on this item.
 // returns a *RequestInformation when successful
 func (m *ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemActivityOLDItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/activities/{itemActivityOLD%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

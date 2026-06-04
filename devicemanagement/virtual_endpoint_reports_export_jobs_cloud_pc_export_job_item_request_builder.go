@@ -47,7 +47,7 @@ type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderPatchRequ
 // NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal instantiates a new VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder and sets the default values.
 func NewVirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) {
     m := &VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJob%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJob%2Did}", pathParameters),
     }
     return m
 }
@@ -130,7 +130,7 @@ func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) ToD
 // ToGetRequestInformation read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/virtualEndpoint/reports/exportJobs/{cloudPcExportJob%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

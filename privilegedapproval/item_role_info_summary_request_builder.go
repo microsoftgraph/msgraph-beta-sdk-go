@@ -47,7 +47,7 @@ type ItemRoleInfoSummaryRequestBuilderPatchRequestConfiguration struct {
 // NewItemRoleInfoSummaryRequestBuilderInternal instantiates a new ItemRoleInfoSummaryRequestBuilder and sets the default values.
 func NewItemRoleInfoSummaryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRoleInfoSummaryRequestBuilder) {
     m := &ItemRoleInfoSummaryRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/roleInfo/summary{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/roleInfo/summary", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *ItemRoleInfoSummaryRequestBuilder) ToDeleteRequestInformation(ctx conte
 // ToGetRequestInformation get summary from privilegedApproval
 // returns a *RequestInformation when successful
 func (m *ItemRoleInfoSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleInfoSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/roleInfo/summary{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

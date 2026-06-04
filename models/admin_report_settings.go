@@ -48,7 +48,29 @@ func (m *AdminReportSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["sharePoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharePointReportSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharePoint(val.(SharePointReportSettingsable))
+        }
+        return nil
+    }
     return res
+}
+// GetSharePoint gets the sharePoint property value. A container for SharePoint-specific report settings. Access the SharePoint API usage report metrics through the operations defined on the sharePointReportSettings resource type.
+// returns a SharePointReportSettingsable when successful
+func (m *AdminReportSettings) GetSharePoint()(SharePointReportSettingsable) {
+    val, err := m.GetBackingStore().Get("sharePoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharePointReportSettingsable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AdminReportSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,6 +84,12 @@ func (m *AdminReportSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("sharePoint", m.GetSharePoint())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDisplayConcealedNames sets the displayConcealedNames property value. If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
@@ -71,9 +99,18 @@ func (m *AdminReportSettings) SetDisplayConcealedNames(value *bool)() {
         panic(err)
     }
 }
+// SetSharePoint sets the sharePoint property value. A container for SharePoint-specific report settings. Access the SharePoint API usage report metrics through the operations defined on the sharePointReportSettings resource type.
+func (m *AdminReportSettings) SetSharePoint(value SharePointReportSettingsable)() {
+    err := m.GetBackingStore().Set("sharePoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AdminReportSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayConcealedNames()(*bool)
+    GetSharePoint()(SharePointReportSettingsable)
     SetDisplayConcealedNames(value *bool)()
+    SetSharePoint(value SharePointReportSettingsable)()
 }

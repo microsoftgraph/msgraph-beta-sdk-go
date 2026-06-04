@@ -47,7 +47,7 @@ type GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBu
 // NewGroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderInternal instantiates a new GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder and sets the default values.
 func NewGroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder) {
     m := &GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/presentations/{groupPolicyPresentation%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/presentations/{groupPolicyPresentation%2Did}", pathParameters),
     }
     return m
 }
@@ -132,7 +132,7 @@ func (m *GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemReque
 // ToGetRequestInformation the group policy presentations associated with the definition.
 // returns a *RequestInformation when successful
 func (m *GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GroupPolicyDefinitionsItemPresentationsGroupPolicyPresentationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition%2Did}/presentations/{groupPolicyPresentation%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

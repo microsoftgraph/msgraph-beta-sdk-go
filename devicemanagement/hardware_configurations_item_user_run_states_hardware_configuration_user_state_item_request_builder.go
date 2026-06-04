@@ -47,7 +47,7 @@ type HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRe
 // NewHardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderInternal instantiates a new HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder and sets the default values.
 func NewHardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder) {
     m := &HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/userRunStates/{hardwareConfigurationUserState%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/userRunStates/{hardwareConfigurationUserState%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateIt
 // ToGetRequestInformation list of run states for the hardware configuration across all users. Read-Only.
 // returns a *RequestInformation when successful
 func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/hardwareConfigurations/{hardwareConfiguration%2Did}/userRunStates/{hardwareConfigurationUserState%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

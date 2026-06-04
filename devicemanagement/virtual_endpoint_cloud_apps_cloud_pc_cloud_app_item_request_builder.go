@@ -47,7 +47,7 @@ type VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderPatchRequestConfig
 // NewVirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderInternal instantiates a new VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder and sets the default values.
 func NewVirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) {
     m := &VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}", pathParameters),
     }
     return m
 }
@@ -57,8 +57,11 @@ func NewVirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property cloudApps for deviceManagement
+// Delete delete a cloudPcCloudApp object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-delete?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable), nil
 }
-// ToDeleteRequestInformation delete navigation property cloudApps for deviceManagement
+// ToDeleteRequestInformation delete a cloudPcCloudApp object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +136,7 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToDeleteRequ
 // ToGetRequestInformation read the properties of a specific cloudPcCloudApp object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/virtualEndpoint/cloudApps/{cloudPcCloudApp%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

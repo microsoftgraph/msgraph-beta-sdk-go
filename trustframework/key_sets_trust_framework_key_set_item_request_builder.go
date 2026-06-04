@@ -47,7 +47,7 @@ type KeySetsTrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration stru
 // NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal instantiates a new KeySetsTrustFrameworkKeySetItemRequestBuilder and sets the default values.
 func NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*KeySetsTrustFrameworkKeySetItemRequestBuilder) {
     m := &KeySetsTrustFrameworkKeySetItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}", pathParameters),
     }
     return m
 }
@@ -151,7 +151,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToDeleteRequestInformati
 // ToGetRequestInformation retrieve the properties and associations for a Trustframeworkkeyset.
 // returns a *RequestInformation when successful
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

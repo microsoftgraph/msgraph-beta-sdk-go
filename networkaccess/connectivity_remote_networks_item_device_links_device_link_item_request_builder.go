@@ -47,7 +47,7 @@ type ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderPatchR
 // NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderInternal instantiates a new ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder and sets the default values.
 func NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) {
     m := &ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/deviceLinks/{deviceLink%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/deviceLinks/{deviceLink%2Did}", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
 // ToGetRequestInformation retrieves a specific device link associated with a remote network.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/deviceLinks/{deviceLink%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

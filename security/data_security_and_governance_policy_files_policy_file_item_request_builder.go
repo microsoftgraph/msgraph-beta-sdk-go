@@ -47,7 +47,7 @@ type DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilderPatchReques
 // NewDataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilderInternal instantiates a new DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilder and sets the default values.
 func NewDataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilder) {
     m := &DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance/policyFiles/{policyFile%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/dataSecurityAndGovernance/policyFiles/{policyFile%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilder) ToDel
 // ToGetRequestInformation get policyFiles from security
 // returns a *RequestInformation when successful
 func (m *DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataSecurityAndGovernancePolicyFilesPolicyFileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/security/dataSecurityAndGovernance/policyFiles/{policyFile%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

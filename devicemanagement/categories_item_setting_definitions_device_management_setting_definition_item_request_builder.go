@@ -47,7 +47,7 @@ type CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemReques
 // NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal instantiates a new CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder and sets the default values.
 func NewCategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) {
     m := &CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/categories/{deviceManagementSettingCategory%2Did}/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/categories/{deviceManagementSettingCategory%2Did}/settingDefinitions/{deviceManagementSettingDefinition%2Did}", pathParameters),
     }
     return m
 }
@@ -127,7 +127,7 @@ func (m *CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRe
 // ToGetRequestInformation the setting definitions this category contains
 // returns a *RequestInformation when successful
 func (m *CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CategoriesItemSettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/deviceManagement/categories/{deviceManagementSettingCategory%2Did}/settingDefinitions/{deviceManagementSettingDefinition%2Did}{?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

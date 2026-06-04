@@ -47,7 +47,7 @@ type VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilderPatchRequestC
 // NewVirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder and sets the default values.
 func NewVirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, joinWebUrl *string)(*VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder) {
     m := &VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions(joinWebUrl='{joinWebUrl}')", pathParameters),
     }
     if joinWebUrl != nil {
         m.BaseRequestBuilder.PathParameters["joinWebUrl"] = *joinWebUrl
@@ -130,7 +130,7 @@ func (m *VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder) ToDelet
 // ToGetRequestInformation the sessions for the virtual event.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))

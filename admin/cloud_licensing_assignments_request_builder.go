@@ -64,7 +64,7 @@ func (m *CloudLicensingAssignmentsRequestBuilder) ByAssignmentId(assignmentId st
 // NewCloudLicensingAssignmentsRequestBuilderInternal instantiates a new CloudLicensingAssignmentsRequestBuilder and sets the default values.
 func NewCloudLicensingAssignmentsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CloudLicensingAssignmentsRequestBuilder) {
     m := &CloudLicensingAssignmentsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/admin/cloudLicensing/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "", pathParameters),
     }
     return m
 }
@@ -133,7 +133,7 @@ func (m *CloudLicensingAssignmentsRequestBuilder) Post(ctx context.Context, body
 // ToGetRequestInformation get a list of license assignment objects within an organization.
 // returns a *RequestInformation when successful
 func (m *CloudLicensingAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudLicensingAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/admin/cloudLicensing/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         if requestConfiguration.QueryParameters != nil {
             requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
@@ -147,7 +147,7 @@ func (m *CloudLicensingAssignmentsRequestBuilder) ToGetRequestInformation(ctx co
 // ToPostRequestInformation create a new license assignment by posting to the assignments collection of an organization. An assignment must always have a direct relationship to an allotment and to a user or group. If an assignment is created by posting to the central assignments collection located at /admin/cloudLicensing/assignments, both of those relationships must be established in the request body. Assignments can also be created by posting to the assignments collection of an allotment, the assignments collection of a user or the assignments collection of a group.
 // returns a *RequestInformation when successful
 func (m *CloudLicensingAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body idfad4f7a1b5606c8a03a0f518dcbdedafbb865f059d128987f178e03f81de16c.Assignmentable, requestConfiguration *CloudLicensingAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/admin/cloudLicensing/assignments", m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

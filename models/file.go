@@ -79,6 +79,16 @@ func (m *File) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["lockInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLockInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockInfo(val.(LockInfoable))
+        }
+        return nil
+    }
     res["mimeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +130,18 @@ func (m *File) GetHashes()(Hashesable) {
     }
     if val != nil {
         return val.(Hashesable)
+    }
+    return nil
+}
+// GetLockInfo gets the lockInfo property value. The lockInfo property
+// returns a LockInfoable when successful
+func (m *File) GetLockInfo()(LockInfoable) {
+    val, err := m.GetBackingStore().Get("lockInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LockInfoable)
     }
     return nil
 }
@@ -175,6 +197,12 @@ func (m *File) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err := writer.WriteObjectValue("lockInfo", m.GetLockInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("mimeType", m.GetMimeType())
         if err != nil {
             return err
@@ -225,6 +253,13 @@ func (m *File) SetHashes(value Hashesable)() {
         panic(err)
     }
 }
+// SetLockInfo sets the lockInfo property value. The lockInfo property
+func (m *File) SetLockInfo(value LockInfoable)() {
+    err := m.GetBackingStore().Set("lockInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMimeType sets the mimeType property value. The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
 func (m *File) SetMimeType(value *string)() {
     err := m.GetBackingStore().Set("mimeType", value)
@@ -253,12 +288,14 @@ type Fileable interface {
     GetArchiveStatus()(*FileArchiveStatus)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetHashes()(Hashesable)
+    GetLockInfo()(LockInfoable)
     GetMimeType()(*string)
     GetOdataType()(*string)
     GetProcessingMetadata()(*bool)
     SetArchiveStatus(value *FileArchiveStatus)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetHashes(value Hashesable)()
+    SetLockInfo(value LockInfoable)()
     SetMimeType(value *string)()
     SetOdataType(value *string)()
     SetProcessingMetadata(value *bool)()
