@@ -110,7 +110,7 @@ func (m *SharePointProtectionPolicy) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetSiteExclusionUnits gets the siteExclusionUnits property value. The siteExclusionUnits property
+// GetSiteExclusionUnits gets the siteExclusionUnits property value. The site exclusion units associated with the SharePoint protection policy.
 // returns a []SiteExclusionUnitable when successful
 func (m *SharePointProtectionPolicy) GetSiteExclusionUnits()([]SiteExclusionUnitable) {
     val, err := m.GetBackingStore().Get("siteExclusionUnits")
@@ -122,7 +122,7 @@ func (m *SharePointProtectionPolicy) GetSiteExclusionUnits()([]SiteExclusionUnit
     }
     return nil
 }
-// GetSiteExclusionUnitsBulkAdditionJobs gets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+// GetSiteExclusionUnitsBulkAdditionJobs gets the siteExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for site exclusion units associated with the SharePoint protection policy.
 // returns a []SiteExclusionUnitsBulkAdditionJobable when successful
 func (m *SharePointProtectionPolicy) GetSiteExclusionUnitsBulkAdditionJobs()([]SiteExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("siteExclusionUnitsBulkAdditionJobs")
@@ -238,14 +238,14 @@ func (m *SharePointProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetSiteExclusionUnits sets the siteExclusionUnits property value. The siteExclusionUnits property
+// SetSiteExclusionUnits sets the siteExclusionUnits property value. The site exclusion units associated with the SharePoint protection policy.
 func (m *SharePointProtectionPolicy) SetSiteExclusionUnits(value []SiteExclusionUnitable)() {
     err := m.GetBackingStore().Set("siteExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteExclusionUnitsBulkAdditionJobs sets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+// SetSiteExclusionUnitsBulkAdditionJobs sets the siteExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for site exclusion units associated with the SharePoint protection policy.
 func (m *SharePointProtectionPolicy) SetSiteExclusionUnitsBulkAdditionJobs(value []SiteExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("siteExclusionUnitsBulkAdditionJobs", value)
     if err != nil {

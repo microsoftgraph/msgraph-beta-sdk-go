@@ -14,7 +14,7 @@ import (
 type ItemCloudPcPoolsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudPcPoolsRequestBuilderGetQueryParameters get cloudPcPools from users
+// ItemCloudPcPoolsRequestBuilderGetQueryParameters the user's Cloud PC pools. Read-only. Nullable.
 type ItemCloudPcPoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewItemCloudPcPoolsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemCloudPcPoolsRequestBuilder) Count()(*ItemCloudPcPoolsCountRequestBuilder) {
     return NewItemCloudPcPoolsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get cloudPcPools from users
+// Get the user's Cloud PC pools. Read-only. Nullable.
 // returns a CloudPcPoolCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPcPoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPcPoolsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemCloudPcPoolsRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPoolable), nil
 }
-// ToGetRequestInformation get cloudPcPools from users
+// ToGetRequestInformation the user's Cloud PC pools. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPcPoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPcPoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

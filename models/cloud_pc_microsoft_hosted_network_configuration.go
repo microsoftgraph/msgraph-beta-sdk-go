@@ -68,7 +68,7 @@ func (m *CloudPcMicrosoftHostedNetworkConfiguration) GetGeographicLocationType()
     }
     return nil
 }
-// GetRegionGroups gets the regionGroups property value. The regionGroups property
+// GetRegionGroups gets the regionGroups property value. The region group configurations for the network.
 // returns a []CloudPcRegionGroupConfigurationable when successful
 func (m *CloudPcMicrosoftHostedNetworkConfiguration) GetRegionGroups()([]CloudPcRegionGroupConfigurationable) {
     val, err := m.GetBackingStore().Get("regionGroups")
@@ -114,7 +114,7 @@ func (m *CloudPcMicrosoftHostedNetworkConfiguration) SetGeographicLocationType(v
         panic(err)
     }
 }
-// SetRegionGroups sets the regionGroups property value. The regionGroups property
+// SetRegionGroups sets the regionGroups property value. The region group configurations for the network.
 func (m *CloudPcMicrosoftHostedNetworkConfiguration) SetRegionGroups(value []CloudPcRegionGroupConfigurationable)() {
     err := m.GetBackingStore().Set("regionGroups", value)
     if err != nil {
