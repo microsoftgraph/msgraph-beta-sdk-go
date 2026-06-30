@@ -89,6 +89,16 @@ func (m *DeviceCompliancePolicyScript) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["runIntervalInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunIntervalInMinutes(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -115,6 +125,18 @@ func (m *DeviceCompliancePolicyScript) GetRulesContent()([]byte) {
     }
     return nil
 }
+// GetRunIntervalInMinutes gets the runIntervalInMinutes property value. Indicates the interval, in minutes, at which the custom compliance script is evaluated on the device. Allowed range from 1 to 480. Nullable.
+// returns a *int32 when successful
+func (m *DeviceCompliancePolicyScript) GetRunIntervalInMinutes()(*int32) {
+    val, err := m.GetBackingStore().Get("runIntervalInMinutes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DeviceCompliancePolicyScript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -131,6 +153,12 @@ func (m *DeviceCompliancePolicyScript) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteByteArrayValue("rulesContent", m.GetRulesContent())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("runIntervalInMinutes", m.GetRunIntervalInMinutes())
         if err != nil {
             return err
         }
@@ -175,6 +203,13 @@ func (m *DeviceCompliancePolicyScript) SetRulesContent(value []byte)() {
         panic(err)
     }
 }
+// SetRunIntervalInMinutes sets the runIntervalInMinutes property value. Indicates the interval, in minutes, at which the custom compliance script is evaluated on the device. Allowed range from 1 to 480. Nullable.
+func (m *DeviceCompliancePolicyScript) SetRunIntervalInMinutes(value *int32)() {
+    err := m.GetBackingStore().Set("runIntervalInMinutes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type DeviceCompliancePolicyScriptable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -183,8 +218,10 @@ type DeviceCompliancePolicyScriptable interface {
     GetDeviceComplianceScriptId()(*string)
     GetOdataType()(*string)
     GetRulesContent()([]byte)
+    GetRunIntervalInMinutes()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceComplianceScriptId(value *string)()
     SetOdataType(value *string)()
     SetRulesContent(value []byte)()
+    SetRunIntervalInMinutes(value *int32)()
 }

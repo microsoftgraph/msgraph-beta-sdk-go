@@ -178,7 +178,7 @@ func (m *VirtualEventTownhall) GetIsInviteOnly()(*bool) {
     }
     return nil
 }
-// GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// GetRegistrationConfiguration gets the registrationConfiguration property value. Registration configuration of the town hall.
 // returns a VirtualEventTownhallRegistrationConfigurationable when successful
 func (m *VirtualEventTownhall) GetRegistrationConfiguration()(VirtualEventTownhallRegistrationConfigurationable) {
     val, err := m.GetBackingStore().Get("registrationConfiguration")
@@ -190,7 +190,7 @@ func (m *VirtualEventTownhall) GetRegistrationConfiguration()(VirtualEventTownha
     }
     return nil
 }
-// GetRegistrations gets the registrations property value. The registrations property
+// GetRegistrations gets the registrations property value. Registration records of the town hall.
 // returns a []VirtualEventRegistrationable when successful
 func (m *VirtualEventTownhall) GetRegistrations()([]VirtualEventRegistrationable) {
     val, err := m.GetBackingStore().Get("registrations")
@@ -306,14 +306,14 @@ func (m *VirtualEventTownhall) SetIsInviteOnly(value *bool)() {
         panic(err)
     }
 }
-// SetRegistrationConfiguration sets the registrationConfiguration property value. The registrationConfiguration property
+// SetRegistrationConfiguration sets the registrationConfiguration property value. Registration configuration of the town hall.
 func (m *VirtualEventTownhall) SetRegistrationConfiguration(value VirtualEventTownhallRegistrationConfigurationable)() {
     err := m.GetBackingStore().Set("registrationConfiguration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegistrations sets the registrations property value. The registrations property
+// SetRegistrations sets the registrations property value. Registration records of the town hall.
 func (m *VirtualEventTownhall) SetRegistrations(value []VirtualEventRegistrationable)() {
     err := m.GetBackingStore().Set("registrations", value)
     if err != nil {

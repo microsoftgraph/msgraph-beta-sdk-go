@@ -261,6 +261,36 @@ func (m *Subscription) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["vapidPublicKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVapidPublicKey(val)
+        }
+        return nil
+    }
+    res["webPushEncryptionP256dhPublicKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebPushEncryptionP256dhPublicKey(val)
+        }
+        return nil
+    }
+    res["webPushEncryptionSecret"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWebPushEncryptionSecret(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIncludeResourceData gets the includeResourceData property value. Optional. When set to true, change notifications include resource data (such as content of a chat message).
@@ -351,6 +381,42 @@ func (m *Subscription) GetNotificationUrlAppId()(*string) {
 // returns a *string when successful
 func (m *Subscription) GetResource()(*string) {
     val, err := m.GetBackingStore().Get("resource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetVapidPublicKey gets the vapidPublicKey property value. The vapidPublicKey property
+// returns a *string when successful
+func (m *Subscription) GetVapidPublicKey()(*string) {
+    val, err := m.GetBackingStore().Get("vapidPublicKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWebPushEncryptionP256dhPublicKey gets the webPushEncryptionP256dhPublicKey property value. The webPushEncryptionP256dhPublicKey property
+// returns a *string when successful
+func (m *Subscription) GetWebPushEncryptionP256dhPublicKey()(*string) {
+    val, err := m.GetBackingStore().Get("webPushEncryptionP256dhPublicKey")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetWebPushEncryptionSecret gets the webPushEncryptionSecret property value. The webPushEncryptionSecret property
+// returns a *string when successful
+func (m *Subscription) GetWebPushEncryptionSecret()(*string) {
+    val, err := m.GetBackingStore().Get("webPushEncryptionSecret")
     if err != nil {
         panic(err)
     }
@@ -451,6 +517,24 @@ func (m *Subscription) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err = writer.WriteStringValue("resource", m.GetResource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("vapidPublicKey", m.GetVapidPublicKey())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("webPushEncryptionP256dhPublicKey", m.GetWebPushEncryptionP256dhPublicKey())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("webPushEncryptionSecret", m.GetWebPushEncryptionSecret())
         if err != nil {
             return err
         }
@@ -562,6 +646,27 @@ func (m *Subscription) SetResource(value *string)() {
         panic(err)
     }
 }
+// SetVapidPublicKey sets the vapidPublicKey property value. The vapidPublicKey property
+func (m *Subscription) SetVapidPublicKey(value *string)() {
+    err := m.GetBackingStore().Set("vapidPublicKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWebPushEncryptionP256dhPublicKey sets the webPushEncryptionP256dhPublicKey property value. The webPushEncryptionP256dhPublicKey property
+func (m *Subscription) SetWebPushEncryptionP256dhPublicKey(value *string)() {
+    err := m.GetBackingStore().Set("webPushEncryptionP256dhPublicKey", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWebPushEncryptionSecret sets the webPushEncryptionSecret property value. The webPushEncryptionSecret property
+func (m *Subscription) SetWebPushEncryptionSecret(value *string)() {
+    err := m.GetBackingStore().Set("webPushEncryptionSecret", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Subscriptionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -580,6 +685,9 @@ type Subscriptionable interface {
     GetNotificationUrl()(*string)
     GetNotificationUrlAppId()(*string)
     GetResource()(*string)
+    GetVapidPublicKey()(*string)
+    GetWebPushEncryptionP256dhPublicKey()(*string)
+    GetWebPushEncryptionSecret()(*string)
     SetApplicationId(value *string)()
     SetChangeType(value *string)()
     SetClientState(value *string)()
@@ -595,4 +703,7 @@ type Subscriptionable interface {
     SetNotificationUrl(value *string)()
     SetNotificationUrlAppId(value *string)()
     SetResource(value *string)()
+    SetVapidPublicKey(value *string)()
+    SetWebPushEncryptionP256dhPublicKey(value *string)()
+    SetWebPushEncryptionSecret(value *string)()
 }

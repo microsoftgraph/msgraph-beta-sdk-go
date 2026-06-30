@@ -38,7 +38,7 @@ func (m *RedirectUriPlatformAllowedDomainConfiguration) GetAdditionalData()(map[
     }
     return val.(map[string]any)
 }
-// GetAllowedDomains gets the allowedDomains property value. The allowedDomains property
+// GetAllowedDomains gets the allowedDomains property value. Collection of domain names that are allowed for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 // returns a []string when successful
 func (m *RedirectUriPlatformAllowedDomainConfiguration) GetAllowedDomains()([]string) {
     val, err := m.GetBackingStore().Get("allowedDomains")
@@ -128,7 +128,7 @@ func (m *RedirectUriPlatformAllowedDomainConfiguration) SetAdditionalData(value 
         panic(err)
     }
 }
-// SetAllowedDomains sets the allowedDomains property value. The allowedDomains property
+// SetAllowedDomains sets the allowedDomains property value. Collection of domain names that are allowed for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 func (m *RedirectUriPlatformAllowedDomainConfiguration) SetAllowedDomains(value []string)() {
     err := m.GetBackingStore().Set("allowedDomains", value)
     if err != nil {

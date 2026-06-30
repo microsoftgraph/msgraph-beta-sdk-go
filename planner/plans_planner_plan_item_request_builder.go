@@ -119,6 +119,11 @@ func (m *PlansPlannerPlanItemRequestBuilder) Get(ctx context.Context, requestCon
 func (m *PlansPlannerPlanItemRequestBuilder) GetUsageRights()(*PlansItemGetUsageRightsRequestBuilder) {
     return NewPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// HistoryItems provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.
+// returns a *PlansItemHistoryItemsRequestBuilder when successful
+func (m *PlansPlannerPlanItemRequestBuilder) HistoryItems()(*PlansItemHistoryItemsRequestBuilder) {
+    return NewPlansItemHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MoveToContainer provides operations to call the moveToContainer method.
 // returns a *PlansItemMoveToContainerRequestBuilder when successful
 func (m *PlansPlannerPlanItemRequestBuilder) MoveToContainer()(*PlansItemMoveToContainerRequestBuilder) {

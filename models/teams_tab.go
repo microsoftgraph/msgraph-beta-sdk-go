@@ -170,7 +170,7 @@ func (m *TeamsTab) GetTeamsAppId()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read only.
+// GetWebUrl gets the webUrl property value. Deep link URL of the tab instance. Read-only.
 // returns a *string when successful
 func (m *TeamsTab) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -274,7 +274,7 @@ func (m *TeamsTab) SetTeamsAppId(value *string)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. Deep link URL of the tab instance. Read only.
+// SetWebUrl sets the webUrl property value. Deep link URL of the tab instance. Read-only.
 func (m *TeamsTab) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

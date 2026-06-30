@@ -43,10 +43,38 @@ func (m *OrganizationalScope) GetAdditionalData()(map[string]any) {
 func (m *OrganizationalScope) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetDeviceGroups gets the deviceGroups property value. List of device groups to which the custom detection rule applies.
+// returns a []string when successful
+func (m *OrganizationalScope) GetDeviceGroups()([]string) {
+    val, err := m.GetBackingStore().Get("deviceGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OrganizationalScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["deviceGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetDeviceGroups(res)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,7 +125,7 @@ func (m *OrganizationalScope) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScopeNames gets the scopeNames property value. List of groups to which the custom detection rule applies.
+// GetScopeNames gets the scopeNames property value. List of groups to which the custom detection rule applies. Deprecated. Use deviceGroups instead. This property will be removed from this resource on October 1, 2026.
 // returns a []string when successful
 func (m *OrganizationalScope) GetScopeNames()([]string) {
     val, err := m.GetBackingStore().Get("scopeNames")
@@ -123,6 +151,12 @@ func (m *OrganizationalScope) GetScopeType()(*ScopeType) {
 }
 // Serialize serializes information the current object
 func (m *OrganizationalScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetDeviceGroups() != nil {
+        err := writer.WriteCollectionOfStringValues("deviceGroups", m.GetDeviceGroups())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -161,6 +195,13 @@ func (m *OrganizationalScope) SetAdditionalData(value map[string]any)() {
 func (m *OrganizationalScope) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetDeviceGroups sets the deviceGroups property value. List of device groups to which the custom detection rule applies.
+func (m *OrganizationalScope) SetDeviceGroups(value []string)() {
+    err := m.GetBackingStore().Set("deviceGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *OrganizationalScope) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -168,7 +209,7 @@ func (m *OrganizationalScope) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScopeNames sets the scopeNames property value. List of groups to which the custom detection rule applies.
+// SetScopeNames sets the scopeNames property value. List of groups to which the custom detection rule applies. Deprecated. Use deviceGroups instead. This property will be removed from this resource on October 1, 2026.
 func (m *OrganizationalScope) SetScopeNames(value []string)() {
     err := m.GetBackingStore().Set("scopeNames", value)
     if err != nil {
@@ -187,10 +228,12 @@ type OrganizationalScopeable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDeviceGroups()([]string)
     GetOdataType()(*string)
     GetScopeNames()([]string)
     GetScopeType()(*ScopeType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDeviceGroups(value []string)()
     SetOdataType(value *string)()
     SetScopeNames(value []string)()
     SetScopeType(value *ScopeType)()

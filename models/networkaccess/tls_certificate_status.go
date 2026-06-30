@@ -13,10 +13,12 @@ const (
     EXPIRED_TLSCERTIFICATESTATUS
     ENABLED_TLSCERTIFICATESTATUS
     DISABLED_TLSCERTIFICATESTATUS
+    CREATING_TLSCERTIFICATESTATUS
+    REVOKED_TLSCERTIFICATESTATUS
 )
 
 func (i TlsCertificateStatus) String() string {
-    return []string{"csrGenerated", "enrolling", "active", "unknownFutureValue", "expiring", "expired", "enabled", "disabled"}[i]
+    return []string{"csrGenerated", "enrolling", "active", "unknownFutureValue", "expiring", "expired", "enabled", "disabled", "creating", "revoked"}[i]
 }
 func ParseTlsCertificateStatus(v string) (any, error) {
     result := CSRGENERATED_TLSCERTIFICATESTATUS
@@ -37,6 +39,10 @@ func ParseTlsCertificateStatus(v string) (any, error) {
             result = ENABLED_TLSCERTIFICATESTATUS
         case "disabled":
             result = DISABLED_TLSCERTIFICATESTATUS
+        case "creating":
+            result = CREATING_TLSCERTIFICATESTATUS
+        case "revoked":
+            result = REVOKED_TLSCERTIFICATESTATUS
         default:
             return nil, nil
     }

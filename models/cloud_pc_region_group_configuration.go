@@ -109,7 +109,7 @@ func (m *CloudPcRegionGroupConfiguration) GetRegionGroup()(*CloudPcRegionGroup) 
     }
     return nil
 }
-// GetRegions gets the regions property value. The regions property
+// GetRegions gets the regions property value. The list of region names within the region group. The default value is automatic.
 // returns a []string when successful
 func (m *CloudPcRegionGroupConfiguration) GetRegions()([]string) {
     val, err := m.GetBackingStore().Get("regions")
@@ -175,7 +175,7 @@ func (m *CloudPcRegionGroupConfiguration) SetRegionGroup(value *CloudPcRegionGro
         panic(err)
     }
 }
-// SetRegions sets the regions property value. The regions property
+// SetRegions sets the regions property value. The list of region names within the region group. The default value is automatic.
 func (m *CloudPcRegionGroupConfiguration) SetRegions(value []string)() {
     err := m.GetBackingStore().Set("regions", value)
     if err != nil {

@@ -93,6 +93,11 @@ func (m *TeamworkRequestBuilder) Get(ctx context.Context, requestConfiguration *
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
+// Messaging provides operations to manage the messaging property of the microsoft.graph.teamwork entity.
+// returns a *MessagingRequestBuilder when successful
+func (m *TeamworkRequestBuilder) Messaging()(*MessagingRequestBuilder) {
+    return NewMessagingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update teamwork
 // returns a Teamworkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

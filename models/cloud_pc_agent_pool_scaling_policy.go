@@ -79,7 +79,7 @@ func (m *CloudPcAgentPoolScalingPolicy) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetMaximumCount gets the maximumCount property value. The maximumCount property
+// GetMaximumCount gets the maximumCount property value. The maximum number of Cloud PCs in the pool. The valid values are 1 to 900, and must be greater than or equal to minimumCount.
 // returns a *int32 when successful
 func (m *CloudPcAgentPoolScalingPolicy) GetMaximumCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCount")
@@ -91,7 +91,7 @@ func (m *CloudPcAgentPoolScalingPolicy) GetMaximumCount()(*int32) {
     }
     return nil
 }
-// GetMinimumCount gets the minimumCount property value. The minimumCount property
+// GetMinimumCount gets the minimumCount property value. The minimum number of Cloud PCs in the pool. The valid values are 0 to 900, and must be less than or equal to maximumCount.
 // returns a *int32 when successful
 func (m *CloudPcAgentPoolScalingPolicy) GetMinimumCount()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCount")
@@ -154,14 +154,14 @@ func (m *CloudPcAgentPoolScalingPolicy) SetAdditionalData(value map[string]any)(
 func (m *CloudPcAgentPoolScalingPolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMaximumCount sets the maximumCount property value. The maximumCount property
+// SetMaximumCount sets the maximumCount property value. The maximum number of Cloud PCs in the pool. The valid values are 1 to 900, and must be greater than or equal to minimumCount.
 func (m *CloudPcAgentPoolScalingPolicy) SetMaximumCount(value *int32)() {
     err := m.GetBackingStore().Set("maximumCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumCount sets the minimumCount property value. The minimumCount property
+// SetMinimumCount sets the minimumCount property value. The minimum number of Cloud PCs in the pool. The valid values are 0 to 900, and must be less than or equal to maximumCount.
 func (m *CloudPcAgentPoolScalingPolicy) SetMinimumCount(value *int32)() {
     err := m.GetBackingStore().Set("minimumCount", value)
     if err != nil {

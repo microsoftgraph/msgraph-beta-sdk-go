@@ -123,6 +123,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemReques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
+// JoinedUsers provides operations to manage the joinedUsers property of the microsoft.graph.channel entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemJoinedUsersRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) JoinedUsers()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemJoinedUsersRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemJoinedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) Members()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRequestBuilder) {

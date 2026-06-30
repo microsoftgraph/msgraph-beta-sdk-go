@@ -20,7 +20,7 @@ const (
     UPGRADEINPROGRESS_MICROSOFTTUNNELSERVERHEALTHSTATUS
     // Indicates the failure of the upgrade during the upgrade cycle of when Intune begins upgrading servers, one server at a time
     UPGRADEFAILED_MICROSOFTTUNNELSERVERHEALTHSTATUS
-    // Evolvable enumeration sentinel value. Do not use.
+    // Evolvable enumeration sentinel value. Do not use enums.
     UNKNOWNFUTUREVALUE_MICROSOFTTUNNELSERVERHEALTHSTATUS
 )
 

@@ -35,7 +35,7 @@ func (m *Channel) GetAllMembers()([]ConversationMemberable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Read only. Timestamp at which the channel was created.
+// GetCreatedDateTime gets the createdDateTime property value. Read-only. Timestamp at which the channel was created.
 // returns a *Time when successful
 func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -198,6 +198,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetIsFavoriteByDefault(val)
+        }
+        return nil
+    }
+    res["joinedUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
+            }
+            m.SetJoinedUsers(res)
         }
         return nil
     }
@@ -390,6 +406,18 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetJoinedUsers gets the joinedUsers property value. The joinedUsers property
+// returns a []ConversationMemberable when successful
+func (m *Channel) GetJoinedUsers()([]ConversationMemberable) {
+    val, err := m.GetBackingStore().Get("joinedUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
     }
     return nil
 }
@@ -621,6 +649,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetJoinedUsers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetJoinedUsers()))
+        for i, v := range m.GetJoinedUsers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("joinedUsers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLayoutType() != nil {
         cast := (*m.GetLayoutType()).String()
         err = writer.WriteStringValue("layoutType", &cast)
@@ -735,7 +775,7 @@ func (m *Channel) SetAllMembers(value []ConversationMemberable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
+// SetCreatedDateTime sets the createdDateTime property value. Read-only. Timestamp at which the channel was created.
 func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -787,6 +827,13 @@ func (m *Channel) SetIsArchived(value *bool)() {
 // SetIsFavoriteByDefault sets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
 func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
     err := m.GetBackingStore().Set("isFavoriteByDefault", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetJoinedUsers sets the joinedUsers property value. The joinedUsers property
+func (m *Channel) SetJoinedUsers(value []ConversationMemberable)() {
+    err := m.GetBackingStore().Set("joinedUsers", value)
     if err != nil {
         panic(err)
     }
@@ -894,6 +941,7 @@ type Channelable interface {
     GetFilesFolder()(DriveItemable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
+    GetJoinedUsers()([]ConversationMemberable)
     GetLayoutType()(*ChannelLayoutType)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
@@ -916,6 +964,7 @@ type Channelable interface {
     SetFilesFolder(value DriveItemable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
+    SetJoinedUsers(value []ConversationMemberable)()
     SetLayoutType(value *ChannelLayoutType)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()

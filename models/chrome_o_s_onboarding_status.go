@@ -16,7 +16,7 @@ const (
     FAILED_CHROMEOSONBOARDINGSTATUS
     // Offboarding
     OFFBOARDING_CHROMEOSONBOARDINGSTATUS
-    // Evolvable enumeration sentinel value. Do not use.
+    // UnknownFutureValue
     UNKNOWNFUTUREVALUE_CHROMEOSONBOARDINGSTATUS
 )
 

@@ -14,7 +14,7 @@ import (
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters get driveExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
 type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,9 +72,12 @@ func NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnit
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder) Count()(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsCountRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get driveExclusionUnitsBulkAdditionJobs from solutions
+// Get get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
 // returns a DriveExclusionUnitsBulkAdditionJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-list-driveexclusionunitsbulkadditionjobs?view=graph-rest-beta
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +95,7 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUni
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobCollectionResponseable), nil
 }
-// ToGetRequestInformation get driveExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation get a list of drive exclusion units bulk addition jobs associated with a OneDrive for work or school protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

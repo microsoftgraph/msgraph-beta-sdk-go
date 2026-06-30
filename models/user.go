@@ -331,7 +331,7 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
-// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// GetCloudPcPools gets the cloudPcPools property value. The user's Cloud PC pools. Read-only. Nullable.
 // returns a []CloudPcPoolable when successful
 func (m *User) GetCloudPcPools()([]CloudPcPoolable) {
     val, err := m.GetBackingStore().Get("cloudPcPools")
@@ -592,6 +592,18 @@ func (m *User) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetDistributionLists gets the distributionLists property value. The personal distribution lists in the user's mailbox. Read-only. Nullable.
+// returns a []DistributionListable when successful
+func (m *User) GetDistributionLists()([]DistributionListable) {
+    val, err := m.GetBackingStore().Get("distributionLists")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DistributionListable)
     }
     return nil
 }
@@ -1356,6 +1368,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["distributionLists"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDistributionListFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DistributionListable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DistributionListable)
+                }
+            }
+            m.SetDistributionLists(res)
         }
         return nil
     }
@@ -4447,6 +4475,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetDistributionLists() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDistributionLists()))
+        for i, v := range m.GetDistributionLists() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("distributionLists", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("drive", m.GetDrive())
         if err != nil {
@@ -5529,7 +5569,7 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
-// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+// SetCloudPcPools sets the cloudPcPools property value. The user's Cloud PC pools. Read-only. Nullable.
 func (m *User) SetCloudPcPools(value []CloudPcPoolable)() {
     err := m.GetBackingStore().Set("cloudPcPools", value)
     if err != nil {
@@ -5679,6 +5719,13 @@ func (m *User) SetDirectReports(value []DirectoryObjectable)() {
 // SetDisplayName sets the displayName property value. The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
 func (m *User) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDistributionLists sets the distributionLists property value. The personal distribution lists in the user's mailbox. Read-only. Nullable.
+func (m *User) SetDistributionLists(value []DistributionListable)() {
+    err := m.GetBackingStore().Set("distributionLists", value)
     if err != nil {
         panic(err)
     }
@@ -6544,6 +6591,7 @@ type Userable interface {
     GetDevices()([]Deviceable)
     GetDirectReports()([]DirectoryObjectable)
     GetDisplayName()(*string)
+    GetDistributionLists()([]DistributionListable)
     GetDrive()(Driveable)
     GetDrives()([]Driveable)
     GetEmployeeExperience()(EmployeeExperienceUserable)
@@ -6706,6 +6754,7 @@ type Userable interface {
     SetDevices(value []Deviceable)()
     SetDirectReports(value []DirectoryObjectable)()
     SetDisplayName(value *string)()
+    SetDistributionLists(value []DistributionListable)()
     SetDrive(value Driveable)()
     SetDrives(value []Driveable)()
     SetEmployeeExperience(value EmployeeExperienceUserable)()

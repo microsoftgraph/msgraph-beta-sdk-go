@@ -70,6 +70,18 @@ func (m *ReportRoot) GetAzureADPremiumLicenseInsight()(AzureADPremiumLicenseInsi
     }
     return nil
 }
+// GetCorrelations gets the correlations property value. The identity correlation reports in the tenant.
+// returns a []IdentityCorrelationable when successful
+func (m *ReportRoot) GetCorrelations()([]IdentityCorrelationable) {
+    val, err := m.GetBackingStore().Get("correlations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityCorrelationable)
+    }
+    return nil
+}
 // GetCredentialUserRegistrationDetails gets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 // returns a []CredentialUserRegistrationDetailsable when successful
 func (m *ReportRoot) GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable) {
@@ -198,6 +210,22 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["correlations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityCorrelationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentityCorrelationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IdentityCorrelationable)
+                }
+            }
+            m.SetCorrelations(res)
+        }
+        return nil
+    }
     res["credentialUserRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCredentialUserRegistrationDetailsFromDiscriminatorValue)
         if err != nil {
@@ -291,6 +319,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 }
             }
             m.SetDailyPrintUsageSummariesByUser(res)
+        }
+        return nil
+    }
+    res["identityAnalytics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityAnalyticsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityAnalytics(val.(IdentityAnalyticsRootable))
         }
         return nil
     }
@@ -441,6 +479,18 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
+}
+// GetIdentityAnalytics gets the identityAnalytics property value. Microsoft Entra identity analytics for the tenant, including its groups.
+// returns a IdentityAnalyticsRootable when successful
+func (m *ReportRoot) GetIdentityAnalytics()(IdentityAnalyticsRootable) {
+    val, err := m.GetBackingStore().Get("identityAnalytics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityAnalyticsRootable)
+    }
+    return nil
 }
 // GetMonthlyPrintUsageByPrinter gets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 // returns a []PrintUsageByPrinterable when successful
@@ -616,6 +666,18 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetCorrelations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCorrelations()))
+        for i, v := range m.GetCorrelations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("correlations", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCredentialUserRegistrationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCredentialUserRegistrationDetails()))
         for i, v := range m.GetCredentialUserRegistrationDetails() {
@@ -684,6 +746,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             }
         }
         err = writer.WriteCollectionOfObjectValues("dailyPrintUsageSummariesByUser", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("identityAnalytics", m.GetIdentityAnalytics())
         if err != nil {
             return err
         }
@@ -820,6 +888,13 @@ func (m *ReportRoot) SetAzureADPremiumLicenseInsight(value AzureADPremiumLicense
         panic(err)
     }
 }
+// SetCorrelations sets the correlations property value. The identity correlation reports in the tenant.
+func (m *ReportRoot) SetCorrelations(value []IdentityCorrelationable)() {
+    err := m.GetBackingStore().Set("correlations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCredentialUserRegistrationDetails sets the credentialUserRegistrationDetails property value. Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 func (m *ReportRoot) SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)() {
     err := m.GetBackingStore().Set("credentialUserRegistrationDetails", value)
@@ -858,6 +933,13 @@ func (m *ReportRoot) SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPr
 // SetDailyPrintUsageSummariesByUser sets the dailyPrintUsageSummariesByUser property value. The dailyPrintUsageSummariesByUser property
 func (m *ReportRoot) SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)() {
     err := m.GetBackingStore().Set("dailyPrintUsageSummariesByUser", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIdentityAnalytics sets the identityAnalytics property value. Microsoft Entra identity analytics for the tenant, including its groups.
+func (m *ReportRoot) SetIdentityAnalytics(value IdentityAnalyticsRootable)() {
+    err := m.GetBackingStore().Set("identityAnalytics", value)
     if err != nil {
         panic(err)
     }
@@ -946,12 +1028,14 @@ type ReportRootable interface {
     GetApplicationSignInDetailedSummary()([]ApplicationSignInDetailedSummaryable)
     GetAuthenticationMethods()(AuthenticationMethodsRootable)
     GetAzureADPremiumLicenseInsight()(AzureADPremiumLicenseInsightable)
+    GetCorrelations()([]IdentityCorrelationable)
     GetCredentialUserRegistrationDetails()([]CredentialUserRegistrationDetailsable)
     GetDailyPrintUsage()([]PrintUsageable)
     GetDailyPrintUsageByPrinter()([]PrintUsageByPrinterable)
     GetDailyPrintUsageByUser()([]PrintUsageByUserable)
     GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable)
+    GetIdentityAnalytics()(IdentityAnalyticsRootable)
     GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
@@ -967,12 +1051,14 @@ type ReportRootable interface {
     SetApplicationSignInDetailedSummary(value []ApplicationSignInDetailedSummaryable)()
     SetAuthenticationMethods(value AuthenticationMethodsRootable)()
     SetAzureADPremiumLicenseInsight(value AzureADPremiumLicenseInsightable)()
+    SetCorrelations(value []IdentityCorrelationable)()
     SetCredentialUserRegistrationDetails(value []CredentialUserRegistrationDetailsable)()
     SetDailyPrintUsage(value []PrintUsageable)()
     SetDailyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetDailyPrintUsageByUser(value []PrintUsageByUserable)()
     SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
+    SetIdentityAnalytics(value IdentityAnalyticsRootable)()
     SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()

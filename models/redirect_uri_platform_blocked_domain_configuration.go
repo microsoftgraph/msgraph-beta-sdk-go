@@ -43,7 +43,7 @@ func (m *RedirectUriPlatformBlockedDomainConfiguration) GetAdditionalData()(map[
 func (m *RedirectUriPlatformBlockedDomainConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockedDomains gets the blockedDomains property value. The blockedDomains property
+// GetBlockedDomains gets the blockedDomains property value. Collection of domain names that are blocked for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 // returns a []string when successful
 func (m *RedirectUriPlatformBlockedDomainConfiguration) GetBlockedDomains()([]string) {
     val, err := m.GetBackingStore().Get("blockedDomains")
@@ -132,7 +132,7 @@ func (m *RedirectUriPlatformBlockedDomainConfiguration) SetAdditionalData(value 
 func (m *RedirectUriPlatformBlockedDomainConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockedDomains sets the blockedDomains property value. The blockedDomains property
+// SetBlockedDomains sets the blockedDomains property value. Collection of domain names that are blocked for this specific platform. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 func (m *RedirectUriPlatformBlockedDomainConfiguration) SetBlockedDomains(value []string)() {
     err := m.GetBackingStore().Set("blockedDomains", value)
     if err != nil {

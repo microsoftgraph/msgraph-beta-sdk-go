@@ -116,7 +116,7 @@ func (m *VirtualEventRegistrationConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsManualApprovalEnabled gets the isManualApprovalEnabled property value. The isManualApprovalEnabled property
+// GetIsManualApprovalEnabled gets the isManualApprovalEnabled property value. Indicates whether registrations require organizer approval before a participant is confirmed.
 // returns a *bool when successful
 func (m *VirtualEventRegistrationConfiguration) GetIsManualApprovalEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isManualApprovalEnabled")
@@ -128,7 +128,7 @@ func (m *VirtualEventRegistrationConfiguration) GetIsManualApprovalEnabled()(*bo
     }
     return nil
 }
-// GetIsWaitlistEnabled gets the isWaitlistEnabled property value. The isWaitlistEnabled property
+// GetIsWaitlistEnabled gets the isWaitlistEnabled property value. Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
 // returns a *bool when successful
 func (m *VirtualEventRegistrationConfiguration) GetIsWaitlistEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isWaitlistEnabled")
@@ -215,14 +215,14 @@ func (m *VirtualEventRegistrationConfiguration) SetCapacity(value *int32)() {
         panic(err)
     }
 }
-// SetIsManualApprovalEnabled sets the isManualApprovalEnabled property value. The isManualApprovalEnabled property
+// SetIsManualApprovalEnabled sets the isManualApprovalEnabled property value. Indicates whether registrations require organizer approval before a participant is confirmed.
 func (m *VirtualEventRegistrationConfiguration) SetIsManualApprovalEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isManualApprovalEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsWaitlistEnabled sets the isWaitlistEnabled property value. The isWaitlistEnabled property
+// SetIsWaitlistEnabled sets the isWaitlistEnabled property value. Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.
 func (m *VirtualEventRegistrationConfiguration) SetIsWaitlistEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isWaitlistEnabled", value)
     if err != nil {

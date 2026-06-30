@@ -89,6 +89,16 @@ func (m *ArtifactQuery) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["structuredQueryExpression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRestoreSearchArtifactQueryExpressionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStructuredQueryExpression(val.(RestoreSearchArtifactQueryExpressionable))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -103,7 +113,7 @@ func (m *ArtifactQuery) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQueryExpression gets the queryExpression property value. Specifies criteria to retrieve artifacts.
+// GetQueryExpression gets the queryExpression property value. Deprecated. Going forward, use the structuredQueryExpression property instead. Specifies criteria to retrieve artifacts.
 // returns a *string when successful
 func (m *ArtifactQuery) GetQueryExpression()(*string) {
     val, err := m.GetBackingStore().Get("queryExpression")
@@ -112,6 +122,18 @@ func (m *ArtifactQuery) GetQueryExpression()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetStructuredQueryExpression gets the structuredQueryExpression property value. Contains a structured query expression for searching artifacts.
+// returns a RestoreSearchArtifactQueryExpressionable when successful
+func (m *ArtifactQuery) GetStructuredQueryExpression()(RestoreSearchArtifactQueryExpressionable) {
+    val, err := m.GetBackingStore().Get("structuredQueryExpression")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RestoreSearchArtifactQueryExpressionable)
     }
     return nil
 }
@@ -132,6 +154,12 @@ func (m *ArtifactQuery) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("queryExpression", m.GetQueryExpression())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("structuredQueryExpression", m.GetStructuredQueryExpression())
         if err != nil {
             return err
         }
@@ -169,9 +197,16 @@ func (m *ArtifactQuery) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQueryExpression sets the queryExpression property value. Specifies criteria to retrieve artifacts.
+// SetQueryExpression sets the queryExpression property value. Deprecated. Going forward, use the structuredQueryExpression property instead. Specifies criteria to retrieve artifacts.
 func (m *ArtifactQuery) SetQueryExpression(value *string)() {
     err := m.GetBackingStore().Set("queryExpression", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetStructuredQueryExpression sets the structuredQueryExpression property value. Contains a structured query expression for searching artifacts.
+func (m *ArtifactQuery) SetStructuredQueryExpression(value RestoreSearchArtifactQueryExpressionable)() {
+    err := m.GetBackingStore().Set("structuredQueryExpression", value)
     if err != nil {
         panic(err)
     }
@@ -184,8 +219,10 @@ type ArtifactQueryable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetQueryExpression()(*string)
+    GetStructuredQueryExpression()(RestoreSearchArtifactQueryExpressionable)
     SetArtifactType(value *RestorableArtifact)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetQueryExpression(value *string)()
+    SetStructuredQueryExpression(value RestoreSearchArtifactQueryExpressionable)()
 }

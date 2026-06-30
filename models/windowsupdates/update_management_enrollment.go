@@ -43,7 +43,7 @@ func (m *UpdateManagementEnrollment) GetAdditionalData()(map[string]any) {
 func (m *UpdateManagementEnrollment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDriver gets the driver property value. The driver property
+// GetDriver gets the driver property value. Information about the enrollment state of the device in driver update management.
 // returns a UpdateCategoryEnrollmentInformationable when successful
 func (m *UpdateManagementEnrollment) GetDriver()(UpdateCategoryEnrollmentInformationable) {
     val, err := m.GetBackingStore().Get("driver")
@@ -55,7 +55,7 @@ func (m *UpdateManagementEnrollment) GetDriver()(UpdateCategoryEnrollmentInforma
     }
     return nil
 }
-// GetFeature gets the feature property value. The feature property
+// GetFeature gets the feature property value. Information about the enrollment state of the device in feature update management.
 // returns a UpdateCategoryEnrollmentInformationable when successful
 func (m *UpdateManagementEnrollment) GetFeature()(UpdateCategoryEnrollmentInformationable) {
     val, err := m.GetBackingStore().Get("feature")
@@ -125,7 +125,7 @@ func (m *UpdateManagementEnrollment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuality gets the quality property value. The quality property
+// GetQuality gets the quality property value. Information about the enrollment state of the device in quality update management.
 // returns a UpdateCategoryEnrollmentInformationable when successful
 func (m *UpdateManagementEnrollment) GetQuality()(UpdateCategoryEnrollmentInformationable) {
     val, err := m.GetBackingStore().Get("quality")
@@ -182,14 +182,14 @@ func (m *UpdateManagementEnrollment) SetAdditionalData(value map[string]any)() {
 func (m *UpdateManagementEnrollment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDriver sets the driver property value. The driver property
+// SetDriver sets the driver property value. Information about the enrollment state of the device in driver update management.
 func (m *UpdateManagementEnrollment) SetDriver(value UpdateCategoryEnrollmentInformationable)() {
     err := m.GetBackingStore().Set("driver", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFeature sets the feature property value. The feature property
+// SetFeature sets the feature property value. Information about the enrollment state of the device in feature update management.
 func (m *UpdateManagementEnrollment) SetFeature(value UpdateCategoryEnrollmentInformationable)() {
     err := m.GetBackingStore().Set("feature", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *UpdateManagementEnrollment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuality sets the quality property value. The quality property
+// SetQuality sets the quality property value. Information about the enrollment state of the device in quality update management.
 func (m *UpdateManagementEnrollment) SetQuality(value UpdateCategoryEnrollmentInformationable)() {
     err := m.GetBackingStore().Set("quality", value)
     if err != nil {

@@ -24,7 +24,7 @@ func NewVirtualEventSession()(*VirtualEventSession) {
 func CreateVirtualEventSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventSession(), nil
 }
-// GetCapacity gets the capacity property value. The capacity property
+// GetCapacity gets the capacity property value. Represents the expected number of attendees for town hall session.
 // returns a *int32 when successful
 func (m *VirtualEventSession) GetCapacity()(*int32) {
     val, err := m.GetBackingStore().Get("capacity")
@@ -230,7 +230,7 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCapacity sets the capacity property value. The capacity property
+// SetCapacity sets the capacity property value. Represents the expected number of attendees for town hall session.
 func (m *VirtualEventSession) SetCapacity(value *int32)() {
     err := m.GetBackingStore().Set("capacity", value)
     if err != nil {

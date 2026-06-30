@@ -39,7 +39,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetAdditionalData()(map[string]a
     }
     return val.(map[string]any)
 }
-// GetAllowedSchemes gets the allowedSchemes property value. The allowedSchemes property
+// GetAllowedSchemes gets the allowedSchemes property value. Collection of URI schemes that are allowed globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme.
 // returns a []string when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetAllowedSchemes()([]string) {
     val, err := m.GetBackingStore().Get("allowedSchemes")
@@ -56,7 +56,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetAllowedSchemes()([]string) {
 func (m *RedirectUriAllowedSchemeConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// GetExcludeActors gets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 // returns a AppManagementPolicyActorExemptionsable when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
     val, err := m.GetBackingStore().Get("excludeActors")
@@ -170,7 +170,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 // returns a *bool when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetIsStateSetByMicrosoft()(*bool) {
     val, err := m.GetBackingStore().Get("isStateSetByMicrosoft")
@@ -194,7 +194,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublicClient gets the publicClient property value. The publicClient property
+// GetPublicClient gets the publicClient property value. Platform-specific allowed scheme configuration for public client applications (native/mobile apps).
 // returns a RedirectUriPlatformAllowedSchemeConfigurationable when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetPublicClient()(RedirectUriPlatformAllowedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("publicClient")
@@ -206,7 +206,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetPublicClient()(RedirectUriPla
     }
     return nil
 }
-// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 // returns a *Time when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
@@ -218,7 +218,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetRestrictForAppsCreatedAfterDa
     }
     return nil
 }
-// GetSpa gets the spa property value. The spa property
+// GetSpa gets the spa property value. Platform-specific allowed scheme configuration for single-page applications (SPAs).
 // returns a RedirectUriPlatformAllowedSchemeConfigurationable when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetSpa()(RedirectUriPlatformAllowedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("spa")
@@ -242,7 +242,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) GetState()(*AppManagementRestric
     }
     return nil
 }
-// GetWeb gets the web property value. The web property
+// GetWeb gets the web property value. Platform-specific allowed scheme configuration for web applications.
 // returns a RedirectUriPlatformAllowedSchemeConfigurationable when successful
 func (m *RedirectUriAllowedSchemeConfiguration) GetWeb()(RedirectUriPlatformAllowedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("web")
@@ -320,7 +320,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) SetAdditionalData(value map[stri
         panic(err)
     }
 }
-// SetAllowedSchemes sets the allowedSchemes property value. The allowedSchemes property
+// SetAllowedSchemes sets the allowedSchemes property value. Collection of URI schemes that are allowed globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme.
 func (m *RedirectUriAllowedSchemeConfiguration) SetAllowedSchemes(value []string)() {
     err := m.GetBackingStore().Set("allowedSchemes", value)
     if err != nil {
@@ -331,14 +331,14 @@ func (m *RedirectUriAllowedSchemeConfiguration) SetAllowedSchemes(value []string
 func (m *RedirectUriAllowedSchemeConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeActors sets the excludeActors property value. The excludeActors property
+// SetExcludeActors sets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 func (m *RedirectUriAllowedSchemeConfiguration) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
     err := m.GetBackingStore().Set("excludeActors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 func (m *RedirectUriAllowedSchemeConfiguration) SetIsStateSetByMicrosoft(value *bool)() {
     err := m.GetBackingStore().Set("isStateSetByMicrosoft", value)
     if err != nil {
@@ -352,21 +352,21 @@ func (m *RedirectUriAllowedSchemeConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublicClient sets the publicClient property value. The publicClient property
+// SetPublicClient sets the publicClient property value. Platform-specific allowed scheme configuration for public client applications (native/mobile apps).
 func (m *RedirectUriAllowedSchemeConfiguration) SetPublicClient(value RedirectUriPlatformAllowedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("publicClient", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 func (m *RedirectUriAllowedSchemeConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restrictForAppsCreatedAfterDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpa sets the spa property value. The spa property
+// SetSpa sets the spa property value. Platform-specific allowed scheme configuration for single-page applications (SPAs).
 func (m *RedirectUriAllowedSchemeConfiguration) SetSpa(value RedirectUriPlatformAllowedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("spa", value)
     if err != nil {
@@ -380,7 +380,7 @@ func (m *RedirectUriAllowedSchemeConfiguration) SetState(value *AppManagementRes
         panic(err)
     }
 }
-// SetWeb sets the web property value. The web property
+// SetWeb sets the web property value. Platform-specific allowed scheme configuration for web applications.
 func (m *RedirectUriAllowedSchemeConfiguration) SetWeb(value RedirectUriPlatformAllowedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("web", value)
     if err != nil {

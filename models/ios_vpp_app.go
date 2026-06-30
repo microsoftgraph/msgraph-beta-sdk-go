@@ -26,6 +26,18 @@ func NewIosVppApp()(*IosVppApp) {
 func CreateIosVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosVppApp(), nil
 }
+// GetAppleDeviceAppDeliveryProtocolType gets the appleDeviceAppDeliveryProtocolType property value. The appleDeviceAppDeliveryProtocolType property
+// returns a *AppleDeviceDeliveryProtocol when successful
+func (m *IosVppApp) GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol) {
+    val, err := m.GetBackingStore().Get("appleDeviceAppDeliveryProtocolType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeviceDeliveryProtocol)
+    }
+    return nil
+}
 // GetApplicableDeviceType gets the applicableDeviceType property value. The applicable iOS Device Type.
 // returns a IosDeviceTypeable when successful
 func (m *IosVppApp) GetApplicableDeviceType()(IosDeviceTypeable) {
@@ -78,6 +90,16 @@ func (m *IosVppApp) GetBundleId()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
+    res["appleDeviceAppDeliveryProtocolType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeviceDeliveryProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleDeviceAppDeliveryProtocolType(val.(*AppleDeviceDeliveryProtocol))
+        }
+        return nil
+    }
     res["applicableDeviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIosDeviceTypeFromDiscriminatorValue)
         if err != nil {
@@ -358,6 +380,13 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if err != nil {
         return err
     }
+    if m.GetAppleDeviceAppDeliveryProtocolType() != nil {
+        cast := (*m.GetAppleDeviceAppDeliveryProtocolType()).String()
+        err = writer.WriteStringValue("appleDeviceAppDeliveryProtocolType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("applicableDeviceType", m.GetApplicableDeviceType())
         if err != nil {
@@ -456,6 +485,13 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     return nil
+}
+// SetAppleDeviceAppDeliveryProtocolType sets the appleDeviceAppDeliveryProtocolType property value. The appleDeviceAppDeliveryProtocolType property
+func (m *IosVppApp) SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)() {
+    err := m.GetBackingStore().Set("appleDeviceAppDeliveryProtocolType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. The applicable iOS Device Type.
 func (m *IosVppApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
@@ -558,6 +594,7 @@ func (m *IosVppApp) SetVppTokenOrganizationName(value *string)() {
 type IosVppAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol)
     GetApplicableDeviceType()(IosDeviceTypeable)
     GetAppStoreUrl()(*string)
     GetAssignedLicenses()([]IosVppAppAssignedLicenseable)
@@ -572,6 +609,7 @@ type IosVppAppable interface {
     GetVppTokenDisplayName()(*string)
     GetVppTokenId()(*string)
     GetVppTokenOrganizationName()(*string)
+    SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)()
     SetApplicableDeviceType(value IosDeviceTypeable)()
     SetAppStoreUrl(value *string)()
     SetAssignedLicenses(value []IosVppAppAssignedLicenseable)()

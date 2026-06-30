@@ -21,6 +21,24 @@ func NewCustomDataProvidedResourceUploadSession()(*CustomDataProvidedResourceUpl
 // CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.customDataProvidedResourceAccessReviewUploadSession":
+                        return NewCustomDataProvidedResourceAccessReviewUploadSession(), nil
+                }
+            }
+        }
+    }
     return NewCustomDataProvidedResourceUploadSession(), nil
 }
 // GetCreatedDateTime gets the createdDateTime property value. DateTime when the upload session was created. Read-only. Supports $orderby.
@@ -35,18 +53,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetCreatedDateTime()(*i3360748
     }
     return nil
 }
-// GetData gets the data property value. An object containing the context for which this data is being uploaded. Currently the only possible concrete type is accessReviewResourceDataUploadSessionContextData
-// returns a CustomExtensionDataable when successful
-func (m *CustomDataProvidedResourceUploadSession) GetData()(CustomExtensionDataable) {
-    val, err := m.GetBackingStore().Get("data")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CustomExtensionDataable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -58,16 +64,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
         }
         if val != nil {
             m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["data"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCustomExtensionDataFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetData(val.(CustomExtensionDataable))
         }
         return nil
     }
@@ -107,16 +103,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
         }
         return nil
     }
-    res["source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSource(val)
-        }
-        return nil
-    }
     res["stats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCustomDataProvidedResourceUploadStatsFromDiscriminatorValue)
         if err != nil {
@@ -134,16 +120,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetFieldDeserializers()(map[st
         }
         if val != nil {
             m.SetStatus(val.(*CustomDataProvidedResourceUploadStatus))
-        }
-        return nil
-    }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTypeEscaped(val)
         }
         return nil
     }
@@ -185,18 +161,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetReferenceId()(*string) {
     }
     return nil
 }
-// GetSource gets the source property value. The source of the access data. This should be set to the customdataprovidedresource's name when creating the session.
-// returns a *string when successful
-func (m *CustomDataProvidedResourceUploadSession) GetSource()(*string) {
-    val, err := m.GetBackingStore().Get("source")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetStats gets the stats property value. The stats property
 // returns a CustomDataProvidedResourceUploadStatsable when successful
 func (m *CustomDataProvidedResourceUploadSession) GetStats()(CustomDataProvidedResourceUploadStatsable) {
@@ -221,18 +185,6 @@ func (m *CustomDataProvidedResourceUploadSession) GetStatus()(*CustomDataProvide
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Schematized form of the expected CSV columns in the uploaded file. The only possible value currently is: accessReviewDataUploadTriggerCallbackData
-// returns a *string when successful
-func (m *CustomDataProvidedResourceUploadSession) GetTypeEscaped()(*string) {
-    val, err := m.GetBackingStore().Get("typeEscaped")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -241,12 +193,6 @@ func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e
     }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("data", m.GetData())
         if err != nil {
             return err
         }
@@ -276,12 +222,6 @@ func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e
         }
     }
     {
-        err = writer.WriteStringValue("source", m.GetSource())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("stats", m.GetStats())
         if err != nil {
             return err
@@ -294,24 +234,11 @@ func (m *CustomDataProvidedResourceUploadSession) Serialize(writer i878a80d2330e
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("type", m.GetTypeEscaped())
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. DateTime when the upload session was created. Read-only. Supports $orderby.
 func (m *CustomDataProvidedResourceUploadSession) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetData sets the data property value. An object containing the context for which this data is being uploaded. Currently the only possible concrete type is accessReviewResourceDataUploadSessionContextData
-func (m *CustomDataProvidedResourceUploadSession) SetData(value CustomExtensionDataable)() {
-    err := m.GetBackingStore().Set("data", value)
     if err != nil {
         panic(err)
     }
@@ -337,13 +264,6 @@ func (m *CustomDataProvidedResourceUploadSession) SetReferenceId(value *string)(
         panic(err)
     }
 }
-// SetSource sets the source property value. The source of the access data. This should be set to the customdataprovidedresource's name when creating the session.
-func (m *CustomDataProvidedResourceUploadSession) SetSource(value *string)() {
-    err := m.GetBackingStore().Set("source", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetStats sets the stats property value. The stats property
 func (m *CustomDataProvidedResourceUploadSession) SetStats(value CustomDataProvidedResourceUploadStatsable)() {
     err := m.GetBackingStore().Set("stats", value)
@@ -358,32 +278,19 @@ func (m *CustomDataProvidedResourceUploadSession) SetStatus(value *CustomDataPro
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Schematized form of the expected CSV columns in the uploaded file. The only possible value currently is: accessReviewDataUploadTriggerCallbackData
-func (m *CustomDataProvidedResourceUploadSession) SetTypeEscaped(value *string)() {
-    err := m.GetBackingStore().Set("typeEscaped", value)
-    if err != nil {
-        panic(err)
-    }
-}
 type CustomDataProvidedResourceUploadSessionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetData()(CustomExtensionDataable)
     GetFiles()([]CustomDataProvidedResourceFileable)
     GetIsUploadDone()(*bool)
     GetReferenceId()(*string)
-    GetSource()(*string)
     GetStats()(CustomDataProvidedResourceUploadStatsable)
     GetStatus()(*CustomDataProvidedResourceUploadStatus)
-    GetTypeEscaped()(*string)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetData(value CustomExtensionDataable)()
     SetFiles(value []CustomDataProvidedResourceFileable)()
     SetIsUploadDone(value *bool)()
     SetReferenceId(value *string)()
-    SetSource(value *string)()
     SetStats(value CustomDataProvidedResourceUploadStatsable)()
     SetStatus(value *CustomDataProvidedResourceUploadStatus)()
-    SetTypeEscaped(value *string)()
 }

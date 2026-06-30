@@ -24,7 +24,7 @@ func NewSensorMigration()(*SensorMigration) {
 func CreateSensorMigrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensorMigration(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time the sensor was created.
 // returns a *Time when successful
 func (m *SensorMigration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -36,7 +36,7 @@ func (m *SensorMigration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the sensor.
 // returns a *string when successful
 func (m *SensorMigration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -48,7 +48,7 @@ func (m *SensorMigration) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. The fully qualified domain name (FQDN) of the domain controller where the sensor is installed.
 // returns a *string when successful
 func (m *SensorMigration) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -194,7 +194,7 @@ func (m *SensorMigration) GetServiceStatus()(*ServiceStatus) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version number of the sensor software.
 // returns a *string when successful
 func (m *SensorMigration) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -266,21 +266,21 @@ func (m *SensorMigration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time the sensor was created.
 func (m *SensorMigration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the sensor.
 func (m *SensorMigration) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. The fully qualified domain name (FQDN) of the domain controller where the sensor is installed.
 func (m *SensorMigration) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
@@ -315,7 +315,7 @@ func (m *SensorMigration) SetServiceStatus(value *ServiceStatus)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version number of the sensor software.
 func (m *SensorMigration) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

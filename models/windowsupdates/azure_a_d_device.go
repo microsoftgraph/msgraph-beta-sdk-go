@@ -24,7 +24,7 @@ func NewAzureADDevice()(*AzureADDevice) {
 func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADDevice(), nil
 }
-// GetEnrollment gets the enrollment property value. The enrollment property
+// GetEnrollment gets the enrollment property value. Specifies the update management enrollment for the device. Read-only. Returned by default.
 // returns a UpdateManagementEnrollmentable when successful
 func (m *AzureADDevice) GetEnrollment()(UpdateManagementEnrollmentable) {
     val, err := m.GetBackingStore().Get("enrollment")
@@ -36,7 +36,7 @@ func (m *AzureADDevice) GetEnrollment()(UpdateManagementEnrollmentable) {
     }
     return nil
 }
-// GetErrors gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
+// GetErrors gets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receiving deployed content. Read-only. Returned by default.
 // returns a []UpdatableAssetErrorable when successful
 func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
     val, err := m.GetBackingStore().Get("errors")
@@ -106,14 +106,14 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetEnrollment sets the enrollment property value. The enrollment property
+// SetEnrollment sets the enrollment property value. Specifies the update management enrollment for the device. Read-only. Returned by default.
 func (m *AzureADDevice) SetEnrollment(value UpdateManagementEnrollmentable)() {
     err := m.GetBackingStore().Set("enrollment", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrors sets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.
+// SetErrors sets the errors property value. Specifies any errors that prevent the device from being enrolled in update management or receiving deployed content. Read-only. Returned by default.
 func (m *AzureADDevice) SetErrors(value []UpdatableAssetErrorable)() {
     err := m.GetBackingStore().Set("errors", value)
     if err != nil {

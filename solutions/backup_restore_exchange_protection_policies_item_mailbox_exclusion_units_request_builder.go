@@ -14,7 +14,7 @@ import (
 type BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderGetQueryParameters get mailboxExclusionUnits from solutions
+// BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderGetQueryParameters get a list of mailbox exclusion units associated with an Exchange protection policy.
 type BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -72,9 +72,12 @@ func NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestB
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder) Count()(*BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsCountRequestBuilder) {
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mailboxExclusionUnits from solutions
+// Get get a list of mailbox exclusion units associated with an Exchange protection policy.
 // returns a MailboxExclusionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxexclusionunits?view=graph-rest-beta
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +95,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequest
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitCollectionResponseable), nil
 }
-// ToGetRequestInformation get mailboxExclusionUnits from solutions
+// ToGetRequestInformation get a list of mailbox exclusion units associated with an Exchange protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
