@@ -9,10 +9,11 @@ const (
     PRIVATE_GROUPACCESSTYPE
     SECRET_GROUPACCESSTYPE
     PUBLIC_GROUPACCESSTYPE
+    UNKNOWNFUTUREVALUE_GROUPACCESSTYPE
 )
 
 func (i GroupAccessType) String() string {
-    return []string{"none", "private", "secret", "public"}[i]
+    return []string{"none", "private", "secret", "public", "unknownFutureValue"}[i]
 }
 func ParseGroupAccessType(v string) (any, error) {
     result := NONE_GROUPACCESSTYPE
@@ -25,6 +26,8 @@ func ParseGroupAccessType(v string) (any, error) {
             result = SECRET_GROUPACCESSTYPE
         case "public":
             result = PUBLIC_GROUPACCESSTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_GROUPACCESSTYPE
         default:
             return nil, nil
     }

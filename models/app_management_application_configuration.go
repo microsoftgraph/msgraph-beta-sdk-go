@@ -84,7 +84,7 @@ func (m *AppManagementApplicationConfiguration) GetIdentifierUris()(IdentifierUr
     }
     return nil
 }
-// GetRedirectUris gets the redirectUris property value. The redirectUris property
+// GetRedirectUris gets the redirectUris property value. Configuration object for redirect URI validation rules and restrictions for an application.
 // returns a RedirectUriConfigurationable when successful
 func (m *AppManagementApplicationConfiguration) GetRedirectUris()(RedirectUriConfigurationable) {
     val, err := m.GetBackingStore().Get("redirectUris")
@@ -136,7 +136,7 @@ func (m *AppManagementApplicationConfiguration) SetIdentifierUris(value Identifi
         panic(err)
     }
 }
-// SetRedirectUris sets the redirectUris property value. The redirectUris property
+// SetRedirectUris sets the redirectUris property value. Configuration object for redirect URI validation rules and restrictions for an application.
 func (m *AppManagementApplicationConfiguration) SetRedirectUris(value RedirectUriConfigurationable)() {
     err := m.GetBackingStore().Set("redirectUris", value)
     if err != nil {

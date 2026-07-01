@@ -14,7 +14,7 @@ import (
 type BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters get siteExclusionUnits from solutions
+// BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters get a site exclusion unit associated with a SharePoint protection policy.
 type BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,9 +43,12 @@ func NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclu
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get siteExclusionUnits from solutions
+// Get get a site exclusion unit associated with a SharePoint protection policy.
 // returns a SiteExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/siteexclusionunit-get?view=graph-rest-beta
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExcl
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable), nil
 }
-// ToGetRequestInformation get siteExclusionUnits from solutions
+// ToGetRequestInformation get a site exclusion unit associated with a SharePoint protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

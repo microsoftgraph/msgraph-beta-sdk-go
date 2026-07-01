@@ -58,7 +58,7 @@ func (m *VirtualEndpoint) GetCloudApps()([]CloudPcCloudAppable) {
     }
     return nil
 }
-// GetCloudPcPools gets the cloudPcPools property value. The cloudPcPools property
+// GetCloudPcPools gets the cloudPcPools property value. The Cloud PC pools managed by the virtual endpoint.
 // returns a []CloudPcPoolable when successful
 func (m *VirtualEndpoint) GetCloudPcPools()([]CloudPcPoolable) {
     val, err := m.GetBackingStore().Get("cloudPcPools")
@@ -849,7 +849,7 @@ func (m *VirtualEndpoint) SetCloudApps(value []CloudPcCloudAppable)() {
         panic(err)
     }
 }
-// SetCloudPcPools sets the cloudPcPools property value. The cloudPcPools property
+// SetCloudPcPools sets the cloudPcPools property value. The Cloud PC pools managed by the virtual endpoint.
 func (m *VirtualEndpoint) SetCloudPcPools(value []CloudPcPoolable)() {
     err := m.GetBackingStore().Set("cloudPcPools", value)
     if err != nil {

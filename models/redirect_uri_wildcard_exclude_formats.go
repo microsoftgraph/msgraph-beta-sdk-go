@@ -43,7 +43,7 @@ func (m *RedirectUriWildcardExcludeFormats) GetAdditionalData()(map[string]any) 
 func (m *RedirectUriWildcardExcludeFormats) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeWildcardsInPath gets the excludeWildcardsInPath property value. The excludeWildcardsInPath property
+// GetExcludeWildcardsInPath gets the excludeWildcardsInPath property value. When true, blocks the use of wildcards in the path portion of redirect URIs. When false, allows wildcards in paths.
 // returns a *bool when successful
 func (m *RedirectUriWildcardExcludeFormats) GetExcludeWildcardsInPath()(*bool) {
     val, err := m.GetBackingStore().Get("excludeWildcardsInPath")
@@ -55,7 +55,7 @@ func (m *RedirectUriWildcardExcludeFormats) GetExcludeWildcardsInPath()(*bool) {
     }
     return nil
 }
-// GetExcludeWildcardsInPathWithDomains gets the excludeWildcardsInPathWithDomains property value. The excludeWildcardsInPathWithDomains property
+// GetExcludeWildcardsInPathWithDomains gets the excludeWildcardsInPathWithDomains property value. Collection of domain names where wildcards in the path portion of redirect URIs are blocked. Accepts only valid host names (no wildcards) as defined in RFC 3986 §3.2.2. For example, login.microsoft.com or contoso.com.
 // returns a []string when successful
 func (m *RedirectUriWildcardExcludeFormats) GetExcludeWildcardsInPathWithDomains()([]string) {
     val, err := m.GetBackingStore().Get("excludeWildcardsInPathWithDomains")
@@ -160,14 +160,14 @@ func (m *RedirectUriWildcardExcludeFormats) SetAdditionalData(value map[string]a
 func (m *RedirectUriWildcardExcludeFormats) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeWildcardsInPath sets the excludeWildcardsInPath property value. The excludeWildcardsInPath property
+// SetExcludeWildcardsInPath sets the excludeWildcardsInPath property value. When true, blocks the use of wildcards in the path portion of redirect URIs. When false, allows wildcards in paths.
 func (m *RedirectUriWildcardExcludeFormats) SetExcludeWildcardsInPath(value *bool)() {
     err := m.GetBackingStore().Set("excludeWildcardsInPath", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeWildcardsInPathWithDomains sets the excludeWildcardsInPathWithDomains property value. The excludeWildcardsInPathWithDomains property
+// SetExcludeWildcardsInPathWithDomains sets the excludeWildcardsInPathWithDomains property value. Collection of domain names where wildcards in the path portion of redirect URIs are blocked. Accepts only valid host names (no wildcards) as defined in RFC 3986 §3.2.2. For example, login.microsoft.com or contoso.com.
 func (m *RedirectUriWildcardExcludeFormats) SetExcludeWildcardsInPathWithDomains(value []string)() {
     err := m.GetBackingStore().Set("excludeWildcardsInPathWithDomains", value)
     if err != nil {

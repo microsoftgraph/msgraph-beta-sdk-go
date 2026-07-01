@@ -11,10 +11,11 @@ const (
     ATTRIBUTECOLLECTIONSTART_AUTHENTICATIONEVENTTYPE
     ATTRIBUTECOLLECTIONSUBMIT_AUTHENTICATIONEVENTTYPE
     EMAILOTPSEND_AUTHENTICATIONEVENTTYPE
+    PASSWORDSUBMIT_AUTHENTICATIONEVENTTYPE
 )
 
 func (i AuthenticationEventType) String() string {
-    return []string{"tokenIssuanceStart", "pageRenderStart", "unknownFutureValue", "attributeCollectionStart", "attributeCollectionSubmit", "emailOtpSend"}[i]
+    return []string{"tokenIssuanceStart", "pageRenderStart", "unknownFutureValue", "attributeCollectionStart", "attributeCollectionSubmit", "emailOtpSend", "passwordSubmit"}[i]
 }
 func ParseAuthenticationEventType(v string) (any, error) {
     result := TOKENISSUANCESTART_AUTHENTICATIONEVENTTYPE
@@ -31,6 +32,8 @@ func ParseAuthenticationEventType(v string) (any, error) {
             result = ATTRIBUTECOLLECTIONSUBMIT_AUTHENTICATIONEVENTTYPE
         case "emailOtpSend":
             result = EMAILOTPSEND_AUTHENTICATIONEVENTTYPE
+        case "passwordSubmit":
+            result = PASSWORDSUBMIT_AUTHENTICATIONEVENTTYPE
         default:
             return nil, nil
     }

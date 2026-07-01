@@ -89,7 +89,7 @@ func (m *CloudVideoInteropInfo) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetMoreInfoWebUrl gets the moreInfoWebUrl property value. The moreInfoWebUrl property
+// GetMoreInfoWebUrl gets the moreInfoWebUrl property value. Provides other video teleconferencing (VTC) dial-in options. Read-only.
 // returns a *string when successful
 func (m *CloudVideoInteropInfo) GetMoreInfoWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("moreInfoWebUrl")
@@ -113,7 +113,7 @@ func (m *CloudVideoInteropInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantKey gets the tenantKey property value. The tenantKey property
+// GetTenantKey gets the tenantKey property value. The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
 // returns a *string when successful
 func (m *CloudVideoInteropInfo) GetTenantKey()(*string) {
     val, err := m.GetBackingStore().Get("tenantKey")
@@ -125,7 +125,7 @@ func (m *CloudVideoInteropInfo) GetTenantKey()(*string) {
     }
     return nil
 }
-// GetVideoTeleconferenceId gets the videoTeleconferenceId property value. The videoTeleconferenceId property
+// GetVideoTeleconferenceId gets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 // returns a *string when successful
 func (m *CloudVideoInteropInfo) GetVideoTeleconferenceId()(*string) {
     val, err := m.GetBackingStore().Get("videoTeleconferenceId")
@@ -182,7 +182,7 @@ func (m *CloudVideoInteropInfo) SetAdditionalData(value map[string]any)() {
 func (m *CloudVideoInteropInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMoreInfoWebUrl sets the moreInfoWebUrl property value. The moreInfoWebUrl property
+// SetMoreInfoWebUrl sets the moreInfoWebUrl property value. Provides other video teleconferencing (VTC) dial-in options. Read-only.
 func (m *CloudVideoInteropInfo) SetMoreInfoWebUrl(value *string)() {
     err := m.GetBackingStore().Set("moreInfoWebUrl", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *CloudVideoInteropInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantKey sets the tenantKey property value. The tenantKey property
+// SetTenantKey sets the tenantKey property value. The tenant key that is used to dial into the interactive voice response (IVR) of the partner CVI service.
 func (m *CloudVideoInteropInfo) SetTenantKey(value *string)() {
     err := m.GetBackingStore().Set("tenantKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVideoTeleconferenceId sets the videoTeleconferenceId property value. The videoTeleconferenceId property
+// SetVideoTeleconferenceId sets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
 func (m *CloudVideoInteropInfo) SetVideoTeleconferenceId(value *string)() {
     err := m.GetBackingStore().Set("videoTeleconferenceId", value)
     if err != nil {

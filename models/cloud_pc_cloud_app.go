@@ -23,7 +23,7 @@ func NewCloudPcCloudApp()(*CloudPcCloudApp) {
 func CreateCloudPcCloudAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcCloudApp(), nil
 }
-// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
+// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue, iconPathInvalid, filePathInvalid. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconPathInvalid, filePathInvalid. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 // returns a *CloudPcCloudAppActionFailedErrorCode when successful
 func (m *CloudPcCloudApp) GetActionFailedErrorCode()(*CloudPcCloudAppActionFailedErrorCode) {
     val, err := m.GetBackingStore().Get("actionFailedErrorCode")
@@ -275,7 +275,7 @@ func (m *CloudPcCloudApp) GetLastPublishedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetProvisioningPolicyId gets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.
+// GetProvisioningPolicyId gets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Required.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetProvisioningPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("provisioningPolicyId")
@@ -381,7 +381,7 @@ func (m *CloudPcCloudApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
+// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue, iconPathInvalid, filePathInvalid. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconPathInvalid, filePathInvalid. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetActionFailedErrorCode(value *CloudPcCloudAppActionFailedErrorCode)() {
     err := m.GetBackingStore().Set("actionFailedErrorCode", value)
     if err != nil {
@@ -451,7 +451,7 @@ func (m *CloudPcCloudApp) SetLastPublishedDateTime(value *i336074805fc853987abe6
         panic(err)
     }
 }
-// SetProvisioningPolicyId sets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.
+// SetProvisioningPolicyId sets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Required.
 func (m *CloudPcCloudApp) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
     if err != nil {

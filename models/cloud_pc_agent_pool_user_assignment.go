@@ -40,7 +40,7 @@ func (m *CloudPcAgentPoolUserAssignment) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetUserPrincipalId gets the userPrincipalId property value. The userPrincipalId property
+// GetUserPrincipalId gets the userPrincipalId property value. The unique identifier of the user principal.
 // returns a *string when successful
 func (m *CloudPcAgentPoolUserAssignment) GetUserPrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalId")
@@ -66,7 +66,7 @@ func (m *CloudPcAgentPoolUserAssignment) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetUserPrincipalId sets the userPrincipalId property value. The userPrincipalId property
+// SetUserPrincipalId sets the userPrincipalId property value. The unique identifier of the user principal.
 func (m *CloudPcAgentPoolUserAssignment) SetUserPrincipalId(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalId", value)
     if err != nil {

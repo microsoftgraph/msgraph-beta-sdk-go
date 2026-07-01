@@ -34,13 +34,10 @@ func NewMigrationsCrossTenantMigrationJobsValidateRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewMigrationsCrossTenantMigrationJobsValidateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post validate the configuration of a crossTenantMigrationJob. This function doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that would affect an actual migration job. 
+// Post invoke action validate
 // Deprecated:  as of 2025-07/PrivatePreview:CrossTenantContentMigrationAPI on 2025-07-09 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
 func (m *MigrationsCrossTenantMigrationJobsValidateRequestBuilder) Post(ctx context.Context, body MigrationsCrossTenantMigrationJobsValidatePostRequestBodyable, requestConfiguration *MigrationsCrossTenantMigrationJobsValidateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,7 +55,7 @@ func (m *MigrationsCrossTenantMigrationJobsValidateRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
 }
-// ToPostRequestInformation validate the configuration of a crossTenantMigrationJob. This function doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that would affect an actual migration job. 
+// ToPostRequestInformation invoke action validate
 // Deprecated:  as of 2025-07/PrivatePreview:CrossTenantContentMigrationAPI on 2025-07-09 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsValidateRequestBuilder) ToPostRequestInformation(ctx context.Context, body MigrationsCrossTenantMigrationJobsValidatePostRequestBodyable, requestConfiguration *MigrationsCrossTenantMigrationJobsValidateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

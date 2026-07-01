@@ -24,7 +24,7 @@ func NewMailboxExclusionUnit()(*MailboxExclusionUnit) {
 func CreateMailboxExclusionUnitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMailboxExclusionUnit(), nil
 }
-// GetDirectoryObjectId gets the directoryObjectId property value. The directoryObjectId property
+// GetDirectoryObjectId gets the directoryObjectId property value. The unique identifier of the directory object (user) associated with the mailbox.
 // returns a *string when successful
 func (m *MailboxExclusionUnit) GetDirectoryObjectId()(*string) {
     val, err := m.GetBackingStore().Get("directoryObjectId")
@@ -36,7 +36,7 @@ func (m *MailboxExclusionUnit) GetDirectoryObjectId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the mailbox.
 // returns a *string when successful
 func (m *MailboxExclusionUnit) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -48,7 +48,7 @@ func (m *MailboxExclusionUnit) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. The email address of the mailbox.
 // returns a *string when successful
 func (m *MailboxExclusionUnit) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
@@ -139,21 +139,21 @@ func (m *MailboxExclusionUnit) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetDirectoryObjectId sets the directoryObjectId property value. The directoryObjectId property
+// SetDirectoryObjectId sets the directoryObjectId property value. The unique identifier of the directory object (user) associated with the mailbox.
 func (m *MailboxExclusionUnit) SetDirectoryObjectId(value *string)() {
     err := m.GetBackingStore().Set("directoryObjectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the mailbox.
 func (m *MailboxExclusionUnit) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. The email address of the mailbox.
 func (m *MailboxExclusionUnit) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {

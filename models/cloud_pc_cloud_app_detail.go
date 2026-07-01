@@ -131,7 +131,7 @@ func (m *CloudPcCloudAppDetail) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetFilePath gets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.
+// GetFilePath gets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App.
 // returns a *string when successful
 func (m *CloudPcCloudAppDetail) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
@@ -237,7 +237,7 @@ func (m *CloudPcCloudAppDetail) SetCommandLineArguments(value *string)() {
         panic(err)
     }
 }
-// SetFilePath sets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App. Read-only.
+// SetFilePath sets the filePath property value. Specifies the path to the executable file for the application within the OS of the hosting Cloud PC. The value should be an absolute path to a Windows or Universal app. For example, C:/app.exe or shell:AppsFolder/appname!App.
 func (m *CloudPcCloudAppDetail) SetFilePath(value *string)() {
     err := m.GetBackingStore().Set("filePath", value)
     if err != nil {

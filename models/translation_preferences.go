@@ -137,7 +137,7 @@ func (m *TranslationPreferences) GetTranslationBehavior()(*TranslationBehavior) 
     }
     return nil
 }
-// GetUntranslatedLanguages gets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
+// GetUntranslatedLanguages gets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read-only.
 // returns a []string when successful
 func (m *TranslationPreferences) GetUntranslatedLanguages()([]string) {
     val, err := m.GetBackingStore().Get("untranslatedLanguages")
@@ -222,7 +222,7 @@ func (m *TranslationPreferences) SetTranslationBehavior(value *TranslationBehavi
         panic(err)
     }
 }
-// SetUntranslatedLanguages sets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.
+// SetUntranslatedLanguages sets the untranslatedLanguages property value. The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read-only.
 func (m *TranslationPreferences) SetUntranslatedLanguages(value []string)() {
     err := m.GetBackingStore().Set("untranslatedLanguages", value)
     if err != nil {

@@ -46,7 +46,7 @@ func (m *BackupRestoreRoot) GetBrowseSessions()([]BrowseSessionBaseable) {
     }
     return nil
 }
-// GetDriveExclusionUnits gets the driveExclusionUnits property value. The driveExclusionUnits property
+// GetDriveExclusionUnits gets the driveExclusionUnits property value. The list of drive exclusion units in the tenant.
 // returns a []DriveExclusionUnitable when successful
 func (m *BackupRestoreRoot) GetDriveExclusionUnits()([]DriveExclusionUnitable) {
     val, err := m.GetBackingStore().Get("driveExclusionUnits")
@@ -58,7 +58,7 @@ func (m *BackupRestoreRoot) GetDriveExclusionUnits()([]DriveExclusionUnitable) {
     }
     return nil
 }
-// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// GetDriveExclusionUnitsBulkAdditionJobs gets the driveExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for drive exclusion units in the tenant.
 // returns a []DriveExclusionUnitsBulkAdditionJobable when successful
 func (m *BackupRestoreRoot) GetDriveExclusionUnitsBulkAdditionJobs()([]DriveExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("driveExclusionUnitsBulkAdditionJobs")
@@ -142,7 +142,7 @@ func (m *BackupRestoreRoot) GetExchangeRestoreSessions()([]ExchangeRestoreSessio
     }
     return nil
 }
-// GetExclusionUnits gets the exclusionUnits property value. The exclusionUnits property
+// GetExclusionUnits gets the exclusionUnits property value. The list of exclusion units in the tenant.
 // returns a []ExclusionUnitBaseable when successful
 func (m *BackupRestoreRoot) GetExclusionUnits()([]ExclusionUnitBaseable) {
     val, err := m.GetBackingStore().Get("exclusionUnits")
@@ -686,7 +686,7 @@ func (m *BackupRestoreRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+// GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The list of mailbox exclusion units in the tenant.
 // returns a []MailboxExclusionUnitable when successful
 func (m *BackupRestoreRoot) GetMailboxExclusionUnits()([]MailboxExclusionUnitable) {
     val, err := m.GetBackingStore().Get("mailboxExclusionUnits")
@@ -698,7 +698,7 @@ func (m *BackupRestoreRoot) GetMailboxExclusionUnits()([]MailboxExclusionUnitabl
     }
     return nil
 }
-// GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+// GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units in the tenant.
 // returns a []MailboxExclusionUnitsBulkAdditionJobable when successful
 func (m *BackupRestoreRoot) GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("mailboxExclusionUnitsBulkAdditionJobs")
@@ -746,7 +746,7 @@ func (m *BackupRestoreRoot) GetMailboxProtectionUnitsBulkAdditionJobs()([]Mailbo
     }
     return nil
 }
-// GetOneDriveForBusinessBrowseSessions gets the oneDriveForBusinessBrowseSessions property value. The list of onedriveforbusiness browse sessions in the tenant.
+// GetOneDriveForBusinessBrowseSessions gets the oneDriveForBusinessBrowseSessions property value. The list of OneDrive for work or school browse sessions in the tenant.
 // returns a []OneDriveForBusinessBrowseSessionable when successful
 func (m *BackupRestoreRoot) GetOneDriveForBusinessBrowseSessions()([]OneDriveForBusinessBrowseSessionable) {
     val, err := m.GetBackingStore().Get("oneDriveForBusinessBrowseSessions")
@@ -866,7 +866,7 @@ func (m *BackupRestoreRoot) GetServiceStatus()(ServiceStatusable) {
     }
     return nil
 }
-// GetSharePointBrowseSessions gets the sharePointBrowseSessions property value. The list of sharepoint browse sessions in the tenant.
+// GetSharePointBrowseSessions gets the sharePointBrowseSessions property value. The list of SharePoint browse sessions in the tenant.
 // returns a []SharePointBrowseSessionable when successful
 func (m *BackupRestoreRoot) GetSharePointBrowseSessions()([]SharePointBrowseSessionable) {
     val, err := m.GetBackingStore().Get("sharePointBrowseSessions")
@@ -902,7 +902,7 @@ func (m *BackupRestoreRoot) GetSharePointRestoreSessions()([]SharePointRestoreSe
     }
     return nil
 }
-// GetSiteExclusionUnits gets the siteExclusionUnits property value. The siteExclusionUnits property
+// GetSiteExclusionUnits gets the siteExclusionUnits property value. The list of site exclusion units in the tenant.
 // returns a []SiteExclusionUnitable when successful
 func (m *BackupRestoreRoot) GetSiteExclusionUnits()([]SiteExclusionUnitable) {
     val, err := m.GetBackingStore().Get("siteExclusionUnits")
@@ -914,7 +914,7 @@ func (m *BackupRestoreRoot) GetSiteExclusionUnits()([]SiteExclusionUnitable) {
     }
     return nil
 }
-// GetSiteExclusionUnitsBulkAdditionJobs gets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+// GetSiteExclusionUnitsBulkAdditionJobs gets the siteExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for site exclusion units in the tenant.
 // returns a []SiteExclusionUnitsBulkAdditionJobable when successful
 func (m *BackupRestoreRoot) GetSiteExclusionUnitsBulkAdditionJobs()([]SiteExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("siteExclusionUnitsBulkAdditionJobs")
@@ -1374,14 +1374,14 @@ func (m *BackupRestoreRoot) SetBrowseSessions(value []BrowseSessionBaseable)() {
         panic(err)
     }
 }
-// SetDriveExclusionUnits sets the driveExclusionUnits property value. The driveExclusionUnits property
+// SetDriveExclusionUnits sets the driveExclusionUnits property value. The list of drive exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetDriveExclusionUnits(value []DriveExclusionUnitable)() {
     err := m.GetBackingStore().Set("driveExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The driveExclusionUnitsBulkAdditionJobs property
+// SetDriveExclusionUnitsBulkAdditionJobs sets the driveExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for drive exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetDriveExclusionUnitsBulkAdditionJobs(value []DriveExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("driveExclusionUnitsBulkAdditionJobs", value)
     if err != nil {
@@ -1430,21 +1430,21 @@ func (m *BackupRestoreRoot) SetExchangeRestoreSessions(value []ExchangeRestoreSe
         panic(err)
     }
 }
-// SetExclusionUnits sets the exclusionUnits property value. The exclusionUnits property
+// SetExclusionUnits sets the exclusionUnits property value. The list of exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetExclusionUnits(value []ExclusionUnitBaseable)() {
     err := m.GetBackingStore().Set("exclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+// SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The list of mailbox exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetMailboxExclusionUnits(value []MailboxExclusionUnitable)() {
     err := m.GetBackingStore().Set("mailboxExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+// SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("mailboxExclusionUnitsBulkAdditionJobs", value)
     if err != nil {
@@ -1472,7 +1472,7 @@ func (m *BackupRestoreRoot) SetMailboxProtectionUnitsBulkAdditionJobs(value []Ma
         panic(err)
     }
 }
-// SetOneDriveForBusinessBrowseSessions sets the oneDriveForBusinessBrowseSessions property value. The list of onedriveforbusiness browse sessions in the tenant.
+// SetOneDriveForBusinessBrowseSessions sets the oneDriveForBusinessBrowseSessions property value. The list of OneDrive for work or school browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetOneDriveForBusinessBrowseSessions(value []OneDriveForBusinessBrowseSessionable)() {
     err := m.GetBackingStore().Set("oneDriveForBusinessBrowseSessions", value)
     if err != nil {
@@ -1542,7 +1542,7 @@ func (m *BackupRestoreRoot) SetServiceStatus(value ServiceStatusable)() {
         panic(err)
     }
 }
-// SetSharePointBrowseSessions sets the sharePointBrowseSessions property value. The list of sharepoint browse sessions in the tenant.
+// SetSharePointBrowseSessions sets the sharePointBrowseSessions property value. The list of SharePoint browse sessions in the tenant.
 func (m *BackupRestoreRoot) SetSharePointBrowseSessions(value []SharePointBrowseSessionable)() {
     err := m.GetBackingStore().Set("sharePointBrowseSessions", value)
     if err != nil {
@@ -1563,14 +1563,14 @@ func (m *BackupRestoreRoot) SetSharePointRestoreSessions(value []SharePointResto
         panic(err)
     }
 }
-// SetSiteExclusionUnits sets the siteExclusionUnits property value. The siteExclusionUnits property
+// SetSiteExclusionUnits sets the siteExclusionUnits property value. The list of site exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetSiteExclusionUnits(value []SiteExclusionUnitable)() {
     err := m.GetBackingStore().Set("siteExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSiteExclusionUnitsBulkAdditionJobs sets the siteExclusionUnitsBulkAdditionJobs property value. The siteExclusionUnitsBulkAdditionJobs property
+// SetSiteExclusionUnitsBulkAdditionJobs sets the siteExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for site exclusion units in the tenant.
 func (m *BackupRestoreRoot) SetSiteExclusionUnitsBulkAdditionJobs(value []SiteExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("siteExclusionUnitsBulkAdditionJobs", value)
     if err != nil {

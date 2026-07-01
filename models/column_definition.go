@@ -338,6 +338,16 @@ func (m *ColumnDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["isSearchable"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsSearchable(val)
+        }
+        return nil
+    }
     res["lookup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLookupColumnFromDiscriminatorValue)
         if err != nil {
@@ -516,7 +526,7 @@ func (m *ColumnDefinition) GetHyperlinkOrPicture()(HyperlinkOrPictureColumnable)
     }
     return nil
 }
-// GetIndexed gets the indexed property value. Specifies whether the column values can used for sorting and searching.
+// GetIndexed gets the indexed property value. Specifies whether the column values can be used for sorting and searching.
 // returns a *bool when successful
 func (m *ColumnDefinition) GetIndexed()(*bool) {
     val, err := m.GetBackingStore().Get("indexed")
@@ -556,6 +566,18 @@ func (m *ColumnDefinition) GetIsReorderable()(*bool) {
 // returns a *bool when successful
 func (m *ColumnDefinition) GetIsSealed()(*bool) {
     val, err := m.GetBackingStore().Get("isSealed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsSearchable gets the isSearchable property value. Specifies whether the column values can be used for searching. Currently supported only for columns in a fileStorageContainer.
+// returns a *bool when successful
+func (m *ColumnDefinition) GetIsSearchable()(*bool) {
+    val, err := m.GetBackingStore().Get("isSearchable")
     if err != nil {
         panic(err)
     }
@@ -847,6 +869,12 @@ func (m *ColumnDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteBoolValue("isSearchable", m.GetIsSearchable())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("lookup", m.GetLookup())
         if err != nil {
             return err
@@ -1031,7 +1059,7 @@ func (m *ColumnDefinition) SetHyperlinkOrPicture(value HyperlinkOrPictureColumna
         panic(err)
     }
 }
-// SetIndexed sets the indexed property value. Specifies whether the column values can used for sorting and searching.
+// SetIndexed sets the indexed property value. Specifies whether the column values can be used for sorting and searching.
 func (m *ColumnDefinition) SetIndexed(value *bool)() {
     err := m.GetBackingStore().Set("indexed", value)
     if err != nil {
@@ -1055,6 +1083,13 @@ func (m *ColumnDefinition) SetIsReorderable(value *bool)() {
 // SetIsSealed sets the isSealed property value. Specifies whether the column can be changed.
 func (m *ColumnDefinition) SetIsSealed(value *bool)() {
     err := m.GetBackingStore().Set("isSealed", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsSearchable sets the isSearchable property value. Specifies whether the column values can be used for searching. Currently supported only for columns in a fileStorageContainer.
+func (m *ColumnDefinition) SetIsSearchable(value *bool)() {
+    err := m.GetBackingStore().Set("isSearchable", value)
     if err != nil {
         panic(err)
     }
@@ -1178,6 +1213,7 @@ type ColumnDefinitionable interface {
     GetIsDeletable()(*bool)
     GetIsReorderable()(*bool)
     GetIsSealed()(*bool)
+    GetIsSearchable()(*bool)
     GetLookup()(LookupColumnable)
     GetName()(*string)
     GetNumber()(NumberColumnable)
@@ -1210,6 +1246,7 @@ type ColumnDefinitionable interface {
     SetIsDeletable(value *bool)()
     SetIsReorderable(value *bool)()
     SetIsSealed(value *bool)()
+    SetIsSearchable(value *bool)()
     SetLookup(value LookupColumnable)()
     SetName(value *string)()
     SetNumber(value NumberColumnable)()

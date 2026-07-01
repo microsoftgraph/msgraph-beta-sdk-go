@@ -49,6 +49,42 @@ func (m *IosDdmLobAppAssignmentSettings) GetAssociatedDomainsDirectDownloadAllow
     }
     return nil
 }
+// GetCellularSliceConfigurationId gets the cellularSliceConfigurationId property value. The cellularSliceConfigurationId property
+// returns a *string when successful
+func (m *IosDdmLobAppAssignmentSettings) GetCellularSliceConfigurationId()(*string) {
+    val, err := m.GetBackingStore().Get("cellularSliceConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetContentFilterConfigurationId gets the contentFilterConfigurationId property value. The contentFilterConfigurationId property
+// returns a *string when successful
+func (m *IosDdmLobAppAssignmentSettings) GetContentFilterConfigurationId()(*string) {
+    val, err := m.GetBackingStore().Get("contentFilterConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDnsProxyConfigurationId gets the dnsProxyConfigurationId property value. The dnsProxyConfigurationId property
+// returns a *string when successful
+func (m *IosDdmLobAppAssignmentSettings) GetDnsProxyConfigurationId()(*string) {
+    val, err := m.GetBackingStore().Get("dnsProxyConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosDdmLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -79,6 +115,36 @@ func (m *IosDdmLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["cellularSliceConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCellularSliceConfigurationId(val)
+        }
+        return nil
+    }
+    res["contentFilterConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentFilterConfigurationId(val)
+        }
+        return nil
+    }
+    res["dnsProxyConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDnsProxyConfigurationId(val)
+        }
+        return nil
+    }
     res["preventManagedAppBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -86,6 +152,16 @@ func (m *IosDdmLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetPreventManagedAppBackup(val)
+        }
+        return nil
+    }
+    res["relayConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRelayConfigurationId(val)
         }
         return nil
     }
@@ -120,6 +196,18 @@ func (m *IosDdmLobAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetRelayConfigurationId gets the relayConfigurationId property value. The relayConfigurationId property
+// returns a *string when successful
+func (m *IosDdmLobAppAssignmentSettings) GetRelayConfigurationId()(*string) {
+    val, err := m.GetBackingStore().Get("relayConfigurationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -166,7 +254,31 @@ func (m *IosDdmLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteStringValue("cellularSliceConfigurationId", m.GetCellularSliceConfigurationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("contentFilterConfigurationId", m.GetContentFilterConfigurationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("dnsProxyConfigurationId", m.GetDnsProxyConfigurationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("preventManagedAppBackup", m.GetPreventManagedAppBackup())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("relayConfigurationId", m.GetRelayConfigurationId())
         if err != nil {
             return err
         }
@@ -199,9 +311,37 @@ func (m *IosDdmLobAppAssignmentSettings) SetAssociatedDomainsDirectDownloadAllow
         panic(err)
     }
 }
+// SetCellularSliceConfigurationId sets the cellularSliceConfigurationId property value. The cellularSliceConfigurationId property
+func (m *IosDdmLobAppAssignmentSettings) SetCellularSliceConfigurationId(value *string)() {
+    err := m.GetBackingStore().Set("cellularSliceConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetContentFilterConfigurationId sets the contentFilterConfigurationId property value. The contentFilterConfigurationId property
+func (m *IosDdmLobAppAssignmentSettings) SetContentFilterConfigurationId(value *string)() {
+    err := m.GetBackingStore().Set("contentFilterConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDnsProxyConfigurationId sets the dnsProxyConfigurationId property value. The dnsProxyConfigurationId property
+func (m *IosDdmLobAppAssignmentSettings) SetDnsProxyConfigurationId(value *string)() {
+    err := m.GetBackingStore().Set("dnsProxyConfigurationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreventManagedAppBackup sets the preventManagedAppBackup property value. When true, indicates that the app should not be backed up to iCloud. When false, indicates that the app may be backed up to iCloud. Default is false.
 func (m *IosDdmLobAppAssignmentSettings) SetPreventManagedAppBackup(value *bool)() {
     err := m.GetBackingStore().Set("preventManagedAppBackup", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRelayConfigurationId sets the relayConfigurationId property value. The relayConfigurationId property
+func (m *IosDdmLobAppAssignmentSettings) SetRelayConfigurationId(value *string)() {
+    err := m.GetBackingStore().Set("relayConfigurationId", value)
     if err != nil {
         panic(err)
     }
@@ -225,12 +365,20 @@ type IosDdmLobAppAssignmentSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAssociatedDomains()([]string)
     GetAssociatedDomainsDirectDownloadAllowed()(*bool)
+    GetCellularSliceConfigurationId()(*string)
+    GetContentFilterConfigurationId()(*string)
+    GetDnsProxyConfigurationId()(*string)
     GetPreventManagedAppBackup()(*bool)
+    GetRelayConfigurationId()(*string)
     GetTapToPayScreenLockEnabled()(*bool)
     GetVpnConfigurationId()(*string)
     SetAssociatedDomains(value []string)()
     SetAssociatedDomainsDirectDownloadAllowed(value *bool)()
+    SetCellularSliceConfigurationId(value *string)()
+    SetContentFilterConfigurationId(value *string)()
+    SetDnsProxyConfigurationId(value *string)()
     SetPreventManagedAppBackup(value *bool)()
+    SetRelayConfigurationId(value *string)()
     SetTapToPayScreenLockEnabled(value *bool)()
     SetVpnConfigurationId(value *string)()
 }

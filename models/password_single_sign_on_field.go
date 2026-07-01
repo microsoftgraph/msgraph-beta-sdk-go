@@ -55,7 +55,7 @@ func (m *PasswordSingleSignOnField) GetCustomizedLabel()(*string) {
     }
     return nil
 }
-// GetDefaultLabel gets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read only.
+// GetDefaultLabel gets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read-only.
 // returns a *string when successful
 func (m *PasswordSingleSignOnField) GetDefaultLabel()(*string) {
     val, err := m.GetBackingStore().Get("defaultLabel")
@@ -217,7 +217,7 @@ func (m *PasswordSingleSignOnField) SetCustomizedLabel(value *string)() {
         panic(err)
     }
 }
-// SetDefaultLabel sets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read only.
+// SetDefaultLabel sets the defaultLabel property value. Label that would be used if no customizedLabel is provided. Read-only.
 func (m *PasswordSingleSignOnField) SetDefaultLabel(value *string)() {
     err := m.GetBackingStore().Set("defaultLabel", value)
     if err != nil {

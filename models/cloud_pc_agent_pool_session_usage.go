@@ -25,7 +25,7 @@ func NewCloudPcAgentPoolSessionUsage()(*CloudPcAgentPoolSessionUsage) {
 func CreateCloudPcAgentPoolSessionUsageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcAgentPoolSessionUsage(), nil
 }
-// GetActiveSessionsCount gets the activeSessionsCount property value. The activeSessionsCount property
+// GetActiveSessionsCount gets the activeSessionsCount property value. The number of active sessions in the pool. Read-only.
 // returns a *int32 when successful
 func (m *CloudPcAgentPoolSessionUsage) GetActiveSessionsCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeSessionsCount")
@@ -50,7 +50,7 @@ func (m *CloudPcAgentPoolSessionUsage) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAvailableSessionsCount gets the availableSessionsCount property value. The availableSessionsCount property
+// GetAvailableSessionsCount gets the availableSessionsCount property value. The number of available sessions in the pool. Read-only.
 // returns a *int32 when successful
 func (m *CloudPcAgentPoolSessionUsage) GetAvailableSessionsCount()(*int32) {
     val, err := m.GetBackingStore().Get("availableSessionsCount")
@@ -143,7 +143,7 @@ func (m *CloudPcAgentPoolSessionUsage) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetActiveSessionsCount sets the activeSessionsCount property value. The activeSessionsCount property
+// SetActiveSessionsCount sets the activeSessionsCount property value. The number of active sessions in the pool. Read-only.
 func (m *CloudPcAgentPoolSessionUsage) SetActiveSessionsCount(value *int32)() {
     err := m.GetBackingStore().Set("activeSessionsCount", value)
     if err != nil {
@@ -157,7 +157,7 @@ func (m *CloudPcAgentPoolSessionUsage) SetAdditionalData(value map[string]any)()
         panic(err)
     }
 }
-// SetAvailableSessionsCount sets the availableSessionsCount property value. The availableSessionsCount property
+// SetAvailableSessionsCount sets the availableSessionsCount property value. The number of available sessions in the pool. Read-only.
 func (m *CloudPcAgentPoolSessionUsage) SetAvailableSessionsCount(value *int32)() {
     err := m.GetBackingStore().Set("availableSessionsCount", value)
     if err != nil {

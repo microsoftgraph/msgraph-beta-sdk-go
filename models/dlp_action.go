@@ -18,10 +18,11 @@ const (
     SPSHARINGNOTIFYUSER_DLPACTION
     SPSHARINGGENERATEINCIDENTREPORT_DLPACTION
     RESTRICTWEBGROUNDING_DLPACTION
+    POLICYTIP_DLPACTION
 )
 
 func (i DlpAction) String() string {
-    return []string{"notifyUser", "blockAccess", "deviceRestriction", "browserRestriction", "unknownFutureValue", "restrictAccess", "generateAlert", "generateIncidentReportAction", "sPBlockAnonymousAccess", "sPRuntimeAccessControl", "sPSharingNotifyUser", "sPSharingGenerateIncidentReport", "restrictWebGrounding"}[i]
+    return []string{"notifyUser", "blockAccess", "deviceRestriction", "browserRestriction", "unknownFutureValue", "restrictAccess", "generateAlert", "generateIncidentReportAction", "sPBlockAnonymousAccess", "sPRuntimeAccessControl", "sPSharingNotifyUser", "sPSharingGenerateIncidentReport", "restrictWebGrounding", "policyTip"}[i]
 }
 func ParseDlpAction(v string) (any, error) {
     result := NOTIFYUSER_DLPACTION
@@ -52,6 +53,8 @@ func ParseDlpAction(v string) (any, error) {
             result = SPSHARINGGENERATEINCIDENTREPORT_DLPACTION
         case "restrictWebGrounding":
             result = RESTRICTWEBGROUNDING_DLPACTION
+        case "policyTip":
+            result = POLICYTIP_DLPACTION
         default:
             return nil, nil
     }

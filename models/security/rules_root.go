@@ -23,7 +23,7 @@ func NewRulesRoot()(*RulesRoot) {
 func CreateRulesRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRulesRoot(), nil
 }
-// GetDetectionRules gets the detectionRules property value. The detectionRules property
+// GetDetectionRules gets the detectionRules property value. The custom detection rules configured for the tenant.
 // returns a []DetectionRuleable when successful
 func (m *RulesRoot) GetDetectionRules()([]DetectionRuleable) {
     val, err := m.GetBackingStore().Get("detectionRules")
@@ -77,7 +77,7 @@ func (m *RulesRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetDetectionRules sets the detectionRules property value. The detectionRules property
+// SetDetectionRules sets the detectionRules property value. The custom detection rules configured for the tenant.
 func (m *RulesRoot) SetDetectionRules(value []DetectionRuleable)() {
     err := m.GetBackingStore().Set("detectionRules", value)
     if err != nil {

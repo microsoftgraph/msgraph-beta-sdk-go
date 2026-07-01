@@ -695,6 +695,16 @@ func (m *ManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["purviewContentEvaluationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppPurviewEvaluationRequirement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPurviewContentEvaluationRequired(val.(*ManagedAppPurviewEvaluationRequirement))
+        }
+        return nil
+    }
     res["saveAsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1077,6 +1087,18 @@ func (m *ManagedAppProtection) GetProtectedMessagingRedirectAppType()(*Messaging
     }
     return nil
 }
+// GetPurviewContentEvaluationRequired gets the purviewContentEvaluationRequired property value. Specifies whether Microsoft Purview Data Loss Prevention (DLP) content evaluation is required before data sharing.
+// returns a *ManagedAppPurviewEvaluationRequirement when successful
+func (m *ManagedAppProtection) GetPurviewContentEvaluationRequired()(*ManagedAppPurviewEvaluationRequirement) {
+    val, err := m.GetBackingStore().Get("purviewContentEvaluationRequired")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppPurviewEvaluationRequirement)
+    }
+    return nil
+}
 // GetSaveAsBlocked gets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 // returns a *bool when successful
 func (m *ManagedAppProtection) GetSaveAsBlocked()(*bool) {
@@ -1387,6 +1409,13 @@ func (m *ManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if m.GetProtectedMessagingRedirectAppType() != nil {
         cast := (*m.GetProtectedMessagingRedirectAppType()).String()
         err = writer.WriteStringValue("protectedMessagingRedirectAppType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPurviewContentEvaluationRequired() != nil {
+        cast := (*m.GetPurviewContentEvaluationRequired()).String()
+        err = writer.WriteStringValue("purviewContentEvaluationRequired", &cast)
         if err != nil {
             return err
         }
@@ -1720,6 +1749,13 @@ func (m *ManagedAppProtection) SetProtectedMessagingRedirectAppType(value *Messa
         panic(err)
     }
 }
+// SetPurviewContentEvaluationRequired sets the purviewContentEvaluationRequired property value. Specifies whether Microsoft Purview Data Loss Prevention (DLP) content evaluation is required before data sharing.
+func (m *ManagedAppProtection) SetPurviewContentEvaluationRequired(value *ManagedAppPurviewEvaluationRequirement)() {
+    err := m.GetBackingStore().Set("purviewContentEvaluationRequired", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSaveAsBlocked sets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
 func (m *ManagedAppProtection) SetSaveAsBlocked(value *bool)() {
     err := m.GetBackingStore().Set("saveAsBlocked", value)
@@ -1782,6 +1818,7 @@ type ManagedAppProtectionable interface {
     GetPreviousPinBlockCount()(*int32)
     GetPrintBlocked()(*bool)
     GetProtectedMessagingRedirectAppType()(*MessagingRedirectAppType)
+    GetPurviewContentEvaluationRequired()(*ManagedAppPurviewEvaluationRequirement)
     GetSaveAsBlocked()(*bool)
     GetSimplePinBlocked()(*bool)
     SetAllowedDataIngestionLocations(value []ManagedAppDataIngestionLocation)()
@@ -1829,6 +1866,7 @@ type ManagedAppProtectionable interface {
     SetPreviousPinBlockCount(value *int32)()
     SetPrintBlocked(value *bool)()
     SetProtectedMessagingRedirectAppType(value *MessagingRedirectAppType)()
+    SetPurviewContentEvaluationRequired(value *ManagedAppPurviewEvaluationRequirement)()
     SetSaveAsBlocked(value *bool)()
     SetSimplePinBlocked(value *bool)()
 }

@@ -19,6 +19,8 @@ func NewVirtualEndpointProvisioningPoliciesItemApplyPostRequestBody()(*VirtualEn
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
+    isForceUserLogoffEnabledValue := false
+    m.SetIsForceUserLogoffEnabled(&isForceUserLogoffEnabledValue)
     return m
 }
 // CreateVirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +50,16 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetBacking
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["isForceUserLogoffEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsForceUserLogoffEnabled(val)
+        }
+        return nil
+    }
     res["policySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseCloudPcPolicySettingType)
         if err != nil {
@@ -69,6 +81,18 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetFieldDe
         return nil
     }
     return res
+}
+// GetIsForceUserLogoffEnabled gets the isForceUserLogoffEnabled property value. The isForceUserLogoffEnabled property
+// returns a *bool when successful
+func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetIsForceUserLogoffEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isForceUserLogoffEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPolicySettings gets the policySettings property value. The policySettings property
 // returns a *CloudPcPolicySettingType when successful
@@ -96,6 +120,12 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetReserve
 }
 // Serialize serializes information the current object
 func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteBoolValue("isForceUserLogoffEnabled", m.GetIsForceUserLogoffEnabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPolicySettings() != nil {
         cast := (*m.GetPolicySettings()).String()
         err := writer.WriteStringValue("policySettings", &cast)
@@ -128,6 +158,13 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetAdditio
 func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetIsForceUserLogoffEnabled sets the isForceUserLogoffEnabled property value. The isForceUserLogoffEnabled property
+func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetIsForceUserLogoffEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isForceUserLogoffEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicySettings sets the policySettings property value. The policySettings property
 func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetPolicySettings(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)() {
     err := m.GetBackingStore().Set("policySettings", value)
@@ -147,9 +184,11 @@ type VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsForceUserLogoffEnabled()(*bool)
     GetPolicySettings()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)
     GetReservePercentage()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsForceUserLogoffEnabled(value *bool)()
     SetPolicySettings(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)()
     SetReservePercentage(value *int32)()
 }

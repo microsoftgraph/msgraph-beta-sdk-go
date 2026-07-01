@@ -120,6 +120,16 @@ func (m *Teamwork) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["messaging"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamworkMessagingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMessaging(val.(TeamworkMessagingable))
+        }
+        return nil
+    }
     res["region"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -183,6 +193,18 @@ func (m *Teamwork) GetIsTeamsEnabled()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetMessaging gets the messaging property value. The messaging property
+// returns a TeamworkMessagingable when successful
+func (m *Teamwork) GetMessaging()(TeamworkMessagingable) {
+    val, err := m.GetBackingStore().Get("messaging")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamworkMessagingable)
     }
     return nil
 }
@@ -283,6 +305,12 @@ func (m *Teamwork) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteObjectValue("messaging", m.GetMessaging())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("region", m.GetRegion())
         if err != nil {
             return err
@@ -348,6 +376,13 @@ func (m *Teamwork) SetIsTeamsEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetMessaging sets the messaging property value. The messaging property
+func (m *Teamwork) SetMessaging(value TeamworkMessagingable)() {
+    err := m.GetBackingStore().Set("messaging", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegion sets the region property value. Represents the region of the organization or the tenant. The region value can be any region supported by the Teams payload. The possible values are: Americas, Europe and MiddleEast, Asia Pacific, UAE, Australia, Brazil, Canada, Switzerland, Germany, France, India, Japan, South Korea, Norway, Singapore, United Kingdom, South Africa, Sweden, Qatar, Poland, Italy, Israel, Spain, Mexico, USGov Community Cloud, USGov Community Cloud High, USGov Department of Defense, and China.
 func (m *Teamwork) SetRegion(value *string)() {
     err := m.GetBackingStore().Set("region", value)
@@ -383,6 +418,7 @@ type Teamworkable interface {
     GetDeletedTeams()([]DeletedTeamable)
     GetDevices()([]TeamworkDeviceable)
     GetIsTeamsEnabled()(*bool)
+    GetMessaging()(TeamworkMessagingable)
     GetRegion()(*string)
     GetTeamsAppSettings()(TeamsAppSettingsable)
     GetTeamTemplates()([]TeamTemplateable)
@@ -391,6 +427,7 @@ type Teamworkable interface {
     SetDeletedTeams(value []DeletedTeamable)()
     SetDevices(value []TeamworkDeviceable)()
     SetIsTeamsEnabled(value *bool)()
+    SetMessaging(value TeamworkMessagingable)()
     SetRegion(value *string)()
     SetTeamsAppSettings(value TeamsAppSettingsable)()
     SetTeamTemplates(value []TeamTemplateable)()

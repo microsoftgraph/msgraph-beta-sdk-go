@@ -39,6 +39,16 @@ func (m *CustomTaskExtensionCalloutData) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["targetSubject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkflowSubjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTargetSubject(val.(WorkflowSubjectable))
+        }
+        return nil
+    }
     res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTaskFromDiscriminatorValue)
         if err != nil {
@@ -80,6 +90,18 @@ func (m *CustomTaskExtensionCalloutData) GetSubject()(ie233ee762e29b4ba6970aa2a2
     }
     if val != nil {
         return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    }
+    return nil
+}
+// GetTargetSubject gets the targetSubject property value. The target subject for workflow execution.
+// returns a WorkflowSubjectable when successful
+func (m *CustomTaskExtensionCalloutData) GetTargetSubject()(WorkflowSubjectable) {
+    val, err := m.GetBackingStore().Get("targetSubject")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkflowSubjectable)
     }
     return nil
 }
@@ -132,6 +154,12 @@ func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteObjectValue("targetSubject", m.GetTargetSubject())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("task", m.GetTask())
         if err != nil {
             return err
@@ -154,6 +182,13 @@ func (m *CustomTaskExtensionCalloutData) Serialize(writer i878a80d2330e89d268963
 // SetSubject sets the subject property value. The subject property
 func (m *CustomTaskExtensionCalloutData) SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
     err := m.GetBackingStore().Set("subject", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTargetSubject sets the targetSubject property value. The target subject for workflow execution.
+func (m *CustomTaskExtensionCalloutData) SetTargetSubject(value WorkflowSubjectable)() {
+    err := m.GetBackingStore().Set("targetSubject", value)
     if err != nil {
         panic(err)
     }
@@ -183,10 +218,12 @@ type CustomTaskExtensionCalloutDataable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomExtensionDataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    GetTargetSubject()(WorkflowSubjectable)
     GetTask()(Taskable)
     GetTaskProcessingresult()(TaskProcessingResultable)
     GetWorkflow()(Workflowable)
     SetSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)()
+    SetTargetSubject(value WorkflowSubjectable)()
     SetTask(value Taskable)()
     SetTaskProcessingresult(value TaskProcessingResultable)()
     SetWorkflow(value Workflowable)()

@@ -58,6 +58,16 @@ func (m *DelegatedAdministrationRoleAssignment) GetFieldDeserializers()(map[stri
         }
         return nil
     }
+    res["groupDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupDisplayName(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -98,6 +108,18 @@ func (m *DelegatedAdministrationRoleAssignment) GetGroup()(ie233ee762e29b4ba6970
     }
     return nil
 }
+// GetGroupDisplayName gets the groupDisplayName property value. The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
+// returns a *string when successful
+func (m *DelegatedAdministrationRoleAssignment) GetGroupDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("groupDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *DelegatedAdministrationRoleAssignment) GetOdataType()(*string) {
@@ -126,6 +148,12 @@ func (m *DelegatedAdministrationRoleAssignment) GetRoleTemplates()([]RoleTemplat
 func (m *DelegatedAdministrationRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("group", m.GetGroup())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("groupDisplayName", m.GetGroupDisplayName())
         if err != nil {
             return err
         }
@@ -174,6 +202,13 @@ func (m *DelegatedAdministrationRoleAssignment) SetGroup(value ie233ee762e29b4ba
         panic(err)
     }
 }
+// SetGroupDisplayName sets the groupDisplayName property value. The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.
+func (m *DelegatedAdministrationRoleAssignment) SetGroupDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("groupDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *DelegatedAdministrationRoleAssignment) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -194,10 +229,12 @@ type DelegatedAdministrationRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetGroup()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)
+    GetGroupDisplayName()(*string)
     GetOdataType()(*string)
     GetRoleTemplates()([]RoleTemplateable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetGroup(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable)()
+    SetGroupDisplayName(value *string)()
     SetOdataType(value *string)()
     SetRoleTemplates(value []RoleTemplateable)()
 }

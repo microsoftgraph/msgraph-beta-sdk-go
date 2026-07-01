@@ -77,6 +77,18 @@ func (m *CopilotPackage) GetAvailableTo()(*PackageStatus) {
     }
     return nil
 }
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
+func (m *CopilotPackage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetDeployedTo gets the deployedTo property value. The deployedTo property
 // returns a *PackageStatus when successful
 func (m *CopilotPackage) GetDeployedTo()(*PackageStatus) {
@@ -144,6 +156,16 @@ func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetAvailableTo(val.(*PackageStatus))
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
         }
         return nil
     }
@@ -480,6 +502,12 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeployedTo() != nil {
         cast := (*m.GetDeployedTo()).String()
         err = writer.WriteStringValue("deployedTo", &cast)
@@ -595,6 +623,13 @@ func (m *CopilotPackage) SetAvailableTo(value *PackageStatus)() {
         panic(err)
     }
 }
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *CopilotPackage) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeployedTo sets the deployedTo property value. The deployedTo property
 func (m *CopilotPackage) SetDeployedTo(value *PackageStatus)() {
     err := m.GetBackingStore().Set("deployedTo", value)
@@ -706,6 +741,7 @@ type CopilotPackageable interface {
     GetAppId()(*string)
     GetAssetId()(*string)
     GetAvailableTo()(*PackageStatus)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeployedTo()(*PackageStatus)
     GetDisplayName()(*string)
     GetElementTypes()([]string)
@@ -724,6 +760,7 @@ type CopilotPackageable interface {
     SetAppId(value *string)()
     SetAssetId(value *string)()
     SetAvailableTo(value *PackageStatus)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeployedTo(value *PackageStatus)()
     SetDisplayName(value *string)()
     SetElementTypes(value []string)()

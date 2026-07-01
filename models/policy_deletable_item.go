@@ -46,12 +46,16 @@ func CreatePolicyDeletableItemFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewCrossTenantAccessPolicyConfigurationPartner(), nil
                     case "#microsoft.graph.crossTenantIdentitySyncPolicyPartner":
                         return NewCrossTenantIdentitySyncPolicyPartner(), nil
+                    case "#microsoft.graph.delegatedAdminServiceProviderConstraints":
+                        return NewDelegatedAdminServiceProviderConstraints(), nil
                     case "#microsoft.graph.ipNamedLocation":
                         return NewIpNamedLocation(), nil
                     case "#microsoft.graph.namedLocation":
                         return NewNamedLocation(), nil
                     case "#microsoft.graph.privateLinkNamedLocation":
                         return NewPrivateLinkNamedLocation(), nil
+                    case "#microsoft.graph.serviceProviderConstraints":
+                        return NewServiceProviderConstraints(), nil
                     case "#microsoft.graph.serviceTagNamedLocation":
                         return NewServiceTagNamedLocation(), nil
                     case "#microsoft.graph.whatIfAnalysisResult":

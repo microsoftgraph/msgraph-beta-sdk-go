@@ -80,7 +80,7 @@ func (m *QueryCondition) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated. Deprecated. This property will be removed from this resource on 2026-10-01.
 // returns a *Time when successful
 func (m *QueryCondition) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -155,7 +155,7 @@ func (m *QueryCondition) SetAdditionalData(value map[string]any)() {
 func (m *QueryCondition) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the query in the custom detection rule was last updated. Deprecated. This property will be removed from this resource on 2026-10-01.
 func (m *QueryCondition) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

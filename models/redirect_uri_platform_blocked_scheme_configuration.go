@@ -43,7 +43,7 @@ func (m *RedirectUriPlatformBlockedSchemeConfiguration) GetAdditionalData()(map[
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockedSchemes gets the blockedSchemes property value. The blockedSchemes property
+// GetBlockedSchemes gets the blockedSchemes property value. Collection of URI schemes that are blocked for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
 // returns a []string when successful
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) GetBlockedSchemes()([]string) {
     val, err := m.GetBackingStore().Get("blockedSchemes")
@@ -55,7 +55,7 @@ func (m *RedirectUriPlatformBlockedSchemeConfiguration) GetBlockedSchemes()([]st
     }
     return nil
 }
-// GetExemptFormats gets the exemptFormats property value. The exemptFormats property
+// GetExemptFormats gets the exemptFormats property value. Collection of URI patterns that are exempt from the blocked scheme restrictions for this platform. Patterns must follow specific validation rules for standard URI formats or URN formats.
 // returns a []string when successful
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) GetExemptFormats()([]string) {
     val, err := m.GetBackingStore().Get("exemptFormats")
@@ -166,14 +166,14 @@ func (m *RedirectUriPlatformBlockedSchemeConfiguration) SetAdditionalData(value 
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockedSchemes sets the blockedSchemes property value. The blockedSchemes property
+// SetBlockedSchemes sets the blockedSchemes property value. Collection of URI schemes that are blocked for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) SetBlockedSchemes(value []string)() {
     err := m.GetBackingStore().Set("blockedSchemes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExemptFormats sets the exemptFormats property value. The exemptFormats property
+// SetExemptFormats sets the exemptFormats property value. Collection of URI patterns that are exempt from the blocked scheme restrictions for this platform. Patterns must follow specific validation rules for standard URI formats or URN formats.
 func (m *RedirectUriPlatformBlockedSchemeConfiguration) SetExemptFormats(value []string)() {
     err := m.GetBackingStore().Set("exemptFormats", value)
     if err != nil {

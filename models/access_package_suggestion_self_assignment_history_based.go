@@ -39,13 +39,13 @@ func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) GetFieldDeserializer
         }
         return nil
     }
-    res["pastAssigmentCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["pastAssignmentCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPastAssigmentCount(val)
+            m.SetPastAssignmentCount(val)
         }
         return nil
     }
@@ -63,10 +63,10 @@ func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) GetLastAssignmentDat
     }
     return nil
 }
-// GetPastAssigmentCount gets the pastAssigmentCount property value. The pastAssigmentCount property
+// GetPastAssignmentCount gets the pastAssignmentCount property value. The number of times the user has been assigned to this access package in the past. Read-only.
 // returns a *int32 when successful
-func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) GetPastAssigmentCount()(*int32) {
-    val, err := m.GetBackingStore().Get("pastAssigmentCount")
+func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) GetPastAssignmentCount()(*int32) {
+    val, err := m.GetBackingStore().Get("pastAssignmentCount")
     if err != nil {
         panic(err)
     }
@@ -88,7 +88,7 @@ func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) Serialize(writer i87
         }
     }
     {
-        err = writer.WriteInt32Value("pastAssigmentCount", m.GetPastAssigmentCount())
+        err = writer.WriteInt32Value("pastAssignmentCount", m.GetPastAssignmentCount())
         if err != nil {
             return err
         }
@@ -102,9 +102,9 @@ func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) SetLastAssignmentDat
         panic(err)
     }
 }
-// SetPastAssigmentCount sets the pastAssigmentCount property value. The pastAssigmentCount property
-func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) SetPastAssigmentCount(value *int32)() {
-    err := m.GetBackingStore().Set("pastAssigmentCount", value)
+// SetPastAssignmentCount sets the pastAssignmentCount property value. The number of times the user has been assigned to this access package in the past. Read-only.
+func (m *AccessPackageSuggestionSelfAssignmentHistoryBased) SetPastAssignmentCount(value *int32)() {
+    err := m.GetBackingStore().Set("pastAssignmentCount", value)
     if err != nil {
         panic(err)
     }
@@ -113,7 +113,7 @@ type AccessPackageSuggestionSelfAssignmentHistoryBasedable interface {
     AccessPackageSuggestionReasonable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLastAssignmentDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetPastAssigmentCount()(*int32)
+    GetPastAssignmentCount()(*int32)
     SetLastAssignmentDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetPastAssigmentCount(value *int32)()
+    SetPastAssignmentCount(value *int32)()
 }

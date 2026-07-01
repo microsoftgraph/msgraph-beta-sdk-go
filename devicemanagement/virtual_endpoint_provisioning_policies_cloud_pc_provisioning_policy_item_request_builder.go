@@ -147,6 +147,11 @@ func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequest
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) RetrievePolicyApplySchedule()(*VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrievePolicyUpdateStatusResult provides operations to call the retrievePolicyUpdateStatusResult method.
+// returns a *VirtualEndpointProvisioningPoliciesItemRetrievePolicyUpdateStatusResultRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) RetrievePolicyUpdateStatusResult()(*VirtualEndpointProvisioningPoliciesItemRetrievePolicyUpdateStatusResultRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyUpdateStatusResultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Retry provides operations to call the retry method.
 // returns a *VirtualEndpointProvisioningPoliciesItemRetryRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) Retry()(*VirtualEndpointProvisioningPoliciesItemRetryRequestBuilder) {

@@ -16,7 +16,7 @@ const (
     FAILED_ONBOARDINGSTATUS
     // Offboarding
     OFFBOARDING_ONBOARDINGSTATUS
-    // Evolvable enumeration sentinel value. Do not use.
+    // UnknownFutureValue
     UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
 )
 
