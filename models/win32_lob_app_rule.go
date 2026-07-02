@@ -40,6 +40,8 @@ func CreateWin32LobAppRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewWin32LobAppFileSystemRule(), nil
                     case "#microsoft.graph.win32LobAppPowerShellScriptRule":
                         return NewWin32LobAppPowerShellScriptRule(), nil
+                    case "#microsoft.graph.win32LobAppProcessRule":
+                        return NewWin32LobAppProcessRule(), nil
                     case "#microsoft.graph.win32LobAppProductCodeRule":
                         return NewWin32LobAppProductCodeRule(), nil
                     case "#microsoft.graph.win32LobAppRegistryRule":

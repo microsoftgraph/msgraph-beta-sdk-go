@@ -34,7 +34,7 @@ func NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post discover the latest schema definition for provisioning to an application. 
+// Post discover the latest schema for a directoryDefinition to provision to an application. 
 // returns a DirectoryDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,7 +57,7 @@ func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable), nil
 }
-// ToPostRequestInformation discover the latest schema definition for provisioning to an application. 
+// ToPostRequestInformation discover the latest schema for a directoryDefinition to provision to an application. 
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaDirectoriesItemDiscoverRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

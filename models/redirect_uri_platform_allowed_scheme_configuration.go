@@ -38,7 +38,7 @@ func (m *RedirectUriPlatformAllowedSchemeConfiguration) GetAdditionalData()(map[
     }
     return val.(map[string]any)
 }
-// GetAllowedSchemes gets the allowedSchemes property value. The allowedSchemes property
+// GetAllowedSchemes gets the allowedSchemes property value. Collection of URI schemes that are allowed for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme for this platform.
 // returns a []string when successful
 func (m *RedirectUriPlatformAllowedSchemeConfiguration) GetAllowedSchemes()([]string) {
     val, err := m.GetBackingStore().Get("allowedSchemes")
@@ -128,7 +128,7 @@ func (m *RedirectUriPlatformAllowedSchemeConfiguration) SetAdditionalData(value 
         panic(err)
     }
 }
-// SetAllowedSchemes sets the allowedSchemes property value. The allowedSchemes property
+// SetAllowedSchemes sets the allowedSchemes property value. Collection of URI schemes that are allowed for this specific platform. Schemes refer to URI schemes as defined in RFC 3986 §3.1. The value '*' can be used to allow any scheme for this platform.
 func (m *RedirectUriPlatformAllowedSchemeConfiguration) SetAllowedSchemes(value []string)() {
     err := m.GetBackingStore().Set("allowedSchemes", value)
     if err != nil {

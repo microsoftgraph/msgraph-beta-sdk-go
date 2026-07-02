@@ -22,7 +22,7 @@ func NewProfilePropertySetting()(*ProfilePropertySetting) {
 func CreateProfilePropertySettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProfilePropertySetting(), nil
 }
-// GetDisplayName gets the displayName property value. Name of the property-level setting.
+// GetDisplayName gets the displayName property value. Name of the property associated with this setting.
 // returns a *string when successful
 func (m *ProfilePropertySetting) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -88,7 +88,7 @@ func (m *ProfilePropertySetting) GetName()(*string) {
     }
     return nil
 }
-// GetPrioritizedSourceUrls gets the prioritizedSourceUrls property value. A collection of prioritized profile source URLs ordered by data precedence within an organization.
+// GetPrioritizedSourceUrls gets the prioritizedSourceUrls property value. A collection of prioritized profile source URLs ordered by data precedence within an organization. For details, see Manage profile source precedence in Microsoft 365.
 // returns a []string when successful
 func (m *ProfilePropertySetting) GetPrioritizedSourceUrls()([]string) {
     val, err := m.GetBackingStore().Get("prioritizedSourceUrls")
@@ -126,7 +126,7 @@ func (m *ProfilePropertySetting) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. Name of the property-level setting.
+// SetDisplayName sets the displayName property value. Name of the property associated with this setting.
 func (m *ProfilePropertySetting) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -140,7 +140,7 @@ func (m *ProfilePropertySetting) SetName(value *string)() {
         panic(err)
     }
 }
-// SetPrioritizedSourceUrls sets the prioritizedSourceUrls property value. A collection of prioritized profile source URLs ordered by data precedence within an organization.
+// SetPrioritizedSourceUrls sets the prioritizedSourceUrls property value. A collection of prioritized profile source URLs ordered by data precedence within an organization. For details, see Manage profile source precedence in Microsoft 365.
 func (m *ProfilePropertySetting) SetPrioritizedSourceUrls(value []string)() {
     err := m.GetBackingStore().Set("prioritizedSourceUrls", value)
     if err != nil {

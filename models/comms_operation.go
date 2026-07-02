@@ -34,6 +34,10 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                 switch *mappingValue {
                     case "#microsoft.graph.addLargeGalleryViewOperation":
                         return NewAddLargeGalleryViewOperation(), nil
+                    case "#microsoft.graph.admitAllFromLobbyOperation":
+                        return NewAdmitAllFromLobbyOperation(), nil
+                    case "#microsoft.graph.admitFromLobbyOperation":
+                        return NewAdmitFromLobbyOperation(), nil
                     case "#microsoft.graph.cancelMediaProcessingOperation":
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.inviteParticipantsOperation":
@@ -46,6 +50,8 @@ func CreateCommsOperationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewPlayPromptOperation(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
+                    case "#microsoft.graph.removeFromLobbyOperation":
+                        return NewRemoveFromLobbyOperation(), nil
                     case "#microsoft.graph.sendDtmfTonesOperation":
                         return NewSendDtmfTonesOperation(), nil
                     case "#microsoft.graph.startHoldMusicOperation":

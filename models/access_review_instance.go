@@ -59,6 +59,18 @@ func (m *AccessReviewInstance) GetDefinition()(AccessReviewScheduleDefinitionabl
     }
     return nil
 }
+// GetDelegatedBy gets the delegatedBy property value. The identities of users who delegated this review instance to the current reviewer. Null if the instance wasn't delegated. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
+// returns a []UserIdentityable when successful
+func (m *AccessReviewInstance) GetDelegatedBy()([]UserIdentityable) {
+    val, err := m.GetBackingStore().Get("delegatedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserIdentityable)
+    }
+    return nil
+}
 // GetEndDateTime gets the endDateTime property value. DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 // returns a *Time when successful
 func (m *AccessReviewInstance) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -138,6 +150,22 @@ func (m *AccessReviewInstance) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDefinition(val.(AccessReviewScheduleDefinitionable))
+        }
+        return nil
+    }
+    res["delegatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserIdentityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserIdentityable)
+                }
+            }
+            m.SetDelegatedBy(res)
         }
         return nil
     }
@@ -343,6 +371,18 @@ func (m *AccessReviewInstance) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetDelegatedBy() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedBy()))
+        for i, v := range m.GetDelegatedBy() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("delegatedBy", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
         if err != nil {
@@ -438,6 +478,13 @@ func (m *AccessReviewInstance) SetDefinition(value AccessReviewScheduleDefinitio
         panic(err)
     }
 }
+// SetDelegatedBy sets the delegatedBy property value. The identities of users who delegated this review instance to the current reviewer. Null if the instance wasn't delegated. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
+func (m *AccessReviewInstance) SetDelegatedBy(value []UserIdentityable)() {
+    err := m.GetBackingStore().Set("delegatedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEndDateTime sets the endDateTime property value. DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstance) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
@@ -500,6 +547,7 @@ type AccessReviewInstanceable interface {
     GetContactedReviewers()([]AccessReviewReviewerable)
     GetDecisions()([]AccessReviewInstanceDecisionItemable)
     GetDefinition()(AccessReviewScheduleDefinitionable)
+    GetDelegatedBy()([]UserIdentityable)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetErrors()([]AccessReviewErrorable)
     GetFallbackReviewers()([]AccessReviewReviewerScopeable)
@@ -511,6 +559,7 @@ type AccessReviewInstanceable interface {
     SetContactedReviewers(value []AccessReviewReviewerable)()
     SetDecisions(value []AccessReviewInstanceDecisionItemable)()
     SetDefinition(value AccessReviewScheduleDefinitionable)()
+    SetDelegatedBy(value []UserIdentityable)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetErrors(value []AccessReviewErrorable)()
     SetFallbackReviewers(value []AccessReviewReviewerScopeable)()

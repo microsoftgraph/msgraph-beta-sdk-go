@@ -21,7 +21,7 @@ type RulesDetectionRulesDetectionRuleItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RulesDetectionRulesDetectionRuleItemRequestBuilderGetQueryParameters get detectionRules from security
+// RulesDetectionRulesDetectionRuleItemRequestBuilderGetQueryParameters the custom detection rules configured for the tenant.
 type RulesDetectionRulesDetectionRuleItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,8 +57,11 @@ func NewRulesDetectionRulesDetectionRuleItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewRulesDetectionRulesDetectionRuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property detectionRules for security
+// Delete delete a detectionRule object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-rulesroot-delete-detectionrules?view=graph-rest-beta
 func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RulesDetectionRulesDetectionRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get detectionRules from security
+// Get the custom detection rules configured for the tenant.
 // returns a DetectionRuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RulesDetectionRulesDetectionRuleItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DetectionRuleable, error) {
@@ -113,7 +116,7 @@ func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) Patch(ctx context.C
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DetectionRuleable), nil
 }
-// ToDeleteRequestInformation delete navigation property detectionRules for security
+// ToDeleteRequestInformation delete a detectionRule object.
 // returns a *RequestInformation when successful
 func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RulesDetectionRulesDetectionRuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +127,7 @@ func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get detectionRules from security
+// ToGetRequestInformation the custom detection rules configured for the tenant.
 // returns a *RequestInformation when successful
 func (m *RulesDetectionRulesDetectionRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RulesDetectionRulesDetectionRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

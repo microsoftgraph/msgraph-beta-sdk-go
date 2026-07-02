@@ -38,7 +38,7 @@ func NewItemSynchronizationSecretsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemSynchronizationSecretsRequestBuilder) Count()(*ItemSynchronizationSecretsCountRequestBuilder) {
     return NewItemSynchronizationSecretsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Put provide credentials for establishing connectivity with the target system.
+// Put provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
 // Deprecated: This method is obsolete. Use PutAsSecretsPutResponse instead.
 // returns a ItemSynchronizationSecretsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -62,7 +62,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) Put(ctx context.Context, body
     }
     return res.(ItemSynchronizationSecretsResponseable), nil
 }
-// PutAsSecretsPutResponse provide credentials for establishing connectivity with the target system.
+// PutAsSecretsPutResponse provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
 // Deprecated: Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a ItemSynchronizationSecretsPutResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -86,7 +86,7 @@ func (m *ItemSynchronizationSecretsRequestBuilder) PutAsSecretsPutResponse(ctx c
     }
     return res.(ItemSynchronizationSecretsPutResponseable), nil
 }
-// ToPutRequestInformation provide credentials for establishing connectivity with the target system.
+// ToPutRequestInformation provide credentials for establishing connectivity with the target system and store them in the synchronization resource.
 // Deprecated: Use connectivityParameters for oauth flows and scim endpoint connectivity. Use SynchronizationJobSettings for job-specific settings This property will be removed. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationSecretsRequestBuilder) ToPutRequestInformation(ctx context.Context, body ItemSynchronizationSecretsPutRequestBodyable, requestConfiguration *ItemSynchronizationSecretsRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

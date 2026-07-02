@@ -14,7 +14,7 @@ import (
 type BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters get driveExclusionUnitsBulkAdditionJobs from solutions
+// BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters the list of bulk addition jobs for drive exclusion units in the tenant.
 type BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder(rawUrl st
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder) Count()(*BackupRestoreDriveExclusionUnitsBulkAdditionJobsCountRequestBuilder) {
     return NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get driveExclusionUnitsBulkAdditionJobs from solutions
+// Get the list of bulk addition jobs for drive exclusion units in the tenant.
 // returns a DriveExclusionUnitsBulkAdditionJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable), nil
 }
-// ToGetRequestInformation get driveExclusionUnitsBulkAdditionJobs from solutions
+// ToGetRequestInformation the list of bulk addition jobs for drive exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

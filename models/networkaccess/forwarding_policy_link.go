@@ -40,7 +40,7 @@ func (m *ForwardingPolicyLink) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. Priority of the policy within the forwarding profile.
 // returns a *int64 when successful
 func (m *ForwardingPolicyLink) GetPriority()(*int64) {
     val, err := m.GetBackingStore().Get("priority")
@@ -66,7 +66,7 @@ func (m *ForwardingPolicyLink) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. Priority of the policy within the forwarding profile.
 func (m *ForwardingPolicyLink) SetPriority(value *int64)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

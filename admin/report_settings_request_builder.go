@@ -119,6 +119,11 @@ func (m *ReportSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdminReportSettingsable), nil
 }
+// SharePoint provides operations to manage the sharePoint property of the microsoft.graph.adminReportSettings entity.
+// returns a *ReportSettingsSharePointRequestBuilder when successful
+func (m *ReportSettingsRequestBuilder) SharePoint()(*ReportSettingsSharePointRequestBuilder) {
+    return NewReportSettingsSharePointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property reportSettings for admin
 // returns a *RequestInformation when successful
 func (m *ReportSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

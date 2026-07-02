@@ -24,7 +24,7 @@ func NewDriveExclusionUnitsBulkAdditionJob()(*DriveExclusionUnitsBulkAdditionJob
 func CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveExclusionUnitsBulkAdditionJob(), nil
 }
-// GetDrives gets the drives property value. The drives property
+// GetDrives gets the drives property value. The email addresses or user principal names of the users whose OneDrive drives are to be added as exclusion units to the protection policy.
 // returns a []string when successful
 func (m *DriveExclusionUnitsBulkAdditionJob) GetDrives()([]string) {
     val, err := m.GetBackingStore().Get("drives")
@@ -72,7 +72,7 @@ func (m *DriveExclusionUnitsBulkAdditionJob) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetDrives sets the drives property value. The drives property
+// SetDrives sets the drives property value. The email addresses or user principal names of the users whose OneDrive drives are to be added as exclusion units to the protection policy.
 func (m *DriveExclusionUnitsBulkAdditionJob) SetDrives(value []string)() {
     err := m.GetBackingStore().Set("drives", value)
     if err != nil {

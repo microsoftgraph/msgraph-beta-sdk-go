@@ -12,7 +12,7 @@ const (
     IMPORTANT_WINDOWSUPDATECVESEVERITYLEVEL
     // Severity of Moderate
     MODERATE_WINDOWSUPDATECVESEVERITYLEVEL
-    // Evolvable enumeration sentinel value. Do not use.
+    // Reserved value of UnknownFutureValue
     UNKNOWNFUTUREVALUE_WINDOWSUPDATECVESEVERITYLEVEL
 )
 

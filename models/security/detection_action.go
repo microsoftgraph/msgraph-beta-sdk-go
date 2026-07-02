@@ -50,6 +50,18 @@ func (m *DetectionAction) GetAlertTemplate()(AlertTemplateable) {
     }
     return nil
 }
+// GetAutomatedActions gets the automatedActions property value. The set of automated actions to run against entities that match the detection. Replaces the deprecated responseActions property.
+// returns a AutomatedActionSetable when successful
+func (m *DetectionAction) GetAutomatedActions()(AutomatedActionSetable) {
+    val, err := m.GetBackingStore().Get("automatedActions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AutomatedActionSetable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *DetectionAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -66,6 +78,16 @@ func (m *DetectionAction) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         if val != nil {
             m.SetAlertTemplate(val.(AlertTemplateable))
+        }
+        return nil
+    }
+    res["automatedActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAutomatedActionSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutomatedActions(val.(AutomatedActionSetable))
         }
         return nil
     }
@@ -119,7 +141,7 @@ func (m *DetectionAction) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrganizationalScope gets the organizationalScope property value. Groups to which the custom detection rule applies.
+// GetOrganizationalScope gets the organizationalScope property value. The set of groups (for example, device groups) to which the parent custom detection rule applies.
 // returns a OrganizationalScopeable when successful
 func (m *DetectionAction) GetOrganizationalScope()(OrganizationalScopeable) {
     val, err := m.GetBackingStore().Get("organizationalScope")
@@ -131,7 +153,7 @@ func (m *DetectionAction) GetOrganizationalScope()(OrganizationalScopeable) {
     }
     return nil
 }
-// GetResponseActions gets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
+// GetResponseActions gets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule. Deprecated. Use automatedActions instead. This property will be removed from this resource on 2026-10-01.
 // returns a []ResponseActionable when successful
 func (m *DetectionAction) GetResponseActions()([]ResponseActionable) {
     val, err := m.GetBackingStore().Get("responseActions")
@@ -147,6 +169,12 @@ func (m *DetectionAction) GetResponseActions()([]ResponseActionable) {
 func (m *DetectionAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("alertTemplate", m.GetAlertTemplate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("automatedActions", m.GetAutomatedActions())
         if err != nil {
             return err
         }
@@ -197,6 +225,13 @@ func (m *DetectionAction) SetAlertTemplate(value AlertTemplateable)() {
         panic(err)
     }
 }
+// SetAutomatedActions sets the automatedActions property value. The set of automated actions to run against entities that match the detection. Replaces the deprecated responseActions property.
+func (m *DetectionAction) SetAutomatedActions(value AutomatedActionSetable)() {
+    err := m.GetBackingStore().Set("automatedActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *DetectionAction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -208,14 +243,14 @@ func (m *DetectionAction) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrganizationalScope sets the organizationalScope property value. Groups to which the custom detection rule applies.
+// SetOrganizationalScope sets the organizationalScope property value. The set of groups (for example, device groups) to which the parent custom detection rule applies.
 func (m *DetectionAction) SetOrganizationalScope(value OrganizationalScopeable)() {
     err := m.GetBackingStore().Set("organizationalScope", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResponseActions sets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule.
+// SetResponseActions sets the responseActions property value. Actions taken on impacted assets as set in the custom detection rule. Deprecated. Use automatedActions instead. This property will be removed from this resource on 2026-10-01.
 func (m *DetectionAction) SetResponseActions(value []ResponseActionable)() {
     err := m.GetBackingStore().Set("responseActions", value)
     if err != nil {
@@ -227,11 +262,13 @@ type DetectionActionable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlertTemplate()(AlertTemplateable)
+    GetAutomatedActions()(AutomatedActionSetable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetOrganizationalScope()(OrganizationalScopeable)
     GetResponseActions()([]ResponseActionable)
     SetAlertTemplate(value AlertTemplateable)()
+    SetAutomatedActions(value AutomatedActionSetable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetOrganizationalScope(value OrganizationalScopeable)()

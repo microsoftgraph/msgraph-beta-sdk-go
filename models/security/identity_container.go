@@ -177,7 +177,7 @@ func (m *IdentityContainer) GetSensorCandidates()([]SensorCandidateable) {
     }
     return nil
 }
-// GetSensorMigration gets the sensorMigration property value. The sensorMigration property
+// GetSensorMigration gets the sensorMigration property value. Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
 // returns a []SensorMigrationable when successful
 func (m *IdentityContainer) GetSensorMigration()([]SensorMigrationable) {
     val, err := m.GetBackingStore().Get("sensorMigration")
@@ -321,7 +321,7 @@ func (m *IdentityContainer) SetSensorCandidates(value []SensorCandidateable)() {
         panic(err)
     }
 }
-// SetSensorMigration sets the sensorMigration property value. The sensorMigration property
+// SetSensorMigration sets the sensorMigration property value. Represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
 func (m *IdentityContainer) SetSensorMigration(value []SensorMigrationable)() {
     err := m.GetBackingStore().Set("sensorMigration", value)
     if err != nil {

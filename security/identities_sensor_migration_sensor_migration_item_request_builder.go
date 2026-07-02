@@ -21,7 +21,7 @@ type IdentitiesSensorMigrationSensorMigrationItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesSensorMigrationSensorMigrationItemRequestBuilderGetQueryParameters get sensorMigration from security
+// IdentitiesSensorMigrationSensorMigrationItemRequestBuilderGetQueryParameters represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
 type IdentitiesSensorMigrationSensorMigrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *IdentitiesSensorMigrationSensorMigrationItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get get sensorMigration from security
+// Get represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
 // returns a SensorMigrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentitiesSensorMigrationSensorMigrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorMigrationSensorMigrationItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorMigrationable, error) {
@@ -124,7 +124,7 @@ func (m *IdentitiesSensorMigrationSensorMigrationItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sensorMigration from security
+// ToGetRequestInformation represents Microsoft Defender for Identity sensors that can be migrated to the unified security portal.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorMigrationSensorMigrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorMigrationSensorMigrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

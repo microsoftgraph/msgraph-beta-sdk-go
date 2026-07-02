@@ -4129,7 +4129,7 @@ func (m *DeviceManagement) GetRemoteAssistanceSettings()(RemoteAssistanceSetting
     }
     return nil
 }
-// GetReports gets the reports property value. The reports property
+// GetReports gets the reports property value. Reports singleton
 // returns a DeviceManagementReportsable when successful
 func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -7930,7 +7930,7 @@ func (m *DeviceManagement) SetRemoteAssistanceSettings(value RemoteAssistanceSet
         panic(err)
     }
 }
-// SetReports sets the reports property value. The reports property
+// SetReports sets the reports property value. Reports singleton
 func (m *DeviceManagement) SetReports(value DeviceManagementReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {

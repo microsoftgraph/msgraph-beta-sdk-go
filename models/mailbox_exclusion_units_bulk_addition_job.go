@@ -46,7 +46,7 @@ func (m *MailboxExclusionUnitsBulkAdditionJob) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetMailboxes gets the mailboxes property value. The mailboxes property
+// GetMailboxes gets the mailboxes property value. The email addresses of the mailboxes to be added as exclusion units to the protection policy.
 // returns a []string when successful
 func (m *MailboxExclusionUnitsBulkAdditionJob) GetMailboxes()([]string) {
     val, err := m.GetBackingStore().Get("mailboxes")
@@ -72,7 +72,7 @@ func (m *MailboxExclusionUnitsBulkAdditionJob) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetMailboxes sets the mailboxes property value. The mailboxes property
+// SetMailboxes sets the mailboxes property value. The email addresses of the mailboxes to be added as exclusion units to the protection policy.
 func (m *MailboxExclusionUnitsBulkAdditionJob) SetMailboxes(value []string)() {
     err := m.GetBackingStore().Set("mailboxes", value)
     if err != nil {

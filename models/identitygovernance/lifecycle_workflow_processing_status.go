@@ -13,10 +13,11 @@ const (
     FAILED_LIFECYCLEWORKFLOWPROCESSINGSTATUS
     UNKNOWNFUTUREVALUE_LIFECYCLEWORKFLOWPROCESSINGSTATUS
     CANCELING_LIFECYCLEWORKFLOWPROCESSINGSTATUS
+    QUARANTINED_LIFECYCLEWORKFLOWPROCESSINGSTATUS
 )
 
 func (i LifecycleWorkflowProcessingStatus) String() string {
-    return []string{"queued", "inProgress", "completed", "completedWithErrors", "canceled", "failed", "unknownFutureValue", "canceling"}[i]
+    return []string{"queued", "inProgress", "completed", "completedWithErrors", "canceled", "failed", "unknownFutureValue", "canceling", "quarantined"}[i]
 }
 func ParseLifecycleWorkflowProcessingStatus(v string) (any, error) {
     result := QUEUED_LIFECYCLEWORKFLOWPROCESSINGSTATUS
@@ -37,6 +38,8 @@ func ParseLifecycleWorkflowProcessingStatus(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_LIFECYCLEWORKFLOWPROCESSINGSTATUS
         case "canceling":
             result = CANCELING_LIFECYCLEWORKFLOWPROCESSINGSTATUS
+        case "quarantined":
+            result = QUARANTINED_LIFECYCLEWORKFLOWPROCESSINGSTATUS
         default:
             return nil, nil
     }

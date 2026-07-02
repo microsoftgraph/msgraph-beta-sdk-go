@@ -14,7 +14,7 @@ import (
 type BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters get mailboxExclusionUnits from solutions
+// BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters get a mailbox exclusion unit associated with an Exchange protection policy.
 type BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,9 +43,12 @@ func NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxE
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get mailboxExclusionUnits from solutions
+// Get get a mailbox exclusion unit associated with an Exchange protection policy.
 // returns a MailboxExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxexclusionunit-get?view=graph-rest-beta
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailbox
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitable), nil
 }
-// ToGetRequestInformation get mailboxExclusionUnits from solutions
+// ToGetRequestInformation get a mailbox exclusion unit associated with an Exchange protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxExclusionUnitsMailboxExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

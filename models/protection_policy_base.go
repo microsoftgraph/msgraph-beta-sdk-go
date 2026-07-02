@@ -273,7 +273,7 @@ func (m *ProtectionPolicyBase) GetOffboardRequestedDateTime()(*i336074805fc85398
     }
     return nil
 }
-// GetProtectionMode gets the protectionMode property value. The protectionMode property
+// GetProtectionMode gets the protectionMode property value. The backup mode for the protection policy. The possible values are: standard, fullServiceBackup, unknownFutureValue. When set to fullServiceBackup, the entire workload is backed up and specific items can be excluded using exclusion units. When set to standard, only the items explicitly added as protection units are backed up.
 // returns a *BackupPolicyProtectionMode when successful
 func (m *ProtectionPolicyBase) GetProtectionMode()(*BackupPolicyProtectionMode) {
     val, err := m.GetBackingStore().Get("protectionMode")
@@ -285,7 +285,7 @@ func (m *ProtectionPolicyBase) GetProtectionMode()(*BackupPolicyProtectionMode) 
     }
     return nil
 }
-// GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Requires $select to retrieve.
+// GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
 // returns a ProtectionPolicyArtifactCountable when successful
 func (m *ProtectionPolicyBase) GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable) {
     val, err := m.GetBackingStore().Get("protectionPolicyArtifactCount")
@@ -465,14 +465,14 @@ func (m *ProtectionPolicyBase) SetOffboardRequestedDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// SetProtectionMode sets the protectionMode property value. The protectionMode property
+// SetProtectionMode sets the protectionMode property value. The backup mode for the protection policy. The possible values are: standard, fullServiceBackup, unknownFutureValue. When set to fullServiceBackup, the entire workload is backed up and specific items can be excluded using exclusion units. When set to standard, only the items explicitly added as protection units are backed up.
 func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMode)() {
     err := m.GetBackingStore().Set("protectionMode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Requires $select to retrieve.
+// SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
 func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)() {
     err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
     if err != nil {

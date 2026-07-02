@@ -9,10 +9,11 @@ const (
     AGENTUSER_AGENTIDENTITYTYPE
     UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
     AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
+    USER_AGENTIDENTITYTYPE
 )
 
 func (i AgentIdentityType) String() string {
-    return []string{"agentIdentity", "agentUser", "unknownFutureValue", "agentIdentityBlueprintPrincipal"}[i]
+    return []string{"agentIdentity", "agentUser", "unknownFutureValue", "agentIdentityBlueprintPrincipal", "user"}[i]
 }
 func ParseAgentIdentityType(v string) (any, error) {
     result := AGENTIDENTITY_AGENTIDENTITYTYPE
@@ -25,6 +26,8 @@ func ParseAgentIdentityType(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
         case "agentIdentityBlueprintPrincipal":
             result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
+        case "user":
+            result = USER_AGENTIDENTITYTYPE
         default:
             return nil, nil
     }

@@ -44,7 +44,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetAdditionalData()(map[string]a
 func (m *RedirectUriBlockedSchemeConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockedSchemes gets the blockedSchemes property value. The blockedSchemes property
+// GetBlockedSchemes gets the blockedSchemes property value. Collection of URI schemes that are blocked globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
 // returns a []string when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetBlockedSchemes()([]string) {
     val, err := m.GetBackingStore().Get("blockedSchemes")
@@ -56,7 +56,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetBlockedSchemes()([]string) {
     }
     return nil
 }
-// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// GetExcludeActors gets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 // returns a AppManagementPolicyActorExemptionsable when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
     val, err := m.GetBackingStore().Get("excludeActors")
@@ -68,7 +68,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetExcludeActors()(AppManagement
     }
     return nil
 }
-// GetExemptFormats gets the exemptFormats property value. The exemptFormats property
+// GetExemptFormats gets the exemptFormats property value. Collection of URI patterns that are exempt from the blocked scheme restrictions. Patterns must follow specific validation rules for standard URI formats or URN formats.
 // returns a []string when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetExemptFormats()([]string) {
     val, err := m.GetBackingStore().Get("exemptFormats")
@@ -198,7 +198,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 // returns a *bool when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetIsStateSetByMicrosoft()(*bool) {
     val, err := m.GetBackingStore().Get("isStateSetByMicrosoft")
@@ -222,7 +222,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublicClient gets the publicClient property value. The publicClient property
+// GetPublicClient gets the publicClient property value. Platform-specific blocked scheme configuration for public client applications (native/mobile apps).
 // returns a RedirectUriPlatformBlockedSchemeConfigurationable when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetPublicClient()(RedirectUriPlatformBlockedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("publicClient")
@@ -234,7 +234,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetPublicClient()(RedirectUriPla
     }
     return nil
 }
-// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 // returns a *Time when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
@@ -246,7 +246,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetRestrictForAppsCreatedAfterDa
     }
     return nil
 }
-// GetSpa gets the spa property value. The spa property
+// GetSpa gets the spa property value. Platform-specific blocked scheme configuration for single-page applications (SPAs).
 // returns a RedirectUriPlatformBlockedSchemeConfigurationable when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetSpa()(RedirectUriPlatformBlockedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("spa")
@@ -270,7 +270,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) GetState()(*AppManagementRestric
     }
     return nil
 }
-// GetWeb gets the web property value. The web property
+// GetWeb gets the web property value. Platform-specific blocked scheme configuration for web applications.
 // returns a RedirectUriPlatformBlockedSchemeConfigurationable when successful
 func (m *RedirectUriBlockedSchemeConfiguration) GetWeb()(RedirectUriPlatformBlockedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("web")
@@ -358,28 +358,28 @@ func (m *RedirectUriBlockedSchemeConfiguration) SetAdditionalData(value map[stri
 func (m *RedirectUriBlockedSchemeConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockedSchemes sets the blockedSchemes property value. The blockedSchemes property
+// SetBlockedSchemes sets the blockedSchemes property value. Collection of URI schemes that are blocked globally across all platforms. Schemes refer to URI schemes as defined in RFC 3986 §3.1.
 func (m *RedirectUriBlockedSchemeConfiguration) SetBlockedSchemes(value []string)() {
     err := m.GetBackingStore().Set("blockedSchemes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeActors sets the excludeActors property value. The excludeActors property
+// SetExcludeActors sets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 func (m *RedirectUriBlockedSchemeConfiguration) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
     err := m.GetBackingStore().Set("excludeActors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExemptFormats sets the exemptFormats property value. The exemptFormats property
+// SetExemptFormats sets the exemptFormats property value. Collection of URI patterns that are exempt from the blocked scheme restrictions. Patterns must follow specific validation rules for standard URI formats or URN formats.
 func (m *RedirectUriBlockedSchemeConfiguration) SetExemptFormats(value []string)() {
     err := m.GetBackingStore().Set("exemptFormats", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 func (m *RedirectUriBlockedSchemeConfiguration) SetIsStateSetByMicrosoft(value *bool)() {
     err := m.GetBackingStore().Set("isStateSetByMicrosoft", value)
     if err != nil {
@@ -393,21 +393,21 @@ func (m *RedirectUriBlockedSchemeConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublicClient sets the publicClient property value. The publicClient property
+// SetPublicClient sets the publicClient property value. Platform-specific blocked scheme configuration for public client applications (native/mobile apps).
 func (m *RedirectUriBlockedSchemeConfiguration) SetPublicClient(value RedirectUriPlatformBlockedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("publicClient", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 func (m *RedirectUriBlockedSchemeConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restrictForAppsCreatedAfterDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpa sets the spa property value. The spa property
+// SetSpa sets the spa property value. Platform-specific blocked scheme configuration for single-page applications (SPAs).
 func (m *RedirectUriBlockedSchemeConfiguration) SetSpa(value RedirectUriPlatformBlockedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("spa", value)
     if err != nil {
@@ -421,7 +421,7 @@ func (m *RedirectUriBlockedSchemeConfiguration) SetState(value *AppManagementRes
         panic(err)
     }
 }
-// SetWeb sets the web property value. The web property
+// SetWeb sets the web property value. Platform-specific blocked scheme configuration for web applications.
 func (m *RedirectUriBlockedSchemeConfiguration) SetWeb(value RedirectUriPlatformBlockedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("web", value)
     if err != nil {

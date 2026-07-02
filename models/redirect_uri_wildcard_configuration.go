@@ -44,7 +44,7 @@ func (m *RedirectUriWildcardConfiguration) GetAdditionalData()(map[string]any) {
 func (m *RedirectUriWildcardConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// GetExcludeActors gets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 // returns a AppManagementPolicyActorExemptionsable when successful
 func (m *RedirectUriWildcardConfiguration) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
     val, err := m.GetBackingStore().Get("excludeActors")
@@ -56,7 +56,7 @@ func (m *RedirectUriWildcardConfiguration) GetExcludeActors()(AppManagementPolic
     }
     return nil
 }
-// GetExcludeFormats gets the excludeFormats property value. The excludeFormats property
+// GetExcludeFormats gets the excludeFormats property value. Configuration that specifies exceptions to the wildcard restriction, such as allowing wildcards for specific trusted domains.
 // returns a RedirectUriWildcardExcludeFormatsable when successful
 func (m *RedirectUriWildcardConfiguration) GetExcludeFormats()(RedirectUriWildcardExcludeFormatsable) {
     val, err := m.GetBackingStore().Get("excludeFormats")
@@ -134,7 +134,7 @@ func (m *RedirectUriWildcardConfiguration) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 // returns a *bool when successful
 func (m *RedirectUriWildcardConfiguration) GetIsStateSetByMicrosoft()(*bool) {
     val, err := m.GetBackingStore().Get("isStateSetByMicrosoft")
@@ -158,7 +158,7 @@ func (m *RedirectUriWildcardConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 // returns a *Time when successful
 func (m *RedirectUriWildcardConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
@@ -234,21 +234,21 @@ func (m *RedirectUriWildcardConfiguration) SetAdditionalData(value map[string]an
 func (m *RedirectUriWildcardConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeActors sets the excludeActors property value. The excludeActors property
+// SetExcludeActors sets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 func (m *RedirectUriWildcardConfiguration) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
     err := m.GetBackingStore().Set("excludeActors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeFormats sets the excludeFormats property value. The excludeFormats property
+// SetExcludeFormats sets the excludeFormats property value. Configuration that specifies exceptions to the wildcard restriction, such as allowing wildcards for specific trusted domains.
 func (m *RedirectUriWildcardConfiguration) SetExcludeFormats(value RedirectUriWildcardExcludeFormatsable)() {
     err := m.GetBackingStore().Set("excludeFormats", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 func (m *RedirectUriWildcardConfiguration) SetIsStateSetByMicrosoft(value *bool)() {
     err := m.GetBackingStore().Set("isStateSetByMicrosoft", value)
     if err != nil {
@@ -262,7 +262,7 @@ func (m *RedirectUriWildcardConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 func (m *RedirectUriWildcardConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restrictForAppsCreatedAfterDateTime", value)
     if err != nil {

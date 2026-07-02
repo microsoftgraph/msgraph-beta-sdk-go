@@ -116,6 +116,16 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["quarantineDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateQuarantineDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQuarantineDetails(val.(QuarantineDetailsable))
+        }
+        return nil
+    }
     res["runs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRunFromDiscriminatorValue)
         if err != nil {
@@ -129,6 +139,32 @@ func (m *Workflow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
                 }
             }
             m.SetRuns(res)
+        }
+        return nil
+    }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkflowSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(WorkflowSettingable))
+        }
+        return nil
+    }
+    res["subjectProcessingResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubjectProcessingResultFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SubjectProcessingResultable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SubjectProcessingResultable)
+                }
+            }
+            m.SetSubjectProcessingResults(res)
         }
         return nil
     }
@@ -228,6 +264,18 @@ func (m *Workflow) GetPreviewScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697
     }
     return nil
 }
+// GetQuarantineDetails gets the quarantineDetails property value. The quarantineDetails property
+// returns a QuarantineDetailsable when successful
+func (m *Workflow) GetQuarantineDetails()(QuarantineDetailsable) {
+    val, err := m.GetBackingStore().Get("quarantineDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(QuarantineDetailsable)
+    }
+    return nil
+}
 // GetRuns gets the runs property value. Workflow runs.
 // returns a []Runable when successful
 func (m *Workflow) GetRuns()([]Runable) {
@@ -237,6 +285,30 @@ func (m *Workflow) GetRuns()([]Runable) {
     }
     if val != nil {
         return val.([]Runable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. The settings property
+// returns a WorkflowSettingable when successful
+func (m *Workflow) GetSettings()(WorkflowSettingable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkflowSettingable)
+    }
+    return nil
+}
+// GetSubjectProcessingResults gets the subjectProcessingResults property value. The subjectProcessingResults property
+// returns a []SubjectProcessingResultable when successful
+func (m *Workflow) GetSubjectProcessingResults()([]SubjectProcessingResultable) {
+    val, err := m.GetBackingStore().Get("subjectProcessingResults")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SubjectProcessingResultable)
     }
     return nil
 }
@@ -336,6 +408,12 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("quarantineDetails", m.GetQuarantineDetails())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRuns() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRuns()))
         for i, v := range m.GetRuns() {
@@ -344,6 +422,24 @@ func (m *Workflow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             }
         }
         err = writer.WriteCollectionOfObjectValues("runs", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSubjectProcessingResults() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectProcessingResults()))
+        for i, v := range m.GetSubjectProcessingResults() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("subjectProcessingResults", cast)
         if err != nil {
             return err
         }
@@ -427,9 +523,30 @@ func (m *Workflow) SetPreviewScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde1
         panic(err)
     }
 }
+// SetQuarantineDetails sets the quarantineDetails property value. The quarantineDetails property
+func (m *Workflow) SetQuarantineDetails(value QuarantineDetailsable)() {
+    err := m.GetBackingStore().Set("quarantineDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRuns sets the runs property value. Workflow runs.
 func (m *Workflow) SetRuns(value []Runable)() {
     err := m.GetBackingStore().Set("runs", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSettings sets the settings property value. The settings property
+func (m *Workflow) SetSettings(value WorkflowSettingable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSubjectProcessingResults sets the subjectProcessingResults property value. The subjectProcessingResults property
+func (m *Workflow) SetSubjectProcessingResults(value []SubjectProcessingResultable)() {
+    err := m.GetBackingStore().Set("subjectProcessingResults", value)
     if err != nil {
         panic(err)
     }
@@ -470,7 +587,10 @@ type Workflowable interface {
     GetId()(*string)
     GetNextScheduleRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPreviewScope()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)
+    GetQuarantineDetails()(QuarantineDetailsable)
     GetRuns()([]Runable)
+    GetSettings()(WorkflowSettingable)
+    GetSubjectProcessingResults()([]SubjectProcessingResultable)
     GetTaskReports()([]TaskReportable)
     GetUserProcessingResults()([]UserProcessingResultable)
     GetVersion()(*int32)
@@ -480,7 +600,10 @@ type Workflowable interface {
     SetId(value *string)()
     SetNextScheduleRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPreviewScope(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable)()
+    SetQuarantineDetails(value QuarantineDetailsable)()
     SetRuns(value []Runable)()
+    SetSettings(value WorkflowSettingable)()
+    SetSubjectProcessingResults(value []SubjectProcessingResultable)()
     SetTaskReports(value []TaskReportable)()
     SetUserProcessingResults(value []UserProcessingResultable)()
     SetVersion(value *int32)()

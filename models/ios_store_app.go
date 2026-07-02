@@ -25,6 +25,18 @@ func NewIosStoreApp()(*IosStoreApp) {
 func CreateIosStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosStoreApp(), nil
 }
+// GetAppleDeviceAppDeliveryProtocolType gets the appleDeviceAppDeliveryProtocolType property value. The appleDeviceAppDeliveryProtocolType property
+// returns a *AppleDeviceDeliveryProtocol when successful
+func (m *IosStoreApp) GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol) {
+    val, err := m.GetBackingStore().Get("appleDeviceAppDeliveryProtocolType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeviceDeliveryProtocol)
+    }
+    return nil
+}
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 // returns a IosDeviceTypeable when successful
 func (m *IosStoreApp) GetApplicableDeviceType()(IosDeviceTypeable) {
@@ -65,6 +77,16 @@ func (m *IosStoreApp) GetBundleId()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
+    res["appleDeviceAppDeliveryProtocolType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeviceDeliveryProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleDeviceAppDeliveryProtocolType(val.(*AppleDeviceDeliveryProtocol))
+        }
+        return nil
+    }
     res["applicableDeviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIosDeviceTypeFromDiscriminatorValue)
         if err != nil {
@@ -125,6 +147,13 @@ func (m *IosStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
+    if m.GetAppleDeviceAppDeliveryProtocolType() != nil {
+        cast := (*m.GetAppleDeviceAppDeliveryProtocolType()).String()
+        err = writer.WriteStringValue("appleDeviceAppDeliveryProtocolType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("applicableDeviceType", m.GetApplicableDeviceType())
         if err != nil {
@@ -150,6 +179,13 @@ func (m *IosStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     return nil
+}
+// SetAppleDeviceAppDeliveryProtocolType sets the appleDeviceAppDeliveryProtocolType property value. The appleDeviceAppDeliveryProtocolType property
+func (m *IosStoreApp) SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)() {
+    err := m.GetBackingStore().Set("appleDeviceAppDeliveryProtocolType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosStoreApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
@@ -182,10 +218,12 @@ func (m *IosStoreApp) SetMinimumSupportedOperatingSystem(value IosMinimumOperati
 type IosStoreAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol)
     GetApplicableDeviceType()(IosDeviceTypeable)
     GetAppStoreUrl()(*string)
     GetBundleId()(*string)
     GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable)
+    SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)()
     SetApplicableDeviceType(value IosDeviceTypeable)()
     SetAppStoreUrl(value *string)()
     SetBundleId(value *string)()

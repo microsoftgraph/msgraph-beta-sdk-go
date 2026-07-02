@@ -138,6 +138,16 @@ func (m *RelatedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["isMicrosoftInfrastructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsMicrosoftInfrastructure(val)
+        }
+        return nil
+    }
     res["multiTenantApplicationMetrics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMultiTenantApplicationMetricsFromDiscriminatorValue)
         if err != nil {
@@ -149,6 +159,18 @@ func (m *RelatedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetIsMicrosoftInfrastructure gets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+// returns a *bool when successful
+func (m *RelatedTenant) GetIsMicrosoftInfrastructure()(*bool) {
+    val, err := m.GetBackingStore().Get("isMicrosoftInfrastructure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetMultiTenantApplicationMetrics gets the multiTenantApplicationMetrics property value. Multi-tenant application usage metrics for this related tenant. Expanded by default.
 // returns a MultiTenantApplicationMetricsable when successful
@@ -241,6 +263,13 @@ func (m *RelatedTenant) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
+// SetIsMicrosoftInfrastructure sets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+func (m *RelatedTenant) SetIsMicrosoftInfrastructure(value *bool)() {
+    err := m.GetBackingStore().Set("isMicrosoftInfrastructure", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMultiTenantApplicationMetrics sets the multiTenantApplicationMetrics property value. Multi-tenant application usage metrics for this related tenant. Expanded by default.
 func (m *RelatedTenant) SetMultiTenantApplicationMetrics(value MultiTenantApplicationMetricsable)() {
     err := m.GetBackingStore().Set("multiTenantApplicationMetrics", value)
@@ -256,11 +285,13 @@ type RelatedTenantable interface {
     GetB2BSignInActivityMetrics()(B2BSignInActivityMetricsable)
     GetBillingMetrics()(BillingMetricsable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIsMicrosoftInfrastructure()(*bool)
     GetMultiTenantApplicationMetrics()(MultiTenantApplicationMetricsable)
     SetAppB2BSignInActivityMetrics(value B2BSignInActivityMetricsable)()
     SetB2BRegistrationMetrics(value B2bRegistrationMetricsable)()
     SetB2BSignInActivityMetrics(value B2BSignInActivityMetricsable)()
     SetBillingMetrics(value BillingMetricsable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIsMicrosoftInfrastructure(value *bool)()
     SetMultiTenantApplicationMetrics(value MultiTenantApplicationMetricsable)()
 }

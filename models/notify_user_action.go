@@ -9,12 +9,12 @@ import (
 )
 
 type NotifyUserAction struct {
-    DlpActionInfo
+    PolicyTipAction
 }
 // NewNotifyUserAction instantiates a new NotifyUserAction and sets the default values.
 func NewNotifyUserAction()(*NotifyUserAction) {
     m := &NotifyUserAction{
-        DlpActionInfo: *NewDlpActionInfo(),
+        PolicyTipAction: *NewPolicyTipAction(),
     }
     return m
 }
@@ -50,7 +50,7 @@ func (m *NotifyUserAction) GetEmailText()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DlpActionInfo.GetFieldDeserializers()
+    res := m.PolicyTipAction.GetFieldDeserializers()
     res["actionLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -68,16 +68,6 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetEmailText(val)
-        }
-        return nil
-    }
-    res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPolicyTip(val)
         }
         return nil
     }
@@ -99,18 +89,6 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetPolicyTip gets the policyTip property value. The text of the policy tip displayed to the user within the application (For example, Outlook, Word).
-// returns a *string when successful
-func (m *NotifyUserAction) GetPolicyTip()(*string) {
-    val, err := m.GetBackingStore().Get("policyTip")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetRecipients gets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
 // returns a []string when successful
 func (m *NotifyUserAction) GetRecipients()([]string) {
@@ -125,7 +103,7 @@ func (m *NotifyUserAction) GetRecipients()([]string) {
 }
 // Serialize serializes information the current object
 func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DlpActionInfo.Serialize(writer)
+    err := m.PolicyTipAction.Serialize(writer)
     if err != nil {
         return err
     }
@@ -137,12 +115,6 @@ func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteStringValue("emailText", m.GetEmailText())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("policyTip", m.GetPolicyTip())
         if err != nil {
             return err
         }
@@ -169,13 +141,6 @@ func (m *NotifyUserAction) SetEmailText(value *string)() {
         panic(err)
     }
 }
-// SetPolicyTip sets the policyTip property value. The text of the policy tip displayed to the user within the application (For example, Outlook, Word).
-func (m *NotifyUserAction) SetPolicyTip(value *string)() {
-    err := m.GetBackingStore().Set("policyTip", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRecipients sets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
 func (m *NotifyUserAction) SetRecipients(value []string)() {
     err := m.GetBackingStore().Set("recipients", value)
@@ -184,14 +149,12 @@ func (m *NotifyUserAction) SetRecipients(value []string)() {
     }
 }
 type NotifyUserActionable interface {
-    DlpActionInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    PolicyTipActionable
     GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEmailText()(*string)
-    GetPolicyTip()(*string)
     GetRecipients()([]string)
     SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEmailText(value *string)()
-    SetPolicyTip(value *string)()
     SetRecipients(value []string)()
 }

@@ -48,6 +48,16 @@ func (m *RuleSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d4118542
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RuleSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["frequency"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrequency(val)
+        }
+        return nil
+    }
     res["nextRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -80,7 +90,19 @@ func (m *RuleSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetNextRunDateTime gets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
+// GetFrequency gets the frequency property value. The recurring time interval at which the rule runs (ISO 8601 duration, for example P1D for daily, PT1H for hourly).
+// returns a *ISODuration when successful
+func (m *RuleSchedule) GetFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("frequency")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
+}
+// GetNextRunDateTime gets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.
 // returns a *Time when successful
 func (m *RuleSchedule) GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextRunDateTime")
@@ -104,7 +126,7 @@ func (m *RuleSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPeriod gets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
+// GetPeriod gets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. 0 signifies the rule is run continuously. Deprecated. Use frequency instead. This property will be removed from this resource on 2026-10-01.
 // returns a *string when successful
 func (m *RuleSchedule) GetPeriod()(*string) {
     val, err := m.GetBackingStore().Get("period")
@@ -118,6 +140,12 @@ func (m *RuleSchedule) GetPeriod()(*string) {
 }
 // Serialize serializes information the current object
 func (m *RuleSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteISODurationValue("frequency", m.GetFrequency())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteTimeValue("nextRunDateTime", m.GetNextRunDateTime())
         if err != nil {
@@ -155,7 +183,14 @@ func (m *RuleSchedule) SetAdditionalData(value map[string]any)() {
 func (m *RuleSchedule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNextRunDateTime sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run.
+// SetFrequency sets the frequency property value. The recurring time interval at which the rule runs (ISO 8601 duration, for example P1D for daily, PT1H for hourly).
+func (m *RuleSchedule) SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("frequency", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNextRunDateTime sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.
 func (m *RuleSchedule) SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextRunDateTime", value)
     if err != nil {
@@ -169,7 +204,7 @@ func (m *RuleSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPeriod sets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. '0' signifies the rule is run continuously.
+// SetPeriod sets the period property value. How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. 0 signifies the rule is run continuously. Deprecated. Use frequency instead. This property will be removed from this resource on 2026-10-01.
 func (m *RuleSchedule) SetPeriod(value *string)() {
     err := m.GetBackingStore().Set("period", value)
     if err != nil {
@@ -181,10 +216,12 @@ type RuleScheduleable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetFrequency()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetNextRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetPeriod()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetPeriod(value *string)()
