@@ -43,7 +43,7 @@ func (m *AlertTemplate) GetAdditionalData()(map[string]any) {
 func (m *AlertTemplate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCategory gets the category property value. Category assigned to the alert triggered by the custom detection rule.
+// GetCategory gets the category property value. Indicates the category assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 // returns a *string when successful
 func (m *AlertTemplate) GetCategory()(*string) {
     val, err := m.GetBackingStore().Get("category")
@@ -52,6 +52,18 @@ func (m *AlertTemplate) GetCategory()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetCustomDetails gets the customDetails property value. Custom key-value detail pairs to include in the alert. Each value identifies the detection query column that supplies the corresponding custom detail.
+// returns a AlertCustomDetailsable when successful
+func (m *AlertTemplate) GetCustomDetails()(AlertCustomDetailsable) {
+    val, err := m.GetBackingStore().Get("customDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AlertCustomDetailsable)
     }
     return nil
 }
@@ -64,6 +76,18 @@ func (m *AlertTemplate) GetDescription()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetEntityMappings gets the entityMappings property value. The entityMappings property
+// returns a EntityMappingConfigurationable when successful
+func (m *AlertTemplate) GetEntityMappings()(EntityMappingConfigurationable) {
+    val, err := m.GetBackingStore().Get("entityMappings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EntityMappingConfigurationable)
     }
     return nil
 }
@@ -81,6 +105,16 @@ func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["customDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAlertCustomDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomDetails(val.(AlertCustomDetailsable))
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -88,6 +122,16 @@ func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["entityMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEntityMappingConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEntityMappings(val.(EntityMappingConfigurationable))
         }
         return nil
     }
@@ -153,6 +197,22 @@ func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["tactics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMitreTacticFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MitreTacticable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MitreTacticable)
+                }
+            }
+            m.SetTactics(res)
+        }
+        return nil
+    }
     res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -165,7 +225,7 @@ func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetImpactedAssets gets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
+// GetImpactedAssets gets the impactedAssets property value. Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
 // returns a []ImpactedAssetable when successful
 func (m *AlertTemplate) GetImpactedAssets()([]ImpactedAssetable) {
     val, err := m.GetBackingStore().Get("impactedAssets")
@@ -177,7 +237,7 @@ func (m *AlertTemplate) GetImpactedAssets()([]ImpactedAssetable) {
     }
     return nil
 }
-// GetMitreTechniques gets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
+// GetMitreTechniques gets the mitreTechniques property value. Indicates the MITRE techniques assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 // returns a []string when successful
 func (m *AlertTemplate) GetMitreTechniques()([]string) {
     val, err := m.GetBackingStore().Get("mitreTechniques")
@@ -225,6 +285,18 @@ func (m *AlertTemplate) GetSeverity()(*AlertSeverity) {
     }
     return nil
 }
+// GetTactics gets the tactics property value. The MITRE ATT&CK tactics framing for this alert.
+// returns a []MitreTacticable when successful
+func (m *AlertTemplate) GetTactics()([]MitreTacticable) {
+    val, err := m.GetBackingStore().Get("tactics")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MitreTacticable)
+    }
+    return nil
+}
 // GetTitle gets the title property value. Name of the alert triggered by the custom detection rule.
 // returns a *string when successful
 func (m *AlertTemplate) GetTitle()(*string) {
@@ -246,7 +318,19 @@ func (m *AlertTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteObjectValue("customDetails", m.GetCustomDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("entityMappings", m.GetEntityMappings())
         if err != nil {
             return err
         }
@@ -288,6 +372,18 @@ func (m *AlertTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetTactics() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTactics()))
+        for i, v := range m.GetTactics() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("tactics", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("title", m.GetTitle())
         if err != nil {
@@ -313,9 +409,16 @@ func (m *AlertTemplate) SetAdditionalData(value map[string]any)() {
 func (m *AlertTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCategory sets the category property value. Category assigned to the alert triggered by the custom detection rule.
+// SetCategory sets the category property value. Indicates the category assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 func (m *AlertTemplate) SetCategory(value *string)() {
     err := m.GetBackingStore().Set("category", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomDetails sets the customDetails property value. Custom key-value detail pairs to include in the alert. Each value identifies the detection query column that supplies the corresponding custom detail.
+func (m *AlertTemplate) SetCustomDetails(value AlertCustomDetailsable)() {
+    err := m.GetBackingStore().Set("customDetails", value)
     if err != nil {
         panic(err)
     }
@@ -327,14 +430,21 @@ func (m *AlertTemplate) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetImpactedAssets sets the impactedAssets property value. Which asset or assets were impacted based on the alert triggered by the custom detection rule.
+// SetEntityMappings sets the entityMappings property value. The entityMappings property
+func (m *AlertTemplate) SetEntityMappings(value EntityMappingConfigurationable)() {
+    err := m.GetBackingStore().Set("entityMappings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetImpactedAssets sets the impactedAssets property value. Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
 func (m *AlertTemplate) SetImpactedAssets(value []ImpactedAssetable)() {
     err := m.GetBackingStore().Set("impactedAssets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMitreTechniques sets the mitreTechniques property value. MITRE technique assigned to the alert triggered by the custom detection rule.
+// SetMitreTechniques sets the mitreTechniques property value. Indicates the MITRE techniques assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 func (m *AlertTemplate) SetMitreTechniques(value []string)() {
     err := m.GetBackingStore().Set("mitreTechniques", value)
     if err != nil {
@@ -362,6 +472,13 @@ func (m *AlertTemplate) SetSeverity(value *AlertSeverity)() {
         panic(err)
     }
 }
+// SetTactics sets the tactics property value. The MITRE ATT&CK tactics framing for this alert.
+func (m *AlertTemplate) SetTactics(value []MitreTacticable)() {
+    err := m.GetBackingStore().Set("tactics", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTitle sets the title property value. Name of the alert triggered by the custom detection rule.
 func (m *AlertTemplate) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
@@ -375,20 +492,26 @@ type AlertTemplateable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCategory()(*string)
+    GetCustomDetails()(AlertCustomDetailsable)
     GetDescription()(*string)
+    GetEntityMappings()(EntityMappingConfigurationable)
     GetImpactedAssets()([]ImpactedAssetable)
     GetMitreTechniques()([]string)
     GetOdataType()(*string)
     GetRecommendedActions()(*string)
     GetSeverity()(*AlertSeverity)
+    GetTactics()([]MitreTacticable)
     GetTitle()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCategory(value *string)()
+    SetCustomDetails(value AlertCustomDetailsable)()
     SetDescription(value *string)()
+    SetEntityMappings(value EntityMappingConfigurationable)()
     SetImpactedAssets(value []ImpactedAssetable)()
     SetMitreTechniques(value []string)()
     SetOdataType(value *string)()
     SetRecommendedActions(value *string)()
     SetSeverity(value *AlertSeverity)()
+    SetTactics(value []MitreTacticable)()
     SetTitle(value *string)()
 }

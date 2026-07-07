@@ -121,7 +121,7 @@ func (m *RedirectUriConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUriWithBlockedDomain gets the uriWithBlockedDomain property value. The uriWithBlockedDomain property
+// GetUriWithBlockedDomain gets the uriWithBlockedDomain property value. Configuration that specifies blocked domains for redirect URIs with global and platform-specific settings.
 // returns a RedirectUriBlockedDomainConfigurationable when successful
 func (m *RedirectUriConfiguration) GetUriWithBlockedDomain()(RedirectUriBlockedDomainConfigurationable) {
     val, err := m.GetBackingStore().Get("uriWithBlockedDomain")
@@ -133,7 +133,7 @@ func (m *RedirectUriConfiguration) GetUriWithBlockedDomain()(RedirectUriBlockedD
     }
     return nil
 }
-// GetUriWithBlockedScheme gets the uriWithBlockedScheme property value. The uriWithBlockedScheme property
+// GetUriWithBlockedScheme gets the uriWithBlockedScheme property value. Configuration that specifies blocked URI schemes for redirect URIs with global and platform-specific settings and exempt format patterns.
 // returns a RedirectUriBlockedSchemeConfigurationable when successful
 func (m *RedirectUriConfiguration) GetUriWithBlockedScheme()(RedirectUriBlockedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("uriWithBlockedScheme")
@@ -145,7 +145,7 @@ func (m *RedirectUriConfiguration) GetUriWithBlockedScheme()(RedirectUriBlockedS
     }
     return nil
 }
-// GetUriWithoutAllowedDomain gets the uriWithoutAllowedDomain property value. The uriWithoutAllowedDomain property
+// GetUriWithoutAllowedDomain gets the uriWithoutAllowedDomain property value. Configuration that specifies allowed domains for redirect URIs with global and platform-specific settings.
 // returns a RedirectUriAllowedDomainConfigurationable when successful
 func (m *RedirectUriConfiguration) GetUriWithoutAllowedDomain()(RedirectUriAllowedDomainConfigurationable) {
     val, err := m.GetBackingStore().Get("uriWithoutAllowedDomain")
@@ -157,7 +157,7 @@ func (m *RedirectUriConfiguration) GetUriWithoutAllowedDomain()(RedirectUriAllow
     }
     return nil
 }
-// GetUriWithoutAllowedScheme gets the uriWithoutAllowedScheme property value. The uriWithoutAllowedScheme property
+// GetUriWithoutAllowedScheme gets the uriWithoutAllowedScheme property value. Configuration that specifies allowed URI schemes for redirect URIs with global and platform-specific settings.
 // returns a RedirectUriAllowedSchemeConfigurationable when successful
 func (m *RedirectUriConfiguration) GetUriWithoutAllowedScheme()(RedirectUriAllowedSchemeConfigurationable) {
     val, err := m.GetBackingStore().Get("uriWithoutAllowedScheme")
@@ -169,7 +169,7 @@ func (m *RedirectUriConfiguration) GetUriWithoutAllowedScheme()(RedirectUriAllow
     }
     return nil
 }
-// GetUriWithWildcard gets the uriWithWildcard property value. The uriWithWildcard property
+// GetUriWithWildcard gets the uriWithWildcard property value. Configuration that controls the use of wildcard patterns in redirect URIs with configurable exceptions.
 // returns a RedirectUriWildcardConfigurationable when successful
 func (m *RedirectUriConfiguration) GetUriWithWildcard()(RedirectUriWildcardConfigurationable) {
     val, err := m.GetBackingStore().Get("uriWithWildcard")
@@ -245,35 +245,35 @@ func (m *RedirectUriConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUriWithBlockedDomain sets the uriWithBlockedDomain property value. The uriWithBlockedDomain property
+// SetUriWithBlockedDomain sets the uriWithBlockedDomain property value. Configuration that specifies blocked domains for redirect URIs with global and platform-specific settings.
 func (m *RedirectUriConfiguration) SetUriWithBlockedDomain(value RedirectUriBlockedDomainConfigurationable)() {
     err := m.GetBackingStore().Set("uriWithBlockedDomain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUriWithBlockedScheme sets the uriWithBlockedScheme property value. The uriWithBlockedScheme property
+// SetUriWithBlockedScheme sets the uriWithBlockedScheme property value. Configuration that specifies blocked URI schemes for redirect URIs with global and platform-specific settings and exempt format patterns.
 func (m *RedirectUriConfiguration) SetUriWithBlockedScheme(value RedirectUriBlockedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("uriWithBlockedScheme", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUriWithoutAllowedDomain sets the uriWithoutAllowedDomain property value. The uriWithoutAllowedDomain property
+// SetUriWithoutAllowedDomain sets the uriWithoutAllowedDomain property value. Configuration that specifies allowed domains for redirect URIs with global and platform-specific settings.
 func (m *RedirectUriConfiguration) SetUriWithoutAllowedDomain(value RedirectUriAllowedDomainConfigurationable)() {
     err := m.GetBackingStore().Set("uriWithoutAllowedDomain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUriWithoutAllowedScheme sets the uriWithoutAllowedScheme property value. The uriWithoutAllowedScheme property
+// SetUriWithoutAllowedScheme sets the uriWithoutAllowedScheme property value. Configuration that specifies allowed URI schemes for redirect URIs with global and platform-specific settings.
 func (m *RedirectUriConfiguration) SetUriWithoutAllowedScheme(value RedirectUriAllowedSchemeConfigurationable)() {
     err := m.GetBackingStore().Set("uriWithoutAllowedScheme", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUriWithWildcard sets the uriWithWildcard property value. The uriWithWildcard property
+// SetUriWithWildcard sets the uriWithWildcard property value. Configuration that controls the use of wildcard patterns in redirect URIs with configurable exceptions.
 func (m *RedirectUriConfiguration) SetUriWithWildcard(value RedirectUriWildcardConfigurationable)() {
     err := m.GetBackingStore().Set("uriWithWildcard", value)
     if err != nil {

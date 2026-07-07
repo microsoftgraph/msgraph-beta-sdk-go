@@ -7,11 +7,12 @@ type ClientFallbackAction int
 const (
     BYPASS_CLIENTFALLBACKACTION ClientFallbackAction = iota
     BLOCK_CLIENTFALLBACKACTION
+    DEFAULT_CLIENTFALLBACKACTION
     UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
 )
 
 func (i ClientFallbackAction) String() string {
-    return []string{"bypass", "block", "unknownFutureValue"}[i]
+    return []string{"bypass", "block", "default", "unknownFutureValue"}[i]
 }
 func ParseClientFallbackAction(v string) (any, error) {
     result := BYPASS_CLIENTFALLBACKACTION
@@ -20,6 +21,8 @@ func ParseClientFallbackAction(v string) (any, error) {
             result = BYPASS_CLIENTFALLBACKACTION
         case "block":
             result = BLOCK_CLIENTFALLBACKACTION
+        case "default":
+            result = DEFAULT_CLIENTFALLBACKACTION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
         default:

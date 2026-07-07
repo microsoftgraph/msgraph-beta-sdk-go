@@ -47,7 +47,7 @@ func (m *CloudPC) GetAllotmentDisplayName()(*string) {
     }
     return nil
 }
-// GetConnectionSetting gets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read Only.
+// GetConnectionSetting gets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read-only.
 // returns a CloudPcConnectionSettingable when successful
 func (m *CloudPC) GetConnectionSetting()(CloudPcConnectionSettingable) {
     val, err := m.GetBackingStore().Get("connectionSetting")
@@ -262,6 +262,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetImageDisplayName(val)
+        }
+        return nil
+    }
+    res["isDisasterRecoveryActive"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisasterRecoveryActive(val)
         }
         return nil
     }
@@ -584,6 +594,18 @@ func (m *CloudPC) GetImageDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetIsDisasterRecoveryActive gets the isDisasterRecoveryActive property value. The isDisasterRecoveryActive property
+// returns a *bool when successful
+func (m *CloudPC) GetIsDisasterRecoveryActive()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisasterRecoveryActive")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -986,6 +1008,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteBoolValue("isDisasterRecoveryActive", m.GetIsDisasterRecoveryActive())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("lastLoginResult", m.GetLastLoginResult())
         if err != nil {
             return err
@@ -1171,7 +1199,7 @@ func (m *CloudPC) SetAllotmentDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetConnectionSetting sets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read Only.
+// SetConnectionSetting sets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read-only.
 func (m *CloudPC) SetConnectionSetting(value CloudPcConnectionSettingable)() {
     err := m.GetBackingStore().Set("connectionSetting", value)
     if err != nil {
@@ -1244,6 +1272,13 @@ func (m *CloudPC) SetGroupDetail(value CloudPcEntraGroupDetailable)() {
 // SetImageDisplayName sets the imageDisplayName property value. Name of the OS image that's on the Cloud PC.
 func (m *CloudPC) SetImageDisplayName(value *string)() {
     err := m.GetBackingStore().Set("imageDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsDisasterRecoveryActive sets the isDisasterRecoveryActive property value. The isDisasterRecoveryActive property
+func (m *CloudPC) SetIsDisasterRecoveryActive(value *bool)() {
+    err := m.GetBackingStore().Set("isDisasterRecoveryActive", value)
     if err != nil {
         panic(err)
     }
@@ -1446,6 +1481,7 @@ type CloudPCable interface {
     GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetGroupDetail()(CloudPcEntraGroupDetailable)
     GetImageDisplayName()(*string)
+    GetIsDisasterRecoveryActive()(*bool)
     GetLastLoginResult()(CloudPcLoginResultable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRemoteActionResult()(CloudPcRemoteActionResultable)
@@ -1485,6 +1521,7 @@ type CloudPCable interface {
     SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetGroupDetail(value CloudPcEntraGroupDetailable)()
     SetImageDisplayName(value *string)()
+    SetIsDisasterRecoveryActive(value *bool)()
     SetLastLoginResult(value CloudPcLoginResultable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRemoteActionResult(value CloudPcRemoteActionResultable)()

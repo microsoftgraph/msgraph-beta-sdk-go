@@ -34,10 +34,13 @@ func NewMigrationsCrossTenantMigrationJobsItemValidateRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewMigrationsCrossTenantMigrationJobsItemValidateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action validate
+// Post validate the configuration of a cross-tenant migration job asynchronously. This action doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.
 // Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-validate?view=graph-rest-beta
 func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) Post(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -55,7 +58,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
 }
-// ToPostRequestInformation invoke action validate
+// ToPostRequestInformation validate the configuration of a cross-tenant migration job asynchronously. This action doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.
 // Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

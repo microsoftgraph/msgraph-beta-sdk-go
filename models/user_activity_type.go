@@ -9,11 +9,15 @@ const (
     UPLOADFILE_USERACTIVITYTYPE
     DOWNLOADTEXT_USERACTIVITYTYPE
     DOWNLOADFILE_USERACTIVITYTYPE
+    COPYTOCLIPBOARD_USERACTIVITYTYPE
+    PASTEFROMCLIPBOARD_USERACTIVITYTYPE
+    PRINT_USERACTIVITYTYPE
+    ACCESSDEBUGTOOLS_USERACTIVITYTYPE
     UNKNOWNFUTUREVALUE_USERACTIVITYTYPE
 )
 
 func (i UserActivityType) String() string {
-    return []string{"uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue"}[i]
+    return []string{"uploadText", "uploadFile", "downloadText", "downloadFile", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools", "unknownFutureValue"}[i]
 }
 func ParseUserActivityType(v string) (any, error) {
     result := UPLOADTEXT_USERACTIVITYTYPE
@@ -26,6 +30,14 @@ func ParseUserActivityType(v string) (any, error) {
             result = DOWNLOADTEXT_USERACTIVITYTYPE
         case "downloadFile":
             result = DOWNLOADFILE_USERACTIVITYTYPE
+        case "copyToClipboard":
+            result = COPYTOCLIPBOARD_USERACTIVITYTYPE
+        case "pasteFromClipboard":
+            result = PASTEFROMCLIPBOARD_USERACTIVITYTYPE
+        case "print":
+            result = PRINT_USERACTIVITYTYPE
+        case "accessDebugTools":
+            result = ACCESSDEBUGTOOLS_USERACTIVITYTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERACTIVITYTYPE
         default:

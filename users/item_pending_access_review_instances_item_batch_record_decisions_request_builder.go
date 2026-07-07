@@ -33,7 +33,7 @@ func NewItemPendingAccessReviewInstancesItemBatchRecordDecisionsRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewItemPendingAccessReviewInstancesItemBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
+// Post enables reviewers to review all accessReviewInstanceDecisionItem objects in a specific pending  accessReviewInstance in batches by using principalId, resourceId, or neither.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsRequestBuilder)
     }
     return nil
 }
-// ToPostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in batches by using principalId, resourceId, or neither.
+// ToPostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in a specific pending  accessReviewInstance in batches by using principalId, resourceId, or neither.
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPendingAccessReviewInstancesItemBatchRecordDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

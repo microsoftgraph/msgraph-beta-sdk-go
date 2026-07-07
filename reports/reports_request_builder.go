@@ -72,6 +72,11 @@ func NewReportsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
     urlParams["request-raw-url"] = rawUrl
     return NewReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Correlations provides operations to manage the correlations property of the microsoft.graph.reportRoot entity.
+// returns a *CorrelationsRequestBuilder when successful
+func (m *ReportsRequestBuilder) Correlations()(*CorrelationsRequestBuilder) {
+    return NewCorrelationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CredentialUserRegistrationDetails provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.
 // returns a *CredentialUserRegistrationDetailsRequestBuilder when successful
 func (m *ReportsRequestBuilder) CredentialUserRegistrationDetails()(*CredentialUserRegistrationDetailsRequestBuilder) {
@@ -736,6 +741,11 @@ func (m *ReportsRequestBuilder) GetYammerGroupsActivityGroupCountsWithPeriod(per
 // returns a *HealthMonitoringRequestBuilder when successful
 func (m *ReportsRequestBuilder) HealthMonitoring()(*HealthMonitoringRequestBuilder) {
     return NewHealthMonitoringRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IdentityAnalytics provides operations to manage the identityAnalytics property of the microsoft.graph.reportRoot entity.
+// returns a *IdentityAnalyticsRequestBuilder when successful
+func (m *ReportsRequestBuilder) IdentityAnalytics()(*IdentityAnalyticsRequestBuilder) {
+    return NewIdentityAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken provides operations to call the managedDeviceEnrollmentAbandonmentDetails method.
 // returns a *ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder when successful

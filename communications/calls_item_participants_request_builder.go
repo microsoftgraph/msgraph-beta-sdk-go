@@ -49,6 +49,11 @@ type CallsItemParticipantsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AdmitAllFromLobby provides operations to call the admitAllFromLobby method.
+// returns a *CallsItemParticipantsAdmitAllFromLobbyRequestBuilder when successful
+func (m *CallsItemParticipantsRequestBuilder) AdmitAllFromLobby()(*CallsItemParticipantsAdmitAllFromLobbyRequestBuilder) {
+    return NewCallsItemParticipantsAdmitAllFromLobbyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ByParticipantId provides operations to manage the participants property of the microsoft.graph.call entity.
 // returns a *CallsItemParticipantsParticipantItemRequestBuilder when successful
 func (m *CallsItemParticipantsRequestBuilder) ByParticipantId(participantId string)(*CallsItemParticipantsParticipantItemRequestBuilder) {

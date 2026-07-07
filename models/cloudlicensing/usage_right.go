@@ -48,6 +48,18 @@ func (m *UsageRight) GetAssignments()([]Assignmentable) {
     }
     return nil
 }
+// GetExternalServiceIdentifier gets the externalServiceIdentifier property value. The externalServiceIdentifier property
+// returns a *string when successful
+func (m *UsageRight) GetExternalServiceIdentifier()(*string) {
+    val, err := m.GetBackingStore().Get("externalServiceIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -81,6 +93,16 @@ func (m *UsageRight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 }
             }
             m.SetAssignments(res)
+        }
+        return nil
+    }
+    res["externalServiceIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalServiceIdentifier(val)
         }
         return nil
     }
@@ -188,6 +210,12 @@ func (m *UsageRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("externalServiceIdentifier", m.GetExternalServiceIdentifier())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServices() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServices()))
         for i, v := range m.GetServices() {
@@ -228,6 +256,13 @@ func (m *UsageRight) SetAssignments(value []Assignmentable)() {
         panic(err)
     }
 }
+// SetExternalServiceIdentifier sets the externalServiceIdentifier property value. The externalServiceIdentifier property
+func (m *UsageRight) SetExternalServiceIdentifier(value *string)() {
+    err := m.GetBackingStore().Set("externalServiceIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetServices sets the services property value. Information about the services associated with the usageRight. Not nullable. Read-only. Supports $filter on the planId property.
 func (m *UsageRight) SetServices(value []Serviceable)() {
     err := m.GetBackingStore().Set("services", value)
@@ -254,11 +289,13 @@ type UsageRightable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllotments()([]Allotmentable)
     GetAssignments()([]Assignmentable)
+    GetExternalServiceIdentifier()(*string)
     GetServices()([]Serviceable)
     GetSkuId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSkuPartNumber()(*string)
     SetAllotments(value []Allotmentable)()
     SetAssignments(value []Assignmentable)()
+    SetExternalServiceIdentifier(value *string)()
     SetServices(value []Serviceable)()
     SetSkuId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSkuPartNumber(value *string)()

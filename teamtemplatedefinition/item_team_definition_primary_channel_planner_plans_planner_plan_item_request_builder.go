@@ -113,6 +113,11 @@ func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuild
 func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemGetUsageRightsRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// HistoryItems provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.
+// returns a *ItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) HistoryItems()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MoveToContainer provides operations to call the moveToContainer method.
 // returns a *ItemTeamDefinitionPrimaryChannelPlannerPlansItemMoveToContainerRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) MoveToContainer()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemMoveToContainerRequestBuilder) {

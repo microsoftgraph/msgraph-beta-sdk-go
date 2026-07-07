@@ -76,6 +76,16 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["informationProtectionLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExternalItemInformationProtectionLabelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInformationProtectionLabel(val.(ExternalItemInformationProtectionLabelable))
+        }
+        return nil
+    }
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePropertiesFromDiscriminatorValue)
         if err != nil {
@@ -87,6 +97,18 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         return nil
     }
     return res
+}
+// GetInformationProtectionLabel gets the informationProtectionLabel property value. The informationProtectionLabel property
+// returns a ExternalItemInformationProtectionLabelable when successful
+func (m *ExternalItem) GetInformationProtectionLabel()(ExternalItemInformationProtectionLabelable) {
+    val, err := m.GetBackingStore().Get("informationProtectionLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalItemInformationProtectionLabelable)
+    }
+    return nil
 }
 // GetProperties gets the properties property value. The properties property
 // returns a Propertiesable when successful
@@ -125,6 +147,12 @@ func (m *ExternalItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteObjectValue("informationProtectionLabel", m.GetInformationProtectionLabel())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("properties", m.GetProperties())
         if err != nil {
             return err
@@ -146,6 +174,13 @@ func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
         panic(err)
     }
 }
+// SetInformationProtectionLabel sets the informationProtectionLabel property value. The informationProtectionLabel property
+func (m *ExternalItem) SetInformationProtectionLabel(value ExternalItemInformationProtectionLabelable)() {
+    err := m.GetBackingStore().Set("informationProtectionLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProperties sets the properties property value. The properties property
 func (m *ExternalItem) SetProperties(value Propertiesable)() {
     err := m.GetBackingStore().Set("properties", value)
@@ -158,8 +193,10 @@ type ExternalItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAcl()([]Aclable)
     GetContent()(ExternalItemContentable)
+    GetInformationProtectionLabel()(ExternalItemInformationProtectionLabelable)
     GetProperties()(Propertiesable)
     SetAcl(value []Aclable)()
     SetContent(value ExternalItemContentable)()
+    SetInformationProtectionLabel(value ExternalItemInformationProtectionLabelable)()
     SetProperties(value Propertiesable)()
 }

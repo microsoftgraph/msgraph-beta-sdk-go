@@ -33,7 +33,7 @@ func NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+// Post apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx co
     }
     return nil
 }
-// ToPostRequestInformation apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
+// ToPostRequestInformation apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. You can apply policy settings such as region and singleSignOn. This action also supports reprovisioning for frontline shared mode Cloud PCs by using the reservePercentage parameter to control the percentage of Cloud PCs that remain available during the process.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

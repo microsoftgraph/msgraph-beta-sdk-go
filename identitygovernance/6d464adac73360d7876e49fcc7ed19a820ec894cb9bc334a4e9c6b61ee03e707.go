@@ -33,7 +33,7 @@ func NewAccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDe
     urlParams["request-raw-url"] = rawUrl
     return NewAccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+// Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *AccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceD
     }
     return nil
 }
-// ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+// ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

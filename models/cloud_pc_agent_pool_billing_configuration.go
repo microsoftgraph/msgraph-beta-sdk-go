@@ -43,7 +43,7 @@ func (m *CloudPcAgentPoolBillingConfiguration) GetAdditionalData()(map[string]an
 func (m *CloudPcAgentPoolBillingConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBillingPlanId gets the billingPlanId property value. The billingPlanId property
+// GetBillingPlanId gets the billingPlanId property value. The identifier of the billing plan.
 // returns a *string when successful
 func (m *CloudPcAgentPoolBillingConfiguration) GetBillingPlanId()(*string) {
     val, err := m.GetBackingStore().Get("billingPlanId")
@@ -155,7 +155,7 @@ func (m *CloudPcAgentPoolBillingConfiguration) SetAdditionalData(value map[strin
 func (m *CloudPcAgentPoolBillingConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBillingPlanId sets the billingPlanId property value. The billingPlanId property
+// SetBillingPlanId sets the billingPlanId property value. The identifier of the billing plan.
 func (m *CloudPcAgentPoolBillingConfiguration) SetBillingPlanId(value *string)() {
     err := m.GetBackingStore().Set("billingPlanId", value)
     if err != nil {

@@ -47,6 +47,16 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetBackingStore()(ie8677
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["groupDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupDisplayName(val)
+        }
+        return nil
+    }
     res["groupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,6 +94,18 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetFieldDeserializers()(
         return nil
     }
     return res
+}
+// GetGroupDisplayName gets the groupDisplayName property value. The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
+// returns a *string when successful
+func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetGroupDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("groupDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetGroupId gets the groupId property value. The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
 // returns a *string when successful
@@ -123,6 +145,12 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) GetRoleTemplates()([]Rol
 }
 // Serialize serializes information the current object
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("groupDisplayName", m.GetGroupDisplayName())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("groupId", m.GetGroupId())
         if err != nil {
@@ -166,6 +194,13 @@ func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetAdditionalData(value 
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetGroupDisplayName sets the groupDisplayName property value. The display name of the security group identified by groupId at the time the snapshot was created. Read-only.
+func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetGroupDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("groupDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetGroupId sets the groupId property value. The object ID of the role-assignable security group in the governing tenant that will be assigned the specified roles.
 func (m *DelegatedAdministrationRoleAssignmentSnapshot) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
@@ -192,10 +227,12 @@ type DelegatedAdministrationRoleAssignmentSnapshotable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetGroupDisplayName()(*string)
     GetGroupId()(*string)
     GetOdataType()(*string)
     GetRoleTemplates()([]RoleTemplateable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetGroupDisplayName(value *string)()
     SetGroupId(value *string)()
     SetOdataType(value *string)()
     SetRoleTemplates(value []RoleTemplateable)()

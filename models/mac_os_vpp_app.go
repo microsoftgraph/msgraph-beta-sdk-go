@@ -26,6 +26,18 @@ func NewMacOsVppApp()(*MacOsVppApp) {
 func CreateMacOsVppAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOsVppApp(), nil
 }
+// GetAppleDeviceAppDeliveryProtocolType gets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+// returns a *AppleDeviceDeliveryProtocol when successful
+func (m *MacOsVppApp) GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol) {
+    val, err := m.GetBackingStore().Get("appleDeviceAppDeliveryProtocolType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeviceDeliveryProtocol)
+    }
+    return nil
+}
 // GetAppStoreUrl gets the appStoreUrl property value. The store URL.
 // returns a *string when successful
 func (m *MacOsVppApp) GetAppStoreUrl()(*string) {
@@ -66,6 +78,16 @@ func (m *MacOsVppApp) GetBundleId()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOsVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
+    res["appleDeviceAppDeliveryProtocolType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeviceDeliveryProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleDeviceAppDeliveryProtocolType(val.(*AppleDeviceDeliveryProtocol))
+        }
+        return nil
+    }
     res["appStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -336,6 +358,13 @@ func (m *MacOsVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
+    if m.GetAppleDeviceAppDeliveryProtocolType() != nil {
+        cast := (*m.GetAppleDeviceAppDeliveryProtocolType()).String()
+        err = writer.WriteStringValue("appleDeviceAppDeliveryProtocolType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("appStoreUrl", m.GetAppStoreUrl())
         if err != nil {
@@ -428,6 +457,13 @@ func (m *MacOsVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     return nil
+}
+// SetAppleDeviceAppDeliveryProtocolType sets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+func (m *MacOsVppApp) SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)() {
+    err := m.GetBackingStore().Set("appleDeviceAppDeliveryProtocolType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppStoreUrl sets the appStoreUrl property value. The store URL.
 func (m *MacOsVppApp) SetAppStoreUrl(value *string)() {
@@ -523,6 +559,7 @@ func (m *MacOsVppApp) SetVppTokenOrganizationName(value *string)() {
 type MacOsVppAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol)
     GetAppStoreUrl()(*string)
     GetAssignedLicenses()([]MacOsVppAppAssignedLicenseable)
     GetBundleId()(*string)
@@ -536,6 +573,7 @@ type MacOsVppAppable interface {
     GetVppTokenDisplayName()(*string)
     GetVppTokenId()(*string)
     GetVppTokenOrganizationName()(*string)
+    SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)()
     SetAppStoreUrl(value *string)()
     SetAssignedLicenses(value []MacOsVppAppAssignedLicenseable)()
     SetBundleId(value *string)()

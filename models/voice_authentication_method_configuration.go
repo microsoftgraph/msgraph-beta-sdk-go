@@ -24,10 +24,32 @@ func NewVoiceAuthenticationMethodConfiguration()(*VoiceAuthenticationMethodConfi
 func CreateVoiceAuthenticationMethodConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVoiceAuthenticationMethodConfiguration(), nil
 }
+// GetCallerIdNumber gets the callerIdNumber property value. The phone number used as the caller ID when voice call authentication is initiated.
+// returns a *string when successful
+func (m *VoiceAuthenticationMethodConfiguration) GetCallerIdNumber()(*string) {
+    val, err := m.GetBackingStore().Get("callerIdNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VoiceAuthenticationMethodConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AuthenticationMethodConfiguration.GetFieldDeserializers()
+    res["callerIdNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallerIdNumber(val)
+        }
+        return nil
+    }
     res["includeTargets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateVoiceAuthenticationMethodTargetFromDiscriminatorValue)
         if err != nil {
@@ -86,6 +108,12 @@ func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("callerIdNumber", m.GetCallerIdNumber())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIncludeTargets() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludeTargets()))
         for i, v := range m.GetIncludeTargets() {
@@ -106,6 +134,13 @@ func (m *VoiceAuthenticationMethodConfiguration) Serialize(writer i878a80d2330e8
     }
     return nil
 }
+// SetCallerIdNumber sets the callerIdNumber property value. The phone number used as the caller ID when voice call authentication is initiated.
+func (m *VoiceAuthenticationMethodConfiguration) SetCallerIdNumber(value *string)() {
+    err := m.GetBackingStore().Set("callerIdNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIncludeTargets sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
 func (m *VoiceAuthenticationMethodConfiguration) SetIncludeTargets(value []VoiceAuthenticationMethodTargetable)() {
     err := m.GetBackingStore().Set("includeTargets", value)
@@ -123,8 +158,10 @@ func (m *VoiceAuthenticationMethodConfiguration) SetIsOfficePhoneAllowed(value *
 type VoiceAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCallerIdNumber()(*string)
     GetIncludeTargets()([]VoiceAuthenticationMethodTargetable)
     GetIsOfficePhoneAllowed()(*bool)
+    SetCallerIdNumber(value *string)()
     SetIncludeTargets(value []VoiceAuthenticationMethodTargetable)()
     SetIsOfficePhoneAllowed(value *bool)()
 }

@@ -70,6 +70,16 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["inUseBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWin32LobAppInUseActionType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInUseBehavior(val.(*Win32LobAppInUseActionType))
+        }
+        return nil
+    }
     res["maxRunTimeInMinutes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -101,6 +111,18 @@ func (m *Win32LobAppInstallExperience) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetInUseBehavior gets the inUseBehavior property value. Indicates whether app-in-use detection is enabled before app enforcement, and if enabled, the action to take when the app is detected to be in-use. Null indicates the feature is not enabled. Possible values are: `notEnabled`, `fail`, `terminateWithoutUserInteraction`, `terminateWithUserInteraction`.
+// returns a *Win32LobAppInUseActionType when successful
+func (m *Win32LobAppInstallExperience) GetInUseBehavior()(*Win32LobAppInUseActionType) {
+    val, err := m.GetBackingStore().Get("inUseBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*Win32LobAppInUseActionType)
+    }
+    return nil
 }
 // GetMaxRunTimeInMinutes gets the maxRunTimeInMinutes property value. The number of minutes the system will wait for install program to finish. Default value is 60 minutes.
 // returns a *int32 when successful
@@ -143,6 +165,13 @@ func (m *Win32LobAppInstallExperience) Serialize(writer i878a80d2330e89d26896388
     if m.GetDeviceRestartBehavior() != nil {
         cast := (*m.GetDeviceRestartBehavior()).String()
         err := writer.WriteStringValue("deviceRestartBehavior", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetInUseBehavior() != nil {
+        cast := (*m.GetInUseBehavior()).String()
+        err := writer.WriteStringValue("inUseBehavior", &cast)
         if err != nil {
             return err
         }
@@ -192,6 +221,13 @@ func (m *Win32LobAppInstallExperience) SetDeviceRestartBehavior(value *Win32LobA
         panic(err)
     }
 }
+// SetInUseBehavior sets the inUseBehavior property value. Indicates whether app-in-use detection is enabled before app enforcement, and if enabled, the action to take when the app is detected to be in-use. Null indicates the feature is not enabled. Possible values are: `notEnabled`, `fail`, `terminateWithoutUserInteraction`, `terminateWithUserInteraction`.
+func (m *Win32LobAppInstallExperience) SetInUseBehavior(value *Win32LobAppInUseActionType)() {
+    err := m.GetBackingStore().Set("inUseBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaxRunTimeInMinutes sets the maxRunTimeInMinutes property value. The number of minutes the system will wait for install program to finish. Default value is 60 minutes.
 func (m *Win32LobAppInstallExperience) SetMaxRunTimeInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("maxRunTimeInMinutes", value)
@@ -219,11 +255,13 @@ type Win32LobAppInstallExperienceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceRestartBehavior()(*Win32LobAppRestartBehavior)
+    GetInUseBehavior()(*Win32LobAppInUseActionType)
     GetMaxRunTimeInMinutes()(*int32)
     GetOdataType()(*string)
     GetRunAsAccount()(*RunAsAccountType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceRestartBehavior(value *Win32LobAppRestartBehavior)()
+    SetInUseBehavior(value *Win32LobAppInUseActionType)()
     SetMaxRunTimeInMinutes(value *int32)()
     SetOdataType(value *string)()
     SetRunAsAccount(value *RunAsAccountType)()

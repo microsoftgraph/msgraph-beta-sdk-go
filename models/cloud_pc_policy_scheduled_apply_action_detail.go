@@ -70,6 +70,16 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetFieldDeserializers()(map[st
         }
         return nil
     }
+    res["isForceUserLogoffEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsForceUserLogoffEnabled(val)
+        }
+        return nil
+    }
     res["nextRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -111,6 +121,18 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetFieldDeserializers()(map[st
         return nil
     }
     return res
+}
+// GetIsForceUserLogoffEnabled gets the isForceUserLogoffEnabled property value. Indicates whether active Cloud PC sessions are forcibly signed out when reprovisioning begins. When true, connected users are immediately signed out and reprovisioning starts right away; reservePercentage must be set to 0 when this property is true, otherwise the request fails. When false, reprovisioning waits until the user disconnects. The default value is false. Optional. Frontline shared only.
+// returns a *bool when successful
+func (m *CloudPcPolicyScheduledApplyActionDetail) GetIsForceUserLogoffEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isForceUserLogoffEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNextRunDateTime gets the nextRunDateTime property value. Indicates IT Admins can see when the next automatic regular apply is executed. It needs to be coordinated with timezone, for example, '2025-01-01 00:00:00' with 'China Standard Time' means the next task executes at Jan 01 2025 00:00:00 GMT+0800 (China Standard Time). Read-Only.
 // returns a *string when successful
@@ -179,6 +201,12 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) Serialize(writer i878a80d2330e
         }
     }
     {
+        err = writer.WriteBoolValue("isForceUserLogoffEnabled", m.GetIsForceUserLogoffEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("nextRunDateTime", m.GetNextRunDateTime())
         if err != nil {
             return err
@@ -219,6 +247,13 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) SetEndDateTime(value *string)(
         panic(err)
     }
 }
+// SetIsForceUserLogoffEnabled sets the isForceUserLogoffEnabled property value. Indicates whether active Cloud PC sessions are forcibly signed out when reprovisioning begins. When true, connected users are immediately signed out and reprovisioning starts right away; reservePercentage must be set to 0 when this property is true, otherwise the request fails. When false, reprovisioning waits until the user disconnects. The default value is false. Optional. Frontline shared only.
+func (m *CloudPcPolicyScheduledApplyActionDetail) SetIsForceUserLogoffEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isForceUserLogoffEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNextRunDateTime sets the nextRunDateTime property value. Indicates IT Admins can see when the next automatic regular apply is executed. It needs to be coordinated with timezone, for example, '2025-01-01 00:00:00' with 'China Standard Time' means the next task executes at Jan 01 2025 00:00:00 GMT+0800 (China Standard Time). Read-Only.
 func (m *CloudPcPolicyScheduledApplyActionDetail) SetNextRunDateTime(value *string)() {
     err := m.GetBackingStore().Set("nextRunDateTime", value)
@@ -252,12 +287,14 @@ type CloudPcPolicyScheduledApplyActionDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCronScheduleExpression()(*string)
     GetEndDateTime()(*string)
+    GetIsForceUserLogoffEnabled()(*bool)
     GetNextRunDateTime()(*string)
     GetReservePercentage()(*int32)
     GetStartDateTime()(*string)
     GetTimezone()(*CloudPcPolicyTimezone)
     SetCronScheduleExpression(value *string)()
     SetEndDateTime(value *string)()
+    SetIsForceUserLogoffEnabled(value *bool)()
     SetNextRunDateTime(value *string)()
     SetReservePercentage(value *int32)()
     SetStartDateTime(value *string)()

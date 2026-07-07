@@ -44,6 +44,11 @@ type CallsItemParticipantsParticipantItemRequestBuilderPatchRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AdmitFromLobby provides operations to call the admitFromLobby method.
+// returns a *CallsItemParticipantsItemAdmitFromLobbyRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) AdmitFromLobby()(*CallsItemParticipantsItemAdmitFromLobbyRequestBuilder) {
+    return NewCallsItemParticipantsItemAdmitFromLobbyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCallsItemParticipantsParticipantItemRequestBuilderInternal instantiates a new CallsItemParticipantsParticipantItemRequestBuilder and sets the default values.
 func NewCallsItemParticipantsParticipantItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsParticipantItemRequestBuilder) {
     m := &CallsItemParticipantsParticipantItemRequestBuilder{
@@ -117,6 +122,11 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Participantable), nil
+}
+// RemoveFromLobby provides operations to call the removeFromLobby method.
+// returns a *CallsItemParticipantsItemRemoveFromLobbyRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) RemoveFromLobby()(*CallsItemParticipantsItemRemoveFromLobbyRequestBuilder) {
+    return NewCallsItemParticipantsItemRemoveFromLobbyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StartHoldMusic provides operations to call the startHoldMusic method.
 // returns a *CallsItemParticipantsItemStartHoldMusicRequestBuilder when successful
