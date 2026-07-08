@@ -58,7 +58,6 @@ func NewDirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBu
     return NewDirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property resourceScope for roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -75,7 +74,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return nil
 }
 // Get get resourceScope from roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable, error) {
@@ -96,7 +94,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable), nil
 }
 // Patch update the navigation property resourceScope in roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable, error) {
@@ -117,7 +114,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable), nil
 }
 // ToDeleteRequestInformation delete navigation property resourceScope for roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +125,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return requestInfo, nil
 }
 // ToGetRequestInformation get resourceScope from roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +139,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property resourceScope in roleManagement
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceScopeable, requestConfiguration *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +154,6 @@ func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder when successful
 func (m *DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) WithUrl(rawUrl string)(*DirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder) {
     return NewDirectoryResourceNamespacesItemResourceActionsItemResourceScopeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

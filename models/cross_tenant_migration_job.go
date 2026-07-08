@@ -23,7 +23,7 @@ func NewCrossTenantMigrationJob()(*CrossTenantMigrationJob) {
 func CreateCrossTenantMigrationJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCrossTenantMigrationJob(), nil
 }
-// GetCompleteAfterDateTime gets the completeAfterDateTime property value. DateTime after which the migration should be performed
+// GetCompleteAfterDateTime gets the completeAfterDateTime property value. Date and time after which the migration should be performed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CrossTenantMigrationJob) GetCompleteAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completeAfterDateTime")
@@ -35,7 +35,7 @@ func (m *CrossTenantMigrationJob) GetCompleteAfterDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. ID of the user that created the job
+// GetCreatedBy gets the createdBy property value. User principal name (UPN) of the user who created the job. Read-only.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetCreatedBy()(*string) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -47,7 +47,7 @@ func (m *CrossTenantMigrationJob) GetCreatedBy()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. When the job what created
+// GetCreatedDateTime gets the createdDateTime property value. When the job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CrossTenantMigrationJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -59,7 +59,7 @@ func (m *CrossTenantMigrationJob) GetCreatedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name of the job. Must be unique per tenant
+// GetDisplayName gets the displayName property value. Display name of the job. Must be unique per tenant.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -71,7 +71,7 @@ func (m *CrossTenantMigrationJob) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExchangeSettings gets the exchangeSettings property value. Settings to use for migration of Exchange workload
+// GetExchangeSettings gets the exchangeSettings property value. Settings to use for migration of Exchange workload. Nullable.
 // returns a ExchangeOnlineCrossTenantMigrationSettingsable when successful
 func (m *CrossTenantMigrationJob) GetExchangeSettings()(ExchangeOnlineCrossTenantMigrationSettingsable) {
     val, err := m.GetBackingStore().Get("exchangeSettings")
@@ -269,7 +269,7 @@ func (m *CrossTenantMigrationJob) GetJobType()(*CrossTenantMigrationJobType) {
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. When this migration job was last updated
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. When this migration job was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CrossTenantMigrationJob) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -281,7 +281,7 @@ func (m *CrossTenantMigrationJob) GetLastUpdatedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetMessage gets the message property value. Status message of the migration job
+// GetMessage gets the message property value. Status message of the migration job. Nullable. Read-only.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
@@ -293,7 +293,7 @@ func (m *CrossTenantMigrationJob) GetMessage()(*string) {
     }
     return nil
 }
-// GetResources gets the resources property value. IDs (GUID) of the resources being migrated with the migration job
+// GetResources gets the resources property value. IDs (GUID) of the resources that are migrated with the migration job.
 // returns a []string when successful
 func (m *CrossTenantMigrationJob) GetResources()([]string) {
     val, err := m.GetBackingStore().Get("resources")
@@ -305,7 +305,7 @@ func (m *CrossTenantMigrationJob) GetResources()([]string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. Type of resource being migrated. Only Users is currently supported
+// GetResourceType gets the resourceType property value. Type of resource being migrated. Only Users is currently supported.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -317,7 +317,7 @@ func (m *CrossTenantMigrationJob) GetResourceType()(*string) {
     }
     return nil
 }
-// GetSourceTenantId gets the sourceTenantId property value. ID (GUID) of the tenant that content is being migrated from
+// GetSourceTenantId gets the sourceTenantId property value. ID (GUID) of the tenant that content is migrated from.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetSourceTenantId()(*string) {
     val, err := m.GetBackingStore().Get("sourceTenantId")
@@ -341,7 +341,7 @@ func (m *CrossTenantMigrationJob) GetStatus()(*CrossTenantMigrationJobStatus) {
     }
     return nil
 }
-// GetTargetTenantId gets the targetTenantId property value. ID of the tenant that content is being migrated to
+// GetTargetTenantId gets the targetTenantId property value. ID of the tenant that content is migrated to. Read-only.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetTargetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("targetTenantId")
@@ -353,7 +353,7 @@ func (m *CrossTenantMigrationJob) GetTargetTenantId()(*string) {
     }
     return nil
 }
-// GetUsers gets the users property value. Details and status of the users being migrated in this migration job
+// GetUsers gets the users property value. Details and status of the users migrated in this migration job.
 // returns a []CrossTenantMigrationTaskable when successful
 func (m *CrossTenantMigrationJob) GetUsers()([]CrossTenantMigrationTaskable) {
     val, err := m.GetBackingStore().Get("users")
@@ -365,7 +365,7 @@ func (m *CrossTenantMigrationJob) GetUsers()([]CrossTenantMigrationTaskable) {
     }
     return nil
 }
-// GetWorkloads gets the workloads property value. Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint)
+// GetWorkloads gets the workloads property value. Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint).
 // returns a []string when successful
 func (m *CrossTenantMigrationJob) GetWorkloads()([]string) {
     val, err := m.GetBackingStore().Get("workloads")
@@ -483,35 +483,35 @@ func (m *CrossTenantMigrationJob) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetCompleteAfterDateTime sets the completeAfterDateTime property value. DateTime after which the migration should be performed
+// SetCompleteAfterDateTime sets the completeAfterDateTime property value. Date and time after which the migration should be performed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *CrossTenantMigrationJob) SetCompleteAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completeAfterDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. ID of the user that created the job
+// SetCreatedBy sets the createdBy property value. User principal name (UPN) of the user who created the job. Read-only.
 func (m *CrossTenantMigrationJob) SetCreatedBy(value *string)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. When the job what created
+// SetCreatedDateTime sets the createdDateTime property value. When the job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.
 func (m *CrossTenantMigrationJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name of the job. Must be unique per tenant
+// SetDisplayName sets the displayName property value. Display name of the job. Must be unique per tenant.
 func (m *CrossTenantMigrationJob) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExchangeSettings sets the exchangeSettings property value. Settings to use for migration of Exchange workload
+// SetExchangeSettings sets the exchangeSettings property value. Settings to use for migration of Exchange workload. Nullable.
 func (m *CrossTenantMigrationJob) SetExchangeSettings(value ExchangeOnlineCrossTenantMigrationSettingsable)() {
     err := m.GetBackingStore().Set("exchangeSettings", value)
     if err != nil {
@@ -525,35 +525,35 @@ func (m *CrossTenantMigrationJob) SetJobType(value *CrossTenantMigrationJobType)
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. When this migration job was last updated
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. When this migration job was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z. Read-only.
 func (m *CrossTenantMigrationJob) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. Status message of the migration job
+// SetMessage sets the message property value. Status message of the migration job. Nullable. Read-only.
 func (m *CrossTenantMigrationJob) SetMessage(value *string)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. IDs (GUID) of the resources being migrated with the migration job
+// SetResources sets the resources property value. IDs (GUID) of the resources that are migrated with the migration job.
 func (m *CrossTenantMigrationJob) SetResources(value []string)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. Type of resource being migrated. Only Users is currently supported
+// SetResourceType sets the resourceType property value. Type of resource being migrated. Only Users is currently supported.
 func (m *CrossTenantMigrationJob) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceTenantId sets the sourceTenantId property value. ID (GUID) of the tenant that content is being migrated from
+// SetSourceTenantId sets the sourceTenantId property value. ID (GUID) of the tenant that content is migrated from.
 func (m *CrossTenantMigrationJob) SetSourceTenantId(value *string)() {
     err := m.GetBackingStore().Set("sourceTenantId", value)
     if err != nil {
@@ -567,21 +567,21 @@ func (m *CrossTenantMigrationJob) SetStatus(value *CrossTenantMigrationJobStatus
         panic(err)
     }
 }
-// SetTargetTenantId sets the targetTenantId property value. ID of the tenant that content is being migrated to
+// SetTargetTenantId sets the targetTenantId property value. ID of the tenant that content is migrated to. Read-only.
 func (m *CrossTenantMigrationJob) SetTargetTenantId(value *string)() {
     err := m.GetBackingStore().Set("targetTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsers sets the users property value. Details and status of the users being migrated in this migration job
+// SetUsers sets the users property value. Details and status of the users migrated in this migration job.
 func (m *CrossTenantMigrationJob) SetUsers(value []CrossTenantMigrationTaskable)() {
     err := m.GetBackingStore().Set("users", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorkloads sets the workloads property value. Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint)
+// SetWorkloads sets the workloads property value. Workloads to migrate. Supported workloads are Teams, Exchange, and ODSP (OneDrive/SharePoint).
 func (m *CrossTenantMigrationJob) SetWorkloads(value []string)() {
     err := m.GetBackingStore().Set("workloads", value)
     if err != nil {

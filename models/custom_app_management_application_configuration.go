@@ -125,7 +125,7 @@ func (m *CustomAppManagementApplicationConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRedirectUris gets the redirectUris property value. The redirectUris property
+// GetRedirectUris gets the redirectUris property value. Configuration for redirect URI validation rules and restrictions.
 // returns a RedirectUriConfigurationable when successful
 func (m *CustomAppManagementApplicationConfiguration) GetRedirectUris()(RedirectUriConfigurationable) {
     val, err := m.GetBackingStore().Get("redirectUris")
@@ -203,7 +203,7 @@ func (m *CustomAppManagementApplicationConfiguration) SetOdataType(value *string
         panic(err)
     }
 }
-// SetRedirectUris sets the redirectUris property value. The redirectUris property
+// SetRedirectUris sets the redirectUris property value. Configuration for redirect URI validation rules and restrictions.
 func (m *CustomAppManagementApplicationConfiguration) SetRedirectUris(value RedirectUriConfigurationable)() {
     err := m.GetBackingStore().Set("redirectUris", value)
     if err != nil {

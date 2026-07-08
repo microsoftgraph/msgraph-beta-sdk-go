@@ -246,6 +246,11 @@ func (m *UserItemRequestBuilder) DevicesWithDeviceId(deviceId *string)(*ItemDevi
 func (m *UserItemRequestBuilder) DirectReports()(*ItemDirectReportsRequestBuilder) {
     return NewItemDirectReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DistributionLists provides operations to manage the distributionLists property of the microsoft.graph.user entity.
+// returns a *ItemDistributionListsRequestBuilder when successful
+func (m *UserItemRequestBuilder) DistributionLists()(*ItemDistributionListsRequestBuilder) {
+    return NewItemDistributionListsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Drive provides operations to manage the drive property of the microsoft.graph.user entity.
 // returns a *ItemDriveRequestBuilder when successful
 func (m *UserItemRequestBuilder) Drive()(*ItemDriveRequestBuilder) {
@@ -529,7 +534,7 @@ func (m *UserItemRequestBuilder) OwnedDevices()(*ItemOwnedDevicesRequestBuilder)
 func (m *UserItemRequestBuilder) OwnedObjects()(*ItemOwnedObjectsRequestBuilder) {
     return NewItemOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a user or agentUser object.
+// Patch update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -702,7 +707,7 @@ func (m *UserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, re
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a user or agentUser object.
+// ToPatchRequestInformation update the properties of a user. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
 // returns a *RequestInformation when successful
 func (m *UserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -14,7 +14,7 @@ import (
 type IdentitiesSensorMigrationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesSensorMigrationRequestBuilderGetQueryParameters get sensorMigration from security
+// IdentitiesSensorMigrationRequestBuilderGetQueryParameters get a list of the sensorMigration objects and their properties.
 type IdentitiesSensorMigrationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,9 +79,12 @@ func NewIdentitiesSensorMigrationRequestBuilder(rawUrl string, requestAdapter i2
 func (m *IdentitiesSensorMigrationRequestBuilder) Count()(*IdentitiesSensorMigrationCountRequestBuilder) {
     return NewIdentitiesSensorMigrationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sensorMigration from security
+// Get get a list of the sensorMigration objects and their properties.
 // returns a SensorMigrationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensormigration?view=graph-rest-beta
 func (m *IdentitiesSensorMigrationRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorMigrationRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorMigrationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *IdentitiesSensorMigrationRequestBuilder) Post(ctx context.Context, body
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorMigrationable), nil
 }
-// ToGetRequestInformation get sensorMigration from security
+// ToGetRequestInformation get a list of the sensorMigration objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorMigrationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorMigrationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

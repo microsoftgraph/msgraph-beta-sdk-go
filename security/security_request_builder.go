@@ -160,6 +160,16 @@ func (m *SecurityRequestBuilder) IpSecurityProfiles()(*IpSecurityProfilesRequest
 func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
     return NewLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphSecurityGetHuntingSchema provides operations to call the getHuntingSchema method.
+// returns a *MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder when successful
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityGetHuntingSchema()(*MicrosoftGraphSecurityGetHuntingSchemaRequestBuilder) {
+    return NewMicrosoftGraphSecurityGetHuntingSchemaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId provides operations to call the getRunHuntingQuery method.
+// returns a *MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder when successful
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceId(query *string)(*MicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilder) {
+    return NewMicrosoftGraphSecurityGetRunHuntingQueryWithQuerytimespanTimespanWithWorkspaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, query)
+}
 // MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
 // returns a *MicrosoftGraphSecurityRunHuntingQueryRequestBuilder when successful
 func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {

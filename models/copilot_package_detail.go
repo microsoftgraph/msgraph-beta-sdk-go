@@ -160,6 +160,22 @@ func (m *CopilotPackageDetail) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["sharedWithUsersAndGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePackageAccessEntityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PackageAccessEntityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PackageAccessEntityable)
+                }
+            }
+            m.SetSharedWithUsersAndGroups(res)
+        }
+        return nil
+    }
     return res
 }
 // GetLongDescription gets the longDescription property value. The longDescription property
@@ -183,6 +199,18 @@ func (m *CopilotPackageDetail) GetSensitivity()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSharedWithUsersAndGroups gets the sharedWithUsersAndGroups property value. The sharedWithUsersAndGroups property
+// returns a []PackageAccessEntityable when successful
+func (m *CopilotPackageDetail) GetSharedWithUsersAndGroups()([]PackageAccessEntityable) {
+    val, err := m.GetBackingStore().Get("sharedWithUsersAndGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PackageAccessEntityable)
     }
     return nil
 }
@@ -246,6 +274,18 @@ func (m *CopilotPackageDetail) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetSharedWithUsersAndGroups() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithUsersAndGroups()))
+        for i, v := range m.GetSharedWithUsersAndGroups() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sharedWithUsersAndGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAcquireUsersAndGroups sets the acquireUsersAndGroups property value. The acquireUsersAndGroups property
@@ -290,6 +330,13 @@ func (m *CopilotPackageDetail) SetSensitivity(value *string)() {
         panic(err)
     }
 }
+// SetSharedWithUsersAndGroups sets the sharedWithUsersAndGroups property value. The sharedWithUsersAndGroups property
+func (m *CopilotPackageDetail) SetSharedWithUsersAndGroups(value []PackageAccessEntityable)() {
+    err := m.GetBackingStore().Set("sharedWithUsersAndGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CopilotPackageDetailable interface {
     CopilotPackageable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -299,10 +346,12 @@ type CopilotPackageDetailable interface {
     GetElementDetails()([]PackageElementDetailable)
     GetLongDescription()(*string)
     GetSensitivity()(*string)
+    GetSharedWithUsersAndGroups()([]PackageAccessEntityable)
     SetAcquireUsersAndGroups(value []PackageAccessEntityable)()
     SetAllowedUsersAndGroups(value []PackageAccessEntityable)()
     SetCategories(value []string)()
     SetElementDetails(value []PackageElementDetailable)()
     SetLongDescription(value *string)()
     SetSensitivity(value *string)()
+    SetSharedWithUsersAndGroups(value []PackageAccessEntityable)()
 }

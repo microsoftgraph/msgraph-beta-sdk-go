@@ -47,7 +47,7 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
     }
     return nil
 }
-// GetAutopatch gets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
+// GetAutopatch gets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.
 // returns a CloudPcProvisioningPolicyAutopatchable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAutopatchable) {
     val, err := m.GetBackingStore().Get("autopatch")
@@ -59,7 +59,7 @@ func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAuto
     }
     return nil
 }
-// GetAutopilotConfiguration gets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
+// GetAutopilotConfiguration gets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.
 // returns a CloudPcAutopilotConfigurationable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopilotConfiguration()(CloudPcAutopilotConfigurationable) {
     val, err := m.GetBackingStore().Get("autopilotConfiguration")
@@ -419,6 +419,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["snapshotResetMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcSnapshotResetMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSnapshotResetMode(val.(*CloudPcSnapshotResetMode))
+        }
+        return nil
+    }
     res["userExperienceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcUserExperienceType)
         if err != nil {
@@ -590,6 +600,18 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetSnapshotResetMode gets the snapshotResetMode property value. The snapshotResetMode property
+// returns a *CloudPcSnapshotResetMode when successful
+func (m *CloudPcProvisioningPolicy) GetSnapshotResetMode()(*CloudPcSnapshotResetMode) {
+    val, err := m.GetBackingStore().Get("snapshotResetMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcSnapshotResetMode)
     }
     return nil
 }
@@ -800,6 +822,13 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetSnapshotResetMode() != nil {
+        cast := (*m.GetSnapshotResetMode()).String()
+        err = writer.WriteStringValue("snapshotResetMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserExperienceType() != nil {
         cast := (*m.GetUserExperienceType()).String()
         err = writer.WriteStringValue("userExperienceType", &cast)
@@ -841,14 +870,14 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         panic(err)
     }
 }
-// SetAutopatch sets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. Supports $select.
+// SetAutopatch sets the autopatch property value. Indicates the Windows Autopatch settings for Cloud PCs using this provisioning policy. The settings take effect when the tenant enrolls in Autopatch and the managedType of the microsoftManagedDesktop property is set as starterManaged. When you create or update a provisioning policy with autopatch, you must use a delegated token and the signed-in user must have the Intune Administrator role. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)() {
     err := m.GetBackingStore().Set("autopatch", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAutopilotConfiguration sets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
+// SetAutopilotConfiguration sets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. When you create or update a provisioning policy with autopilotConfiguration, use the required Microsoft Graph permissions listed on the corresponding create and update API pages. In delegated scenarios, the signed-in user must also have the Microsoft.Intune/DeviceConfigurations/Assign Intune RBAC permission. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopilotConfiguration(value CloudPcAutopilotConfigurationable)() {
     err := m.GetBackingStore().Set("autopilotConfiguration", value)
     if err != nil {
@@ -988,6 +1017,13 @@ func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
         panic(err)
     }
 }
+// SetSnapshotResetMode sets the snapshotResetMode property value. The snapshotResetMode property
+func (m *CloudPcProvisioningPolicy) SetSnapshotResetMode(value *CloudPcSnapshotResetMode)() {
+    err := m.GetBackingStore().Set("snapshotResetMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
 func (m *CloudPcProvisioningPolicy) SetUserExperienceType(value *CloudPcUserExperienceType)() {
     err := m.GetBackingStore().Set("userExperienceType", value)
@@ -1042,6 +1078,7 @@ type CloudPcProvisioningPolicyable interface {
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
+    GetSnapshotResetMode()(*CloudPcSnapshotResetMode)
     GetUserExperienceType()(*CloudPcUserExperienceType)
     GetUserSettingsPersistenceConfiguration()(CloudPcUserSettingsPersistenceConfigurationable)
     GetWindowsSetting()(CloudPcWindowsSettingable)
@@ -1069,6 +1106,7 @@ type CloudPcProvisioningPolicyable interface {
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
+    SetSnapshotResetMode(value *CloudPcSnapshotResetMode)()
     SetUserExperienceType(value *CloudPcUserExperienceType)()
     SetUserSettingsPersistenceConfiguration(value CloudPcUserSettingsPersistenceConfigurationable)()
     SetWindowsSetting(value CloudPcWindowsSettingable)()

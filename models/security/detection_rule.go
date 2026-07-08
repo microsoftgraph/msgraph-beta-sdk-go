@@ -4,19 +4,19 @@
 package security
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type DetectionRule struct {
-    ProtectionRule
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
 // NewDetectionRule instantiates a new DetectionRule and sets the default values.
 func NewDetectionRule()(*DetectionRule) {
     m := &DetectionRule{
-        ProtectionRule: *NewProtectionRule(),
+        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
     }
-    odataTypeValue := "#microsoft.graph.security.detectionRule"
-    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateDetectionRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -24,7 +24,43 @@ func NewDetectionRule()(*DetectionRule) {
 func CreateDetectionRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDetectionRule(), nil
 }
-// GetDetectionAction gets the detectionAction property value. Complex type representing the actions taken when a detection is made by this rule.
+// GetCreatedBy gets the createdBy property value. Name of the user or application that created the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+// returns a *string when successful
+func (m *DetectionRule) GetCreatedBy()(*string) {
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. Timestamp of rule creation. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.
+// returns a *Time when successful
+func (m *DetectionRule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetDescription gets the description property value. A user-supplied description of the detection rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+// returns a *string when successful
+func (m *DetectionRule) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDetectionAction gets the detectionAction property value. The detectionAction property
 // returns a DetectionActionable when successful
 func (m *DetectionRule) GetDetectionAction()(DetectionActionable) {
     val, err := m.GetBackingStore().Get("detectionAction")
@@ -36,7 +72,7 @@ func (m *DetectionRule) GetDetectionAction()(DetectionActionable) {
     }
     return nil
 }
-// GetDetectorId gets the detectorId property value. The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
+// GetDetectorId gets the detectorId property value. Internal detector identifier. Deprecated. This property will be removed from this resource on 2026-10-01.
 // returns a *string when successful
 func (m *DetectionRule) GetDetectorId()(*string) {
     val, err := m.GetBackingStore().Get("detectorId")
@@ -48,10 +84,52 @@ func (m *DetectionRule) GetDetectorId()(*string) {
     }
     return nil
 }
+// GetDisplayName gets the displayName property value. The display name of the rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains) and $orderby.
+// returns a *string when successful
+func (m *DetectionRule) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ProtectionRule.GetFieldDeserializers()
+    res := m.Entity.GetFieldDeserializers()
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedBy(val)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
+        }
+        return nil
+    }
     res["detectionAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDetectionActionFromDiscriminatorValue)
         if err != nil {
@@ -69,6 +147,46 @@ func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDetectorId(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
+        }
+        return nil
+    }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
         }
         return nil
     }
@@ -102,9 +220,55 @@ func (m *DetectionRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDetectionRuleStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatus(val.(*DetectionRuleStatus))
+        }
+        return nil
+    }
     return res
 }
-// GetLastRunDetails gets the lastRunDetails property value. Complex type holding details about the last run of this rule.
+// GetIsEnabled gets the isEnabled property value. Indicates whether the rule is turned on for the tenant. Supports $filter (eq, ne, not). Deprecated. Use status instead. This property will be removed from this resource on 2026-10-01.
+// returns a *bool when successful
+func (m *DetectionRule) GetIsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. Name of the user or application that last updated the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+// returns a *string when successful
+func (m *DetectionRule) GetLastModifiedBy()(*string) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the rule was last updated. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.
+// returns a *Time when successful
+func (m *DetectionRule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLastRunDetails gets the lastRunDetails property value. Runtime execution details for the most recent rule run. Supports $filter on the following nested properties:String: lastRunDetails/failureReason  supports eq, ne, not, in, startsWith, endsWith, contains.DateTimeOffset: lastRunDetails/lastRunDateTime  supports eq, ne, not, le, ge, lt, gt.Enum: lastRunDetails/status, lastRunDetails/errorCode  each supports eq, ne, not, in.Deprecated. This property will be removed from this resource on 2026-10-01. Runtime execution details aren't exposed in the v1.0 API.
 // returns a RunDetailsable when successful
 func (m *DetectionRule) GetLastRunDetails()(RunDetailsable) {
     val, err := m.GetBackingStore().Get("lastRunDetails")
@@ -116,7 +280,7 @@ func (m *DetectionRule) GetLastRunDetails()(RunDetailsable) {
     }
     return nil
 }
-// GetQueryCondition gets the queryCondition property value. Complex type holding data about the advanced hunting query of this rule.
+// GetQueryCondition gets the queryCondition property value. The queryCondition property
 // returns a QueryConditionable when successful
 func (m *DetectionRule) GetQueryCondition()(QueryConditionable) {
     val, err := m.GetBackingStore().Get("queryCondition")
@@ -128,7 +292,7 @@ func (m *DetectionRule) GetQueryCondition()(QueryConditionable) {
     }
     return nil
 }
-// GetSchedule gets the schedule property value. Complex type holding data about the triggering schedule of this rule.
+// GetSchedule gets the schedule property value. The schedule property
 // returns a RuleScheduleable when successful
 func (m *DetectionRule) GetSchedule()(RuleScheduleable) {
     val, err := m.GetBackingStore().Get("schedule")
@@ -140,11 +304,41 @@ func (m *DetectionRule) GetSchedule()(RuleScheduleable) {
     }
     return nil
 }
+// GetStatus gets the status property value. The status property
+// returns a *DetectionRuleStatus when successful
+func (m *DetectionRule) GetStatus()(*DetectionRuleStatus) {
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DetectionRuleStatus)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ProtectionRule.Serialize(writer)
+    err := m.Entity.Serialize(writer)
     if err != nil {
         return err
+    }
+    {
+        err = writer.WriteStringValue("createdBy", m.GetCreatedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
     }
     {
         err = writer.WriteObjectValue("detectionAction", m.GetDetectionAction())
@@ -154,6 +348,30 @@ func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("detectorId", m.GetDetectorId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
@@ -176,54 +394,133 @@ func (m *DetectionRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetStatus() != nil {
+        cast := (*m.GetStatus()).String()
+        err = writer.WriteStringValue("status", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetDetectionAction sets the detectionAction property value. Complex type representing the actions taken when a detection is made by this rule.
+// SetCreatedBy sets the createdBy property value. Name of the user or application that created the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+func (m *DetectionRule) SetCreatedBy(value *string)() {
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. Timestamp of rule creation. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.
+func (m *DetectionRule) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDescription sets the description property value. A user-supplied description of the detection rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+func (m *DetectionRule) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetectionAction sets the detectionAction property value. The detectionAction property
 func (m *DetectionRule) SetDetectionAction(value DetectionActionable)() {
     err := m.GetBackingStore().Set("detectionAction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetectorId sets the detectorId property value. The ID of the detector that triggered the alert. Also see the 'detectorId' field in microsoft.graph.security.alert.
+// SetDetectorId sets the detectorId property value. Internal detector identifier. Deprecated. This property will be removed from this resource on 2026-10-01.
 func (m *DetectionRule) SetDetectorId(value *string)() {
     err := m.GetBackingStore().Set("detectorId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastRunDetails sets the lastRunDetails property value. Complex type holding details about the last run of this rule.
+// SetDisplayName sets the displayName property value. The display name of the rule. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains) and $orderby.
+func (m *DetectionRule) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsEnabled sets the isEnabled property value. Indicates whether the rule is turned on for the tenant. Supports $filter (eq, ne, not). Deprecated. Use status instead. This property will be removed from this resource on 2026-10-01.
+func (m *DetectionRule) SetIsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedBy sets the lastModifiedBy property value. Name of the user or application that last updated the rule. Read-only. Supports $filter (eq, ne, not, in, startsWith, endsWith, contains).
+func (m *DetectionRule) SetLastModifiedBy(value *string)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the rule was last updated. Read-only. Supports $filter (eq, ne, not, le, ge, lt, gt) and $orderby.
+func (m *DetectionRule) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastRunDetails sets the lastRunDetails property value. Runtime execution details for the most recent rule run. Supports $filter on the following nested properties:String: lastRunDetails/failureReason  supports eq, ne, not, in, startsWith, endsWith, contains.DateTimeOffset: lastRunDetails/lastRunDateTime  supports eq, ne, not, le, ge, lt, gt.Enum: lastRunDetails/status, lastRunDetails/errorCode  each supports eq, ne, not, in.Deprecated. This property will be removed from this resource on 2026-10-01. Runtime execution details aren't exposed in the v1.0 API.
 func (m *DetectionRule) SetLastRunDetails(value RunDetailsable)() {
     err := m.GetBackingStore().Set("lastRunDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQueryCondition sets the queryCondition property value. Complex type holding data about the advanced hunting query of this rule.
+// SetQueryCondition sets the queryCondition property value. The queryCondition property
 func (m *DetectionRule) SetQueryCondition(value QueryConditionable)() {
     err := m.GetBackingStore().Set("queryCondition", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSchedule sets the schedule property value. Complex type holding data about the triggering schedule of this rule.
+// SetSchedule sets the schedule property value. The schedule property
 func (m *DetectionRule) SetSchedule(value RuleScheduleable)() {
     err := m.GetBackingStore().Set("schedule", value)
     if err != nil {
         panic(err)
     }
 }
+// SetStatus sets the status property value. The status property
+func (m *DetectionRule) SetStatus(value *DetectionRuleStatus)() {
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type DetectionRuleable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    ProtectionRuleable
+    GetCreatedBy()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
     GetDetectionAction()(DetectionActionable)
     GetDetectorId()(*string)
+    GetDisplayName()(*string)
+    GetIsEnabled()(*bool)
+    GetLastModifiedBy()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRunDetails()(RunDetailsable)
     GetQueryCondition()(QueryConditionable)
     GetSchedule()(RuleScheduleable)
+    GetStatus()(*DetectionRuleStatus)
+    SetCreatedBy(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
     SetDetectionAction(value DetectionActionable)()
     SetDetectorId(value *string)()
+    SetDisplayName(value *string)()
+    SetIsEnabled(value *bool)()
+    SetLastModifiedBy(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRunDetails(value RunDetailsable)()
     SetQueryCondition(value QueryConditionable)()
     SetSchedule(value RuleScheduleable)()
+    SetStatus(value *DetectionRuleStatus)()
 }

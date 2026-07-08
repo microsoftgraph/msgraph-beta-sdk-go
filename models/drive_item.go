@@ -326,6 +326,16 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["lockInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLockInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockInfo(val.(LockInfoable))
+        }
+        return nil
+    }
     res["malware"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMalwareFromDiscriminatorValue)
         if err != nil {
@@ -651,6 +661,18 @@ func (m *DriveItem) GetLocation()(GeoCoordinatesable) {
     }
     if val != nil {
         return val.(GeoCoordinatesable)
+    }
+    return nil
+}
+// GetLockInfo gets the lockInfo property value. Lock metadata for the item, including the lock type, when it was created, when it expires, and which users currently hold the lock. Read-only.
+// returns a LockInfoable when successful
+func (m *DriveItem) GetLockInfo()(LockInfoable) {
+    val, err := m.GetBackingStore().Get("lockInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LockInfoable)
     }
     return nil
 }
@@ -1051,6 +1073,12 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteObjectValue("lockInfo", m.GetLockInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("malware", m.GetMalware())
         if err != nil {
             return err
@@ -1326,6 +1354,13 @@ func (m *DriveItem) SetLocation(value GeoCoordinatesable)() {
         panic(err)
     }
 }
+// SetLockInfo sets the lockInfo property value. Lock metadata for the item, including the lock type, when it was created, when it expires, and which users currently hold the lock. Read-only.
+func (m *DriveItem) SetLockInfo(value LockInfoable)() {
+    err := m.GetBackingStore().Set("lockInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMalware sets the malware property value. Malware metadata, if the item was detected to contain malware. Read-only.
 func (m *DriveItem) SetMalware(value Malwareable)() {
     err := m.GetBackingStore().Set("malware", value)
@@ -1506,6 +1541,7 @@ type DriveItemable interface {
     GetImage()(Imageable)
     GetListItem()(ListItemable)
     GetLocation()(GeoCoordinatesable)
+    GetLockInfo()(LockInfoable)
     GetMalware()(Malwareable)
     GetMedia()(Mediaable)
     GetPackageEscaped()(PackageEscapedable)
@@ -1545,6 +1581,7 @@ type DriveItemable interface {
     SetImage(value Imageable)()
     SetListItem(value ListItemable)()
     SetLocation(value GeoCoordinatesable)()
+    SetLockInfo(value LockInfoable)()
     SetMalware(value Malwareable)()
     SetMedia(value Mediaable)()
     SetPackageEscaped(value PackageEscapedable)()

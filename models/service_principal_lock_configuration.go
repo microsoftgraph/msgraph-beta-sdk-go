@@ -79,6 +79,18 @@ func (m *ServicePrincipalLockConfiguration) GetCredentialsWithUsageVerify()(*boo
     }
     return nil
 }
+// GetEnforcementScope gets the enforcementScope property value. The enforcementScope property
+// returns a *ServicePrincipalLockScope when successful
+func (m *ServicePrincipalLockConfiguration) GetEnforcementScope()(*ServicePrincipalLockScope) {
+    val, err := m.GetBackingStore().Get("enforcementScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ServicePrincipalLockScope)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServicePrincipalLockConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -110,6 +122,16 @@ func (m *ServicePrincipalLockConfiguration) GetFieldDeserializers()(map[string]f
         }
         if val != nil {
             m.SetCredentialsWithUsageVerify(val)
+        }
+        return nil
+    }
+    res["enforcementScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseServicePrincipalLockScope)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnforcementScope(val.(*ServicePrincipalLockScope))
         }
         return nil
     }
@@ -201,6 +223,13 @@ func (m *ServicePrincipalLockConfiguration) Serialize(writer i878a80d2330e89d268
             return err
         }
     }
+    if m.GetEnforcementScope() != nil {
+        cast := (*m.GetEnforcementScope()).String()
+        err := writer.WriteStringValue("enforcementScope", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
         if err != nil {
@@ -259,6 +288,13 @@ func (m *ServicePrincipalLockConfiguration) SetCredentialsWithUsageVerify(value 
         panic(err)
     }
 }
+// SetEnforcementScope sets the enforcementScope property value. The enforcementScope property
+func (m *ServicePrincipalLockConfiguration) SetEnforcementScope(value *ServicePrincipalLockScope)() {
+    err := m.GetBackingStore().Set("enforcementScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsEnabled sets the isEnabled property value. Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
 func (m *ServicePrincipalLockConfiguration) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
@@ -288,6 +324,7 @@ type ServicePrincipalLockConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCredentialsWithUsageSign()(*bool)
     GetCredentialsWithUsageVerify()(*bool)
+    GetEnforcementScope()(*ServicePrincipalLockScope)
     GetIsEnabled()(*bool)
     GetOdataType()(*string)
     GetTokenEncryptionKeyId()(*bool)
@@ -295,6 +332,7 @@ type ServicePrincipalLockConfigurationable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCredentialsWithUsageSign(value *bool)()
     SetCredentialsWithUsageVerify(value *bool)()
+    SetEnforcementScope(value *ServicePrincipalLockScope)()
     SetIsEnabled(value *bool)()
     SetOdataType(value *string)()
     SetTokenEncryptionKeyId(value *bool)()

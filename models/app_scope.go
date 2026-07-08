@@ -40,7 +40,7 @@ func CreateAppScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     }
     return NewAppScope(), nil
 }
-// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
+// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read-only.
 // returns a *string when successful
 func (m *AppScope) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -110,7 +110,7 @@ func (m *AppScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
+// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read-only.
 func (m *AppScope) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

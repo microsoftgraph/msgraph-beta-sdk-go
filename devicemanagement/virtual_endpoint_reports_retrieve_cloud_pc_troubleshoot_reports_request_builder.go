@@ -33,7 +33,7 @@ func NewVirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
+// Post get Cloud PC troubleshooting reports. You can get tenant-level reports, configuration reports, user and device reports, and view data table reports. For the report types grouped by scope, including the mandatory filter parameters and response columns per reportName, see Cloud PC troubleshoot report types.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +56,7 @@ func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder)
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
+// ToPostRequestInformation get Cloud PC troubleshooting reports. You can get tenant-level reports, configuration reports, user and device reports, and view data table reports. For the report types grouped by scope, including the mandatory filter parameters and response columns per reportName, see Cloud PC troubleshoot report types.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

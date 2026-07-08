@@ -217,7 +217,7 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     }
     return nil
 }
-// GetNotificationSetting gets the notificationSetting property value. Defines the setting of the Cloud PC notification prompts for the Cloud PC user.
+// GetNotificationSetting gets the notificationSetting property value. Defines the setting of the Cloud PC notification prompts for the Cloud PC user. The notificationSetting property is deprecated and will stop returning data on July 14, 2026.
 // returns a CloudPcNotificationSettingable when successful
 func (m *CloudPcUserSetting) GetNotificationSetting()(CloudPcNotificationSettingable) {
     val, err := m.GetBackingStore().Get("notificationSetting")
@@ -400,7 +400,7 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetNotificationSetting sets the notificationSetting property value. Defines the setting of the Cloud PC notification prompts for the Cloud PC user.
+// SetNotificationSetting sets the notificationSetting property value. Defines the setting of the Cloud PC notification prompts for the Cloud PC user. The notificationSetting property is deprecated and will stop returning data on July 14, 2026.
 func (m *CloudPcUserSetting) SetNotificationSetting(value CloudPcNotificationSettingable)() {
     err := m.GetBackingStore().Set("notificationSetting", value)
     if err != nil {

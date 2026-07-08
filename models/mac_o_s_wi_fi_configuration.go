@@ -183,6 +183,16 @@ func (m *MacOSWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["wifiRequirePhysicalMacAddressEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWifiRequirePhysicalMacAddressEnabled(val)
+        }
+        return nil
+    }
     res["wiFiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWiFiSecurityType)
         if err != nil {
@@ -279,6 +289,18 @@ func (m *MacOSWiFiConfiguration) GetSsid()(*string) {
     }
     return nil
 }
+// GetWifiRequirePhysicalMacAddressEnabled gets the wifiRequirePhysicalMacAddressEnabled property value. Indicates whether devices connecting with this Wi-Fi profile must use their physical MAC address instead of a randomized MAC address. When TRUE, it uses the actual Wi-Fi MAC address. When FALSE, it enables the MAC address randomization. Applies to macOS 15 and later. Default is false.
+// returns a *bool when successful
+func (m *MacOSWiFiConfiguration) GetWifiRequirePhysicalMacAddressEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("wifiRequirePhysicalMacAddressEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types.
 // returns a *WiFiSecurityType when successful
 func (m *MacOSWiFiConfiguration) GetWiFiSecurityType()(*WiFiSecurityType) {
@@ -355,6 +377,12 @@ func (m *MacOSWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     {
         err = writer.WriteStringValue("ssid", m.GetSsid())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("wifiRequirePhysicalMacAddressEnabled", m.GetWifiRequirePhysicalMacAddressEnabled())
         if err != nil {
             return err
         }
@@ -438,6 +466,13 @@ func (m *MacOSWiFiConfiguration) SetSsid(value *string)() {
         panic(err)
     }
 }
+// SetWifiRequirePhysicalMacAddressEnabled sets the wifiRequirePhysicalMacAddressEnabled property value. Indicates whether devices connecting with this Wi-Fi profile must use their physical MAC address instead of a randomized MAC address. When TRUE, it uses the actual Wi-Fi MAC address. When FALSE, it enables the MAC address randomization. Applies to macOS 15 and later. Default is false.
+func (m *MacOSWiFiConfiguration) SetWifiRequirePhysicalMacAddressEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("wifiRequirePhysicalMacAddressEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types.
 func (m *MacOSWiFiConfiguration) SetWiFiSecurityType(value *WiFiSecurityType)() {
     err := m.GetBackingStore().Set("wiFiSecurityType", value)
@@ -458,6 +493,7 @@ type MacOSWiFiConfigurationable interface {
     GetProxyManualPort()(*int32)
     GetProxySettings()(*WiFiProxySetting)
     GetSsid()(*string)
+    GetWifiRequirePhysicalMacAddressEnabled()(*bool)
     GetWiFiSecurityType()(*WiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
@@ -469,5 +505,6 @@ type MacOSWiFiConfigurationable interface {
     SetProxyManualPort(value *int32)()
     SetProxySettings(value *WiFiProxySetting)()
     SetSsid(value *string)()
+    SetWifiRequirePhysicalMacAddressEnabled(value *bool)()
     SetWiFiSecurityType(value *WiFiSecurityType)()
 }

@@ -9,7 +9,6 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceManagement singleton that acts as container for a collection of Resource Access entities.
 type DeviceManagement struct {
     Entity
 }
@@ -4129,7 +4128,7 @@ func (m *DeviceManagement) GetRemoteAssistanceSettings()(RemoteAssistanceSetting
     }
     return nil
 }
-// GetReports gets the reports property value. The reports property
+// GetReports gets the reports property value. Reports singleton
 // returns a DeviceManagementReportsable when successful
 func (m *DeviceManagement) GetReports()(DeviceManagementReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -7930,7 +7929,7 @@ func (m *DeviceManagement) SetRemoteAssistanceSettings(value RemoteAssistanceSet
         panic(err)
     }
 }
-// SetReports sets the reports property value. The reports property
+// SetReports sets the reports property value. Reports singleton
 func (m *DeviceManagement) SetReports(value DeviceManagementReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {

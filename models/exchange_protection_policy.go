@@ -110,7 +110,7 @@ func (m *ExchangeProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+// GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The mailbox exclusion units associated with the Exchange protection policy.
 // returns a []MailboxExclusionUnitable when successful
 func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnits()([]MailboxExclusionUnitable) {
     val, err := m.GetBackingStore().Get("mailboxExclusionUnits")
@@ -122,7 +122,7 @@ func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnits()([]MailboxExclusion
     }
     return nil
 }
-// GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+// GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.
 // returns a []MailboxExclusionUnitsBulkAdditionJobable when successful
 func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable) {
     val, err := m.GetBackingStore().Get("mailboxExclusionUnitsBulkAdditionJobs")
@@ -238,14 +238,14 @@ func (m *ExchangeProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The mailboxExclusionUnits property
+// SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The mailbox exclusion units associated with the Exchange protection policy.
 func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnits(value []MailboxExclusionUnitable)() {
     err := m.GetBackingStore().Set("mailboxExclusionUnits", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The mailboxExclusionUnitsBulkAdditionJobs property
+// SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.
 func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)() {
     err := m.GetBackingStore().Set("mailboxExclusionUnitsBulkAdditionJobs", value)
     if err != nil {

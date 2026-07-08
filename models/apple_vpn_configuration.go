@@ -191,6 +191,18 @@ func (m *AppleVpnConfiguration) GetExcludedDomains()([]string) {
     }
     return nil
 }
+// GetExcludeLocalNetworks gets the excludeLocalNetworks property value. Indicates whether local network traffic is excluded from the VPN tunnel. When TRUE, local network traffic bypasses the VPN tunnel. Default value is null. Only takes effect when includeAllNetworks is TRUE or enforceVpnRouting is TRUE. Not applicable when enablePerApp is TRUE.
+// returns a *bool when successful
+func (m *AppleVpnConfiguration) GetExcludeLocalNetworks()(*bool) {
+    val, err := m.GetBackingStore().Get("excludeLocalNetworks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -339,6 +351,16 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["excludeLocalNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludeLocalNetworks(val)
+        }
+        return nil
+    }
     res["identifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -346,6 +368,16 @@ func (m *AppleVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetIdentifier(val)
+        }
+        return nil
+    }
+    res["includeAllNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeAllNetworks(val)
         }
         return nil
     }
@@ -462,6 +494,18 @@ func (m *AppleVpnConfiguration) GetIdentifier()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetIncludeAllNetworks gets the includeAllNetworks property value. Indicates whether most network traffic is routed through the VPN tunnel. When TRUE, most network traffic is sent through the VPN tunnel. Default value is null. Not applicable when enablePerApp is TRUE.
+// returns a *bool when successful
+func (m *AppleVpnConfiguration) GetIncludeAllNetworks()(*bool) {
+    val, err := m.GetBackingStore().Get("includeAllNetworks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -666,7 +710,19 @@ func (m *AppleVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteBoolValue("excludeLocalNetworks", m.GetExcludeLocalNetworks())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("identifier", m.GetIdentifier())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("includeAllNetworks", m.GetIncludeAllNetworks())
         if err != nil {
             return err
         }
@@ -818,9 +874,23 @@ func (m *AppleVpnConfiguration) SetExcludedDomains(value []string)() {
         panic(err)
     }
 }
+// SetExcludeLocalNetworks sets the excludeLocalNetworks property value. Indicates whether local network traffic is excluded from the VPN tunnel. When TRUE, local network traffic bypasses the VPN tunnel. Default value is null. Only takes effect when includeAllNetworks is TRUE or enforceVpnRouting is TRUE. Not applicable when enablePerApp is TRUE.
+func (m *AppleVpnConfiguration) SetExcludeLocalNetworks(value *bool)() {
+    err := m.GetBackingStore().Set("excludeLocalNetworks", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIdentifier sets the identifier property value. Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin
 func (m *AppleVpnConfiguration) SetIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIncludeAllNetworks sets the includeAllNetworks property value. Indicates whether most network traffic is routed through the VPN tunnel. When TRUE, most network traffic is sent through the VPN tunnel. Default value is null. Not applicable when enablePerApp is TRUE.
+func (m *AppleVpnConfiguration) SetIncludeAllNetworks(value *bool)() {
+    err := m.GetBackingStore().Set("includeAllNetworks", value)
     if err != nil {
         panic(err)
     }
@@ -903,7 +973,9 @@ type AppleVpnConfigurationable interface {
     GetEnablePerApp()(*bool)
     GetEnableSplitTunneling()(*bool)
     GetExcludedDomains()([]string)
+    GetExcludeLocalNetworks()(*bool)
     GetIdentifier()(*string)
+    GetIncludeAllNetworks()(*bool)
     GetLoginGroupOrDomain()(*string)
     GetOnDemandRules()([]VpnOnDemandRuleable)
     GetOptInToDeviceIdSharing()(*bool)
@@ -925,7 +997,9 @@ type AppleVpnConfigurationable interface {
     SetEnablePerApp(value *bool)()
     SetEnableSplitTunneling(value *bool)()
     SetExcludedDomains(value []string)()
+    SetExcludeLocalNetworks(value *bool)()
     SetIdentifier(value *string)()
+    SetIncludeAllNetworks(value *bool)()
     SetLoginGroupOrDomain(value *string)()
     SetOnDemandRules(value []VpnOnDemandRuleable)()
     SetOptInToDeviceIdSharing(value *bool)()

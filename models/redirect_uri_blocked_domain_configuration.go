@@ -44,7 +44,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetAdditionalData()(map[string]a
 func (m *RedirectUriBlockedDomainConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockedDomains gets the blockedDomains property value. The blockedDomains property
+// GetBlockedDomains gets the blockedDomains property value. Collection of domain names that are blocked globally across all platforms. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 // returns a []string when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetBlockedDomains()([]string) {
     val, err := m.GetBackingStore().Get("blockedDomains")
@@ -56,7 +56,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetBlockedDomains()([]string) {
     }
     return nil
 }
-// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// GetExcludeActors gets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 // returns a AppManagementPolicyActorExemptionsable when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
     val, err := m.GetBackingStore().Get("excludeActors")
@@ -170,7 +170,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 // returns a *bool when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetIsStateSetByMicrosoft()(*bool) {
     val, err := m.GetBackingStore().Get("isStateSetByMicrosoft")
@@ -194,7 +194,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPublicClient gets the publicClient property value. The publicClient property
+// GetPublicClient gets the publicClient property value. Platform-specific blocked domain configuration for public client applications (native/mobile apps).
 // returns a RedirectUriPlatformBlockedDomainConfigurationable when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetPublicClient()(RedirectUriPlatformBlockedDomainConfigurationable) {
     val, err := m.GetBackingStore().Get("publicClient")
@@ -206,7 +206,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetPublicClient()(RedirectUriPla
     }
     return nil
 }
-// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 // returns a *Time when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
@@ -218,7 +218,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetRestrictForAppsCreatedAfterDa
     }
     return nil
 }
-// GetSpa gets the spa property value. The spa property
+// GetSpa gets the spa property value. Platform-specific blocked domain configuration for single-page applications (SPAs).
 // returns a RedirectUriPlatformBlockedDomainConfigurationable when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetSpa()(RedirectUriPlatformBlockedDomainConfigurationable) {
     val, err := m.GetBackingStore().Get("spa")
@@ -242,7 +242,7 @@ func (m *RedirectUriBlockedDomainConfiguration) GetState()(*AppManagementRestric
     }
     return nil
 }
-// GetWeb gets the web property value. The web property
+// GetWeb gets the web property value. Platform-specific blocked domain configuration for web applications.
 // returns a RedirectUriPlatformBlockedDomainConfigurationable when successful
 func (m *RedirectUriBlockedDomainConfiguration) GetWeb()(RedirectUriPlatformBlockedDomainConfigurationable) {
     val, err := m.GetBackingStore().Get("web")
@@ -324,21 +324,21 @@ func (m *RedirectUriBlockedDomainConfiguration) SetAdditionalData(value map[stri
 func (m *RedirectUriBlockedDomainConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockedDomains sets the blockedDomains property value. The blockedDomains property
+// SetBlockedDomains sets the blockedDomains property value. Collection of domain names that are blocked globally across all platforms. Domain validation follows RFC 3986 (URI syntax, section 3.2.2 for the host component). Domain matching is case-insensitive and exact; wildcards are not supported.
 func (m *RedirectUriBlockedDomainConfiguration) SetBlockedDomains(value []string)() {
     err := m.GetBackingStore().Set("blockedDomains", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeActors sets the excludeActors property value. The excludeActors property
+// SetExcludeActors sets the excludeActors property value. Applications or service principals that are exempt from this restriction.
 func (m *RedirectUriBlockedDomainConfiguration) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
     err := m.GetBackingStore().Set("excludeActors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. The isStateSetByMicrosoft property
+// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. Indicates whether the restriction state was set by Microsoft.
 func (m *RedirectUriBlockedDomainConfiguration) SetIsStateSetByMicrosoft(value *bool)() {
     err := m.GetBackingStore().Set("isStateSetByMicrosoft", value)
     if err != nil {
@@ -352,21 +352,21 @@ func (m *RedirectUriBlockedDomainConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPublicClient sets the publicClient property value. The publicClient property
+// SetPublicClient sets the publicClient property value. Platform-specific blocked domain configuration for public client applications (native/mobile apps).
 func (m *RedirectUriBlockedDomainConfiguration) SetPublicClient(value RedirectUriPlatformBlockedDomainConfigurationable)() {
     err := m.GetBackingStore().Set("publicClient", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Date and time when this restriction starts applying to newly created applications. Applications created before this date are not affected.
 func (m *RedirectUriBlockedDomainConfiguration) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restrictForAppsCreatedAfterDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpa sets the spa property value. The spa property
+// SetSpa sets the spa property value. Platform-specific blocked domain configuration for single-page applications (SPAs).
 func (m *RedirectUriBlockedDomainConfiguration) SetSpa(value RedirectUriPlatformBlockedDomainConfigurationable)() {
     err := m.GetBackingStore().Set("spa", value)
     if err != nil {
@@ -380,7 +380,7 @@ func (m *RedirectUriBlockedDomainConfiguration) SetState(value *AppManagementRes
         panic(err)
     }
 }
-// SetWeb sets the web property value. The web property
+// SetWeb sets the web property value. Platform-specific blocked domain configuration for web applications.
 func (m *RedirectUriBlockedDomainConfiguration) SetWeb(value RedirectUriPlatformBlockedDomainConfigurationable)() {
     err := m.GetBackingStore().Set("web", value)
     if err != nil {

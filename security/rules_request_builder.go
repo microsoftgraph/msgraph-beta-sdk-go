@@ -21,7 +21,7 @@ type RulesRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RulesRequestBuilderGetQueryParameters get rules from security
+// RulesRequestBuilderGetQueryParameters container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
 type RulesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -78,7 +78,7 @@ func (m *RulesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
 func (m *RulesRequestBuilder) DetectionRules()(*RulesDetectionRulesRequestBuilder) {
     return NewRulesDetectionRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get rules from security
+// Get container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
 // returns a RulesRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RulesRequestBuilder) Get(ctx context.Context, requestConfiguration *RulesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RulesRootable, error) {
@@ -129,7 +129,7 @@ func (m *RulesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get rules from security
+// ToGetRequestInformation container for the security rules configured in Microsoft Defender XDR, including custom detection rules.
 // returns a *RequestInformation when successful
 func (m *RulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

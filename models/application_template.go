@@ -23,7 +23,7 @@ func NewApplicationTemplate()(*ApplicationTemplate) {
 func CreateApplicationTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewApplicationTemplate(), nil
 }
-// GetCategories gets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).
+// GetCategories gets the categories property value. The list of categories for the application. To get the full list of supported values, use the applicationTemplate: categories function. Supports $filter (contains).
 // returns a []string when successful
 func (m *ApplicationTemplate) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
@@ -549,7 +549,7 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.  Supports $filter (contains).
+// SetCategories sets the categories property value. The list of categories for the application. To get the full list of supported values, use the applicationTemplate: categories function. Supports $filter (contains).
 func (m *ApplicationTemplate) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {

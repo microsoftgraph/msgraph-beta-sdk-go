@@ -12,7 +12,7 @@ const (
     APPROVED_WINDOWSQUALITYUPDATEAPPROVALSTATUS
     // suspended for corresponding catalog item
     SUSPENDED_WINDOWSQUALITYUPDATEAPPROVALSTATUS
-    // Evolvable enumeration sentinel value. Do not use.
+    // Evolvable enumeration sentinel value. Do not use
     UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATEAPPROVALSTATUS
 )
 

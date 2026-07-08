@@ -24,7 +24,7 @@ func NewConnectedOrganizationMembers()(*ConnectedOrganizationMembers) {
 func CreateConnectedOrganizationMembersFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectedOrganizationMembers(), nil
 }
-// GetDescription gets the description property value. The name of the connected organization. Read only.
+// GetDescription gets the description property value. The name of the connected organization. Read-only.
 // returns a *string when successful
 func (m *ConnectedOrganizationMembers) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -94,7 +94,7 @@ func (m *ConnectedOrganizationMembers) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetDescription sets the description property value. The name of the connected organization. Read only.
+// SetDescription sets the description property value. The name of the connected organization. Read-only.
 func (m *ConnectedOrganizationMembers) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {

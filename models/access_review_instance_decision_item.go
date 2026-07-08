@@ -95,6 +95,18 @@ func (m *AccessReviewInstanceDecisionItem) GetDecision()(*string) {
     }
     return nil
 }
+// GetDelegatedBy gets the delegatedBy property value. The identities of users who delegated this decision item to the current reviewer. Null if the item wasn't delegated. A collection because multiple reviewers can delegate to the same user. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
+// returns a []UserIdentityable when successful
+func (m *AccessReviewInstanceDecisionItem) GetDelegatedBy()([]UserIdentityable) {
+    val, err := m.GetBackingStore().Get("delegatedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserIdentityable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -156,6 +168,22 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetDecision(val)
+        }
+        return nil
+    }
+    res["delegatedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserIdentityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserIdentityable)
+                }
+            }
+            m.SetDelegatedBy(res)
         }
         return nil
     }
@@ -495,6 +523,18 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
             return err
         }
     }
+    if m.GetDelegatedBy() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedBy()))
+        for i, v := range m.GetDelegatedBy() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("delegatedBy", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetInsights() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInsights()))
         for i, v := range m.GetInsights() {
@@ -623,6 +663,13 @@ func (m *AccessReviewInstanceDecisionItem) SetDecision(value *string)() {
         panic(err)
     }
 }
+// SetDelegatedBy sets the delegatedBy property value. The identities of users who delegated this decision item to the current reviewer. Null if the item wasn't delegated. A collection because multiple reviewers can delegate to the same user. Only returned via filterByCurrentUser when explicitly requested via $select. Read-only.
+func (m *AccessReviewInstanceDecisionItem) SetDelegatedBy(value []UserIdentityable)() {
+    err := m.GetBackingStore().Set("delegatedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInsights sets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
 func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsightable)() {
     err := m.GetBackingStore().Set("insights", value)
@@ -723,6 +770,7 @@ type AccessReviewInstanceDecisionItemable interface {
     GetApplyDescription()(*string)
     GetApplyResult()(*string)
     GetDecision()(*string)
+    GetDelegatedBy()([]UserIdentityable)
     GetInsights()([]GovernanceInsightable)
     GetInstance()(AccessReviewInstanceable)
     GetJustification()(*string)
@@ -742,6 +790,7 @@ type AccessReviewInstanceDecisionItemable interface {
     SetApplyDescription(value *string)()
     SetApplyResult(value *string)()
     SetDecision(value *string)()
+    SetDelegatedBy(value []UserIdentityable)()
     SetInsights(value []GovernanceInsightable)()
     SetInstance(value AccessReviewInstanceable)()
     SetJustification(value *string)()

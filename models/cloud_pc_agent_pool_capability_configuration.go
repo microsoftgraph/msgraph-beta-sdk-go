@@ -24,7 +24,7 @@ func NewCloudPcAgentPoolCapabilityConfiguration()(*CloudPcAgentPoolCapabilityCon
 func CreateCloudPcAgentPoolCapabilityConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcAgentPoolCapabilityConfiguration(), nil
 }
-// GetEnableSingleSignOn gets the enableSingleSignOn property value. The enableSingleSignOn property
+// GetEnableSingleSignOn gets the enableSingleSignOn property value. When true, provisioned Cloud PCs support single sign-on, allowing users to authenticate with password-less options (such as FIDO2 keys) via Microsoft Entra ID. Default value is false.
 // returns a *bool when successful
 func (m *CloudPcAgentPoolCapabilityConfiguration) GetEnableSingleSignOn()(*bool) {
     val, err := m.GetBackingStore().Get("enableSingleSignOn")
@@ -66,7 +66,7 @@ func (m *CloudPcAgentPoolCapabilityConfiguration) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetEnableSingleSignOn sets the enableSingleSignOn property value. The enableSingleSignOn property
+// SetEnableSingleSignOn sets the enableSingleSignOn property value. When true, provisioned Cloud PCs support single sign-on, allowing users to authenticate with password-less options (such as FIDO2 keys) via Microsoft Entra ID. Default value is false.
 func (m *CloudPcAgentPoolCapabilityConfiguration) SetEnableSingleSignOn(value *bool)() {
     err := m.GetBackingStore().Set("enableSingleSignOn", value)
     if err != nil {

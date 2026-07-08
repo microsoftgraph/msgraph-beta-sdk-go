@@ -40,12 +40,18 @@ func CreateMobileAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2
                         return NewAndroidManagedStoreAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosDdmLobAppAssignmentSettings":
                         return NewIosDdmLobAppAssignmentSettings(), nil
+                    case "#microsoft.graph.iosDdmStoreAppAssignmentSettings":
+                        return NewIosDdmStoreAppAssignmentSettings(), nil
+                    case "#microsoft.graph.iosDdmVppAppAssignmentSettings":
+                        return NewIosDdmVppAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosLobAppAssignmentSettings":
                         return NewIosLobAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosStoreAppAssignmentSettings":
                         return NewIosStoreAppAssignmentSettings(), nil
                     case "#microsoft.graph.iosVppAppAssignmentSettings":
                         return NewIosVppAppAssignmentSettings(), nil
+                    case "#microsoft.graph.macOsDdmVppAppAssignmentSettings":
+                        return NewMacOsDdmVppAppAssignmentSettings(), nil
                     case "#microsoft.graph.macOsLobAppAssignmentSettings":
                         return NewMacOsLobAppAssignmentSettings(), nil
                     case "#microsoft.graph.macOsVppAppAssignmentSettings":

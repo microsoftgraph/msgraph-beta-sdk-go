@@ -45,7 +45,7 @@ func CreateExclusionUnitBulkAdditionJobFromDiscriminatorValue(parseNode i878a80d
     }
     return NewExclusionUnitBulkAdditionJob(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of the person who created the bulk addition job.
 // returns a IdentitySetable when successful
 func (m *ExclusionUnitBulkAdditionJob) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -57,7 +57,7 @@ func (m *ExclusionUnitBulkAdditionJob) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the bulk addition job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ExclusionUnitBulkAdditionJob) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -69,7 +69,7 @@ func (m *ExclusionUnitBulkAdditionJob) GetCreatedDateTime()(*i336074805fc853987a
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the bulk addition job.
 // returns a *string when successful
 func (m *ExclusionUnitBulkAdditionJob) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -81,7 +81,7 @@ func (m *ExclusionUnitBulkAdditionJob) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Contains error details if the bulk addition job failed.
 // returns a PublicErrorable when successful
 func (m *ExclusionUnitBulkAdditionJob) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -169,7 +169,7 @@ func (m *ExclusionUnitBulkAdditionJob) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identity of the person who last modified the bulk addition job.
 // returns a IdentitySetable when successful
 func (m *ExclusionUnitBulkAdditionJob) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -181,7 +181,7 @@ func (m *ExclusionUnitBulkAdditionJob) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the bulk addition job was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ExclusionUnitBulkAdditionJob) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -256,42 +256,42 @@ func (m *ExclusionUnitBulkAdditionJob) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of the person who created the bulk addition job.
 func (m *ExclusionUnitBulkAdditionJob) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the bulk addition job was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExclusionUnitBulkAdditionJob) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the bulk addition job.
 func (m *ExclusionUnitBulkAdditionJob) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Contains error details if the bulk addition job failed.
 func (m *ExclusionUnitBulkAdditionJob) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identity of the person who last modified the bulk addition job.
 func (m *ExclusionUnitBulkAdditionJob) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the bulk addition job was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ExclusionUnitBulkAdditionJob) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

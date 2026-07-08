@@ -271,7 +271,7 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     }
     return nil
 }
-// GetCloudVideoInteropInfo gets the cloudVideoInteropInfo property value. The cloudVideoInteropInfo property
+// GetCloudVideoInteropInfo gets the cloudVideoInteropInfo property value. Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
 // returns a CloudVideoInteropInfoable when successful
 func (m *OnlineMeetingBase) GetCloudVideoInteropInfo()(CloudVideoInteropInfoable) {
     val, err := m.GetBackingStore().Get("cloudVideoInteropInfo")
@@ -601,6 +601,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["meetingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseOnlineMeetingType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingType(val.(*OnlineMeetingType))
+        }
+        return nil
+    }
     res["recordAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -756,6 +766,18 @@ func (m *OnlineMeetingBase) GetMeetingSpokenLanguageTag()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetMeetingType gets the meetingType property value. The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.
+// returns a *OnlineMeetingType when successful
+func (m *OnlineMeetingBase) GetMeetingType()(*OnlineMeetingType) {
+    val, err := m.GetBackingStore().Get("meetingType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*OnlineMeetingType)
     }
     return nil
 }
@@ -1021,6 +1043,13 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetMeetingType() != nil {
+        cast := (*m.GetMeetingType()).String()
+        err = writer.WriteStringValue("meetingType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("recordAutomatically", m.GetRecordAutomatically())
         if err != nil {
@@ -1193,7 +1222,7 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
-// SetCloudVideoInteropInfo sets the cloudVideoInteropInfo property value. The cloudVideoInteropInfo property
+// SetCloudVideoInteropInfo sets the cloudVideoInteropInfo property value. Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.
 func (m *OnlineMeetingBase) SetCloudVideoInteropInfo(value CloudVideoInteropInfoable)() {
     err := m.GetBackingStore().Set("cloudVideoInteropInfo", value)
     if err != nil {
@@ -1259,6 +1288,13 @@ func (m *OnlineMeetingBase) SetMeetingOptionsWebUrl(value *string)() {
 // SetMeetingSpokenLanguageTag sets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
 func (m *OnlineMeetingBase) SetMeetingSpokenLanguageTag(value *string)() {
     err := m.GetBackingStore().Set("meetingSpokenLanguageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingType sets the meetingType property value. The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.
+func (m *OnlineMeetingBase) SetMeetingType(value *OnlineMeetingType)() {
+    err := m.GetBackingStore().Set("meetingType", value)
     if err != nil {
         panic(err)
     }
@@ -1337,6 +1373,7 @@ type OnlineMeetingBaseable interface {
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
     GetMeetingOptionsWebUrl()(*string)
     GetMeetingSpokenLanguageTag()(*string)
+    GetMeetingType()(*OnlineMeetingType)
     GetRecordAutomatically()(*bool)
     GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
@@ -1372,6 +1409,7 @@ type OnlineMeetingBaseable interface {
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
     SetMeetingOptionsWebUrl(value *string)()
     SetMeetingSpokenLanguageTag(value *string)()
+    SetMeetingType(value *OnlineMeetingType)()
     SetRecordAutomatically(value *bool)()
     SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()

@@ -33,7 +33,7 @@ func NewItemSynchronizationAcquireAccessTokenRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemSynchronizationAcquireAccessTokenRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+// Post acquire an OAuth access token from the synchronization resource to authorize the Microsoft Entra provisioning service to provision users into an application.
 // Deprecated: This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -53,7 +53,7 @@ func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) Post(ctx context.C
     }
     return nil
 }
-// ToPostRequestInformation acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
+// ToPostRequestInformation acquire an OAuth access token from the synchronization resource to authorize the Microsoft Entra provisioning service to provision users into an application.
 // Deprecated: This action acquires an access token via Oauth Code Grant Flow. Code Grant will be completely deprecated so this action will be obsolete. as of 2026-02/SynchronizationSecret_Deprecation on 2026-02-06 and will be removed 2027-07-06
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationAcquireAccessTokenRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationAcquireAccessTokenPostRequestBodyable, requestConfiguration *ItemSynchronizationAcquireAccessTokenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

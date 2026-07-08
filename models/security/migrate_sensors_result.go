@@ -43,7 +43,7 @@ func (m *MigrateSensorsResult) GetAdditionalData()(map[string]any) {
 func (m *MigrateSensorsResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedMigrationSensorIds gets the failedMigrationSensorIds property value. The failedMigrationSensorIds property
+// GetFailedMigrationSensorIds gets the failedMigrationSensorIds property value. The collection of sensor IDs that failed to migrate.
 // returns a []string when successful
 func (m *MigrateSensorsResult) GetFailedMigrationSensorIds()([]string) {
     val, err := m.GetBackingStore().Get("failedMigrationSensorIds")
@@ -115,7 +115,7 @@ func (m *MigrateSensorsResult) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSuccessfulMigrationSensorIds gets the successfulMigrationSensorIds property value. The successfulMigrationSensorIds property
+// GetSuccessfulMigrationSensorIds gets the successfulMigrationSensorIds property value. The collection of sensor IDs that were successfully migrated.
 // returns a []string when successful
 func (m *MigrateSensorsResult) GetSuccessfulMigrationSensorIds()([]string) {
     val, err := m.GetBackingStore().Get("successfulMigrationSensorIds")
@@ -166,7 +166,7 @@ func (m *MigrateSensorsResult) SetAdditionalData(value map[string]any)() {
 func (m *MigrateSensorsResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedMigrationSensorIds sets the failedMigrationSensorIds property value. The failedMigrationSensorIds property
+// SetFailedMigrationSensorIds sets the failedMigrationSensorIds property value. The collection of sensor IDs that failed to migrate.
 func (m *MigrateSensorsResult) SetFailedMigrationSensorIds(value []string)() {
     err := m.GetBackingStore().Set("failedMigrationSensorIds", value)
     if err != nil {
@@ -180,7 +180,7 @@ func (m *MigrateSensorsResult) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSuccessfulMigrationSensorIds sets the successfulMigrationSensorIds property value. The successfulMigrationSensorIds property
+// SetSuccessfulMigrationSensorIds sets the successfulMigrationSensorIds property value. The collection of sensor IDs that were successfully migrated.
 func (m *MigrateSensorsResult) SetSuccessfulMigrationSensorIds(value []string)() {
     err := m.GetBackingStore().Set("successfulMigrationSensorIds", value)
     if err != nil {

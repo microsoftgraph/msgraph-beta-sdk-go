@@ -24,7 +24,7 @@ func NewDriveExclusionUnit()(*DriveExclusionUnit) {
 func CreateDriveExclusionUnitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveExclusionUnit(), nil
 }
-// GetDirectoryObjectId gets the directoryObjectId property value. The directoryObjectId property
+// GetDirectoryObjectId gets the directoryObjectId property value. The unique identifier of the directory object (user) associated with the drive.
 // returns a *string when successful
 func (m *DriveExclusionUnit) GetDirectoryObjectId()(*string) {
     val, err := m.GetBackingStore().Get("directoryObjectId")
@@ -36,7 +36,7 @@ func (m *DriveExclusionUnit) GetDirectoryObjectId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the user associated with the drive.
 // returns a *string when successful
 func (m *DriveExclusionUnit) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -48,7 +48,7 @@ func (m *DriveExclusionUnit) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEmail gets the email property value. The email property
+// GetEmail gets the email property value. The email address of the user associated with the drive.
 // returns a *string when successful
 func (m *DriveExclusionUnit) GetEmail()(*string) {
     val, err := m.GetBackingStore().Get("email")
@@ -110,21 +110,21 @@ func (m *DriveExclusionUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetDirectoryObjectId sets the directoryObjectId property value. The directoryObjectId property
+// SetDirectoryObjectId sets the directoryObjectId property value. The unique identifier of the directory object (user) associated with the drive.
 func (m *DriveExclusionUnit) SetDirectoryObjectId(value *string)() {
     err := m.GetBackingStore().Set("directoryObjectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the user associated with the drive.
 func (m *DriveExclusionUnit) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmail sets the email property value. The email property
+// SetEmail sets the email property value. The email address of the user associated with the drive.
 func (m *DriveExclusionUnit) SetEmail(value *string)() {
     err := m.GetBackingStore().Set("email", value)
     if err != nil {

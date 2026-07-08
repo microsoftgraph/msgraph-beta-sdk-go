@@ -14,7 +14,7 @@ import (
 type BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderGetQueryParameters get exclusionUnits from solutions
+// BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderGetQueryParameters the list of exclusion units in the tenant.
 type BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,7 +43,7 @@ func NewBackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewBackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get exclusionUnits from solutions
+// Get the list of exclusion units in the tenant.
 // returns a ExclusionUnitBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExclusionUnitBaseable, error) {
@@ -63,7 +63,7 @@ func (m *BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExclusionUnitBaseable), nil
 }
-// ToGetRequestInformation get exclusionUnits from solutions
+// ToGetRequestInformation the list of exclusion units in the tenant.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExclusionUnitsExclusionUnitBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

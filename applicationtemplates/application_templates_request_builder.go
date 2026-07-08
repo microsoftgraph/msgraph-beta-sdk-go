@@ -54,6 +54,11 @@ func (m *ApplicationTemplatesRequestBuilder) ByApplicationTemplateId(application
     }
     return NewApplicationTemplateItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
+// Categories provides operations to call the categories method.
+// returns a *CategoriesRequestBuilder when successful
+func (m *ApplicationTemplatesRequestBuilder) Categories()(*CategoriesRequestBuilder) {
+    return NewCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewApplicationTemplatesRequestBuilderInternal instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.
 func NewApplicationTemplatesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApplicationTemplatesRequestBuilder) {
     m := &ApplicationTemplatesRequestBuilder{

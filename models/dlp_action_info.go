@@ -39,6 +39,8 @@ func CreateDlpActionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewBlockAccessAction(), nil
                     case "#microsoft.graph.notifyUserAction":
                         return NewNotifyUserAction(), nil
+                    case "#microsoft.graph.policyTipAction":
+                        return NewPolicyTipAction(), nil
                     case "#microsoft.graph.restrictAccessAction":
                         return NewRestrictAccessAction(), nil
                     case "#microsoft.graph.restrictAccessActionBase":
