@@ -216,7 +216,7 @@ func (m *Workspace) GetNickname()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
+// GetPlaceId gets the placeId property value. The placeId property
 // returns a *string when successful
 func (m *Workspace) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -346,7 +346,7 @@ func (m *Workspace) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
+// SetPlaceId sets the placeId property value. The placeId property
 func (m *Workspace) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {
