@@ -24,6 +24,18 @@ func NewVppToken()(*VppToken) {
 func CreateVppTokenFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVppToken(), nil
 }
+// GetAppleDeviceAppDeliveryProtocolType gets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+// returns a *AppleDeviceDeliveryProtocol when successful
+func (m *VppToken) GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol) {
+    val, err := m.GetBackingStore().Get("appleDeviceAppDeliveryProtocolType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeviceDeliveryProtocol)
+    }
+    return nil
+}
 // GetAppleId gets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
 // returns a *string when successful
 func (m *VppToken) GetAppleId()(*string) {
@@ -112,6 +124,16 @@ func (m *VppToken) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *VppToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["appleDeviceAppDeliveryProtocolType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeviceDeliveryProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleDeviceAppDeliveryProtocolType(val.(*AppleDeviceDeliveryProtocol))
+        }
+        return nil
+    }
     res["appleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -422,6 +444,13 @@ func (m *VppToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
+    if m.GetAppleDeviceAppDeliveryProtocolType() != nil {
+        cast := (*m.GetAppleDeviceAppDeliveryProtocolType()).String()
+        err = writer.WriteStringValue("appleDeviceAppDeliveryProtocolType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("appleId", m.GetAppleId())
         if err != nil {
@@ -534,6 +563,13 @@ func (m *VppToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     return nil
+}
+// SetAppleDeviceAppDeliveryProtocolType sets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+func (m *VppToken) SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)() {
+    err := m.GetBackingStore().Set("appleDeviceAppDeliveryProtocolType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAppleId sets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
 func (m *VppToken) SetAppleId(value *string)() {
@@ -657,6 +693,7 @@ func (m *VppToken) SetVppTokenAccountType(value *VppTokenAccountType)() {
 type VppTokenable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol)
     GetAppleId()(*string)
     GetAutomaticallyUpdateApps()(*bool)
     GetClaimTokenManagementFromExternalMdm()(*bool)
@@ -674,6 +711,7 @@ type VppTokenable interface {
     GetToken()(*string)
     GetTokenActionResults()([]VppTokenActionResultable)
     GetVppTokenAccountType()(*VppTokenAccountType)
+    SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)()
     SetAppleId(value *string)()
     SetAutomaticallyUpdateApps(value *bool)()
     SetClaimTokenManagementFromExternalMdm(value *bool)()

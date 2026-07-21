@@ -93,6 +93,16 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable), nil
 }
+// MicrosoftGraphSecurityDisablePolicy provides operations to call the disablePolicy method.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) MicrosoftGraphSecurityDisablePolicy()(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphSecurityEnablePolicy provides operations to call the enablePolicy method.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) MicrosoftGraphSecurityEnablePolicy()(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphSecurityRetryPolicy provides operations to call the retryPolicy method.
 // returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) MicrosoftGraphSecurityRetryPolicy()(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder) {

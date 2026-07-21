@@ -38,7 +38,7 @@ func (m *PlannerTaskDetailsData) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+// GetApprovalAttachment gets the approvalAttachment property value. Detailed information about the approval that is attached to the task.
 // returns a PlannerBaseApprovalAttachmentable when successful
 func (m *PlannerTaskDetailsData) GetApprovalAttachment()(PlannerBaseApprovalAttachmentable) {
     val, err := m.GetBackingStore().Get("approvalAttachment")
@@ -55,7 +55,7 @@ func (m *PlannerTaskDetailsData) GetApprovalAttachment()(PlannerBaseApprovalAtta
 func (m *PlannerTaskDetailsData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChecklist gets the checklist property value. The checklist property
+// GetChecklist gets the checklist property value. The collection of checklist items on the task.
 // returns a PlannerChecklistItemsable when successful
 func (m *PlannerTaskDetailsData) GetChecklist()(PlannerChecklistItemsable) {
     val, err := m.GetBackingStore().Get("checklist")
@@ -67,7 +67,7 @@ func (m *PlannerTaskDetailsData) GetChecklist()(PlannerChecklistItemsable) {
     }
     return nil
 }
-// GetCompletionRequirements gets the completionRequirements property value. The completionRequirements property
+// GetCompletionRequirements gets the completionRequirements property value. Contains detailed information about requirements on the task.
 // returns a PlannerTaskCompletionRequirementDetailsable when successful
 func (m *PlannerTaskDetailsData) GetCompletionRequirements()(PlannerTaskCompletionRequirementDetailsable) {
     val, err := m.GetBackingStore().Get("completionRequirements")
@@ -79,7 +79,7 @@ func (m *PlannerTaskDetailsData) GetCompletionRequirements()(PlannerTaskCompleti
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the task.
 // returns a *string when successful
 func (m *PlannerTaskDetailsData) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -187,7 +187,7 @@ func (m *PlannerTaskDetailsData) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetForms gets the forms property value. The forms property
+// GetForms gets the forms property value. The collection of forms associated with the task.
 // returns a PlannerFormsDictionaryable when successful
 func (m *PlannerTaskDetailsData) GetForms()(PlannerFormsDictionaryable) {
     val, err := m.GetBackingStore().Get("forms")
@@ -199,7 +199,7 @@ func (m *PlannerTaskDetailsData) GetForms()(PlannerFormsDictionaryable) {
     }
     return nil
 }
-// GetNotes gets the notes property value. The notes property
+// GetNotes gets the notes property value. Rich text description of the task for use by applications that support HTML content.
 // returns a ItemBodyable when successful
 func (m *PlannerTaskDetailsData) GetNotes()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("notes")
@@ -235,7 +235,7 @@ func (m *PlannerTaskDetailsData) GetPreviewType()(*PlannerPreviewType) {
     }
     return nil
 }
-// GetReferences gets the references property value. The references property
+// GetReferences gets the references property value. The collection of references on the task.
 // returns a PlannerExternalReferencesable when successful
 func (m *PlannerTaskDetailsData) GetReferences()(PlannerExternalReferencesable) {
     val, err := m.GetBackingStore().Get("references")
@@ -319,7 +319,7 @@ func (m *PlannerTaskDetailsData) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApprovalAttachment sets the approvalAttachment property value. The approvalAttachment property
+// SetApprovalAttachment sets the approvalAttachment property value. Detailed information about the approval that is attached to the task.
 func (m *PlannerTaskDetailsData) SetApprovalAttachment(value PlannerBaseApprovalAttachmentable)() {
     err := m.GetBackingStore().Set("approvalAttachment", value)
     if err != nil {
@@ -330,35 +330,35 @@ func (m *PlannerTaskDetailsData) SetApprovalAttachment(value PlannerBaseApproval
 func (m *PlannerTaskDetailsData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChecklist sets the checklist property value. The checklist property
+// SetChecklist sets the checklist property value. The collection of checklist items on the task.
 func (m *PlannerTaskDetailsData) SetChecklist(value PlannerChecklistItemsable)() {
     err := m.GetBackingStore().Set("checklist", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletionRequirements sets the completionRequirements property value. The completionRequirements property
+// SetCompletionRequirements sets the completionRequirements property value. Contains detailed information about requirements on the task.
 func (m *PlannerTaskDetailsData) SetCompletionRequirements(value PlannerTaskCompletionRequirementDetailsable)() {
     err := m.GetBackingStore().Set("completionRequirements", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the task.
 func (m *PlannerTaskDetailsData) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetForms sets the forms property value. The forms property
+// SetForms sets the forms property value. The collection of forms associated with the task.
 func (m *PlannerTaskDetailsData) SetForms(value PlannerFormsDictionaryable)() {
     err := m.GetBackingStore().Set("forms", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. The notes property
+// SetNotes sets the notes property value. Rich text description of the task for use by applications that support HTML content.
 func (m *PlannerTaskDetailsData) SetNotes(value ItemBodyable)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
@@ -379,7 +379,7 @@ func (m *PlannerTaskDetailsData) SetPreviewType(value *PlannerPreviewType)() {
         panic(err)
     }
 }
-// SetReferences sets the references property value. The references property
+// SetReferences sets the references property value. The collection of references on the task.
 func (m *PlannerTaskDetailsData) SetReferences(value PlannerExternalReferencesable)() {
     err := m.GetBackingStore().Set("references", value)
     if err != nil {

@@ -102,6 +102,16 @@ func (m *FileStorageContainersRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerCollectionResponseable), nil
 }
+// GetByUserWithUserPrincipalName provides operations to call the getByUser method.
+// returns a *FileStorageContainersGetByUserWithUserPrincipalNameRequestBuilder when successful
+func (m *FileStorageContainersRequestBuilder) GetByUserWithUserPrincipalName(userPrincipalName *string)(*FileStorageContainersGetByUserWithUserPrincipalNameRequestBuilder) {
+    return NewFileStorageContainersGetByUserWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
+// GetByUserWithUserPrincipalNameWithRole provides operations to call the getByUser method.
+// returns a *FileStorageContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilder when successful
+func (m *FileStorageContainersRequestBuilder) GetByUserWithUserPrincipalNameWithRole(role *string, userPrincipalName *string)(*FileStorageContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilder) {
+    return NewFileStorageContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role, userPrincipalName)
+}
 // Post create a new fileStorageContainer object.  The respective container type identified by containerTypeId must be enabled in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

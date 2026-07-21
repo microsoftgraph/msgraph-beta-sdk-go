@@ -43,7 +43,7 @@ func (m *CloudPcOrganizationActionDetail) GetAdditionalData()(map[string]any) {
 func (m *CloudPcOrganizationActionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorDescription gets the errorDescription property value. The errorDescription property
+// GetErrorDescription gets the errorDescription property value. More user-friendly error details. For example, Activation failed due to invalid billing plan.
 // returns a *string when successful
 func (m *CloudPcOrganizationActionDetail) GetErrorDescription()(*string) {
     val, err := m.GetBackingStore().Get("errorDescription")
@@ -155,7 +155,7 @@ func (m *CloudPcOrganizationActionDetail) SetAdditionalData(value map[string]any
 func (m *CloudPcOrganizationActionDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorDescription sets the errorDescription property value. The errorDescription property
+// SetErrorDescription sets the errorDescription property value. More user-friendly error details. For example, Activation failed due to invalid billing plan.
 func (m *CloudPcOrganizationActionDetail) SetErrorDescription(value *string)() {
     err := m.GetBackingStore().Set("errorDescription", value)
     if err != nil {

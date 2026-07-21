@@ -127,7 +127,7 @@ func (m *ExternalItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetInformationProtectionLabel gets the informationProtectionLabel property value. The informationProtectionLabel property
+// GetInformationProtectionLabel gets the informationProtectionLabel property value. Specifies the Microsoft Purview sensitivity label for the item. Set the sensitivityLabelId property to the GUID of a Purview sensitivity label. The service then applies the label rules to the item. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command. Optional.
 // returns a ExternalItemInformationProtectionLabelable when successful
 func (m *ExternalItem) GetInformationProtectionLabel()(ExternalItemInformationProtectionLabelable) {
     val, err := m.GetBackingStore().Get("informationProtectionLabel")
@@ -222,7 +222,7 @@ func (m *ExternalItem) SetContent(value ExternalItemContentable)() {
         panic(err)
     }
 }
-// SetInformationProtectionLabel sets the informationProtectionLabel property value. The informationProtectionLabel property
+// SetInformationProtectionLabel sets the informationProtectionLabel property value. Specifies the Microsoft Purview sensitivity label for the item. Set the sensitivityLabelId property to the GUID of a Purview sensitivity label. The service then applies the label rules to the item. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command. Optional.
 func (m *ExternalItem) SetInformationProtectionLabel(value ExternalItemInformationProtectionLabelable)() {
     err := m.GetBackingStore().Set("informationProtectionLabel", value)
     if err != nil {

@@ -297,20 +297,20 @@ func (m *ReportsRequestBuilder) GetMailboxUsageQuotaStatusMailboxCountsWithPerio
 func (m *ReportsRequestBuilder) GetMailboxUsageStorageWithPeriod(period *string)(*GetMailboxUsageStorageWithPeriodRequestBuilder) {
     return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
-// GetMicrosoft365CopilotUsageUserDetailWithPeriod provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
-// returns a *GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUsageUserDetailWithPeriod(period *string)(*GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder) {
-    return NewGetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+// GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+// returns a *GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
 }
-// GetMicrosoft365CopilotUserCountSummaryWithPeriod provides operations to call the getMicrosoft365CopilotUserCountSummary method.
-// returns a *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountSummaryWithPeriod(period *string)(*GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder) {
-    return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+// GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+// returns a *GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
 }
-// GetMicrosoft365CopilotUserCountTrendWithPeriod provides operations to call the getMicrosoft365CopilotUserCountTrend method.
-// returns a *GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriod(period *string)(*GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder) {
-    return NewGetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+// GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+// returns a *GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
 }
 // GetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
 // returns a *GetOffice365ActivationCountsRequestBuilder when successful

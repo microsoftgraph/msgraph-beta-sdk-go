@@ -50,7 +50,7 @@ func (m *TaskHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetNewData gets the newData property value. The newData property
+// GetNewData gets the newData property value. A snapshot of the task state after the change. This property is null for deletion events.
 // returns a PlannerTaskDataable when successful
 func (m *TaskHistoryItem) GetNewData()(PlannerTaskDataable) {
     val, err := m.GetBackingStore().Get("newData")
@@ -62,7 +62,7 @@ func (m *TaskHistoryItem) GetNewData()(PlannerTaskDataable) {
     }
     return nil
 }
-// GetOldData gets the oldData property value. The oldData property
+// GetOldData gets the oldData property value. A snapshot of the task state before the change. This property is null for creation and undeletion events.
 // returns a PlannerTaskDataable when successful
 func (m *TaskHistoryItem) GetOldData()(PlannerTaskDataable) {
     val, err := m.GetBackingStore().Get("oldData")
@@ -94,14 +94,14 @@ func (m *TaskHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetNewData sets the newData property value. The newData property
+// SetNewData sets the newData property value. A snapshot of the task state after the change. This property is null for deletion events.
 func (m *TaskHistoryItem) SetNewData(value PlannerTaskDataable)() {
     err := m.GetBackingStore().Set("newData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOldData sets the oldData property value. The oldData property
+// SetOldData sets the oldData property value. A snapshot of the task state before the change. This property is null for creation and undeletion events.
 func (m *TaskHistoryItem) SetOldData(value PlannerTaskDataable)() {
     err := m.GetBackingStore().Set("oldData", value)
     if err != nil {

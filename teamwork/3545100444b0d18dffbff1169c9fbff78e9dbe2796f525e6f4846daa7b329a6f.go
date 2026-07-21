@@ -14,7 +14,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters get historyItems from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters collection of history items for entities in the plan. Read-only. Nullable.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlans
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get historyItems from teamwork
+// Get collection of history items for entities in the plan. Read-only. Nullable.
 // returns a PlannerHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerHistoryItemCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlan
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerHistoryItemable), nil
 }
-// ToGetRequestInformation get historyItems from teamwork
+// ToGetRequestInformation collection of history items for entities in the plan. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansItemHistoryItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

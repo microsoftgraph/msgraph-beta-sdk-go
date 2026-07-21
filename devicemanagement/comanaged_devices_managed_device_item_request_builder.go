@@ -188,6 +188,11 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) GetFileVaultKey()(*Com
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) GetNonCompliantSettings()(*ComanagedDevicesItemGetNonCompliantSettingsRequestBuilder) {
     return NewComanagedDevicesItemGetNonCompliantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetSyncStatus provides operations to call the getSyncStatus method.
+// returns a *ComanagedDevicesItemGetSyncStatusRequestBuilder when successful
+func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) GetSyncStatus()(*ComanagedDevicesItemGetSyncStatusRequestBuilder) {
+    return NewComanagedDevicesItemGetSyncStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // InitiateDeviceAttestation provides operations to call the initiateDeviceAttestation method.
 // returns a *ComanagedDevicesItemInitiateDeviceAttestationRequestBuilder when successful
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) InitiateDeviceAttestation()(*ComanagedDevicesItemInitiateDeviceAttestationRequestBuilder) {
@@ -277,6 +282,11 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) Reenable()(*ComanagedD
 // returns a *ComanagedDevicesItemRemoteLockRequestBuilder when successful
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RemoteLock()(*ComanagedDevicesItemRemoteLockRequestBuilder) {
     return NewComanagedDevicesItemRemoteLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RemoveDeviceEsim provides operations to call the removeDeviceEsim method.
+// returns a *ComanagedDevicesItemRemoveDeviceEsimRequestBuilder when successful
+func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RemoveDeviceEsim()(*ComanagedDevicesItemRemoveDeviceEsimRequestBuilder) {
+    return NewComanagedDevicesItemRemoveDeviceEsimRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RemoveDeviceFirmwareConfigurationInterfaceManagement provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.
 // returns a *ComanagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder when successful
