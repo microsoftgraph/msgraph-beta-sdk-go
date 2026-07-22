@@ -208,6 +208,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) LastModifiedByUser()(*ItemItemsIt
 func (m *ItemItemsDriveItemItemRequestBuilder) ListItem()(*ItemItemsItemListItemRequestBuilder) {
     return NewItemItemsItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Lock provides operations to call the lock method.
+// returns a *ItemItemsItemLockRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) Lock()(*ItemItemsItemLockRequestBuilder) {
+    return NewItemItemsItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property items in drives
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -242,6 +247,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Permissions()(*ItemItemsItemPermi
 // returns a *ItemItemsItemPreviewRequestBuilder when successful
 func (m *ItemItemsDriveItemItemRequestBuilder) Preview()(*ItemItemsItemPreviewRequestBuilder) {
     return NewItemItemsItemPreviewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ReleaseLock provides operations to call the releaseLock method.
+// returns a *ItemItemsItemReleaseLockRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ReleaseLock()(*ItemItemsItemReleaseLockRequestBuilder) {
+    return NewItemItemsItemReleaseLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restore provides operations to call the restore method.
 // returns a *ItemItemsItemRestoreRequestBuilder when successful

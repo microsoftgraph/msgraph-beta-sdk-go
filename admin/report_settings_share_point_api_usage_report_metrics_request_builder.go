@@ -14,7 +14,7 @@ import (
 type ReportSettingsSharePointApiUsageReportMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportSettingsSharePointApiUsageReportMetricsRequestBuilderGetQueryParameters get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+// ReportSettingsSharePointApiUsageReportMetricsRequestBuilderGetQueryParameters get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
 type ReportSettingsSharePointApiUsageReportMetricsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewReportSettingsSharePointApiUsageReportMetricsRequestBuilder(rawUrl strin
 func (m *ReportSettingsSharePointApiUsageReportMetricsRequestBuilder) Count()(*ReportSettingsSharePointApiUsageReportMetricsCountRequestBuilder) {
     return NewReportSettingsSharePointApiUsageReportMetricsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+// Get get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
 // returns a ApiUsageReportEnablementStatusCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *ReportSettingsSharePointApiUsageReportMetricsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApiUsageReportEnablementStatusable), nil
 }
-// ToGetRequestInformation get the list of SharePoint API usage report metrics and their enablement status for the tenant. Currently, only the EgressReport metric is supported.
+// ToGetRequestInformation get the list of SharePoint API usage report metrics and their enablement status for the tenant. The supported metrics are egressReport and throttlingReport.
 // returns a *RequestInformation when successful
 func (m *ReportSettingsSharePointApiUsageReportMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportSettingsSharePointApiUsageReportMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

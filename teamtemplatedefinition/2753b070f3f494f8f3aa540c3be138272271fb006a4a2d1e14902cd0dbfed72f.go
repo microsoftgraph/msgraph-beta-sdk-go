@@ -21,7 +21,7 @@ type ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilderGetQueryParameters get historyItems from teamTemplateDefinition
+// ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilderGetQueryParameters collection of history items for entities in the plan. Read-only. Nullable.
 type ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -73,7 +73,7 @@ func (m *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistor
     }
     return nil
 }
-// Get get historyItems from teamTemplateDefinition
+// Get collection of history items for entities in the plan. Read-only. Nullable.
 // returns a PlannerHistoryItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerHistoryItemable, error) {
@@ -124,7 +124,7 @@ func (m *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get historyItems from teamTemplateDefinition
+// ToGetRequestInformation collection of history items for entities in the plan. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemPlannerPlansItemHistoryItemsPlannerHistoryItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

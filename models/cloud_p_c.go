@@ -285,6 +285,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["lastLogoffDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastLogoffDateTime(val)
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -618,6 +628,18 @@ func (m *CloudPC) GetLastLoginResult()(CloudPcLoginResultable) {
     }
     if val != nil {
         return val.(CloudPcLoginResultable)
+    }
+    return nil
+}
+// GetLastLogoffDateTime gets the lastLogoffDateTime property value. The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.
+// returns a *Time when successful
+func (m *CloudPC) GetLastLogoffDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastLogoffDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -1020,6 +1042,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteTimeValue("lastLogoffDateTime", m.GetLastLogoffDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
@@ -1290,6 +1318,13 @@ func (m *CloudPC) SetLastLoginResult(value CloudPcLoginResultable)() {
         panic(err)
     }
 }
+// SetLastLogoffDateTime sets the lastLogoffDateTime property value. The date and time when the user last logged off from the Cloud PC session. Returns null if the user has never established a session or if a session is currently active. The timestamp is shown in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only when explicitly selected with $select.
+func (m *CloudPC) SetLastLogoffDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastLogoffDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.
 func (m *CloudPC) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -1483,6 +1518,7 @@ type CloudPCable interface {
     GetImageDisplayName()(*string)
     GetIsDisasterRecoveryActive()(*bool)
     GetLastLoginResult()(CloudPcLoginResultable)
+    GetLastLogoffDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastRemoteActionResult()(CloudPcRemoteActionResultable)
     GetManagedDeviceId()(*string)
@@ -1523,6 +1559,7 @@ type CloudPCable interface {
     SetImageDisplayName(value *string)()
     SetIsDisasterRecoveryActive(value *bool)()
     SetLastLoginResult(value CloudPcLoginResultable)()
+    SetLastLogoffDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastRemoteActionResult(value CloudPcRemoteActionResultable)()
     SetManagedDeviceId(value *string)()

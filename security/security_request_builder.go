@@ -57,6 +57,11 @@ func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuil
 func (m *SecurityRequestBuilder) AuditLog()(*AuditLogRequestBuilder) {
     return NewAuditLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CaseManagement provides operations to manage the caseManagement property of the microsoft.graph.security entity.
+// returns a *CaseManagementRequestBuilder when successful
+func (m *SecurityRequestBuilder) CaseManagement()(*CaseManagementRequestBuilder) {
+    return NewCaseManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 // returns a *CasesRequestBuilder when successful
 func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {

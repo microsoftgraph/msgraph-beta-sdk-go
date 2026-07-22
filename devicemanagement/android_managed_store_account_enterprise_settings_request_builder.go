@@ -77,6 +77,11 @@ func NewAndroidManagedStoreAccountEnterpriseSettingsRequestBuilder(rawUrl string
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateGooglePlayWebToken()(*AndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilder) {
     return NewAndroidManagedStoreAccountEnterpriseSettingsCreateGooglePlayWebTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CreateZeroTouchWebToken provides operations to call the createZeroTouchWebToken method.
+// returns a *AndroidManagedStoreAccountEnterpriseSettingsCreateZeroTouchWebTokenRequestBuilder when successful
+func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) CreateZeroTouchWebToken()(*AndroidManagedStoreAccountEnterpriseSettingsCreateZeroTouchWebTokenRequestBuilder) {
+    return NewAndroidManagedStoreAccountEnterpriseSettingsCreateZeroTouchWebTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property androidManagedStoreAccountEnterpriseSettings for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilderDeleteRequestConfiguration)(error) {

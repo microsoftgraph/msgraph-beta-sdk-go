@@ -26,7 +26,7 @@ func NewPlannerTaskData()(*PlannerTaskData) {
 func CreatePlannerTaskDataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskData(), nil
 }
-// GetActiveChecklistItemCount gets the activeChecklistItemCount property value. The activeChecklistItemCount property
+// GetActiveChecklistItemCount gets the activeChecklistItemCount property value. The number of incomplete checklist items whose value is set to false.
 // returns a *int32 when successful
 func (m *PlannerTaskData) GetActiveChecklistItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeChecklistItemCount")
@@ -51,7 +51,7 @@ func (m *PlannerTaskData) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppliedCategories gets the appliedCategories property value. The appliedCategories property
+// GetAppliedCategories gets the appliedCategories property value. The categories to which the task is applied.
 // returns a PlannerAppliedCategoriesable when successful
 func (m *PlannerTaskData) GetAppliedCategories()(PlannerAppliedCategoriesable) {
     val, err := m.GetBackingStore().Get("appliedCategories")
@@ -63,7 +63,7 @@ func (m *PlannerTaskData) GetAppliedCategories()(PlannerAppliedCategoriesable) {
     }
     return nil
 }
-// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+// GetArchivalInfo gets the archivalInfo property value. Information about who archived or unarchived the task and why.
 // returns a PlannerArchivalInfoable when successful
 func (m *PlannerTaskData) GetArchivalInfo()(PlannerArchivalInfoable) {
     val, err := m.GetBackingStore().Get("archivalInfo")
@@ -75,7 +75,7 @@ func (m *PlannerTaskData) GetArchivalInfo()(PlannerArchivalInfoable) {
     }
     return nil
 }
-// GetAssignments gets the assignments property value. The assignments property
+// GetAssignments gets the assignments property value. The set of assignees the task is assigned to.
 // returns a PlannerAssignmentsable when successful
 func (m *PlannerTaskData) GetAssignments()(PlannerAssignmentsable) {
     val, err := m.GetBackingStore().Get("assignments")
@@ -92,7 +92,7 @@ func (m *PlannerTaskData) GetAssignments()(PlannerAssignmentsable) {
 func (m *PlannerTaskData) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBucketId gets the bucketId property value. The bucketId property
+// GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task.
 // returns a *string when successful
 func (m *PlannerTaskData) GetBucketId()(*string) {
     val, err := m.GetBackingStore().Get("bucketId")
@@ -104,7 +104,7 @@ func (m *PlannerTaskData) GetBucketId()(*string) {
     }
     return nil
 }
-// GetChecklistItemCount gets the checklistItemCount property value. The checklistItemCount property
+// GetChecklistItemCount gets the checklistItemCount property value. The number of checklist items that are present on the task.
 // returns a *int32 when successful
 func (m *PlannerTaskData) GetChecklistItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("checklistItemCount")
@@ -116,7 +116,7 @@ func (m *PlannerTaskData) GetChecklistItemCount()(*int32) {
     }
     return nil
 }
-// GetCompletedBy gets the completedBy property value. The completedBy property
+// GetCompletedBy gets the completedBy property value. The identity of the user that completed the task.
 // returns a IdentitySetable when successful
 func (m *PlannerTaskData) GetCompletedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("completedBy")
@@ -128,7 +128,7 @@ func (m *PlannerTaskData) GetCompletedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. The completedDateTime property
+// GetCompletedDateTime gets the completedDateTime property value. The date and time at which the percentComplete of the task is set to 100. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PlannerTaskData) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
@@ -140,7 +140,7 @@ func (m *PlannerTaskData) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetConversationThreadId gets the conversationThreadId property value. The conversationThreadId property
+// GetConversationThreadId gets the conversationThreadId property value. The thread ID of the conversation on the task that corresponds to the ID of the conversation thread object created in the group.
 // returns a *string when successful
 func (m *PlannerTaskData) GetConversationThreadId()(*string) {
     val, err := m.GetBackingStore().Get("conversationThreadId")
@@ -152,7 +152,7 @@ func (m *PlannerTaskData) GetConversationThreadId()(*string) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of the user who created the task.
 // returns a IdentitySetable when successful
 func (m *PlannerTaskData) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -164,7 +164,7 @@ func (m *PlannerTaskData) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time at which the task was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PlannerTaskData) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -176,7 +176,7 @@ func (m *PlannerTaskData) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a
     }
     return nil
 }
-// GetCreationSource gets the creationSource property value. The creationSource property
+// GetCreationSource gets the creationSource property value. Information about the origin of the task.
 // returns a PlannerTaskCreationable when successful
 func (m *PlannerTaskData) GetCreationSource()(PlannerTaskCreationable) {
     val, err := m.GetBackingStore().Get("creationSource")
@@ -188,7 +188,7 @@ func (m *PlannerTaskData) GetCreationSource()(PlannerTaskCreationable) {
     }
     return nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. Additional details about the task.
 // returns a PlannerTaskDetailsDataable when successful
 func (m *PlannerTaskData) GetDetails()(PlannerTaskDetailsDataable) {
     val, err := m.GetBackingStore().Get("details")
@@ -200,7 +200,7 @@ func (m *PlannerTaskData) GetDetails()(PlannerTaskDetailsDataable) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The dueDateTime property
+// GetDueDateTime gets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PlannerTaskData) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -488,7 +488,7 @@ func (m *PlannerTaskData) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetHasChat gets the hasChat property value. The hasChat property
+// GetHasChat gets the hasChat property value. Set to true if the task has a chat associated with it; otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTaskData) GetHasChat()(*bool) {
     val, err := m.GetBackingStore().Get("hasChat")
@@ -500,7 +500,7 @@ func (m *PlannerTaskData) GetHasChat()(*bool) {
     }
     return nil
 }
-// GetHasDescription gets the hasDescription property value. The hasDescription property
+// GetHasDescription gets the hasDescription property value. Set to true if the details object of the task has a nonempty description; otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTaskData) GetHasDescription()(*bool) {
     val, err := m.GetBackingStore().Get("hasDescription")
@@ -512,7 +512,7 @@ func (m *PlannerTaskData) GetHasDescription()(*bool) {
     }
     return nil
 }
-// GetIsArchived gets the isArchived property value. The isArchived property
+// GetIsArchived gets the isArchived property value. Set to true if the task is archived; otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTaskData) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
@@ -536,7 +536,7 @@ func (m *PlannerTaskData) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOrderHint gets the orderHint property value. The orderHint property
+// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view.
 // returns a *string when successful
 func (m *PlannerTaskData) GetOrderHint()(*string) {
     val, err := m.GetBackingStore().Get("orderHint")
@@ -548,7 +548,7 @@ func (m *PlannerTaskData) GetOrderHint()(*string) {
     }
     return nil
 }
-// GetPercentComplete gets the percentComplete property value. The percentComplete property
+// GetPercentComplete gets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
 // returns a *int32 when successful
 func (m *PlannerTaskData) GetPercentComplete()(*int32) {
     val, err := m.GetBackingStore().Get("percentComplete")
@@ -572,7 +572,7 @@ func (m *PlannerTaskData) GetPreviewType()(*PlannerPreviewType) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority.
 // returns a *int32 when successful
 func (m *PlannerTaskData) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
@@ -584,7 +584,7 @@ func (m *PlannerTaskData) GetPriority()(*int32) {
     }
     return nil
 }
-// GetRecurrence gets the recurrence property value. The recurrence property
+// GetRecurrence gets the recurrence property value. Defines active or inactive recurrence for the task. A null value indicates that the recurrence was never defined for the task.
 // returns a PlannerTaskRecurrenceable when successful
 func (m *PlannerTaskData) GetRecurrence()(PlannerTaskRecurrenceable) {
     val, err := m.GetBackingStore().Get("recurrence")
@@ -596,7 +596,7 @@ func (m *PlannerTaskData) GetRecurrence()(PlannerTaskRecurrenceable) {
     }
     return nil
 }
-// GetReferenceCount gets the referenceCount property value. The referenceCount property
+// GetReferenceCount gets the referenceCount property value. Number of external references that exist on the task.
 // returns a *int32 when successful
 func (m *PlannerTaskData) GetReferenceCount()(*int32) {
     val, err := m.GetBackingStore().Get("referenceCount")
@@ -620,7 +620,7 @@ func (m *PlannerTaskData) GetSpecifiedCompletionRequirements()(*PlannerTaskCompl
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The date and time at which the task starts. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PlannerTaskData) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -632,7 +632,7 @@ func (m *PlannerTaskData) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. Title of the task.
 // returns a *string when successful
 func (m *PlannerTaskData) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -818,7 +818,7 @@ func (m *PlannerTaskData) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetActiveChecklistItemCount sets the activeChecklistItemCount property value. The activeChecklistItemCount property
+// SetActiveChecklistItemCount sets the activeChecklistItemCount property value. The number of incomplete checklist items whose value is set to false.
 func (m *PlannerTaskData) SetActiveChecklistItemCount(value *int32)() {
     err := m.GetBackingStore().Set("activeChecklistItemCount", value)
     if err != nil {
@@ -832,21 +832,21 @@ func (m *PlannerTaskData) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppliedCategories sets the appliedCategories property value. The appliedCategories property
+// SetAppliedCategories sets the appliedCategories property value. The categories to which the task is applied.
 func (m *PlannerTaskData) SetAppliedCategories(value PlannerAppliedCategoriesable)() {
     err := m.GetBackingStore().Set("appliedCategories", value)
     if err != nil {
         panic(err)
     }
 }
-// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+// SetArchivalInfo sets the archivalInfo property value. Information about who archived or unarchived the task and why.
 func (m *PlannerTaskData) SetArchivalInfo(value PlannerArchivalInfoable)() {
     err := m.GetBackingStore().Set("archivalInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignments sets the assignments property value. The assignments property
+// SetAssignments sets the assignments property value. The set of assignees the task is assigned to.
 func (m *PlannerTaskData) SetAssignments(value PlannerAssignmentsable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
@@ -857,91 +857,91 @@ func (m *PlannerTaskData) SetAssignments(value PlannerAssignmentsable)() {
 func (m *PlannerTaskData) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBucketId sets the bucketId property value. The bucketId property
+// SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task.
 func (m *PlannerTaskData) SetBucketId(value *string)() {
     err := m.GetBackingStore().Set("bucketId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetChecklistItemCount sets the checklistItemCount property value. The checklistItemCount property
+// SetChecklistItemCount sets the checklistItemCount property value. The number of checklist items that are present on the task.
 func (m *PlannerTaskData) SetChecklistItemCount(value *int32)() {
     err := m.GetBackingStore().Set("checklistItemCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletedBy sets the completedBy property value. The completedBy property
+// SetCompletedBy sets the completedBy property value. The identity of the user that completed the task.
 func (m *PlannerTaskData) SetCompletedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("completedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletedDateTime sets the completedDateTime property value. The completedDateTime property
+// SetCompletedDateTime sets the completedDateTime property value. The date and time at which the percentComplete of the task is set to 100. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *PlannerTaskData) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConversationThreadId sets the conversationThreadId property value. The conversationThreadId property
+// SetConversationThreadId sets the conversationThreadId property value. The thread ID of the conversation on the task that corresponds to the ID of the conversation thread object created in the group.
 func (m *PlannerTaskData) SetConversationThreadId(value *string)() {
     err := m.GetBackingStore().Set("conversationThreadId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of the user who created the task.
 func (m *PlannerTaskData) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time at which the task was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *PlannerTaskData) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreationSource sets the creationSource property value. The creationSource property
+// SetCreationSource sets the creationSource property value. Information about the origin of the task.
 func (m *PlannerTaskData) SetCreationSource(value PlannerTaskCreationable)() {
     err := m.GetBackingStore().Set("creationSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. Additional details about the task.
 func (m *PlannerTaskData) SetDetails(value PlannerTaskDetailsDataable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The dueDateTime property
+// SetDueDateTime sets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *PlannerTaskData) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasChat sets the hasChat property value. The hasChat property
+// SetHasChat sets the hasChat property value. Set to true if the task has a chat associated with it; otherwise, false.
 func (m *PlannerTaskData) SetHasChat(value *bool)() {
     err := m.GetBackingStore().Set("hasChat", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasDescription sets the hasDescription property value. The hasDescription property
+// SetHasDescription sets the hasDescription property value. Set to true if the details object of the task has a nonempty description; otherwise, false.
 func (m *PlannerTaskData) SetHasDescription(value *bool)() {
     err := m.GetBackingStore().Set("hasDescription", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsArchived sets the isArchived property value. The isArchived property
+// SetIsArchived sets the isArchived property value. Set to true if the task is archived; otherwise, false.
 func (m *PlannerTaskData) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
     if err != nil {
@@ -955,14 +955,14 @@ func (m *PlannerTaskData) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOrderHint sets the orderHint property value. The orderHint property
+// SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view.
 func (m *PlannerTaskData) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPercentComplete sets the percentComplete property value. The percentComplete property
+// SetPercentComplete sets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
 func (m *PlannerTaskData) SetPercentComplete(value *int32)() {
     err := m.GetBackingStore().Set("percentComplete", value)
     if err != nil {
@@ -976,21 +976,21 @@ func (m *PlannerTaskData) SetPreviewType(value *PlannerPreviewType)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority.
 func (m *PlannerTaskData) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecurrence sets the recurrence property value. The recurrence property
+// SetRecurrence sets the recurrence property value. Defines active or inactive recurrence for the task. A null value indicates that the recurrence was never defined for the task.
 func (m *PlannerTaskData) SetRecurrence(value PlannerTaskRecurrenceable)() {
     err := m.GetBackingStore().Set("recurrence", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReferenceCount sets the referenceCount property value. The referenceCount property
+// SetReferenceCount sets the referenceCount property value. Number of external references that exist on the task.
 func (m *PlannerTaskData) SetReferenceCount(value *int32)() {
     err := m.GetBackingStore().Set("referenceCount", value)
     if err != nil {
@@ -1004,14 +1004,14 @@ func (m *PlannerTaskData) SetSpecifiedCompletionRequirements(value *PlannerTaskC
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The date and time at which the task starts. The date and time information uses ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2021 is 2021-01-01T00:00:00Z.
 func (m *PlannerTaskData) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. Title of the task.
 func (m *PlannerTaskData) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

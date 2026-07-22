@@ -81,7 +81,7 @@ func (m *ExternalItemInformationProtectionLabel) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSensitivityLabelId gets the sensitivityLabelId property value. The sensitivityLabelId property
+// GetSensitivityLabelId gets the sensitivityLabelId property value. The GUID of the Purview sensitivity label. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command.
 // returns a *string when successful
 func (m *ExternalItemInformationProtectionLabel) GetSensitivityLabelId()(*string) {
     val, err := m.GetBackingStore().Get("sensitivityLabelId")
@@ -133,7 +133,7 @@ func (m *ExternalItemInformationProtectionLabel) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSensitivityLabelId sets the sensitivityLabelId property value. The sensitivityLabelId property
+// SetSensitivityLabelId sets the sensitivityLabelId property value. The GUID of the Purview sensitivity label. To get the label GUID, use the Get sensitivityLabel API or the Get-Label PowerShell command.
 func (m *ExternalItemInformationProtectionLabel) SetSensitivityLabelId(value *string)() {
     err := m.GetBackingStore().Set("sensitivityLabelId", value)
     if err != nil {

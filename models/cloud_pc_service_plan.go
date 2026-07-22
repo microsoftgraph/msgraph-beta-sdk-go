@@ -144,7 +144,7 @@ func (m *CloudPcServicePlan) GetRamInGB()(*int32) {
     }
     return nil
 }
-// GetStorageInGB gets the storageInGB property value. The size of the OS Disk in GB. Read-only.
+// GetStorageInGB gets the storageInGB property value. The size of the operating system disk in GB. Read-only.
 // returns a *int32 when successful
 func (m *CloudPcServicePlan) GetStorageInGB()(*int32) {
     val, err := m.GetBackingStore().Get("storageInGB")
@@ -284,7 +284,7 @@ func (m *CloudPcServicePlan) SetRamInGB(value *int32)() {
         panic(err)
     }
 }
-// SetStorageInGB sets the storageInGB property value. The size of the OS Disk in GB. Read-only.
+// SetStorageInGB sets the storageInGB property value. The size of the operating system disk in GB. Read-only.
 func (m *CloudPcServicePlan) SetStorageInGB(value *int32)() {
     err := m.GetBackingStore().Set("storageInGB", value)
     if err != nil {

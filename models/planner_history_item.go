@@ -41,7 +41,7 @@ func CreatePlannerHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26
     }
     return NewPlannerHistoryItem(), nil
 }
-// GetActor gets the actor property value. The actor property
+// GetActor gets the actor property value. The identity of the user or application that performed the change.
 // returns a IdentitySetable when successful
 func (m *PlannerHistoryItem) GetActor()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("actor")
@@ -53,7 +53,7 @@ func (m *PlannerHistoryItem) GetActor()(IdentitySetable) {
     }
     return nil
 }
-// GetEntityId gets the entityId property value. The entityId property
+// GetEntityId gets the entityId property value. The ID of the entity that was changed.
 // returns a *string when successful
 func (m *PlannerHistoryItem) GetEntityId()(*string) {
     val, err := m.GetBackingStore().Get("entityId")
@@ -155,7 +155,7 @@ func (m *PlannerHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetOccurredDateTime gets the occurredDateTime property value. The occurredDateTime property
+// GetOccurredDateTime gets the occurredDateTime property value. The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PlannerHistoryItem) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("occurredDateTime")
@@ -167,7 +167,7 @@ func (m *PlannerHistoryItem) GetOccurredDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetPlanId gets the planId property value. The planId property
+// GetPlanId gets the planId property value. The ID of the plan that contains the changed entity.
 // returns a *string when successful
 func (m *PlannerHistoryItem) GetPlanId()(*string) {
     val, err := m.GetBackingStore().Get("planId")
@@ -225,14 +225,14 @@ func (m *PlannerHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetActor sets the actor property value. The actor property
+// SetActor sets the actor property value. The identity of the user or application that performed the change.
 func (m *PlannerHistoryItem) SetActor(value IdentitySetable)() {
     err := m.GetBackingStore().Set("actor", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEntityId sets the entityId property value. The entityId property
+// SetEntityId sets the entityId property value. The ID of the entity that was changed.
 func (m *PlannerHistoryItem) SetEntityId(value *string)() {
     err := m.GetBackingStore().Set("entityId", value)
     if err != nil {
@@ -253,14 +253,14 @@ func (m *PlannerHistoryItem) SetEventType(value *HistoryEventType)() {
         panic(err)
     }
 }
-// SetOccurredDateTime sets the occurredDateTime property value. The occurredDateTime property
+// SetOccurredDateTime sets the occurredDateTime property value. The date and time when the change occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *PlannerHistoryItem) SetOccurredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("occurredDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlanId sets the planId property value. The planId property
+// SetPlanId sets the planId property value. The ID of the plan that contains the changed entity.
 func (m *PlannerHistoryItem) SetPlanId(value *string)() {
     err := m.GetBackingStore().Set("planId", value)
     if err != nil {

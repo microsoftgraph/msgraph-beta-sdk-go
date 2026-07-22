@@ -79,7 +79,7 @@ func (m *ApiUsageReportEnablementStatus) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetMetric gets the metric property value. The name of the API usage report metric. Currently, only EgressReport is supported.
+// GetMetric gets the metric property value. The name of the API usage report metric. The supported values are: egressReport, throttlingReport.
 // returns a *string when successful
 func (m *ApiUsageReportEnablementStatus) GetMetric()(*string) {
     val, err := m.GetBackingStore().Get("metric")
@@ -155,7 +155,7 @@ func (m *ApiUsageReportEnablementStatus) SetAdditionalData(value map[string]any)
 func (m *ApiUsageReportEnablementStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMetric sets the metric property value. The name of the API usage report metric. Currently, only EgressReport is supported.
+// SetMetric sets the metric property value. The name of the API usage report metric. The supported values are: egressReport, throttlingReport.
 func (m *ApiUsageReportEnablementStatus) SetMetric(value *string)() {
     err := m.GetBackingStore().Set("metric", value)
     if err != nil {

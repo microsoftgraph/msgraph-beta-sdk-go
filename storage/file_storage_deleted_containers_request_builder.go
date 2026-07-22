@@ -99,6 +99,16 @@ func (m *FileStorageDeletedContainersRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerCollectionResponseable), nil
 }
+// GetByUserWithUserPrincipalName provides operations to call the getByUser method.
+// returns a *FileStorageDeletedContainersGetByUserWithUserPrincipalNameRequestBuilder when successful
+func (m *FileStorageDeletedContainersRequestBuilder) GetByUserWithUserPrincipalName(userPrincipalName *string)(*FileStorageDeletedContainersGetByUserWithUserPrincipalNameRequestBuilder) {
+    return NewFileStorageDeletedContainersGetByUserWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
+// GetByUserWithUserPrincipalNameWithRole provides operations to call the getByUser method.
+// returns a *FileStorageDeletedContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilder when successful
+func (m *FileStorageDeletedContainersRequestBuilder) GetByUserWithUserPrincipalNameWithRole(role *string, userPrincipalName *string)(*FileStorageDeletedContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilder) {
+    return NewFileStorageDeletedContainersGetByUserWithUserPrincipalNameWithRoleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, role, userPrincipalName)
+}
 // Post create new navigation property to deletedContainers for storage
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

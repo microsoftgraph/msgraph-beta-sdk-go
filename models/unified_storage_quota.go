@@ -34,6 +34,18 @@ func (m *UnifiedStorageQuota) GetDeleted()(*int64) {
     }
     return nil
 }
+// GetFamilyMembersUsage gets the familyMembersUsage property value. The familyMembersUsage property
+// returns a []FamilyMemberStorageQuotaable when successful
+func (m *UnifiedStorageQuota) GetFamilyMembersUsage()([]FamilyMemberStorageQuotaable) {
+    val, err := m.GetBackingStore().Get("familyMembersUsage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]FamilyMemberStorageQuotaable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UnifiedStorageQuota) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -45,6 +57,32 @@ func (m *UnifiedStorageQuota) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetDeleted(val)
+        }
+        return nil
+    }
+    res["familyMembersUsage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateFamilyMemberStorageQuotaFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]FamilyMemberStorageQuotaable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(FamilyMemberStorageQuotaable)
+                }
+            }
+            m.SetFamilyMembersUsage(res)
+        }
+        return nil
+    }
+    res["isPooledStorageEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsPooledStorageEnabled(val)
         }
         return nil
     }
@@ -115,6 +153,18 @@ func (m *UnifiedStorageQuota) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetIsPooledStorageEnabled gets the isPooledStorageEnabled property value. The isPooledStorageEnabled property
+// returns a *bool when successful
+func (m *UnifiedStorageQuota) GetIsPooledStorageEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isPooledStorageEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetManageWebUrl gets the manageWebUrl property value. A URL that can be used in a browser to manage the breakdown. Read-only.
 // returns a *string when successful
@@ -200,6 +250,24 @@ func (m *UnifiedStorageQuota) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetFamilyMembersUsage() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFamilyMembersUsage()))
+        for i, v := range m.GetFamilyMembersUsage() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("familyMembersUsage", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isPooledStorageEnabled", m.GetIsPooledStorageEnabled())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("manageWebUrl", m.GetManageWebUrl())
         if err != nil {
@@ -251,6 +319,20 @@ func (m *UnifiedStorageQuota) SetDeleted(value *int64)() {
         panic(err)
     }
 }
+// SetFamilyMembersUsage sets the familyMembersUsage property value. The familyMembersUsage property
+func (m *UnifiedStorageQuota) SetFamilyMembersUsage(value []FamilyMemberStorageQuotaable)() {
+    err := m.GetBackingStore().Set("familyMembersUsage", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsPooledStorageEnabled sets the isPooledStorageEnabled property value. The isPooledStorageEnabled property
+func (m *UnifiedStorageQuota) SetIsPooledStorageEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isPooledStorageEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManageWebUrl sets the manageWebUrl property value. A URL that can be used in a browser to manage the breakdown. Read-only.
 func (m *UnifiedStorageQuota) SetManageWebUrl(value *string)() {
     err := m.GetBackingStore().Set("manageWebUrl", value)
@@ -297,6 +379,8 @@ type UnifiedStorageQuotaable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDeleted()(*int64)
+    GetFamilyMembersUsage()([]FamilyMemberStorageQuotaable)
+    GetIsPooledStorageEnabled()(*bool)
     GetManageWebUrl()(*string)
     GetRemaining()(*int64)
     GetServices()([]ServiceStorageQuotaBreakdownable)
@@ -304,6 +388,8 @@ type UnifiedStorageQuotaable interface {
     GetTotal()(*int64)
     GetUsed()(*int64)
     SetDeleted(value *int64)()
+    SetFamilyMembersUsage(value []FamilyMemberStorageQuotaable)()
+    SetIsPooledStorageEnabled(value *bool)()
     SetManageWebUrl(value *string)()
     SetRemaining(value *int64)()
     SetServices(value []ServiceStorageQuotaBreakdownable)()

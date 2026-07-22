@@ -311,7 +311,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHistoryItems gets the historyItems property value. The historyItems property
+// GetHistoryItems gets the historyItems property value. Collection of history items for entities in the plan. Read-only. Nullable.
 // returns a []PlannerHistoryItemable when successful
 func (m *PlannerPlan) GetHistoryItems()([]PlannerHistoryItemable) {
     val, err := m.GetBackingStore().Get("historyItems")
@@ -568,7 +568,7 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         panic(err)
     }
 }
-// SetHistoryItems sets the historyItems property value. The historyItems property
+// SetHistoryItems sets the historyItems property value. Collection of history items for entities in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetHistoryItems(value []PlannerHistoryItemable)() {
     err := m.GetBackingStore().Set("historyItems", value)
     if err != nil {

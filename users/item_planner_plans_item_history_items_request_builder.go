@@ -14,7 +14,7 @@ import (
 type ItemPlannerPlansItemHistoryItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters get historyItems from users
+// ItemPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters collection of history items for entities in the plan. Read-only. Nullable.
 type ItemPlannerPlansItemHistoryItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewItemPlannerPlansItemHistoryItemsRequestBuilder(rawUrl string, requestAda
 func (m *ItemPlannerPlansItemHistoryItemsRequestBuilder) Count()(*ItemPlannerPlansItemHistoryItemsCountRequestBuilder) {
     return NewItemPlannerPlansItemHistoryItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get historyItems from users
+// Get collection of history items for entities in the plan. Read-only. Nullable.
 // returns a PlannerHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemHistoryItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemHistoryItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerHistoryItemCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemPlannerPlansItemHistoryItemsRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerHistoryItemable), nil
 }
-// ToGetRequestInformation get historyItems from users
+// ToGetRequestInformation collection of history items for entities in the plan. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemHistoryItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemHistoryItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
