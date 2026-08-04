@@ -213,6 +213,11 @@ func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) ToP
     }
     return requestInfo, nil
 }
+// TransferPrincipalOwnership provides operations to call the transferPrincipalOwnership method.
+// returns a *FileStorageDeletedContainersItemTransferPrincipalOwnershipRequestBuilder when successful
+func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) TransferPrincipalOwnership()(*FileStorageDeletedContainersItemTransferPrincipalOwnershipRequestBuilder) {
+    return NewFileStorageDeletedContainersItemTransferPrincipalOwnershipRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Unarchive provides operations to call the unarchive method.
 // returns a *FileStorageDeletedContainersItemUnarchiveRequestBuilder when successful
 func (m *FileStorageDeletedContainersFileStorageContainerItemRequestBuilder) Unarchive()(*FileStorageDeletedContainersItemUnarchiveRequestBuilder) {

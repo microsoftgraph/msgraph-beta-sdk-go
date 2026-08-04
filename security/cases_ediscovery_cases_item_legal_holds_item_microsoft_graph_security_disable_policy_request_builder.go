@@ -33,8 +33,11 @@ func NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolic
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action disablePolicy
+// Post disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-disablepolicy?view=graph-rest-beta
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePoli
     }
     return nil
 }
-// ToPostRequestInformation invoke action disablePolicy
+// ToPostRequestInformation disable an eDiscovery hold policy (legal hold) to release the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityDisablePolicyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

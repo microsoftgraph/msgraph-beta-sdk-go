@@ -19,6 +19,8 @@ func NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody()(*BackupRestoreBro
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
+    optimizedBrowseValue := false
+    m.SetOptimizedBrowse(&optimizedBrowseValue)
     return m
 }
 // CreateBackupRestoreBrowseSessionsItemBrowsePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -102,6 +104,16 @@ func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFieldDeseriali
         }
         return nil
     }
+    res["optimizedBrowse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOptimizedBrowse(val)
+        }
+        return nil
+    }
     res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseBrowseQueryOrder)
         if err != nil {
@@ -123,6 +135,18 @@ func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFilter()(*stri
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOptimizedBrowse gets the optimizedBrowse property value. The optimizedBrowse property
+// returns a *bool when successful
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetOptimizedBrowse()(*bool) {
+    val, err := m.GetBackingStore().Get("optimizedBrowse")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -155,6 +179,12 @@ func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) Serialize(writer 
     }
     {
         err := writer.WriteStringValue("filter", m.GetFilter())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("optimizedBrowse", m.GetOptimizedBrowse())
         if err != nil {
             return err
         }
@@ -206,6 +236,13 @@ func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetFilter(value *
         panic(err)
     }
 }
+// SetOptimizedBrowse sets the optimizedBrowse property value. The optimizedBrowse property
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOptimizedBrowse(value *bool)() {
+    err := m.GetBackingStore().Set("optimizedBrowse", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)() {
     err := m.GetBackingStore().Set("orderBy", value)
@@ -221,10 +258,12 @@ type BackupRestoreBrowseSessionsItemBrowsePostRequestBodyable interface {
     GetBrowseLocationItemKey()(*string)
     GetBrowseResourceType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)
     GetFilter()(*string)
+    GetOptimizedBrowse()(*bool)
     GetOrderBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBrowseLocationItemKey(value *string)()
     SetBrowseResourceType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)()
     SetFilter(value *string)()
+    SetOptimizedBrowse(value *bool)()
     SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)()
 }

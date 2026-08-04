@@ -54,14 +54,14 @@ func (m *ChatMessage) GetAttachments()([]ChatMessageAttachmentable) {
     return nil
 }
 // GetBody gets the body property value. The body property
-// returns a ItemBodyable when successful
-func (m *ChatMessage) GetBody()(ItemBodyable) {
+// returns a ChatMessageBodyable when successful
+func (m *ChatMessage) GetBody()(ChatMessageBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(ItemBodyable)
+        return val.(ChatMessageBodyable)
     }
     return nil
 }
@@ -158,12 +158,12 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateChatMessageBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(ItemBodyable))
+            m.SetBody(val.(ChatMessageBodyable))
         }
         return nil
     }
@@ -837,7 +837,7 @@ func (m *ChatMessage) SetAttachments(value []ChatMessageAttachmentable)() {
     }
 }
 // SetBody sets the body property value. The body property
-func (m *ChatMessage) SetBody(value ItemBodyable)() {
+func (m *ChatMessage) SetBody(value ChatMessageBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
         panic(err)
@@ -1008,7 +1008,7 @@ type ChatMessageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAttachments()([]ChatMessageAttachmentable)
-    GetBody()(ItemBodyable)
+    GetBody()(ChatMessageBodyable)
     GetChannelIdentity()(ChannelIdentityable)
     GetChatId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1033,7 +1033,7 @@ type ChatMessageable interface {
     GetSummary()(*string)
     GetWebUrl()(*string)
     SetAttachments(value []ChatMessageAttachmentable)()
-    SetBody(value ItemBodyable)()
+    SetBody(value ChatMessageBodyable)()
     SetChannelIdentity(value ChannelIdentityable)()
     SetChatId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

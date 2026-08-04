@@ -48,14 +48,14 @@ func (m *AiInteraction) GetAttachments()([]AiInteractionAttachmentable) {
     return nil
 }
 // GetBody gets the body property value. The body property
-// returns a ItemBodyable when successful
-func (m *AiInteraction) GetBody()(ItemBodyable) {
+// returns a ChatMessageBodyable when successful
+func (m *AiInteraction) GetBody()(ChatMessageBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(ItemBodyable)
+        return val.(ChatMessageBodyable)
     }
     return nil
 }
@@ -138,12 +138,12 @@ func (m *AiInteraction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateChatMessageBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(ItemBodyable))
+            m.SetBody(val.(ChatMessageBodyable))
         }
         return nil
     }
@@ -493,7 +493,7 @@ func (m *AiInteraction) SetAttachments(value []AiInteractionAttachmentable)() {
     }
 }
 // SetBody sets the body property value. The body property
-func (m *AiInteraction) SetBody(value ItemBodyable)() {
+func (m *AiInteraction) SetBody(value ChatMessageBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
         panic(err)
@@ -581,7 +581,7 @@ type AiInteractionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppClass()(*string)
     GetAttachments()([]AiInteractionAttachmentable)
-    GetBody()(ItemBodyable)
+    GetBody()(ChatMessageBodyable)
     GetContexts()([]AiInteractionContextable)
     GetConversationType()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -595,7 +595,7 @@ type AiInteractionable interface {
     GetSessionId()(*string)
     SetAppClass(value *string)()
     SetAttachments(value []AiInteractionAttachmentable)()
-    SetBody(value ItemBodyable)()
+    SetBody(value ChatMessageBodyable)()
     SetContexts(value []AiInteractionContextable)()
     SetConversationType(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

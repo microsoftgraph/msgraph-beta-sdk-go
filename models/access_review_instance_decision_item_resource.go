@@ -37,6 +37,8 @@ func CreateAccessReviewInstanceDecisionItemResourceFromDiscriminatorValue(parseN
                 switch *mappingValue {
                     case "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource":
                         return NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(), nil
+                    case "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource":
+                        return NewAccessReviewInstanceDecisionItemAccessPackageResource(), nil
                     case "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource":
                         return NewAccessReviewInstanceDecisionItemAzureRoleResource(), nil
                     case "#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource":
@@ -171,7 +173,7 @@ func (m *AccessReviewInstanceDecisionItemResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.
+// GetTypeEscaped gets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -262,7 +264,7 @@ func (m *AccessReviewInstanceDecisionItemResource) SetOdataType(value *string)()
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.
+// SetTypeEscaped sets the type property value. Type of resource. Types include: Group, ServicePrincipal, DirectoryRole, AzureRole, AccessPackage, AccessPackageAssignmentPolicy, and CustomDataProvidedResource.
 func (m *AccessReviewInstanceDecisionItemResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

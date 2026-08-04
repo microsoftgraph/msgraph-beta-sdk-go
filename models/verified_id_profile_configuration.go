@@ -25,7 +25,7 @@ func NewVerifiedIdProfileConfiguration()(*VerifiedIdProfileConfiguration) {
 func CreateVerifiedIdProfileConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVerifiedIdProfileConfiguration(), nil
 }
-// GetAcceptedIssuer gets the acceptedIssuer property value. Trusted Verified ID issuer.
+// GetAcceptedIssuer gets the acceptedIssuer property value. Trusted Verified ID issuer. Required.
 // returns a *string when successful
 func (m *VerifiedIdProfileConfiguration) GetAcceptedIssuer()(*string) {
     val, err := m.GetBackingStore().Get("acceptedIssuer")
@@ -55,7 +55,7 @@ func (m *VerifiedIdProfileConfiguration) GetAdditionalData()(map[string]any) {
 func (m *VerifiedIdProfileConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClaimBindings gets the claimBindings property value. Claim bindings from Verified ID to source attributes.
+// GetClaimBindings gets the claimBindings property value. Claim bindings from Verified ID to source attributes. Required.
 // returns a []ClaimBindingable when successful
 func (m *VerifiedIdProfileConfiguration) GetClaimBindings()([]ClaimBindingable) {
     val, err := m.GetBackingStore().Get("claimBindings")
@@ -175,7 +175,7 @@ func (m *VerifiedIdProfileConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Verified ID type.
+// GetTypeEscaped gets the type property value. Verified ID type. Required.
 // returns a *string when successful
 func (m *VerifiedIdProfileConfiguration) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -240,7 +240,7 @@ func (m *VerifiedIdProfileConfiguration) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAcceptedIssuer sets the acceptedIssuer property value. Trusted Verified ID issuer.
+// SetAcceptedIssuer sets the acceptedIssuer property value. Trusted Verified ID issuer. Required.
 func (m *VerifiedIdProfileConfiguration) SetAcceptedIssuer(value *string)() {
     err := m.GetBackingStore().Set("acceptedIssuer", value)
     if err != nil {
@@ -258,7 +258,7 @@ func (m *VerifiedIdProfileConfiguration) SetAdditionalData(value map[string]any)
 func (m *VerifiedIdProfileConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClaimBindings sets the claimBindings property value. Claim bindings from Verified ID to source attributes.
+// SetClaimBindings sets the claimBindings property value. Claim bindings from Verified ID to source attributes. Required.
 func (m *VerifiedIdProfileConfiguration) SetClaimBindings(value []ClaimBindingable)() {
     err := m.GetBackingStore().Set("claimBindings", value)
     if err != nil {
@@ -286,7 +286,7 @@ func (m *VerifiedIdProfileConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Verified ID type.
+// SetTypeEscaped sets the type property value. Verified ID type. Required.
 func (m *VerifiedIdProfileConfiguration) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

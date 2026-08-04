@@ -410,6 +410,22 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["remoteTenantGroups"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRemoteTenantGroupFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RemoteTenantGroupable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RemoteTenantGroupable)
+                }
+            }
+            m.SetRemoteTenantGroups(res)
+        }
+        return nil
+    }
     res["sharedEmailDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedEmailDomainFromDiscriminatorValue)
         if err != nil {
@@ -547,6 +563,18 @@ func (m *Directory) GetRecommendations()([]Recommendationable) {
     }
     if val != nil {
         return val.([]Recommendationable)
+    }
+    return nil
+}
+// GetRemoteTenantGroups gets the remoteTenantGroups property value. Collection of groups in remote Microsoft Entra tenants that are available in the directory.
+// returns a []RemoteTenantGroupable when successful
+func (m *Directory) GetRemoteTenantGroups()([]RemoteTenantGroupable) {
+    val, err := m.GetBackingStore().Get("remoteTenantGroups")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RemoteTenantGroupable)
     }
     return nil
 }
@@ -784,6 +812,18 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetRemoteTenantGroups() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteTenantGroups()))
+        for i, v := range m.GetRemoteTenantGroups() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("remoteTenantGroups", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSharedEmailDomains() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedEmailDomains()))
         for i, v := range m.GetSharedEmailDomains() {
@@ -942,6 +982,13 @@ func (m *Directory) SetRecommendations(value []Recommendationable)() {
         panic(err)
     }
 }
+// SetRemoteTenantGroups sets the remoteTenantGroups property value. Collection of groups in remote Microsoft Entra tenants that are available in the directory.
+func (m *Directory) SetRemoteTenantGroups(value []RemoteTenantGroupable)() {
+    err := m.GetBackingStore().Set("remoteTenantGroups", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharedEmailDomains sets the sharedEmailDomains property value. The sharedEmailDomains property
 func (m *Directory) SetSharedEmailDomains(value []SharedEmailDomainable)() {
     err := m.GetBackingStore().Set("sharedEmailDomains", value)
@@ -984,6 +1031,7 @@ type Directoryable interface {
     GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable)
     GetRecommendationConfiguration()(RecommendationConfigurationable)
     GetRecommendations()([]Recommendationable)
+    GetRemoteTenantGroups()([]RemoteTenantGroupable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
     GetTemplates()(Templateable)
@@ -1005,6 +1053,7 @@ type Directoryable interface {
     SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)()
     SetRecommendationConfiguration(value RecommendationConfigurationable)()
     SetRecommendations(value []Recommendationable)()
+    SetRemoteTenantGroups(value []RemoteTenantGroupable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()
     SetTemplates(value Templateable)()

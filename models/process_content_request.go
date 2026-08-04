@@ -91,6 +91,18 @@ func (m *ProcessContentRequest) GetDeviceMetadata()(DeviceMetadataable) {
     }
     return nil
 }
+// GetEvaluationScope gets the evaluationScope property value. The evaluationScope property
+// returns a EvaluationScopeable when successful
+func (m *ProcessContentRequest) GetEvaluationScope()(EvaluationScopeable) {
+    val, err := m.GetBackingStore().Get("evaluationScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EvaluationScopeable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProcessContentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -138,6 +150,16 @@ func (m *ProcessContentRequest) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetDeviceMetadata(val.(DeviceMetadataable))
+        }
+        return nil
+    }
+    res["evaluationScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEvaluationScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEvaluationScope(val.(EvaluationScopeable))
         }
         return nil
     }
@@ -242,6 +264,12 @@ func (m *ProcessContentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err := writer.WriteObjectValue("evaluationScope", m.GetEvaluationScope())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("integratedAppMetadata", m.GetIntegratedAppMetadata())
         if err != nil {
             return err
@@ -306,6 +334,13 @@ func (m *ProcessContentRequest) SetDeviceMetadata(value DeviceMetadataable)() {
         panic(err)
     }
 }
+// SetEvaluationScope sets the evaluationScope property value. The evaluationScope property
+func (m *ProcessContentRequest) SetEvaluationScope(value EvaluationScopeable)() {
+    err := m.GetBackingStore().Set("evaluationScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIntegratedAppMetadata sets the integratedAppMetadata property value. The integratedAppMetadata property
 func (m *ProcessContentRequest) SetIntegratedAppMetadata(value IntegratedApplicationMetadataable)() {
     err := m.GetBackingStore().Set("integratedAppMetadata", value)
@@ -336,6 +371,7 @@ type ProcessContentRequestable interface {
     GetContentEntries()([]ProcessContentMetadataBaseable)
     GetContextMetadata()(ContextMetadataable)
     GetDeviceMetadata()(DeviceMetadataable)
+    GetEvaluationScope()(EvaluationScopeable)
     GetIntegratedAppMetadata()(IntegratedApplicationMetadataable)
     GetOdataType()(*string)
     GetProtectedAppMetadata()(ProtectedApplicationMetadataable)
@@ -344,6 +380,7 @@ type ProcessContentRequestable interface {
     SetContentEntries(value []ProcessContentMetadataBaseable)()
     SetContextMetadata(value ContextMetadataable)()
     SetDeviceMetadata(value DeviceMetadataable)()
+    SetEvaluationScope(value EvaluationScopeable)()
     SetIntegratedAppMetadata(value IntegratedApplicationMetadataable)()
     SetOdataType(value *string)()
     SetProtectedAppMetadata(value ProtectedApplicationMetadataable)()

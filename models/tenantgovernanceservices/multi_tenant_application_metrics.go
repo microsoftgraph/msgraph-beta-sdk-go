@@ -37,6 +37,22 @@ func (m *MultiTenantApplicationMetrics) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["investigationHints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateActionStepFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ActionStepable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ActionStepable)
+                }
+            }
+            m.SetInvestigationHints(res)
+        }
+        return nil
+    }
     res["recent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMultiTenantApplicationMetricsRecentFromDiscriminatorValue)
         if err != nil {
@@ -58,6 +74,18 @@ func (m *MultiTenantApplicationMetrics) GetInitial()(MultiTenantApplicationMetri
     }
     if val != nil {
         return val.(MultiTenantApplicationMetricsInitialable)
+    }
+    return nil
+}
+// GetInvestigationHints gets the investigationHints property value. Ordered drill-in guidance for investigating multitenant application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=multiTenantApplicationMetrics($expand=investigationHints).
+// returns a []ActionStepable when successful
+func (m *MultiTenantApplicationMetrics) GetInvestigationHints()([]ActionStepable) {
+    val, err := m.GetBackingStore().Get("investigationHints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActionStepable)
     }
     return nil
 }
@@ -85,6 +113,18 @@ func (m *MultiTenantApplicationMetrics) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetInvestigationHints() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInvestigationHints()))
+        for i, v := range m.GetInvestigationHints() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("investigationHints", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("recent", m.GetRecent())
         if err != nil {
@@ -100,6 +140,13 @@ func (m *MultiTenantApplicationMetrics) SetInitial(value MultiTenantApplicationM
         panic(err)
     }
 }
+// SetInvestigationHints sets the investigationHints property value. Ordered drill-in guidance for investigating multitenant application counts. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=multiTenantApplicationMetrics($expand=investigationHints).
+func (m *MultiTenantApplicationMetrics) SetInvestigationHints(value []ActionStepable)() {
+    err := m.GetBackingStore().Set("investigationHints", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecent sets the recent property value. The recent property
 func (m *MultiTenantApplicationMetrics) SetRecent(value MultiTenantApplicationMetricsRecentable)() {
     err := m.GetBackingStore().Set("recent", value)
@@ -111,7 +158,9 @@ type MultiTenantApplicationMetricsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInitial()(MultiTenantApplicationMetricsInitialable)
+    GetInvestigationHints()([]ActionStepable)
     GetRecent()(MultiTenantApplicationMetricsRecentable)
     SetInitial(value MultiTenantApplicationMetricsInitialable)()
+    SetInvestigationHints(value []ActionStepable)()
     SetRecent(value MultiTenantApplicationMetricsRecentable)()
 }

@@ -1283,8 +1283,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDirectorySettingTemplate(), nil
                     case "#microsoft.graph.distributionList":
                         return NewDistributionList(), nil
-                    case "#microsoft.graph.distributionListMember":
-                        return NewDistributionListMember(), nil
                     case "#microsoft.graph.dlpEvaluatePoliciesJobResponse":
                         return NewDlpEvaluatePoliciesJobResponse(), nil
                     case "#microsoft.graph.document":
@@ -2169,6 +2167,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftApplicationDataAccessSettings":
                         return NewMicrosoftApplicationDataAccessSettings(), nil
+                    case "#microsoft.graph.microsoftAppsFileStorageContainerUsage":
+                        return NewMicrosoftAppsFileStorageContainerUsage(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod":
                         return NewMicrosoftAuthenticatorAuthenticationMethod(), nil
                     case "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration":
@@ -2775,6 +2775,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRemoteAssistanceSettings(), nil
                     case "#microsoft.graph.remoteDesktopSecurityConfiguration":
                         return NewRemoteDesktopSecurityConfiguration(), nil
+                    case "#microsoft.graph.remoteTenantGroup":
+                        return NewRemoteTenantGroup(), nil
                     case "#microsoft.graph.removeFromLobbyOperation":
                         return NewRemoveFromLobbyOperation(), nil
                     case "#microsoft.graph.reportRoot":
@@ -3357,6 +3359,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUnifiedRoleScheduleBase(), nil
                     case "#microsoft.graph.unifiedRoleScheduleInstanceBase":
                         return NewUnifiedRoleScheduleInstanceBase(), nil
+                    case "#microsoft.graph.unifiedRoot":
+                        return NewUnifiedRoot(), nil
                     case "#microsoft.graph.unifiedStorageQuota":
                         return NewUnifiedStorageQuota(), nil
                     case "#microsoft.graph.unitMap":

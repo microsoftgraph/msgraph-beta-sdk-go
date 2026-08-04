@@ -44,6 +44,16 @@ type AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderPatchReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AcceptRecommendations provides operations to call the acceptRecommendations method.
+// returns a *AccessReviewsInstancesItemStagesItemAcceptRecommendationsRequestBuilder when successful
+func (m *AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) AcceptRecommendations()(*AccessReviewsInstancesItemStagesItemAcceptRecommendationsRequestBuilder) {
+    return NewAccessReviewsInstancesItemStagesItemAcceptRecommendationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BatchRecordDecisions provides operations to call the batchRecordDecisions method.
+// returns a *AccessReviewsInstancesItemStagesItemBatchRecordDecisionsRequestBuilder when successful
+func (m *AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) BatchRecordDecisions()(*AccessReviewsInstancesItemStagesItemBatchRecordDecisionsRequestBuilder) {
+    return NewAccessReviewsInstancesItemStagesItemBatchRecordDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderInternal instantiates a new AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder and sets the default values.
 func NewAccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder) {
     m := &AccessReviewsInstancesItemStagesAccessReviewStageItemRequestBuilder{

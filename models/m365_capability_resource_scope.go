@@ -91,7 +91,7 @@ func (m *M365CapabilityResourceScope) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. The ID of the resource to modify (a user or group ID).
+// GetResourceId gets the resourceId property value. The ID of the resource to modify. The value is either All, to apply the capability to all resources of the type specified by resourceType (all users or all groups), or the GUID of a specific user or group.
 // returns a *string when successful
 func (m *M365CapabilityResourceScope) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
@@ -162,7 +162,7 @@ func (m *M365CapabilityResourceScope) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The ID of the resource to modify (a user or group ID).
+// SetResourceId sets the resourceId property value. The ID of the resource to modify. The value is either All, to apply the capability to all resources of the type specified by resourceType (all users or all groups), or the GUID of a specific user or group.
 func (m *M365CapabilityResourceScope) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {

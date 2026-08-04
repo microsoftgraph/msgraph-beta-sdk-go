@@ -36,18 +36,6 @@ func (m *DistributionList) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDistributionListMembers gets the distributionListMembers property value. The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
-// returns a []DistributionListMemberable when successful
-func (m *DistributionList) GetDistributionListMembers()([]DistributionListMemberable) {
-    val, err := m.GetBackingStore().Get("distributionListMembers")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DistributionListMemberable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DistributionList) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -59,22 +47,6 @@ func (m *DistributionList) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["distributionListMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDistributionListMemberFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DistributionListMemberable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DistributionListMemberable)
-                }
-            }
-            m.SetDistributionListMembers(res)
         }
         return nil
     }
@@ -192,18 +164,6 @@ func (m *DistributionList) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetDistributionListMembers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDistributionListMembers()))
-        for i, v := range m.GetDistributionListMembers() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("distributionListMembers", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
@@ -249,13 +209,6 @@ func (m *DistributionList) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDistributionListMembers sets the distributionListMembers property value. The expanded members of the distribution list. Each member contains detailed information including resolved email addresses. Read-only.
-func (m *DistributionList) SetDistributionListMembers(value []DistributionListMemberable)() {
-    err := m.GetBackingStore().Set("distributionListMembers", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetMembers sets the members property value. The list of members in the distribution list. Not returned by default; use $select=members to include.
 func (m *DistributionList) SetMembers(value []Memberable)() {
     err := m.GetBackingStore().Set("members", value)
@@ -288,13 +241,11 @@ type DistributionListable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetDistributionListMembers()([]DistributionListMemberable)
     GetMembers()([]Memberable)
     GetNotes()(*string)
     GetPersonIdentifier()(*string)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     SetDisplayName(value *string)()
-    SetDistributionListMembers(value []DistributionListMemberable)()
     SetMembers(value []Memberable)()
     SetNotes(value *string)()
     SetPersonIdentifier(value *string)()

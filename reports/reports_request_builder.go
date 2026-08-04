@@ -297,20 +297,20 @@ func (m *ReportsRequestBuilder) GetMailboxUsageQuotaStatusMailboxCountsWithPerio
 func (m *ReportsRequestBuilder) GetMailboxUsageStorageWithPeriod(period *string)(*GetMailboxUsageStorageWithPeriodRequestBuilder) {
     return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
-// GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
-// returns a *GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilder) {
-    return NewGetMicrosoft365CopilotUsageUserDetailWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
+// GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+// returns a *GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersion(period *string)(*GetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUsageUserDetailWithPeriodversionVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
-// GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUserCountSummary method.
-// returns a *GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilder) {
-    return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
+// GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+// returns a *GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersion(period *string)(*GetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodversionVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
-// GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion provides operations to call the getMicrosoft365CopilotUserCountTrend method.
-// returns a *GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder when successful
-func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersion(period *string, version *string)(*GetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilder) {
-    return NewGetMicrosoft365CopilotUserCountTrendWithPeriodWithVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period, version)
+// GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+// returns a *GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersion(period *string)(*GetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
 // GetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
 // returns a *GetOffice365ActivationCountsRequestBuilder when successful
@@ -456,6 +456,26 @@ func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithDate(date *i8
 // returns a *GetSharePointActivityUserDetailWithPeriodRequestBuilder when successful
 func (m *ReportsRequestBuilder) GetSharePointActivityUserDetailWithPeriod(period *string)(*GetSharePointActivityUserDetailWithPeriodRequestBuilder) {
     return NewGetSharePointActivityUserDetailWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetSharePointApiUsageWithDatereportTypeReportType provides operations to call the getSharePointApiUsage method.
+// returns a *GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetSharePointApiUsageWithDatereportTypeReportType(date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilder) {
+    return NewGetSharePointApiUsageWithDatereportTypeReportTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, date)
+}
+// GetSharePointApiUsageWithDateWithAppIdreportTypeReportType provides operations to call the getSharePointApiUsage method.
+// returns a *GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetSharePointApiUsageWithDateWithAppIdreportTypeReportType(appId *string, date *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*GetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilder) {
+    return NewGetSharePointApiUsageWithDateWithAppIdreportTypeReportTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId, date)
+}
+// GetSharePointApiUsageWithPeriodreportTypeReportType provides operations to call the getSharePointApiUsage method.
+// returns a *GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetSharePointApiUsageWithPeriodreportTypeReportType(period *string)(*GetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilder) {
+    return NewGetSharePointApiUsageWithPeriodreportTypeReportTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType provides operations to call the getSharePointApiUsage method.
+// returns a *GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportType(appId *string, period *string)(*GetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilder) {
+    return NewGetSharePointApiUsageWithPeriodWithAppIdreportTypeReportTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId, period)
 }
 // GetSharePointSiteUsageDetailWithDate provides operations to call the getSharePointSiteUsageDetail method.
 // returns a *GetSharePointSiteUsageDetailWithDateRequestBuilder when successful
@@ -781,6 +801,11 @@ func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailures()(*ManagedDev
 // returns a *ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder when successful
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentTopFailuresWithPeriod(period *string)(*ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder) {
     return NewManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// MicrosoftAppsFileStorageContainerUsageSummary provides operations to manage the microsoftAppsFileStorageContainerUsageSummary property of the microsoft.graph.reportRoot entity.
+// returns a *MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder when successful
+func (m *ReportsRequestBuilder) MicrosoftAppsFileStorageContainerUsageSummary()(*MicrosoftAppsFileStorageContainerUsageSummaryRequestBuilder) {
+    return NewMicrosoftAppsFileStorageContainerUsageSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MonthlyPrintUsageByPrinter provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
 // returns a *MonthlyPrintUsageByPrinterRequestBuilder when successful

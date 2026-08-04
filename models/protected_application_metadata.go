@@ -50,7 +50,29 @@ func (m *ProtectedApplicationMetadata) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["sourceLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePolicyLocationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceLocation(val.(PolicyLocationable))
+        }
+        return nil
+    }
     return res
+}
+// GetSourceLocation gets the sourceLocation property value. The sourceLocation property
+// returns a PolicyLocationable when successful
+func (m *ProtectedApplicationMetadata) GetSourceLocation()(PolicyLocationable) {
+    val, err := m.GetBackingStore().Get("sourceLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PolicyLocationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ProtectedApplicationMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -64,6 +86,12 @@ func (m *ProtectedApplicationMetadata) Serialize(writer i878a80d2330e89d26896388
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("sourceLocation", m.GetSourceLocation())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetApplicationLocation sets the applicationLocation property value. The client (application) ID of the Microsoft Entra application. Required.
@@ -73,9 +101,18 @@ func (m *ProtectedApplicationMetadata) SetApplicationLocation(value PolicyLocati
         panic(err)
     }
 }
+// SetSourceLocation sets the sourceLocation property value. The sourceLocation property
+func (m *ProtectedApplicationMetadata) SetSourceLocation(value PolicyLocationable)() {
+    err := m.GetBackingStore().Set("sourceLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ProtectedApplicationMetadataable interface {
     IntegratedApplicationMetadataable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApplicationLocation()(PolicyLocationable)
+    GetSourceLocation()(PolicyLocationable)
     SetApplicationLocation(value PolicyLocationable)()
+    SetSourceLocation(value PolicyLocationable)()
 }

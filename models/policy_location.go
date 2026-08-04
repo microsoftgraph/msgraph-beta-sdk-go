@@ -39,6 +39,8 @@ func CreatePolicyLocationFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewPolicyLocationApplication(), nil
                     case "#microsoft.graph.policyLocationDomain":
                         return NewPolicyLocationDomain(), nil
+                    case "#microsoft.graph.policyLocationTool":
+                        return NewPolicyLocationTool(), nil
                     case "#microsoft.graph.policyLocationUrl":
                         return NewPolicyLocationUrl(), nil
                 }

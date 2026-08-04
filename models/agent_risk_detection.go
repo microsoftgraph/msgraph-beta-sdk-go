@@ -47,7 +47,7 @@ func (m *AgentRiskDetection) GetAdditionalInfo()(*string) {
     }
     return nil
 }
-// GetAgentDisplayName gets the agentDisplayName property value. Name of the agent.  Supports $filter (eq, startsWith).
+// GetAgentDisplayName gets the agentDisplayName property value. Name of the agent. Deprecated. Use displayName instead. This property will be removed after 2027-04-28.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *AgentRiskDetection) GetAgentDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("agentDisplayName")
@@ -59,7 +59,7 @@ func (m *AgentRiskDetection) GetAgentDisplayName()(*string) {
     }
     return nil
 }
-// GetAgentId gets the agentId property value. The unique identifier for the agent. This is equivalent to 'id' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).
+// GetAgentId gets the agentId property value. The unique identifier for the agent. Deprecated. Use identityId instead. This property will be removed after 2027-04-28. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *AgentRiskDetection) GetAgentId()(*string) {
     val, err := m.GetBackingStore().Get("agentId")
@@ -119,7 +119,7 @@ func (m *AgentRiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) 
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Human-readable name of the identity associated with this risk detection.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *AgentRiskDetection) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -347,7 +347,7 @@ func (m *AgentRiskDetection) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIdentityId gets the identityId property value. The identityId property
+// GetIdentityId gets the identityId property value. Unique identifier of the identity associated with this risk detection.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *AgentRiskDetection) GetIdentityId()(*string) {
     val, err := m.GetBackingStore().Get("identityId")
@@ -644,14 +644,14 @@ func (m *AgentRiskDetection) SetAdditionalInfo(value *string)() {
         panic(err)
     }
 }
-// SetAgentDisplayName sets the agentDisplayName property value. Name of the agent.  Supports $filter (eq, startsWith).
+// SetAgentDisplayName sets the agentDisplayName property value. Name of the agent. Deprecated. Use displayName instead. This property will be removed after 2027-04-28.  Supports $filter (eq, startsWith).
 func (m *AgentRiskDetection) SetAgentDisplayName(value *string)() {
     err := m.GetBackingStore().Set("agentDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAgentId sets the agentId property value. The unique identifier for the agent. This is equivalent to 'id' to the specific agent type. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).
+// SetAgentId sets the agentId property value. The unique identifier for the agent. Deprecated. Use identityId instead. This property will be removed after 2027-04-28. See riskyAgentIdentity, riskyAgentIdentityBlueprintPrincipal, and riskyAgentUser.  Supports $filter (eq, startsWith).
 func (m *AgentRiskDetection) SetAgentId(value *string)() {
     err := m.GetBackingStore().Set("agentId", value)
     if err != nil {
@@ -686,14 +686,14 @@ func (m *AgentRiskDetection) SetDetectionTimingType(value *RiskDetectionTimingTy
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Human-readable name of the identity associated with this risk detection.  Supports $filter (eq, startsWith).
 func (m *AgentRiskDetection) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentityId sets the identityId property value. The identityId property
+// SetIdentityId sets the identityId property value. Unique identifier of the identity associated with this risk detection.  Supports $filter (eq, startsWith).
 func (m *AgentRiskDetection) SetIdentityId(value *string)() {
     err := m.GetBackingStore().Set("identityId", value)
     if err != nil {

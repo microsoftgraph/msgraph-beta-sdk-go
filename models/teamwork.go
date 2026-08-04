@@ -196,7 +196,7 @@ func (m *Teamwork) GetIsTeamsEnabled()(*bool) {
     }
     return nil
 }
-// GetMessaging gets the messaging property value. The messaging property
+// GetMessaging gets the messaging property value. The messaging functionality, including custom emojis.
 // returns a TeamworkMessagingable when successful
 func (m *Teamwork) GetMessaging()(TeamworkMessagingable) {
     val, err := m.GetBackingStore().Get("messaging")
@@ -376,7 +376,7 @@ func (m *Teamwork) SetIsTeamsEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetMessaging sets the messaging property value. The messaging property
+// SetMessaging sets the messaging property value. The messaging functionality, including custom emojis.
 func (m *Teamwork) SetMessaging(value TeamworkMessagingable)() {
     err := m.GetBackingStore().Set("messaging", value)
     if err != nil {

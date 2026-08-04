@@ -40,10 +40,42 @@ func CreatePolicyTipActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     }
     return NewPolicyTipAction(), nil
 }
+// GetComplianceUrl gets the complianceUrl property value. The complianceUrl property
+// returns a *string when successful
+func (m *PolicyTipAction) GetComplianceUrl()(*string) {
+    val, err := m.GetBackingStore().Get("complianceUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PolicyTipAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DlpActionInfo.GetFieldDeserializers()
+    res["complianceUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetComplianceUrl(val)
+        }
+        return nil
+    }
+    res["matchedConditionsDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMatchedConditionsDescription(val)
+        }
+        return nil
+    }
     res["policyTip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -55,6 +87,18 @@ func (m *PolicyTipAction) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetMatchedConditionsDescription gets the matchedConditionsDescription property value. The matchedConditionsDescription property
+// returns a *string when successful
+func (m *PolicyTipAction) GetMatchedConditionsDescription()(*string) {
+    val, err := m.GetBackingStore().Get("matchedConditionsDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPolicyTip gets the policyTip property value. The text of the policy tip that explains what triggered the DLP policy. Developers can display this information to users in the app.
 // returns a *string when successful
@@ -75,12 +119,38 @@ func (m *PolicyTipAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteStringValue("complianceUrl", m.GetComplianceUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("matchedConditionsDescription", m.GetMatchedConditionsDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("policyTip", m.GetPolicyTip())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetComplianceUrl sets the complianceUrl property value. The complianceUrl property
+func (m *PolicyTipAction) SetComplianceUrl(value *string)() {
+    err := m.GetBackingStore().Set("complianceUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMatchedConditionsDescription sets the matchedConditionsDescription property value. The matchedConditionsDescription property
+func (m *PolicyTipAction) SetMatchedConditionsDescription(value *string)() {
+    err := m.GetBackingStore().Set("matchedConditionsDescription", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPolicyTip sets the policyTip property value. The text of the policy tip that explains what triggered the DLP policy. Developers can display this information to users in the app.
 func (m *PolicyTipAction) SetPolicyTip(value *string)() {
@@ -92,6 +162,10 @@ func (m *PolicyTipAction) SetPolicyTip(value *string)() {
 type PolicyTipActionable interface {
     DlpActionInfoable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetComplianceUrl()(*string)
+    GetMatchedConditionsDescription()(*string)
     GetPolicyTip()(*string)
+    SetComplianceUrl(value *string)()
+    SetMatchedConditionsDescription(value *string)()
     SetPolicyTip(value *string)()
 }

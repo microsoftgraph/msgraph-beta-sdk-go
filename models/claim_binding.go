@@ -113,7 +113,7 @@ func (m *ClaimBinding) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourceAttribute gets the sourceAttribute property value. Source attribute value
+// GetSourceAttribute gets the sourceAttribute property value. The source attribute from the directory or credential.
 // returns a *string when successful
 func (m *ClaimBinding) GetSourceAttribute()(*string) {
     val, err := m.GetBackingStore().Get("sourceAttribute")
@@ -125,7 +125,7 @@ func (m *ClaimBinding) GetSourceAttribute()(*string) {
     }
     return nil
 }
-// GetVerifiedIdClaim gets the verifiedIdClaim property value. Entra ID attribute value
+// GetVerifiedIdClaim gets the verifiedIdClaim property value. The claim name in the verified ID credential.
 // returns a *string when successful
 func (m *ClaimBinding) GetVerifiedIdClaim()(*string) {
     val, err := m.GetBackingStore().Get("verifiedIdClaim")
@@ -197,14 +197,14 @@ func (m *ClaimBinding) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourceAttribute sets the sourceAttribute property value. Source attribute value
+// SetSourceAttribute sets the sourceAttribute property value. The source attribute from the directory or credential.
 func (m *ClaimBinding) SetSourceAttribute(value *string)() {
     err := m.GetBackingStore().Set("sourceAttribute", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerifiedIdClaim sets the verifiedIdClaim property value. Entra ID attribute value
+// SetVerifiedIdClaim sets the verifiedIdClaim property value. The claim name in the verified ID credential.
 func (m *ClaimBinding) SetVerifiedIdClaim(value *string)() {
     err := m.GetBackingStore().Set("verifiedIdClaim", value)
     if err != nil {

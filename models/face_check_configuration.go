@@ -79,7 +79,7 @@ func (m *FaceCheckConfiguration) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. Defines if Face Check is required. Currently must always be true.
+// GetIsEnabled gets the isEnabled property value. Indicates whether Face Check is required. Currently must be true.
 // returns a *bool when successful
 func (m *FaceCheckConfiguration) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -103,7 +103,7 @@ func (m *FaceCheckConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourcePhotoClaimName gets the sourcePhotoClaimName property value. Source of photo to validate Face Check against. Currently must always be portrait
+// GetSourcePhotoClaimName gets the sourcePhotoClaimName property value. The source claim name for the photo used to validate Face Check. Currently must be portrait.
 // returns a *string when successful
 func (m *FaceCheckConfiguration) GetSourcePhotoClaimName()(*string) {
     val, err := m.GetBackingStore().Get("sourcePhotoClaimName")
@@ -154,7 +154,7 @@ func (m *FaceCheckConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *FaceCheckConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsEnabled sets the isEnabled property value. Defines if Face Check is required. Currently must always be true.
+// SetIsEnabled sets the isEnabled property value. Indicates whether Face Check is required. Currently must be true.
 func (m *FaceCheckConfiguration) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
@@ -168,7 +168,7 @@ func (m *FaceCheckConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourcePhotoClaimName sets the sourcePhotoClaimName property value. Source of photo to validate Face Check against. Currently must always be portrait
+// SetSourcePhotoClaimName sets the sourcePhotoClaimName property value. The source claim name for the photo used to validate Face Check. Currently must be portrait.
 func (m *FaceCheckConfiguration) SetSourcePhotoClaimName(value *string)() {
     err := m.GetBackingStore().Set("sourcePhotoClaimName", value)
     if err != nil {
