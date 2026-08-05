@@ -124,6 +124,16 @@ func (m *AccessReviewSet) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["unified"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUnifiedRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnified(val.(UnifiedRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetHistoryDefinitions gets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
@@ -159,6 +169,18 @@ func (m *AccessReviewSet) GetPolicy()(AccessReviewPolicyable) {
     }
     if val != nil {
         return val.(AccessReviewPolicyable)
+    }
+    return nil
+}
+// GetUnified gets the unified property value. Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.
+// returns a UnifiedRootable when successful
+func (m *AccessReviewSet) GetUnified()(UnifiedRootable) {
+    val, err := m.GetBackingStore().Get("unified")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UnifiedRootable)
     }
     return nil
 }
@@ -222,6 +244,12 @@ func (m *AccessReviewSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("unified", m.GetUnified())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDecisions sets the decisions property value. Represents a Microsoft Entra access review decision on an instance of a review.
@@ -259,6 +287,13 @@ func (m *AccessReviewSet) SetPolicy(value AccessReviewPolicyable)() {
         panic(err)
     }
 }
+// SetUnified sets the unified property value. Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.
+func (m *AccessReviewSet) SetUnified(value UnifiedRootable)() {
+    err := m.GetBackingStore().Set("unified", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AccessReviewSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -267,9 +302,11 @@ type AccessReviewSetable interface {
     GetHistoryDefinitions()([]AccessReviewHistoryDefinitionable)
     GetInstances()([]AccessReviewInstanceable)
     GetPolicy()(AccessReviewPolicyable)
+    GetUnified()(UnifiedRootable)
     SetDecisions(value []AccessReviewInstanceDecisionItemable)()
     SetDefinitions(value []AccessReviewScheduleDefinitionable)()
     SetHistoryDefinitions(value []AccessReviewHistoryDefinitionable)()
     SetInstances(value []AccessReviewInstanceable)()
     SetPolicy(value AccessReviewPolicyable)()
+    SetUnified(value UnifiedRootable)()
 }

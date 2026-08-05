@@ -24,14 +24,14 @@ func CreateChatMessageInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     return NewChatMessageInfo(), nil
 }
 // GetBody gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
-// returns a ItemBodyable when successful
-func (m *ChatMessageInfo) GetBody()(ItemBodyable) {
+// returns a ChatMessageBodyable when successful
+func (m *ChatMessageInfo) GetBody()(ChatMessageBodyable) {
     val, err := m.GetBackingStore().Get("body")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(ItemBodyable)
+        return val.(ChatMessageBodyable)
     }
     return nil
 }
@@ -64,12 +64,12 @@ func (m *ChatMessageInfo) GetEventDetail()(EventMessageDetailable) {
 func (m *ChatMessageInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["body"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateChatMessageBodyFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBody(val.(ItemBodyable))
+            m.SetBody(val.(ChatMessageBodyable))
         }
         return nil
     }
@@ -207,7 +207,7 @@ func (m *ChatMessageInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     return nil
 }
 // SetBody sets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn't return @mentions and attachments.
-func (m *ChatMessageInfo) SetBody(value ItemBodyable)() {
+func (m *ChatMessageInfo) SetBody(value ChatMessageBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {
         panic(err)
@@ -251,13 +251,13 @@ func (m *ChatMessageInfo) SetMessageType(value *ChatMessageType)() {
 type ChatMessageInfoable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBody()(ItemBodyable)
+    GetBody()(ChatMessageBodyable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEventDetail()(EventMessageDetailable)
     GetFrom()(ChatMessageFromIdentitySetable)
     GetIsDeleted()(*bool)
     GetMessageType()(*ChatMessageType)
-    SetBody(value ItemBodyable)()
+    SetBody(value ChatMessageBodyable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventDetail(value EventMessageDetailable)()
     SetFrom(value ChatMessageFromIdentitySetable)()

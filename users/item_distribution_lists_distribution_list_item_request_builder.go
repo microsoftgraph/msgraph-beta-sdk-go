@@ -83,11 +83,6 @@ func (m *ItemDistributionListsDistributionListItemRequestBuilder) Delete(ctx con
 func (m *ItemDistributionListsDistributionListItemRequestBuilder) DeleteMembers()(*ItemDistributionListsItemDeleteMembersRequestBuilder) {
     return NewItemDistributionListsItemDeleteMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// DistributionListMembers provides operations to manage the distributionListMembers property of the microsoft.graph.distributionList entity.
-// returns a *ItemDistributionListsItemDistributionListMembersRequestBuilder when successful
-func (m *ItemDistributionListsDistributionListItemRequestBuilder) DistributionListMembers()(*ItemDistributionListsItemDistributionListMembersRequestBuilder) {
-    return NewItemDistributionListsItemDistributionListMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get the personal distribution lists in the user's mailbox. Read-only. Nullable.
 // returns a DistributionListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

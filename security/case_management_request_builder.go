@@ -49,6 +49,11 @@ type CaseManagementRequestBuilderPatchRequestConfiguration struct {
 func (m *CaseManagementRequestBuilder) Cases()(*CaseManagementCasesRequestBuilder) {
     return NewCaseManagementCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CaseTypeConfigurations provides operations to manage the caseTypeConfigurations property of the microsoft.graph.security.caseManagementRoot entity.
+// returns a *CaseManagementCaseTypeConfigurationsRequestBuilder when successful
+func (m *CaseManagementRequestBuilder) CaseTypeConfigurations()(*CaseManagementCaseTypeConfigurationsRequestBuilder) {
+    return NewCaseManagementCaseTypeConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewCaseManagementRequestBuilderInternal instantiates a new CaseManagementRequestBuilder and sets the default values.
 func NewCaseManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CaseManagementRequestBuilder) {
     m := &CaseManagementRequestBuilder{

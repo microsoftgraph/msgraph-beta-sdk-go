@@ -57,8 +57,11 @@ func NewCrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNam
     urlParams["request-raw-url"] = rawUrl
     return NewCrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property m365Capabilities for policies
+// Delete delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-delete-m365capabilities?view=graph-rest-beta
 func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +96,12 @@ func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable), nil
 }
-// Patch update the navigation property m365Capabilities in policies
+// Patch update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
 // returns a M365CapabilityBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-update-m365capabilities?view=graph-rest-beta
 func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable, requestConfiguration *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable), nil
 }
-// ToDeleteRequestInformation delete navigation property m365Capabilities for policies
+// ToDeleteRequestInformation delete a Microsoft 365 cross-tenant capability from a partner organization in the cross-tenant access policy.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNa
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property m365Capabilities in policies
+// ToPatchRequestInformation update an existing Microsoft 365 cross-tenant capability for a partner organization in the cross-tenant access policy.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.M365CapabilityBaseable, requestConfiguration *CrossTenantAccessPolicyPartnersItemM365CapabilitiesM365CapabilityBaseNameItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

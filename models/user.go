@@ -2647,6 +2647,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["sponsorOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetSponsorOf(res)
+        }
+        return nil
+    }
     res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -3884,6 +3900,18 @@ func (m *User) GetSolutions()(UserSolutionRootable) {
     }
     if val != nil {
         return val.(UserSolutionRootable)
+    }
+    return nil
+}
+// GetSponsorOf gets the sponsorOf property value. Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that's a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.
+// returns a []DirectoryObjectable when successful
+func (m *User) GetSponsorOf()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("sponsorOf")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
     }
     return nil
 }
@@ -5285,6 +5313,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetSponsorOf() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsorOf()))
+        for i, v := range m.GetSponsorOf() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sponsorOf", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSponsors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
         for i, v := range m.GetSponsors() {
@@ -6444,6 +6484,13 @@ func (m *User) SetSolutions(value UserSolutionRootable)() {
         panic(err)
     }
 }
+// SetSponsorOf sets the sponsorOf property value. Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that's a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.
+func (m *User) SetSponsorOf(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("sponsorOf", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSponsors sets the sponsors property value. The users and groups responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
 func (m *User) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
@@ -6694,6 +6741,7 @@ type Userable interface {
     GetSignInSessionsValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSkills()([]string)
     GetSolutions()(UserSolutionRootable)
+    GetSponsorOf()([]DirectoryObjectable)
     GetSponsors()([]DirectoryObjectable)
     GetState()(*string)
     GetStreetAddress()(*string)
@@ -6857,6 +6905,7 @@ type Userable interface {
     SetSignInSessionsValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSkills(value []string)()
     SetSolutions(value UserSolutionRootable)()
+    SetSponsorOf(value []DirectoryObjectable)()
     SetSponsors(value []DirectoryObjectable)()
     SetState(value *string)()
     SetStreetAddress(value *string)()

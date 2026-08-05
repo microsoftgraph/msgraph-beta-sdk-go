@@ -35,6 +35,8 @@ func CreateConnectionInfoFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.externalSapAcConnectionInfo":
+                        return NewExternalSapAcConnectionInfo(), nil
                     case "#microsoft.graph.externalTokenBasedSapIagConnectionInfo":
                         return NewExternalTokenBasedSapIagConnectionInfo(), nil
                 }

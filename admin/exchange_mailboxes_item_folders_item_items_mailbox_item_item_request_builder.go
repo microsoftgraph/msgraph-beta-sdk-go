@@ -14,6 +14,13 @@ import (
 type ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters read the properties and relationships of a mailboxItem object.
 type ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -43,6 +50,26 @@ func NewExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Delete delete a mailboxItem from a mailboxFolder in a mailbox. Use the disposalType query parameter to specify whether to soft-delete or hard-delete the item.
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxfolder-delete-items?view=graph-rest-beta
+func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
 // Get read the properties and relationships of a mailboxItem object.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MailboxItemable when successful
@@ -66,6 +93,18 @@ func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) Get
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxItemable), nil
+}
+// ToDeleteRequestInformation delete a mailboxItem from a mailboxFolder in a mailbox. Use the disposalType query parameter to specify whether to soft-delete or hard-delete the item.
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
+// returns a *RequestInformation when successful
+func (m *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsMailboxItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a mailboxItem object.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15

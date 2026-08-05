@@ -111,6 +111,22 @@ func (m *PolicyScopeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["locationExclusions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePolicyLocationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PolicyLocationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PolicyLocationable)
+                }
+            }
+            m.SetLocationExclusions(res)
+        }
+        return nil
+    }
     res["locations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePolicyLocationFromDiscriminatorValue)
         if err != nil {
@@ -154,6 +170,18 @@ func (m *PolicyScopeBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetLocationExclusions gets the locationExclusions property value. The locationExclusions property
+// returns a []PolicyLocationable when successful
+func (m *PolicyScopeBase) GetLocationExclusions()([]PolicyLocationable) {
+    val, err := m.GetBackingStore().Get("locationExclusions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PolicyLocationable)
+    }
+    return nil
 }
 // GetLocations gets the locations property value. The locations (like domains or URLs) to be protected. Required.
 // returns a []PolicyLocationable when successful
@@ -203,6 +231,18 @@ func (m *PolicyScopeBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     if m.GetExecutionMode() != nil {
         cast := (*m.GetExecutionMode()).String()
         err := writer.WriteStringValue("executionMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLocationExclusions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLocationExclusions()))
+        for i, v := range m.GetLocationExclusions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("locationExclusions", cast)
         if err != nil {
             return err
         }
@@ -270,6 +310,13 @@ func (m *PolicyScopeBase) SetExecutionMode(value *ExecutionMode)() {
         panic(err)
     }
 }
+// SetLocationExclusions sets the locationExclusions property value. The locationExclusions property
+func (m *PolicyScopeBase) SetLocationExclusions(value []PolicyLocationable)() {
+    err := m.GetBackingStore().Set("locationExclusions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLocations sets the locations property value. The locations (like domains or URLs) to be protected. Required.
 func (m *PolicyScopeBase) SetLocations(value []PolicyLocationable)() {
     err := m.GetBackingStore().Set("locations", value)
@@ -298,12 +345,14 @@ type PolicyScopeBaseable interface {
     GetActivities()(*UserActivityTypes)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExecutionMode()(*ExecutionMode)
+    GetLocationExclusions()([]PolicyLocationable)
     GetLocations()([]PolicyLocationable)
     GetOdataType()(*string)
     GetPolicyActions()([]DlpActionInfoable)
     SetActivities(value *UserActivityTypes)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExecutionMode(value *ExecutionMode)()
+    SetLocationExclusions(value []PolicyLocationable)()
     SetLocations(value []PolicyLocationable)()
     SetOdataType(value *string)()
     SetPolicyActions(value []DlpActionInfoable)()

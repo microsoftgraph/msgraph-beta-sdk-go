@@ -160,7 +160,7 @@ func (m *RelatedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsMicrosoftInfrastructure gets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+// GetIsMicrosoftInfrastructure gets the isMicrosoftInfrastructure property value. Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
 // returns a *bool when successful
 func (m *RelatedTenant) GetIsMicrosoftInfrastructure()(*bool) {
     val, err := m.GetBackingStore().Get("isMicrosoftInfrastructure")
@@ -263,7 +263,7 @@ func (m *RelatedTenant) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetIsMicrosoftInfrastructure sets the isMicrosoftInfrastructure property value. Indicates whether this tenant is a Microsoft infrastructure tenant.
+// SetIsMicrosoftInfrastructure sets the isMicrosoftInfrastructure property value. Indicates whether the related tenant is a Microsoft infrastructure tenant. Read-only.
 func (m *RelatedTenant) SetIsMicrosoftInfrastructure(value *bool)() {
     err := m.GetBackingStore().Set("isMicrosoftInfrastructure", value)
     if err != nil {

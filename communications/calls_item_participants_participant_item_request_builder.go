@@ -134,6 +134,11 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) RemoveFromLobby()(*CallsItemParticipantsItemRemoveFromLobbyRequestBuilder) {
     return NewCallsItemParticipantsItemRemoveFromLobbyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ReportSyntheticMedia provides operations to call the reportSyntheticMedia method.
+// returns a *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) ReportSyntheticMedia()(*CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) {
+    return NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // StartHoldMusic provides operations to call the startHoldMusic method.
 // returns a *CallsItemParticipantsItemStartHoldMusicRequestBuilder when successful
 func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartHoldMusicRequestBuilder) {

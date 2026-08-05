@@ -185,6 +185,11 @@ func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuild
 func (m *DirectoryRequestBuilder) Recovery()(*RecoveryRequestBuilder) {
     return NewRecoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RemoteTenantGroups provides operations to manage the remoteTenantGroups property of the microsoft.graph.directory entity.
+// returns a *RemoteTenantGroupsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RemoteTenantGroups()(*RemoteTenantGroupsRequestBuilder) {
+    return NewRemoteTenantGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SharedEmailDomains provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
 // returns a *SharedEmailDomainsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsRequestBuilder) {

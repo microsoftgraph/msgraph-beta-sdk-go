@@ -118,6 +118,11 @@ func (m *DataSecurityAndGovernanceRequestBuilder) Patch(ctx context.Context, bod
 func (m *DataSecurityAndGovernanceRequestBuilder) PolicyFiles()(*DataSecurityAndGovernancePolicyFilesRequestBuilder) {
     return NewDataSecurityAndGovernancePolicyFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ProcessContent provides operations to call the processContent method.
+// returns a *DataSecurityAndGovernanceProcessContentRequestBuilder when successful
+func (m *DataSecurityAndGovernanceRequestBuilder) ProcessContent()(*DataSecurityAndGovernanceProcessContentRequestBuilder) {
+    return NewDataSecurityAndGovernanceProcessContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ProcessContentAsync provides operations to call the processContentAsync method.
 // returns a *DataSecurityAndGovernanceProcessContentAsyncRequestBuilder when successful
 func (m *DataSecurityAndGovernanceRequestBuilder) ProcessContentAsync()(*DataSecurityAndGovernanceProcessContentAsyncRequestBuilder) {

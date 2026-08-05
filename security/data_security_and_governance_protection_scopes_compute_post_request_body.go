@@ -68,6 +68,18 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) GetDev
     }
     return nil
 }
+// GetEvaluationScope gets the evaluationScope property value. The evaluationScope property
+// returns a EvaluationScopeable when successful
+func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) GetEvaluationScope()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable) {
+    val, err := m.GetBackingStore().Get("evaluationScope")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,6 +101,16 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) GetFie
         }
         if val != nil {
             m.SetDeviceMetadata(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceMetadataable))
+        }
+        return nil
+    }
+    res["evaluationScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateEvaluationScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEvaluationScope(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable))
         }
         return nil
     }
@@ -182,6 +204,12 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) Serial
         }
     }
     {
+        err := writer.WriteObjectValue("evaluationScope", m.GetEvaluationScope())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("integratedAppMetadata", m.GetIntegratedAppMetadata())
         if err != nil {
             return err
@@ -239,6 +267,13 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) SetDev
         panic(err)
     }
 }
+// SetEvaluationScope sets the evaluationScope property value. The evaluationScope property
+func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) SetEvaluationScope(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable)() {
+    err := m.GetBackingStore().Set("evaluationScope", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIntegratedAppMetadata sets the integratedAppMetadata property value. The integratedAppMetadata property
 func (m *DataSecurityAndGovernanceProtectionScopesComputePostRequestBody) SetIntegratedAppMetadata(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntegratedApplicationMetadataable)() {
     err := m.GetBackingStore().Set("integratedAppMetadata", value)
@@ -267,12 +302,14 @@ type DataSecurityAndGovernanceProtectionScopesComputePostRequestBodyable interfa
     GetActivities()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityTypes)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceMetadata()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceMetadataable)
+    GetEvaluationScope()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable)
     GetIntegratedAppMetadata()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntegratedApplicationMetadataable)
     GetLocations()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyLocationable)
     GetPivotOn()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPivotProperty)
     SetActivities(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityTypes)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceMetadata(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceMetadataable)()
+    SetEvaluationScope(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluationScopeable)()
     SetIntegratedAppMetadata(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IntegratedApplicationMetadataable)()
     SetLocations(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyLocationable)()
     SetPivotOn(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PolicyPivotProperty)()

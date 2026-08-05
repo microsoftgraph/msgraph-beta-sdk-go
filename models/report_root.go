@@ -332,6 +332,16 @@ func (m *ReportRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["microsoftAppsFileStorageContainerUsageSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMicrosoftAppsFileStorageContainerUsageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMicrosoftAppsFileStorageContainerUsageSummary(val.(MicrosoftAppsFileStorageContainerUsageable))
+        }
+        return nil
+    }
     res["monthlyPrintUsageByPrinter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePrintUsageByPrinterFromDiscriminatorValue)
         if err != nil {
@@ -489,6 +499,18 @@ func (m *ReportRoot) GetIdentityAnalytics()(IdentityAnalyticsRootable) {
     }
     if val != nil {
         return val.(IdentityAnalyticsRootable)
+    }
+    return nil
+}
+// GetMicrosoftAppsFileStorageContainerUsageSummary gets the microsoftAppsFileStorageContainerUsageSummary property value. The microsoftAppsFileStorageContainerUsageSummary property
+// returns a MicrosoftAppsFileStorageContainerUsageable when successful
+func (m *ReportRoot) GetMicrosoftAppsFileStorageContainerUsageSummary()(MicrosoftAppsFileStorageContainerUsageable) {
+    val, err := m.GetBackingStore().Get("microsoftAppsFileStorageContainerUsageSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MicrosoftAppsFileStorageContainerUsageable)
     }
     return nil
 }
@@ -756,6 +778,12 @@ func (m *ReportRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("microsoftAppsFileStorageContainerUsageSummary", m.GetMicrosoftAppsFileStorageContainerUsageSummary())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMonthlyPrintUsageByPrinter() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMonthlyPrintUsageByPrinter()))
         for i, v := range m.GetMonthlyPrintUsageByPrinter() {
@@ -944,6 +972,13 @@ func (m *ReportRoot) SetIdentityAnalytics(value IdentityAnalyticsRootable)() {
         panic(err)
     }
 }
+// SetMicrosoftAppsFileStorageContainerUsageSummary sets the microsoftAppsFileStorageContainerUsageSummary property value. The microsoftAppsFileStorageContainerUsageSummary property
+func (m *ReportRoot) SetMicrosoftAppsFileStorageContainerUsageSummary(value MicrosoftAppsFileStorageContainerUsageable)() {
+    err := m.GetBackingStore().Set("microsoftAppsFileStorageContainerUsageSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMonthlyPrintUsageByPrinter sets the monthlyPrintUsageByPrinter property value. Retrieve a list of monthly print usage summaries, grouped by printer.
 func (m *ReportRoot) SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)() {
     err := m.GetBackingStore().Set("monthlyPrintUsageByPrinter", value)
@@ -1036,6 +1071,7 @@ type ReportRootable interface {
     GetDailyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
     GetDailyPrintUsageSummariesByUser()([]PrintUsageByUserable)
     GetIdentityAnalytics()(IdentityAnalyticsRootable)
+    GetMicrosoftAppsFileStorageContainerUsageSummary()(MicrosoftAppsFileStorageContainerUsageable)
     GetMonthlyPrintUsageByPrinter()([]PrintUsageByPrinterable)
     GetMonthlyPrintUsageByUser()([]PrintUsageByUserable)
     GetMonthlyPrintUsageSummariesByPrinter()([]PrintUsageByPrinterable)
@@ -1059,6 +1095,7 @@ type ReportRootable interface {
     SetDailyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()
     SetDailyPrintUsageSummariesByUser(value []PrintUsageByUserable)()
     SetIdentityAnalytics(value IdentityAnalyticsRootable)()
+    SetMicrosoftAppsFileStorageContainerUsageSummary(value MicrosoftAppsFileStorageContainerUsageable)()
     SetMonthlyPrintUsageByPrinter(value []PrintUsageByPrinterable)()
     SetMonthlyPrintUsageByUser(value []PrintUsageByUserable)()
     SetMonthlyPrintUsageSummariesByPrinter(value []PrintUsageByPrinterable)()

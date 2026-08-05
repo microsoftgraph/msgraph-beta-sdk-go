@@ -209,7 +209,7 @@ func (m *VerifiedIdProfile) GetVerifiedIdProfileConfiguration()(VerifiedIdProfil
     }
     return nil
 }
-// GetVerifiedIdUsageConfigurations gets the verifiedIdUsageConfigurations property value. Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue. Required.
+// GetVerifiedIdUsageConfigurations gets the verifiedIdUsageConfigurations property value. Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue, verification. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: verification. Required.
 // returns a []VerifiedIdUsageConfigurationable when successful
 func (m *VerifiedIdProfile) GetVerifiedIdUsageConfigurations()([]VerifiedIdUsageConfigurationable) {
     val, err := m.GetBackingStore().Get("verifiedIdUsageConfigurations")
@@ -351,7 +351,7 @@ func (m *VerifiedIdProfile) SetVerifiedIdProfileConfiguration(value VerifiedIdPr
         panic(err)
     }
 }
-// SetVerifiedIdUsageConfigurations sets the verifiedIdUsageConfigurations property value. Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue. Required.
+// SetVerifiedIdUsageConfigurations sets the verifiedIdUsageConfigurations property value. Collection defining the usage purpose for the profile. The possible values are: recovery, onboarding, all, unknownFutureValue, verification. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: verification. Required.
 func (m *VerifiedIdProfile) SetVerifiedIdUsageConfigurations(value []VerifiedIdUsageConfigurationable)() {
     err := m.GetBackingStore().Set("verifiedIdUsageConfigurations", value)
     if err != nil {

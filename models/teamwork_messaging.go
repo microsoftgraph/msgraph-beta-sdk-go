@@ -22,7 +22,7 @@ func NewTeamworkMessaging()(*TeamworkMessaging) {
 func CreateTeamworkMessagingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamworkMessaging(), nil
 }
-// GetCustomEmojis gets the customEmojis property value. The customEmojis property
+// GetCustomEmojis gets the customEmojis property value. The collection of custom emojis available in organization messaging.
 // returns a []TeamworkCustomEmojiable when successful
 func (m *TeamworkMessaging) GetCustomEmojis()([]TeamworkCustomEmojiable) {
     val, err := m.GetBackingStore().Get("customEmojis")
@@ -76,7 +76,7 @@ func (m *TeamworkMessaging) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetCustomEmojis sets the customEmojis property value. The customEmojis property
+// SetCustomEmojis sets the customEmojis property value. The collection of custom emojis available in organization messaging.
 func (m *TeamworkMessaging) SetCustomEmojis(value []TeamworkCustomEmojiable)() {
     err := m.GetBackingStore().Set("customEmojis", value)
     if err != nil {

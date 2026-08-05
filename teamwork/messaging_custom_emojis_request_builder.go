@@ -14,7 +14,7 @@ import (
 type MessagingCustomEmojisRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MessagingCustomEmojisRequestBuilderGetQueryParameters get customEmojis from teamwork
+// MessagingCustomEmojisRequestBuilderGetQueryParameters get a list of custom emojis available in the teamwork messaging of the organization.
 type MessagingCustomEmojisRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,9 +79,12 @@ func NewMessagingCustomEmojisRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *MessagingCustomEmojisRequestBuilder) Count()(*MessagingCustomEmojisCountRequestBuilder) {
     return NewMessagingCustomEmojisCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get customEmojis from teamwork
+// Get get a list of custom emojis available in the teamwork messaging of the organization.
 // returns a TeamworkCustomEmojiCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkmessaging-list-customemojis?view=graph-rest-beta
 func (m *MessagingCustomEmojisRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagingCustomEmojisRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *MessagingCustomEmojisRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiCollectionResponseable), nil
 }
-// Post create new navigation property to customEmojis for teamwork
+// Post create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
 // returns a TeamworkCustomEmojiable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkmessaging-post-customemojis?view=graph-rest-beta
 func (m *MessagingCustomEmojisRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable, requestConfiguration *MessagingCustomEmojisRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *MessagingCustomEmojisRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable), nil
 }
-// ToGetRequestInformation get customEmojis from teamwork
+// ToGetRequestInformation get a list of custom emojis available in the teamwork messaging of the organization.
 // returns a *RequestInformation when successful
 func (m *MessagingCustomEmojisRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessagingCustomEmojisRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *MessagingCustomEmojisRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to customEmojis for teamwork
+// ToPostRequestInformation create a new custom emoji in the teamwork messaging of the organization, which adds the custom emoji to Teams for the tenant. The emoji image is provided as base64-encoded content bytes.
 // returns a *RequestInformation when successful
 func (m *MessagingCustomEmojisRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable, requestConfiguration *MessagingCustomEmojisRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -21,7 +21,7 @@ type MessagingRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MessagingRequestBuilderGetQueryParameters get messaging from teamwork
+// MessagingRequestBuilderGetQueryParameters the messaging functionality, including custom emojis.
 type MessagingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -78,7 +78,7 @@ func (m *MessagingRequestBuilder) Delete(ctx context.Context, requestConfigurati
     }
     return nil
 }
-// Get get messaging from teamwork
+// Get the messaging functionality, including custom emojis.
 // returns a TeamworkMessagingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MessagingRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkMessagingable, error) {
@@ -129,7 +129,7 @@ func (m *MessagingRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get messaging from teamwork
+// ToGetRequestInformation the messaging functionality, including custom emojis.
 // returns a *RequestInformation when successful
 func (m *MessagingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessagingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

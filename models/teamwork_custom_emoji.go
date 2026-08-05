@@ -44,7 +44,7 @@ func (m *TeamworkCustomEmoji) GetAdditionalData()(map[string]any) {
 func (m *TeamworkCustomEmoji) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentBytes gets the contentBytes property value. The contentBytes property
+// GetContentBytes gets the contentBytes property value. The base64-encoded image content of the emoji. Supported formats include PNG and GIF.
 // returns a *string when successful
 func (m *TeamworkCustomEmoji) GetContentBytes()(*string) {
     val, err := m.GetBackingStore().Get("contentBytes")
@@ -68,7 +68,7 @@ func (m *TeamworkCustomEmoji) GetCreatedBy()(CustomEmojiFromIdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the emoji was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *TeamworkCustomEmoji) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -80,7 +80,7 @@ func (m *TeamworkCustomEmoji) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.
 // returns a *string when successful
 func (m *TeamworkCustomEmoji) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -211,7 +211,7 @@ func (m *TeamworkCustomEmoji) SetAdditionalData(value map[string]any)() {
 func (m *TeamworkCustomEmoji) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentBytes sets the contentBytes property value. The contentBytes property
+// SetContentBytes sets the contentBytes property value. The base64-encoded image content of the emoji. Supported formats include PNG and GIF.
 func (m *TeamworkCustomEmoji) SetContentBytes(value *string)() {
     err := m.GetBackingStore().Set("contentBytes", value)
     if err != nil {
@@ -225,14 +225,14 @@ func (m *TeamworkCustomEmoji) SetCreatedBy(value CustomEmojiFromIdentitySetable)
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the emoji was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *TeamworkCustomEmoji) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.
 func (m *TeamworkCustomEmoji) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

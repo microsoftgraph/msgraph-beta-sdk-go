@@ -37,6 +37,22 @@ func (m *B2bRegistrationMetrics) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["investigationHints"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateActionStepFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ActionStepable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ActionStepable)
+                }
+            }
+            m.SetInvestigationHints(res)
+        }
+        return nil
+    }
     res["recent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateB2BRegistrationMetricsRecentFromDiscriminatorValue)
         if err != nil {
@@ -58,6 +74,18 @@ func (m *B2bRegistrationMetrics) GetInitial()(B2BRegistrationMetricsInitialable)
     }
     if val != nil {
         return val.(B2BRegistrationMetricsInitialable)
+    }
+    return nil
+}
+// GetInvestigationHints gets the investigationHints property value. Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BRegistrationMetrics($expand=investigationHints).
+// returns a []ActionStepable when successful
+func (m *B2bRegistrationMetrics) GetInvestigationHints()([]ActionStepable) {
+    val, err := m.GetBackingStore().Get("investigationHints")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ActionStepable)
     }
     return nil
 }
@@ -85,6 +113,18 @@ func (m *B2bRegistrationMetrics) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetInvestigationHints() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInvestigationHints()))
+        for i, v := range m.GetInvestigationHints() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("investigationHints", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("recent", m.GetRecent())
         if err != nil {
@@ -100,6 +140,13 @@ func (m *B2bRegistrationMetrics) SetInitial(value B2BRegistrationMetricsInitiala
         panic(err)
     }
 }
+// SetInvestigationHints sets the investigationHints property value. Ordered drill-in guidance for investigating B2B registration metrics. This collection is returned only when explicitly requested by using a nested $expand query parameter, for example $expand=b2BRegistrationMetrics($expand=investigationHints).
+func (m *B2bRegistrationMetrics) SetInvestigationHints(value []ActionStepable)() {
+    err := m.GetBackingStore().Set("investigationHints", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecent sets the recent property value. The recent property
 func (m *B2bRegistrationMetrics) SetRecent(value B2BRegistrationMetricsRecentable)() {
     err := m.GetBackingStore().Set("recent", value)
@@ -111,7 +158,9 @@ type B2bRegistrationMetricsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetInitial()(B2BRegistrationMetricsInitialable)
+    GetInvestigationHints()([]ActionStepable)
     GetRecent()(B2BRegistrationMetricsRecentable)
     SetInitial(value B2BRegistrationMetricsInitialable)()
+    SetInvestigationHints(value []ActionStepable)()
     SetRecent(value B2BRegistrationMetricsRecentable)()
 }
