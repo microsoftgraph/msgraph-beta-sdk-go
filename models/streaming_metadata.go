@@ -89,7 +89,7 @@ func (m *StreamingMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetFrameDropRate gets the frameDropRate property value. The frameDropRate property
+// GetFrameDropRate gets the frameDropRate property value. Percentage of frames dropped during streaming, expressed as a value between 0.0 and 1.0.
 // returns a *float64 when successful
 func (m *StreamingMetadata) GetFrameDropRate()(*float64) {
     val, err := m.GetBackingStore().Get("frameDropRate")
@@ -101,7 +101,7 @@ func (m *StreamingMetadata) GetFrameDropRate()(*float64) {
     }
     return nil
 }
-// GetLatencyMs gets the latencyMs property value. The latencyMs property
+// GetLatencyMs gets the latencyMs property value. Network latency in milliseconds.
 // returns a *int32 when successful
 func (m *StreamingMetadata) GetLatencyMs()(*int32) {
     val, err := m.GetBackingStore().Get("latencyMs")
@@ -113,7 +113,7 @@ func (m *StreamingMetadata) GetLatencyMs()(*int32) {
     }
     return nil
 }
-// GetNetworkJitterMs gets the networkJitterMs property value. The networkJitterMs property
+// GetNetworkJitterMs gets the networkJitterMs property value. Network jitter in milliseconds.
 // returns a *int32 when successful
 func (m *StreamingMetadata) GetNetworkJitterMs()(*int32) {
     val, err := m.GetBackingStore().Get("networkJitterMs")
@@ -182,21 +182,21 @@ func (m *StreamingMetadata) SetAdditionalData(value map[string]any)() {
 func (m *StreamingMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFrameDropRate sets the frameDropRate property value. The frameDropRate property
+// SetFrameDropRate sets the frameDropRate property value. Percentage of frames dropped during streaming, expressed as a value between 0.0 and 1.0.
 func (m *StreamingMetadata) SetFrameDropRate(value *float64)() {
     err := m.GetBackingStore().Set("frameDropRate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLatencyMs sets the latencyMs property value. The latencyMs property
+// SetLatencyMs sets the latencyMs property value. Network latency in milliseconds.
 func (m *StreamingMetadata) SetLatencyMs(value *int32)() {
     err := m.GetBackingStore().Set("latencyMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNetworkJitterMs sets the networkJitterMs property value. The networkJitterMs property
+// SetNetworkJitterMs sets the networkJitterMs property value. Network jitter in milliseconds.
 func (m *StreamingMetadata) SetNetworkJitterMs(value *int32)() {
     err := m.GetBackingStore().Set("networkJitterMs", value)
     if err != nil {

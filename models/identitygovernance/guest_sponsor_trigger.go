@@ -40,7 +40,7 @@ func (m *GuestSponsorTrigger) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMinimumRequiredSponsors gets the minimumRequiredSponsors property value. The minimumRequiredSponsors property
+// GetMinimumRequiredSponsors gets the minimumRequiredSponsors property value. The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
 // returns a *int32 when successful
 func (m *GuestSponsorTrigger) GetMinimumRequiredSponsors()(*int32) {
     val, err := m.GetBackingStore().Get("minimumRequiredSponsors")
@@ -66,7 +66,7 @@ func (m *GuestSponsorTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetMinimumRequiredSponsors sets the minimumRequiredSponsors property value. The minimumRequiredSponsors property
+// SetMinimumRequiredSponsors sets the minimumRequiredSponsors property value. The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
 func (m *GuestSponsorTrigger) SetMinimumRequiredSponsors(value *int32)() {
     err := m.GetBackingStore().Set("minimumRequiredSponsors", value)
     if err != nil {

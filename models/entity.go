@@ -2539,6 +2539,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPlannerBucketTaskBoardTaskFormat(), nil
                     case "#microsoft.graph.plannerDelta":
                         return NewPlannerDelta(), nil
+                    case "#microsoft.graph.plannerGoal":
+                        return NewPlannerGoal(), nil
                     case "#microsoft.graph.plannerGroup":
                         return NewPlannerGroup(), nil
                     case "#microsoft.graph.plannerHistoryItem":
@@ -2787,6 +2789,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRequest(), nil
                     case "#microsoft.graph.resellerDelegatedAdminRelationship":
                         return NewResellerDelegatedAdminRelationship(), nil
+                    case "#microsoft.graph.resourceAccountKeyAuthenticationMethod":
+                        return NewResourceAccountKeyAuthenticationMethod(), nil
                     case "#microsoft.graph.resourceOperation":
                         return NewResourceOperation(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":

@@ -43,7 +43,7 @@ func (m *SyntheticMediaDetectionDetail) GetAdditionalData()(map[string]any) {
 func (m *SyntheticMediaDetectionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConfidence gets the confidence property value. The confidence property
+// GetConfidence gets the confidence property value. Confidence score for this specific detection, expressed as a value between 0.0 and 1.0.
 // returns a *float64 when successful
 func (m *SyntheticMediaDetectionDetail) GetConfidence()(*float64) {
     val, err := m.GetBackingStore().Get("confidence")
@@ -139,7 +139,7 @@ func (m *SyntheticMediaDetectionDetail) GetModality()(*ContentModality) {
     }
     return nil
 }
-// GetModelName gets the modelName property value. The modelName property
+// GetModelName gets the modelName property value. Name of the detection model used (for example, DeepfakeDetector-v2, VoiceAuthenticator-v1).
 // returns a *string when successful
 func (m *SyntheticMediaDetectionDetail) GetModelName()(*string) {
     val, err := m.GetBackingStore().Get("modelName")
@@ -151,7 +151,7 @@ func (m *SyntheticMediaDetectionDetail) GetModelName()(*string) {
     }
     return nil
 }
-// GetModelTasks gets the modelTasks property value. The modelTasks property
+// GetModelTasks gets the modelTasks property value. Detection tasks that the model performed. This value is free-form text. The bot can specify any task names that describe its analysis. Common examples include faceSwap, lipSync, and voiceClone.
 // returns a []string when successful
 func (m *SyntheticMediaDetectionDetail) GetModelTasks()([]string) {
     val, err := m.GetBackingStore().Get("modelTasks")
@@ -245,7 +245,7 @@ func (m *SyntheticMediaDetectionDetail) SetAdditionalData(value map[string]any)(
 func (m *SyntheticMediaDetectionDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConfidence sets the confidence property value. The confidence property
+// SetConfidence sets the confidence property value. Confidence score for this specific detection, expressed as a value between 0.0 and 1.0.
 func (m *SyntheticMediaDetectionDetail) SetConfidence(value *float64)() {
     err := m.GetBackingStore().Set("confidence", value)
     if err != nil {
@@ -259,14 +259,14 @@ func (m *SyntheticMediaDetectionDetail) SetModality(value *ContentModality)() {
         panic(err)
     }
 }
-// SetModelName sets the modelName property value. The modelName property
+// SetModelName sets the modelName property value. Name of the detection model used (for example, DeepfakeDetector-v2, VoiceAuthenticator-v1).
 func (m *SyntheticMediaDetectionDetail) SetModelName(value *string)() {
     err := m.GetBackingStore().Set("modelName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModelTasks sets the modelTasks property value. The modelTasks property
+// SetModelTasks sets the modelTasks property value. Detection tasks that the model performed. This value is free-form text. The bot can specify any task names that describe its analysis. Common examples include faceSwap, lipSync, and voiceClone.
 func (m *SyntheticMediaDetectionDetail) SetModelTasks(value []string)() {
     err := m.GetBackingStore().Set("modelTasks", value)
     if err != nil {

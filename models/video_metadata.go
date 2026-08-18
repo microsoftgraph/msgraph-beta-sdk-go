@@ -43,7 +43,7 @@ func (m *VideoMetadata) GetAdditionalData()(map[string]any) {
 func (m *VideoMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBitrateKbps gets the bitrateKbps property value. The bitrateKbps property
+// GetBitrateKbps gets the bitrateKbps property value. Video bitrate in kilobits per second.
 // returns a *int32 when successful
 func (m *VideoMetadata) GetBitrateKbps()(*int32) {
     val, err := m.GetBackingStore().Get("bitrateKbps")
@@ -55,7 +55,7 @@ func (m *VideoMetadata) GetBitrateKbps()(*int32) {
     }
     return nil
 }
-// GetCodec gets the codec property value. The codec property
+// GetCodec gets the codec property value. The video codec used (for example, H.264 or VP9).
 // returns a *string when successful
 func (m *VideoMetadata) GetCodec()(*string) {
     val, err := m.GetBackingStore().Get("codec")
@@ -113,7 +113,7 @@ func (m *VideoMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFrameRate gets the frameRate property value. The frameRate property
+// GetFrameRate gets the frameRate property value. Frame rate in frames per second.
 // returns a *float64 when successful
 func (m *VideoMetadata) GetFrameRate()(*float64) {
     val, err := m.GetBackingStore().Get("frameRate")
@@ -182,21 +182,21 @@ func (m *VideoMetadata) SetAdditionalData(value map[string]any)() {
 func (m *VideoMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBitrateKbps sets the bitrateKbps property value. The bitrateKbps property
+// SetBitrateKbps sets the bitrateKbps property value. Video bitrate in kilobits per second.
 func (m *VideoMetadata) SetBitrateKbps(value *int32)() {
     err := m.GetBackingStore().Set("bitrateKbps", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCodec sets the codec property value. The codec property
+// SetCodec sets the codec property value. The video codec used (for example, H.264 or VP9).
 func (m *VideoMetadata) SetCodec(value *string)() {
     err := m.GetBackingStore().Set("codec", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFrameRate sets the frameRate property value. The frameRate property
+// SetFrameRate sets the frameRate property value. Frame rate in frames per second.
 func (m *VideoMetadata) SetFrameRate(value *float64)() {
     err := m.GetBackingStore().Set("frameRate", value)
     if err != nil {

@@ -113,6 +113,11 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context,
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*ItemPlannerPlansItemGetUsageRightsRequestBuilder) {
     return NewItemPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Goals provides operations to manage the goals property of the microsoft.graph.plannerPlan entity.
+// returns a *ItemPlannerPlansItemGoalsRequestBuilder when successful
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Goals()(*ItemPlannerPlansItemGoalsRequestBuilder) {
+    return NewItemPlannerPlansItemGoalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // HistoryItems provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.
 // returns a *ItemPlannerPlansItemHistoryItemsRequestBuilder when successful
 func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) HistoryItems()(*ItemPlannerPlansItemHistoryItemsRequestBuilder) {

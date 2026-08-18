@@ -24,7 +24,7 @@ func NewClientCredentialAuthenticationInfo()(*ClientCredentialAuthenticationInfo
 func CreateClientCredentialAuthenticationInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClientCredentialAuthenticationInfo(), nil
 }
-// GetAccessTokenUrl gets the accessTokenUrl property value. The accessTokenUrl property
+// GetAccessTokenUrl gets the accessTokenUrl property value. The URL endpoint used to obtain access tokens for authentication with the external system.
 // returns a *string when successful
 func (m *ClientCredentialAuthenticationInfo) GetAccessTokenUrl()(*string) {
     val, err := m.GetBackingStore().Get("accessTokenUrl")
@@ -36,7 +36,7 @@ func (m *ClientCredentialAuthenticationInfo) GetAccessTokenUrl()(*string) {
     }
     return nil
 }
-// GetClientId gets the clientId property value. The clientId property
+// GetClientId gets the clientId property value. The client identifier used for authentication with the external system.
 // returns a *string when successful
 func (m *ClientCredentialAuthenticationInfo) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
@@ -84,7 +84,7 @@ func (m *ClientCredentialAuthenticationInfo) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetSecretName gets the secretName property value. The secretName property
+// GetSecretName gets the secretName property value. The name of the secret in Azure Key Vault that contains the client secret.
 // returns a *string when successful
 func (m *ClientCredentialAuthenticationInfo) GetSecretName()(*string) {
     val, err := m.GetBackingStore().Get("secretName")
@@ -122,21 +122,21 @@ func (m *ClientCredentialAuthenticationInfo) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAccessTokenUrl sets the accessTokenUrl property value. The accessTokenUrl property
+// SetAccessTokenUrl sets the accessTokenUrl property value. The URL endpoint used to obtain access tokens for authentication with the external system.
 func (m *ClientCredentialAuthenticationInfo) SetAccessTokenUrl(value *string)() {
     err := m.GetBackingStore().Set("accessTokenUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientId sets the clientId property value. The clientId property
+// SetClientId sets the clientId property value. The client identifier used for authentication with the external system.
 func (m *ClientCredentialAuthenticationInfo) SetClientId(value *string)() {
     err := m.GetBackingStore().Set("clientId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecretName sets the secretName property value. The secretName property
+// SetSecretName sets the secretName property value. The name of the secret in Azure Key Vault that contains the client secret.
 func (m *ClientCredentialAuthenticationInfo) SetSecretName(value *string)() {
     err := m.GetBackingStore().Set("secretName", value)
     if err != nil {

@@ -113,6 +113,11 @@ func (m *DeletedTeamsItemChannelsItemPlannerPlansPlannerPlanItemRequestBuilder) 
 func (m *DeletedTeamsItemChannelsItemPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*DeletedTeamsItemChannelsItemPlannerPlansItemGetUsageRightsRequestBuilder) {
     return NewDeletedTeamsItemChannelsItemPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Goals provides operations to manage the goals property of the microsoft.graph.plannerPlan entity.
+// returns a *DeletedTeamsItemChannelsItemPlannerPlansItemGoalsRequestBuilder when successful
+func (m *DeletedTeamsItemChannelsItemPlannerPlansPlannerPlanItemRequestBuilder) Goals()(*DeletedTeamsItemChannelsItemPlannerPlansItemGoalsRequestBuilder) {
+    return NewDeletedTeamsItemChannelsItemPlannerPlansItemGoalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // HistoryItems provides operations to manage the historyItems property of the microsoft.graph.plannerPlan entity.
 // returns a *DeletedTeamsItemChannelsItemPlannerPlansItemHistoryItemsRequestBuilder when successful
 func (m *DeletedTeamsItemChannelsItemPlannerPlansPlannerPlanItemRequestBuilder) HistoryItems()(*DeletedTeamsItemChannelsItemPlannerPlansItemHistoryItemsRequestBuilder) {

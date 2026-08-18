@@ -141,6 +141,26 @@ func (m *VerifiedIdProfileConfiguration) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["manifestUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManifestUrl(val)
+        }
+        return nil
+    }
+    res["methodType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseVerifiedIdMethodType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMethodType(val.(*VerifiedIdMethodType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -162,6 +182,30 @@ func (m *VerifiedIdProfileConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetManifestUrl gets the manifestUrl property value. The URL where the credential issuer's manifest can be found. The manifest defines the credential schema and issuer details. Optional.
+// returns a *string when successful
+func (m *VerifiedIdProfileConfiguration) GetManifestUrl()(*string) {
+    val, err := m.GetBackingStore().Get("manifestUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMethodType gets the methodType property value. The methodType property
+// returns a *VerifiedIdMethodType when successful
+func (m *VerifiedIdProfileConfiguration) GetMethodType()(*VerifiedIdMethodType) {
+    val, err := m.GetBackingStore().Get("methodType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*VerifiedIdMethodType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -216,6 +260,19 @@ func (m *VerifiedIdProfileConfiguration) Serialize(writer i878a80d2330e89d268963
     }
     {
         err := writer.WriteObjectValue("claimValidation", m.GetClaimValidation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("manifestUrl", m.GetManifestUrl())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMethodType() != nil {
+        cast := (*m.GetMethodType()).String()
+        err := writer.WriteStringValue("methodType", &cast)
         if err != nil {
             return err
         }
@@ -279,6 +336,20 @@ func (m *VerifiedIdProfileConfiguration) SetClaimValidation(value ClaimValidatio
         panic(err)
     }
 }
+// SetManifestUrl sets the manifestUrl property value. The URL where the credential issuer's manifest can be found. The manifest defines the credential schema and issuer details. Optional.
+func (m *VerifiedIdProfileConfiguration) SetManifestUrl(value *string)() {
+    err := m.GetBackingStore().Set("manifestUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMethodType sets the methodType property value. The methodType property
+func (m *VerifiedIdProfileConfiguration) SetMethodType(value *VerifiedIdMethodType)() {
+    err := m.GetBackingStore().Set("methodType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *VerifiedIdProfileConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -302,6 +373,8 @@ type VerifiedIdProfileConfigurationable interface {
     GetClaimBindings()([]ClaimBindingable)
     GetClaimBindingSource()(*ClaimBindingSource)
     GetClaimValidation()(ClaimValidationable)
+    GetManifestUrl()(*string)
+    GetMethodType()(*VerifiedIdMethodType)
     GetOdataType()(*string)
     GetTypeEscaped()(*string)
     SetAcceptedIssuer(value *string)()
@@ -309,6 +382,8 @@ type VerifiedIdProfileConfigurationable interface {
     SetClaimBindings(value []ClaimBindingable)()
     SetClaimBindingSource(value *ClaimBindingSource)()
     SetClaimValidation(value ClaimValidationable)()
+    SetManifestUrl(value *string)()
+    SetMethodType(value *VerifiedIdMethodType)()
     SetOdataType(value *string)()
     SetTypeEscaped(value *string)()
 }

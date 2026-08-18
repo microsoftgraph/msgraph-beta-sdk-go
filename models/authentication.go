@@ -258,6 +258,22 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["resourceAccountKeyAuthenticationMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceAccountKeyAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceAccountKeyAuthenticationMethodable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceAccountKeyAuthenticationMethodable)
+                }
+            }
+            m.SetResourceAccountKeyAuthenticationMethods(res)
+        }
+        return nil
+    }
     res["signInPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInPreferencesFromDiscriminatorValue)
         if err != nil {
@@ -435,6 +451,18 @@ func (m *Authentication) GetRequirements()(StrongAuthenticationRequirementsable)
     }
     if val != nil {
         return val.(StrongAuthenticationRequirementsable)
+    }
+    return nil
+}
+// GetResourceAccountKeyAuthenticationMethods gets the resourceAccountKeyAuthenticationMethods property value. Represents the resource account key credentials registered to a user for authentication on shared devices.
+// returns a []ResourceAccountKeyAuthenticationMethodable when successful
+func (m *Authentication) GetResourceAccountKeyAuthenticationMethods()([]ResourceAccountKeyAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("resourceAccountKeyAuthenticationMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceAccountKeyAuthenticationMethodable)
     }
     return nil
 }
@@ -636,6 +664,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetResourceAccountKeyAuthenticationMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceAccountKeyAuthenticationMethods()))
+        for i, v := range m.GetResourceAccountKeyAuthenticationMethods() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("resourceAccountKeyAuthenticationMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("signInPreferences", m.GetSignInPreferences())
         if err != nil {
@@ -771,6 +811,13 @@ func (m *Authentication) SetRequirements(value StrongAuthenticationRequirementsa
         panic(err)
     }
 }
+// SetResourceAccountKeyAuthenticationMethods sets the resourceAccountKeyAuthenticationMethods property value. Represents the resource account key credentials registered to a user for authentication on shared devices.
+func (m *Authentication) SetResourceAccountKeyAuthenticationMethods(value []ResourceAccountKeyAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("resourceAccountKeyAuthenticationMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignInPreferences sets the signInPreferences property value. The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
 func (m *Authentication) SetSignInPreferences(value SignInPreferencesable)() {
     err := m.GetBackingStore().Set("signInPreferences", value)
@@ -815,6 +862,7 @@ type Authenticationable interface {
     GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable)
     GetQrCodePinMethod()(QrCodePinAuthenticationMethodable)
     GetRequirements()(StrongAuthenticationRequirementsable)
+    GetResourceAccountKeyAuthenticationMethods()([]ResourceAccountKeyAuthenticationMethodable)
     GetSignInPreferences()(SignInPreferencesable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
@@ -832,6 +880,7 @@ type Authenticationable interface {
     SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)()
     SetQrCodePinMethod(value QrCodePinAuthenticationMethodable)()
     SetRequirements(value StrongAuthenticationRequirementsable)()
+    SetResourceAccountKeyAuthenticationMethods(value []ResourceAccountKeyAuthenticationMethodable)()
     SetSignInPreferences(value SignInPreferencesable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()
     SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()

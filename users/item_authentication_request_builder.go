@@ -178,6 +178,11 @@ func (m *ItemAuthenticationRequestBuilder) QrCodePinMethod()(*ItemAuthentication
 func (m *ItemAuthenticationRequestBuilder) Requirements()(*ItemAuthenticationRequirementsRequestBuilder) {
     return NewItemAuthenticationRequirementsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ResourceAccountKeyAuthenticationMethods provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) ResourceAccountKeyAuthenticationMethods()(*ItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilder) {
+    return NewItemAuthenticationResourceAccountKeyAuthenticationMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SignInPreferences the signInPreferences property
 // returns a *ItemAuthenticationSignInPreferencesRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) SignInPreferences()(*ItemAuthenticationSignInPreferencesRequestBuilder) {

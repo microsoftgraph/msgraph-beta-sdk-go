@@ -40,6 +40,8 @@ func CreatePlannerDeltaFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                         return NewPlannerBucket(), nil
                     case "#microsoft.graph.plannerBucketTaskBoardTaskFormat":
                         return NewPlannerBucketTaskBoardTaskFormat(), nil
+                    case "#microsoft.graph.plannerGoal":
+                        return NewPlannerGoal(), nil
                     case "#microsoft.graph.plannerHistoryItem":
                         return NewPlannerHistoryItem(), nil
                     case "#microsoft.graph.plannerPlan":
