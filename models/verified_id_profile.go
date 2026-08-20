@@ -81,6 +81,16 @@ func (m *VerifiedIdProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["mobileDriversLicenseConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMobileDriversLicenseConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMobileDriversLicenseConfiguration(val.(MobileDriversLicenseConfigurationable))
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -98,6 +108,16 @@ func (m *VerifiedIdProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetPriority(val)
+        }
+        return nil
+    }
+    res["selfServiceIssuance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVerifiedIdSelfServiceIssuanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSelfServiceIssuance(val.(VerifiedIdSelfServiceIssuanceable))
         }
         return nil
     }
@@ -161,6 +181,18 @@ func (m *VerifiedIdProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
+// GetMobileDriversLicenseConfiguration gets the mobileDriversLicenseConfiguration property value. Configuration for accepting mobile driver's licenses. Optional.
+// returns a MobileDriversLicenseConfigurationable when successful
+func (m *VerifiedIdProfile) GetMobileDriversLicenseConfiguration()(MobileDriversLicenseConfigurationable) {
+    val, err := m.GetBackingStore().Get("mobileDriversLicenseConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MobileDriversLicenseConfigurationable)
+    }
+    return nil
+}
 // GetName gets the name property value. Display name for the verified ID profile. Required.
 // returns a *string when successful
 func (m *VerifiedIdProfile) GetName()(*string) {
@@ -182,6 +214,18 @@ func (m *VerifiedIdProfile) GetPriority()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetSelfServiceIssuance gets the selfServiceIssuance property value. Configuration for self-service issuance. Optional.
+// returns a VerifiedIdSelfServiceIssuanceable when successful
+func (m *VerifiedIdProfile) GetSelfServiceIssuance()(VerifiedIdSelfServiceIssuanceable) {
+    val, err := m.GetBackingStore().Get("selfServiceIssuance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VerifiedIdSelfServiceIssuanceable)
     }
     return nil
 }
@@ -258,6 +302,12 @@ func (m *VerifiedIdProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteObjectValue("mobileDriversLicenseConfiguration", m.GetMobileDriversLicenseConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
@@ -265,6 +315,12 @@ func (m *VerifiedIdProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err = writer.WriteInt32Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("selfServiceIssuance", m.GetSelfServiceIssuance())
         if err != nil {
             return err
         }
@@ -323,6 +379,13 @@ func (m *VerifiedIdProfile) SetLastModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
+// SetMobileDriversLicenseConfiguration sets the mobileDriversLicenseConfiguration property value. Configuration for accepting mobile driver's licenses. Optional.
+func (m *VerifiedIdProfile) SetMobileDriversLicenseConfiguration(value MobileDriversLicenseConfigurationable)() {
+    err := m.GetBackingStore().Set("mobileDriversLicenseConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. Display name for the verified ID profile. Required.
 func (m *VerifiedIdProfile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -333,6 +396,13 @@ func (m *VerifiedIdProfile) SetName(value *string)() {
 // SetPriority sets the priority property value. Defines profile processing priority if multiple profiles are configured. Optional.
 func (m *VerifiedIdProfile) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSelfServiceIssuance sets the selfServiceIssuance property value. Configuration for self-service issuance. Optional.
+func (m *VerifiedIdProfile) SetSelfServiceIssuance(value VerifiedIdSelfServiceIssuanceable)() {
+    err := m.GetBackingStore().Set("selfServiceIssuance", value)
     if err != nil {
         panic(err)
     }
@@ -371,8 +441,10 @@ type VerifiedIdProfileable interface {
     GetDescription()(*string)
     GetFaceCheckConfiguration()(FaceCheckConfigurationable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetMobileDriversLicenseConfiguration()(MobileDriversLicenseConfigurationable)
     GetName()(*string)
     GetPriority()(*int32)
+    GetSelfServiceIssuance()(VerifiedIdSelfServiceIssuanceable)
     GetState()(*VerifiedIdProfileState)
     GetVerifiedIdProfileConfiguration()(VerifiedIdProfileConfigurationable)
     GetVerifiedIdUsageConfigurations()([]VerifiedIdUsageConfigurationable)
@@ -380,8 +452,10 @@ type VerifiedIdProfileable interface {
     SetDescription(value *string)()
     SetFaceCheckConfiguration(value FaceCheckConfigurationable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetMobileDriversLicenseConfiguration(value MobileDriversLicenseConfigurationable)()
     SetName(value *string)()
     SetPriority(value *int32)()
+    SetSelfServiceIssuance(value VerifiedIdSelfServiceIssuanceable)()
     SetState(value *VerifiedIdProfileState)()
     SetVerifiedIdProfileConfiguration(value VerifiedIdProfileConfigurationable)()
     SetVerifiedIdUsageConfigurations(value []VerifiedIdUsageConfigurationable)()

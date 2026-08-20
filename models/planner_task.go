@@ -419,6 +419,22 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["goalIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetGoalIds(res)
+        }
+        return nil
+    }
     res["hasChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -616,6 +632,18 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetGoalIds gets the goalIds property value. Read-only. The IDs of the goals associated with the task.
+// returns a []string when successful
+func (m *PlannerTask) GetGoalIds()([]string) {
+    val, err := m.GetBackingStore().Get("goalIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
 }
 // GetHasChat gets the hasChat property value. Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.
 // returns a *bool when successful
@@ -953,6 +981,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetGoalIds() != nil {
+        err = writer.WriteCollectionOfStringValues("goalIds", m.GetGoalIds())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("hasChat", m.GetHasChat())
         if err != nil {
@@ -1196,6 +1230,13 @@ func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
         panic(err)
     }
 }
+// SetGoalIds sets the goalIds property value. Read-only. The IDs of the goals associated with the task.
+func (m *PlannerTask) SetGoalIds(value []string)() {
+    err := m.GetBackingStore().Set("goalIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHasChat sets the hasChat property value. Read-only. This value is true if the task has chat messages associated with it. Otherwise, false.
 func (m *PlannerTask) SetHasChat(value *bool)() {
     err := m.GetBackingStore().Set("hasChat", value)
@@ -1349,6 +1390,7 @@ type PlannerTaskable interface {
     GetCreationSource()(PlannerTaskCreationable)
     GetDetails()(PlannerTaskDetailsable)
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetGoalIds()([]string)
     GetHasChat()(*bool)
     GetHasDescription()(*bool)
     GetIsArchived()(*bool)
@@ -1385,6 +1427,7 @@ type PlannerTaskable interface {
     SetCreationSource(value PlannerTaskCreationable)()
     SetDetails(value PlannerTaskDetailsable)()
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetGoalIds(value []string)()
     SetHasChat(value *bool)()
     SetHasDescription(value *bool)()
     SetIsArchived(value *bool)()

@@ -44,7 +44,7 @@ func (m *SyntheticMediaDetectionInfo) GetAdditionalData()(map[string]any) {
 func (m *SyntheticMediaDetectionInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDetectionId gets the detectionId property value. The detectionId property
+// GetDetectionId gets the detectionId property value. Unique identifier for the detection event. This property correlates with the id parameter that the detection bot passed to reportSyntheticMedia.
 // returns a *UUID when successful
 func (m *SyntheticMediaDetectionInfo) GetDetectionId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("detectionId")
@@ -56,7 +56,7 @@ func (m *SyntheticMediaDetectionInfo) GetDetectionId()(*i561e97a8befe7661a44c8f5
     }
     return nil
 }
-// GetDetectorBot gets the detectorBot property value. The detectorBot property
+// GetDetectorBot gets the detectorBot property value. Identifier of the detection bot that produced this result.
 // returns a *string when successful
 func (m *SyntheticMediaDetectionInfo) GetDetectorBot()(*string) {
     val, err := m.GetBackingStore().Get("detectorBot")
@@ -124,7 +124,7 @@ func (m *SyntheticMediaDetectionInfo) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetIsParticipantTrusted gets the isParticipantTrusted property value. The isParticipantTrusted property
+// GetIsParticipantTrusted gets the isParticipantTrusted property value. Set to true if the participant is classified as trusted or reliable (for example, a known internal user); otherwise, false.
 // returns a *bool when successful
 func (m *SyntheticMediaDetectionInfo) GetIsParticipantTrusted()(*bool) {
     val, err := m.GetBackingStore().Get("isParticipantTrusted")
@@ -148,7 +148,7 @@ func (m *SyntheticMediaDetectionInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSyntheticConfidence gets the syntheticConfidence property value. The syntheticConfidence property
+// GetSyntheticConfidence gets the syntheticConfidence property value. Confidence score (0.0 to 1.0) that the participant's media is synthetic.
 // returns a *float64 when successful
 func (m *SyntheticMediaDetectionInfo) GetSyntheticConfidence()(*float64) {
     val, err := m.GetBackingStore().Get("syntheticConfidence")
@@ -211,21 +211,21 @@ func (m *SyntheticMediaDetectionInfo) SetAdditionalData(value map[string]any)() 
 func (m *SyntheticMediaDetectionInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDetectionId sets the detectionId property value. The detectionId property
+// SetDetectionId sets the detectionId property value. Unique identifier for the detection event. This property correlates with the id parameter that the detection bot passed to reportSyntheticMedia.
 func (m *SyntheticMediaDetectionInfo) SetDetectionId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("detectionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetectorBot sets the detectorBot property value. The detectorBot property
+// SetDetectorBot sets the detectorBot property value. Identifier of the detection bot that produced this result.
 func (m *SyntheticMediaDetectionInfo) SetDetectorBot(value *string)() {
     err := m.GetBackingStore().Set("detectorBot", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsParticipantTrusted sets the isParticipantTrusted property value. The isParticipantTrusted property
+// SetIsParticipantTrusted sets the isParticipantTrusted property value. Set to true if the participant is classified as trusted or reliable (for example, a known internal user); otherwise, false.
 func (m *SyntheticMediaDetectionInfo) SetIsParticipantTrusted(value *bool)() {
     err := m.GetBackingStore().Set("isParticipantTrusted", value)
     if err != nil {
@@ -239,7 +239,7 @@ func (m *SyntheticMediaDetectionInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSyntheticConfidence sets the syntheticConfidence property value. The syntheticConfidence property
+// SetSyntheticConfidence sets the syntheticConfidence property value. Confidence score (0.0 to 1.0) that the participant's media is synthetic.
 func (m *SyntheticMediaDetectionInfo) SetSyntheticConfidence(value *float64)() {
     err := m.GetBackingStore().Set("syntheticConfidence", value)
     if err != nil {

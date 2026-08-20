@@ -286,7 +286,7 @@ func (m *Participant) GetRosterSequenceNumber()(*int64) {
     }
     return nil
 }
-// GetSyntheticMediaDetection gets the syntheticMediaDetection property value. The syntheticMediaDetection property
+// GetSyntheticMediaDetection gets the syntheticMediaDetection property value. The latest synthetic media detection result reported for this participant by an in-call detection bot. Nullable. Set to null when no detection is reported. Populated asynchronously after a successful call to reportSyntheticMedia.
 // returns a SyntheticMediaDetectionInfoable when successful
 func (m *Participant) GetSyntheticMediaDetection()(SyntheticMediaDetectionInfoable) {
     val, err := m.GetBackingStore().Get("syntheticMediaDetection")
@@ -461,7 +461,7 @@ func (m *Participant) SetRosterSequenceNumber(value *int64)() {
         panic(err)
     }
 }
-// SetSyntheticMediaDetection sets the syntheticMediaDetection property value. The syntheticMediaDetection property
+// SetSyntheticMediaDetection sets the syntheticMediaDetection property value. The latest synthetic media detection result reported for this participant by an in-call detection bot. Nullable. Set to null when no detection is reported. Populated asynchronously after a successful call to reportSyntheticMedia.
 func (m *Participant) SetSyntheticMediaDetection(value SyntheticMediaDetectionInfoable)() {
     err := m.GetBackingStore().Set("syntheticMediaDetection", value)
     if err != nil {

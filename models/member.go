@@ -43,7 +43,7 @@ func (m *Member) GetAdditionalData()(map[string]any) {
 func (m *Member) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContactId gets the contactId property value. The ID of the referenced contact, if applicable. Optional.
+// GetContactId gets the contactId property value. The contactId property
 // returns a *string when successful
 func (m *Member) GetContactId()(*string) {
     val, err := m.GetBackingStore().Get("contactId")
@@ -133,7 +133,7 @@ func (m *Member) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetKey gets the key property value. The email address or routing key of the member. Required.
+// GetKey gets the key property value. The email address or routing key of the member. Optional.
 // returns a *string when successful
 func (m *Member) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
@@ -169,7 +169,7 @@ func (m *Member) GetRecipientType()(*RecipientType) {
     }
     return nil
 }
-// GetRoutingType gets the routingType property value. The routing type for the member, for example, SMTP. Optional.
+// GetRoutingType gets the routingType property value. The routingType property
 // returns a *string when successful
 func (m *Member) GetRoutingType()(*string) {
     val, err := m.GetBackingStore().Get("routingType")
@@ -239,7 +239,7 @@ func (m *Member) SetAdditionalData(value map[string]any)() {
 func (m *Member) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContactId sets the contactId property value. The ID of the referenced contact, if applicable. Optional.
+// SetContactId sets the contactId property value. The contactId property
 func (m *Member) SetContactId(value *string)() {
     err := m.GetBackingStore().Set("contactId", value)
     if err != nil {
@@ -253,7 +253,7 @@ func (m *Member) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetKey sets the key property value. The email address or routing key of the member. Required.
+// SetKey sets the key property value. The email address or routing key of the member. Optional.
 func (m *Member) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -274,7 +274,7 @@ func (m *Member) SetRecipientType(value *RecipientType)() {
         panic(err)
     }
 }
-// SetRoutingType sets the routingType property value. The routing type for the member, for example, SMTP. Optional.
+// SetRoutingType sets the routingType property value. The routingType property
 func (m *Member) SetRoutingType(value *string)() {
     err := m.GetBackingStore().Set("routingType", value)
     if err != nil {

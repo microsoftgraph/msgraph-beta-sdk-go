@@ -81,7 +81,7 @@ func (m *ClassificationRequestContentMetaData) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourceId gets the sourceId property value. The sourceId property
+// GetSourceId gets the sourceId property value. An identifier for the source of the content being classified.
 // returns a *string when successful
 func (m *ClassificationRequestContentMetaData) GetSourceId()(*string) {
     val, err := m.GetBackingStore().Get("sourceId")
@@ -133,7 +133,7 @@ func (m *ClassificationRequestContentMetaData) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourceId sets the sourceId property value. The sourceId property
+// SetSourceId sets the sourceId property value. An identifier for the source of the content being classified.
 func (m *ClassificationRequestContentMetaData) SetSourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceId", value)
     if err != nil {

@@ -38,7 +38,7 @@ func (m *MediaMetadata) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudioMetadata gets the audioMetadata property value. The audioMetadata property
+// GetAudioMetadata gets the audioMetadata property value. Audio-specific encoding details. Nullable. Set when the analyzed content is audio or multimodal.
 // returns a AudioMetadataable when successful
 func (m *MediaMetadata) GetAudioMetadata()(AudioMetadataable) {
     val, err := m.GetBackingStore().Get("audioMetadata")
@@ -55,7 +55,7 @@ func (m *MediaMetadata) GetAudioMetadata()(AudioMetadataable) {
 func (m *MediaMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetByteSize gets the byteSize property value. The byteSize property
+// GetByteSize gets the byteSize property value. Size of the content in bytes. Set this value to 0 for live streams where the total size is unknown; for recorded files, specify the actual size.
 // returns a *int64 when successful
 func (m *MediaMetadata) GetByteSize()(*int64) {
     val, err := m.GetBackingStore().Get("byteSize")
@@ -67,7 +67,7 @@ func (m *MediaMetadata) GetByteSize()(*int64) {
     }
     return nil
 }
-// GetDuration gets the duration property value. The duration property
+// GetDuration gets the duration property value. Duration of the analyzed content in whole seconds. Sub-second or millisecond windows are rounded to the nearest second. For a continuous live stream, set this value to the length of the analysis window.
 // returns a *int32 when successful
 func (m *MediaMetadata) GetDuration()(*int32) {
     val, err := m.GetBackingStore().Get("duration")
@@ -175,7 +175,7 @@ func (m *MediaMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsRealTime gets the isRealTime property value. The isRealTime property
+// GetIsRealTime gets the isRealTime property value. Indicates whether the analysis was performed in real time on a live stream.
 // returns a *bool when successful
 func (m *MediaMetadata) GetIsRealTime()(*bool) {
     val, err := m.GetBackingStore().Get("isRealTime")
@@ -187,7 +187,7 @@ func (m *MediaMetadata) GetIsRealTime()(*bool) {
     }
     return nil
 }
-// GetMimeType gets the mimeType property value. The mimeType property
+// GetMimeType gets the mimeType property value. MIME type of the analyzed content. Common values for Teams media include audio/pcm, video/mp4, and video/h264.
 // returns a *string when successful
 func (m *MediaMetadata) GetMimeType()(*string) {
     val, err := m.GetBackingStore().Get("mimeType")
@@ -223,7 +223,7 @@ func (m *MediaMetadata) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStreamingMetadata gets the streamingMetadata property value. The streamingMetadata property
+// GetStreamingMetadata gets the streamingMetadata property value. Network and real-time streaming quality metrics. Nullable. Set when the analyzed content was streamed in real time.
 // returns a StreamingMetadataable when successful
 func (m *MediaMetadata) GetStreamingMetadata()(StreamingMetadataable) {
     val, err := m.GetBackingStore().Get("streamingMetadata")
@@ -235,7 +235,7 @@ func (m *MediaMetadata) GetStreamingMetadata()(StreamingMetadataable) {
     }
     return nil
 }
-// GetVideoMetadata gets the videoMetadata property value. The videoMetadata property
+// GetVideoMetadata gets the videoMetadata property value. Video-specific encoding and quality details. Nullable. Set when the analyzed content is video or multimodal.
 // returns a VideoMetadataable when successful
 func (m *MediaMetadata) GetVideoMetadata()(VideoMetadataable) {
     val, err := m.GetBackingStore().Get("videoMetadata")
@@ -319,7 +319,7 @@ func (m *MediaMetadata) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAudioMetadata sets the audioMetadata property value. The audioMetadata property
+// SetAudioMetadata sets the audioMetadata property value. Audio-specific encoding details. Nullable. Set when the analyzed content is audio or multimodal.
 func (m *MediaMetadata) SetAudioMetadata(value AudioMetadataable)() {
     err := m.GetBackingStore().Set("audioMetadata", value)
     if err != nil {
@@ -330,28 +330,28 @@ func (m *MediaMetadata) SetAudioMetadata(value AudioMetadataable)() {
 func (m *MediaMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetByteSize sets the byteSize property value. The byteSize property
+// SetByteSize sets the byteSize property value. Size of the content in bytes. Set this value to 0 for live streams where the total size is unknown; for recorded files, specify the actual size.
 func (m *MediaMetadata) SetByteSize(value *int64)() {
     err := m.GetBackingStore().Set("byteSize", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDuration sets the duration property value. The duration property
+// SetDuration sets the duration property value. Duration of the analyzed content in whole seconds. Sub-second or millisecond windows are rounded to the nearest second. For a continuous live stream, set this value to the length of the analysis window.
 func (m *MediaMetadata) SetDuration(value *int32)() {
     err := m.GetBackingStore().Set("duration", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRealTime sets the isRealTime property value. The isRealTime property
+// SetIsRealTime sets the isRealTime property value. Indicates whether the analysis was performed in real time on a live stream.
 func (m *MediaMetadata) SetIsRealTime(value *bool)() {
     err := m.GetBackingStore().Set("isRealTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMimeType sets the mimeType property value. The mimeType property
+// SetMimeType sets the mimeType property value. MIME type of the analyzed content. Common values for Teams media include audio/pcm, video/mp4, and video/h264.
 func (m *MediaMetadata) SetMimeType(value *string)() {
     err := m.GetBackingStore().Set("mimeType", value)
     if err != nil {
@@ -372,14 +372,14 @@ func (m *MediaMetadata) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStreamingMetadata sets the streamingMetadata property value. The streamingMetadata property
+// SetStreamingMetadata sets the streamingMetadata property value. Network and real-time streaming quality metrics. Nullable. Set when the analyzed content was streamed in real time.
 func (m *MediaMetadata) SetStreamingMetadata(value StreamingMetadataable)() {
     err := m.GetBackingStore().Set("streamingMetadata", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVideoMetadata sets the videoMetadata property value. The videoMetadata property
+// SetVideoMetadata sets the videoMetadata property value. Video-specific encoding and quality details. Nullable. Set when the analyzed content is video or multimodal.
 func (m *MediaMetadata) SetVideoMetadata(value VideoMetadataable)() {
     err := m.GetBackingStore().Set("videoMetadata", value)
     if err != nil {

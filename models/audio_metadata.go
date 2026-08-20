@@ -43,7 +43,7 @@ func (m *AudioMetadata) GetAdditionalData()(map[string]any) {
 func (m *AudioMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBitDepth gets the bitDepth property value. The bitDepth property
+// GetBitDepth gets the bitDepth property value. Bit depth of the audio samples (for example, 16, 24).
 // returns a *int32 when successful
 func (m *AudioMetadata) GetBitDepth()(*int32) {
     val, err := m.GetBackingStore().Get("bitDepth")
@@ -55,7 +55,7 @@ func (m *AudioMetadata) GetBitDepth()(*int32) {
     }
     return nil
 }
-// GetChannels gets the channels property value. The channels property
+// GetChannels gets the channels property value. Number of audio channels (for example, 1 for mono, 2 for stereo).
 // returns a *int32 when successful
 func (m *AudioMetadata) GetChannels()(*int32) {
     val, err := m.GetBackingStore().Get("channels")
@@ -125,7 +125,7 @@ func (m *AudioMetadata) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSampleRateHz gets the sampleRateHz property value. The sampleRateHz property
+// GetSampleRateHz gets the sampleRateHz property value. Sample rate in Hertz (for example, 16000, 48000).
 // returns a *int32 when successful
 func (m *AudioMetadata) GetSampleRateHz()(*int32) {
     val, err := m.GetBackingStore().Get("sampleRateHz")
@@ -182,14 +182,14 @@ func (m *AudioMetadata) SetAdditionalData(value map[string]any)() {
 func (m *AudioMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBitDepth sets the bitDepth property value. The bitDepth property
+// SetBitDepth sets the bitDepth property value. Bit depth of the audio samples (for example, 16, 24).
 func (m *AudioMetadata) SetBitDepth(value *int32)() {
     err := m.GetBackingStore().Set("bitDepth", value)
     if err != nil {
         panic(err)
     }
 }
-// SetChannels sets the channels property value. The channels property
+// SetChannels sets the channels property value. Number of audio channels (for example, 1 for mono, 2 for stereo).
 func (m *AudioMetadata) SetChannels(value *int32)() {
     err := m.GetBackingStore().Set("channels", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *AudioMetadata) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSampleRateHz sets the sampleRateHz property value. The sampleRateHz property
+// SetSampleRateHz sets the sampleRateHz property value. Sample rate in Hertz (for example, 16000, 48000).
 func (m *AudioMetadata) SetSampleRateHz(value *int32)() {
     err := m.GetBackingStore().Set("sampleRateHz", value)
     if err != nil {

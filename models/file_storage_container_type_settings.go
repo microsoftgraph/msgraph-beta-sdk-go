@@ -55,7 +55,7 @@ func (m *FileStorageContainerTypeSettings) GetAgent()(FileStorageContainerTypeAg
 func (m *FileStorageContainerTypeSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConsumingTenantOverridables gets the consumingTenantOverridables property value. A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue.
+// GetConsumingTenantOverridables gets the consumingTenantOverridables property value. A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue, isOfficeRestricted.
 // returns a *FileStorageContainerTypeSettingsOverride when successful
 func (m *FileStorageContainerTypeSettings) GetConsumingTenantOverridables()(*FileStorageContainerTypeSettingsOverride) {
     val, err := m.GetBackingStore().Get("consumingTenantOverridables")
@@ -387,7 +387,7 @@ func (m *FileStorageContainerTypeSettings) SetAgent(value FileStorageContainerTy
 func (m *FileStorageContainerTypeSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConsumingTenantOverridables sets the consumingTenantOverridables property value. A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue.
+// SetConsumingTenantOverridables sets the consumingTenantOverridables property value. A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue, isOfficeRestricted.
 func (m *FileStorageContainerTypeSettings) SetConsumingTenantOverridables(value *FileStorageContainerTypeSettingsOverride)() {
     err := m.GetBackingStore().Set("consumingTenantOverridables", value)
     if err != nil {

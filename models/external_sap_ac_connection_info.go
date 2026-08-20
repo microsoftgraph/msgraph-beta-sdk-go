@@ -102,7 +102,7 @@ func (m *ExternalSapAcConnectionInfo) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetKeyVaultName gets the keyVaultName property value. The keyVaultName property
+// GetKeyVaultName gets the keyVaultName property value. The name of the Azure Key Vault that stores the credentials used for authentication.
 // returns a *string when successful
 func (m *ExternalSapAcConnectionInfo) GetKeyVaultName()(*string) {
     val, err := m.GetBackingStore().Get("keyVaultName")
@@ -114,7 +114,7 @@ func (m *ExternalSapAcConnectionInfo) GetKeyVaultName()(*string) {
     }
     return nil
 }
-// GetResourceGroup gets the resourceGroup property value. The resourceGroup property
+// GetResourceGroup gets the resourceGroup property value. The Azure resource group that contains the Key Vault.
 // returns a *string when successful
 func (m *ExternalSapAcConnectionInfo) GetResourceGroup()(*string) {
     val, err := m.GetBackingStore().Get("resourceGroup")
@@ -126,7 +126,7 @@ func (m *ExternalSapAcConnectionInfo) GetResourceGroup()(*string) {
     }
     return nil
 }
-// GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
+// GetSubscriptionId gets the subscriptionId property value. The Azure subscription ID that contains the Key Vault.
 // returns a *string when successful
 func (m *ExternalSapAcConnectionInfo) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
@@ -138,7 +138,7 @@ func (m *ExternalSapAcConnectionInfo) GetSubscriptionId()(*string) {
     }
     return nil
 }
-// GetSystemId gets the systemId property value. The systemId property
+// GetSystemId gets the systemId property value. The identifier of the target SAP AC system.
 // returns a *string when successful
 func (m *ExternalSapAcConnectionInfo) GetSystemId()(*string) {
     val, err := m.GetBackingStore().Get("systemId")
@@ -150,7 +150,7 @@ func (m *ExternalSapAcConnectionInfo) GetSystemId()(*string) {
     }
     return nil
 }
-// GetUserIdentifier gets the userIdentifier property value. The userIdentifier property
+// GetUserIdentifier gets the userIdentifier property value. The user identifier used to connect to the SAP AC system.
 // returns a *string when successful
 func (m *ExternalSapAcConnectionInfo) GetUserIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("userIdentifier")
@@ -213,35 +213,35 @@ func (m *ExternalSapAcConnectionInfo) SetAuthenticationInfo(value Authentication
         panic(err)
     }
 }
-// SetKeyVaultName sets the keyVaultName property value. The keyVaultName property
+// SetKeyVaultName sets the keyVaultName property value. The name of the Azure Key Vault that stores the credentials used for authentication.
 func (m *ExternalSapAcConnectionInfo) SetKeyVaultName(value *string)() {
     err := m.GetBackingStore().Set("keyVaultName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceGroup sets the resourceGroup property value. The resourceGroup property
+// SetResourceGroup sets the resourceGroup property value. The Azure resource group that contains the Key Vault.
 func (m *ExternalSapAcConnectionInfo) SetResourceGroup(value *string)() {
     err := m.GetBackingStore().Set("resourceGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
+// SetSubscriptionId sets the subscriptionId property value. The Azure subscription ID that contains the Key Vault.
 func (m *ExternalSapAcConnectionInfo) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSystemId sets the systemId property value. The systemId property
+// SetSystemId sets the systemId property value. The identifier of the target SAP AC system.
 func (m *ExternalSapAcConnectionInfo) SetSystemId(value *string)() {
     err := m.GetBackingStore().Set("systemId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserIdentifier sets the userIdentifier property value. The userIdentifier property
+// SetUserIdentifier sets the userIdentifier property value. The user identifier used to connect to the SAP AC system.
 func (m *ExternalSapAcConnectionInfo) SetUserIdentifier(value *string)() {
     err := m.GetBackingStore().Set("userIdentifier", value)
     if err != nil {

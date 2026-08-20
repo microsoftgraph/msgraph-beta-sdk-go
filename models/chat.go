@@ -479,7 +479,7 @@ func (m *Chat) GetTabs()([]TeamsTabable) {
     }
     return nil
 }
-// GetTargetedMessages gets the targetedMessages property value. A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+// GetTargetedMessages gets the targetedMessages property value. A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 // returns a []TargetedChatMessageable when successful
 func (m *Chat) GetTargetedMessages()([]TargetedChatMessageable) {
     val, err := m.GetBackingStore().Get("targetedMessages")
@@ -835,7 +835,7 @@ func (m *Chat) SetTabs(value []TeamsTabable)() {
         panic(err)
     }
 }
-// SetTargetedMessages sets the targetedMessages property value. A collection of targeted messages in the chat that are visible only to specific users. Nullable.
+// SetTargetedMessages sets the targetedMessages property value. A collection of targeted messages in the chat that are visible only to specific users. Nullable. You can't expand this relationship using $expand. Targeted messages can also be retrieved via the userTeamwork: getAllTargetedMessages API.
 func (m *Chat) SetTargetedMessages(value []TargetedChatMessageable)() {
     err := m.GetBackingStore().Set("targetedMessages", value)
     if err != nil {

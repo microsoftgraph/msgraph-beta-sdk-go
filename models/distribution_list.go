@@ -104,7 +104,7 @@ func (m *DistributionList) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetMembers gets the members property value. The list of members in the distribution list. Not returned by default; use $select=members to include.
+// GetMembers gets the members property value. The members property
 // returns a []Memberable when successful
 func (m *DistributionList) GetMembers()([]Memberable) {
     val, err := m.GetBackingStore().Get("members")
@@ -116,7 +116,7 @@ func (m *DistributionList) GetMembers()([]Memberable) {
     }
     return nil
 }
-// GetNotes gets the notes property value. The notes property
+// GetNotes gets the notes property value. Notes about the distribution list.
 // returns a *string when successful
 func (m *DistributionList) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
@@ -128,7 +128,7 @@ func (m *DistributionList) GetNotes()(*string) {
     }
     return nil
 }
-// GetPersonIdentifier gets the personIdentifier property value. The personIdentifier property
+// GetPersonIdentifier gets the personIdentifier property value. The unique identifier of the distribution list in the mailbox. Read-only.
 // returns a *string when successful
 func (m *DistributionList) GetPersonIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("personIdentifier")
@@ -140,7 +140,7 @@ func (m *DistributionList) GetPersonIdentifier()(*string) {
     }
     return nil
 }
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the distribution list. Read-only.
 // returns a []SingleValueLegacyExtendedPropertyable when successful
 func (m *DistributionList) GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -209,28 +209,28 @@ func (m *DistributionList) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetMembers sets the members property value. The list of members in the distribution list. Not returned by default; use $select=members to include.
+// SetMembers sets the members property value. The members property
 func (m *DistributionList) SetMembers(value []Memberable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. The notes property
+// SetNotes sets the notes property value. Notes about the distribution list.
 func (m *DistributionList) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPersonIdentifier sets the personIdentifier property value. The personIdentifier property
+// SetPersonIdentifier sets the personIdentifier property value. The unique identifier of the distribution list in the mailbox. Read-only.
 func (m *DistributionList) SetPersonIdentifier(value *string)() {
     err := m.GetBackingStore().Set("personIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the distribution list. Read-only.
 func (m *DistributionList) SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)() {
     err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
     if err != nil {

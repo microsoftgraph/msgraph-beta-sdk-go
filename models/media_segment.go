@@ -43,7 +43,7 @@ func (m *MediaSegment) GetAdditionalData()(map[string]any) {
 func (m *MediaSegment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEndTimeSec gets the endTimeSec property value. The endTimeSec property
+// GetEndTimeSec gets the endTimeSec property value. End time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn't apply.
 // returns a *int32 when successful
 func (m *MediaSegment) GetEndTimeSec()(*int32) {
     val, err := m.GetBackingStore().Get("endTimeSec")
@@ -107,7 +107,7 @@ func (m *MediaSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetFrameIndices gets the frameIndices property value. The frameIndices property
+// GetFrameIndices gets the frameIndices property value. Frame indices that identify the video frames in the segment. Applies only to video analysis; pass an empty array for audio-only segments.
 // returns a []int32 when successful
 func (m *MediaSegment) GetFrameIndices()([]int32) {
     val, err := m.GetBackingStore().Get("frameIndices")
@@ -131,7 +131,7 @@ func (m *MediaSegment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStartTimeSec gets the startTimeSec property value. The startTimeSec property
+// GetStartTimeSec gets the startTimeSec property value. Start time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn't apply.
 // returns a *int32 when successful
 func (m *MediaSegment) GetStartTimeSec()(*int32) {
     val, err := m.GetBackingStore().Get("startTimeSec")
@@ -188,14 +188,14 @@ func (m *MediaSegment) SetAdditionalData(value map[string]any)() {
 func (m *MediaSegment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEndTimeSec sets the endTimeSec property value. The endTimeSec property
+// SetEndTimeSec sets the endTimeSec property value. End time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn't apply.
 func (m *MediaSegment) SetEndTimeSec(value *int32)() {
     err := m.GetBackingStore().Set("endTimeSec", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFrameIndices sets the frameIndices property value. The frameIndices property
+// SetFrameIndices sets the frameIndices property value. Frame indices that identify the video frames in the segment. Applies only to video analysis; pass an empty array for audio-only segments.
 func (m *MediaSegment) SetFrameIndices(value []int32)() {
     err := m.GetBackingStore().Set("frameIndices", value)
     if err != nil {
@@ -209,7 +209,7 @@ func (m *MediaSegment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStartTimeSec sets the startTimeSec property value. The startTimeSec property
+// SetStartTimeSec sets the startTimeSec property value. Start time of the segment, in seconds from the start of the analyzed live stream. Set to 0 for recorded or offline analysis, where a stream-relative time base doesn't apply.
 func (m *MediaSegment) SetStartTimeSec(value *int32)() {
     err := m.GetBackingStore().Set("startTimeSec", value)
     if err != nil {

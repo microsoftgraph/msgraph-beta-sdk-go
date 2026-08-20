@@ -54,6 +54,22 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["goals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerGoalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerGoalable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlannerGoalable)
+                }
+            }
+            m.SetGoals(res)
+        }
+        return nil
+    }
     res["plans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerPlanFromDiscriminatorValue)
         if err != nil {
@@ -103,6 +119,18 @@ func (m *Planner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetGoals gets the goals property value. Read-only. Nullable. Returns a collection of the specified goals
+// returns a []PlannerGoalable when successful
+func (m *Planner) GetGoals()([]PlannerGoalable) {
+    val, err := m.GetBackingStore().Get("goals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerGoalable)
+    }
+    return nil
 }
 // GetPlans gets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 // returns a []PlannerPlanable when successful
@@ -158,6 +186,18 @@ func (m *Planner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetGoals() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGoals()))
+        for i, v := range m.GetGoals() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("goals", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPlans() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPlans()))
         for i, v := range m.GetPlans() {
@@ -203,6 +243,13 @@ func (m *Planner) SetBuckets(value []PlannerBucketable)() {
         panic(err)
     }
 }
+// SetGoals sets the goals property value. Read-only. Nullable. Returns a collection of the specified goals
+func (m *Planner) SetGoals(value []PlannerGoalable)() {
+    err := m.GetBackingStore().Set("goals", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPlans sets the plans property value. Read-only. Nullable. Returns a collection of the specified plans
 func (m *Planner) SetPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("plans", value)
@@ -228,10 +275,12 @@ type Plannerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBuckets()([]PlannerBucketable)
+    GetGoals()([]PlannerGoalable)
     GetPlans()([]PlannerPlanable)
     GetRosters()([]PlannerRosterable)
     GetTasks()([]PlannerTaskable)
     SetBuckets(value []PlannerBucketable)()
+    SetGoals(value []PlannerGoalable)()
     SetPlans(value []PlannerPlanable)()
     SetRosters(value []PlannerRosterable)()
     SetTasks(value []PlannerTaskable)()

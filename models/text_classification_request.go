@@ -22,7 +22,7 @@ func NewTextClassificationRequest()(*TextClassificationRequest) {
 func CreateTextClassificationRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTextClassificationRequest(), nil
 }
-// GetContentMetaData gets the contentMetaData property value. The contentMetaData property
+// GetContentMetaData gets the contentMetaData property value. Metadata that describes the content being classified.
 // returns a ClassificationRequestContentMetaDataable when successful
 func (m *TextClassificationRequest) GetContentMetaData()(ClassificationRequestContentMetaDataable) {
     val, err := m.GetBackingStore().Get("contentMetaData")
@@ -106,7 +106,7 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetFileExtension gets the fileExtension property value. The fileExtension property
+// GetFileExtension gets the fileExtension property value. The file extension of the content being classified.
 // returns a *string when successful
 func (m *TextClassificationRequest) GetFileExtension()(*string) {
     val, err := m.GetBackingStore().Get("fileExtension")
@@ -118,7 +118,7 @@ func (m *TextClassificationRequest) GetFileExtension()(*string) {
     }
     return nil
 }
-// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
+// GetMatchTolerancesToInclude gets the matchTolerancesToInclude property value. The match tolerance levels to include in the classification results. The possible values are: exact, near.
 // returns a *MlClassificationMatchTolerance when successful
 func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance) {
     val, err := m.GetBackingStore().Get("matchTolerancesToInclude")
@@ -130,7 +130,7 @@ func (m *TextClassificationRequest) GetMatchTolerancesToInclude()(*MlClassificat
     }
     return nil
 }
-// GetScopesToRun gets the scopesToRun property value. The scopesToRun property
+// GetScopesToRun gets the scopesToRun property value. The document scopes over which to run classification. The possible values are: fullDocument, partialDocument.
 // returns a *SensitiveTypeScope when successful
 func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
     val, err := m.GetBackingStore().Get("scopesToRun")
@@ -142,7 +142,7 @@ func (m *TextClassificationRequest) GetScopesToRun()(*SensitiveTypeScope) {
     }
     return nil
 }
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. The identifiers of the sensitive information types to evaluate against the text.
 // returns a []string when successful
 func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
     val, err := m.GetBackingStore().Get("sensitiveTypeIds")
@@ -154,7 +154,7 @@ func (m *TextClassificationRequest) GetSensitiveTypeIds()([]string) {
     }
     return nil
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. The text to classify.
 // returns a *string when successful
 func (m *TextClassificationRequest) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -212,42 +212,42 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetContentMetaData sets the contentMetaData property value. The contentMetaData property
+// SetContentMetaData sets the contentMetaData property value. Metadata that describes the content being classified.
 func (m *TextClassificationRequest) SetContentMetaData(value ClassificationRequestContentMetaDataable)() {
     err := m.GetBackingStore().Set("contentMetaData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileExtension sets the fileExtension property value. The fileExtension property
+// SetFileExtension sets the fileExtension property value. The file extension of the content being classified.
 func (m *TextClassificationRequest) SetFileExtension(value *string)() {
     err := m.GetBackingStore().Set("fileExtension", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The matchTolerancesToInclude property
+// SetMatchTolerancesToInclude sets the matchTolerancesToInclude property value. The match tolerance levels to include in the classification results. The possible values are: exact, near.
 func (m *TextClassificationRequest) SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)() {
     err := m.GetBackingStore().Set("matchTolerancesToInclude", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopesToRun sets the scopesToRun property value. The scopesToRun property
+// SetScopesToRun sets the scopesToRun property value. The document scopes over which to run classification. The possible values are: fullDocument, partialDocument.
 func (m *TextClassificationRequest) SetScopesToRun(value *SensitiveTypeScope)() {
     err := m.GetBackingStore().Set("scopesToRun", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
+// SetSensitiveTypeIds sets the sensitiveTypeIds property value. The identifiers of the sensitive information types to evaluate against the text.
 func (m *TextClassificationRequest) SetSensitiveTypeIds(value []string)() {
     err := m.GetBackingStore().Set("sensitiveTypeIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. The text to classify.
 func (m *TextClassificationRequest) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {

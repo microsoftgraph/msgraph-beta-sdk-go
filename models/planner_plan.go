@@ -231,6 +231,22 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["goals"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePlannerGoalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PlannerGoalable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PlannerGoalable)
+                }
+            }
+            m.SetGoals(res)
+        }
+        return nil
+    }
     res["historyItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerHistoryItemFromDiscriminatorValue)
         if err != nil {
@@ -310,6 +326,18 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetGoals gets the goals property value. Collection of goals in the plan. Read-only. Nullable.
+// returns a []PlannerGoalable when successful
+func (m *PlannerPlan) GetGoals()([]PlannerGoalable) {
+    val, err := m.GetBackingStore().Get("goals")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PlannerGoalable)
+    }
+    return nil
 }
 // GetHistoryItems gets the historyItems property value. Collection of history items for entities in the plan. Read-only. Nullable.
 // returns a []PlannerHistoryItemable when successful
@@ -449,6 +477,18 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetGoals() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGoals()))
+        for i, v := range m.GetGoals() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("goals", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetHistoryItems() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistoryItems()))
         for i, v := range m.GetHistoryItems() {
@@ -568,6 +608,13 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         panic(err)
     }
 }
+// SetGoals sets the goals property value. Collection of goals in the plan. Read-only. Nullable.
+func (m *PlannerPlan) SetGoals(value []PlannerGoalable)() {
+    err := m.GetBackingStore().Set("goals", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHistoryItems sets the historyItems property value. Collection of history items for entities in the plan. Read-only. Nullable.
 func (m *PlannerPlan) SetHistoryItems(value []PlannerHistoryItemable)() {
     err := m.GetBackingStore().Set("historyItems", value)
@@ -622,6 +669,7 @@ type PlannerPlanable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreationSource()(PlannerPlanCreationable)
     GetDetails()(PlannerPlanDetailsable)
+    GetGoals()([]PlannerGoalable)
     GetHistoryItems()([]PlannerHistoryItemable)
     GetIsArchived()(*bool)
     GetOwner()(*string)
@@ -637,6 +685,7 @@ type PlannerPlanable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreationSource(value PlannerPlanCreationable)()
     SetDetails(value PlannerPlanDetailsable)()
+    SetGoals(value []PlannerGoalable)()
     SetHistoryItems(value []PlannerHistoryItemable)()
     SetIsArchived(value *bool)()
     SetOwner(value *string)()

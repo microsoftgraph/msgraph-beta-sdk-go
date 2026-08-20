@@ -9,10 +9,11 @@ const (
     ONBOARDING_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
     ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
     UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+    VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
 )
 
 func (i VerifiedIdUsageConfigurationPurpose) String() string {
-    return []string{"recovery", "onboarding", "all", "unknownFutureValue"}[i]
+    return []string{"recovery", "onboarding", "all", "unknownFutureValue", "verification"}[i]
 }
 func ParseVerifiedIdUsageConfigurationPurpose(v string) (any, error) {
     result := RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
@@ -25,6 +26,8 @@ func ParseVerifiedIdUsageConfigurationPurpose(v string) (any, error) {
             result = ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+        case "verification":
+            result = VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
         default:
             return nil, nil
     }
