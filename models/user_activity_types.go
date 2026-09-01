@@ -19,12 +19,13 @@ const (
     PASTEFROMCLIPBOARD_USERACTIVITYTYPES = 128
     PRINT_USERACTIVITYTYPES = 256
     ACCESSDEBUGTOOLS_USERACTIVITYTYPES = 512
+    CONTENTFILTERING_USERACTIVITYTYPES = 1024
 )
 
 func (i UserActivityTypes) String() string {
     var values []string
-    options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools"}
-    for p := 0; p < 10; p++ {
+    options := []string{"none", "uploadText", "uploadFile", "downloadText", "downloadFile", "unknownFutureValue", "copyToClipboard", "pasteFromClipboard", "print", "accessDebugTools", "contentFiltering"}
+    for p := 0; p < 11; p++ {
         mantis := UserActivityTypes(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -57,6 +58,8 @@ func ParseUserActivityTypes(v string) (any, error) {
                 result |= PRINT_USERACTIVITYTYPES
             case "accessDebugTools":
                 result |= ACCESSDEBUGTOOLS_USERACTIVITYTYPES
+            case "contentFiltering":
+                result |= CONTENTFILTERING_USERACTIVITYTYPES
             default:
                 return nil, nil
         }

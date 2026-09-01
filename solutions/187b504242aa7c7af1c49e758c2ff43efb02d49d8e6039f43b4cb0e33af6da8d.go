@@ -58,6 +58,7 @@ func NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreA
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property granularDriveRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return nil
 }
 // Get a collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a GranularDriveRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable), nil
 }
 // Patch update the navigation property granularDriveRestoreArtifacts in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a GranularDriveRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable), nil
 }
 // ToDeleteRequestInformation delete navigation property granularDriveRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of browse session id and item key details that can be used to restore OneDrive for work or school files and folders.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property granularDriveRestoreArtifacts in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GranularDriveRestoreArtifactable, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestore
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemGranularDriveRestoreArtifactsGranularDriveRestoreArtifactItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

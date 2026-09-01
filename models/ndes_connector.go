@@ -94,6 +94,32 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["healthChecks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConnectorHealthCheckFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConnectorHealthCheckable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConnectorHealthCheckable)
+                }
+            }
+            m.SetHealthChecks(res)
+        }
+        return nil
+    }
+    res["healthStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseNdesConnectorHealthStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthStatus(val.(*NdesConnectorHealthStatus))
+        }
+        return nil
+    }
     res["lastConnectionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -141,6 +167,30 @@ func (m *NdesConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetHealthChecks gets the healthChecks property value. The collection of individual health check results for this connector. Each entry represents an independent health metric with its current status. Empty when the connector is disconnected or when health has not been evaluated yet. Read-only.
+// returns a []ConnectorHealthCheckable when successful
+func (m *NdesConnector) GetHealthChecks()([]ConnectorHealthCheckable) {
+    val, err := m.GetBackingStore().Get("healthChecks")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConnectorHealthCheckable)
+    }
+    return nil
+}
+// GetHealthStatus gets the healthStatus property value. The overall health status of the connector, representing the worst status across all individual health checks. This value is pre-computed on each connector upload and may be overridden to disconnected at read time if the connector has not connected recently. Read-only.
+// returns a *NdesConnectorHealthStatus when successful
+func (m *NdesConnector) GetHealthStatus()(*NdesConnectorHealthStatus) {
+    val, err := m.GetBackingStore().Get("healthStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NdesConnectorHealthStatus)
+    }
+    return nil
 }
 // GetLastConnectionDateTime gets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 // returns a *Time when successful
@@ -262,6 +312,20 @@ func (m *NdesConnector) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad
         panic(err)
     }
 }
+// SetHealthChecks sets the healthChecks property value. The collection of individual health check results for this connector. Each entry represents an independent health metric with its current status. Empty when the connector is disconnected or when health has not been evaluated yet. Read-only.
+func (m *NdesConnector) SetHealthChecks(value []ConnectorHealthCheckable)() {
+    err := m.GetBackingStore().Set("healthChecks", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHealthStatus sets the healthStatus property value. The overall health status of the connector, representing the worst status across all individual health checks. This value is pre-computed on each connector upload and may be overridden to disconnected at read time if the connector has not connected recently. Read-only.
+func (m *NdesConnector) SetHealthStatus(value *NdesConnectorHealthStatus)() {
+    err := m.GetBackingStore().Set("healthStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastConnectionDateTime sets the lastConnectionDateTime property value. Last connection time for the Ndes Connector
 func (m *NdesConnector) SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastConnectionDateTime", value)
@@ -296,6 +360,8 @@ type NdesConnectorable interface {
     GetConnectorVersion()(*string)
     GetDisplayName()(*string)
     GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHealthChecks()([]ConnectorHealthCheckable)
+    GetHealthStatus()(*NdesConnectorHealthStatus)
     GetLastConnectionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMachineName()(*string)
     GetRoleScopeTagIds()([]string)
@@ -303,6 +369,8 @@ type NdesConnectorable interface {
     SetConnectorVersion(value *string)()
     SetDisplayName(value *string)()
     SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHealthChecks(value []ConnectorHealthCheckable)()
+    SetHealthStatus(value *NdesConnectorHealthStatus)()
     SetLastConnectionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMachineName(value *string)()
     SetRoleScopeTagIds(value []string)()

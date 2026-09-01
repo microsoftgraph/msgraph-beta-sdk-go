@@ -58,6 +58,7 @@ func NewEntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataP
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property uploadSessions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get uploadSessions from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
@@ -99,6 +101,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
 // Patch update the navigation property uploadSessions in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a CustomDataProvidedResourceUploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, error) {
@@ -119,6 +122,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable), nil
 }
 // ToDeleteRequestInformation delete navigation property uploadSessions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return requestInfo, nil
 }
 // ToGetRequestInformation get uploadSessions from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property uploadSessions in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceUploadSessionable, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +170,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomData
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsItemUploadFileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder) {
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsCustomDataProvidedResourceUploadSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

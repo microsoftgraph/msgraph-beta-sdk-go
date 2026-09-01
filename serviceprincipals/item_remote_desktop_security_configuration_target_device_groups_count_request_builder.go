@@ -43,6 +43,7 @@ func NewItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuil
     return NewItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBui
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder when successful
 func (m *ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder) WithUrl(rawUrl string)(*ItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder) {
     return NewItemRemoteDesktopSecurityConfigurationTargetDeviceGroupsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

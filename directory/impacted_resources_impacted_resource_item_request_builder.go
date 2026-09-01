@@ -44,6 +44,21 @@ type ImpactedResourcesImpactedResourceItemRequestBuilderPatchRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AcceptRisk provides operations to call the acceptRisk method.
+// returns a *ImpactedResourcesItemAcceptRiskRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) AcceptRisk()(*ImpactedResourcesItemAcceptRiskRequestBuilder) {
+    return NewImpactedResourcesItemAcceptRiskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AddTag provides operations to call the addTag method.
+// returns a *ImpactedResourcesItemAddTagRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) AddTag()(*ImpactedResourcesItemAddTagRequestBuilder) {
+    return NewImpactedResourcesItemAddTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ApplyAlternateMitigation provides operations to call the applyAlternateMitigation method.
+// returns a *ImpactedResourcesItemApplyAlternateMitigationRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) ApplyAlternateMitigation()(*ImpactedResourcesItemApplyAlternateMitigationRequestBuilder) {
+    return NewImpactedResourcesItemApplyAlternateMitigationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Complete provides operations to call the complete method.
 // returns a *ImpactedResourcesItemCompleteRequestBuilder when successful
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Complete()(*ImpactedResourcesItemCompleteRequestBuilder) {
@@ -103,6 +118,11 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
+// MarkPlanned provides operations to call the markPlanned method.
+// returns a *ImpactedResourcesItemMarkPlannedRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) MarkPlanned()(*ImpactedResourcesItemMarkPlannedRequestBuilder) {
+    return NewImpactedResourcesItemMarkPlannedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property impactedResources in directory
 // returns a ImpactedResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -132,6 +152,16 @@ func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Postpone()(*Impact
 // returns a *ImpactedResourcesItemReactivateRequestBuilder when successful
 func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Reactivate()(*ImpactedResourcesItemReactivateRequestBuilder) {
     return NewImpactedResourcesItemReactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RemoveTag provides operations to call the removeTag method.
+// returns a *ImpactedResourcesItemRemoveTagRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) RemoveTag()(*ImpactedResourcesItemRemoveTagRequestBuilder) {
+    return NewImpactedResourcesItemRemoveTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tags provides operations to manage the tags property of the microsoft.graph.impactedResource entity.
+// returns a *ImpactedResourcesItemTagsRequestBuilder when successful
+func (m *ImpactedResourcesImpactedResourceItemRequestBuilder) Tags()(*ImpactedResourcesItemTagsRequestBuilder) {
+    return NewImpactedResourcesItemTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property impactedResources for directory
 // returns a *RequestInformation when successful

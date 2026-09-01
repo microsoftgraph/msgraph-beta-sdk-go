@@ -401,6 +401,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["provisioningConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcProvisioningConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisioningConfiguration(val.(CloudPcProvisioningConfigurationable))
+        }
+        return nil
+    }
     res["provisioningPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -763,6 +773,18 @@ func (m *CloudPC) GetProvisionedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
+// GetProvisioningConfiguration gets the provisioningConfiguration property value. The provisioningConfiguration property
+// returns a CloudPcProvisioningConfigurationable when successful
+func (m *CloudPC) GetProvisioningConfiguration()(CloudPcProvisioningConfigurationable) {
+    val, err := m.GetBackingStore().Get("provisioningConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcProvisioningConfigurationable)
+    }
+    return nil
+}
 // GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 // returns a *string when successful
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
@@ -1117,6 +1139,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("provisioningConfiguration", m.GetProvisioningConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("provisioningPolicyId", m.GetProvisioningPolicyId())
         if err != nil {
             return err
@@ -1395,6 +1423,13 @@ func (m *CloudPC) SetProvisionedDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
+// SetProvisioningConfiguration sets the provisioningConfiguration property value. The provisioningConfiguration property
+func (m *CloudPC) SetProvisioningConfiguration(value CloudPcProvisioningConfigurationable)() {
+    err := m.GetBackingStore().Set("provisioningConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
@@ -1529,6 +1564,7 @@ type CloudPCable interface {
     GetPowerState()(*CloudPcPowerState)
     GetProductType()(*CloudPcProductType)
     GetProvisionedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetProvisioningConfiguration()(CloudPcProvisioningConfigurationable)
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
@@ -1570,6 +1606,7 @@ type CloudPCable interface {
     SetPowerState(value *CloudPcPowerState)()
     SetProductType(value *CloudPcProductType)()
     SetProvisionedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetProvisioningConfiguration(value CloudPcProvisioningConfigurationable)()
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()

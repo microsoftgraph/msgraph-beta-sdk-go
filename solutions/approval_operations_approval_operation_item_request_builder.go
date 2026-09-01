@@ -58,6 +58,7 @@ func NewApprovalOperationsApprovalOperationItemRequestBuilder(rawUrl string, req
     return NewApprovalOperationsApprovalOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property operations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalOperationsApprovalOperationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) Delete(ctx conte
     return nil
 }
 // Get read the properties and relationships of an approvalOperation object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalOperationable), nil
 }
 // Patch update the navigation property operations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalOperationable, requestConfiguration *ApprovalOperationsApprovalOperationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalOperationable, error) {
@@ -117,6 +120,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) Patch(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalOperationable), nil
 }
 // ToDeleteRequestInformation delete navigation property operations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalOperationsApprovalOperationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an approvalOperation object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalOperationsApprovalOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property operations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalOperationable, requestConfiguration *ApprovalOperationsApprovalOperationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *ApprovalOperationsApprovalOperationItemRequestBuilder when successful
 func (m *ApprovalOperationsApprovalOperationItemRequestBuilder) WithUrl(rawUrl string)(*ApprovalOperationsApprovalOperationItemRequestBuilder) {
     return NewApprovalOperationsApprovalOperationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

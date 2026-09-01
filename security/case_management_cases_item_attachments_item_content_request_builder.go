@@ -48,7 +48,7 @@ func NewCaseManagementCasesItemAttachmentsItemContentRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewCaseManagementCasesItemAttachmentsItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete the binary content stream for the attachment.
+// Delete the binary content stream for the attachment. Use the Upload content and Download content methods to access it.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -64,9 +64,12 @@ func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get the binary content stream for the attachment.
+// Get download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don't download content when scanResult is malicious.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-download-content?view=graph-rest-beta
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +87,12 @@ func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Get(ctx co
     }
     return res.([]byte), nil
 }
-// Put the binary content stream for the attachment.
+// Put upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.
 // returns a Attachmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-attachment-upload-content?view=graph-rest-beta
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderPutRequestConfiguration)(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Attachmentable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -104,7 +110,7 @@ func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) Put(ctx co
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Attachmentable), nil
 }
-// ToDeleteRequestInformation the binary content stream for the attachment.
+// ToDeleteRequestInformation the binary content stream for the attachment. Use the Upload content and Download content methods to access it.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,7 +121,7 @@ func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the binary content stream for the attachment.
+// ToGetRequestInformation download the binary content of an attachment. After an upload completes, the service asynchronously scans the attachment for malware. Poll the attachment metadata by using Get attachment. If scanResult is unscanned, wait and try again later. Download the content only when scanResult is noThreatsFound. Don't download content when scanResult is malicious.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +132,7 @@ func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the binary content stream for the attachment.
+// ToPutRequestInformation upload binary content for an attachment. Create the attachment metadata first by using Create case attachment. The maximum file size is 100 MB. Upload files in chunks of no more than 1 MB. For files larger than 1 MB, send one PUT request for each chunk until all byte ranges are uploaded.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemAttachmentsItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *CaseManagementCasesItemAttachmentsItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -178,6 +178,16 @@ func (m *Drive) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDriveSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(DriveSettingsable))
+        }
+        return nil
+    }
     res["sharePointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
@@ -285,6 +295,18 @@ func (m *Drive) GetRoot()(DriveItemable) {
     }
     if val != nil {
         return val.(DriveItemable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. The settings associated with the drive. Read-only. This property isn't returned by default and must be selected using the $select query parameter.
+// returns a DriveSettingsable when successful
+func (m *Drive) GetSettings()(DriveSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DriveSettingsable)
     }
     return nil
 }
@@ -409,6 +431,12 @@ func (m *Drive) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("sharePointIds", m.GetSharePointIds())
         if err != nil {
             return err
@@ -497,6 +525,13 @@ func (m *Drive) SetRoot(value DriveItemable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. The settings associated with the drive. Read-only. This property isn't returned by default and must be selected using the $select query parameter.
+func (m *Drive) SetSettings(value DriveSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharePointIds sets the sharePointIds property value. The sharePointIds property
 func (m *Drive) SetSharePointIds(value SharepointIdsable)() {
     err := m.GetBackingStore().Set("sharePointIds", value)
@@ -530,6 +565,7 @@ type Driveable interface {
     GetOwner()(IdentitySetable)
     GetQuota()(Quotaable)
     GetRoot()(DriveItemable)
+    GetSettings()(DriveSettingsable)
     GetSharePointIds()(SharepointIdsable)
     GetSpecial()([]DriveItemable)
     GetSystem()(SystemFacetable)
@@ -542,6 +578,7 @@ type Driveable interface {
     SetOwner(value IdentitySetable)()
     SetQuota(value Quotaable)()
     SetRoot(value DriveItemable)()
+    SetSettings(value DriveSettingsable)()
     SetSharePointIds(value SharepointIdsable)()
     SetSpecial(value []DriveItemable)()
     SetSystem(value SystemFacetable)()

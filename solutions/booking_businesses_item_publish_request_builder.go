@@ -34,6 +34,7 @@ func NewBookingBusinessesItemPublishRequestBuilder(rawUrl string, requestAdapter
     return NewBookingBusinessesItemPublishRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *BookingBusinessesItemPublishRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemPublishRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemPublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *BookingBusinessesItemPublishRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemPublishRequestBuilder when successful
 func (m *BookingBusinessesItemPublishRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemPublishRequestBuilder) {
     return NewBookingBusinessesItemPublishRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

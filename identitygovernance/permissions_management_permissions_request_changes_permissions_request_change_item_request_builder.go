@@ -58,6 +58,7 @@ func NewPermissionsManagementPermissionsRequestChangesPermissionsRequestChangeIt
     return NewPermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property permissionsRequestChanges for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return nil
 }
 // Get read the properties and relationships of a permissionsRequestChange object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsRequestChangeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsRequestChangeable), nil
 }
 // Patch update the navigation property permissionsRequestChanges in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsRequestChangeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsRequestChangeable, requestConfiguration *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsRequestChangeable, error) {
@@ -117,6 +120,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsRequestChangeable), nil
 }
 // ToDeleteRequestInformation delete navigation property permissionsRequestChanges for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a permissionsRequestChange object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property permissionsRequestChanges in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsRequestChangeable, requestConfiguration *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder when successful
 func (m *PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) WithUrl(rawUrl string)(*PermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder) {
     return NewPermissionsManagementPermissionsRequestChangesPermissionsRequestChangeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

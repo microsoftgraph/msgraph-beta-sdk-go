@@ -58,6 +58,7 @@ func NewItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAp
     return NewItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -77,6 +78,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return nil
 }
 // Get read the properties and relationships of a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a servicePrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ApprovedClientAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,6 +102,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppable), nil
 }
 // Patch update the properties of an approvedClientApp object for a remotedesktopsecurityconfiguration.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ApprovedClientAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -123,6 +126,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppable), nil
 }
 // ToDeleteRequestInformation delete a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a approvedClientApp object for the remoteDesktopSecurityConfiguration object on a servicePrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -148,6 +153,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an approvedClientApp object for a remotedesktopsecurityconfiguration.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppable, requestConfiguration *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,6 +169,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientA
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) WithUrl(rawUrl string)(*ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) {
     return NewItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -63,6 +63,7 @@ func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessScenariosRequestB
     return NewBusinessScenariosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BusinessScenariosWithUniqueName provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosWithUniqueNameRequestBuilder when successful
 func (m *SolutionsRequestBuilder) BusinessScenariosWithUniqueName(uniqueName *string)(*BusinessScenariosWithUniqueNameRequestBuilder) {
     return NewBusinessScenariosWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
@@ -81,6 +82,7 @@ func NewSolutionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewSolutionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SolutionsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SolutionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SolutionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable, error) {
@@ -106,6 +108,7 @@ func (m *SolutionsRequestBuilder) Migrations()(*MigrationsRequestBuilder) {
     return NewMigrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SolutionsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SolutionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable, requestConfiguration *SolutionsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable, error) {
@@ -131,6 +134,7 @@ func (m *SolutionsRequestBuilder) SharePoint()(*SharePointRequestBuilder) {
     return NewSharePointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SolutionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SolutionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,6 +149,7 @@ func (m *SolutionsRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // ToPatchRequestInformation update solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SolutionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable, requestConfiguration *SolutionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -165,6 +170,7 @@ func (m *SolutionsRequestBuilder) VirtualEvents()(*VirtualEventsRequestBuilder) 
     return NewVirtualEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SolutionsRequestBuilder when successful
 func (m *SolutionsRequestBuilder) WithUrl(rawUrl string)(*SolutionsRequestBuilder) {
     return NewSolutionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

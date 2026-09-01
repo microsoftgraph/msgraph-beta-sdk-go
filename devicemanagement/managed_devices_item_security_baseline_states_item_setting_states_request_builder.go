@@ -50,6 +50,7 @@ type ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderPost
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySecurityBaselineSettingStateId provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder when successful
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) BySecurityBaselineSettingStateId(securityBaselineSettingStateId string)(*ManagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBaselineSettingStateItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the security baseline state for different settings for a device
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a SecurityBaselineSettingStateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateCollectionResponseable), nil
 }
 // Post create new navigation property to settingStates for deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a SecurityBaselineSettingStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, error) {
@@ -120,6 +123,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable), nil
 }
 // ToGetRequestInformation the security baseline state for different settings for a device
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to settingStates for deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityBaselineSettingStateable, requestConfiguration *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use POST /deviceManagement/reports/getConfigurationSettingsReport instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder when successful
 func (m *ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) WithUrl(rawUrl string)(*ManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder) {
     return NewManagedDevicesItemSecurityBaselineStatesItemSettingStatesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -124,6 +124,11 @@ func (m *ItemDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
+// Provision provides operations to call the provision method.
+// returns a *ItemDevicesProvisionRequestBuilder when successful
+func (m *ItemDevicesRequestBuilder) Provision()(*ItemDevicesProvisionRequestBuilder) {
+    return NewItemDevicesProvisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get devices from users
 // returns a *RequestInformation when successful
 func (m *ItemDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

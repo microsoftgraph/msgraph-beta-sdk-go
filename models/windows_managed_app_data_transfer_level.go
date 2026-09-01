@@ -10,10 +10,14 @@ const (
     ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL WindowsManagedAppDataTransferLevel = iota
     // No apps.
     NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+    // Selected apps only. Allowed locations are specified by the child property.
+    SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
 )
 
 func (i WindowsManagedAppDataTransferLevel) String() string {
-    return []string{"allApps", "none"}[i]
+    return []string{"allApps", "none", "selectedApps", "unknownFutureValue"}[i]
 }
 func ParseWindowsManagedAppDataTransferLevel(v string) (any, error) {
     result := ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
@@ -22,6 +26,10 @@ func ParseWindowsManagedAppDataTransferLevel(v string) (any, error) {
             result = ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
         case "none":
             result = NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+        case "selectedApps":
+            result = SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
         default:
             return nil, nil
     }

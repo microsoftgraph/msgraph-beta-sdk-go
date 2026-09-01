@@ -43,6 +43,7 @@ type BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsB
     QueryParameters *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters
 }
 // ByDriveProtectionUnitsBulkAdditionJobId provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ByDriveProtectionUnitsBulkAdditionJobId(driveProtectionUnitsBulkAdditionJobId string)(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUn
     return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of driveProtectionUnitsBulkAdditionJobs objects associated with a oneDriveForBusinessProtectionPolicy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveProtectionUnitsBulkAdditionJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,6 +98,7 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUn
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of driveProtectionUnitsBulkAdditionJobs objects associated with a oneDriveForBusinessProtectionPolicy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,6 +113,7 @@ func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessProtectionPoliciesItemDriveProtectionUnitsBulkAdditionJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

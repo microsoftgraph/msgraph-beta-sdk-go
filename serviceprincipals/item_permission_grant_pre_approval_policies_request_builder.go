@@ -43,6 +43,7 @@ type ItemPermissionGrantPreApprovalPoliciesRequestBuilderGetRequestConfiguration
     QueryParameters *ItemPermissionGrantPreApprovalPoliciesRequestBuilderGetQueryParameters
 }
 // ByPermissionGrantPreApprovalPolicyId provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.servicePrincipal entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilder when successful
 func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) ByPermissionGrantPreApprovalPolicyId(permissionGrantPreApprovalPolicyId string)(*ItemPermissionGrantPreApprovalPoliciesPermissionGrantPreApprovalPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) Count()(*ItemPerm
     return NewItemPermissionGrantPreApprovalPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the permissionGrantPreApprovalPolicy object for the servicePrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a PermissionGrantPreApprovalPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPermissionGrantPreApprovalPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantPreApprovalPolicyCollectionResponseable, error) {
@@ -93,6 +95,7 @@ func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantPreApprovalPolicyCollectionResponseable), nil
 }
 // ToGetRequestInformation retrieve the permissionGrantPreApprovalPolicy object for the servicePrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionGrantPreApprovalPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemPermissionGrantPreApprovalPoliciesRequestBuilder when successful
 func (m *ItemPermissionGrantPreApprovalPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemPermissionGrantPreApprovalPoliciesRequestBuilder) {
     return NewItemPermissionGrantPreApprovalPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

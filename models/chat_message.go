@@ -89,6 +89,18 @@ func (m *ChatMessage) GetChatId()(*string) {
     }
     return nil
 }
+// GetCitations gets the citations property value. Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
+// returns a []ChatMessageCitationable when successful
+func (m *ChatMessage) GetCitations()([]ChatMessageCitationable) {
+    val, err := m.GetBackingStore().Get("citations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ChatMessageCitationable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the chat message was created.
 // returns a *Time when successful
 func (m *ChatMessage) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -187,6 +199,22 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["citations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateChatMessageCitationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ChatMessageCitationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ChatMessageCitationable)
+                }
+            }
+            m.SetCitations(res)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -234,6 +262,16 @@ func (m *ChatMessage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetFrom(val.(ChatMessageFromIdentitySetable))
+        }
+        return nil
+    }
+    res["hasReplies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasReplies(val)
         }
         return nil
     }
@@ -438,6 +476,18 @@ func (m *ChatMessage) GetFrom()(ChatMessageFromIdentitySetable) {
     }
     if val != nil {
         return val.(ChatMessageFromIdentitySetable)
+    }
+    return nil
+}
+// GetHasReplies gets the hasReplies property value. The hasReplies property
+// returns a *bool when successful
+func (m *ChatMessage) GetHasReplies()(*bool) {
+    val, err := m.GetBackingStore().Get("hasReplies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -669,6 +719,18 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetCitations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCitations()))
+        for i, v := range m.GetCitations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("citations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -695,6 +757,12 @@ func (m *ChatMessage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteObjectValue("from", m.GetFrom())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("hasReplies", m.GetHasReplies())
         if err != nil {
             return err
         }
@@ -857,6 +925,13 @@ func (m *ChatMessage) SetChatId(value *string)() {
         panic(err)
     }
 }
+// SetCitations sets the citations property value. Read-only. Inline citations that reference external sources cited in the message. Citations are system-generated for bot messages and appear as a typed collection.
+func (m *ChatMessage) SetCitations(value []ChatMessageCitationable)() {
+    err := m.GetBackingStore().Set("citations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the chat message was created.
 func (m *ChatMessage) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -888,6 +963,13 @@ func (m *ChatMessage) SetEventDetail(value EventMessageDetailable)() {
 // SetFrom sets the from property value. Details of the sender of the chat message. Can only be set during migration.
 func (m *ChatMessage) SetFrom(value ChatMessageFromIdentitySetable)() {
     err := m.GetBackingStore().Set("from", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHasReplies sets the hasReplies property value. The hasReplies property
+func (m *ChatMessage) SetHasReplies(value *bool)() {
+    err := m.GetBackingStore().Set("hasReplies", value)
     if err != nil {
         panic(err)
     }
@@ -1011,11 +1093,13 @@ type ChatMessageable interface {
     GetBody()(ChatMessageBodyable)
     GetChannelIdentity()(ChannelIdentityable)
     GetChatId()(*string)
+    GetCitations()([]ChatMessageCitationable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEtag()(*string)
     GetEventDetail()(EventMessageDetailable)
     GetFrom()(ChatMessageFromIdentitySetable)
+    GetHasReplies()(*bool)
     GetHostedContents()([]ChatMessageHostedContentable)
     GetImportance()(*ChatMessageImportance)
     GetLastEditedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -1036,11 +1120,13 @@ type ChatMessageable interface {
     SetBody(value ChatMessageBodyable)()
     SetChannelIdentity(value ChannelIdentityable)()
     SetChatId(value *string)()
+    SetCitations(value []ChatMessageCitationable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEtag(value *string)()
     SetEventDetail(value EventMessageDetailable)()
     SetFrom(value ChatMessageFromIdentitySetable)()
+    SetHasReplies(value *bool)()
     SetHostedContents(value []ChatMessageHostedContentable)()
     SetImportance(value *ChatMessageImportance)()
     SetLastEditedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceSettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceSettingsRequestBuilder provides operations to manage the settings property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -73,13 +73,18 @@ func (m *TenantGovernanceSettingsRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
+// EnableRelatedTenants provides operations to call the enableRelatedTenants method.
+// returns a *TenantGovernanceSettingsEnableRelatedTenantsRequestBuilder when successful
+func (m *TenantGovernanceSettingsRequestBuilder) EnableRelatedTenants()(*TenantGovernanceSettingsEnableRelatedTenantsRequestBuilder) {
+    return NewTenantGovernanceSettingsEnableRelatedTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get read the properties of the tenantGovernanceSetting singleton, which controls related tenant discovery and invitation capabilities.
 // returns a TenantGovernanceSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-get?view=graph-rest-beta
-func (m *TenantGovernanceSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceSettingsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable, error) {
+func (m *TenantGovernanceSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,19 +92,14 @@ func (m *TenantGovernanceSettingsRequestBuilder) Get(ctx context.Context, reques
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateTenantGovernanceSettingFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantGovernanceSettingFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable), nil
-}
-// MicrosoftGraphTenantGovernanceServicesEnableRelatedTenants provides operations to call the enableRelatedTenants method.
-// returns a *TenantGovernanceSettingsMicrosoftGraphTenantGovernanceServicesEnableRelatedTenantsRequestBuilder when successful
-func (m *TenantGovernanceSettingsRequestBuilder) MicrosoftGraphTenantGovernanceServicesEnableRelatedTenants()(*TenantGovernanceSettingsMicrosoftGraphTenantGovernanceServicesEnableRelatedTenantsRequestBuilder) {
-    return NewTenantGovernanceSettingsMicrosoftGraphTenantGovernanceServicesEnableRelatedTenantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable), nil
 }
 // Patch update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
 // returns a TenantGovernanceSettingable when successful
@@ -107,7 +107,7 @@ func (m *TenantGovernanceSettingsRequestBuilder) MicrosoftGraphTenantGovernanceS
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-tenantgovernancesetting-update?view=graph-rest-beta
-func (m *TenantGovernanceSettingsRequestBuilder) Patch(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable, error) {
+func (m *TenantGovernanceSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -115,14 +115,14 @@ func (m *TenantGovernanceSettingsRequestBuilder) Patch(ctx context.Context, body
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateTenantGovernanceSettingFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTenantGovernanceSettingFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable), nil
 }
 // ToDeleteRequestInformation delete navigation property settings for directory
 // returns a *RequestInformation when successful
@@ -151,7 +151,7 @@ func (m *TenantGovernanceSettingsRequestBuilder) ToGetRequestInformation(ctx con
 }
 // ToPatchRequestInformation update the canReceiveInvitations property of the tenantGovernanceSetting singleton. This property controls whether the tenant can receive governance invitations.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantGovernanceSettingable, requestConfiguration *TenantGovernanceSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

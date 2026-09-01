@@ -34,6 +34,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder(
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder
     return nil
 }
 // ToPostRequestInformation cancel an access assignment request to a group whose membership and ownership are governed by PIM.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder) {
     return NewPrivilegedAccessGroupAssignmentScheduleRequestsItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

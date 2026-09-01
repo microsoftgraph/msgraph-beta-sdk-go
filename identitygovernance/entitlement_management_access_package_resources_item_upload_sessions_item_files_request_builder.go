@@ -43,6 +43,7 @@ type EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesReque
     QueryParameters *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderGetQueryParameters
 }
 // ByCustomDataProvidedResourceFileId provides operations to manage the files property of the microsoft.graph.customDataProvidedResourceUploadSession entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesCustomDataProvidedResourceFileItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) ByCustomDataProvidedResourceFileId(customDataProvidedResourceFileId string)(*EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesCustomDataProvidedResourceFileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesR
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a CustomDataProvidedResourceFileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceFileCollectionResponseable, error) {
@@ -93,6 +95,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomDataProvidedResourceFileCollectionResponseable), nil
 }
 // ToGetRequestInformation the files uploaded during this upload session. Supports $expand and $expand with nested $filter and $orderby.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder) {
     return NewEntitlementManagementAccessPackageResourcesItemUploadSessionsItemFilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

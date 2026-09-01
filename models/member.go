@@ -43,18 +43,6 @@ func (m *Member) GetAdditionalData()(map[string]any) {
 func (m *Member) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContactId gets the contactId property value. The contactId property
-// returns a *string when successful
-func (m *Member) GetContactId()(*string) {
-    val, err := m.GetBackingStore().Get("contactId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetDisplayName gets the displayName property value. The display name of the member. Optional.
 // returns a *string when successful
 func (m *Member) GetDisplayName()(*string) {
@@ -71,16 +59,6 @@ func (m *Member) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Member) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["contactId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContactId(val)
-        }
-        return nil
-    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -101,6 +79,16 @@ func (m *Member) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["memberId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMemberId(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -111,23 +99,13 @@ func (m *Member) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
-    res["recipientType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecipientType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRecipientType(val.(*RecipientType))
-        }
-        return nil
-    }
-    res["routingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRoutingType(val)
+            m.SetTypeEscaped(val.(*RecipientType))
         }
         return nil
     }
@@ -137,6 +115,18 @@ func (m *Member) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
 // returns a *string when successful
 func (m *Member) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMemberId gets the memberId property value. A unique identifier system-generated for contact, privateDL, and mailbox members. Optional.
+// returns a *string when successful
+func (m *Member) GetMemberId()(*string) {
+    val, err := m.GetBackingStore().Get("memberId")
     if err != nil {
         panic(err)
     }
@@ -157,10 +147,10 @@ func (m *Member) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRecipientType gets the recipientType property value. The recipientType property
+// GetTypeEscaped gets the type property value. The type property
 // returns a *RecipientType when successful
-func (m *Member) GetRecipientType()(*RecipientType) {
-    val, err := m.GetBackingStore().Get("recipientType")
+func (m *Member) GetTypeEscaped()(*RecipientType) {
+    val, err := m.GetBackingStore().Get("typeEscaped")
     if err != nil {
         panic(err)
     }
@@ -169,26 +159,8 @@ func (m *Member) GetRecipientType()(*RecipientType) {
     }
     return nil
 }
-// GetRoutingType gets the routingType property value. The routingType property
-// returns a *string when successful
-func (m *Member) GetRoutingType()(*string) {
-    val, err := m.GetBackingStore().Get("routingType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // Serialize serializes information the current object
 func (m *Member) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("contactId", m.GetContactId())
-        if err != nil {
-            return err
-        }
-    }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -202,20 +174,20 @@ func (m *Member) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRecipientType() != nil {
-        cast := (*m.GetRecipientType()).String()
-        err := writer.WriteStringValue("recipientType", &cast)
+        err := writer.WriteStringValue("memberId", m.GetMemberId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("routingType", m.GetRoutingType())
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTypeEscaped() != nil {
+        cast := (*m.GetTypeEscaped()).String()
+        err := writer.WriteStringValue("type", &cast)
         if err != nil {
             return err
         }
@@ -239,13 +211,6 @@ func (m *Member) SetAdditionalData(value map[string]any)() {
 func (m *Member) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContactId sets the contactId property value. The contactId property
-func (m *Member) SetContactId(value *string)() {
-    err := m.GetBackingStore().Set("contactId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDisplayName sets the displayName property value. The display name of the member. Optional.
 func (m *Member) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -260,6 +225,13 @@ func (m *Member) SetKey(value *string)() {
         panic(err)
     }
 }
+// SetMemberId sets the memberId property value. A unique identifier system-generated for contact, privateDL, and mailbox members. Optional.
+func (m *Member) SetMemberId(value *string)() {
+    err := m.GetBackingStore().Set("memberId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *Member) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -267,16 +239,9 @@ func (m *Member) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRecipientType sets the recipientType property value. The recipientType property
-func (m *Member) SetRecipientType(value *RecipientType)() {
-    err := m.GetBackingStore().Set("recipientType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRoutingType sets the routingType property value. The routingType property
-func (m *Member) SetRoutingType(value *string)() {
-    err := m.GetBackingStore().Set("routingType", value)
+// SetTypeEscaped sets the type property value. The type property
+func (m *Member) SetTypeEscaped(value *RecipientType)() {
+    err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
@@ -286,17 +251,15 @@ type Memberable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetContactId()(*string)
     GetDisplayName()(*string)
     GetKey()(*string)
+    GetMemberId()(*string)
     GetOdataType()(*string)
-    GetRecipientType()(*RecipientType)
-    GetRoutingType()(*string)
+    GetTypeEscaped()(*RecipientType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetContactId(value *string)()
     SetDisplayName(value *string)()
     SetKey(value *string)()
+    SetMemberId(value *string)()
     SetOdataType(value *string)()
-    SetRecipientType(value *RecipientType)()
-    SetRoutingType(value *string)()
+    SetTypeEscaped(value *RecipientType)()
 }

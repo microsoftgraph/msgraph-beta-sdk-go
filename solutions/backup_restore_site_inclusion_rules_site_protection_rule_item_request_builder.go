@@ -58,6 +58,7 @@ func NewBackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder(rawU
     return NewBackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property siteInclusionRules for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) De
     return nil
 }
 // Get the list of site inclusion rules applied to the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionRuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable), nil
 }
 // Patch update the navigation property siteInclusionRules in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionRuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) Pa
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable), nil
 }
 // ToDeleteRequestInformation delete navigation property siteInclusionRules for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of site inclusion rules applied to the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property siteInclusionRules in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionRuleable, requestConfiguration *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder when successful
 func (m *BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder) {
     return NewBackupRestoreSiteInclusionRulesSiteProtectionRuleItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

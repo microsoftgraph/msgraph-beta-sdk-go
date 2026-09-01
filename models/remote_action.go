@@ -88,10 +88,14 @@ const (
     SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
     // Indicates remote device action to restore the Managed Home Screen kiosk app.
     RESTOREMANAGEDHOMESCREEN_REMOTEACTION
+    // Indicates remote device action to trigger an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+    TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
+    // Indicates remote device action to cancel an in-progress enhanced log collection session on a supervised Apple device.
+    CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete", "suspendManagedHomeScreen", "restoreManagedHomeScreen"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete", "suspendManagedHomeScreen", "restoreManagedHomeScreen", "triggerEnhancedLogCollection", "cancelEnhancedLogCollection"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -178,6 +182,10 @@ func ParseRemoteAction(v string) (any, error) {
             result = SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
         case "restoreManagedHomeScreen":
             result = RESTOREMANAGEDHOMESCREEN_REMOTEACTION
+        case "triggerEnhancedLogCollection":
+            result = TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
+        case "cancelEnhancedLogCollection":
+            result = CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
         default:
             return nil, nil
     }

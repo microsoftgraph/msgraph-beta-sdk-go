@@ -6,15 +6,15 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder provides operations to manage the multiTenantApplicationMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder provides operations to manage the multiTenantApplicationMetrics property of the microsoft.graph.relatedTenant entity.
 type TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters multi-tenant application usage metrics for this related tenant. Expanded by default.
+// TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters get multiTenantApplicationMetrics from directory
 type TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,10 +43,10 @@ func NewTenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get multi-tenant application usage metrics for this related tenant. Expanded by default.
+// Get get multiTenantApplicationMetrics from directory
 // returns a MultiTenantApplicationMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.MultiTenantApplicationMetricsable, error) {
+func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantApplicationMetricsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,16 +54,16 @@ func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestB
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateMultiTenantApplicationMetricsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMultiTenantApplicationMetricsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.MultiTenantApplicationMetricsable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MultiTenantApplicationMetricsable), nil
 }
-// ToGetRequestInformation multi-tenant application usage metrics for this related tenant. Expanded by default.
+// ToGetRequestInformation get multiTenantApplicationMetrics from directory
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

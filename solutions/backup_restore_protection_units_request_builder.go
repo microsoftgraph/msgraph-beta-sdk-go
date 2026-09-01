@@ -43,6 +43,7 @@ type BackupRestoreProtectionUnitsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *BackupRestoreProtectionUnitsRequestBuilderGetQueryParameters
 }
 // ByProtectionUnitBaseId provides operations to manage the protectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder when successful
 func (m *BackupRestoreProtectionUnitsRequestBuilder) ByProtectionUnitBaseId(protectionUnitBaseId string)(*BackupRestoreProtectionUnitsProtectionUnitBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *BackupRestoreProtectionUnitsRequestBuilder) Count()(*BackupRestoreProte
     return NewBackupRestoreProtectionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read the properties and relationships of a protectionUnitBase object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ProtectionUnitBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreProtectionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreProtectionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionUnitBaseCollectionResponseable, error) {
@@ -108,6 +110,7 @@ func (m *BackupRestoreProtectionUnitsRequestBuilder) GraphSiteProtectionUnit()(*
     return NewBackupRestoreProtectionUnitsGraphSiteProtectionUnitRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation read the properties and relationships of a protectionUnitBase object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +125,7 @@ func (m *BackupRestoreProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreProtectionUnitsRequestBuilder when successful
 func (m *BackupRestoreProtectionUnitsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreProtectionUnitsRequestBuilder) {
     return NewBackupRestoreProtectionUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

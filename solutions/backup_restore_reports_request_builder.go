@@ -58,6 +58,7 @@ func NewBackupRestoreReportsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewBackupRestoreReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property reports for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreReportsRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreReportsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreReportsRequestBuilder) Delete(ctx context.Context, request
     return nil
 }
 // Get get reports from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BackupReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable, error) {
@@ -94,11 +96,13 @@ func (m *BackupRestoreReportsRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable), nil
 }
 // GetStatisticsByPolicyWithPolicyId provides operations to call the getStatisticsByPolicy method.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreReportsGetStatisticsByPolicyWithPolicyIdRequestBuilder when successful
 func (m *BackupRestoreReportsRequestBuilder) GetStatisticsByPolicyWithPolicyId(policyId *string)(*BackupRestoreReportsGetStatisticsByPolicyWithPolicyIdRequestBuilder) {
     return NewBackupRestoreReportsGetStatisticsByPolicyWithPolicyIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, policyId)
 }
 // Patch update the navigation property reports in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BackupReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable, requestConfiguration *BackupRestoreReportsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable, error) {
@@ -119,6 +123,7 @@ func (m *BackupRestoreReportsRequestBuilder) Patch(ctx context.Context, body ie2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable), nil
 }
 // ToDeleteRequestInformation delete navigation property reports for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +135,7 @@ func (m *BackupRestoreReportsRequestBuilder) ToDeleteRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToGetRequestInformation get reports from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +150,7 @@ func (m *BackupRestoreReportsRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property reports in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreReportsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BackupReportable, requestConfiguration *BackupRestoreReportsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +166,7 @@ func (m *BackupRestoreReportsRequestBuilder) ToPatchRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreReportsRequestBuilder when successful
 func (m *BackupRestoreReportsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreReportsRequestBuilder) {
     return NewBackupRestoreReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

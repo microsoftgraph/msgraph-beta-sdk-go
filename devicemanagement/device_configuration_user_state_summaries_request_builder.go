@@ -58,6 +58,7 @@ func NewDeviceConfigurationUserStateSummariesRequestBuilder(rawUrl string, reque
     return NewDeviceConfigurationUserStateSummariesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Delete(ctx context.Context, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Delete(ctx context
     return nil
 }
 // Get the device configuration user state summary for this account.
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a DeviceConfigurationUserStateSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
@@ -94,6 +96,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable), nil
 }
 // Patch update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a DeviceConfigurationUserStateSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, error) {
@@ -114,6 +117,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) Patch(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable), nil
 }
 // ToDeleteRequestInformation delete navigation property deviceConfigurationUserStateSummaries for deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation the device configuration user state summary for this account.
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property deviceConfigurationUserStateSummaries in deviceManagement
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceConfigurationUserStateSummaryable, requestConfiguration *DeviceConfigurationUserStateSummariesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *DeviceConfigurationUserStateSummariesRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This API is deprecated and will stop returning data on July 7, 2026. Use GET /deviceManagement/deviceConfigurations(&apos;{policyId}&apos;)/userStatusOverview or POST /deviceManagement/reports/getDeviceConfigurationPolicyStatusSummary instead. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *DeviceConfigurationUserStateSummariesRequestBuilder when successful
 func (m *DeviceConfigurationUserStateSummariesRequestBuilder) WithUrl(rawUrl string)(*DeviceConfigurationUserStateSummariesRequestBuilder) {
     return NewDeviceConfigurationUserStateSummariesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

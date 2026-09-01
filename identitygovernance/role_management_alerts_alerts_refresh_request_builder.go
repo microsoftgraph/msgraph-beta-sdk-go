@@ -34,6 +34,7 @@ func NewRoleManagementAlertsAlertsRefreshRequestBuilder(rawUrl string, requestAd
     return NewRoleManagementAlertsAlertsRefreshRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Microsoft Entra roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) Post(ctx context.Conte
     return nil
 }
 // ToPostRequestInformation refresh incidents on all security alerts or on a single security alert in Privileged Identity Management (PIM) for Microsoft Entra roles. This task is a long-running operation and the unifiedRoleManagementAlert object will be updated only when the operation completes.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) ToPostRequestInformation(ctx context.Context, body RoleManagementAlertsAlertsRefreshPostRequestBodyable, requestConfiguration *RoleManagementAlertsAlertsRefreshRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertsRefreshRequestBuilder when successful
 func (m *RoleManagementAlertsAlertsRefreshRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertsRefreshRequestBuilder) {
     return NewRoleManagementAlertsAlertsRefreshRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

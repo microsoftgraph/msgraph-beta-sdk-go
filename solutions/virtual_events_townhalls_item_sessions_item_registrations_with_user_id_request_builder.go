@@ -47,6 +47,7 @@ func NewVirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuil
     return NewVirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get registrations from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
@@ -67,6 +68,7 @@ func (m *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
 // ToGetRequestInformation get registrations from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -81,6 +83,7 @@ func (m *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder) {
     return NewVirtualEventsTownhallsItemSessionsItemRegistrationsWithUserIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

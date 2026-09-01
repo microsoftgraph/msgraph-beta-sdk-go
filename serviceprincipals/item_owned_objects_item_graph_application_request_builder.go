@@ -44,6 +44,7 @@ func NewItemOwnedObjectsItemGraphApplicationRequestBuilder(rawUrl string, reques
     return NewItemOwnedObjectsItemGraphApplicationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a Applicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOwnedObjectsItemGraphApplicationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedObjectsItemGraphApplicationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable, error) {
@@ -64,6 +65,7 @@ func (m *ItemOwnedObjectsItemGraphApplicationRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Applicationable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.application
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemOwnedObjectsItemGraphApplicationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsItemGraphApplicationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemOwnedObjectsItemGraphApplicationRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemOwnedObjectsItemGraphApplicationRequestBuilder when successful
 func (m *ItemOwnedObjectsItemGraphApplicationRequestBuilder) WithUrl(rawUrl string)(*ItemOwnedObjectsItemGraphApplicationRequestBuilder) {
     return NewItemOwnedObjectsItemGraphApplicationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

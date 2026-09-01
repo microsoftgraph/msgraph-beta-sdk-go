@@ -96,6 +96,18 @@ func (m *FileStorageContainer) GetCustomProperties()(FileStorageContainerCustomP
     }
     return nil
 }
+// GetDataLocationCode gets the dataLocationCode property value. The geographic location of the data for multi-geo tenants. This property is only returned when explicitly selected by using $select. Read-only.
+// returns a *string when successful
+func (m *FileStorageContainer) GetDataLocationCode()(*string) {
+    val, err := m.GetBackingStore().Get("dataLocationCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDescription gets the description property value. Provides a user-visible description of the fileStorageContainer. Read-write.
 // returns a *string when successful
 func (m *FileStorageContainer) GetDescription()(*string) {
@@ -211,6 +223,16 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetCustomProperties(val.(FileStorageContainerCustomPropertyDictionaryable))
+        }
+        return nil
+    }
+    res["dataLocationCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataLocationCode(val)
         }
         return nil
     }
@@ -593,6 +615,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteStringValue("dataLocationCode", m.GetDataLocationCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -759,6 +787,13 @@ func (m *FileStorageContainer) SetCustomProperties(value FileStorageContainerCus
         panic(err)
     }
 }
+// SetDataLocationCode sets the dataLocationCode property value. The geographic location of the data for multi-geo tenants. This property is only returned when explicitly selected by using $select. Read-only.
+func (m *FileStorageContainer) SetDataLocationCode(value *string)() {
+    err := m.GetBackingStore().Set("dataLocationCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. Provides a user-visible description of the fileStorageContainer. Read-write.
 func (m *FileStorageContainer) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -880,6 +915,7 @@ type FileStorageContainerable interface {
     GetContainerTypeId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCustomProperties()(FileStorageContainerCustomPropertyDictionaryable)
+    GetDataLocationCode()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDrive()(Driveable)
@@ -902,6 +938,7 @@ type FileStorageContainerable interface {
     SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCustomProperties(value FileStorageContainerCustomPropertyDictionaryable)()
+    SetDataLocationCode(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()

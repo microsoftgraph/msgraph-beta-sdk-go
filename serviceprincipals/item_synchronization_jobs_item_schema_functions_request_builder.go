@@ -79,6 +79,7 @@ func (m *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) Get(ctx conte
     return res.(ItemSynchronizationJobsItemSchemaFunctionsResponseable), nil
 }
 // GetAsFunctionsGetResponse list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ItemSynchronizationJobsItemSchemaFunctionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +103,7 @@ func (m *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) GetAsFunction
     return res.(ItemSynchronizationJobsItemSchemaFunctionsGetResponseable), nil
 }
 // ToGetRequestInformation list all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -116,6 +118,7 @@ func (m *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemSchemaFunctionsRequestBuilder) {
     return NewItemSynchronizationJobsItemSchemaFunctionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

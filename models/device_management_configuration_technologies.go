@@ -44,12 +44,14 @@ const (
     WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 32768
     // Indicates the settings that can be deployed through the Android channel.
     ANDROID_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 65536
+    // Setting can be deployed through the Intune Open Extensibility channel for scenarios such as Windows Recovery Environment (WinRE) configuration policies.
+    INTUNEOPENEXTENSIBILITY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 131072
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
     var values []string
-    options := []string{"none", "mdm", "windows10XManagement", "configManager", "intuneManagementExtension", "thirdParty", "documentGateway", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue", "windowsOsRecovery", "android"}
-    for p := 0; p < 17; p++ {
+    options := []string{"none", "mdm", "windows10XManagement", "configManager", "intuneManagementExtension", "thirdParty", "documentGateway", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue", "windowsOsRecovery", "android", "intuneOpenExtensibility"}
+    for p := 0; p < 18; p++ {
         mantis := DeviceManagementConfigurationTechnologies(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -96,6 +98,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
                 result |= WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "android":
                 result |= ANDROID_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "intuneOpenExtensibility":
+                result |= INTUNEOPENEXTENSIBILITY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             default:
                 return nil, nil
         }

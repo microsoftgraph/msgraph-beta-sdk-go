@@ -102,7 +102,7 @@ func (m *CaseManagementCasesItemAttachmentsRequestBuilder) Get(ctx context.Conte
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.AttachmentCollectionResponseable), nil
 }
-// Post create an attachment for a case.
+// Post create attachment metadata for a case. This method doesn't upload the file content. After creating the attachment, use Upload attachment content.
 // returns a Attachmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -139,7 +139,7 @@ func (m *CaseManagementCasesItemAttachmentsRequestBuilder) ToGetRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create an attachment for a case.
+// ToPostRequestInformation create attachment metadata for a case. This method doesn't upload the file content. After creating the attachment, use Upload attachment content.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemAttachmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Attachmentable, requestConfiguration *CaseManagementCasesItemAttachmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

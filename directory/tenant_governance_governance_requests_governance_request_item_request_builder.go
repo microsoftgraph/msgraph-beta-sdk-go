@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -79,7 +79,7 @@ func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-get?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, error) {
+func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -87,16 +87,16 @@ func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable), nil
 }
-// GovernancePolicyTemplate provides operations to manage the governancePolicyTemplate property of the microsoft.graph.tenantGovernanceServices.governanceRequest entity.
+// GovernancePolicyTemplate provides operations to manage the governancePolicyTemplate property of the microsoft.graph.governanceRequest entity.
 // returns a *TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilder when successful
 func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) GovernancePolicyTemplate()(*TenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilder) {
     return NewTenantGovernanceGovernanceRequestsItemGovernancePolicyTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -107,7 +107,7 @@ func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) 
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-governancerequest-update?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) Patch(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderPatchRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, error) {
+func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -115,14 +115,14 @@ func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable), nil
 }
 // ToDeleteRequestInformation delete navigation property governanceRequests for directory
 // returns a *RequestInformation when successful
@@ -151,7 +151,7 @@ func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) 
 }
 // ToPatchRequestInformation update the status property of a governanceRequest to accept or reject the governance request. Only the governed tenant can update the request status.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

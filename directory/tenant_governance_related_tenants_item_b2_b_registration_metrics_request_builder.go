@@ -6,15 +6,15 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder provides operations to manage the b2BRegistrationMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder provides operations to manage the b2BRegistrationMetrics property of the microsoft.graph.relatedTenant entity.
 type TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters b2B registration metrics for this related tenant. Expanded by default.
+// TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters get b2BRegistrationMetrics from directory
 type TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,10 +43,10 @@ func NewTenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get b2B registration metrics for this related tenant. Expanded by default.
+// Get get b2BRegistrationMetrics from directory
 // returns a B2bRegistrationMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.B2bRegistrationMetricsable, error) {
+func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2bRegistrationMetricsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,16 +54,16 @@ func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder)
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateB2bRegistrationMetricsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateB2bRegistrationMetricsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.B2bRegistrationMetricsable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2bRegistrationMetricsable), nil
 }
-// ToGetRequestInformation b2B registration metrics for this related tenant. Expanded by default.
+// ToGetRequestInformation get b2BRegistrationMetrics from directory
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

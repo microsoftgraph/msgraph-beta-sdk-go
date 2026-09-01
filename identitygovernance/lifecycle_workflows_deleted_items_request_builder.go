@@ -51,6 +51,7 @@ func NewLifecycleWorkflowsDeletedItemsRequestBuilder(rawUrl string, requestAdapt
     return NewLifecycleWorkflowsDeletedItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deletedItems for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Delete(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -67,6 +68,7 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Delete(ctx context.Contex
     return nil
 }
 // Get deleted workflows in your lifecycle workflows instance.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a DeletedItemContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable, error) {
@@ -86,7 +88,13 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable), nil
 }
+// LifecyclePolicies provides operations to manage the lifecyclePolicies property of the microsoft.graph.deletedItemContainer entity.
+// returns a *LifecycleWorkflowsDeletedItemsLifecyclePoliciesRequestBuilder when successful
+func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) LifecyclePolicies()(*LifecycleWorkflowsDeletedItemsLifecyclePoliciesRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsLifecyclePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property deletedItems for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -98,6 +106,7 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToDeleteRequestInformatio
     return requestInfo, nil
 }
 // ToGetRequestInformation deleted workflows in your lifecycle workflows instance.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,6 +121,7 @@ func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsDeletedItemsRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

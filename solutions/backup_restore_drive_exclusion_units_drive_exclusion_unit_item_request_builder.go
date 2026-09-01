@@ -58,6 +58,7 @@ func NewBackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder(raw
     return NewBackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property driveExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) D
     return nil
 }
 // Get the list of drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable), nil
 }
 // Patch update the navigation property driveExclusionUnits in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable), nil
 }
 // ToDeleteRequestInformation delete navigation property driveExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) T
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) T
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property driveExclusionUnits in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, requestConfiguration *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder when successful
 func (m *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) {
     return NewBackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

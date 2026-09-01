@@ -50,6 +50,7 @@ type BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySiteRestoreArtifactsBulkAdditionRequestId provides operations to manage the siteRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.sharePointRestoreSession entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsSiteRestoreArtifactsBulkAdditionRequestItemRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) BySiteRestoreArtifactsBulkAdditionRequestId(siteRestoreArtifactsBulkAdditionRequestId string)(*BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsSiteRestoreArtifactsBulkAdditionRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     return NewBackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteRestoreArtifactsBulkAdditionRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactsBulkAdditionRequestCollectionResponseable), nil
 }
 // Post create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteRestoreArtifactsBulkAdditionRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactsBulkAdditionRequestable), nil
 }
 // ToGetRequestInformation get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactsBulkAdditionRequestable, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) {
     return NewBackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

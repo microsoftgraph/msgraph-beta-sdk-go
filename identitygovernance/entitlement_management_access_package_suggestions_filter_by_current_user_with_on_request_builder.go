@@ -82,6 +82,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnR
     return res.(EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse retrieve suggested accessPackageSuggestion objects for the current end user. This operation returns access packages that are suggested based on various criteria such as related people insights and the user's assignment history. The suggestions help end users discover relevant access packages they may need for their role or work context.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +106,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnR
     return res.(EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation retrieve suggested accessPackageSuggestion objects for the current end user. This operation returns access packages that are suggested based on various criteria such as related people insights and the user's assignment history. The suggestions help end users discover relevant access packages they may need for their role or work context.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,6 +121,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func NewBackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsB
     return NewBackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property mailboxExclusionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return nil
 }
 // Get the list of bulk addition jobs for mailbox exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable), nil
 }
 // Patch update the navigation property mailboxExclusionUnitsBulkAdditionJobs in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable), nil
 }
 // ToDeleteRequestInformation delete navigation property mailboxExclusionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of bulk addition jobs for mailbox exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property mailboxExclusionUnitsBulkAdditionJobs in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxExclusionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnits
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder when successful
 func (m *BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder) {
     return NewBackupRestoreMailboxExclusionUnitsBulkAdditionJobsMailboxExclusionUnitsBulkAdditionJobItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

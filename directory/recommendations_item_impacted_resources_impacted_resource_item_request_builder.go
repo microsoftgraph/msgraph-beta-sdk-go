@@ -44,6 +44,21 @@ type RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilderPatch
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AcceptRisk provides operations to call the acceptRisk method.
+// returns a *RecommendationsItemImpactedResourcesItemAcceptRiskRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) AcceptRisk()(*RecommendationsItemImpactedResourcesItemAcceptRiskRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemAcceptRiskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AddTag provides operations to call the addTag method.
+// returns a *RecommendationsItemImpactedResourcesItemAddTagRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) AddTag()(*RecommendationsItemImpactedResourcesItemAddTagRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemAddTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ApplyAlternateMitigation provides operations to call the applyAlternateMitigation method.
+// returns a *RecommendationsItemImpactedResourcesItemApplyAlternateMitigationRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) ApplyAlternateMitigation()(*RecommendationsItemImpactedResourcesItemApplyAlternateMitigationRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemApplyAlternateMitigationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Complete provides operations to call the complete method.
 // returns a *RecommendationsItemImpactedResourcesItemCompleteRequestBuilder when successful
 func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) Complete()(*RecommendationsItemImpactedResourcesItemCompleteRequestBuilder) {
@@ -106,6 +121,11 @@ func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
 }
+// MarkPlanned provides operations to call the markPlanned method.
+// returns a *RecommendationsItemImpactedResourcesItemMarkPlannedRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) MarkPlanned()(*RecommendationsItemImpactedResourcesItemMarkPlannedRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemMarkPlannedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property impactedResources in directory
 // returns a ImpactedResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -135,6 +155,16 @@ func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder)
 // returns a *RecommendationsItemImpactedResourcesItemReactivateRequestBuilder when successful
 func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) Reactivate()(*RecommendationsItemImpactedResourcesItemReactivateRequestBuilder) {
     return NewRecommendationsItemImpactedResourcesItemReactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RemoveTag provides operations to call the removeTag method.
+// returns a *RecommendationsItemImpactedResourcesItemRemoveTagRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) RemoveTag()(*RecommendationsItemImpactedResourcesItemRemoveTagRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemRemoveTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tags provides operations to manage the tags property of the microsoft.graph.impactedResource entity.
+// returns a *RecommendationsItemImpactedResourcesItemTagsRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) Tags()(*RecommendationsItemImpactedResourcesItemTagsRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesItemTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property impactedResources for directory
 // returns a *RequestInformation when successful

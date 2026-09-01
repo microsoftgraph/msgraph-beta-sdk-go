@@ -34,6 +34,7 @@ func NewItemSynchronizationJobsItemRestartRequestBuilder(rawUrl string, requestA
     return NewItemSynchronizationJobsItemRestartRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *ItemSynchronizationJobsItemRestartRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemRestartRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSynchronizationJobsItemRestartPostRequestBodyable, requestConfiguration *ItemSynchronizationJobsItemRestartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *ItemSynchronizationJobsItemRestartRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationJobsItemRestartRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemRestartRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemRestartRequestBuilder) {
     return NewItemSynchronizationJobsItemRestartRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

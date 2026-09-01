@@ -82,6 +82,7 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) Get(ctx conte
     return res.(VirtualEventsWebinarsGetByUserRoleWithRoleResponseable), nil
 }
 // GetAsGetByUserRoleWithRoleGetResponse get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +106,7 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) GetAsGetByUse
     return res.(VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable), nil
 }
 // ToGetRequestInformation get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,6 +121,7 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder when successful
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) {
     return NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

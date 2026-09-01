@@ -35,6 +35,8 @@ func CreateWorkflowSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.identityGovernance.directoryObjectWorkflowSubject":
+                        return NewDirectoryObjectWorkflowSubject(), nil
                     case "#microsoft.graph.identityGovernance.provisioningObjectWorkflowSubject":
                         return NewProvisioningObjectWorkflowSubject(), nil
                 }

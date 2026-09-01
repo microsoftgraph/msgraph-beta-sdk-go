@@ -58,6 +58,7 @@ func NewBackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestB
     return NewBackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property sharePointBrowseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return nil
 }
 // Get read the properties and relationships of sharePointBrowseSession object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable), nil
 }
 // Patch update the navigation property sharePointBrowseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable, error) {
@@ -117,6 +120,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable), nil
 }
 // ToDeleteRequestInformation delete navigation property sharePointBrowseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of sharePointBrowseSession object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property sharePointBrowseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointBrowseSessionable, requestConfiguration *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder when successful
 func (m *BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder) {
     return NewBackupRestoreSharePointBrowseSessionsSharePointBrowseSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

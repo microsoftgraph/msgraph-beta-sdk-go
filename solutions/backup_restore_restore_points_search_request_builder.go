@@ -35,6 +35,7 @@ func NewBackupRestoreRestorePointsSearchRequestBuilder(rawUrl string, requestAda
     return NewBackupRestoreRestorePointsSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post search for the restorePoint objects associated with a protectionUnit.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a RestorePointSearchResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *BackupRestoreRestorePointsSearchRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointSearchResponseable), nil
 }
 // ToPostRequestInformation search for the restorePoint objects associated with a protectionUnit.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreRestorePointsSearchRequestBuilder) ToPostRequestInformation(ctx context.Context, body BackupRestoreRestorePointsSearchPostRequestBodyable, requestConfiguration *BackupRestoreRestorePointsSearchRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -73,6 +75,7 @@ func (m *BackupRestoreRestorePointsSearchRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreRestorePointsSearchRequestBuilder when successful
 func (m *BackupRestoreRestorePointsSearchRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreRestorePointsSearchRequestBuilder) {
     return NewBackupRestoreRestorePointsSearchRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

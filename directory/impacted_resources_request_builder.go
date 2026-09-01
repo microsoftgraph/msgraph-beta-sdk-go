@@ -49,6 +49,11 @@ type ImpactedResourcesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddTag provides operations to call the addTag method.
+// returns a *ImpactedResourcesAddTagRequestBuilder when successful
+func (m *ImpactedResourcesRequestBuilder) AddTag()(*ImpactedResourcesAddTagRequestBuilder) {
+    return NewImpactedResourcesAddTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ByImpactedResourceId provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
 // returns a *ImpactedResourcesImpactedResourceItemRequestBuilder when successful
 func (m *ImpactedResourcesRequestBuilder) ByImpactedResourceId(impactedResourceId string)(*ImpactedResourcesImpactedResourceItemRequestBuilder) {
@@ -118,6 +123,11 @@ func (m *ImpactedResourcesRequestBuilder) Post(ctx context.Context, body ie233ee
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
+}
+// RemoveTag provides operations to call the removeTag method.
+// returns a *ImpactedResourcesRemoveTagRequestBuilder when successful
+func (m *ImpactedResourcesRequestBuilder) RemoveTag()(*ImpactedResourcesRemoveTagRequestBuilder) {
+    return NewImpactedResourcesRemoveTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get impactedResources from directory
 // returns a *RequestInformation when successful

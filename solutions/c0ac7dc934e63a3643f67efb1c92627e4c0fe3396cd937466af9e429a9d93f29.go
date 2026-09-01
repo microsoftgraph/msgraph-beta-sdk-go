@@ -58,6 +58,7 @@ func NewBackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseS
     return NewBackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property oneDriveForBusinessBrowseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return nil
 }
 // Get read the properties and relationships of oneDriveForBusinessBrowseSession object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a OneDriveForBusinessBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable), nil
 }
 // Patch update the navigation property oneDriveForBusinessBrowseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a OneDriveForBusinessBrowseSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable, error) {
@@ -117,6 +120,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable), nil
 }
 // ToDeleteRequestInformation delete navigation property oneDriveForBusinessBrowseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of oneDriveForBusinessBrowseSession object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property oneDriveForBusinessBrowseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OneDriveForBusinessBrowseSessionable, requestConfiguration *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowse
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessBrowseSessionsOneDriveForBusinessBrowseSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

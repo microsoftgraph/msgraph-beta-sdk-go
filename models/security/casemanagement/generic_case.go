@@ -25,7 +25,7 @@ func NewGenericCase()(*GenericCase) {
 func CreateGenericCaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewGenericCase(), nil
 }
-// GetAssignedTo gets the assignedTo property value. The user assigned to the generic case.
+// GetAssignedTo gets the assignedTo property value. The user assigned to the generic case. Supports $filter and $orderby.
 // returns a *string when successful
 func (m *GenericCase) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -37,7 +37,7 @@ func (m *GenericCase) GetAssignedTo()(*string) {
     }
     return nil
 }
-// GetClosingNotes gets the closingNotes property value. Notes recorded when the generic case is closed.
+// GetClosingNotes gets the closingNotes property value. Notes recorded when the generic case is closed. Supports $filter.
 // returns a *string when successful
 func (m *GenericCase) GetClosingNotes()(*string) {
     val, err := m.GetBackingStore().Get("closingNotes")
@@ -49,7 +49,7 @@ func (m *GenericCase) GetClosingNotes()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description of the generic case.
+// GetDescription gets the description property value. The description of the generic case. Supports $filter.
 // returns a *string when successful
 func (m *GenericCase) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -61,7 +61,7 @@ func (m *GenericCase) GetDescription()(*string) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the generic case.
+// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the generic case. Supports $filter.
 // returns a *Time when successful
 func (m *GenericCase) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -129,7 +129,7 @@ func (m *GenericCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetPriority gets the priority property value. The priority assigned to the generic case.
+// GetPriority gets the priority property value. The priority assigned to the generic case. Possible values are: veryLow, low, medium, high, and critical. Supports $filter.
 // returns a *string when successful
 func (m *GenericCase) GetPriority()(*string) {
     val, err := m.GetBackingStore().Get("priority")
@@ -179,35 +179,35 @@ func (m *GenericCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. The user assigned to the generic case.
+// SetAssignedTo sets the assignedTo property value. The user assigned to the generic case. Supports $filter and $orderby.
 func (m *GenericCase) SetAssignedTo(value *string)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClosingNotes sets the closingNotes property value. Notes recorded when the generic case is closed.
+// SetClosingNotes sets the closingNotes property value. Notes recorded when the generic case is closed. Supports $filter.
 func (m *GenericCase) SetClosingNotes(value *string)() {
     err := m.GetBackingStore().Set("closingNotes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description of the generic case.
+// SetDescription sets the description property value. The description of the generic case. Supports $filter.
 func (m *GenericCase) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the generic case.
+// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the generic case. Supports $filter.
 func (m *GenericCase) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority assigned to the generic case.
+// SetPriority sets the priority property value. The priority assigned to the generic case. Possible values are: veryLow, low, medium, high, and critical. Supports $filter.
 func (m *GenericCase) SetPriority(value *string)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

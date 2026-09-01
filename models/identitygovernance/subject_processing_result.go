@@ -128,6 +128,16 @@ func (m *SubjectProcessingResult) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["subjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSubjectType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSubjectType(val.(*SubjectType))
+        }
+        return nil
+    }
     res["taskProcessingResults"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTaskProcessingResultFromDiscriminatorValue)
         if err != nil {
@@ -246,6 +256,18 @@ func (m *SubjectProcessingResult) GetSubject()(WorkflowSubjectable) {
     }
     return nil
 }
+// GetSubjectType gets the subjectType property value. The subjectType property
+// returns a *SubjectType when successful
+func (m *SubjectProcessingResult) GetSubjectType()(*SubjectType) {
+    val, err := m.GetBackingStore().Get("subjectType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SubjectType)
+    }
+    return nil
+}
 // GetTaskProcessingResults gets the taskProcessingResults property value. The task-level processing results for this subject. Read-only.
 // returns a []TaskProcessingResultable when successful
 func (m *SubjectProcessingResult) GetTaskProcessingResults()([]TaskProcessingResultable) {
@@ -361,6 +383,13 @@ func (m *SubjectProcessingResult) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetSubjectType() != nil {
+        cast := (*m.GetSubjectType()).String()
+        err = writer.WriteStringValue("subjectType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTaskProcessingResults() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskProcessingResults()))
         for i, v := range m.GetTaskProcessingResults() {
@@ -449,6 +478,13 @@ func (m *SubjectProcessingResult) SetSubject(value WorkflowSubjectable)() {
         panic(err)
     }
 }
+// SetSubjectType sets the subjectType property value. The subjectType property
+func (m *SubjectProcessingResult) SetSubjectType(value *SubjectType)() {
+    err := m.GetBackingStore().Set("subjectType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTaskProcessingResults sets the taskProcessingResults property value. The task-level processing results for this subject. Read-only.
 func (m *SubjectProcessingResult) SetTaskProcessingResults(value []TaskProcessingResultable)() {
     err := m.GetBackingStore().Set("taskProcessingResults", value)
@@ -494,6 +530,7 @@ type SubjectProcessingResultable interface {
     GetScheduledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSubject()(WorkflowSubjectable)
+    GetSubjectType()(*SubjectType)
     GetTaskProcessingResults()([]TaskProcessingResultable)
     GetTotalTasksCount()(*int32)
     GetTotalUnprocessedTasksCount()(*int32)
@@ -506,6 +543,7 @@ type SubjectProcessingResultable interface {
     SetScheduledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSubject(value WorkflowSubjectable)()
+    SetSubjectType(value *SubjectType)()
     SetTaskProcessingResults(value []TaskProcessingResultable)()
     SetTotalTasksCount(value *int32)()
     SetTotalUnprocessedTasksCount(value *int32)()

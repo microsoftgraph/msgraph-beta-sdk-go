@@ -34,6 +34,7 @@ func NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemI
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return nil
 }
 // ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

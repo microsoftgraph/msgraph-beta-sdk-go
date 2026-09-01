@@ -6,15 +6,15 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder provides operations to manage the b2BSignInActivityMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder provides operations to manage the b2BSignInActivityMetrics property of the microsoft.graph.relatedTenant entity.
 type TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetQueryParameters b2B sign-in activity metrics for this related tenant. Expanded by default.
+// TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetQueryParameters get b2BSignInActivityMetrics from directory
 type TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -43,10 +43,10 @@ func NewTenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewTenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get b2B sign-in activity metrics for this related tenant. Expanded by default.
+// Get get b2BSignInActivityMetrics from directory
 // returns a B2BSignInActivityMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.B2BSignInActivityMetricsable, error) {
+func (m *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,16 +54,16 @@ func (m *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilde
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateB2BSignInActivityMetricsFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateB2BSignInActivityMetricsFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.B2BSignInActivityMetricsable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable), nil
 }
-// ToGetRequestInformation b2B sign-in activity metrics for this related tenant. Expanded by default.
+// ToGetRequestInformation get b2BSignInActivityMetrics from directory
 // returns a *RequestInformation when successful
 func (m *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

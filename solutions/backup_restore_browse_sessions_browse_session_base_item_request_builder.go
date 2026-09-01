@@ -50,6 +50,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Browse(
     return NewBackupRestoreBrowseSessionsItemBrowseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BrowseWithNextFetchToken provides operations to call the browse method.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreBrowseSessionsItemBrowseWithNextFetchTokenRequestBuilder when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) BrowseWithNextFetchToken(nextFetchToken *string)(*BackupRestoreBrowseSessionsItemBrowseWithNextFetchTokenRequestBuilder) {
     return NewBackupRestoreBrowseSessionsItemBrowseWithNextFetchTokenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, nextFetchToken)
@@ -68,6 +69,7 @@ func NewBackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder(rawUrl st
     return NewBackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property browseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -84,6 +86,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Delete(
     return nil
 }
 // Get the list of browse sessions in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BrowseSessionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable, error) {
@@ -104,6 +107,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable), nil
 }
 // Patch update the navigation property browseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BrowseSessionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable, error) {
@@ -124,6 +128,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) Patch(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable), nil
 }
 // ToDeleteRequestInformation delete navigation property browseSessions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,6 +140,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of browse sessions in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +155,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property browseSessions in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseSessionBaseable, requestConfiguration *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +171,7 @@ func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) ToPatch
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder when successful
 func (m *BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder) {
     return NewBackupRestoreBrowseSessionsBrowseSessionBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

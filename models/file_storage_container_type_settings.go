@@ -38,18 +38,6 @@ func (m *FileStorageContainerTypeSettings) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAgent gets the agent property value. Contains agent-related settings. Optional
-// returns a FileStorageContainerTypeAgentSettingsable when successful
-func (m *FileStorageContainerTypeSettings) GetAgent()(FileStorageContainerTypeAgentSettingsable) {
-    val, err := m.GetBackingStore().Get("agent")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(FileStorageContainerTypeAgentSettingsable)
-    }
-    return nil
-}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *FileStorageContainerTypeSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -71,16 +59,6 @@ func (m *FileStorageContainerTypeSettings) GetConsumingTenantOverridables()(*Fil
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainerTypeSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["agent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateFileStorageContainerTypeAgentSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAgent(val.(FileStorageContainerTypeAgentSettingsable))
-        }
-        return nil
-    }
     res["consumingTenantOverridables"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFileStorageContainerTypeSettingsOverride)
         if err != nil {
@@ -108,6 +86,16 @@ func (m *FileStorageContainerTypeSettings) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetIsItemVersioningEnabled(val)
+        }
+        return nil
+    }
+    res["isOfficeRestricted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsOfficeRestricted(val)
         }
         return nil
     }
@@ -207,6 +195,18 @@ func (m *FileStorageContainerTypeSettings) GetIsItemVersioningEnabled()(*bool) {
     }
     return nil
 }
+// GetIsOfficeRestricted gets the isOfficeRestricted property value. Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.
+// returns a *bool when successful
+func (m *FileStorageContainerTypeSettings) GetIsOfficeRestricted()(*bool) {
+    val, err := m.GetBackingStore().Get("isOfficeRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetIsSearchEnabled gets the isSearchEnabled property value. Indicates whether search is enabled.
 // returns a *bool when successful
 func (m *FileStorageContainerTypeSettings) GetIsSearchEnabled()(*bool) {
@@ -293,12 +293,6 @@ func (m *FileStorageContainerTypeSettings) GetUrlTemplate()(*string) {
 }
 // Serialize serializes information the current object
 func (m *FileStorageContainerTypeSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("agent", m.GetAgent())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetConsumingTenantOverridables() != nil {
         cast := (*m.GetConsumingTenantOverridables()).String()
         err := writer.WriteStringValue("consumingTenantOverridables", &cast)
@@ -314,6 +308,12 @@ func (m *FileStorageContainerTypeSettings) Serialize(writer i878a80d2330e89d2689
     }
     {
         err := writer.WriteBoolValue("isItemVersioningEnabled", m.GetIsItemVersioningEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isOfficeRestricted", m.GetIsOfficeRestricted())
         if err != nil {
             return err
         }
@@ -376,13 +376,6 @@ func (m *FileStorageContainerTypeSettings) SetAdditionalData(value map[string]an
         panic(err)
     }
 }
-// SetAgent sets the agent property value. Contains agent-related settings. Optional
-func (m *FileStorageContainerTypeSettings) SetAgent(value FileStorageContainerTypeAgentSettingsable)() {
-    err := m.GetBackingStore().Set("agent", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *FileStorageContainerTypeSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -404,6 +397,13 @@ func (m *FileStorageContainerTypeSettings) SetIsDiscoverabilityEnabled(value *bo
 // SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. Indicates whether item versioning is enabled.
 func (m *FileStorageContainerTypeSettings) SetIsItemVersioningEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsOfficeRestricted sets the isOfficeRestricted property value. Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.
+func (m *FileStorageContainerTypeSettings) SetIsOfficeRestricted(value *bool)() {
+    err := m.GetBackingStore().Set("isOfficeRestricted", value)
     if err != nil {
         panic(err)
     }
@@ -461,11 +461,11 @@ type FileStorageContainerTypeSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAgent()(FileStorageContainerTypeAgentSettingsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConsumingTenantOverridables()(*FileStorageContainerTypeSettingsOverride)
     GetIsDiscoverabilityEnabled()(*bool)
     GetIsItemVersioningEnabled()(*bool)
+    GetIsOfficeRestricted()(*bool)
     GetIsSearchEnabled()(*bool)
     GetIsSharingRestricted()(*bool)
     GetItemMajorVersionLimit()(*int64)
@@ -473,11 +473,11 @@ type FileStorageContainerTypeSettingsable interface {
     GetOdataType()(*string)
     GetSharingCapability()(*SharingCapabilities)
     GetUrlTemplate()(*string)
-    SetAgent(value FileStorageContainerTypeAgentSettingsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConsumingTenantOverridables(value *FileStorageContainerTypeSettingsOverride)()
     SetIsDiscoverabilityEnabled(value *bool)()
     SetIsItemVersioningEnabled(value *bool)()
+    SetIsOfficeRestricted(value *bool)()
     SetIsSearchEnabled(value *bool)()
     SetIsSharingRestricted(value *bool)()
     SetItemMajorVersionLimit(value *int64)()

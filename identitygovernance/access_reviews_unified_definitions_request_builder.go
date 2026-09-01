@@ -50,6 +50,7 @@ type AccessReviewsUnifiedDefinitionsRequestBuilderPostRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewScheduleDefinitionId provides operations to manage the definitions property of the microsoft.graph.unifiedRoot entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) ByAccessReviewScheduleDefinitionId(accessReviewScheduleDefinitionId string)(*AccessReviewsUnifiedDefinitionsAccessReviewScheduleDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,11 +81,13 @@ func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) Count()(*AccessReviewsUn
     return NewAccessReviewsUnifiedDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsUnifiedDefinitionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsUnifiedDefinitionsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get retrieve the accessReviewScheduleDefinition objects for user-centric (catalog-scope) access reviews through the unified route. A list of zero or more accessReviewScheduleDefinition objects is returned, including all of their nested properties, for each access review series created. This doesn't include the associated accessReviewInstance objects.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewScheduleDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -108,6 +111,7 @@ func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionCollectionResponseable), nil
 }
 // Post create a new user-centric (catalog-scope) accessReviewScheduleDefinition object through the unified route. With a user-centric review, a reviewer evaluates a principal's access to every group and application contained in an entitlement management catalog in a single review. The catalog is identified in the resourceScopes collection of the principalResourceMembershipsScope.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewScheduleDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -131,6 +135,7 @@ func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) Post(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable), nil
 }
 // ToGetRequestInformation retrieve the accessReviewScheduleDefinition objects for user-centric (catalog-scope) access reviews through the unified route. A list of zero or more accessReviewScheduleDefinition objects is returned, including all of their nested properties, for each access review series created. This doesn't include the associated accessReviewInstance objects.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsUnifiedDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,6 +150,7 @@ func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new user-centric (catalog-scope) accessReviewScheduleDefinition object through the unified route. With a user-centric review, a reviewer evaluates a principal's access to every group and application contained in an entitlement management catalog in a single review. The catalog is identified in the resourceScopes collection of the principalResourceMembershipsScope.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewScheduleDefinitionable, requestConfiguration *AccessReviewsUnifiedDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,6 +166,7 @@ func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsUnifiedDefinitionsRequestBuilder) {
     return NewAccessReviewsUnifiedDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

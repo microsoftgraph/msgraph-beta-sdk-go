@@ -109,6 +109,18 @@ func (m *AndroidManagedAppProtection) GetAppActionIfAndroidSafetyNetDeviceAttest
     }
     return nil
 }
+// GetAppActionIfDeveloperOptionsEnabled gets the appActionIfDeveloperOptionsEnabled property value. Defines a managed app behavior, either warn, block, or wipe, if Developer Options are enabled on the Android device. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+// returns a *ManagedAppRemediationAction when successful
+func (m *AndroidManagedAppProtection) GetAppActionIfDeveloperOptionsEnabled()(*ManagedAppRemediationAction) {
+    val, err := m.GetBackingStore().Get("appActionIfDeveloperOptionsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
+}
 // GetAppActionIfDeviceLockNotSet gets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 // returns a *ManagedAppRemediationAction when successful
 func (m *AndroidManagedAppProtection) GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction) {
@@ -426,6 +438,16 @@ func (m *AndroidManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(val.(*ManagedAppRemediationAction))
+        }
+        return nil
+    }
+    res["appActionIfDeveloperOptionsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfDeveloperOptionsEnabled(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -1098,6 +1120,13 @@ func (m *AndroidManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetAppActionIfDeveloperOptionsEnabled() != nil {
+        cast := (*m.GetAppActionIfDeveloperOptionsEnabled()).String()
+        err = writer.WriteStringValue("appActionIfDeveloperOptionsEnabled", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAppActionIfDeviceLockNotSet() != nil {
         cast := (*m.GetAppActionIfDeviceLockNotSet()).String()
         err = writer.WriteStringValue("appActionIfDeviceLockNotSet", &cast)
@@ -1403,6 +1432,13 @@ func (m *AndroidManagedAppProtection) SetAppActionIfAndroidSafetyNetDeviceAttest
         panic(err)
     }
 }
+// SetAppActionIfDeveloperOptionsEnabled sets the appActionIfDeveloperOptionsEnabled property value. Defines a managed app behavior, either warn, block, or wipe, if Developer Options are enabled on the Android device. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+func (m *AndroidManagedAppProtection) SetAppActionIfDeveloperOptionsEnabled(value *ManagedAppRemediationAction)() {
+    err := m.GetBackingStore().Set("appActionIfDeveloperOptionsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAppActionIfDeviceLockNotSet sets the appActionIfDeviceLockNotSet property value. An admin initiated action to be applied on a managed app.
 func (m *AndroidManagedAppProtection) SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfDeviceLockNotSet", value)
@@ -1679,6 +1715,7 @@ type AndroidManagedAppProtectionable interface {
     GetAppActionIfAndroidDeviceModelNotAllowed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidSafetyNetAppsVerificationFailed()(*ManagedAppRemediationAction)
     GetAppActionIfAndroidSafetyNetDeviceAttestationFailed()(*ManagedAppRemediationAction)
+    GetAppActionIfDeveloperOptionsEnabled()(*ManagedAppRemediationAction)
     GetAppActionIfDeviceLockNotSet()(*ManagedAppRemediationAction)
     GetAppActionIfDevicePasscodeComplexityLessThanHigh()(*ManagedAppRemediationAction)
     GetAppActionIfDevicePasscodeComplexityLessThanLow()(*ManagedAppRemediationAction)
@@ -1724,6 +1761,7 @@ type AndroidManagedAppProtectionable interface {
     SetAppActionIfAndroidDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidSafetyNetAppsVerificationFailed(value *ManagedAppRemediationAction)()
     SetAppActionIfAndroidSafetyNetDeviceAttestationFailed(value *ManagedAppRemediationAction)()
+    SetAppActionIfDeveloperOptionsEnabled(value *ManagedAppRemediationAction)()
     SetAppActionIfDeviceLockNotSet(value *ManagedAppRemediationAction)()
     SetAppActionIfDevicePasscodeComplexityLessThanHigh(value *ManagedAppRemediationAction)()
     SetAppActionIfDevicePasscodeComplexityLessThanLow(value *ManagedAppRemediationAction)()

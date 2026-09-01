@@ -70,7 +70,7 @@ func (m *CaseEscaped) GetAttachments()([]Attachmentable) {
     }
     return nil
 }
-// GetCustomFields gets the customFields property value. Tenant-defined custom field values keyed by custom field identifier.
+// GetCustomFields gets the customFields property value. Tenant-defined custom field values keyed by the exact displayName of each custom field definition. The property and its dynamic fields don't support $filter.
 // returns a CustomFieldValuesable when successful
 func (m *CaseEscaped) GetCustomFields()(CustomFieldValuesable) {
     val, err := m.GetBackingStore().Get("customFields")
@@ -82,7 +82,7 @@ func (m *CaseEscaped) GetCustomFields()(CustomFieldValuesable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name of the case. Supports $filter (eq, ne) and $orderby.
+// GetDisplayName gets the displayName property value. The display name of the case. Supports $filter and $orderby.
 // returns a *string when successful
 func (m *CaseEscaped) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -206,7 +206,7 @@ func (m *CaseEscaped) GetRelations()([]Relationable) {
     }
     return nil
 }
-// GetStatus gets the status property value. The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.
+// GetStatus gets the status property value. The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).
 // returns a *string when successful
 func (m *CaseEscaped) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -318,14 +318,14 @@ func (m *CaseEscaped) SetAttachments(value []Attachmentable)() {
         panic(err)
     }
 }
-// SetCustomFields sets the customFields property value. Tenant-defined custom field values keyed by custom field identifier.
+// SetCustomFields sets the customFields property value. Tenant-defined custom field values keyed by the exact displayName of each custom field definition. The property and its dynamic fields don't support $filter.
 func (m *CaseEscaped) SetCustomFields(value CustomFieldValuesable)() {
     err := m.GetBackingStore().Set("customFields", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name of the case. Supports $filter (eq, ne) and $orderby.
+// SetDisplayName sets the displayName property value. The display name of the case. Supports $filter and $orderby.
 func (m *CaseEscaped) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -339,7 +339,7 @@ func (m *CaseEscaped) SetRelations(value []Relationable)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The lifecycle status of the case, such as open, in progress, or closed. Supports $filter (eq, ne) and $orderby.
+// SetStatus sets the status property value. The tenant-defined lifecycle status of the case. Use a displayName value returned in the status tree by List statuses from /security/caseManagement/caseTypeConfigurations/genericCase/statuses or /security/caseManagement/caseTypeConfigurations/incidentCase/statuses, depending on the case type. Supports $filter (eq).
 func (m *CaseEscaped) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

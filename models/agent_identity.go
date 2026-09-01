@@ -5,6 +5,7 @@ package models
 
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -37,6 +38,18 @@ func (m *AgentIdentity) GetAgentIdentityBlueprintId()(*string) {
     }
     return nil
 }
+// GetCommunicationConfiguration gets the communicationConfiguration property value. The effective communication configuration for this agent identity. Represents the agent identity-level override that resolves on top of the configuration inherited from the agent identity blueprint.
+// returns a AgentCommunicationConfigurationable when successful
+func (m *AgentIdentity) GetCommunicationConfiguration()(AgentCommunicationConfigurationable) {
+    val, err := m.GetBackingStore().Get("communicationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AgentCommunicationConfigurationable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.
 // returns a *Time when successful
 func (m *AgentIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -60,6 +73,16 @@ func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAgentIdentityBlueprintId(val)
+        }
+        return nil
+    }
+    res["communicationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAgentCommunicationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommunicationConfiguration(val.(AgentCommunicationConfigurationable))
         }
         return nil
     }
@@ -105,6 +128,22 @@ func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["managerApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("uuid")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID))
+                }
+            }
+            m.SetManagerApplications(res)
+        }
+        return nil
+    }
     res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -147,6 +186,18 @@ func (m *AgentIdentity) GetInheritedOauth2PermissionGrants()([]OAuth2PermissionG
     }
     return nil
 }
+// GetManagerApplications gets the managerApplications property value. The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select.
+// returns a []UUID when successful
+func (m *AgentIdentity) GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("managerApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetSponsors gets the sponsors property value. The sponsors for this agent identity.
 // returns a []DirectoryObjectable when successful
 func (m *AgentIdentity) GetSponsors()([]DirectoryObjectable) {
@@ -167,6 +218,12 @@ func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("agentIdentityBlueprintId", m.GetAgentIdentityBlueprintId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("communicationConfiguration", m.GetCommunicationConfiguration())
         if err != nil {
             return err
         }
@@ -222,6 +279,13 @@ func (m *AgentIdentity) SetAgentIdentityBlueprintId(value *string)() {
         panic(err)
     }
 }
+// SetCommunicationConfiguration sets the communicationConfiguration property value. The effective communication configuration for this agent identity. Represents the agent identity-level override that resolves on top of the configuration inherited from the agent identity blueprint.
+func (m *AgentIdentity) SetCommunicationConfiguration(value AgentCommunicationConfigurationable)() {
+    err := m.GetBackingStore().Set("communicationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the agent identity was created. Read-only. Inherited from servicePrincipal.
 func (m *AgentIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -243,6 +307,13 @@ func (m *AgentIdentity) SetInheritedOauth2PermissionGrants(value []OAuth2Permiss
         panic(err)
     }
 }
+// SetManagerApplications sets the managerApplications property value. The collection of application IDs designated as managers of this agent identity's backing agentIdentityBlueprint. Read-only; the value is server-managed and reflects the managerApplications of the backing agentIdentityBlueprint. To change the managers, an owner or administrator must update the managerApplications property on the backing agentIdentityBlueprint in the tenant where it's registered. For multitenant agent identity blueprints, admins in a tenant where the blueprint is only consumed can't make this change — they must ask an owner or administrator in the blueprint's home tenant. Not nullable. Returned only on $select.
+func (m *AgentIdentity) SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("managerApplications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSponsors sets the sponsors property value. The sponsors for this agent identity.
 func (m *AgentIdentity) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
@@ -254,13 +325,17 @@ type AgentIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ServicePrincipalable
     GetAgentIdentityBlueprintId()(*string)
+    GetCommunicationConfiguration()(AgentCommunicationConfigurationable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetInheritedAppRoleAssignments()([]AppRoleAssignmentable)
     GetInheritedOauth2PermissionGrants()([]OAuth2PermissionGrantable)
+    GetManagerApplications()([]i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetSponsors()([]DirectoryObjectable)
     SetAgentIdentityBlueprintId(value *string)()
+    SetCommunicationConfiguration(value AgentCommunicationConfigurationable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetInheritedAppRoleAssignments(value []AppRoleAssignmentable)()
     SetInheritedOauth2PermissionGrants(value []OAuth2PermissionGrantable)()
+    SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetSponsors(value []DirectoryObjectable)()
 }

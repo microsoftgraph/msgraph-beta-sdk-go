@@ -34,6 +34,7 @@ func NewSharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuil
     return NewSharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBui
     return nil
 }
 // ToPostRequestInformation cancel a sharePointMigrationTask that moves a specific object from a source organization to a target organization. Only cancel the sharePointMigrationTask before it starts and when reverting doesn't cause system instability.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilder) WithUrl(rawUrl string)(*SharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

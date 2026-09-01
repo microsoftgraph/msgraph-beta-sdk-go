@@ -11,10 +11,11 @@ const (
     UNKNOWNFUTUREVALUE_SCENARIO
     CONDITIONALACCESS_SCENARIO
     SAML_SCENARIO
+    GSA_SCENARIO
 )
 
 func (i Scenario) String() string {
-    return []string{"unknown", "mfa", "devices", "unknownFutureValue", "conditionalAccess", "saml"}[i]
+    return []string{"unknown", "mfa", "devices", "unknownFutureValue", "conditionalAccess", "saml", "gsa"}[i]
 }
 func ParseScenario(v string) (any, error) {
     result := UNKNOWN_SCENARIO
@@ -31,6 +32,8 @@ func ParseScenario(v string) (any, error) {
             result = CONDITIONALACCESS_SCENARIO
         case "saml":
             result = SAML_SCENARIO
+        case "gsa":
+            result = GSA_SCENARIO
         default:
             return nil, nil
     }

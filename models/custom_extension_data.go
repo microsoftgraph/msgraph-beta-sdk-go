@@ -39,6 +39,8 @@ func CreateCustomExtensionDataFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewAccessPackageAssignmentRequestCallbackData(), nil
                     case "#microsoft.graph.assignmentRequestApprovalStageCallbackData":
                         return NewAssignmentRequestApprovalStageCallbackData(), nil
+                    case "#microsoft.graph.sapAssignmentRequestCallbackData":
+                        return NewSapAssignmentRequestCallbackData(), nil
                 }
             }
         }

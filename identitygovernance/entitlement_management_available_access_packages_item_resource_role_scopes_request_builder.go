@@ -43,6 +43,7 @@ type EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBu
     QueryParameters *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilderGetQueryParameters
 }
 // ByAccessPackageResourceRoleScopeId provides operations to manage the resourceRoleScopes property of the microsoft.graph.availableAccessPackage entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder when successful
 func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder) ByAccessPackageResourceRoleScopeId(accessPackageResourceRoleScopeId string)(*EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesAccessPackageResourceRoleScopeItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesReque
     return NewEntitlementManagementAvailableAccessPackagesItemResourceRoleScopesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the accessPackageResourceRoleScope objects associated with an availableAccessPackage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessPackageResourceRoleScopeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,6 +98,7 @@ func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleScopeCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of the accessPackageResourceRoleScope objects associated with an availableAccessPackage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,6 +113,7 @@ func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder when successful
 func (m *EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder) {
     return NewEntitlementManagementAvailableAccessPackagesItemResourceRoleScopesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

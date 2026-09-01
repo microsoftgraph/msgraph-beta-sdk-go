@@ -50,6 +50,7 @@ type SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilderPostRequest
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySharePointGroupIdentityMappingId provides operations to manage the crossOrganizationGroupMappings property of the microsoft.graph.sharePointMigrationsRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) BySharePointGroupIdentityMappingId(sharePointGroupIdentityMappingId string)(*SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) Count
     return NewSharePointMigrationsCrossOrganizationGroupMappingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a specific cross-organization group identity mapping based on the Microsoft Entra ID object ID of the source group. This method allows clients to verify existing group migration configurations and confirm that mappings are correctly established prior to or during cross-tenant migration operations.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointGroupIdentityMappingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) Get(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingCollectionResponseable), nil
 }
 // Post create new navigation property to crossOrganizationGroupMappings for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointGroupIdentityMappingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable, error) {
@@ -123,6 +126,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) Post(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable), nil
 }
 // ToGetRequestInformation retrieve a specific cross-organization group identity mapping based on the Microsoft Entra ID object ID of the source group. This method allows clients to verify existing group migration configurations and confirm that mappings are correctly established prior to or during cross-tenant migration operations.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) ToGet
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to crossOrganizationGroupMappings for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) ToPos
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) WithUrl(rawUrl string)(*SharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationGroupMappingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

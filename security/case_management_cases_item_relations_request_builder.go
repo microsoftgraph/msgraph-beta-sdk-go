@@ -14,7 +14,7 @@ import (
 type CaseManagementCasesItemRelationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CaseManagementCasesItemRelationsRequestBuilderGetQueryParameters get a list of external resource relation objects for a case.
+// CaseManagementCasesItemRelationsRequestBuilderGetQueryParameters get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 type CaseManagementCasesItemRelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func NewCaseManagementCasesItemRelationsRequestBuilder(rawUrl string, requestAda
 func (m *CaseManagementCasesItemRelationsRequestBuilder) Count()(*CaseManagementCasesItemRelationsCountRequestBuilder) {
     return NewCaseManagementCasesItemRelationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of external resource relation objects for a case.
+// Get get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a RelationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *CaseManagementCasesItemRelationsRequestBuilder) Get(ctx context.Context
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.RelationCollectionResponseable), nil
 }
-// Post create an external resource relation for a case.
+// Post create a concrete external resource relation for a case.
 // returns a Relationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -125,7 +125,7 @@ func (m *CaseManagementCasesItemRelationsRequestBuilder) Post(ctx context.Contex
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
 }
-// ToGetRequestInformation get a list of external resource relation objects for a case.
+// ToGetRequestInformation get a list of external resource relation objects for a case. Each relation is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemRelationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +139,7 @@ func (m *CaseManagementCasesItemRelationsRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create an external resource relation for a case.
+// ToPostRequestInformation create a concrete external resource relation for a case.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemRelationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

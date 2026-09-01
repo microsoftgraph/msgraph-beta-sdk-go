@@ -8,10 +8,12 @@ const (
     LOW_RECOMMENDATIONPRIORITY RecommendationPriority = iota
     MEDIUM_RECOMMENDATIONPRIORITY
     HIGH_RECOMMENDATIONPRIORITY
+    CRITICAL_RECOMMENDATIONPRIORITY
+    UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
 )
 
 func (i RecommendationPriority) String() string {
-    return []string{"low", "medium", "high"}[i]
+    return []string{"low", "medium", "high", "critical", "unknownFutureValue"}[i]
 }
 func ParseRecommendationPriority(v string) (any, error) {
     result := LOW_RECOMMENDATIONPRIORITY
@@ -22,6 +24,10 @@ func ParseRecommendationPriority(v string) (any, error) {
             result = MEDIUM_RECOMMENDATIONPRIORITY
         case "high":
             result = HIGH_RECOMMENDATIONPRIORITY
+        case "critical":
+            result = CRITICAL_RECOMMENDATIONPRIORITY
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
         default:
             return nil, nil
     }

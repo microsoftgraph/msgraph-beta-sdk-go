@@ -102,6 +102,11 @@ func (m *Alerts_v2RequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable), nil
 }
+// MicrosoftGraphSecurityCreateAlert provides operations to call the createAlert method.
+// returns a *Alerts_v2MicrosoftGraphSecurityCreateAlertRequestBuilder when successful
+func (m *Alerts_v2RequestBuilder) MicrosoftGraphSecurityCreateAlert()(*Alerts_v2MicrosoftGraphSecurityCreateAlertRequestBuilder) {
+    return NewAlerts_v2MicrosoftGraphSecurityCreateAlertRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftGraphSecurityMoveAlerts provides operations to call the moveAlerts method.
 // returns a *Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder when successful
 func (m *Alerts_v2RequestBuilder) MicrosoftGraphSecurityMoveAlerts()(*Alerts_v2MicrosoftGraphSecurityMoveAlertsRequestBuilder) {

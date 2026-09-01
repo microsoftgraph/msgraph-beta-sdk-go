@@ -77,6 +77,42 @@ func (m *RecommendationBase) GetCategory()(*RecommendationCategory) {
     }
     return nil
 }
+// GetCategoryGroup gets the categoryGroup property value. The categoryGroup property
+// returns a *RecommendationCategoryGroup when successful
+func (m *RecommendationBase) GetCategoryGroup()(*RecommendationCategoryGroup) {
+    val, err := m.GetBackingStore().Get("categoryGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RecommendationCategoryGroup)
+    }
+    return nil
+}
+// GetCompletedBySystemDateTime gets the completedBySystemDateTime property value. The completedBySystemDateTime property
+// returns a *Time when successful
+func (m *RecommendationBase) GetCompletedBySystemDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("completedBySystemDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetCompletedByUserDateTime gets the completedByUserDateTime property value. The completedByUserDateTime property
+// returns a *Time when successful
+func (m *RecommendationBase) GetCompletedByUserDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("completedByUserDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the recommendation was detected as applicable to your directory.
 // returns a *Time when successful
 func (m *RecommendationBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -110,6 +146,18 @@ func (m *RecommendationBase) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetFailedReviewDateTime gets the failedReviewDateTime property value. The failedReviewDateTime property
+// returns a *Time when successful
+func (m *RecommendationBase) GetFailedReviewDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("failedReviewDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -165,6 +213,36 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["categoryGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRecommendationCategoryGroup)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCategoryGroup(val.(*RecommendationCategoryGroup))
+        }
+        return nil
+    }
+    res["completedBySystemDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompletedBySystemDateTime(val)
+        }
+        return nil
+    }
+    res["completedByUserDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompletedByUserDateTime(val)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -192,6 +270,16 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["failedReviewDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFailedReviewDateTime(val)
         }
         return nil
     }
@@ -297,6 +385,32 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["needsMoreActionResourceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNeedsMoreActionResourceCount(val)
+        }
+        return nil
+    }
+    res["nistClassifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateNistClassificationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]NistClassificationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(NistClassificationable)
+                }
+            }
+            m.SetNistClassifications(res)
+        }
+        return nil
+    }
     res["postponeUntilDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -337,6 +451,16 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["remediatedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemediatedDateTime(val)
+        }
+        return nil
+    }
     res["remediationImpact"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -364,6 +488,32 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetStatus(val.(*RecommendationStatus))
+        }
+        return nil
+    }
+    res["statusModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatusModifiedDateTime(val)
+        }
+        return nil
+    }
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendationTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RecommendationTagable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RecommendationTagable)
+                }
+            }
+            m.SetTags(res)
         }
         return nil
     }
@@ -465,6 +615,30 @@ func (m *RecommendationBase) GetMaxScore()(*float64) {
     }
     return nil
 }
+// GetNeedsMoreActionResourceCount gets the needsMoreActionResourceCount property value. The needsMoreActionResourceCount property
+// returns a *int32 when successful
+func (m *RecommendationBase) GetNeedsMoreActionResourceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("needsMoreActionResourceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetNistClassifications gets the nistClassifications property value. The nistClassifications property
+// returns a []NistClassificationable when successful
+func (m *RecommendationBase) GetNistClassifications()([]NistClassificationable) {
+    val, err := m.GetBackingStore().Get("nistClassifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]NistClassificationable)
+    }
+    return nil
+}
 // GetPostponeUntilDateTime gets the postponeUntilDateTime property value. The future date and time when the status of a postponed recommendation will be active again.
 // returns a *Time when successful
 func (m *RecommendationBase) GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -513,6 +687,18 @@ func (m *RecommendationBase) GetReleaseType()(*string) {
     }
     return nil
 }
+// GetRemediatedDateTime gets the remediatedDateTime property value. The remediatedDateTime property
+// returns a *Time when successful
+func (m *RecommendationBase) GetRemediatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("remediatedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetRemediationImpact gets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
 // returns a *string when successful
 func (m *RecommendationBase) GetRemediationImpact()(*string) {
@@ -549,6 +735,30 @@ func (m *RecommendationBase) GetStatus()(*RecommendationStatus) {
     }
     return nil
 }
+// GetStatusModifiedDateTime gets the statusModifiedDateTime property value. The statusModifiedDateTime property
+// returns a *Time when successful
+func (m *RecommendationBase) GetStatusModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("statusModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetTags gets the tags property value. The tags property
+// returns a []RecommendationTagable when successful
+func (m *RecommendationBase) GetTags()([]RecommendationTagable) {
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RecommendationTagable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -580,6 +790,25 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetCategoryGroup() != nil {
+        cast := (*m.GetCategoryGroup()).String()
+        err = writer.WriteStringValue("categoryGroup", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("completedBySystemDateTime", m.GetCompletedBySystemDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("completedByUserDateTime", m.GetCompletedByUserDateTime())
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -594,6 +823,12 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("failedReviewDateTime", m.GetFailedReviewDateTime())
         if err != nil {
             return err
         }
@@ -659,6 +894,24 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteInt32Value("needsMoreActionResourceCount", m.GetNeedsMoreActionResourceCount())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetNistClassifications() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNistClassifications()))
+        for i, v := range m.GetNistClassifications() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("nistClassifications", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("postponeUntilDateTime", m.GetPostponeUntilDateTime())
         if err != nil {
             return err
@@ -685,6 +938,12 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteTimeValue("remediatedDateTime", m.GetRemediatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("remediationImpact", m.GetRemediationImpact())
         if err != nil {
             return err
@@ -700,6 +959,24 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("statusModifiedDateTime", m.GetStatusModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTags() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
+        for i, v := range m.GetTags() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("tags", cast)
         if err != nil {
             return err
         }
@@ -727,6 +1004,27 @@ func (m *RecommendationBase) SetCategory(value *RecommendationCategory)() {
         panic(err)
     }
 }
+// SetCategoryGroup sets the categoryGroup property value. The categoryGroup property
+func (m *RecommendationBase) SetCategoryGroup(value *RecommendationCategoryGroup)() {
+    err := m.GetBackingStore().Set("categoryGroup", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCompletedBySystemDateTime sets the completedBySystemDateTime property value. The completedBySystemDateTime property
+func (m *RecommendationBase) SetCompletedBySystemDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("completedBySystemDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCompletedByUserDateTime sets the completedByUserDateTime property value. The completedByUserDateTime property
+func (m *RecommendationBase) SetCompletedByUserDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("completedByUserDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the recommendation was detected as applicable to your directory.
 func (m *RecommendationBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -744,6 +1042,13 @@ func (m *RecommendationBase) SetCurrentScore(value *float64)() {
 // SetDisplayName sets the displayName property value. The title of the recommendation.
 func (m *RecommendationBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFailedReviewDateTime sets the failedReviewDateTime property value. The failedReviewDateTime property
+func (m *RecommendationBase) SetFailedReviewDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("failedReviewDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -811,6 +1116,20 @@ func (m *RecommendationBase) SetMaxScore(value *float64)() {
         panic(err)
     }
 }
+// SetNeedsMoreActionResourceCount sets the needsMoreActionResourceCount property value. The needsMoreActionResourceCount property
+func (m *RecommendationBase) SetNeedsMoreActionResourceCount(value *int32)() {
+    err := m.GetBackingStore().Set("needsMoreActionResourceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNistClassifications sets the nistClassifications property value. The nistClassifications property
+func (m *RecommendationBase) SetNistClassifications(value []NistClassificationable)() {
+    err := m.GetBackingStore().Set("nistClassifications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPostponeUntilDateTime sets the postponeUntilDateTime property value. The future date and time when the status of a postponed recommendation will be active again.
 func (m *RecommendationBase) SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("postponeUntilDateTime", value)
@@ -839,6 +1158,13 @@ func (m *RecommendationBase) SetReleaseType(value *string)() {
         panic(err)
     }
 }
+// SetRemediatedDateTime sets the remediatedDateTime property value. The remediatedDateTime property
+func (m *RecommendationBase) SetRemediatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("remediatedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemediationImpact sets the remediationImpact property value. Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
 func (m *RecommendationBase) SetRemediationImpact(value *string)() {
     err := m.GetBackingStore().Set("remediationImpact", value)
@@ -860,15 +1186,33 @@ func (m *RecommendationBase) SetStatus(value *RecommendationStatus)() {
         panic(err)
     }
 }
+// SetStatusModifiedDateTime sets the statusModifiedDateTime property value. The statusModifiedDateTime property
+func (m *RecommendationBase) SetStatusModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("statusModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTags sets the tags property value. The tags property
+func (m *RecommendationBase) SetTags(value []RecommendationTagable)() {
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type RecommendationBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActionSteps()([]ActionStepable)
     GetBenefits()(*string)
     GetCategory()(*RecommendationCategory)
+    GetCategoryGroup()(*RecommendationCategoryGroup)
+    GetCompletedBySystemDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCompletedByUserDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCurrentScore()(*float64)
     GetDisplayName()(*string)
+    GetFailedReviewDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFeatureAreas()([]RecommendationFeatureAreas)
     GetImpactedResources()([]ImpactedResourceable)
     GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -878,19 +1222,28 @@ type RecommendationBaseable interface {
     GetLastModifiedBy()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMaxScore()(*float64)
+    GetNeedsMoreActionResourceCount()(*int32)
+    GetNistClassifications()([]NistClassificationable)
     GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPriority()(*RecommendationPriority)
     GetRecommendationType()(*RecommendationType)
     GetReleaseType()(*string)
+    GetRemediatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRemediationImpact()(*string)
     GetRequiredLicenses()(*RequiredLicenses)
     GetStatus()(*RecommendationStatus)
+    GetStatusModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetTags()([]RecommendationTagable)
     SetActionSteps(value []ActionStepable)()
     SetBenefits(value *string)()
     SetCategory(value *RecommendationCategory)()
+    SetCategoryGroup(value *RecommendationCategoryGroup)()
+    SetCompletedBySystemDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCompletedByUserDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCurrentScore(value *float64)()
     SetDisplayName(value *string)()
+    SetFailedReviewDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFeatureAreas(value []RecommendationFeatureAreas)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -900,11 +1253,16 @@ type RecommendationBaseable interface {
     SetLastModifiedBy(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMaxScore(value *float64)()
+    SetNeedsMoreActionResourceCount(value *int32)()
+    SetNistClassifications(value []NistClassificationable)()
     SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPriority(value *RecommendationPriority)()
     SetRecommendationType(value *RecommendationType)()
     SetReleaseType(value *string)()
+    SetRemediatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRemediationImpact(value *string)()
     SetRequiredLicenses(value *RequiredLicenses)()
     SetStatus(value *RecommendationStatus)()
+    SetStatusModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetTags(value []RecommendationTagable)()
 }

@@ -49,6 +49,11 @@ type RecommendationsItemImpactedResourcesRequestBuilderPostRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AddTag provides operations to call the addTag method.
+// returns a *RecommendationsItemImpactedResourcesAddTagRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesRequestBuilder) AddTag()(*RecommendationsItemImpactedResourcesAddTagRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesAddTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ByImpactedResourceId provides operations to manage the impactedResources property of the microsoft.graph.recommendationBase entity.
 // returns a *RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder when successful
 func (m *RecommendationsItemImpactedResourcesRequestBuilder) ByImpactedResourceId(impactedResourceId string)(*RecommendationsItemImpactedResourcesImpactedResourceItemRequestBuilder) {
@@ -121,6 +126,11 @@ func (m *RecommendationsItemImpactedResourcesRequestBuilder) Post(ctx context.Co
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable), nil
+}
+// RemoveTag provides operations to call the removeTag method.
+// returns a *RecommendationsItemImpactedResourcesRemoveTagRequestBuilder when successful
+func (m *RecommendationsItemImpactedResourcesRequestBuilder) RemoveTag()(*RecommendationsItemImpactedResourcesRemoveTagRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesRemoveTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the impactedResource objects for a recommendation.
 // returns a *RequestInformation when successful

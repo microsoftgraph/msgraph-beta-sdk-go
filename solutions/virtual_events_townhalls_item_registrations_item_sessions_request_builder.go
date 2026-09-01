@@ -43,6 +43,7 @@ type VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilderGetRequest
     QueryParameters *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilderGetQueryParameters
 }
 // ByVirtualEventSessionId provides operations to manage the sessions property of the microsoft.graph.virtualEventRegistration entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) ByVirtualEventSessionId(virtualEventSessionId string)(*VirtualEventsTownhallsItemRegistrationsItemSessionsVirtualEventSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) Coun
     return NewVirtualEventsTownhallsItemRegistrationsItemSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get sessions for a registration.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventSessionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionCollectionResponseable, error) {
@@ -93,6 +95,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventSessionCollectionResponseable), nil
 }
 // ToGetRequestInformation sessions for a registration.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder when successful
 func (m *VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder) {
     return NewVirtualEventsTownhallsItemRegistrationsItemSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

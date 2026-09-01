@@ -76,6 +76,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuild
     return res.(EntitlementManagementAccessPackageAssignmentResourceRolesMyResponseable), nil
 }
 // GetAsMyGetResponse invoke function My
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a EntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) GetAsMyGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseable, error) {
@@ -96,6 +97,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuild
     return res.(EntitlementManagementAccessPackageAssignmentResourceRolesMyGetResponseable), nil
 }
 // ToGetRequestInformation invoke function My
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,6 +112,7 @@ func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentResourceRolesMyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
