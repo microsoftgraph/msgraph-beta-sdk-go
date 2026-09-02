@@ -50,6 +50,7 @@ type VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderPostReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMeetingAttendanceReportId provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeetingBase entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) ByMeetingAttendanceReportId(meetingAttendanceReportId string)(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) C
     return NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MeetingAttendanceReportCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportCollectionResponseable), nil
 }
 // Post create new navigation property to attendanceReports for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MeetingAttendanceReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
@@ -123,6 +126,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
 // ToGetRequestInformation get a list of meetingAttendanceReport objects for an onlineMeeting or a virtualEvent. Each time an online meeting or a virtual event ends, an attendance report is generated for that session.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) T
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to attendanceReports for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder) {
     return NewVirtualEventsWebinarsItemSessionsItemAttendanceReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

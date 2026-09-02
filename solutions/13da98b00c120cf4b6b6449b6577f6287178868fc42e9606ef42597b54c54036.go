@@ -44,6 +44,7 @@ func NewBackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxP
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get a protection rule that's associated with a protection policy. You can use this operation to get mailbox, drive, and site protection rules. An inclusion rule indicates that a protection policy should contain protection units that match the specified rule criteria. The initial status of a protection rule upon creation is active. After the rule is applied, the state is either completed or completedWithErrors.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxProtectionRuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -67,6 +68,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailbox
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxProtectionRuleable), nil
 }
 // ToGetRequestInformation get a protection rule that's associated with a protection policy. You can use this operation to get mailbox, drive, and site protection rules. An inclusion rule indicates that a protection policy should contain protection units that match the specified rule criteria. The initial status of a protection rule upon creation is active. After the rule is applied, the state is either completed or completedWithErrors.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -81,6 +83,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailbox
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder) {
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxInclusionRulesMailboxProtectionRuleItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

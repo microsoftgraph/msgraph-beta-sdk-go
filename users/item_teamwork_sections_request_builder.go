@@ -125,6 +125,11 @@ func (m *ItemTeamworkSectionsRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionable), nil
 }
+// Reorder provides operations to call the reorder method.
+// returns a *ItemTeamworkSectionsReorderRequestBuilder when successful
+func (m *ItemTeamworkSectionsRequestBuilder) Reorder()(*ItemTeamworkSectionsReorderRequestBuilder) {
+    return NewItemTeamworkSectionsReorderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get the list of sections in a user's teamwork.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

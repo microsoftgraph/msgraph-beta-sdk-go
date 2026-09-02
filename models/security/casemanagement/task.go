@@ -25,7 +25,7 @@ func NewTask()(*Task) {
 func CreateTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTask(), nil
 }
-// GetAssignedTo gets the assignedTo property value. The user assigned to the task.
+// GetAssignedTo gets the assignedTo property value. The user assigned to the task. Supports $filter.
 // returns a *string when successful
 func (m *Task) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -49,7 +49,7 @@ func (m *Task) GetCategory()(*CaseTaskCategory) {
     }
     return nil
 }
-// GetClosingNotes gets the closingNotes property value. Notes recorded when the task is completed.
+// GetClosingNotes gets the closingNotes property value. Notes recorded when the task is completed. Supports $filter.
 // returns a *string when successful
 func (m *Task) GetClosingNotes()(*string) {
     val, err := m.GetBackingStore().Get("closingNotes")
@@ -61,7 +61,7 @@ func (m *Task) GetClosingNotes()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description of the task.
+// GetDescription gets the description property value. The description of the task. Supports $filter.
 // returns a *string when successful
 func (m *Task) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -73,7 +73,7 @@ func (m *Task) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The title of the task.
+// GetDisplayName gets the displayName property value. The title of the task. Supports $filter.
 // returns a *string when successful
 func (m *Task) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -85,7 +85,7 @@ func (m *Task) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the task.
+// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the task. Supports $filter.
 // returns a *Time when successful
 func (m *Task) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -266,7 +266,7 @@ func (m *Task) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetAssignedTo sets the assignedTo property value. The user assigned to the task.
+// SetAssignedTo sets the assignedTo property value. The user assigned to the task. Supports $filter.
 func (m *Task) SetAssignedTo(value *string)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
@@ -280,28 +280,28 @@ func (m *Task) SetCategory(value *CaseTaskCategory)() {
         panic(err)
     }
 }
-// SetClosingNotes sets the closingNotes property value. Notes recorded when the task is completed.
+// SetClosingNotes sets the closingNotes property value. Notes recorded when the task is completed. Supports $filter.
 func (m *Task) SetClosingNotes(value *string)() {
     err := m.GetBackingStore().Set("closingNotes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description of the task.
+// SetDescription sets the description property value. The description of the task. Supports $filter.
 func (m *Task) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The title of the task.
+// SetDisplayName sets the displayName property value. The title of the task. Supports $filter.
 func (m *Task) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the task.
+// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the task. Supports $filter.
 func (m *Task) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {

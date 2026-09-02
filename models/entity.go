@@ -143,6 +143,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAgentCardManifest(), nil
                     case "#microsoft.graph.agentCollection":
                         return NewAgentCollection(), nil
+                    case "#microsoft.graph.agentCommunicationConfiguration":
+                        return NewAgentCommunicationConfiguration(), nil
                     case "#microsoft.graph.agentIdentity":
                         return NewAgentIdentity(), nil
                     case "#microsoft.graph.agentIdentityBlueprint":
@@ -555,6 +557,22 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAzureUser(), nil
                     case "#microsoft.graph.b2bManagementPolicy":
                         return NewB2bManagementPolicy(), nil
+                    case "#microsoft.graph.b2bRegistrationMetrics":
+                        return NewB2bRegistrationMetrics(), nil
+                    case "#microsoft.graph.b2BRegistrationMetricsBase":
+                        return NewB2BRegistrationMetricsBase(), nil
+                    case "#microsoft.graph.b2BRegistrationMetricsInitial":
+                        return NewB2BRegistrationMetricsInitial(), nil
+                    case "#microsoft.graph.b2BRegistrationMetricsRecent":
+                        return NewB2BRegistrationMetricsRecent(), nil
+                    case "#microsoft.graph.b2BSignInActivityMetrics":
+                        return NewB2BSignInActivityMetrics(), nil
+                    case "#microsoft.graph.b2BSignInActivityMetricsBase":
+                        return NewB2BSignInActivityMetricsBase(), nil
+                    case "#microsoft.graph.b2BSignInActivityMetricsInitial":
+                        return NewB2BSignInActivityMetricsInitial(), nil
+                    case "#microsoft.graph.b2BSignInActivityMetricsRecent":
+                        return NewB2BSignInActivityMetricsRecent(), nil
                     case "#microsoft.graph.b2cAuthenticationMethodsPolicy":
                         return NewB2cAuthenticationMethodsPolicy(), nil
                     case "#microsoft.graph.b2cIdentityUserFlow":
@@ -575,6 +593,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBaseMapFeature(), nil
                     case "#microsoft.graph.baseSitePage":
                         return NewBaseSitePage(), nil
+                    case "#microsoft.graph.billingMetrics":
+                        return NewBillingMetrics(), nil
+                    case "#microsoft.graph.billingMetricsBase":
+                        return NewBillingMetricsBase(), nil
+                    case "#microsoft.graph.billingMetricsInitial":
+                        return NewBillingMetricsInitial(), nil
+                    case "#microsoft.graph.billingMetricsRecent":
+                        return NewBillingMetricsRecent(), nil
                     case "#microsoft.graph.bitlocker":
                         return NewBitlocker(), nil
                     case "#microsoft.graph.bitlockerRecoveryKey":
@@ -1033,8 +1059,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceAndAppManagementRoleAssignment(), nil
                     case "#microsoft.graph.deviceAndAppManagementRoleDefinition":
                         return NewDeviceAndAppManagementRoleDefinition(), nil
-                    case "#microsoft.graph.deviceAppManagement":
-                        return NewDeviceAppManagement(), nil
                     case "#microsoft.graph.deviceAppManagementTask":
                         return NewDeviceAppManagementTask(), nil
                     case "#microsoft.graph.deviceCategory":
@@ -1283,6 +1307,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDirectorySettingTemplate(), nil
                     case "#microsoft.graph.distributionList":
                         return NewDistributionList(), nil
+                    case "#microsoft.graph.distributionListMember":
+                        return NewDistributionListMember(), nil
                     case "#microsoft.graph.dlpEvaluatePoliciesJobResponse":
                         return NewDlpEvaluatePoliciesJobResponse(), nil
                     case "#microsoft.graph.document":
@@ -1605,8 +1631,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGoalsExportJob(), nil
                     case "#microsoft.graph.governanceInsight":
                         return NewGovernanceInsight(), nil
+                    case "#microsoft.graph.governanceInvitation":
+                        return NewGovernanceInvitation(), nil
                     case "#microsoft.graph.governancePolicyTemplate":
                         return NewGovernancePolicyTemplate(), nil
+                    case "#microsoft.graph.governanceRelationship":
+                        return NewGovernanceRelationship(), nil
+                    case "#microsoft.graph.governanceRequest":
+                        return NewGovernanceRequest(), nil
                     case "#microsoft.graph.governanceResource":
                         return NewGovernanceResource(), nil
                     case "#microsoft.graph.governanceRoleAssignment":
@@ -2243,6 +2275,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMonthlyUserInsightMetricsRoot(), nil
                     case "#microsoft.graph.multiActivitySubscription":
                         return NewMultiActivitySubscription(), nil
+                    case "#microsoft.graph.multiTenantApplicationMetrics":
+                        return NewMultiTenantApplicationMetrics(), nil
+                    case "#microsoft.graph.multiTenantApplicationMetricsBase":
+                        return NewMultiTenantApplicationMetricsBase(), nil
+                    case "#microsoft.graph.multiTenantApplicationMetricsInitial":
+                        return NewMultiTenantApplicationMetricsInitial(), nil
+                    case "#microsoft.graph.multiTenantApplicationMetricsRecent":
+                        return NewMultiTenantApplicationMetricsRecent(), nil
                     case "#microsoft.graph.multiTenantOrganization":
                         return NewMultiTenantOrganization(), nil
                     case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
@@ -2751,6 +2791,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRecommendationBase(), nil
                     case "#microsoft.graph.recommendationConfiguration":
                         return NewRecommendationConfiguration(), nil
+                    case "#microsoft.graph.recommendationTag":
+                        return NewRecommendationTag(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.recycleBin":
@@ -2767,6 +2809,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewReflectCheckInResponse(), nil
                     case "#microsoft.graph.regionalAndLanguageSettings":
                         return NewRegionalAndLanguageSettings(), nil
+                    case "#microsoft.graph.relatedTenant":
+                        return NewRelatedTenant(), nil
+                    case "#microsoft.graph.relatedTenantsRefreshRequest":
+                        return NewRelatedTenantsRefreshRequest(), nil
                     case "#microsoft.graph.relyingPartyDetailedSummary":
                         return NewRelyingPartyDetailedSummary(), nil
                     case "#microsoft.graph.remoteActionAudit":
@@ -2813,6 +2859,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRiskDetection(), nil
                     case "#microsoft.graph.riskyAgent":
                         return NewRiskyAgent(), nil
+                    case "#microsoft.graph.riskyAgentDiscoveredAgentIdentity":
+                        return NewRiskyAgentDiscoveredAgentIdentity(), nil
                     case "#microsoft.graph.riskyAgentIdentity":
                         return NewRiskyAgentIdentity(), nil
                     case "#microsoft.graph.riskyAgentIdentityBlueprintPrincipal":
@@ -3239,6 +3287,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewTenantAttachRBAC(), nil
                     case "#microsoft.graph.tenantDataSecurityAndGovernance":
                         return NewTenantDataSecurityAndGovernance(), nil
+                    case "#microsoft.graph.tenantGovernance":
+                        return NewTenantGovernance(), nil
+                    case "#microsoft.graph.tenantGovernancePolicyTemplate":
+                        return NewTenantGovernancePolicyTemplate(), nil
+                    case "#microsoft.graph.tenantGovernanceSetting":
+                        return NewTenantGovernanceSetting(), nil
                     case "#microsoft.graph.tenantProtectionScopeContainer":
                         return NewTenantProtectionScopeContainer(), nil
                     case "#microsoft.graph.tenantRelationshipAccessPolicyBase":

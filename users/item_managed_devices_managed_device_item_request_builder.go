@@ -59,6 +59,11 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) AssignmentFilterEval
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) BypassActivationLock()(*ItemManagedDevicesItemBypassActivationLockRequestBuilder) {
     return NewItemManagedDevicesItemBypassActivationLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CancelEnhancedLogCollection provides operations to call the cancelEnhancedLogCollection method.
+// returns a *ItemManagedDevicesItemCancelEnhancedLogCollectionRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) CancelEnhancedLogCollection()(*ItemManagedDevicesItemCancelEnhancedLogCollectionRequestBuilder) {
+    return NewItemManagedDevicesItemCancelEnhancedLogCollectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ChangeAssignments provides operations to call the changeAssignments method.
 // returns a *ItemManagedDevicesItemChangeAssignmentsRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ChangeAssignments()(*ItemManagedDevicesItemChangeAssignmentsRequestBuilder) {
@@ -427,6 +432,11 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ToPatchRequestInform
 // returns a *ItemManagedDevicesItemTriggerConfigurationManagerActionRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) TriggerConfigurationManagerAction()(*ItemManagedDevicesItemTriggerConfigurationManagerActionRequestBuilder) {
     return NewItemManagedDevicesItemTriggerConfigurationManagerActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TriggerEnhancedLogCollection provides operations to call the triggerEnhancedLogCollection method.
+// returns a *ItemManagedDevicesItemTriggerEnhancedLogCollectionRequestBuilder when successful
+func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) TriggerEnhancedLogCollection()(*ItemManagedDevicesItemTriggerEnhancedLogCollectionRequestBuilder) {
+    return NewItemManagedDevicesItemTriggerEnhancedLogCollectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UpdateWindowsDeviceAccount provides operations to call the updateWindowsDeviceAccount method.
 // returns a *ItemManagedDevicesItemUpdateWindowsDeviceAccountRequestBuilder when successful

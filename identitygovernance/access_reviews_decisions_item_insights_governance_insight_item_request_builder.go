@@ -58,6 +58,7 @@ func NewAccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder(ra
     return NewAccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property insights for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return nil
 }
 // Get insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a GovernanceInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, error) {
@@ -94,6 +96,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable), nil
 }
 // Patch update the navigation property insights in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a GovernanceInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, error) {
@@ -114,6 +117,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable), nil
 }
 // ToDeleteRequestInformation delete navigation property insights for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property insights in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, requestConfiguration *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
     return NewAccessReviewsDecisionsItemInsightsGovernanceInsightItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

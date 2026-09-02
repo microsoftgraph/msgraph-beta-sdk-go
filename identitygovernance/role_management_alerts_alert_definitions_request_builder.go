@@ -50,6 +50,7 @@ type RoleManagementAlertsAlertDefinitionsRequestBuilderPostRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUnifiedRoleManagementAlertDefinitionId provides operations to manage the alertDefinitions property of the microsoft.graph.roleManagementAlert entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertDefinitionsUnifiedRoleManagementAlertDefinitionItemRequestBuilder when successful
 func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) ByUnifiedRoleManagementAlertDefinitionId(unifiedRoleManagementAlertDefinitionId string)(*RoleManagementAlertsAlertDefinitionsUnifiedRoleManagementAlertDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) Count()(*RoleManage
     return NewRoleManagementAlertsAlertDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the unifiedRoleManagementAlertDefinition objects and their properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionCollectionResponseable), nil
 }
 // Post create new navigation property to alertDefinitions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable, requestConfiguration *RoleManagementAlertsAlertDefinitionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable, error) {
@@ -123,6 +126,7 @@ func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) Post(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable), nil
 }
 // ToGetRequestInformation get a list of the unifiedRoleManagementAlertDefinition objects and their properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to alertDefinitions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable, requestConfiguration *RoleManagementAlertsAlertDefinitionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertDefinitionsRequestBuilder when successful
 func (m *RoleManagementAlertsAlertDefinitionsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertDefinitionsRequestBuilder) {
     return NewRoleManagementAlertsAlertDefinitionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

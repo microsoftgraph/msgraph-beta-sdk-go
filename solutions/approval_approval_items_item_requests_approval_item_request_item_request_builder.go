@@ -58,6 +58,7 @@ func NewApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder(r
     return NewApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property requests for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return nil
 }
 // Get read the properties and relationships of an approvalItemRequest object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemRequestable), nil
 }
 // Patch update the navigation property requests in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemRequestable, requestConfiguration *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemRequestable, error) {
@@ -117,6 +120,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemRequestable), nil
 }
 // ToDeleteRequestInformation delete navigation property requests for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an approvalItemRequest object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property requests in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemRequestable, requestConfiguration *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder when successful
 func (m *ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) WithUrl(rawUrl string)(*ApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder) {
     return NewApprovalApprovalItemsItemRequestsApprovalItemRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

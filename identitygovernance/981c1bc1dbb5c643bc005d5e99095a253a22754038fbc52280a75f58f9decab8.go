@@ -82,6 +82,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUse
     return res.(AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +106,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUse
     return res.(AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation retrieve the accessReviewInstanceDecisionItem objects for a specific accessReviewInstance. A list of zero or more accessReviewInstanceDecisionItem objects are returned, including all of their nested properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,6 +121,7 @@ func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUse
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsDecisionsItemInstanceStagesItemDecisionsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -50,6 +50,7 @@ type PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilderPo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByApprovalStepId provides operations to manage the steps property of the microsoft.graph.approval entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) ByApprovalStepId(approvalStepId string)(*PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuild
     return NewPermissionsManagementScheduledPermissionsApprovalsItemStepsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ApprovalStepCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepCollectionResponseable), nil
 }
 // Post create new navigation property to steps for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
@@ -120,6 +123,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
 // ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuild
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to steps for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) WithUrl(rawUrl string)(*PermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder) {
     return NewPermissionsManagementScheduledPermissionsApprovalsItemStepsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

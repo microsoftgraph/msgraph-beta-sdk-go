@@ -65,6 +65,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Acc
     return NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AccessPackagesIncompatibleWithWithUniqueName provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithWithUniqueNameRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) AccessPackagesIncompatibleWithWithUniqueName(uniqueName *string)(*EntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithWithUniqueNameRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemAccessPackagesIncompatibleWithWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
@@ -83,6 +84,7 @@ func NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilder(rawUr
     return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete an accessPackage object. You can't delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -102,6 +104,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Del
     return nil
 }
 // Get retrieve the properties and relationships of an accessPackage object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -145,6 +148,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Mov
     return NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -168,6 +172,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) Pat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable), nil
 }
 // ToDeleteRequestInformation delete an accessPackage object. You can't delete an access package if it has any accessPackageAssignment. To delete the access package, first query if there are any assignments with a filter to indicate the specific access package, such as: $filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'. For more information on how to remove assignments that are still in the delivered state, see Remove an assignment.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -179,6 +184,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToD
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of an accessPackage object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -193,6 +199,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPatchRequestInformation update an existing accessPackage object to change one or more of its properties, such as the display name or description.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, requestConfiguration *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -208,6 +215,7 @@ func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesAccessPackageItemRequestBuilder) {
     return NewEntitlementManagementAccessPackagesAccessPackageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

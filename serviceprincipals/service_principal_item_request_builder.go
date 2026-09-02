@@ -113,6 +113,7 @@ func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassifications(
     return NewItemDelegatedPermissionClassificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -147,11 +148,13 @@ func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*Ite
     return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederatedIdentityCredentialsWithName provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemFederatedIdentityCredentialsWithNameRequestBuilder when successful
 func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
     return NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
 }
 // Get retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -199,10 +202,20 @@ func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemH
 func (m *ServicePrincipalItemRequestBuilder) LicenseDetails()(*ItemLicenseDetailsRequestBuilder) {
     return NewItemLicenseDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Lifecycle provides operations to manage the lifecycle property of the microsoft.graph.servicePrincipal entity.
+// returns a *ItemLifecycleRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) Lifecycle()(*ItemLifecycleRequestBuilder) {
+    return NewItemLifecycleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
 // returns a *ItemMemberOfRequestBuilder when successful
 func (m *ServicePrincipalItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernanceAttest provides operations to call the attest method.
+// returns a *ItemMicrosoftGraphIdentityGovernanceAttestRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) MicrosoftGraphIdentityGovernanceAttest()(*ItemMicrosoftGraphIdentityGovernanceAttestRequestBuilder) {
+    return NewItemMicrosoftGraphIdentityGovernanceAttestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Oauth2PermissionGrants provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
 // returns a *ItemOauth2PermissionGrantsRequestBuilder when successful
@@ -220,6 +233,7 @@ func (m *ServicePrincipalItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder)
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -263,6 +277,7 @@ func (m *ServicePrincipalItemRequestBuilder) Synchronization()(*ItemSynchronizat
     return NewItemSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -274,6 +289,7 @@ func (m *ServicePrincipalItemRequestBuilder) ToDeleteRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -298,6 +314,7 @@ func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenL
     return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPatchRequestInformation create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -323,6 +340,7 @@ func (m *ServicePrincipalItemRequestBuilder) UpdatePasswordSingleSignOnCredentia
     return NewItemUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ServicePrincipalItemRequestBuilder when successful
 func (m *ServicePrincipalItemRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalItemRequestBuilder) {
     return NewServicePrincipalItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

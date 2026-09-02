@@ -50,6 +50,7 @@ type BackupRestoreSharePointRestoreSessionsRequestBuilderPostRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySharePointRestoreSessionId provides operations to manage the sharePointRestoreSessions property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) BySharePointRestoreSessionId(sharePointRestoreSessionId string)(*BackupRestoreSharePointRestoreSessionsSharePointRestoreSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) Count()(*BackupRe
     return NewBackupRestoreSharePointRestoreSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of SharePoint restore sessions available in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointRestoreSessionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointRestoreSessionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointRestoreSessionCollectionResponseable), nil
 }
 // Post create a new sharePointRestoreSession object. To create a granular restore session, granular site restore artifacts must be present in the payload. A request can't include both granularSiteRestoreArtifact and siteRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointRestoreSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -123,6 +126,7 @@ func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) Post(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointRestoreSessionable), nil
 }
 // ToGetRequestInformation the list of SharePoint restore sessions available in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new sharePointRestoreSession object. To create a granular restore session, granular site restore artifacts must be present in the payload. A request can't include both granularSiteRestoreArtifact and siteRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointRestoreSessionable, requestConfiguration *BackupRestoreSharePointRestoreSessionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSharePointRestoreSessionsRequestBuilder) {
     return NewBackupRestoreSharePointRestoreSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

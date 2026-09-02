@@ -50,6 +50,7 @@ type BackupRestoreSiteProtectionUnitsRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySiteProtectionUnitId provides operations to manage the siteProtectionUnits property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder when successful
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) BySiteProtectionUnitId(siteProtectionUnitId string)(*BackupRestoreSiteProtectionUnitsSiteProtectionUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Count()(*BackupRestoreS
     return NewBackupRestoreSiteProtectionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of site protection units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitCollectionResponseable), nil
 }
 // Post create new navigation property to siteProtectionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitable, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitable, error) {
@@ -120,6 +123,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitable), nil
 }
 // ToGetRequestInformation the list of site protection units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to siteProtectionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitable, requestConfiguration *BackupRestoreSiteProtectionUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteProtectionUnitsRequestBuilder when successful
 func (m *BackupRestoreSiteProtectionUnitsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSiteProtectionUnitsRequestBuilder) {
     return NewBackupRestoreSiteProtectionUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

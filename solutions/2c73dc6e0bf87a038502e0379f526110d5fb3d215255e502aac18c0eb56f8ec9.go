@@ -63,6 +63,7 @@ func NewSharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTa
     return NewSharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property crossOrganizationMigrationTasks for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return nil
 }
 // Get get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable), nil
 }
 // Patch update the navigation property crossOrganizationMigrationTasks in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, error) {
@@ -122,6 +125,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable), nil
 }
 // ToDeleteRequestInformation delete navigation property crossOrganizationMigrationTasks for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,6 +137,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return requestInfo, nil
 }
 // ToGetRequestInformation get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,6 +152,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property crossOrganizationMigrationTasks in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,6 +168,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationT
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) WithUrl(rawUrl string)(*SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

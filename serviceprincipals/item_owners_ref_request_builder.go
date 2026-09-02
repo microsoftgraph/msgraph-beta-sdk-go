@@ -73,6 +73,7 @@ func NewItemOwnersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewItemOwnersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -92,6 +93,7 @@ func (m *ItemOwnersRefRequestBuilder) Delete(ctx context.Context, requestConfigu
     return nil
 }
 // Get directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOwnersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
@@ -112,6 +114,7 @@ func (m *ItemOwnersRefRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -131,6 +134,7 @@ func (m *ItemOwnersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e
     return nil
 }
 // ToDeleteRequestInformation remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/owners/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -145,6 +149,7 @@ func (m *ItemOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // ToGetRequestInformation directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +164,7 @@ func (m *ItemOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToPostRequestInformation add an owner for the servicePrincipal. Service principal owners can be users, the service principal itself, or other service principals.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemOwnersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -174,6 +180,7 @@ func (m *ItemOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemOwnersRefRequestBuilder when successful
 func (m *ItemOwnersRefRequestBuilder) WithUrl(rawUrl string)(*ItemOwnersRefRequestBuilder) {
     return NewItemOwnersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

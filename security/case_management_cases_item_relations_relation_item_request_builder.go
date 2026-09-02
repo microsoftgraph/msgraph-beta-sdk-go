@@ -21,7 +21,7 @@ type CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters links from the case to related security resources. Supports $expand.
+// CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string "uriparametername:\"%24expand\""
@@ -57,8 +57,11 @@ func NewCaseManagementCasesItemRelationsRelationItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property relations for security
+// Delete delete a concrete relation from a case.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta
 func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get links from the case to related security resources. Supports $expand.
+// Get read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a Relationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta
 func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,7 @@ func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Get(ctx con
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
 }
-// Patch update the properties of a relation object.
+// Patch update the properties of a concrete relation object.
 // returns a Relationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -116,7 +122,7 @@ func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Patch(ctx c
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
 }
-// ToDeleteRequestInformation delete navigation property relations for security
+// ToDeleteRequestInformation delete a concrete relation from a case.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +133,7 @@ func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation links from the case to related security resources. Supports $expand.
+// ToGetRequestInformation read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +147,7 @@ func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a relation object.
+// ToPatchRequestInformation update the properties of a concrete relation object.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

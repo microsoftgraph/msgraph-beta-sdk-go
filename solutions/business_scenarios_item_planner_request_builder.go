@@ -58,6 +58,7 @@ func NewBusinessScenariosItemPlannerRequestBuilder(rawUrl string, requestAdapter
     return NewBusinessScenariosItemPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property planner for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Delete(ctx context.Context,
     return nil
 }
 // Get read the properties and relationships of a businessScenarioPlanner object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BusinessScenarioPlannerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) GetPlan()(*BusinessScenario
     return NewBusinessScenariosItemPlannerGetPlanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property planner in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BusinessScenarioPlannerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, error) {
@@ -137,6 +140,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Tasks()(*BusinessScenariosI
     return NewBusinessScenariosItemPlannerTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property planner for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -148,6 +152,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a businessScenarioPlanner object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,6 +167,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property planner in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -177,6 +183,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToPatchRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosItemPlannerRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerRequestBuilder) {
     return NewBusinessScenariosItemPlannerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

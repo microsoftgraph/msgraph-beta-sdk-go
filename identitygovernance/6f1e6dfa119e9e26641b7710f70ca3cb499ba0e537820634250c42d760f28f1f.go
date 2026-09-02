@@ -63,6 +63,7 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIte
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property userConsentRequests for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return nil
 }
 // Get read the properties and relationships of a userConsentRequest object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UserConsentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable), nil
 }
 // Patch update the navigation property userConsentRequests in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UserConsentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
@@ -122,6 +125,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable), nil
 }
 // ToDeleteRequestInformation delete navigation property userConsentRequests for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,6 +137,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a userConsentRequest object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,6 +152,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property userConsentRequests in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,6 +168,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestIt
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) WithUrl(rawUrl string)(*AppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsUserConsentRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

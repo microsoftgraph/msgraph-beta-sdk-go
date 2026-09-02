@@ -50,6 +50,7 @@ type ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilderPostR
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByApprovedClientAppId provides operations to manage the approvedClientApps property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder) ByApprovedClientAppId(approvedClientAppId string)(*ItemRemoteDesktopSecurityConfigurationApprovedClientAppsApprovedClientAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder)
     return NewItemRemoteDesktopSecurityConfigurationApprovedClientAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ApprovedClientAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppCollectionResponseable), nil
 }
 // Post create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ApprovedClientAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppable), nil
 }
 // ToGetRequestInformation get a list of the approvedClientApp objects and their properties on the remoteDesktopSecurityConfiguration resource on a service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder)
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new approvedClientApp object for the remoteDesktopSecurityConfiguration object on a service principal. You can configure a maximum of 20 approved client apps.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovedClientAppable, requestConfiguration *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder when successful
 func (m *ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder) WithUrl(rawUrl string)(*ItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder) {
     return NewItemRemoteDesktopSecurityConfigurationApprovedClientAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

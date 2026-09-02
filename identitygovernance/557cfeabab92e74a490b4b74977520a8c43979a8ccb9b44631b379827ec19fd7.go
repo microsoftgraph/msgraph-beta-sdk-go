@@ -51,6 +51,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMai
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a MailboxSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, error) {
@@ -71,6 +72,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMa
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable), nil
 }
 // Patch update property mailboxSettings value.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a MailboxSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, error) {
@@ -91,6 +93,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMa
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable), nil
 }
 // ToGetRequestInformation settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Requires $select to retrieve.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -105,6 +108,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMa
     return requestInfo, nil
 }
 // ToPatchRequestInformation update property mailboxSettings value.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -120,6 +124,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMa
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemVersionsItemLastModifiedByMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

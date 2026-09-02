@@ -66,6 +66,7 @@ func NewVirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder(rawUrl st
     return NewVirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property registrations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -82,6 +83,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) Delete(
     return nil
 }
 // Get get the properties and relationships of a virtualEventRegistration object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +107,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
 // Patch update the navigation property registrations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
@@ -125,6 +128,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) Patch(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
 // ToDeleteRequestInformation delete navigation property registrations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of a virtualEventRegistration object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,6 +155,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property registrations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, requestConfiguration *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -165,6 +171,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) ToPatch
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationsWithUserIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -34,6 +34,7 @@ func NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBui
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created. The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBu
     return nil
 }
 // ToPostRequestInformation stop an access review stage that is inProgress. After the access review stage stops, the stage status will be Completed and the reviewers can no longer give input. If there are subsequent stages that depend on the completed stage, the next stage will be created. The accessReviewInstanceDecisionItem objects will always reflect the last decisions recorded across all stages at that given time, regardless of the status of the stages.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilder) {
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemStopRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

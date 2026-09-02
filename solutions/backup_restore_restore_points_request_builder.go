@@ -50,6 +50,7 @@ type BackupRestoreRestorePointsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByRestorePointId provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreRestorePointsRestorePointItemRequestBuilder when successful
 func (m *BackupRestoreRestorePointsRequestBuilder) ByRestorePointId(restorePointId string)(*BackupRestoreRestorePointsRestorePointItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreRestorePointsRequestBuilder) Count()(*BackupRestoreRestore
     return NewBackupRestoreRestorePointsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list of restore points in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a RestorePointCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreRestorePointsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreRestorePointsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreRestorePointsRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointCollectionResponseable), nil
 }
 // Post create new navigation property to restorePoints for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a RestorePointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreRestorePointsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointable, requestConfiguration *BackupRestoreRestorePointsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointable, error) {
@@ -125,6 +128,7 @@ func (m *BackupRestoreRestorePointsRequestBuilder) Search()(*BackupRestoreRestor
     return NewBackupRestoreRestorePointsSearchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list of restore points in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreRestorePointsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreRestorePointsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +143,7 @@ func (m *BackupRestoreRestorePointsRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to restorePoints for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreRestorePointsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointable, requestConfiguration *BackupRestoreRestorePointsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +159,7 @@ func (m *BackupRestoreRestorePointsRequestBuilder) ToPostRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreRestorePointsRequestBuilder when successful
 func (m *BackupRestoreRestorePointsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreRestorePointsRequestBuilder) {
     return NewBackupRestoreRestorePointsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

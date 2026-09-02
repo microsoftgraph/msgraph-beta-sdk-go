@@ -25,6 +25,18 @@ func NewWindowsManagedAppProtection()(*WindowsManagedAppProtection) {
 func CreateWindowsManagedAppProtectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsManagedAppProtection(), nil
 }
+// GetAllowedInboundDataTransferSourceApps gets the allowedInboundDataTransferSourceApps property value. Windows MAM data transfer locations
+// returns a *WindowsManagedAppDataTransferLocations when successful
+func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSourceApps()(*WindowsManagedAppDataTransferLocations) {
+    val, err := m.GetBackingStore().Get("allowedInboundDataTransferSourceApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsManagedAppDataTransferLocations)
+    }
+    return nil
+}
 // GetAllowedInboundDataTransferSources gets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 // returns a *WindowsManagedAppDataTransferLevel when successful
 func (m *WindowsManagedAppProtection) GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel) {
@@ -46,6 +58,18 @@ func (m *WindowsManagedAppProtection) GetAllowedOutboundClipboardSharingLevel()(
     }
     if val != nil {
         return val.(*WindowsManagedAppClipboardSharingLevel)
+    }
+    return nil
+}
+// GetAllowedOutboundDataTransferDestinationApps gets the allowedOutboundDataTransferDestinationApps property value. Windows MAM data transfer locations
+// returns a *WindowsManagedAppDataTransferLocations when successful
+func (m *WindowsManagedAppProtection) GetAllowedOutboundDataTransferDestinationApps()(*WindowsManagedAppDataTransferLocations) {
+    val, err := m.GetBackingStore().Get("allowedOutboundDataTransferDestinationApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsManagedAppDataTransferLocations)
     }
     return nil
 }
@@ -125,6 +149,16 @@ func (m *WindowsManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDep
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ManagedAppPolicy.GetFieldDeserializers()
+    res["allowedInboundDataTransferSourceApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsManagedAppDataTransferLocations)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedInboundDataTransferSourceApps(val.(*WindowsManagedAppDataTransferLocations))
+        }
+        return nil
+    }
     res["allowedInboundDataTransferSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseWindowsManagedAppDataTransferLevel)
         if err != nil {
@@ -142,6 +176,16 @@ func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetAllowedOutboundClipboardSharingLevel(val.(*WindowsManagedAppClipboardSharingLevel))
+        }
+        return nil
+    }
+    res["allowedOutboundDataTransferDestinationApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsManagedAppDataTransferLocations)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedOutboundDataTransferDestinationApps(val.(*WindowsManagedAppDataTransferLocations))
         }
         return nil
     }
@@ -599,6 +643,13 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
+    if m.GetAllowedInboundDataTransferSourceApps() != nil {
+        cast := (*m.GetAllowedInboundDataTransferSourceApps()).String()
+        err = writer.WriteStringValue("allowedInboundDataTransferSourceApps", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAllowedInboundDataTransferSources() != nil {
         cast := (*m.GetAllowedInboundDataTransferSources()).String()
         err = writer.WriteStringValue("allowedInboundDataTransferSources", &cast)
@@ -609,6 +660,13 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     if m.GetAllowedOutboundClipboardSharingLevel() != nil {
         cast := (*m.GetAllowedOutboundClipboardSharingLevel()).String()
         err = writer.WriteStringValue("allowedOutboundClipboardSharingLevel", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAllowedOutboundDataTransferDestinationApps() != nil {
+        cast := (*m.GetAllowedOutboundDataTransferDestinationApps()).String()
+        err = writer.WriteStringValue("allowedOutboundDataTransferDestinationApps", &cast)
         if err != nil {
             return err
         }
@@ -769,6 +827,13 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
+// SetAllowedInboundDataTransferSourceApps sets the allowedInboundDataTransferSourceApps property value. Windows MAM data transfer locations
+func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSourceApps(value *WindowsManagedAppDataTransferLocations)() {
+    err := m.GetBackingStore().Set("allowedInboundDataTransferSourceApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowedInboundDataTransferSources sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
 func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)() {
     err := m.GetBackingStore().Set("allowedInboundDataTransferSources", value)
@@ -779,6 +844,13 @@ func (m *WindowsManagedAppProtection) SetAllowedInboundDataTransferSources(value
 // SetAllowedOutboundClipboardSharingLevel sets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
 func (m *WindowsManagedAppProtection) SetAllowedOutboundClipboardSharingLevel(value *WindowsManagedAppClipboardSharingLevel)() {
     err := m.GetBackingStore().Set("allowedOutboundClipboardSharingLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowedOutboundDataTransferDestinationApps sets the allowedOutboundDataTransferDestinationApps property value. Windows MAM data transfer locations
+func (m *WindowsManagedAppProtection) SetAllowedOutboundDataTransferDestinationApps(value *WindowsManagedAppDataTransferLocations)() {
+    err := m.GetBackingStore().Set("allowedOutboundDataTransferDestinationApps", value)
     if err != nil {
         panic(err)
     }
@@ -947,8 +1019,10 @@ func (m *WindowsManagedAppProtection) SetPrintBlocked(value *bool)() {
 type WindowsManagedAppProtectionable interface {
     ManagedAppPolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllowedInboundDataTransferSourceApps()(*WindowsManagedAppDataTransferLocations)
     GetAllowedInboundDataTransferSources()(*WindowsManagedAppDataTransferLevel)
     GetAllowedOutboundClipboardSharingLevel()(*WindowsManagedAppClipboardSharingLevel)
+    GetAllowedOutboundDataTransferDestinationApps()(*WindowsManagedAppDataTransferLocations)
     GetAllowedOutboundDataTransferDestinations()(*WindowsManagedAppDataTransferLevel)
     GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction)
     GetApps()([]ManagedMobileAppable)
@@ -972,8 +1046,10 @@ type WindowsManagedAppProtectionable interface {
     GetPeriodOfflineBeforeAccessCheck()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPeriodOfflineBeforeWipeIsEnforced()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetPrintBlocked()(*bool)
+    SetAllowedInboundDataTransferSourceApps(value *WindowsManagedAppDataTransferLocations)()
     SetAllowedInboundDataTransferSources(value *WindowsManagedAppDataTransferLevel)()
     SetAllowedOutboundClipboardSharingLevel(value *WindowsManagedAppClipboardSharingLevel)()
+    SetAllowedOutboundDataTransferDestinationApps(value *WindowsManagedAppDataTransferLocations)()
     SetAllowedOutboundDataTransferDestinations(value *WindowsManagedAppDataTransferLevel)()
     SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)()
     SetApps(value []ManagedMobileAppable)()

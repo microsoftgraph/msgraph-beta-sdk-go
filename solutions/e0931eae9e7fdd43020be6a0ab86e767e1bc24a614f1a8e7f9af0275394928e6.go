@@ -58,6 +58,7 @@ func NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkA
     return NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property driveExclusionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return nil
 }
 // Get the list of bulk addition jobs for drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable), nil
 }
 // Patch update the navigation property driveExclusionUnitsBulkAdditionJobs in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable), nil
 }
 // ToDeleteRequestInformation delete navigation property driveExclusionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of bulk addition jobs for drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property driveExclusionUnitsBulkAdditionJobs in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulk
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder when successful
 func (m *BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder) {
     return NewBackupRestoreDriveExclusionUnitsBulkAdditionJobsDriveExclusionUnitsBulkAdditionJobItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

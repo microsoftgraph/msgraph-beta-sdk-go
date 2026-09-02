@@ -44,6 +44,7 @@ func NewLifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessing
     return NewLifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get subjectProcessingResults from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a SubjectProcessingResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.SubjectProcessingResultable, error) {
@@ -74,6 +75,7 @@ func (m *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessin
     return NewLifecycleWorkflowsWorkflowsItemSubjectProcessingResultsItemTaskProcessingResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get subjectProcessingResults from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -88,6 +90,7 @@ func (m *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessin
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

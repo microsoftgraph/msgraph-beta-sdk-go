@@ -50,6 +50,7 @@ type ItemDelegatedPermissionClassificationsRequestBuilderPostRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDelegatedPermissionClassificationId provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder when successful
 func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ByDelegatedPermissionClassificationId(delegatedPermissionClassificationId string)(*ItemDelegatedPermissionClassificationsDelegatedPermissionClassificationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ItemDelegatedPermissionClassificationsRequestBuilder) Count()(*ItemDele
     return NewItemDelegatedPermissionClassificationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a DelegatedPermissionClassificationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *ItemDelegatedPermissionClassificationsRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedPermissionClassificationCollectionResponseable), nil
 }
 // Post classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a DelegatedPermissionClassificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *ItemDelegatedPermissionClassificationsRequestBuilder) Post(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedPermissionClassificationable), nil
 }
 // ToGetRequestInformation retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDelegatedPermissionClassificationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPostRequestInformation classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedPermissionClassificationable, requestConfiguration *ItemDelegatedPermissionClassificationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *ItemDelegatedPermissionClassificationsRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemDelegatedPermissionClassificationsRequestBuilder when successful
 func (m *ItemDelegatedPermissionClassificationsRequestBuilder) WithUrl(rawUrl string)(*ItemDelegatedPermissionClassificationsRequestBuilder) {
     return NewItemDelegatedPermissionClassificationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

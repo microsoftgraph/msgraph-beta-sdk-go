@@ -50,6 +50,7 @@ type VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderPo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByVirtualEventRegistrationQuestionBaseId provides operations to manage the questions property of the microsoft.graph.virtualEventRegistrationConfiguration entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) ByVirtualEventRegistrationQuestionBaseId(virtualEventRegistrationQuestionBaseId string)(*VirtualEventsWebinarsItemRegistrationConfigurationQuestionsVirtualEventRegistrationQuestionBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     return NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationQuestionBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationQuestionBaseCollectionResponseable), nil
 }
 // Post create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationQuestionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationQuestionBaseable), nil
 }
 // ToGetRequestInformation get a list of all registration questions for a webinar or town hall. The list can include either predefined registration questions or custom registration questions.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     return requestInfo, nil
 }
 // ToPostRequestInformation create a registration question for a webinar or town hall. You can create either a predefined registration question or a custom registration question.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationQuestionBaseable, requestConfiguration *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationConfigurationQuestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

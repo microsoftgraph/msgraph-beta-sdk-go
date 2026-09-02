@@ -51,15 +51,15 @@ func (m *DistributionList) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMemberFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateDistributionListMemberFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]Memberable, len(val))
+            res := make([]DistributionListMemberable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(Memberable)
+                    res[i] = v.(DistributionListMemberable)
                 }
             }
             m.SetMembers(res)
@@ -104,15 +104,15 @@ func (m *DistributionList) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetMembers gets the members property value. The members property
-// returns a []Memberable when successful
-func (m *DistributionList) GetMembers()([]Memberable) {
+// GetMembers gets the members property value. The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+// returns a []DistributionListMemberable when successful
+func (m *DistributionList) GetMembers()([]DistributionListMemberable) {
     val, err := m.GetBackingStore().Get("members")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]Memberable)
+        return val.([]DistributionListMemberable)
     }
     return nil
 }
@@ -209,8 +209,8 @@ func (m *DistributionList) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetMembers sets the members property value. The members property
-func (m *DistributionList) SetMembers(value []Memberable)() {
+// SetMembers sets the members property value. The members of the distribution list. Not returned by default; use $expand=members to include. Read-only.
+func (m *DistributionList) SetMembers(value []DistributionListMemberable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {
         panic(err)
@@ -241,12 +241,12 @@ type DistributionListable interface {
     OutlookItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
-    GetMembers()([]Memberable)
+    GetMembers()([]DistributionListMemberable)
     GetNotes()(*string)
     GetPersonIdentifier()(*string)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     SetDisplayName(value *string)()
-    SetMembers(value []Memberable)()
+    SetMembers(value []DistributionListMemberable)()
     SetNotes(value *string)()
     SetPersonIdentifier(value *string)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()

@@ -55,6 +55,7 @@ func (m *ItemSynchronizationPingRequestBuilder) Get(ctx context.Context, request
     return res.(ItemSynchronizationPingResponseable), nil
 }
 // GetAsPingGetResponse invoke function Ping
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ItemSynchronizationPingGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationPingRequestBuilder) GetAsPingGetResponse(ctx context.Context, requestConfiguration *ItemSynchronizationPingRequestBuilderGetRequestConfiguration)(ItemSynchronizationPingGetResponseable, error) {
@@ -75,6 +76,7 @@ func (m *ItemSynchronizationPingRequestBuilder) GetAsPingGetResponse(ctx context
     return res.(ItemSynchronizationPingGetResponseable), nil
 }
 // ToGetRequestInformation invoke function Ping
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationPingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationPingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -86,6 +88,7 @@ func (m *ItemSynchronizationPingRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationPingRequestBuilder when successful
 func (m *ItemSynchronizationPingRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationPingRequestBuilder) {
     return NewItemSynchronizationPingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

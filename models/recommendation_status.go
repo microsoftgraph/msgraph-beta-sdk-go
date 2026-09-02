@@ -15,10 +15,11 @@ const (
     THIRDPARTY_RECOMMENDATIONSTATUS
     PLANNED_RECOMMENDATIONSTATUS
     ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
+    NEEDSMOREACTION_RECOMMENDATIONSTATUS
 )
 
 func (i RecommendationStatus) String() string {
-    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue", "riskAccepted", "thirdParty", "planned", "alternateMitigation"}[i]
+    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue", "riskAccepted", "thirdParty", "planned", "alternateMitigation", "needsMoreAction"}[i]
 }
 func ParseRecommendationStatus(v string) (any, error) {
     result := ACTIVE_RECOMMENDATIONSTATUS
@@ -43,6 +44,8 @@ func ParseRecommendationStatus(v string) (any, error) {
             result = PLANNED_RECOMMENDATIONSTATUS
         case "alternateMitigation":
             result = ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
+        case "needsMoreAction":
+            result = NEEDSMOREACTION_RECOMMENDATIONSTATUS
         default:
             return nil, nil
     }

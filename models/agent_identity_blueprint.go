@@ -24,10 +24,32 @@ func NewAgentIdentityBlueprint()(*AgentIdentityBlueprint) {
 func CreateAgentIdentityBlueprintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgentIdentityBlueprint(), nil
 }
+// GetCommunicationConfiguration gets the communicationConfiguration property value. The default communication configuration for agent identities created from this agent identity blueprint. Agent identities inherit this configuration unless they define their own override.
+// returns a AgentCommunicationConfigurationable when successful
+func (m *AgentIdentityBlueprint) GetCommunicationConfiguration()(AgentCommunicationConfigurationable) {
+    val, err := m.GetBackingStore().Get("communicationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AgentCommunicationConfigurationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgentIdentityBlueprint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Application.GetFieldDeserializers()
+    res["communicationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAgentCommunicationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommunicationConfiguration(val.(AgentCommunicationConfigurationable))
+        }
+        return nil
+    }
     res["inheritablePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateInheritablePermissionFromDiscriminatorValue)
         if err != nil {
@@ -92,6 +114,12 @@ func (m *AgentIdentityBlueprint) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("communicationConfiguration", m.GetCommunicationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetInheritablePermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritablePermissions()))
         for i, v := range m.GetInheritablePermissions() {
@@ -118,6 +146,13 @@ func (m *AgentIdentityBlueprint) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
+// SetCommunicationConfiguration sets the communicationConfiguration property value. The default communication configuration for agent identities created from this agent identity blueprint. Agent identities inherit this configuration unless they define their own override.
+func (m *AgentIdentityBlueprint) SetCommunicationConfiguration(value AgentCommunicationConfigurationable)() {
+    err := m.GetBackingStore().Set("communicationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInheritablePermissions sets the inheritablePermissions property value. Defines scopes of a resource application that may be automatically granted to agent identities without additional consent.
 func (m *AgentIdentityBlueprint) SetInheritablePermissions(value []InheritablePermissionable)() {
     err := m.GetBackingStore().Set("inheritablePermissions", value)
@@ -135,8 +170,10 @@ func (m *AgentIdentityBlueprint) SetSponsors(value []DirectoryObjectable)() {
 type AgentIdentityBlueprintable interface {
     Applicationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCommunicationConfiguration()(AgentCommunicationConfigurationable)
     GetInheritablePermissions()([]InheritablePermissionable)
     GetSponsors()([]DirectoryObjectable)
+    SetCommunicationConfiguration(value AgentCommunicationConfigurationable)()
     SetInheritablePermissions(value []InheritablePermissionable)()
     SetSponsors(value []DirectoryObjectable)()
 }

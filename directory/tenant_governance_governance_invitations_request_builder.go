@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceGovernanceInvitationsRequestBuilder provides operations to manage the governanceInvitations property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceGovernanceInvitationsRequestBuilder provides operations to manage the governanceInvitations property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceGovernanceInvitationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -49,7 +49,7 @@ type TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceInvitationId provides operations to manage the governanceInvitations property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// ByGovernanceInvitationId provides operations to manage the governanceInvitations property of the microsoft.graph.tenantGovernance entity.
 // returns a *TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder when successful
 func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ByGovernanceInvitationId(governanceInvitationId string)(*TenantGovernanceGovernanceInvitationsGovernanceInvitationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -85,7 +85,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Count()(*TenantGov
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governanceinvitations?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationCollectionResponseable, error) {
+func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,14 +93,14 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Co
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceInvitationCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceInvitationCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationCollectionResponseable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationCollectionResponseable), nil
 }
 // Post create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
 // returns a GovernanceInvitationable when successful
@@ -108,7 +108,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Get(ctx context.Co
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governanceinvitations?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationable, error) {
+func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -116,14 +116,14 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) Post(ctx context.C
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceInvitationFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceInvitationFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationable), nil
 }
 // ToGetRequestInformation get a list of the governanceInvitation objects and their properties. This API method returns all governance invitations where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
@@ -141,7 +141,7 @@ func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToGetRequestInform
 }
 // ToPostRequestInformation create a new governanceInvitation to establish a governance relationship with a governed tenant. Invitations provide an alternative mechanism to governance requests for initiating relationships.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceGovernanceInvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInvitationable, requestConfiguration *TenantGovernanceGovernanceInvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

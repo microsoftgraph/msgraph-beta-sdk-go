@@ -87,6 +87,38 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["lifecyclePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LifecyclePolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(LifecyclePolicyable)
+                }
+            }
+            m.SetLifecyclePolicies(res)
+        }
+        return nil
+    }
+    res["lifecyclePolicyPriorityConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyPriorityConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]LifecyclePolicyPriorityConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(LifecyclePolicyPriorityConfigurationable)
+                }
+            }
+            m.SetLifecyclePolicyPriorityConfigurations(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLifecycleManagementSettingsFromDiscriminatorValue)
         if err != nil {
@@ -156,6 +188,30 @@ func (m *LifecycleWorkflowsContainer) GetInsights()(Insightsable) {
     }
     if val != nil {
         return val.(Insightsable)
+    }
+    return nil
+}
+// GetLifecyclePolicies gets the lifecyclePolicies property value. The lifecyclePolicies property
+// returns a []LifecyclePolicyable when successful
+func (m *LifecycleWorkflowsContainer) GetLifecyclePolicies()([]LifecyclePolicyable) {
+    val, err := m.GetBackingStore().Get("lifecyclePolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LifecyclePolicyable)
+    }
+    return nil
+}
+// GetLifecyclePolicyPriorityConfigurations gets the lifecyclePolicyPriorityConfigurations property value. The lifecyclePolicyPriorityConfigurations property
+// returns a []LifecyclePolicyPriorityConfigurationable when successful
+func (m *LifecycleWorkflowsContainer) GetLifecyclePolicyPriorityConfigurations()([]LifecyclePolicyPriorityConfigurationable) {
+    val, err := m.GetBackingStore().Get("lifecyclePolicyPriorityConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]LifecyclePolicyPriorityConfigurationable)
     }
     return nil
 }
@@ -237,6 +293,30 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetLifecyclePolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicies()))
+        for i, v := range m.GetLifecyclePolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("lifecyclePolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLifecyclePolicyPriorityConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicyPriorityConfigurations()))
+        for i, v := range m.GetLifecyclePolicyPriorityConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("lifecyclePolicyPriorityConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -302,6 +382,20 @@ func (m *LifecycleWorkflowsContainer) SetInsights(value Insightsable)() {
         panic(err)
     }
 }
+// SetLifecyclePolicies sets the lifecyclePolicies property value. The lifecyclePolicies property
+func (m *LifecycleWorkflowsContainer) SetLifecyclePolicies(value []LifecyclePolicyable)() {
+    err := m.GetBackingStore().Set("lifecyclePolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLifecyclePolicyPriorityConfigurations sets the lifecyclePolicyPriorityConfigurations property value. The lifecyclePolicyPriorityConfigurations property
+func (m *LifecycleWorkflowsContainer) SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable)() {
+    err := m.GetBackingStore().Set("lifecyclePolicyPriorityConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -336,6 +430,8 @@ type LifecycleWorkflowsContainerable interface {
     GetCustomTaskExtensions()([]CustomTaskExtensionable)
     GetDeletedItems()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
     GetInsights()(Insightsable)
+    GetLifecyclePolicies()([]LifecyclePolicyable)
+    GetLifecyclePolicyPriorityConfigurations()([]LifecyclePolicyPriorityConfigurationable)
     GetSettings()(LifecycleManagementSettingsable)
     GetTaskDefinitions()([]TaskDefinitionable)
     GetWorkflows()([]Workflowable)
@@ -343,6 +439,8 @@ type LifecycleWorkflowsContainerable interface {
     SetCustomTaskExtensions(value []CustomTaskExtensionable)()
     SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)()
     SetInsights(value Insightsable)()
+    SetLifecyclePolicies(value []LifecyclePolicyable)()
+    SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable)()
     SetSettings(value LifecycleManagementSettingsable)()
     SetTaskDefinitions(value []TaskDefinitionable)()
     SetWorkflows(value []Workflowable)()

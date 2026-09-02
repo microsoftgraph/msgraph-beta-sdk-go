@@ -257,6 +257,16 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["parameters"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessPackageAssignmentRequestParametersFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetParameters(val.(AccessPackageAssignmentRequestParametersable))
+        }
+        return nil
+    }
     res["requestor"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAccessPackageSubjectFromDiscriminatorValue)
         if err != nil {
@@ -358,6 +368,18 @@ func (m *AccessPackageAssignmentRequest) GetJustification()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetParameters gets the parameters property value. Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.
+// returns a AccessPackageAssignmentRequestParametersable when successful
+func (m *AccessPackageAssignmentRequest) GetParameters()(AccessPackageAssignmentRequestParametersable) {
+    val, err := m.GetBackingStore().Get("parameters")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageAssignmentRequestParametersable)
     }
     return nil
 }
@@ -530,6 +552,12 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteObjectValue("parameters", m.GetParameters())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("requestor", m.GetRequestor())
         if err != nil {
             return err
@@ -650,6 +678,13 @@ func (m *AccessPackageAssignmentRequest) SetJustification(value *string)() {
         panic(err)
     }
 }
+// SetParameters sets the parameters property value. Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.
+func (m *AccessPackageAssignmentRequest) SetParameters(value AccessPackageAssignmentRequestParametersable)() {
+    err := m.GetBackingStore().Set("parameters", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequestor sets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubjectable)() {
     err := m.GetBackingStore().Set("requestor", value)
@@ -706,6 +741,7 @@ type AccessPackageAssignmentRequestable interface {
     GetHistory()([]RequestActivityable)
     GetIsValidationOnly()(*bool)
     GetJustification()(*string)
+    GetParameters()(AccessPackageAssignmentRequestParametersable)
     GetRequestor()(AccessPackageSubjectable)
     GetRequestState()(*string)
     GetRequestStatus()(*string)
@@ -723,6 +759,7 @@ type AccessPackageAssignmentRequestable interface {
     SetHistory(value []RequestActivityable)()
     SetIsValidationOnly(value *bool)()
     SetJustification(value *string)()
+    SetParameters(value AccessPackageAssignmentRequestParametersable)()
     SetRequestor(value AccessPackageSubjectable)()
     SetRequestState(value *string)()
     SetRequestStatus(value *string)()

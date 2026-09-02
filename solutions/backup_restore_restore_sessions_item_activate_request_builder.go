@@ -35,6 +35,7 @@ func NewBackupRestoreRestoreSessionsItemActivateRequestBuilder(rawUrl string, re
     return NewBackupRestoreRestoreSessionsItemActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a RestoreSessionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *BackupRestoreRestoreSessionsItemActivateRequestBuilder) Post(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreSessionBaseable), nil
 }
 // ToPostRequestInformation activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreRestoreSessionsItemActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreRestoreSessionsItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *BackupRestoreRestoreSessionsItemActivateRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreRestoreSessionsItemActivateRequestBuilder when successful
 func (m *BackupRestoreRestoreSessionsItemActivateRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreRestoreSessionsItemActivateRequestBuilder) {
     return NewBackupRestoreRestoreSessionsItemActivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

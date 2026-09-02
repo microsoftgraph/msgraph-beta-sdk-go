@@ -34,7 +34,7 @@ func NewDeletedItemsCrossTenantPartnersItemRestoreRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsCrossTenantPartnersItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+// Post restore a deleted crossTenantAccessPolicyConfigurationPartner object.
 // returns a CrossTenantAccessPolicyConfigurationPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,7 +57,7 @@ func (m *DeletedItemsCrossTenantPartnersItemRestoreRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantAccessPolicyConfigurationPartnerable), nil
 }
-// ToPostRequestInformation restore a deleted crossTenantAccessPolicyConfigurationPartner object. 
+// ToPostRequestInformation restore a deleted crossTenantAccessPolicyConfigurationPartner object.
 // returns a *RequestInformation when successful
 func (m *DeletedItemsCrossTenantPartnersItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsCrossTenantPartnersItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

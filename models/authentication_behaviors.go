@@ -55,6 +55,18 @@ func (m *AuthenticationBehaviors) GetBlockAzureADGraphAccess()(*bool) {
     }
     return nil
 }
+// GetCoopEnforcement gets the coopEnforcement property value. Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.
+// returns a *bool when successful
+func (m *AuthenticationBehaviors) GetCoopEnforcement()(*bool) {
+    val, err := m.GetBackingStore().Get("coopEnforcement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationBehaviors) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,6 +78,16 @@ func (m *AuthenticationBehaviors) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetBlockAzureADGraphAccess(val)
+        }
+        return nil
+    }
+    res["coopEnforcement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCoopEnforcement(val)
         }
         return nil
     }
@@ -146,6 +168,12 @@ func (m *AuthenticationBehaviors) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err := writer.WriteBoolValue("coopEnforcement", m.GetCoopEnforcement())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -189,6 +217,13 @@ func (m *AuthenticationBehaviors) SetBlockAzureADGraphAccess(value *bool)() {
         panic(err)
     }
 }
+// SetCoopEnforcement sets the coopEnforcement property value. Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.
+func (m *AuthenticationBehaviors) SetCoopEnforcement(value *bool)() {
+    err := m.GetBackingStore().Set("coopEnforcement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationBehaviors) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -216,11 +251,13 @@ type AuthenticationBehaviorsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBlockAzureADGraphAccess()(*bool)
+    GetCoopEnforcement()(*bool)
     GetOdataType()(*string)
     GetRemoveUnverifiedEmailClaim()(*bool)
     GetRequireClientServicePrincipal()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBlockAzureADGraphAccess(value *bool)()
+    SetCoopEnforcement(value *bool)()
     SetOdataType(value *string)()
     SetRemoveUnverifiedEmailClaim(value *bool)()
     SetRequireClientServicePrincipal(value *bool)()

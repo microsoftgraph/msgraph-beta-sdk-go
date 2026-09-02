@@ -58,6 +58,7 @@ func NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRe
     return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property mailboxRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return nil
 }
 // Get a collection of restore points and destination details that can be used to restore Exchange mailboxes.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxRestoreArtifactable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxRestoreArtifactable), nil
 }
 // Patch update the navigation property mailboxRestoreArtifacts in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxRestoreArtifactable, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxRestoreArtifactable, error) {
@@ -119,6 +122,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsItemRestorePointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property mailboxRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of restore points and destination details that can be used to restore Exchange mailboxes.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property mailboxRestoreArtifacts in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxRestoreArtifactable, requestConfiguration *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +165,7 @@ func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder when successful
 func (m *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder) {
     return NewBackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsMailboxRestoreArtifactItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

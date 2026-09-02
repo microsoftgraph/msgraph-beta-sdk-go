@@ -58,6 +58,7 @@ func NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder(rawUrl stri
     return NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property townhalls for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Delete(ct
     return nil
 }
 // Get read the properties and relationships of a virtualEventTownhall object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable), nil
 }
 // Patch update the properties of a virtualEventTownhall object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventTownhallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -135,11 +138,13 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Registrat
     return NewVirtualEventsTownhallsItemRegistrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RegistrationsWithEmail provides operations to manage the registrations property of the microsoft.graph.virtualEventTownhall entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) RegistrationsWithEmail(email *string)(*VirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilder) {
     return NewVirtualEventsTownhallsItemRegistrationsWithEmailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, email)
 }
 // RegistrationsWithUserId provides operations to manage the registrations property of the microsoft.graph.virtualEventTownhall entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemRegistrationsWithUserIdRequestBuilder when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) RegistrationsWithUserId(userId *string)(*VirtualEventsTownhallsItemRegistrationsWithUserIdRequestBuilder) {
     return NewVirtualEventsTownhallsItemRegistrationsWithUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userId)
@@ -150,11 +155,13 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) Sessions(
     return NewVirtualEventsTownhallsItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SessionsWithJoinWebUrl provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) SessionsWithJoinWebUrl(joinWebUrl *string)(*VirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilder) {
     return NewVirtualEventsTownhallsItemSessionsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // ToDeleteRequestInformation delete navigation property townhalls for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -166,6 +173,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToDeleteR
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -180,6 +188,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a virtualEventTownhall object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventTownhallable, requestConfiguration *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -195,6 +204,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToPatchRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder when successful
 func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) {
     return NewVirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

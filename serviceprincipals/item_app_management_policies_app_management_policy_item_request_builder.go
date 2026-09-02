@@ -44,6 +44,7 @@ func NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl st
     return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the appManagementPolicy applied to this service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a AppManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable, error) {
@@ -64,6 +65,7 @@ func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppManagementPolicyable), nil
 }
 // ToGetRequestInformation the appManagementPolicy applied to this service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder when successful
 func (m *ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) WithUrl(rawUrl string)(*ItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder) {
     return NewItemAppManagementPoliciesAppManagementPolicyItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

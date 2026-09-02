@@ -68,6 +68,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return NewBackupRestoreProtectionPoliciesItemDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it's offboarded. You can restore data using previous restore points even after deletion.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -87,6 +88,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return nil
 }
 // Get list of protection policies in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ProtectionPolicyBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable, error) {
@@ -107,6 +109,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable), nil
 }
 // Patch update the navigation property protectionPolicies in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ProtectionPolicyBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable, error) {
@@ -127,6 +130,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable), nil
 }
 // ToDeleteRequestInformation delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it's offboarded. You can restore data using previous restore points even after deletion.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,6 +142,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation list of protection policies in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property protectionPolicies in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable, requestConfiguration *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -167,6 +173,7 @@ func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder when successful
 func (m *BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder) {
     return NewBackupRestoreProtectionPoliciesProtectionPolicyBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder(rawUrl string, 
     return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -77,6 +78,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Delete(ctx co
     return nil
 }
 // Get read the properties and relationships of an appRoleAssignment object.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a AppRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,6 +102,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Get(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
 // Patch update the navigation property appRoleAssignedTo in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a AppRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, error) {
@@ -120,6 +123,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) Patch(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
 // ToDeleteRequestInformation deletes an appRoleAssignment that a user, group, or client service principal has been granted for a resource service principal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToDeleteReque
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an appRoleAssignment object.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,6 +150,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property appRoleAssignedTo in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable, requestConfiguration *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,6 +166,7 @@ func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) ToPatchReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder when successful
 func (m *ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*ItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder) {
     return NewItemAppRoleAssignedToAppRoleAssignmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

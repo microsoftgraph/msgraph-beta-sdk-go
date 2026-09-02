@@ -35,6 +35,7 @@ func NewItemCreatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
     return NewItemCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post create single sign-on credentials using a password for a user or group.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a PasswordSingleSignOnCredentialSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable), nil
 }
 // ToPostRequestInformation create single sign-on credentials using a password for a user or group.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCreatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemCreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -73,6 +75,7 @@ func (m *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder when successful
 func (m *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) WithUrl(rawUrl string)(*ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) {
     return NewItemCreatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -50,6 +50,7 @@ type EntitlementManagementExternalOriginResourceConnectorsRequestBuilderPostRequ
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByExternalOriginResourceConnectorId provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) ByExternalOriginResourceConnectorId(externalOriginResourceConnectorId string)(*EntitlementManagementExternalOriginResourceConnectorsExternalOriginResourceConnectorItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) Co
     return NewEntitlementManagementExternalOriginResourceConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of externalOriginResourceConnector objects and their properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ExternalOriginResourceConnectorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorCollectionResponseable), nil
 }
 // Post creates a new externalOriginResourceConnector object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ExternalOriginResourceConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) Po
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable), nil
 }
 // ToGetRequestInformation get a list of externalOriginResourceConnector objects and their properties.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) To
     return requestInfo, nil
 }
 // ToPostRequestInformation creates a new externalOriginResourceConnector object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalOriginResourceConnectorable, requestConfiguration *EntitlementManagementExternalOriginResourceConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder when successful
 func (m *EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementExternalOriginResourceConnectorsRequestBuilder) {
     return NewEntitlementManagementExternalOriginResourceConnectorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

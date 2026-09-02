@@ -50,6 +50,7 @@ type PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilderPo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPermissionsCreepIndexDistributionId provides operations to manage the permissionsCreepIndexDistributions property of the microsoft.graph.permissionsAnalytics entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilder when successful
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) ByPermissionsCreepIndexDistributionId(permissionsCreepIndexDistributionId string)(*PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsPermissionsCreepIndexDistributionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuild
     return NewPermissionsAnalyticsAzurePermissionsCreepIndexDistributionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsCreepIndexDistributionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionCollectionResponseable), nil
 }
 // Post create new navigation property to permissionsCreepIndexDistributions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsCreepIndexDistributionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionable, requestConfiguration *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionable, error) {
@@ -120,6 +123,7 @@ func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionable), nil
 }
 // ToGetRequestInformation represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuild
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to permissionsCreepIndexDistributions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsCreepIndexDistributionable, requestConfiguration *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder when successful
 func (m *PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) WithUrl(rawUrl string)(*PermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder) {
     return NewPermissionsAnalyticsAzurePermissionsCreepIndexDistributionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

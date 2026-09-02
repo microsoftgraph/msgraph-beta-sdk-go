@@ -44,6 +44,7 @@ func NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get references the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
@@ -69,6 +70,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilde
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation references the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -83,6 +85,7 @@ func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder when successful
 func (m *PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) WithUrl(rawUrl string)(*PrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder) {
     return NewPrivilegedAccessGroupEligibilityScheduleInstancesItemGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -35,6 +35,7 @@ func NewBackupRestoreProtectionPoliciesItemActivateRequestBuilder(rawUrl string,
     return NewBackupRestoreProtectionPoliciesItemActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ProtectionPolicyBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *BackupRestoreProtectionPoliciesItemActivateRequestBuilder) Post(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable), nil
 }
 // ToPostRequestInformation activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesItemActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *BackupRestoreProtectionPoliciesItemActivateRequestBuilder) ToPostReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreProtectionPoliciesItemActivateRequestBuilder when successful
 func (m *BackupRestoreProtectionPoliciesItemActivateRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreProtectionPoliciesItemActivateRequestBuilder) {
     return NewBackupRestoreProtectionPoliciesItemActivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

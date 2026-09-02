@@ -44,6 +44,7 @@ func NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifacts
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a RestorePointable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointable, error) {
@@ -64,6 +65,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointable), nil
 }
 // ToGetRequestInformation represents the date and time when an artifact is protected by a protectionPolicy and can be restored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsItemRestorePointRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

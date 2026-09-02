@@ -34,6 +34,7 @@ func NewItemTokenIssuancePoliciesItemRefRequestBuilder(rawUrl string, requestAda
     return NewItemTokenIssuancePoliciesItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // ToDeleteRequestInformation delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemTokenIssuancePoliciesItemRefRequestBuilder when successful
 func (m *ItemTokenIssuancePoliciesItemRefRequestBuilder) WithUrl(rawUrl string)(*ItemTokenIssuancePoliciesItemRefRequestBuilder) {
     return NewItemTokenIssuancePoliciesItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

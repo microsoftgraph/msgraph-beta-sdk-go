@@ -82,6 +82,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWi
     return res.(PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +106,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWi
     return res.(PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for Groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,6 +121,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWi
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*PermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilder) {
     return NewPermissionsManagementScheduledPermissionsApprovalsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

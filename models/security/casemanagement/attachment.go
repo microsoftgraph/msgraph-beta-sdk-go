@@ -24,7 +24,7 @@ func NewAttachment()(*Attachment) {
 func CreateAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAttachment(), nil
 }
-// GetContent gets the content property value. The binary content stream for the attachment.
+// GetContent gets the content property value. The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
 // returns a []byte when successful
 func (m *Attachment) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
@@ -136,7 +136,7 @@ func (m *Attachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetFileExtension gets the fileExtension property value. The file extension of the attachment.
+// GetFileExtension gets the fileExtension property value. The file extension of the attachment. The service normalizes the value to include a leading period.
 // returns a *string when successful
 func (m *Attachment) GetFileExtension()(*string) {
     val, err := m.GetBackingStore().Get("fileExtension")
@@ -148,7 +148,7 @@ func (m *Attachment) GetFileExtension()(*string) {
     }
     return nil
 }
-// GetFileSize gets the fileSize property value. The size of the attachment in bytes.
+// GetFileSize gets the fileSize property value. The size of the attachment in bytes. The maximum file size is 100 MB.
 // returns a *int64 when successful
 func (m *Attachment) GetFileSize()(*int64) {
     val, err := m.GetBackingStore().Get("fileSize")
@@ -235,7 +235,7 @@ func (m *Attachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetContent sets the content property value. The binary content stream for the attachment.
+// SetContent sets the content property value. The binary content stream for the attachment. Use the Upload content and Download content methods to access it.
 func (m *Attachment) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
@@ -256,14 +256,14 @@ func (m *Attachment) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFileExtension sets the fileExtension property value. The file extension of the attachment.
+// SetFileExtension sets the fileExtension property value. The file extension of the attachment. The service normalizes the value to include a leading period.
 func (m *Attachment) SetFileExtension(value *string)() {
     err := m.GetBackingStore().Set("fileExtension", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileSize sets the fileSize property value. The size of the attachment in bytes.
+// SetFileSize sets the fileSize property value. The size of the attachment in bytes. The maximum file size is 100 MB.
 func (m *Attachment) SetFileSize(value *int64)() {
     err := m.GetBackingStore().Set("fileSize", value)
     if err != nil {

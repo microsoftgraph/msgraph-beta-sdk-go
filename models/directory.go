@@ -468,6 +468,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["tenantGovernance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTenantGovernanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantGovernance(val.(TenantGovernanceable))
+        }
+        return nil
+    }
     return res
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
@@ -611,6 +621,18 @@ func (m *Directory) GetTemplates()(Templateable) {
     }
     if val != nil {
         return val.(Templateable)
+    }
+    return nil
+}
+// GetTenantGovernance gets the tenantGovernance property value. Container for Microsoft Entra Tenant Governance capabilities.
+// returns a TenantGovernanceable when successful
+func (m *Directory) GetTenantGovernance()(TenantGovernanceable) {
+    val, err := m.GetBackingStore().Get("tenantGovernance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TenantGovernanceable)
     }
     return nil
 }
@@ -854,6 +876,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("tenantGovernance", m.GetTenantGovernance())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
@@ -1010,6 +1038,13 @@ func (m *Directory) SetTemplates(value Templateable)() {
         panic(err)
     }
 }
+// SetTenantGovernance sets the tenantGovernance property value. Container for Microsoft Entra Tenant Governance capabilities.
+func (m *Directory) SetTenantGovernance(value TenantGovernanceable)() {
+    err := m.GetBackingStore().Set("tenantGovernance", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -1035,6 +1070,7 @@ type Directoryable interface {
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
     GetTemplates()(Templateable)
+    GetTenantGovernance()(TenantGovernanceable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
     SetAuthenticationMethodDevices(value AuthenticationMethodDeviceable)()
@@ -1057,4 +1093,5 @@ type Directoryable interface {
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()
     SetTemplates(value Templateable)()
+    SetTenantGovernance(value TenantGovernanceable)()
 }

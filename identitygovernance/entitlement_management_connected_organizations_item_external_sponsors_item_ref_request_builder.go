@@ -34,6 +34,7 @@ func NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRe
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefR
     return nil
 }
 // ToDeleteRequestInformation remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,6 +66,7 @@ func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder when successful
 func (m *EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder) {
     return NewEntitlementManagementConnectedOrganizationsItemExternalSponsorsItemRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

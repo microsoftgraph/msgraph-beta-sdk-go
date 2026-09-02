@@ -63,6 +63,7 @@ func NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder(ra
     return NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a bookingAppointment in the specified bookingBusiness.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -82,6 +83,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return nil
 }
 // Get get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BookingAppointmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +107,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
 }
 // Patch update the properties of a bookingAppointment object in the specified bookingBusiness.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BookingAppointmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -128,6 +131,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
 }
 // ToDeleteRequestInformation delete a bookingAppointment in the specified bookingBusiness.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +143,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,6 +158,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a bookingAppointment object in the specified bookingBusiness.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable, requestConfiguration *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -168,6 +174,7 @@ func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder when successful
 func (m *BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder) {
     return NewBookingBusinessesItemAppointmentsBookingAppointmentItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

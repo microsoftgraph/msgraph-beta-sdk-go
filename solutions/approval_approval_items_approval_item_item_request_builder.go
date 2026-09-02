@@ -63,6 +63,7 @@ func NewApprovalApprovalItemsApprovalItemItemRequestBuilder(rawUrl string, reque
     return NewApprovalApprovalItemsApprovalItemItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property approvalItems for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ApprovalApprovalItemsApprovalItemItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) Delete(ctx context
     return nil
 }
 // Get read the properties and relationships of an approvalItem object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemable), nil
 }
 // Patch update the navigation property approvalItems in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemable, requestConfiguration *ApprovalApprovalItemsApprovalItemItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemable, error) {
@@ -132,6 +135,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) Responses()(*Appro
     return NewApprovalApprovalItemsItemResponsesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property approvalItems for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsApprovalItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,6 +147,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an approvalItem object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsApprovalItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +162,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property approvalItems in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemable, requestConfiguration *ApprovalApprovalItemsApprovalItemItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -172,6 +178,7 @@ func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *ApprovalApprovalItemsApprovalItemItemRequestBuilder when successful
 func (m *ApprovalApprovalItemsApprovalItemItemRequestBuilder) WithUrl(rawUrl string)(*ApprovalApprovalItemsApprovalItemItemRequestBuilder) {
     return NewApprovalApprovalItemsApprovalItemItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

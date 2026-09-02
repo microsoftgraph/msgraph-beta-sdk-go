@@ -44,6 +44,7 @@ func NewRoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder(rawUrl st
     return NewRoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertConfigurationable, error) {
@@ -64,6 +65,7 @@ func (m *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertConfigurationable), nil
 }
 // ToGetRequestInformation the configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder when successful
 func (m *RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder) {
     return NewRoleManagementAlertsAlertsItemAlertConfigurationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

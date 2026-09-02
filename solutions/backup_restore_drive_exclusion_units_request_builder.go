@@ -50,6 +50,7 @@ type BackupRestoreDriveExclusionUnitsRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDriveExclusionUnitId provides operations to manage the driveExclusionUnits property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder when successful
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) ByDriveExclusionUnitId(driveExclusionUnitId string)(*BackupRestoreDriveExclusionUnitsDriveExclusionUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) Count()(*BackupRestoreD
     return NewBackupRestoreDriveExclusionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitCollectionResponseable), nil
 }
 // Post create new navigation property to driveExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, requestConfiguration *BackupRestoreDriveExclusionUnitsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, error) {
@@ -120,6 +123,7 @@ func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable), nil
 }
 // ToGetRequestInformation the list of drive exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveExclusionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to driveExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveExclusionUnitable, requestConfiguration *BackupRestoreDriveExclusionUnitsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveExclusionUnitsRequestBuilder when successful
 func (m *BackupRestoreDriveExclusionUnitsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreDriveExclusionUnitsRequestBuilder) {
     return NewBackupRestoreDriveExclusionUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

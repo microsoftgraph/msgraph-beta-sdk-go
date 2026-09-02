@@ -33,6 +33,8 @@ func CreateRiskyAgentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.riskyAgentDiscoveredAgentIdentity":
+                        return NewRiskyAgentDiscoveredAgentIdentity(), nil
                     case "#microsoft.graph.riskyAgentIdentity":
                         return NewRiskyAgentIdentity(), nil
                     case "#microsoft.graph.riskyAgentIdentityBlueprintPrincipal":

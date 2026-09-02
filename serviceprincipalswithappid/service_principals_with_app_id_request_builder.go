@@ -61,6 +61,7 @@ func NewServicePrincipalsWithAppIdRequestBuilder(rawUrl string, requestAdapter i
     return NewServicePrincipalsWithAppIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -80,6 +81,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Delete(ctx context.Context, r
     return nil
 }
 // Get retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // Patch create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) Patch(ctx context.Context, bo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // ToDeleteRequestInformation delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) ToDeleteRequestInformation(ct
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToPatchRequestInformation create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn't exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalsWithAppIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalsWithAppIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -166,6 +172,7 @@ func (m *ServicePrincipalsWithAppIdRequestBuilder) ToPatchRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ServicePrincipalsWithAppIdRequestBuilder when successful
 func (m *ServicePrincipalsWithAppIdRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalsWithAppIdRequestBuilder) {
     return NewServicePrincipalsWithAppIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) Post(ctx conte
     return res.(BookingBusinessesItemGetStaffAvailabilityResponseable), nil
 }
 // PostAsGetStaffAvailabilityPostResponse get the availability information of staff members of a Microsoft Bookings calendar.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BookingBusinessesItemGetStaffAvailabilityPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -81,6 +82,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) PostAsGetStaff
     return res.(BookingBusinessesItemGetStaffAvailabilityPostResponseable), nil
 }
 // ToPostRequestInformation get the availability information of staff members of a Microsoft Bookings calendar.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) ToPostRequestInformation(ctx context.Context, body BookingBusinessesItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *BookingBusinessesItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -96,6 +98,7 @@ func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemGetStaffAvailabilityRequestBuilder when successful
 func (m *BookingBusinessesItemGetStaffAvailabilityRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemGetStaffAvailabilityRequestBuilder) {
     return NewBookingBusinessesItemGetStaffAvailabilityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

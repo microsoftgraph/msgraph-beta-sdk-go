@@ -50,6 +50,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsReq
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDriveRestoreArtifactId provides operations to manage the driveRestoreArtifacts property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) ByDriveRestoreArtifactId(driveRestoreArtifactId string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsDriveRestoreArtifactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the driveRestoreArtifact objects and their properties for a oneDriveForBusinessRestoreSession for a tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveRestoreArtifactCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactCollectionResponseable), nil
 }
 // Post create new navigation property to driveRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactable, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactable, error) {
@@ -123,6 +126,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactable), nil
 }
 // ToGetRequestInformation get a list of the driveRestoreArtifact objects and their properties for a oneDriveForBusinessRestoreSession for a tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to driveRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactable, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

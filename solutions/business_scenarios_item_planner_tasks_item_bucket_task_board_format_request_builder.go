@@ -58,6 +58,7 @@ func NewBusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder
     return NewBusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property bucketTaskBoardFormat for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return nil
 }
 // Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a PlannerBucketTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, error) {
@@ -94,6 +96,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable), nil
 }
 // Patch update the navigation property bucketTaskBoardFormat in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a PlannerBucketTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, error) {
@@ -114,6 +117,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable), nil
 }
 // ToDeleteRequestInformation delete navigation property bucketTaskBoardFormat for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property bucketTaskBoardFormat in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, requestConfiguration *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksItemBucketTaskBoardFormatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -43,6 +43,7 @@ type ItemMemberOfRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemMemberOfRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemMemberOfDirectoryObjectItemRequestBuilder when successful
 func (m *ItemMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *ItemMemberOfRequestBuilder) Count()(*ItemMemberOfCountRequestBuilder) {
     return NewItemMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the groups and directory roles that this servicePrincipal is a direct member of. This operation isn't transitive.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -111,6 +113,7 @@ func (m *ItemMemberOfRequestBuilder) GraphGroup()(*ItemMemberOfGraphGroupRequest
     return NewItemMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the groups and directory roles that this servicePrincipal is a direct member of. This operation isn't transitive.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +128,7 @@ func (m *ItemMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemMemberOfRequestBuilder when successful
 func (m *ItemMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemMemberOfRequestBuilder) {
     return NewItemMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

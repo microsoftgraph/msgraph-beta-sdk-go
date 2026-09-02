@@ -34,6 +34,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder
     return NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action reprocess
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) Post(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilde
     return nil
 }
 // ToPostRequestInformation invoke action reprocess
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemReprocessRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

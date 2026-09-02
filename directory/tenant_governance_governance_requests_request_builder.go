@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceGovernanceRequestsRequestBuilder provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceGovernanceRequestsRequestBuilder provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceGovernanceRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -49,7 +49,7 @@ type TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByGovernanceRequestId provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// ByGovernanceRequestId provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
 // returns a *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder when successful
 func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ByGovernanceRequestId(governanceRequestId string)(*TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -85,7 +85,7 @@ func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Count()(*TenantGovern
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestCollectionResponseable, error) {
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,14 +93,14 @@ func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Conte
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceRequestCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestCollectionResponseable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable), nil
 }
 // Post create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
 // returns a GovernanceRequestable when successful
@@ -108,7 +108,7 @@ func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Conte
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Post(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, error) {
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -116,14 +116,14 @@ func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Post(ctx context.Cont
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable), nil
 }
 // ToGetRequestInformation get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
@@ -141,7 +141,7 @@ func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToGetRequestInformati
 }
 // ToPostRequestInformation create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

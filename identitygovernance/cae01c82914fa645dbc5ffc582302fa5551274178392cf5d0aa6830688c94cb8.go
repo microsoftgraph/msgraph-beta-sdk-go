@@ -43,6 +43,7 @@ func NewEntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCo
     return NewEntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesC
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesC
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemAccessPackageResourceRoleScopesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func (m *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyReq
     return res.(EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsResponseable), nil
 }
 // PostAsGetApplicablePolicyRequirementsPostResponse in Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -81,6 +82,7 @@ func (m *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyReq
     return res.(EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsPostResponseable), nil
 }
 // ToPostRequestInformation in Microsoft Entra entitlement management, this action retrieves accessPackageAssignmentRequestRequirements objects for an accessPackage that the currently signed-in user can use to create an accessPackageAssignmentRequest. Each requirement object corresponds to an access package assignment policy that the currently signed-in user is allowed to request an assignment for.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -92,6 +94,7 @@ func (m *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilder) {
     return NewEntitlementManagementAccessPackagesWithUniqueNameGetApplicablePolicyRequirementsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -294,7 +294,7 @@ func (m *DeviceComplianceScript) GetLastModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetPlatform gets the platform property value. Indicates the operating system platform type that this compliance script targets.
+// GetPlatform gets the platform property value. Indicates the device platform on which the device compliance script will be executed. Possible values are: windows10AndLater (default), linux. The default value is windows10AndLater.
 // returns a *DeviceComplianceScriptPlatformType when successful
 func (m *DeviceComplianceScript) GetPlatform()(*DeviceComplianceScriptPlatformType) {
     val, err := m.GetBackingStore().Get("platform")
@@ -534,7 +534,7 @@ func (m *DeviceComplianceScript) SetLastModifiedDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. Indicates the operating system platform type that this compliance script targets.
+// SetPlatform sets the platform property value. Indicates the device platform on which the device compliance script will be executed. Possible values are: windows10AndLater (default), linux. The default value is windows10AndLater.
 func (m *DeviceComplianceScript) SetPlatform(value *DeviceComplianceScriptPlatformType)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

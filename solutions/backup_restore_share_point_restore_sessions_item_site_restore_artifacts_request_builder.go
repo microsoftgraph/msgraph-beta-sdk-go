@@ -50,6 +50,7 @@ type BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilde
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySiteRestoreArtifactId provides operations to manage the siteRestoreArtifacts property of the microsoft.graph.sharePointRestoreSession entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsSiteRestoreArtifactItemRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) BySiteRestoreArtifactId(siteRestoreArtifactId string)(*BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsSiteRestoreArtifactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBu
     return NewBackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get list all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteRestoreArtifactCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactCollectionResponseable), nil
 }
 // Post create new navigation property to siteRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteRestoreArtifactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactable, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactable, error) {
@@ -123,6 +126,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactable), nil
 }
 // ToGetRequestInformation list all the siteRestoreArtifact objects for a sharePointRestoreSession for the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBu
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to siteRestoreArtifacts for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactable, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder) {
     return NewBackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

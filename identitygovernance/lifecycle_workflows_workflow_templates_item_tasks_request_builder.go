@@ -43,6 +43,7 @@ type LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetRequestConfigu
     QueryParameters *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetQueryParameters
 }
 // ByTaskId provides operations to manage the tasks property of the microsoft.graph.identityGovernance.workflowTemplate entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) ByTaskId(taskId string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) Count()(*Li
     return NewLifecycleWorkflowsWorkflowTemplatesItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a TaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskCollectionResponseable, error) {
@@ -93,6 +95,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) Get(ctx con
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskCollectionResponseable), nil
 }
 // ToGetRequestInformation represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowTemplatesItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

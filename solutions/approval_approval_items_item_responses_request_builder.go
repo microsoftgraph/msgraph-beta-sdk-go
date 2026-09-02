@@ -50,6 +50,7 @@ type ApprovalApprovalItemsItemResponsesRequestBuilderPostRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByApprovalItemResponseId provides operations to manage the responses property of the microsoft.graph.approvalItem entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *ApprovalApprovalItemsItemResponsesApprovalItemResponseItemRequestBuilder when successful
 func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) ByApprovalItemResponseId(approvalItemResponseId string)(*ApprovalApprovalItemsItemResponsesApprovalItemResponseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) Count()(*ApprovalAppr
     return NewApprovalApprovalItemsItemResponsesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of approvalItemResponse objects.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemResponseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemResponseCollectionResponseable), nil
 }
 // Post create a new approvalItemResponse object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ApprovalItemResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) Post(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemResponseable), nil
 }
 // ToGetRequestInformation get a list of approvalItemResponse objects.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemResponsesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new approvalItemResponse object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalItemResponseable, requestConfiguration *ApprovalApprovalItemsItemResponsesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *ApprovalApprovalItemsItemResponsesRequestBuilder when successful
 func (m *ApprovalApprovalItemsItemResponsesRequestBuilder) WithUrl(rawUrl string)(*ApprovalApprovalItemsItemResponsesRequestBuilder) {
     return NewApprovalApprovalItemsItemResponsesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

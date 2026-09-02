@@ -34,6 +34,7 @@ func NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationReques
     return NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action refreshDeviceComplianceReportSummarization
+// Deprecated: This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) Post(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationReque
     return nil
 }
 // ToPostRequestInformation invoke action refreshDeviceComplianceReportSummarization
+// Deprecated: This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *RequestInformation when successful
 func (m *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This action is deprecated and will be removed on July 7, 2026. This API is obsolete and should be removed from client code; no replacement is needed as the current reporting architecture continuously aggregates compliance data. as of 2026-04/Rv1MigrationDeprecation on 2026-04-03 and will be removed 2026-07-07
 // returns a *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder when successful
 func (m *DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) WithUrl(rawUrl string)(*DeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder) {
     return NewDeviceCompliancePoliciesRefreshDeviceComplianceReportSummarizationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

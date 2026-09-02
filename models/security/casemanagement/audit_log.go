@@ -90,7 +90,7 @@ func (m *AuditLog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetModifiedProperties gets the modifiedProperties property value. The collection of property changes recorded in the audit log.
+// GetModifiedProperties gets the modifiedProperties property value. The collection of property changes recorded in the audit log. Supports $filter.
 // returns a []ModifiedPropertyable when successful
 func (m *AuditLog) GetModifiedProperties()([]ModifiedPropertyable) {
     val, err := m.GetBackingStore().Get("modifiedProperties")
@@ -149,7 +149,7 @@ func (m *AuditLog) SetDetails(value ActivityResourceDetailsable)() {
         panic(err)
     }
 }
-// SetModifiedProperties sets the modifiedProperties property value. The collection of property changes recorded in the audit log.
+// SetModifiedProperties sets the modifiedProperties property value. The collection of property changes recorded in the audit log. Supports $filter.
 func (m *AuditLog) SetModifiedProperties(value []ModifiedPropertyable)() {
     err := m.GetBackingStore().Set("modifiedProperties", value)
     if err != nil {

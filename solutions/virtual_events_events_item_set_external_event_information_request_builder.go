@@ -34,6 +34,7 @@ func NewVirtualEventsEventsItemSetExternalEventInformationRequestBuilder(rawUrl 
     return NewVirtualEventsEventsItemSetExternalEventInformationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action setExternalEventInformation
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) Post(ctx context.Context, body VirtualEventsEventsItemSetExternalEventInformationPostRequestBodyable, requestConfiguration *VirtualEventsEventsItemSetExternalEventInformationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -50,6 +51,7 @@ func (m *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) Post(
     return nil
 }
 // ToPostRequestInformation invoke action setExternalEventInformation
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEventsEventsItemSetExternalEventInformationPostRequestBodyable, requestConfiguration *VirtualEventsEventsItemSetExternalEventInformationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) ToPos
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder when successful
 func (m *VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemSetExternalEventInformationRequestBuilder) {
     return NewVirtualEventsEventsItemSetExternalEventInformationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

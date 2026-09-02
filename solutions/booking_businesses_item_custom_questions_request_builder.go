@@ -50,6 +50,7 @@ type BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByBookingCustomQuestionId provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ByBookingCustomQuestionId(bookingCustomQuestionId string)(*BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Count()(*BookingBus
     return NewBookingBusinessesItemCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get all custom questions of this business.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BookingCustomQuestionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable), nil
 }
 // Post create new navigation property to customQuestions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BookingCustomQuestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, error) {
@@ -120,6 +123,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Post(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable), nil
 }
 // ToGetRequestInformation all custom questions of this business.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to customQuestions for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemCustomQuestionsRequestBuilder when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemCustomQuestionsRequestBuilder) {
     return NewBookingBusinessesItemCustomQuestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

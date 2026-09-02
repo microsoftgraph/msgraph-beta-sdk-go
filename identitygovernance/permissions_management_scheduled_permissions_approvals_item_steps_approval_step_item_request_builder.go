@@ -58,6 +58,7 @@ func NewPermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepI
     return NewPermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property steps for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return nil
 }
 // Get used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
@@ -94,6 +96,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
 // Patch update the navigation property steps in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
@@ -114,6 +117,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
 // ToDeleteRequestInformation delete navigation property steps for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return requestInfo, nil
 }
 // ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property steps in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStep
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) WithUrl(rawUrl string)(*PermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder) {
     return NewPermissionsManagementScheduledPermissionsApprovalsItemStepsApprovalStepItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

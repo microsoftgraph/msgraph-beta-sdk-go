@@ -50,6 +50,7 @@ type AccessReviewsHistoryDefinitionsItemInstancesRequestBuilderPostRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewHistoryInstanceId provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder when successful
 func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ByAccessReviewHistoryInstanceId(accessReviewHistoryInstanceId string)(*AccessReviewsHistoryDefinitionsItemInstancesAccessReviewHistoryInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) Count()(*Ac
     return NewAccessReviewsHistoryDefinitionsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the instances of an access review history definition created in the last 30 days.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewHistoryInstanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryInstanceCollectionResponseable), nil
 }
 // Post create new navigation property to instances for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewHistoryInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryInstanceable, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryInstanceable, error) {
@@ -123,6 +126,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) Post(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryInstanceable), nil
 }
 // ToGetRequestInformation retrieve the instances of an access review history definition created in the last 30 days.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to instances for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewHistoryInstanceable, requestConfiguration *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder when successful
 func (m *AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsHistoryDefinitionsItemInstancesRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

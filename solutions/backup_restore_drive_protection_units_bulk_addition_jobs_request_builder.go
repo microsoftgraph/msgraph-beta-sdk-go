@@ -50,6 +50,7 @@ type BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDriveProtectionUnitsBulkAdditionJobId provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder when successful
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ByDriveProtectionUnitsBulkAdditionJobId(driveProtectionUnitsBulkAdditionJobId string)(*BackupRestoreDriveProtectionUnitsBulkAdditionJobsDriveProtectionUnitsBulkAdditionJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) Count(
     return NewBackupRestoreDriveProtectionUnitsBulkAdditionJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get driveProtectionUnitsBulkAdditionJobs from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveProtectionUnitsBulkAdditionJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobCollectionResponseable), nil
 }
 // Post create new navigation property to driveProtectionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveProtectionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobable, error) {
@@ -120,6 +123,7 @@ func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) Post(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobable), nil
 }
 // ToGetRequestInformation get driveProtectionUnitsBulkAdditionJobs from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to driveProtectionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveProtectionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder when successful
 func (m *BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder) {
     return NewBackupRestoreDriveProtectionUnitsBulkAdditionJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

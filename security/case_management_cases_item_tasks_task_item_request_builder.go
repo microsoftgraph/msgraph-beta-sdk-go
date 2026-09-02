@@ -57,8 +57,11 @@ func NewCaseManagementCasesItemTasksTaskItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewCaseManagementCasesItemTasksTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tasks for security
+// Delete delete a task from a case.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-task-delete?view=graph-rest-beta
 func (m *CaseManagementCasesItemTasksTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CaseManagementCasesItemTasksTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *CaseManagementCasesItemTasksTaskItemRequestBuilder) Patch(ctx context.C
     }
     return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Taskable), nil
 }
-// ToDeleteRequestInformation delete navigation property tasks for security
+// ToDeleteRequestInformation delete a task from a case.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCasesItemTasksTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemTasksTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

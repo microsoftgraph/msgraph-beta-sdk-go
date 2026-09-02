@@ -4,6 +4,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -37,6 +38,18 @@ func (m *MacOsDdmVppAppAssignmentSettings) GetAutomaticAppUpdates()(*DdmAppAutom
     }
     return nil
 }
+// GetDdmAppConfigId gets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
+// returns a *UUID when successful
+func (m *MacOsDdmVppAppAssignmentSettings) GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("ddmAppConfigId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOsDdmVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,6 +61,16 @@ func (m *MacOsDdmVppAppAssignmentSettings) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetAutomaticAppUpdates(val.(*DdmAppAutomaticAppUpdates))
+        }
+        return nil
+    }
+    res["ddmAppConfigId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDdmAppConfigId(val)
         }
         return nil
     }
@@ -133,6 +156,12 @@ func (m *MacOsDdmVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteUUIDValue("ddmAppConfigId", m.GetDdmAppConfigId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isIosApp", m.GetIsIosApp())
         if err != nil {
             return err
@@ -155,6 +184,13 @@ func (m *MacOsDdmVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d2689
 // SetAutomaticAppUpdates sets the automaticAppUpdates property value. Specifies whether the device automatically updates the app. Possible values are: 'alwaysOn', 'alwaysOff', 'storeSettings'. By default, this value is set to 'storeSettings'.
 func (m *MacOsDdmVppAppAssignmentSettings) SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates)() {
     err := m.GetBackingStore().Set("automaticAppUpdates", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDdmAppConfigId sets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
+func (m *MacOsDdmVppAppAssignmentSettings) SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("ddmAppConfigId", value)
     if err != nil {
         panic(err)
     }
@@ -184,10 +220,12 @@ type MacOsDdmVppAppAssignmentSettingsable interface {
     MobileAppAssignmentSettingsable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAutomaticAppUpdates()(*DdmAppAutomaticAppUpdates)
+    GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetIsIosApp()(*bool)
     GetUseDeviceLicensing()(*bool)
     GetVersion()(*int32)
     SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates)()
+    SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetIsIosApp(value *bool)()
     SetUseDeviceLicensing(value *bool)()
     SetVersion(value *int32)()

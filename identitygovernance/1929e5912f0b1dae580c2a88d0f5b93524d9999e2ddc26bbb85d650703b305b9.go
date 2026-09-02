@@ -48,6 +48,7 @@ func NewEntitlementManagementAccessPackageResourcesItemAccessPackageResourceRole
     return NewEntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -64,6 +65,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return nil
 }
 // Get the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -84,6 +86,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return res.([]byte), nil
 }
 // Put the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -104,6 +107,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,6 +119,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return requestInfo, nil
 }
 // ToGetRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,6 +131,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,6 +144,7 @@ func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRol
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) {
     return NewEntitlementManagementAccessPackageResourcesItemAccessPackageResourceRolesItemAccessPackageResourceAccessPackageResourceScopesItemAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

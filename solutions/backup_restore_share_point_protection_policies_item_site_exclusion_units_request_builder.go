@@ -43,6 +43,7 @@ type BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuild
     QueryParameters *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilderGetQueryParameters
 }
 // BySiteExclusionUnitId provides operations to manage the siteExclusionUnits property of the microsoft.graph.sharePointProtectionPolicy entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder when successful
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder) BySiteExclusionUnitId(siteExclusionUnitId string)(*BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestB
     return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of site exclusion units associated with a SharePoint protection policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteExclusionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,6 +98,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitCollectionResponseable), nil
 }
 // ToGetRequestInformation get a list of site exclusion units associated with a SharePoint protection policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,6 +113,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder when successful
 func (m *BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder) {
     return NewBackupRestoreSharePointProtectionPoliciesItemSiteExclusionUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

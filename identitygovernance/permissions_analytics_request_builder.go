@@ -68,6 +68,7 @@ func NewPermissionsAnalyticsRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewPermissionsAnalyticsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property permissionsAnalytics for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsAnalyticsRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionsAnalyticsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -89,6 +90,7 @@ func (m *PermissionsAnalyticsRequestBuilder) Gcp()(*PermissionsAnalyticsGcpReque
     return NewPermissionsAnalyticsGcpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get permissionsAnalytics from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsAnalyticsAggregationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsAnalyticsRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsAnalyticsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable, error) {
@@ -109,6 +111,7 @@ func (m *PermissionsAnalyticsRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable), nil
 }
 // Patch update the navigation property permissionsAnalytics in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a PermissionsAnalyticsAggregationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsAnalyticsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable, requestConfiguration *PermissionsAnalyticsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable, error) {
@@ -129,6 +132,7 @@ func (m *PermissionsAnalyticsRequestBuilder) Patch(ctx context.Context, body ie2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable), nil
 }
 // ToDeleteRequestInformation delete navigation property permissionsAnalytics for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsAnalyticsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionsAnalyticsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *PermissionsAnalyticsRequestBuilder) ToDeleteRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToGetRequestInformation get permissionsAnalytics from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsAnalyticsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsAnalyticsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +159,7 @@ func (m *PermissionsAnalyticsRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property permissionsAnalytics in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsAnalyticsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionsAnalyticsAggregationable, requestConfiguration *PermissionsAnalyticsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -169,6 +175,7 @@ func (m *PermissionsAnalyticsRequestBuilder) ToPatchRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsAnalyticsRequestBuilder when successful
 func (m *PermissionsAnalyticsRequestBuilder) WithUrl(rawUrl string)(*PermissionsAnalyticsRequestBuilder) {
     return NewPermissionsAnalyticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

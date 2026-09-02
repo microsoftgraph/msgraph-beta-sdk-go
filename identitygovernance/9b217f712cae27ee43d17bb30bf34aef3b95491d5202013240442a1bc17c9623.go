@@ -5,6 +5,7 @@ package identitygovernance
 
 import (
     "context"
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
@@ -43,6 +44,7 @@ type LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResults
     QueryParameters *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderGetQueryParameters
 }
 // BySubjectProcessingResultId provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) BySubjectProcessingResultId(subjectProcessingResultId string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +75,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingRes
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the processing results for each subject in this workflow run.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a SubjectProcessingResultCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.SubjectProcessingResultCollectionResponseable, error) {
@@ -92,7 +95,14 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingRes
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.SubjectProcessingResultCollectionResponseable), nil
 }
+// MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
+// returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
+}
 // ToGetRequestInformation the processing results for each subject in this workflow run.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +117,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingRes
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

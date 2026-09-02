@@ -58,6 +58,7 @@ func NewBackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder(rawUr
     return NewBackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property siteExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Del
     return nil
 }
 // Get the list of site exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, error) {
@@ -94,6 +96,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable), nil
 }
 // Patch update the navigation property siteExclusionUnits in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteExclusionUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, error) {
@@ -114,6 +117,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) Pat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable), nil
 }
 // ToDeleteRequestInformation delete navigation property siteExclusionUnits for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToD
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of site exclusion units in the tenant.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToG
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property siteExclusionUnits in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteExclusionUnitable, requestConfiguration *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) ToP
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder when successful
 func (m *BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder) {
     return NewBackupRestoreSiteExclusionUnitsSiteExclusionUnitItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

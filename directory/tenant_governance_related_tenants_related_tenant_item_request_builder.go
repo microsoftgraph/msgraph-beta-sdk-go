@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -44,22 +44,22 @@ type TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderPatchRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppB2BSignInActivityMetrics provides operations to manage the appB2BSignInActivityMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// AppB2BSignInActivityMetrics provides operations to manage the appB2BSignInActivityMetrics property of the microsoft.graph.relatedTenant entity.
 // returns a *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) AppB2BSignInActivityMetrics()(*TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) {
     return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// B2BRegistrationMetrics provides operations to manage the b2BRegistrationMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// B2BRegistrationMetrics provides operations to manage the b2BRegistrationMetrics property of the microsoft.graph.relatedTenant entity.
 // returns a *TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) B2BRegistrationMetrics()(*TenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilder) {
     return NewTenantGovernanceRelatedTenantsItemB2BRegistrationMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// B2BSignInActivityMetrics provides operations to manage the b2BSignInActivityMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// B2BSignInActivityMetrics provides operations to manage the b2BSignInActivityMetrics property of the microsoft.graph.relatedTenant entity.
 // returns a *TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) B2BSignInActivityMetrics()(*TenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilder) {
     return NewTenantGovernanceRelatedTenantsItemB2BSignInActivityMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// BillingMetrics provides operations to manage the billingMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// BillingMetrics provides operations to manage the billingMetrics property of the microsoft.graph.relatedTenant entity.
 // returns a *TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) BillingMetrics()(*TenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilder) {
     return NewTenantGovernanceRelatedTenantsItemBillingMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -99,7 +99,7 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Delete(c
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-relatedtenant-get?view=graph-rest-beta
-func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, error) {
+func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -107,16 +107,16 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Get(ctx 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable), nil
 }
-// MultiTenantApplicationMetrics provides operations to manage the multiTenantApplicationMetrics property of the microsoft.graph.tenantGovernanceServices.relatedTenant entity.
+// MultiTenantApplicationMetrics provides operations to manage the multiTenantApplicationMetrics property of the microsoft.graph.relatedTenant entity.
 // returns a *TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) MultiTenantApplicationMetrics()(*TenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilder) {
     return NewTenantGovernanceRelatedTenantsItemMultiTenantApplicationMetricsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
@@ -124,7 +124,7 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) MultiTen
 // Patch update the navigation property relatedTenants in directory
 // returns a RelatedTenantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Patch(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderPatchRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, error) {
+func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -132,14 +132,14 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) Patch(ct
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable), nil
 }
 // ToDeleteRequestInformation delete navigation property relatedTenants for directory
 // returns a *RequestInformation when successful
@@ -168,7 +168,7 @@ func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) ToGetReq
 }
 // ToPatchRequestInformation update the navigation property relatedTenants in directory
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

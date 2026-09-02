@@ -44,6 +44,21 @@ type RecommendationsRecommendationItemRequestBuilderPatchRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AcceptRisk provides operations to call the acceptRisk method.
+// returns a *RecommendationsItemAcceptRiskRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) AcceptRisk()(*RecommendationsItemAcceptRiskRequestBuilder) {
+    return NewRecommendationsItemAcceptRiskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AddTag provides operations to call the addTag method.
+// returns a *RecommendationsItemAddTagRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) AddTag()(*RecommendationsItemAddTagRequestBuilder) {
+    return NewRecommendationsItemAddTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ApplyAlternateMitigation provides operations to call the applyAlternateMitigation method.
+// returns a *RecommendationsItemApplyAlternateMitigationRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) ApplyAlternateMitigation()(*RecommendationsItemApplyAlternateMitigationRequestBuilder) {
+    return NewRecommendationsItemApplyAlternateMitigationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Complete provides operations to call the complete method.
 // returns a *RecommendationsItemCompleteRequestBuilder when successful
 func (m *RecommendationsRecommendationItemRequestBuilder) Complete()(*RecommendationsItemCompleteRequestBuilder) {
@@ -111,6 +126,11 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Get(ctx context.Contex
 func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResources()(*RecommendationsItemImpactedResourcesRequestBuilder) {
     return NewRecommendationsItemImpactedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MarkPlanned provides operations to call the markPlanned method.
+// returns a *RecommendationsItemMarkPlannedRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) MarkPlanned()(*RecommendationsItemMarkPlannedRequestBuilder) {
+    return NewRecommendationsItemMarkPlannedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property recommendations in directory
 // returns a Recommendationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -140,6 +160,16 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Postpone()(*Recommenda
 // returns a *RecommendationsItemReactivateRequestBuilder when successful
 func (m *RecommendationsRecommendationItemRequestBuilder) Reactivate()(*RecommendationsItemReactivateRequestBuilder) {
     return NewRecommendationsItemReactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RemoveTag provides operations to call the removeTag method.
+// returns a *RecommendationsItemRemoveTagRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) RemoveTag()(*RecommendationsItemRemoveTagRequestBuilder) {
+    return NewRecommendationsItemRemoveTagRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tags provides operations to manage the tags property of the microsoft.graph.recommendationBase entity.
+// returns a *RecommendationsItemTagsRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) Tags()(*RecommendationsItemTagsRequestBuilder) {
+    return NewRecommendationsItemTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property recommendations for directory
 // returns a *RequestInformation when successful

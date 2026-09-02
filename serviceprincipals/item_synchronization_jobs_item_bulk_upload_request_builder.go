@@ -63,6 +63,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Content()(*ItemSyn
     return NewItemSynchronizationJobsItemBulkUploadValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property bulkUpload for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Delete(ctx context
     return nil
 }
 // Get the bulk upload operation for the job.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a BulkUploadable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable, error) {
@@ -99,6 +101,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable), nil
 }
 // Patch update the navigation property bulkUpload in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a BulkUploadable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable, error) {
@@ -119,6 +122,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) Patch(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable), nil
 }
 // ToDeleteRequestInformation delete navigation property bulkUpload for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation the bulk upload operation for the job.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property bulkUpload in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BulkUploadable, requestConfiguration *ItemSynchronizationJobsItemBulkUploadRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +165,7 @@ func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationJobsItemBulkUploadRequestBuilder when successful
 func (m *ItemSynchronizationJobsItemBulkUploadRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationJobsItemBulkUploadRequestBuilder) {
     return NewItemSynchronizationJobsItemBulkUploadRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

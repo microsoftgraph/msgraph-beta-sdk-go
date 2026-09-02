@@ -50,6 +50,7 @@ type ItemLicenseDetailsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByLicenseDetailsId provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemLicenseDetailsLicenseDetailsItemRequestBuilder when successful
 func (m *ItemLicenseDetailsRequestBuilder) ByLicenseDetailsId(licenseDetailsId string)(*ItemLicenseDetailsLicenseDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ItemLicenseDetailsRequestBuilder) Count()(*ItemLicenseDetailsCountReque
     return NewItemLicenseDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get licenseDetails from servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a LicenseDetailsCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemLicenseDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemLicenseDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsCollectionResponseable, error) {
@@ -105,6 +107,7 @@ func (m *ItemLicenseDetailsRequestBuilder) GetTeamsLicensingDetails()(*ItemLicen
     return NewItemLicenseDetailsGetTeamsLicensingDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to licenseDetails for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a LicenseDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemLicenseDetailsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *ItemLicenseDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, error) {
@@ -125,6 +128,7 @@ func (m *ItemLicenseDetailsRequestBuilder) Post(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable), nil
 }
 // ToGetRequestInformation get licenseDetails from servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemLicenseDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemLicenseDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +143,7 @@ func (m *ItemLicenseDetailsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to licenseDetails for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemLicenseDetailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LicenseDetailsable, requestConfiguration *ItemLicenseDetailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +159,7 @@ func (m *ItemLicenseDetailsRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemLicenseDetailsRequestBuilder when successful
 func (m *ItemLicenseDetailsRequestBuilder) WithUrl(rawUrl string)(*ItemLicenseDetailsRequestBuilder) {
     return NewItemLicenseDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

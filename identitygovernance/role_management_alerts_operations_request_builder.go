@@ -50,6 +50,7 @@ type RoleManagementAlertsOperationsRequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByLongRunningOperationId provides operations to manage the operations property of the microsoft.graph.roleManagementAlert entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder when successful
 func (m *RoleManagementAlertsOperationsRequestBuilder) ByLongRunningOperationId(longRunningOperationId string)(*RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) Count()(*RoleManagementAl
     return NewRoleManagementAlertsOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents operations on resources that take a long time to complete and can run in the background until completion.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a LongRunningOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationCollectionResponseable), nil
 }
 // Post create new navigation property to operations for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a LongRunningOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsOperationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable, error) {
@@ -120,6 +123,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) Post(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable), nil
 }
 // ToGetRequestInformation represents operations on resources that take a long time to complete and can run in the background until completion.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to operations for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsOperationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable, requestConfiguration *RoleManagementAlertsOperationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *RoleManagementAlertsOperationsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsOperationsRequestBuilder when successful
 func (m *RoleManagementAlertsOperationsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsOperationsRequestBuilder) {
     return NewRoleManagementAlertsOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

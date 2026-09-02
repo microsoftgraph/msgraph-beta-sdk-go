@@ -58,6 +58,7 @@ func NewVirtualEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewVirtualEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property virtualEvents for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *VirtualEventsRequestBuilder) Events()(*VirtualEventsEventsRequestBuilde
     return NewVirtualEventsEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of virtual events.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable, error) {
@@ -99,6 +101,7 @@ func (m *VirtualEventsRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable), nil
 }
 // Patch update the navigation property virtualEvents in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable, requestConfiguration *VirtualEventsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable, error) {
@@ -119,6 +122,7 @@ func (m *VirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233ee762
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable), nil
 }
 // ToDeleteRequestInformation delete navigation property virtualEvents for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *VirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of virtual events.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *VirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property virtualEvents in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventsRootable, requestConfiguration *VirtualEventsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -169,6 +175,7 @@ func (m *VirtualEventsRequestBuilder) Webinars()(*VirtualEventsWebinarsRequestBu
     return NewVirtualEventsWebinarsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsRequestBuilder when successful
 func (m *VirtualEventsRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsRequestBuilder) {
     return NewVirtualEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

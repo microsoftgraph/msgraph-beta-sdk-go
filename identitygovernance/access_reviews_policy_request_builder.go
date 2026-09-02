@@ -58,6 +58,7 @@ func NewAccessReviewsPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewAccessReviewsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property policy for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewsPolicyRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *AccessReviewsPolicyRequestBuilder) Delete(ctx context.Context, requestC
     return nil
 }
 // Get read the properties and relationships of an accessReviewPolicy object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *AccessReviewsPolicyRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable), nil
 }
 // Patch update the properties of an accessReviewPolicy object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,6 +123,7 @@ func (m *AccessReviewsPolicyRequestBuilder) Patch(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable), nil
 }
 // ToDeleteRequestInformation delete navigation property policy for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *AccessReviewsPolicyRequestBuilder) ToDeleteRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an accessReviewPolicy object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,6 +150,7 @@ func (m *AccessReviewsPolicyRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an accessReviewPolicy object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewPolicyable, requestConfiguration *AccessReviewsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,6 +166,7 @@ func (m *AccessReviewsPolicyRequestBuilder) ToPatchRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsPolicyRequestBuilder when successful
 func (m *AccessReviewsPolicyRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsPolicyRequestBuilder) {
     return NewAccessReviewsPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -39,6 +39,18 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetAdditionalData()
     }
     return val.(map[string]any)
 }
+// GetAppliedByUser gets the appliedByUser property value. The appliedByUser property
+// returns a UserIdentityable when successful
+func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetAppliedByUser()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable) {
+    val, err := m.GetBackingStore().Get("appliedByUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable)
+    }
+    return nil
+}
 // GetAssignmentMethod gets the assignmentMethod property value. The assignmentMethod property
 // returns a *SensitivityLabelAssignmentMethod when successful
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetAssignmentMethod()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod) {
@@ -60,6 +72,16 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetBackingStore()(i
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["appliedByUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserIdentityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppliedByUser(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable))
+        }
+        return nil
+    }
     res["assignmentMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseSensitivityLabelAssignmentMethod)
         if err != nil {
@@ -118,6 +140,12 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) GetSensitivityLabel
 }
 // Serialize serializes information the current object
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("appliedByUser", m.GetAppliedByUser())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignmentMethod() != nil {
         cast := (*m.GetAssignmentMethod()).String()
         err := writer.WriteStringValue("assignmentMethod", &cast)
@@ -152,6 +180,13 @@ func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetAdditionalData(v
         panic(err)
     }
 }
+// SetAppliedByUser sets the appliedByUser property value. The appliedByUser property
+func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetAppliedByUser(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable)() {
+    err := m.GetBackingStore().Set("appliedByUser", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignmentMethod sets the assignmentMethod property value. The assignmentMethod property
 func (m *ItemItemsItemAssignSensitivityLabelPostRequestBody) SetAssignmentMethod(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)() {
     err := m.GetBackingStore().Set("assignmentMethod", value)
@@ -181,10 +216,12 @@ type ItemItemsItemAssignSensitivityLabelPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppliedByUser()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable)
     GetAssignmentMethod()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetJustificationText()(*string)
     GetSensitivityLabelId()(*string)
+    SetAppliedByUser(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserIdentityable)()
     SetAssignmentMethod(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelAssignmentMethod)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetJustificationText(value *string)()

@@ -103,6 +103,11 @@ func (m *ItemDistributionListsDistributionListItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DistributionListable), nil
 }
+// Members provides operations to manage the members property of the microsoft.graph.distributionList entity.
+// returns a *ItemDistributionListsItemMembersRequestBuilder when successful
+func (m *ItemDistributionListsDistributionListItemRequestBuilder) Members()(*ItemDistributionListsItemMembersRequestBuilder) {
+    return NewItemDistributionListsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property distributionLists in users
 // returns a DistributionListable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

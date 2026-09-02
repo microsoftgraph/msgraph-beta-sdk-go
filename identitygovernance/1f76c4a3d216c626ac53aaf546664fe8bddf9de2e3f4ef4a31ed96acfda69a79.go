@@ -50,6 +50,7 @@ type AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByGovernanceInsightId provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) ByGovernanceInsightId(governanceInsightId string)(*AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsGovernanceInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a GovernanceInsightCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightCollectionResponseable), nil
 }
 // Post create new navigation property to insights for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a GovernanceInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, error) {
@@ -120,6 +123,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable), nil
 }
 // ToGetRequestInformation insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to insights for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceInsightable, requestConfiguration *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItem
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder when successful
 func (m *AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder) {
     return NewAccessReviewsUnifiedDefinitionsItemInstancesItemStagesItemDecisionsItemInsightsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

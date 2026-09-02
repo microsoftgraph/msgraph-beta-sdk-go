@@ -35,6 +35,7 @@ func NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateA
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post activate a lifecycle workflow for a specified subject and synchronously wait for execution to complete. This action returns an awaitedWorkflowProcessingResult with the execution outcome. Use this action when you need immediate confirmation of workflow completion, for example when provisioning a non-user subject.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AwaitedWorkflowProcessingResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivate
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.AwaitedWorkflowProcessingResultable), nil
 }
 // ToPostRequestInformation activate a lifecycle workflow for a specified subject and synchronously wait for execution to complete. This action returns an awaitedWorkflowProcessingResult with the execution outcome. Use this action when you need immediate confirmation of workflow completion, for example when provisioning a non-user subject.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder) ToPostRequestInformation(ctx context.Context, body LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitActivateAndWaitPostRequestBodyable, requestConfiguration *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -73,6 +75,7 @@ func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivate
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

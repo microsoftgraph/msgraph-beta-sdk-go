@@ -14,13 +14,6 @@ import (
 type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters read the properties and relationships of a configurationMonitoringResult object.
 type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -37,13 +30,6 @@ type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitorin
     // Request query parameters
     QueryParameters *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters
 }
-// ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // NewConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderInternal instantiates a new ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder and sets the default values.
 func NewConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) {
     m := &ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder{
@@ -56,22 +42,6 @@ func NewConfigurationManagementConfigurationMonitoringResultsConfigurationMonito
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderInternal(urlParams, requestAdapter)
-}
-// Delete delete navigation property configurationMonitoringResults for admin
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
 }
 // Get read the properties and relationships of a configurationMonitoringResult object.
 // returns a ConfigurationMonitoringResultable when successful
@@ -96,37 +66,6 @@ func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable), nil
 }
-// Patch update the navigation property configurationMonitoringResults in admin
-// returns a ConfigurationMonitoringResultable when successful
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable, error) {
-    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConfigurationMonitoringResultFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable), nil
-}
-// ToDeleteRequestInformation delete navigation property configurationMonitoringResults for admin
-// returns a *RequestInformation when successful
-func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
 // ToGetRequestInformation read the properties and relationships of a configurationMonitoringResult object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,21 +78,6 @@ func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonit
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
-// ToPatchRequestInformation update the navigation property configurationMonitoringResults in admin
-// returns a *RequestInformation when successful
-func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

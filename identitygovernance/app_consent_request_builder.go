@@ -63,6 +63,7 @@ func NewAppConsentRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewAppConsentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property appConsent for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentRequestBuilder) Delete(ctx context.Context, requestConfiguration *AppConsentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *AppConsentRequestBuilder) Delete(ctx context.Context, requestConfigurat
     return nil
 }
 // Get get appConsent from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AppConsentApprovalRouteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable, error) {
@@ -99,6 +101,7 @@ func (m *AppConsentRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable), nil
 }
 // Patch update the navigation property appConsent in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AppConsentApprovalRouteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AppConsentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable, requestConfiguration *AppConsentRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable, error) {
@@ -119,6 +122,7 @@ func (m *AppConsentRequestBuilder) Patch(ctx context.Context, body ie233ee762e29
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable), nil
 }
 // ToDeleteRequestInformation delete navigation property appConsent for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AppConsentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *AppConsentRequestBuilder) ToDeleteRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToGetRequestInformation get appConsent from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *AppConsentRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property appConsent in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AppConsentRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppConsentApprovalRouteable, requestConfiguration *AppConsentRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +165,7 @@ func (m *AppConsentRequestBuilder) ToPatchRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AppConsentRequestBuilder when successful
 func (m *AppConsentRequestBuilder) WithUrl(rawUrl string)(*AppConsentRequestBuilder) {
     return NewAppConsentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

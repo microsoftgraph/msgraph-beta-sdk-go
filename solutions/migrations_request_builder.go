@@ -63,13 +63,13 @@ func (m *MigrationsRequestBuilder) CrossTenantMigrationJobs()(*MigrationsCrossTe
     return NewMigrationsCrossTenantMigrationJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CrossTenantMigrationJobsWithDisplayName provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder when successful
 func (m *MigrationsRequestBuilder) CrossTenantMigrationJobsWithDisplayName(displayName *string)(*MigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilder) {
     return NewMigrationsCrossTenantMigrationJobsWithDisplayNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, displayName)
 }
 // Delete delete navigation property migrations for solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MigrationsRequestBuilder) Delete(ctx context.Context, requestConfiguration *MigrationsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -86,7 +86,7 @@ func (m *MigrationsRequestBuilder) Delete(ctx context.Context, requestConfigurat
     return nil
 }
 // Get get migrations from solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MigrationsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MigrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *MigrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable, error) {
@@ -107,7 +107,7 @@ func (m *MigrationsRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable), nil
 }
 // Patch update the navigation property migrations in solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MigrationsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MigrationsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable, requestConfiguration *MigrationsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable, error) {
@@ -128,7 +128,7 @@ func (m *MigrationsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable), nil
 }
 // ToDeleteRequestInformation delete navigation property migrations for solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *MigrationsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MigrationsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +140,7 @@ func (m *MigrationsRequestBuilder) ToDeleteRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // ToGetRequestInformation get migrations from solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *MigrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MigrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +155,7 @@ func (m *MigrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property migrations in solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *MigrationsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MigrationsRootable, requestConfiguration *MigrationsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -171,7 +171,7 @@ func (m *MigrationsRequestBuilder) ToPatchRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *MigrationsRequestBuilder when successful
 func (m *MigrationsRequestBuilder) WithUrl(rawUrl string)(*MigrationsRequestBuilder) {
     return NewMigrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

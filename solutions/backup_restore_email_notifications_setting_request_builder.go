@@ -58,6 +58,7 @@ func NewBackupRestoreEmailNotificationsSettingRequestBuilder(rawUrl string, requ
     return NewBackupRestoreEmailNotificationsSettingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property emailNotificationsSetting for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) Delete(ctx context.Context, requestConfiguration *BackupRestoreEmailNotificationsSettingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) Delete(ctx contex
     return nil
 }
 // Get read the properties and relationships of an emailNotificationsSetting object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a EmailNotificationsSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,6 +99,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailNotificationsSettingable), nil
 }
 // Patch update the properties of an emailNotificationsSetting object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a EmailNotificationsSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,6 +123,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) Patch(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailNotificationsSettingable), nil
 }
 // ToDeleteRequestInformation delete navigation property emailNotificationsSetting for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreEmailNotificationsSettingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToDeleteRequestIn
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an emailNotificationsSetting object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreEmailNotificationsSettingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,6 +150,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an emailNotificationsSetting object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailNotificationsSettingable, requestConfiguration *BackupRestoreEmailNotificationsSettingRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,6 +166,7 @@ func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreEmailNotificationsSettingRequestBuilder when successful
 func (m *BackupRestoreEmailNotificationsSettingRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreEmailNotificationsSettingRequestBuilder) {
     return NewBackupRestoreEmailNotificationsSettingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

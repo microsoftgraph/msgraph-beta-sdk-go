@@ -50,6 +50,7 @@ type EntitlementManagementAccessPackageSuggestionsRequestBuilderPostRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessPackageSuggestionId provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageSuggestionsAccessPackageSuggestionItemRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) ByAccessPackageSuggestionId(accessPackageSuggestionId string)(*EntitlementManagementAccessPackageSuggestionsAccessPackageSuggestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,11 +81,13 @@ func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) Count()(*E
     return NewEntitlementManagementAccessPackageSuggestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackageSuggestionsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get get accessPackageSuggestions from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessPackageSuggestionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageSuggestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionCollectionResponseable, error) {
@@ -105,6 +108,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionCollectionResponseable), nil
 }
 // Post create new navigation property to accessPackageSuggestions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessPackageSuggestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionable, requestConfiguration *EntitlementManagementAccessPackageSuggestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionable, error) {
@@ -125,6 +129,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionable), nil
 }
 // ToGetRequestInformation get accessPackageSuggestions from identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to accessPackageSuggestions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSuggestionable, requestConfiguration *EntitlementManagementAccessPackageSuggestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageSuggestionsRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageSuggestionsRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageSuggestionsRequestBuilder) {
     return NewEntitlementManagementAccessPackageSuggestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

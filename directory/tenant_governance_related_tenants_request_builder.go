@@ -6,11 +6,11 @@ package directory
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/tenantgovernanceservices"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// TenantGovernanceRelatedTenantsRequestBuilder provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// TenantGovernanceRelatedTenantsRequestBuilder provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceRelatedTenantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -49,7 +49,7 @@ type TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByRelatedTenantId provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernanceServices.tenantGovernance entity.
+// ByRelatedTenantId provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.
 // returns a *TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder when successful
 func (m *TenantGovernanceRelatedTenantsRequestBuilder) ByRelatedTenantId(relatedTenantId string)(*TenantGovernanceRelatedTenantsRelatedTenantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -85,7 +85,7 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Count()(*TenantGovernance
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-relatedtenants?view=graph-rest-beta
-func (m *TenantGovernanceRelatedTenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantCollectionResponseable, error) {
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,29 +93,19 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Get(ctx context.Context, 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateRelatedTenantCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRelatedTenantCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantCollectionResponseable), nil
-}
-// MicrosoftGraphTenantGovernanceServicesRefresh provides operations to call the refresh method.
-// returns a *TenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshRequestBuilder when successful
-func (m *TenantGovernanceRelatedTenantsRequestBuilder) MicrosoftGraphTenantGovernanceServicesRefresh()(*TenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshRequestBuilder) {
-    return NewTenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// MicrosoftGraphTenantGovernanceServicesRefreshStatus provides operations to call the refreshStatus method.
-// returns a *TenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshStatusRequestBuilder when successful
-func (m *TenantGovernanceRelatedTenantsRequestBuilder) MicrosoftGraphTenantGovernanceServicesRefreshStatus()(*TenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshStatusRequestBuilder) {
-    return NewTenantGovernanceRelatedTenantsMicrosoftGraphTenantGovernanceServicesRefreshStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantCollectionResponseable), nil
 }
 // Post create new navigation property to relatedTenants for directory
 // returns a RelatedTenantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsRequestBuilder) Post(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration)(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, error) {
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -123,14 +113,24 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) Post(ctx context.Context,
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateRelatedTenantFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable), nil
+}
+// Refresh provides operations to call the refresh method.
+// returns a *TenantGovernanceRelatedTenantsRefreshRequestBuilder when successful
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) Refresh()(*TenantGovernanceRelatedTenantsRefreshRequestBuilder) {
+    return NewTenantGovernanceRelatedTenantsRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RefreshStatus provides operations to call the refreshStatus method.
+// returns a *TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder when successful
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) RefreshStatus()(*TenantGovernanceRelatedTenantsRefreshStatusRequestBuilder) {
+    return NewTenantGovernanceRelatedTenantsRefreshStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a list of relatedTenant objects and their properties, including relationship metrics.
 // returns a *RequestInformation when successful
@@ -148,7 +148,7 @@ func (m *TenantGovernanceRelatedTenantsRequestBuilder) ToGetRequestInformation(c
 }
 // ToPostRequestInformation create new navigation property to relatedTenants for directory
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceRelatedTenantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i0d0ba8079cc3fcc0bec4e415076af7949e6c7032c1980e6a404fa9328ec05b42.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TenantGovernanceRelatedTenantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RelatedTenantable, requestConfiguration *TenantGovernanceRelatedTenantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

@@ -4,6 +4,7 @@
 package models
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -73,6 +74,18 @@ func (m *IosDdmLobAppAssignmentSettings) GetContentFilterConfigurationId()(*stri
     }
     return nil
 }
+// GetDdmAppConfigId gets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
+// returns a *UUID when successful
+func (m *IosDdmLobAppAssignmentSettings) GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("ddmAppConfigId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    }
+    return nil
+}
 // GetDnsProxyConfigurationId gets the dnsProxyConfigurationId property value. The dnsProxyConfigurationId property
 // returns a *string when successful
 func (m *IosDdmLobAppAssignmentSettings) GetDnsProxyConfigurationId()(*string) {
@@ -132,6 +145,16 @@ func (m *IosDdmLobAppAssignmentSettings) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetContentFilterConfigurationId(val)
+        }
+        return nil
+    }
+    res["ddmAppConfigId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDdmAppConfigId(val)
         }
         return nil
     }
@@ -266,6 +289,12 @@ func (m *IosDdmLobAppAssignmentSettings) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteUUIDValue("ddmAppConfigId", m.GetDdmAppConfigId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("dnsProxyConfigurationId", m.GetDnsProxyConfigurationId())
         if err != nil {
             return err
@@ -325,6 +354,13 @@ func (m *IosDdmLobAppAssignmentSettings) SetContentFilterConfigurationId(value *
         panic(err)
     }
 }
+// SetDdmAppConfigId sets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
+func (m *IosDdmLobAppAssignmentSettings) SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("ddmAppConfigId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDnsProxyConfigurationId sets the dnsProxyConfigurationId property value. The dnsProxyConfigurationId property
 func (m *IosDdmLobAppAssignmentSettings) SetDnsProxyConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("dnsProxyConfigurationId", value)
@@ -367,6 +403,7 @@ type IosDdmLobAppAssignmentSettingsable interface {
     GetAssociatedDomainsDirectDownloadAllowed()(*bool)
     GetCellularSliceConfigurationId()(*string)
     GetContentFilterConfigurationId()(*string)
+    GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetDnsProxyConfigurationId()(*string)
     GetPreventManagedAppBackup()(*bool)
     GetRelayConfigurationId()(*string)
@@ -376,6 +413,7 @@ type IosDdmLobAppAssignmentSettingsable interface {
     SetAssociatedDomainsDirectDownloadAllowed(value *bool)()
     SetCellularSliceConfigurationId(value *string)()
     SetContentFilterConfigurationId(value *string)()
+    SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetDnsProxyConfigurationId(value *string)()
     SetPreventManagedAppBackup(value *bool)()
     SetRelayConfigurationId(value *string)()

@@ -43,6 +43,7 @@ type BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBui
     QueryParameters *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilderGetQueryParameters
 }
 // ByMailboxProtectionUnitId provides operations to manage the mailboxProtectionUnits property of the microsoft.graph.exchangeProtectionPolicy entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsMailboxProtectionUnitItemRequestBuilder when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) ByMailboxProtectionUnitId(mailboxProtectionUnitId string)(*BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsMailboxProtectionUnitItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +74,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsReques
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the protection units (mailboxes) that are  protected under the Exchange protection policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a MailboxProtectionUnitCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxProtectionUnitCollectionResponseable, error) {
@@ -93,6 +95,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsReques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxProtectionUnitCollectionResponseable), nil
 }
 // ToGetRequestInformation the protection units (mailboxes) that are  protected under the Exchange protection policy.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder when successful
 func (m *BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder) {
     return NewBackupRestoreExchangeProtectionPoliciesItemMailboxProtectionUnitsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRe
     return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property localizations for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return nil
 }
 // Get the localized version of the terms of use agreement files attached to the agreement.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementFileLocalizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
@@ -94,6 +96,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable), nil
 }
 // Patch update the navigation property localizations in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementFileLocalizationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, error) {
@@ -114,6 +117,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable), nil
 }
 // ToDeleteRequestInformation delete navigation property localizations for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return requestInfo, nil
 }
 // ToGetRequestInformation the localized version of the terms of use agreement files attached to the agreement.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property localizations in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileLocalizationable, requestConfiguration *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,6 +165,7 @@ func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemR
     return NewTermsOfUseAgreementsItemFileLocalizationsItemVersionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder) {
     return NewTermsOfUseAgreementsItemFileLocalizationsAgreementFileLocalizationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

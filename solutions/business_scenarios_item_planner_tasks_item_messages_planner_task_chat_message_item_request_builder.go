@@ -58,6 +58,7 @@ func NewBusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemR
     return NewBusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property messages for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return nil
 }
 // Get read-only. Nullable. Chat messages associated with the task.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a PlannerTaskChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskChatMessageable, error) {
@@ -94,6 +96,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskChatMessageable), nil
 }
 // Patch update the navigation property messages in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a PlannerTaskChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskChatMessageable, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskChatMessageable, error) {
@@ -119,6 +122,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return NewBusinessScenariosItemPlannerTasksItemMessagesItemSetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property messages for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,6 +134,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Chat messages associated with the task.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,6 +149,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property messages in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskChatMessageable, requestConfiguration *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +170,7 @@ func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItem
     return NewBusinessScenariosItemPlannerTasksItemMessagesItemUnsetReactionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksItemMessagesPlannerTaskChatMessageItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -34,6 +34,18 @@ func (m *TextClassificationRequest) GetContentMetaData()(ClassificationRequestCo
     }
     return nil
 }
+// GetEmbeddings gets the embeddings property value. Optional caller-supplied precomputed embeddings for the text, so the service can skip recomputing them. Embeddings for models outside the allow-list are rejected with a 400.
+// returns a []EmbeddingInputable when successful
+func (m *TextClassificationRequest) GetEmbeddings()([]EmbeddingInputable) {
+    val, err := m.GetBackingStore().Get("embeddings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]EmbeddingInputable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -45,6 +57,22 @@ func (m *TextClassificationRequest) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetContentMetaData(val.(ClassificationRequestContentMetaDataable))
+        }
+        return nil
+    }
+    res["embeddings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateEmbeddingInputFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]EmbeddingInputable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(EmbeddingInputable)
+                }
+            }
+            m.SetEmbeddings(res)
         }
         return nil
     }
@@ -178,6 +206,18 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetEmbeddings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEmbeddings()))
+        for i, v := range m.GetEmbeddings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("embeddings", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("fileExtension", m.GetFileExtension())
         if err != nil {
@@ -215,6 +255,13 @@ func (m *TextClassificationRequest) Serialize(writer i878a80d2330e89d26896388a3f
 // SetContentMetaData sets the contentMetaData property value. Metadata that describes the content being classified.
 func (m *TextClassificationRequest) SetContentMetaData(value ClassificationRequestContentMetaDataable)() {
     err := m.GetBackingStore().Set("contentMetaData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetEmbeddings sets the embeddings property value. Optional caller-supplied precomputed embeddings for the text, so the service can skip recomputing them. Embeddings for models outside the allow-list are rejected with a 400.
+func (m *TextClassificationRequest) SetEmbeddings(value []EmbeddingInputable)() {
+    err := m.GetBackingStore().Set("embeddings", value)
     if err != nil {
         panic(err)
     }
@@ -258,12 +305,14 @@ type TextClassificationRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetContentMetaData()(ClassificationRequestContentMetaDataable)
+    GetEmbeddings()([]EmbeddingInputable)
     GetFileExtension()(*string)
     GetMatchTolerancesToInclude()(*MlClassificationMatchTolerance)
     GetScopesToRun()(*SensitiveTypeScope)
     GetSensitiveTypeIds()([]string)
     GetText()(*string)
     SetContentMetaData(value ClassificationRequestContentMetaDataable)()
+    SetEmbeddings(value []EmbeddingInputable)()
     SetFileExtension(value *string)()
     SetMatchTolerancesToInclude(value *MlClassificationMatchTolerance)()
     SetScopesToRun(value *SensitiveTypeScope)()

@@ -44,6 +44,7 @@ func NewRoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder(rawUrl strin
     return NewRoleManagementAlertsAlertsItemAlertDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable, error) {
@@ -64,6 +65,7 @@ func (m *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertDefinitionable), nil
 }
 // ToGetRequestInformation contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder when successful
 func (m *RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder) {
     return NewRoleManagementAlertsAlertsItemAlertDefinitionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

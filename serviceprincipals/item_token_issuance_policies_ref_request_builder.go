@@ -73,6 +73,7 @@ func NewItemTokenIssuancePoliciesRefRequestBuilder(rawUrl string, requestAdapter
     return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -89,6 +90,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Delete(ctx context.Context,
     return nil
 }
 // Get the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
@@ -109,6 +111,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -125,6 +128,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) Post(ctx context.Context, b
     return nil
 }
 // ToDeleteRequestInformation delete ref of navigation property tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/tokenIssuancePolicies/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -139,6 +143,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToDeleteRequestInformation(
     return requestInfo, nil
 }
 // ToGetRequestInformation the tokenIssuancePolicies assigned to this service principal. Supports $expand.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,6 +158,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemTokenIssuancePoliciesRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -168,6 +174,7 @@ func (m *ItemTokenIssuancePoliciesRefRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemTokenIssuancePoliciesRefRequestBuilder when successful
 func (m *ItemTokenIssuancePoliciesRefRequestBuilder) WithUrl(rawUrl string)(*ItemTokenIssuancePoliciesRefRequestBuilder) {
     return NewItemTokenIssuancePoliciesRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

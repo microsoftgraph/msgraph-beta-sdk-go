@@ -50,7 +50,7 @@ type MigrationsCrossTenantMigrationJobsItemUsersRequestBuilderPostRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCrossTenantMigrationTaskId provides operations to manage the users property of the microsoft.graph.crossTenantMigrationJob entity.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) ByCrossTenantMigrationTaskId(crossTenantMigrationTaskId string)(*MigrationsCrossTenantMigrationJobsItemUsersCrossTenantMigrationTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -81,7 +81,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) Count()(*Mig
     return NewMigrationsCrossTenantMigrationJobsItemUsersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the crossTenantMigrationTasks for users in a crossTenantMigrationJob. 
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a CrossTenantMigrationTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,7 +105,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationTaskCollectionResponseable), nil
 }
 // Post create new navigation property to users for solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a CrossTenantMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationTaskable, requestConfiguration *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationTaskable, error) {
@@ -126,7 +126,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) Post(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationTaskable), nil
 }
 // ToGetRequestInformation get a list of the crossTenantMigrationTasks for users in a crossTenantMigrationJob. 
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to users for solutions
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationTaskable, requestConfiguration *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) ToPostReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) WithUrl(rawUrl string)(*MigrationsCrossTenantMigrationJobsItemUsersRequestBuilder) {
     return NewMigrationsCrossTenantMigrationJobsItemUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

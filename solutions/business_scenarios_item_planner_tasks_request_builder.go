@@ -50,6 +50,7 @@ type BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByBusinessScenarioTaskId provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ByBusinessScenarioTaskId(businessScenarioTaskId string)(*BusinessScenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Count()(*BusinessScena
     return NewBusinessScenariosItemPlannerTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the businessScenarioTask objects and their properties.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BusinessScenarioTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable), nil
 }
 // Post create a new businessScenarioTask object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a BusinessScenarioTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) Post(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
 // ToGetRequestInformation get a list of the businessScenarioTask objects and their properties.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new businessScenarioTask object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessScenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *BusinessScenariosItemPlannerTasksRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BusinessScenariosItemPlannerTasksRequestBuilder when successful
 func (m *BusinessScenariosItemPlannerTasksRequestBuilder) WithUrl(rawUrl string)(*BusinessScenariosItemPlannerTasksRequestBuilder) {
     return NewBusinessScenariosItemPlannerTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

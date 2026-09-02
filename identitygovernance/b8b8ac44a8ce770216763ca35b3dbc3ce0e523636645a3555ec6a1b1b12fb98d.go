@@ -48,6 +48,7 @@ func NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignment
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -64,6 +65,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return nil
 }
 // Get the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -84,6 +86,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return res.([]byte), nil
 }
 // Put the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -104,6 +107,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,6 +119,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return requestInfo, nil
 }
 // ToGetRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,6 +131,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,6 +144,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmentResourceRolesItemAccessPackageResourceRoleAccessPackageResourceUploadSessionsItemFilesItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,7 @@ func CreatePolicyTipActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896
     }
     return NewPolicyTipAction(), nil
 }
-// GetComplianceUrl gets the complianceUrl property value. The complianceUrl property
+// GetComplianceUrl gets the complianceUrl property value. A URL that points users to additional compliance guidance or remediation details for the policy tip.
 // returns a *string when successful
 func (m *PolicyTipAction) GetComplianceUrl()(*string) {
     val, err := m.GetBackingStore().Get("complianceUrl")
@@ -88,7 +88,7 @@ func (m *PolicyTipAction) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetMatchedConditionsDescription gets the matchedConditionsDescription property value. The matchedConditionsDescription property
+// GetMatchedConditionsDescription gets the matchedConditionsDescription property value. A user-friendly summary of the matched DLP conditions that triggered the policy tip.
 // returns a *string when successful
 func (m *PolicyTipAction) GetMatchedConditionsDescription()(*string) {
     val, err := m.GetBackingStore().Get("matchedConditionsDescription")
@@ -138,14 +138,14 @@ func (m *PolicyTipAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetComplianceUrl sets the complianceUrl property value. The complianceUrl property
+// SetComplianceUrl sets the complianceUrl property value. A URL that points users to additional compliance guidance or remediation details for the policy tip.
 func (m *PolicyTipAction) SetComplianceUrl(value *string)() {
     err := m.GetBackingStore().Set("complianceUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMatchedConditionsDescription sets the matchedConditionsDescription property value. The matchedConditionsDescription property
+// SetMatchedConditionsDescription sets the matchedConditionsDescription property value. A user-friendly summary of the matched DLP conditions that triggered the policy tip.
 func (m *PolicyTipAction) SetMatchedConditionsDescription(value *string)() {
     err := m.GetBackingStore().Set("matchedConditionsDescription", value)
     if err != nil {

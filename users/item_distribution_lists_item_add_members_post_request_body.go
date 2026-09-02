@@ -48,7 +48,7 @@ func (m *ItemDistributionListsItemAddMembersPostRequestBody) GetBackingStore()(i
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ItemDistributionListsItemAddMembersPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["Members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMemberFromDiscriminatorValue)
         if err != nil {
             return err
@@ -66,7 +66,7 @@ func (m *ItemDistributionListsItemAddMembersPostRequestBody) GetFieldDeserialize
     }
     return res
 }
-// GetMembers gets the members property value. The members property
+// GetMembers gets the Members property value. The Members property
 // returns a []Memberable when successful
 func (m *ItemDistributionListsItemAddMembersPostRequestBody) GetMembers()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Memberable) {
     val, err := m.GetBackingStore().Get("members")
@@ -87,7 +87,7 @@ func (m *ItemDistributionListsItemAddMembersPostRequestBody) Serialize(writer i8
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err := writer.WriteCollectionOfObjectValues("members", cast)
+        err := writer.WriteCollectionOfObjectValues("Members", cast)
         if err != nil {
             return err
         }
@@ -111,7 +111,7 @@ func (m *ItemDistributionListsItemAddMembersPostRequestBody) SetAdditionalData(v
 func (m *ItemDistributionListsItemAddMembersPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMembers sets the members property value. The members property
+// SetMembers sets the Members property value. The Members property
 func (m *ItemDistributionListsItemAddMembersPostRequestBody) SetMembers(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Memberable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

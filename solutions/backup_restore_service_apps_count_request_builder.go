@@ -43,6 +43,7 @@ func NewBackupRestoreServiceAppsCountRequestBuilder(rawUrl string, requestAdapte
     return NewBackupRestoreServiceAppsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreServiceAppsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreServiceAppsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *BackupRestoreServiceAppsCountRequestBuilder) Get(ctx context.Context, r
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreServiceAppsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreServiceAppsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *BackupRestoreServiceAppsCountRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreServiceAppsCountRequestBuilder when successful
 func (m *BackupRestoreServiceAppsCountRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreServiceAppsCountRequestBuilder) {
     return NewBackupRestoreServiceAppsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

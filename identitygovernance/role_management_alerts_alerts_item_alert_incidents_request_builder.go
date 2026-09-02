@@ -50,6 +50,7 @@ type RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderPostRequestConfig
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUnifiedRoleManagementAlertIncidentId provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder when successful
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) ByUnifiedRoleManagementAlertIncidentId(unifiedRoleManagementAlertIncidentId string)(*RoleManagementAlertsAlertsItemAlertIncidentsUnifiedRoleManagementAlertIncidentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) Count()(*Ro
     return NewRoleManagementAlertsAlertsItemAlertIncidentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertIncidentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentCollectionResponseable), nil
 }
 // Post create new navigation property to alertIncidents for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a UnifiedRoleManagementAlertIncidentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentable, requestConfiguration *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentable, error) {
@@ -120,6 +123,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) Post(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentable), nil
 }
 // ToGetRequestInformation represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to alertIncidents for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertIncidentable, requestConfiguration *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder when successful
 func (m *RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) WithUrl(rawUrl string)(*RoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder) {
     return NewRoleManagementAlertsAlertsItemAlertIncidentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

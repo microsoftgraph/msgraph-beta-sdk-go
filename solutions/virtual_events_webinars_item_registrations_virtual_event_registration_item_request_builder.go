@@ -63,6 +63,7 @@ func NewVirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReques
     return NewVirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property registrations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -79,6 +80,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return nil
 }
 // Get get the properties and relationships of a virtualEventRegistration object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable), nil
 }
 // Patch update the navigation property registrations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, requestConfiguration *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, error) {
@@ -127,11 +130,13 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SessionsWithJoinWebUrl provides operations to manage the sessions property of the microsoft.graph.virtualEventRegistration entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemRegistrationsItemSessionsWithJoinWebUrlRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) SessionsWithJoinWebUrl(joinWebUrl *string)(*VirtualEventsWebinarsItemRegistrationsItemSessionsWithJoinWebUrlRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationsItemSessionsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // ToDeleteRequestInformation delete navigation property registrations for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,6 +148,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of a virtualEventRegistration object.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property registrations in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventRegistrationable, requestConfiguration *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -172,6 +179,7 @@ func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder when successful
 func (m *VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder) {
     return NewVirtualEventsWebinarsItemRegistrationsVirtualEventRegistrationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

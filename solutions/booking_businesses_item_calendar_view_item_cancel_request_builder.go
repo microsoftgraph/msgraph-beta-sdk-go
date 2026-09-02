@@ -34,6 +34,7 @@ func NewBookingBusinessesItemCalendarViewItemCancelRequestBuilder(rawUrl string,
     return NewBookingBusinessesItemCalendarViewItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *BookingBusinessesItemCalendarViewItemCancelRequestBuilder) Post(ctx con
     return nil
 }
 // ToPostRequestInformation cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCalendarViewItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, body BookingBusinessesItemCalendarViewItemCancelPostRequestBodyable, requestConfiguration *BookingBusinessesItemCalendarViewItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *BookingBusinessesItemCalendarViewItemCancelRequestBuilder) ToPostReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BookingBusinessesItemCalendarViewItemCancelRequestBuilder when successful
 func (m *BookingBusinessesItemCalendarViewItemCancelRequestBuilder) WithUrl(rawUrl string)(*BookingBusinessesItemCalendarViewItemCancelRequestBuilder) {
     return NewBookingBusinessesItemCalendarViewItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

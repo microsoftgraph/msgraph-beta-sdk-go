@@ -35,6 +35,7 @@ func NewBackupRestoreProtectionPoliciesItemDeactivateRequestBuilder(rawUrl strin
     return NewBackupRestoreProtectionPoliciesItemDeactivateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post deactivate a protectionPolicyBase. When a protection policy is deactivated, backup activity stops immediately, no new backups are taken, and the protected resources are no longer covered by the policy. Any backups taken before deactivation are retained according to the retention policy, after which they're offboarded. You can restore data using previous restore points even after deactivation. To reactivate a deactivated policy, use the activate API.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ProtectionPolicyBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable), nil
 }
 // ToPostRequestInformation deactivate a protectionPolicyBase. When a protection policy is deactivated, backup activity stops immediately, no new backups are taken, and the protected resources are no longer covered by the policy. Any backups taken before deactivation are retained according to the retention policy, after which they're offboarded. You can restore data using previous restore points even after deactivation. To reactivate a deactivated policy, use the activate API.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder when successful
 func (m *BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreProtectionPoliciesItemDeactivateRequestBuilder) {
     return NewBackupRestoreProtectionPoliciesItemDeactivateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

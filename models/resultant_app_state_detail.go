@@ -70,6 +70,8 @@ const (
     UNTARGETEDSUPERSEDINGAPPSDETECTED_RESULTANTAPPSTATEDETAIL
     // App was removed in order to install a superseding app.
     APPREMOVEDBYSUPERSEDENCE_RESULTANTAPPSTATEDETAIL
+    // App cannot be installed. One or more of the application's dependencies are in use.
+    DEPENDENCYAPPINUSE_RESULTANTAPPSTATEDETAIL
     // Application failed to uninstall. See error code property for more details.
     SEEUNINSTALLERRORCODE_RESULTANTAPPSTATEDETAIL
     // Device must be rebooted to complete installation of the application.
@@ -78,10 +80,16 @@ const (
     INSTALLINGDEPENDENCIES_RESULTANTAPPSTATEDETAIL
     // Application content was downloaded to the device.
     CONTENTDOWNLOADED_RESULTANTAPPSTATEDETAIL
+    // App enforcement is pending because the app is currently in use.
+    INUSE_RESULTANTAPPSTATEDETAIL
+    // App enforcement was deferred by the user because the app is currently in use.
+    DEFERRED_RESULTANTAPPSTATEDETAIL
+    // App enforcement was automatically deferred because the app is currently in use and a user response was not available.
+    AUTODEFERRED_RESULTANTAPPSTATEDETAIL
 )
 
 func (i ResultantAppStateDetail) String() string {
-    return []string{"processorArchitectureNotApplicable", "minimumDiskSpaceNotMet", "minimumOsVersionNotMet", "minimumPhysicalMemoryNotMet", "minimumLogicalProcessorCountNotMet", "minimumCpuSpeedNotMet", "platformNotApplicable", "fileSystemRequirementNotMet", "registryRequirementNotMet", "powerShellScriptRequirementNotMet", "supersedingAppsNotApplicable", "noAdditionalDetails", "dependencyFailedToInstall", "dependencyWithRequirementsNotMet", "dependencyPendingReboot", "dependencyWithAutoInstallDisabled", "supersededAppUninstallFailed", "supersededAppUninstallPendingReboot", "removingSupersededApps", "iosAppStoreUpdateFailedToInstall", "vppAppHasUpdateAvailable", "userRejectedUpdate", "uninstallPendingReboot", "supersedingAppsDetected", "supersededAppsDetected", "seeInstallErrorCode", "autoInstallDisabled", "managedAppNoLongerPresent", "userRejectedInstall", "userIsNotLoggedIntoAppStore", "untargetedSupersedingAppsDetected", "appRemovedBySupersedence", "seeUninstallErrorCode", "pendingReboot", "installingDependencies", "contentDownloaded"}[i]
+    return []string{"processorArchitectureNotApplicable", "minimumDiskSpaceNotMet", "minimumOsVersionNotMet", "minimumPhysicalMemoryNotMet", "minimumLogicalProcessorCountNotMet", "minimumCpuSpeedNotMet", "platformNotApplicable", "fileSystemRequirementNotMet", "registryRequirementNotMet", "powerShellScriptRequirementNotMet", "supersedingAppsNotApplicable", "noAdditionalDetails", "dependencyFailedToInstall", "dependencyWithRequirementsNotMet", "dependencyPendingReboot", "dependencyWithAutoInstallDisabled", "supersededAppUninstallFailed", "supersededAppUninstallPendingReboot", "removingSupersededApps", "iosAppStoreUpdateFailedToInstall", "vppAppHasUpdateAvailable", "userRejectedUpdate", "uninstallPendingReboot", "supersedingAppsDetected", "supersededAppsDetected", "seeInstallErrorCode", "autoInstallDisabled", "managedAppNoLongerPresent", "userRejectedInstall", "userIsNotLoggedIntoAppStore", "untargetedSupersedingAppsDetected", "appRemovedBySupersedence", "dependencyAppInUse", "seeUninstallErrorCode", "pendingReboot", "installingDependencies", "contentDownloaded", "inUse", "deferred", "autoDeferred"}[i]
 }
 func ParseResultantAppStateDetail(v string) (any, error) {
     result := PROCESSORARCHITECTURENOTAPPLICABLE_RESULTANTAPPSTATEDETAIL
@@ -150,6 +158,8 @@ func ParseResultantAppStateDetail(v string) (any, error) {
             result = UNTARGETEDSUPERSEDINGAPPSDETECTED_RESULTANTAPPSTATEDETAIL
         case "appRemovedBySupersedence":
             result = APPREMOVEDBYSUPERSEDENCE_RESULTANTAPPSTATEDETAIL
+        case "dependencyAppInUse":
+            result = DEPENDENCYAPPINUSE_RESULTANTAPPSTATEDETAIL
         case "seeUninstallErrorCode":
             result = SEEUNINSTALLERRORCODE_RESULTANTAPPSTATEDETAIL
         case "pendingReboot":
@@ -158,6 +168,12 @@ func ParseResultantAppStateDetail(v string) (any, error) {
             result = INSTALLINGDEPENDENCIES_RESULTANTAPPSTATEDETAIL
         case "contentDownloaded":
             result = CONTENTDOWNLOADED_RESULTANTAPPSTATEDETAIL
+        case "inUse":
+            result = INUSE_RESULTANTAPPSTATEDETAIL
+        case "deferred":
+            result = DEFERRED_RESULTANTAPPSTATEDETAIL
+        case "autoDeferred":
+            result = AUTODEFERRED_RESULTANTAPPSTATEDETAIL
         default:
             return nil, nil
     }

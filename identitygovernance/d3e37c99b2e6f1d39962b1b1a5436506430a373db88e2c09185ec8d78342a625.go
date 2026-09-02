@@ -34,6 +34,7 @@ func NewAccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDeci
     return NewAccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post record decisions in bulk for all accessReviewInstanceDecisionItem objects within a single accessReviewStage of a multi-stage accessReviewInstance, by using principalId, resourceId, or neither. This action records decisions for a specific stage only, unlike accessReviewInstance: batchRecordDecisions, which operates across the entire instance.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -53,6 +54,7 @@ func (m *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDec
     return nil
 }
 // ToPostRequestInformation record decisions in bulk for all accessReviewInstanceDecisionItem objects within a single accessReviewStage of a multi-stage accessReviewInstance, by using principalId, resourceId, or neither. This action records decisions for a specific stage only, unlike accessReviewInstance: batchRecordDecisions, which operates across the entire instance.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,6 +70,7 @@ func (m *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDec
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilder when successful
 func (m *AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilder) {
     return NewAccessReviewsInstancesItemDecisionsItemInstanceStagesItemBatchRecordDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

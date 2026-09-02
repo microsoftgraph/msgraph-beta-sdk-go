@@ -5,6 +5,7 @@ package identitygovernance
 
 import (
     "context"
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
     i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
@@ -43,6 +44,7 @@ type LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuild
     QueryParameters *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderGetQueryParameters
 }
 // BySubjectProcessingResultId provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.run entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) BySubjectProcessingResultId(subjectProcessingResultId string)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsSubjectProcessingResultItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -73,6 +75,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestB
     return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the subjectProcessingResult objects for a specific workflow run. Each result represents the processing outcome for a single subject.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a SubjectProcessingResultCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -95,7 +98,14 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestB
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.SubjectProcessingResultCollectionResponseable), nil
 }
+// MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime provides operations to call the summary method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
+// returns a *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(endDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time, startDateTime *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsMicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, endDateTime, startDateTime)
+}
 // ToGetRequestInformation get a list of the subjectProcessingResult objects for a specific workflow run. Each result represents the processing outcome for a single subject.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,6 +120,7 @@ func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

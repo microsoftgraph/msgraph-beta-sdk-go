@@ -50,6 +50,7 @@ type TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderPostRequestConfigura
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAgreementFileVersionId provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *TermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ByAgreementFileVersionId(agreementFileVersionId string)(*TermsOfUseAgreementsItemFilesItemVersionsAgreementFileVersionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) Count()(*Terms
     return NewTermsOfUseAgreementsItemFilesItemVersionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementFileVersionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) Get(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionCollectionResponseable), nil
 }
 // Post create new navigation property to versions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementFileVersionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionable, requestConfiguration *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionable, error) {
@@ -120,6 +123,7 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) Post(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionable), nil
 }
 // ToGetRequestInformation read-only. Customized versions of the terms of use agreement in the Microsoft Entra tenant.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to versions for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementFileVersionable, requestConfiguration *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemFilesItemVersionsRequestBuilder) {
     return NewTermsOfUseAgreementsItemFilesItemVersionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

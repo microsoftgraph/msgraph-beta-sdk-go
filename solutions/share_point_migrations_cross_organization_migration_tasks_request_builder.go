@@ -50,6 +50,7 @@ type SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderPostReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySharePointMigrationTaskId provides operations to manage the crossOrganizationMigrationTasks property of the microsoft.graph.sharePointMigrationsRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) BySharePointMigrationTaskId(sharePointMigrationTaskId string)(*SharePointMigrationsCrossOrganizationMigrationTasksSharePointMigrationTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Coun
     return NewSharePointMigrationsCrossOrganizationMigrationTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointMigrationTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskCollectionResponseable, error) {
@@ -100,21 +102,25 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskCollectionResponseable), nil
 }
 // GetBySourceGroupMailNicknameWithSourceGroupMailNickname provides operations to call the getBySourceGroupMailNickname method.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) GetBySourceGroupMailNicknameWithSourceGroupMailNickname(sourceGroupMailNickname *string)(*SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceGroupMailNicknameWithSourceGroupMailNicknameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourceGroupMailNickname)
 }
 // GetBySourceSiteUrlWithSourceSiteUrl provides operations to call the getBySourceSiteUrl method.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceSiteUrlWithSourceSiteUrlRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) GetBySourceSiteUrlWithSourceSiteUrl(sourceSiteUrl *string)(*SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceSiteUrlWithSourceSiteUrlRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceSiteUrlWithSourceSiteUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourceSiteUrl)
 }
 // GetBySourceUserPrincipalNameWithSourcePrincipalName provides operations to call the getBySourceUserPrincipalName method.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) GetBySourceUserPrincipalNameWithSourcePrincipalName(sourcePrincipalName *string)(*SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourcePrincipalName)
 }
 // Post create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user's OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -138,6 +144,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Post
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable), nil
 }
 // ToGetRequestInformation get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +159,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPostRequestInformation create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user's OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -167,6 +175,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToPo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) WithUrl(rawUrl string)(*SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

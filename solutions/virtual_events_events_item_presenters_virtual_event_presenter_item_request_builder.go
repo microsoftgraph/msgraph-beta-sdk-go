@@ -58,6 +58,7 @@ func NewVirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder
     return NewVirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property presenters for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return nil
 }
 // Get the virtual event presenters.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, error) {
@@ -94,6 +96,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable), nil
 }
 // Patch update the navigation property presenters in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a VirtualEventPresenterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, error) {
@@ -119,11 +122,13 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return NewVirtualEventsEventsItemPresentersItemSessionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SessionsWithJoinWebUrl provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsEventsItemPresentersItemSessionsWithJoinWebUrlRequestBuilder when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) SessionsWithJoinWebUrl(joinWebUrl *string)(*VirtualEventsEventsItemPresentersItemSessionsWithJoinWebUrlRequestBuilder) {
     return NewVirtualEventsEventsItemPresentersItemSessionsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // ToDeleteRequestInformation delete navigation property presenters for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,6 +140,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation the virtual event presenters.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +155,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property presenters in solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventPresenterable, requestConfiguration *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +171,7 @@ func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder when successful
 func (m *VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder) {
     return NewVirtualEventsEventsItemPresentersVirtualEventPresenterItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

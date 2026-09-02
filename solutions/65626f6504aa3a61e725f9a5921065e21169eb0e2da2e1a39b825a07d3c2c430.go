@@ -50,6 +50,7 @@ type BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBul
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDriveRestoreArtifactsBulkAdditionRequestId provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) ByDriveRestoreArtifactsBulkAdditionRequestId(driveRestoreArtifactsBulkAdditionRequestId string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsDriveRestoreArtifactsBulkAdditionRequestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveRestoreArtifactsBulkAdditionRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactsBulkAdditionRequestCollectionResponseable), nil
 }
 // Post create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a DriveRestoreArtifactsBulkAdditionRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactsBulkAdditionRequestable), nil
 }
 // ToGetRequestInformation get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return requestInfo, nil
 }
 // ToPostRequestInformation create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveRestoreArtifactsBulkAdditionRequestable, requestConfiguration *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifact
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder when successful
 func (m *BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder) {
     return NewBackupRestoreOneDriveForBusinessRestoreSessionsItemDriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

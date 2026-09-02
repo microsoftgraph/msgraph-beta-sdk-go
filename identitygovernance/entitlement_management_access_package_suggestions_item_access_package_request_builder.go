@@ -44,6 +44,7 @@ func NewEntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBui
     return NewEntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the access package information for the suggested package.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AvailableAccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AvailableAccessPackageable, error) {
@@ -64,6 +65,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AvailableAccessPackageable), nil
 }
 // ToGetRequestInformation the access package information for the suggested package.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder when successful
 func (m *EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder) {
     return NewEntitlementManagementAccessPackageSuggestionsItemAccessPackageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

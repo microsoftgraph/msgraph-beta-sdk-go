@@ -58,6 +58,7 @@ func NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder
     return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property acceptances for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return nil
 }
 // Get read-only. Information about acceptances of this agreement.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementAcceptanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
@@ -94,6 +96,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable), nil
 }
 // Patch update the navigation property acceptances in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AgreementAcceptanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, error) {
@@ -114,6 +117,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable), nil
 }
 // ToDeleteRequestInformation delete navigation property acceptances for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Information about acceptances of this agreement.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property acceptances in identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceable, requestConfiguration *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder when successful
 func (m *TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) WithUrl(rawUrl string)(*TermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder) {
     return NewTermsOfUseAgreementsItemAcceptancesAgreementAcceptanceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

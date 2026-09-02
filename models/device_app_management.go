@@ -6,23 +6,39 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceAppManagement singleton entity that acts as a container for all device app management functionality.
 type DeviceAppManagement struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewDeviceAppManagement instantiates a new DeviceAppManagement and sets the default values.
 func NewDeviceAppManagement()(*DeviceAppManagement) {
     m := &DeviceAppManagement{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateDeviceAppManagementFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateDeviceAppManagementFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceAppManagement(), nil
+}
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
+func (m *DeviceAppManagement) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAndroidManagedAppProtections gets the androidManagedAppProtections property value. Android managed app policies.
 // returns a []AndroidManagedAppProtectionable when successful
@@ -35,6 +51,11 @@ func (m *DeviceAppManagement) GetAndroidManagedAppProtections()([]AndroidManaged
         return val.([]AndroidManagedAppProtectionable)
     }
     return nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *DeviceAppManagement) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetDefaultManagedAppProtections gets the defaultManagedAppProtections property value. Default managed app policies.
 // returns a []DefaultManagedAppProtectionable when successful
@@ -75,7 +96,7 @@ func (m *DeviceAppManagement) GetEnterpriseCodeSigningCertificates()([]Enterpris
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["androidManagedAppProtections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAndroidManagedAppProtectionFromDiscriminatorValue)
         if err != nil {
@@ -395,6 +416,16 @@ func (m *DeviceAppManagement) GetFieldDeserializers()(map[string]func(i878a80d23
                 }
             }
             m.SetMobileApps(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -764,6 +795,18 @@ func (m *DeviceAppManagement) GetMobileApps()([]MobileAppable) {
     }
     return nil
 }
+// GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
+func (m *DeviceAppManagement) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPolicySets gets the policySets property value. The PolicySet of Policies and Applications
 // returns a []PolicySetable when successful
 func (m *DeviceAppManagement) GetPolicySets()([]PolicySetable) {
@@ -886,10 +929,6 @@ func (m *DeviceAppManagement) GetWindowsManagementApp()(WindowsManagementAppable
 }
 // Serialize serializes information the current object
 func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     if m.GetAndroidManagedAppProtections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAndroidManagedAppProtections()))
         for i, v := range m.GetAndroidManagedAppProtections() {
@@ -897,7 +936,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("androidManagedAppProtections", cast)
+        err := writer.WriteCollectionOfObjectValues("androidManagedAppProtections", cast)
         if err != nil {
             return err
         }
@@ -909,7 +948,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("defaultManagedAppProtections", cast)
+        err := writer.WriteCollectionOfObjectValues("defaultManagedAppProtections", cast)
         if err != nil {
             return err
         }
@@ -921,7 +960,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("deviceAppManagementTasks", cast)
+        err := writer.WriteCollectionOfObjectValues("deviceAppManagementTasks", cast)
         if err != nil {
             return err
         }
@@ -933,7 +972,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("enterpriseCodeSigningCertificates", cast)
+        err := writer.WriteCollectionOfObjectValues("enterpriseCodeSigningCertificates", cast)
         if err != nil {
             return err
         }
@@ -945,7 +984,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("iosLobAppProvisioningConfigurations", cast)
+        err := writer.WriteCollectionOfObjectValues("iosLobAppProvisioningConfigurations", cast)
         if err != nil {
             return err
         }
@@ -957,13 +996,13 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("iosManagedAppProtections", cast)
+        err := writer.WriteCollectionOfObjectValues("iosManagedAppProtections", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteBoolValue("isEnabledForMicrosoftStoreForBusiness", m.GetIsEnabledForMicrosoftStoreForBusiness())
+        err := writer.WriteBoolValue("isEnabledForMicrosoftStoreForBusiness", m.GetIsEnabledForMicrosoftStoreForBusiness())
         if err != nil {
             return err
         }
@@ -975,7 +1014,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("managedAppPolicies", cast)
+        err := writer.WriteCollectionOfObjectValues("managedAppPolicies", cast)
         if err != nil {
             return err
         }
@@ -987,7 +1026,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("managedAppRegistrations", cast)
+        err := writer.WriteCollectionOfObjectValues("managedAppRegistrations", cast)
         if err != nil {
             return err
         }
@@ -999,7 +1038,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("managedAppStatuses", cast)
+        err := writer.WriteCollectionOfObjectValues("managedAppStatuses", cast)
         if err != nil {
             return err
         }
@@ -1011,7 +1050,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("managedEBookCategories", cast)
+        err := writer.WriteCollectionOfObjectValues("managedEBookCategories", cast)
         if err != nil {
             return err
         }
@@ -1023,7 +1062,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("managedEBooks", cast)
+        err := writer.WriteCollectionOfObjectValues("managedEBooks", cast)
         if err != nil {
             return err
         }
@@ -1035,32 +1074,32 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mdmWindowsInformationProtectionPolicies", cast)
+        err := writer.WriteCollectionOfObjectValues("mdmWindowsInformationProtectionPolicies", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteStringValue("microsoftStoreForBusinessLanguage", m.GetMicrosoftStoreForBusinessLanguage())
+        err := writer.WriteStringValue("microsoftStoreForBusinessLanguage", m.GetMicrosoftStoreForBusinessLanguage())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("microsoftStoreForBusinessLastCompletedApplicationSyncTime", m.GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime())
+        err := writer.WriteTimeValue("microsoftStoreForBusinessLastCompletedApplicationSyncTime", m.GetMicrosoftStoreForBusinessLastCompletedApplicationSyncTime())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteTimeValue("microsoftStoreForBusinessLastSuccessfulSyncDateTime", m.GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime())
+        err := writer.WriteTimeValue("microsoftStoreForBusinessLastSuccessfulSyncDateTime", m.GetMicrosoftStoreForBusinessLastSuccessfulSyncDateTime())
         if err != nil {
             return err
         }
     }
     if m.GetMicrosoftStoreForBusinessPortalSelection() != nil {
         cast := (*m.GetMicrosoftStoreForBusinessPortalSelection()).String()
-        err = writer.WriteStringValue("microsoftStoreForBusinessPortalSelection", &cast)
+        err := writer.WriteStringValue("microsoftStoreForBusinessPortalSelection", &cast)
         if err != nil {
             return err
         }
@@ -1072,7 +1111,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mobileAppCatalogPackages", cast)
+        err := writer.WriteCollectionOfObjectValues("mobileAppCatalogPackages", cast)
         if err != nil {
             return err
         }
@@ -1084,7 +1123,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mobileAppCategories", cast)
+        err := writer.WriteCollectionOfObjectValues("mobileAppCategories", cast)
         if err != nil {
             return err
         }
@@ -1096,7 +1135,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mobileAppConfigurations", cast)
+        err := writer.WriteCollectionOfObjectValues("mobileAppConfigurations", cast)
         if err != nil {
             return err
         }
@@ -1108,7 +1147,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mobileAppRelationships", cast)
+        err := writer.WriteCollectionOfObjectValues("mobileAppRelationships", cast)
         if err != nil {
             return err
         }
@@ -1120,7 +1159,13 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("mobileApps", cast)
+        err := writer.WriteCollectionOfObjectValues("mobileApps", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -1132,13 +1177,13 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("policySets", cast)
+        err := writer.WriteCollectionOfObjectValues("policySets", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("symantecCodeSigningCertificate", m.GetSymantecCodeSigningCertificate())
+        err := writer.WriteObjectValue("symantecCodeSigningCertificate", m.GetSymantecCodeSigningCertificate())
         if err != nil {
             return err
         }
@@ -1150,7 +1195,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("targetedManagedAppConfigurations", cast)
+        err := writer.WriteCollectionOfObjectValues("targetedManagedAppConfigurations", cast)
         if err != nil {
             return err
         }
@@ -1162,7 +1207,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("vppTokens", cast)
+        err := writer.WriteCollectionOfObjectValues("vppTokens", cast)
         if err != nil {
             return err
         }
@@ -1174,7 +1219,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("wdacSupplementalPolicies", cast)
+        err := writer.WriteCollectionOfObjectValues("wdacSupplementalPolicies", cast)
         if err != nil {
             return err
         }
@@ -1186,7 +1231,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionDeviceRegistrations", cast)
+        err := writer.WriteCollectionOfObjectValues("windowsInformationProtectionDeviceRegistrations", cast)
         if err != nil {
             return err
         }
@@ -1198,7 +1243,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionPolicies", cast)
+        err := writer.WriteCollectionOfObjectValues("windowsInformationProtectionPolicies", cast)
         if err != nil {
             return err
         }
@@ -1210,7 +1255,7 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("windowsInformationProtectionWipeActions", cast)
+        err := writer.WriteCollectionOfObjectValues("windowsInformationProtectionWipeActions", cast)
         if err != nil {
             return err
         }
@@ -1222,18 +1267,31 @@ func (m *DeviceAppManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("windowsManagedAppProtections", cast)
+        err := writer.WriteCollectionOfObjectValues("windowsManagedAppProtections", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("windowsManagementApp", m.GetWindowsManagementApp())
+        err := writer.WriteObjectValue("windowsManagementApp", m.GetWindowsManagementApp())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *DeviceAppManagement) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAndroidManagedAppProtections sets the androidManagedAppProtections property value. Android managed app policies.
 func (m *DeviceAppManagement) SetAndroidManagedAppProtections(value []AndroidManagedAppProtectionable)() {
@@ -1241,6 +1299,10 @@ func (m *DeviceAppManagement) SetAndroidManagedAppProtections(value []AndroidMan
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *DeviceAppManagement) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetDefaultManagedAppProtections sets the defaultManagedAppProtections property value. Default managed app policies.
 func (m *DeviceAppManagement) SetDefaultManagedAppProtections(value []DefaultManagedAppProtectionable)() {
@@ -1389,6 +1451,13 @@ func (m *DeviceAppManagement) SetMobileApps(value []MobileAppable)() {
         panic(err)
     }
 }
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *DeviceAppManagement) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicySets sets the policySets property value. The PolicySet of Policies and Applications
 func (m *DeviceAppManagement) SetPolicySets(value []PolicySetable)() {
     err := m.GetBackingStore().Set("policySets", value)
@@ -1460,9 +1529,11 @@ func (m *DeviceAppManagement) SetWindowsManagementApp(value WindowsManagementApp
     }
 }
 type DeviceAppManagementable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAndroidManagedAppProtections()([]AndroidManagedAppProtectionable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDefaultManagedAppProtections()([]DefaultManagedAppProtectionable)
     GetDeviceAppManagementTasks()([]DeviceAppManagementTaskable)
     GetEnterpriseCodeSigningCertificates()([]EnterpriseCodeSigningCertificateable)
@@ -1484,6 +1555,7 @@ type DeviceAppManagementable interface {
     GetMobileAppConfigurations()([]ManagedDeviceMobileAppConfigurationable)
     GetMobileAppRelationships()([]MobileAppRelationshipable)
     GetMobileApps()([]MobileAppable)
+    GetOdataType()(*string)
     GetPolicySets()([]PolicySetable)
     GetSymantecCodeSigningCertificate()(SymantecCodeSigningCertificateable)
     GetTargetedManagedAppConfigurations()([]TargetedManagedAppConfigurationable)
@@ -1495,6 +1567,7 @@ type DeviceAppManagementable interface {
     GetWindowsManagedAppProtections()([]WindowsManagedAppProtectionable)
     GetWindowsManagementApp()(WindowsManagementAppable)
     SetAndroidManagedAppProtections(value []AndroidManagedAppProtectionable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDefaultManagedAppProtections(value []DefaultManagedAppProtectionable)()
     SetDeviceAppManagementTasks(value []DeviceAppManagementTaskable)()
     SetEnterpriseCodeSigningCertificates(value []EnterpriseCodeSigningCertificateable)()
@@ -1516,6 +1589,7 @@ type DeviceAppManagementable interface {
     SetMobileAppConfigurations(value []ManagedDeviceMobileAppConfigurationable)()
     SetMobileAppRelationships(value []MobileAppRelationshipable)()
     SetMobileApps(value []MobileAppable)()
+    SetOdataType(value *string)()
     SetPolicySets(value []PolicySetable)()
     SetSymantecCodeSigningCertificate(value SymantecCodeSigningCertificateable)()
     SetTargetedManagedAppConfigurations(value []TargetedManagedAppConfigurationable)()

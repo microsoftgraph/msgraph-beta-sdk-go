@@ -221,6 +221,22 @@ func (m *ImpactedResource) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRecommendationTagFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RecommendationTagable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RecommendationTagable)
+                }
+            }
+            m.SetTags(res)
+        }
+        return nil
+    }
     return res
 }
 // GetLastModifiedBy gets the lastModifiedBy property value. Name of the user or service that last updated the status.
@@ -343,6 +359,18 @@ func (m *ImpactedResource) GetSubjectId()(*string) {
     }
     return nil
 }
+// GetTags gets the tags property value. The tags property
+// returns a []RecommendationTagable when successful
+func (m *ImpactedResource) GetTags()([]RecommendationTagable) {
+    val, err := m.GetBackingStore().Get("tags")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RecommendationTagable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *ImpactedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -436,6 +464,18 @@ func (m *ImpactedResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteStringValue("subjectId", m.GetSubjectId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTags() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
+        for i, v := range m.GetTags() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("tags", cast)
         if err != nil {
             return err
         }
@@ -540,6 +580,13 @@ func (m *ImpactedResource) SetSubjectId(value *string)() {
         panic(err)
     }
 }
+// SetTags sets the tags property value. The tags property
+func (m *ImpactedResource) SetTags(value []RecommendationTagable)() {
+    err := m.GetBackingStore().Set("tags", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ImpactedResourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -557,6 +604,7 @@ type ImpactedResourceable interface {
     GetResourceType()(*string)
     GetStatus()(*RecommendationStatus)
     GetSubjectId()(*string)
+    GetTags()([]RecommendationTagable)
     SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetAdditionalDetails(value []KeyValueable)()
     SetApiUrl(value *string)()
@@ -571,4 +619,5 @@ type ImpactedResourceable interface {
     SetResourceType(value *string)()
     SetStatus(value *RecommendationStatus)()
     SetSubjectId(value *string)()
+    SetTags(value []RecommendationTagable)()
 }

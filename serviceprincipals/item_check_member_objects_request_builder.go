@@ -55,6 +55,7 @@ func (m *ItemCheckMemberObjectsRequestBuilder) Post(ctx context.Context, body It
     return res.(ItemCheckMemberObjectsResponseable), nil
 }
 // PostAsCheckMemberObjectsPostResponse invoke action checkMemberObjects
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ItemCheckMemberObjectsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostResponse(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(ItemCheckMemberObjectsPostResponseable, error) {
@@ -75,6 +76,7 @@ func (m *ItemCheckMemberObjectsRequestBuilder) PostAsCheckMemberObjectsPostRespo
     return res.(ItemCheckMemberObjectsPostResponseable), nil
 }
 // ToPostRequestInformation invoke action checkMemberObjects
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemCheckMemberObjectsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCheckMemberObjectsPostRequestBodyable, requestConfiguration *ItemCheckMemberObjectsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -90,6 +92,7 @@ func (m *ItemCheckMemberObjectsRequestBuilder) ToPostRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemCheckMemberObjectsRequestBuilder when successful
 func (m *ItemCheckMemberObjectsRequestBuilder) WithUrl(rawUrl string)(*ItemCheckMemberObjectsRequestBuilder) {
     return NewItemCheckMemberObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

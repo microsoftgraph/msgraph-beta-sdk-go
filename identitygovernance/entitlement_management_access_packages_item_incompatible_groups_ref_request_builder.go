@@ -73,6 +73,7 @@ func NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuild
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete remove a group from the list of groups marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -92,6 +93,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return nil
 }
 // Get retrieve a list of the group objects marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -115,6 +117,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post add a group to the list of groups marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -134,6 +137,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return nil
 }
 // ToDeleteRequestInformation remove a group from the list of groups marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -148,6 +152,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of the group objects marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,6 +167,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return requestInfo, nil
 }
 // ToPostRequestInformation add a group to the list of groups marked as incompatible on an accessPackage.  
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -177,6 +183,7 @@ func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder when successful
 func (m *EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder) {
     return NewEntitlementManagementAccessPackagesItemIncompatibleGroupsRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -50,6 +50,7 @@ type BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestCo
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySiteProtectionUnitsBulkAdditionJobId provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteProtectionUnitsBulkAdditionJobsSiteProtectionUnitsBulkAdditionJobItemRequestBuilder when successful
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) BySiteProtectionUnitsBulkAdditionJobId(siteProtectionUnitsBulkAdditionJobId string)(*BackupRestoreSiteProtectionUnitsBulkAdditionJobsSiteProtectionUnitsBulkAdditionJobItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) Count()
     return NewBackupRestoreSiteProtectionUnitsBulkAdditionJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get siteProtectionUnitsBulkAdditionJobs from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionUnitsBulkAdditionJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobCollectionResponseable), nil
 }
 // Post create new navigation property to siteProtectionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SiteProtectionUnitsBulkAdditionJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobable, error) {
@@ -120,6 +123,7 @@ func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) Post(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobable), nil
 }
 // ToGetRequestInformation get siteProtectionUnitsBulkAdditionJobs from solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to siteProtectionUnitsBulkAdditionJobs for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteProtectionUnitsBulkAdditionJobable, requestConfiguration *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder when successful
 func (m *BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) WithUrl(rawUrl string)(*BackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder) {
     return NewBackupRestoreSiteProtectionUnitsBulkAdditionJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

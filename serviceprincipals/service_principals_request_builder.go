@@ -50,6 +50,7 @@ type ServicePrincipalsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByServicePrincipalId provides operations to manage the collection of servicePrincipal entities.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ServicePrincipalItemRequestBuilder when successful
 func (m *ServicePrincipalsRequestBuilder) ByServicePrincipalId(servicePrincipalId string)(*ServicePrincipalItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -85,6 +86,7 @@ func (m *ServicePrincipalsRequestBuilder) Delta()(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -118,6 +120,7 @@ func (m *ServicePrincipalsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObj
     return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -141,6 +144,7 @@ func (m *ServicePrincipalsRequestBuilder) Post(ctx context.Context, body ie233ee
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // ToGetRequestInformation retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +159,7 @@ func (m *ServicePrincipalsRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, requestConfiguration *ServicePrincipalsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -175,6 +180,7 @@ func (m *ServicePrincipalsRequestBuilder) ValidateProperties()(*ValidateProperti
     return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ServicePrincipalsRequestBuilder when successful
 func (m *ServicePrincipalsRequestBuilder) WithUrl(rawUrl string)(*ServicePrincipalsRequestBuilder) {
     return NewServicePrincipalsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

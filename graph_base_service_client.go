@@ -693,6 +693,7 @@ func (m *GraphBaseServiceClient) ServicePrincipals()(*ibd3e65bb14e91a8a05d902c54
     return ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2.NewServicePrincipalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServicePrincipalsWithAppId provides operations to manage the collection of servicePrincipal entities.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ServicePrincipalsWithAppIdRequestBuilder when successful
 func (m *GraphBaseServiceClient) ServicePrincipalsWithAppId(appId *string)(*if298592eede46286a454444191c80a3a678c2136e14beb3f7c77b80b0b3ed812.ServicePrincipalsWithAppIdRequestBuilder) {
     return if298592eede46286a454444191c80a3a678c2136e14beb3f7c77b80b0b3ed812.NewServicePrincipalsWithAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, appId)

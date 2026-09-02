@@ -63,11 +63,13 @@ func NewPermissionsManagementScheduledPermissionsRequestsRequestBuilder(rawUrl s
     return NewPermissionsManagementScheduledPermissionsRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsRequestsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*PermissionsManagementScheduledPermissionsRequestsFilterByCurrentUserWithOnRequestBuilder) {
     return NewPermissionsManagementScheduledPermissionsRequestsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ScheduledPermissionsRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledPermissionsRequestCollectionResponseable, error) {
@@ -88,6 +90,7 @@ func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledPermissionsRequestCollectionResponseable), nil
 }
 // Post create a new scheduledPermissionsRequest object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ScheduledPermissionsRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -111,6 +114,7 @@ func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) Post(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledPermissionsRequestable), nil
 }
 // ToGetRequestInformation represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PermissionsManagementScheduledPermissionsRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new scheduledPermissionsRequest object.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScheduledPermissionsRequestable, requestConfiguration *PermissionsManagementScheduledPermissionsRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +145,7 @@ func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *PermissionsManagementScheduledPermissionsRequestsRequestBuilder when successful
 func (m *PermissionsManagementScheduledPermissionsRequestsRequestBuilder) WithUrl(rawUrl string)(*PermissionsManagementScheduledPermissionsRequestsRequestBuilder) {
     return NewPermissionsManagementScheduledPermissionsRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

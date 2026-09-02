@@ -50,6 +50,7 @@ type AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilderP
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewStageId provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder when successful
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) ByAccessReviewStageId(accessReviewStageId string)(*AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesAccessReviewStageItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,11 +81,13 @@ func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuil
     return NewAccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewAccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewStageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageCollectionResponseable, error) {
@@ -105,6 +108,7 @@ func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageCollectionResponseable), nil
 }
 // Post create new navigation property to stages for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a AccessReviewStageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, requestConfiguration *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, error) {
@@ -125,6 +129,7 @@ func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable), nil
 }
 // ToGetRequestInformation if the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuil
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to stages for identityGovernance
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewStageable, requestConfiguration *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder when successful
 func (m *AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder) {
     return NewAccessReviewsUnifiedInstancesItemDecisionsItemInstanceStagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

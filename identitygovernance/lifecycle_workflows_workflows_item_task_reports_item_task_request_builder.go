@@ -44,6 +44,7 @@ func NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder(rawUrl 
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a Taskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable, error) {
@@ -64,6 +65,7 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) Get(c
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable), nil
 }
 // ToGetRequestInformation the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemTaskReportsItemTaskRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

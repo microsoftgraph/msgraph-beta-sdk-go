@@ -25,7 +25,7 @@ func NewIncidentCase()(*IncidentCase) {
 func CreateIncidentCaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIncidentCase(), nil
 }
-// GetAiAgentIds gets the aiAgentIds property value. The list of AI agent identifiers associated with the incident.
+// GetAiAgentIds gets the aiAgentIds property value. The list of AI agent identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetAiAgentIds()([]string) {
     val, err := m.GetBackingStore().Get("aiAgentIds")
@@ -37,7 +37,7 @@ func (m *IncidentCase) GetAiAgentIds()([]string) {
     }
     return nil
 }
-// GetAlertCounts gets the alertCounts property value. A summary of alert counts grouped by severity and status.
+// GetAlertCounts gets the alertCounts property value. A summary of alert counts grouped by severity and status. Supports $filter.
 // returns a AlertCountsable when successful
 func (m *IncidentCase) GetAlertCounts()(AlertCountsable) {
     val, err := m.GetBackingStore().Get("alertCounts")
@@ -49,7 +49,7 @@ func (m *IncidentCase) GetAlertCounts()(AlertCountsable) {
     }
     return nil
 }
-// GetAlertPolicyIds gets the alertPolicyIds property value. The list of alert policy identifiers associated with the incident.
+// GetAlertPolicyIds gets the alertPolicyIds property value. The list of alert policy identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetAlertPolicyIds()([]string) {
     val, err := m.GetBackingStore().Get("alertPolicyIds")
@@ -61,7 +61,7 @@ func (m *IncidentCase) GetAlertPolicyIds()([]string) {
     }
     return nil
 }
-// GetAssignedTo gets the assignedTo property value. The user assigned to investigate the incident case.
+// GetAssignedTo gets the assignedTo property value. The user assigned to investigate the incident case. Supports $filter and $orderby.
 // returns a *string when successful
 func (m *IncidentCase) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -73,7 +73,7 @@ func (m *IncidentCase) GetAssignedTo()(*string) {
     }
     return nil
 }
-// GetAssociatedThreatIds gets the associatedThreatIds property value. The list of threat identifiers associated with the incident.
+// GetAssociatedThreatIds gets the associatedThreatIds property value. The list of threat identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetAssociatedThreatIds()([]string) {
     val, err := m.GetBackingStore().Get("associatedThreatIds")
@@ -85,7 +85,7 @@ func (m *IncidentCase) GetAssociatedThreatIds()([]string) {
     }
     return nil
 }
-// GetCategories gets the categories property value. The incident categories.
+// GetCategories gets the categories property value. The incident categories. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
@@ -109,7 +109,7 @@ func (m *IncidentCase) GetClassification()(*IncidentClassification) {
     }
     return nil
 }
-// GetCloudScopes gets the cloudScopes property value. The cloud scopes associated with the incident.
+// GetCloudScopes gets the cloudScopes property value. The cloud scopes associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetCloudScopes()([]string) {
     val, err := m.GetBackingStore().Get("cloudScopes")
@@ -121,7 +121,7 @@ func (m *IncidentCase) GetCloudScopes()([]string) {
     }
     return nil
 }
-// GetDataSensitivityLabels gets the dataSensitivityLabels property value. The data sensitivity labels associated with the incident.
+// GetDataSensitivityLabels gets the dataSensitivityLabels property value. The data sensitivity labels associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetDataSensitivityLabels()([]string) {
     val, err := m.GetBackingStore().Get("dataSensitivityLabels")
@@ -133,7 +133,7 @@ func (m *IncidentCase) GetDataSensitivityLabels()([]string) {
     }
     return nil
 }
-// GetDataStreams gets the dataStreams property value. The data streams associated with the incident.
+// GetDataStreams gets the dataStreams property value. The data streams associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetDataStreams()([]string) {
     val, err := m.GetBackingStore().Get("dataStreams")
@@ -145,7 +145,7 @@ func (m *IncidentCase) GetDataStreams()([]string) {
     }
     return nil
 }
-// GetDetectionSources gets the detectionSources property value. The detection sources that identified the incident.
+// GetDetectionSources gets the detectionSources property value. The detection sources that identified the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetDetectionSources()([]string) {
     val, err := m.GetBackingStore().Get("detectionSources")
@@ -169,7 +169,7 @@ func (m *IncidentCase) GetDetermination()(*IncidentDetermination) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the incident case.
+// GetDueDateTime gets the dueDateTime property value. The target completion date and time for the incident case. Supports $filter.
 // returns a *Time when successful
 func (m *IncidentCase) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -181,7 +181,7 @@ func (m *IncidentCase) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetEmailNotificationRecipients gets the emailNotificationRecipients property value. The email notification recipients for the incident case.
+// GetEmailNotificationRecipients gets the emailNotificationRecipients property value. The email notification recipients for the incident case. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetEmailNotificationRecipients()([]string) {
     val, err := m.GetBackingStore().Get("emailNotificationRecipients")
@@ -657,7 +657,7 @@ func (m *IncidentCase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetFirstEventTime gets the firstEventTime property value. The date and time of the first event in the incident.
+// GetFirstEventTime gets the firstEventTime property value. The date and time of the first event in the incident. Supports $filter.
 // returns a *Time when successful
 func (m *IncidentCase) GetFirstEventTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstEventTime")
@@ -669,7 +669,7 @@ func (m *IncidentCase) GetFirstEventTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetImpactedAssets gets the impactedAssets property value. A summary of impacted asset counts for the incident.
+// GetImpactedAssets gets the impactedAssets property value. A summary of impacted asset counts for the incident. Supports $filter.
 // returns a ImpactedAssetsCountsable when successful
 func (m *IncidentCase) GetImpactedAssets()(ImpactedAssetsCountsable) {
     val, err := m.GetBackingStore().Get("impactedAssets")
@@ -681,7 +681,7 @@ func (m *IncidentCase) GetImpactedAssets()(ImpactedAssetsCountsable) {
     }
     return nil
 }
-// GetIncidentId gets the incidentId property value. The Microsoft Security incident identifier.
+// GetIncidentId gets the incidentId property value. The Microsoft Security incident identifier. Supports $filter.
 // returns a *int64 when successful
 func (m *IncidentCase) GetIncidentId()(*int64) {
     val, err := m.GetBackingStore().Get("incidentId")
@@ -693,7 +693,7 @@ func (m *IncidentCase) GetIncidentId()(*int64) {
     }
     return nil
 }
-// GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident in the Microsoft Defender portal.
+// GetIncidentWebUrl gets the incidentWebUrl property value. The URL for the incident in the Microsoft Defender portal. Supports $filter.
 // returns a *string when successful
 func (m *IncidentCase) GetIncidentWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("incidentWebUrl")
@@ -705,7 +705,7 @@ func (m *IncidentCase) GetIncidentWebUrl()(*string) {
     }
     return nil
 }
-// GetInvestigation gets the investigation property value. A summary of investigation details associated with the incident.
+// GetInvestigation gets the investigation property value. A summary of investigation details associated with the incident. Supports $filter.
 // returns a Investigationable when successful
 func (m *IncidentCase) GetInvestigation()(Investigationable) {
     val, err := m.GetBackingStore().Get("investigation")
@@ -717,7 +717,7 @@ func (m *IncidentCase) GetInvestigation()(Investigationable) {
     }
     return nil
 }
-// GetInvestigationIds gets the investigationIds property value. The list of investigation identifiers associated with the incident.
+// GetInvestigationIds gets the investigationIds property value. The list of investigation identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetInvestigationIds()([]string) {
     val, err := m.GetBackingStore().Get("investigationIds")
@@ -729,7 +729,7 @@ func (m *IncidentCase) GetInvestigationIds()([]string) {
     }
     return nil
 }
-// GetInvestigationStates gets the investigationStates property value. The list of investigation states associated with the incident.
+// GetInvestigationStates gets the investigationStates property value. The list of investigation states associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetInvestigationStates()([]string) {
     val, err := m.GetBackingStore().Get("investigationStates")
@@ -741,7 +741,7 @@ func (m *IncidentCase) GetInvestigationStates()([]string) {
     }
     return nil
 }
-// GetLastEventTime gets the lastEventTime property value. The date and time of the most recent event in the incident.
+// GetLastEventTime gets the lastEventTime property value. The date and time of the most recent event in the incident. Supports $filter.
 // returns a *Time when successful
 func (m *IncidentCase) GetLastEventTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastEventTime")
@@ -753,7 +753,7 @@ func (m *IncidentCase) GetLastEventTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
-// GetMachineGroupIds gets the machineGroupIds property value. The list of machine group identifiers associated with the incident.
+// GetMachineGroupIds gets the machineGroupIds property value. The list of machine group identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetMachineGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("machineGroupIds")
@@ -765,7 +765,7 @@ func (m *IncidentCase) GetMachineGroupIds()([]string) {
     }
     return nil
 }
-// GetOsPlatforms gets the osPlatforms property value. The operating system platforms associated with the incident.
+// GetOsPlatforms gets the osPlatforms property value. The operating system platforms associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetOsPlatforms()([]string) {
     val, err := m.GetBackingStore().Get("osPlatforms")
@@ -777,7 +777,7 @@ func (m *IncidentCase) GetOsPlatforms()([]string) {
     }
     return nil
 }
-// GetPolicyNames gets the policyNames property value. The policy names associated with the incident.
+// GetPolicyNames gets the policyNames property value. The policy names associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetPolicyNames()([]string) {
     val, err := m.GetBackingStore().Get("policyNames")
@@ -789,7 +789,7 @@ func (m *IncidentCase) GetPolicyNames()([]string) {
     }
     return nil
 }
-// GetPriorityScore gets the priorityScore property value. The priority score assigned to the incident.
+// GetPriorityScore gets the priorityScore property value. The priority score assigned to the incident. Supports $filter.
 // returns a *int32 when successful
 func (m *IncidentCase) GetPriorityScore()(*int32) {
     val, err := m.GetBackingStore().Get("priorityScore")
@@ -801,7 +801,7 @@ func (m *IncidentCase) GetPriorityScore()(*int32) {
     }
     return nil
 }
-// GetProductNames gets the productNames property value. The product names associated with the incident.
+// GetProductNames gets the productNames property value. The product names associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetProductNames()([]string) {
     val, err := m.GetBackingStore().Get("productNames")
@@ -813,7 +813,7 @@ func (m *IncidentCase) GetProductNames()([]string) {
     }
     return nil
 }
-// GetRedirectCaseId gets the redirectCaseId property value. The case identifier to which this case redirects when merged.
+// GetRedirectCaseId gets the redirectCaseId property value. The redirectCaseId property
 // returns a *int64 when successful
 func (m *IncidentCase) GetRedirectCaseId()(*int64) {
     val, err := m.GetBackingStore().Get("redirectCaseId")
@@ -825,7 +825,7 @@ func (m *IncidentCase) GetRedirectCaseId()(*int64) {
     }
     return nil
 }
-// GetRedirectIncidentId gets the redirectIncidentId property value. The incident identifier to which this incident redirects when merged.
+// GetRedirectIncidentId gets the redirectIncidentId property value. The redirectIncidentId property
 // returns a *int64 when successful
 func (m *IncidentCase) GetRedirectIncidentId()(*int64) {
     val, err := m.GetBackingStore().Get("redirectIncidentId")
@@ -837,7 +837,7 @@ func (m *IncidentCase) GetRedirectIncidentId()(*int64) {
     }
     return nil
 }
-// GetServiceSources gets the serviceSources property value. The service sources associated with the incident.
+// GetServiceSources gets the serviceSources property value. The service sources associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetServiceSources()([]string) {
     val, err := m.GetBackingStore().Get("serviceSources")
@@ -861,7 +861,7 @@ func (m *IncidentCase) GetSeverity()(*IncidentSeverity) {
     }
     return nil
 }
-// GetSummary gets the summary property value. A summary of the incident.
+// GetSummary gets the summary property value. A summary of the incident. Supports $filter.
 // returns a *string when successful
 func (m *IncidentCase) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
@@ -873,7 +873,7 @@ func (m *IncidentCase) GetSummary()(*string) {
     }
     return nil
 }
-// GetSystemTags gets the systemTags property value. The system tags associated with the incident.
+// GetSystemTags gets the systemTags property value. The system tags associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetSystemTags()([]string) {
     val, err := m.GetBackingStore().Get("systemTags")
@@ -885,7 +885,7 @@ func (m *IncidentCase) GetSystemTags()([]string) {
     }
     return nil
 }
-// GetTopRiskScore gets the topRiskScore property value. The top risk score associated with the incident.
+// GetTopRiskScore gets the topRiskScore property value. The top risk score associated with the incident. Supports $filter.
 // returns a *int32 when successful
 func (m *IncidentCase) GetTopRiskScore()(*int32) {
     val, err := m.GetBackingStore().Get("topRiskScore")
@@ -897,7 +897,7 @@ func (m *IncidentCase) GetTopRiskScore()(*int32) {
     }
     return nil
 }
-// GetWorkspaceIds gets the workspaceIds property value. The list of workspace identifiers associated with the incident.
+// GetWorkspaceIds gets the workspaceIds property value. The list of workspace identifiers associated with the incident. Supports $filter.
 // returns a []string when successful
 func (m *IncidentCase) GetWorkspaceIds()([]string) {
     val, err := m.GetBackingStore().Get("workspaceIds")
@@ -1130,42 +1130,42 @@ func (m *IncidentCase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetAiAgentIds sets the aiAgentIds property value. The list of AI agent identifiers associated with the incident.
+// SetAiAgentIds sets the aiAgentIds property value. The list of AI agent identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetAiAgentIds(value []string)() {
     err := m.GetBackingStore().Set("aiAgentIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertCounts sets the alertCounts property value. A summary of alert counts grouped by severity and status.
+// SetAlertCounts sets the alertCounts property value. A summary of alert counts grouped by severity and status. Supports $filter.
 func (m *IncidentCase) SetAlertCounts(value AlertCountsable)() {
     err := m.GetBackingStore().Set("alertCounts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertPolicyIds sets the alertPolicyIds property value. The list of alert policy identifiers associated with the incident.
+// SetAlertPolicyIds sets the alertPolicyIds property value. The list of alert policy identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetAlertPolicyIds(value []string)() {
     err := m.GetBackingStore().Set("alertPolicyIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssignedTo sets the assignedTo property value. The user assigned to investigate the incident case.
+// SetAssignedTo sets the assignedTo property value. The user assigned to investigate the incident case. Supports $filter and $orderby.
 func (m *IncidentCase) SetAssignedTo(value *string)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAssociatedThreatIds sets the associatedThreatIds property value. The list of threat identifiers associated with the incident.
+// SetAssociatedThreatIds sets the associatedThreatIds property value. The list of threat identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetAssociatedThreatIds(value []string)() {
     err := m.GetBackingStore().Set("associatedThreatIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCategories sets the categories property value. The incident categories.
+// SetCategories sets the categories property value. The incident categories. Supports $filter.
 func (m *IncidentCase) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {
@@ -1179,28 +1179,28 @@ func (m *IncidentCase) SetClassification(value *IncidentClassification)() {
         panic(err)
     }
 }
-// SetCloudScopes sets the cloudScopes property value. The cloud scopes associated with the incident.
+// SetCloudScopes sets the cloudScopes property value. The cloud scopes associated with the incident. Supports $filter.
 func (m *IncidentCase) SetCloudScopes(value []string)() {
     err := m.GetBackingStore().Set("cloudScopes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDataSensitivityLabels sets the dataSensitivityLabels property value. The data sensitivity labels associated with the incident.
+// SetDataSensitivityLabels sets the dataSensitivityLabels property value. The data sensitivity labels associated with the incident. Supports $filter.
 func (m *IncidentCase) SetDataSensitivityLabels(value []string)() {
     err := m.GetBackingStore().Set("dataSensitivityLabels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDataStreams sets the dataStreams property value. The data streams associated with the incident.
+// SetDataStreams sets the dataStreams property value. The data streams associated with the incident. Supports $filter.
 func (m *IncidentCase) SetDataStreams(value []string)() {
     err := m.GetBackingStore().Set("dataStreams", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetectionSources sets the detectionSources property value. The detection sources that identified the incident.
+// SetDetectionSources sets the detectionSources property value. The detection sources that identified the incident. Supports $filter.
 func (m *IncidentCase) SetDetectionSources(value []string)() {
     err := m.GetBackingStore().Set("detectionSources", value)
     if err != nil {
@@ -1214,126 +1214,126 @@ func (m *IncidentCase) SetDetermination(value *IncidentDetermination)() {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the incident case.
+// SetDueDateTime sets the dueDateTime property value. The target completion date and time for the incident case. Supports $filter.
 func (m *IncidentCase) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmailNotificationRecipients sets the emailNotificationRecipients property value. The email notification recipients for the incident case.
+// SetEmailNotificationRecipients sets the emailNotificationRecipients property value. The email notification recipients for the incident case. Supports $filter.
 func (m *IncidentCase) SetEmailNotificationRecipients(value []string)() {
     err := m.GetBackingStore().Set("emailNotificationRecipients", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstEventTime sets the firstEventTime property value. The date and time of the first event in the incident.
+// SetFirstEventTime sets the firstEventTime property value. The date and time of the first event in the incident. Supports $filter.
 func (m *IncidentCase) SetFirstEventTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstEventTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImpactedAssets sets the impactedAssets property value. A summary of impacted asset counts for the incident.
+// SetImpactedAssets sets the impactedAssets property value. A summary of impacted asset counts for the incident. Supports $filter.
 func (m *IncidentCase) SetImpactedAssets(value ImpactedAssetsCountsable)() {
     err := m.GetBackingStore().Set("impactedAssets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncidentId sets the incidentId property value. The Microsoft Security incident identifier.
+// SetIncidentId sets the incidentId property value. The Microsoft Security incident identifier. Supports $filter.
 func (m *IncidentCase) SetIncidentId(value *int64)() {
     err := m.GetBackingStore().Set("incidentId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncidentWebUrl sets the incidentWebUrl property value. The URL for the incident in the Microsoft Defender portal.
+// SetIncidentWebUrl sets the incidentWebUrl property value. The URL for the incident in the Microsoft Defender portal. Supports $filter.
 func (m *IncidentCase) SetIncidentWebUrl(value *string)() {
     err := m.GetBackingStore().Set("incidentWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInvestigation sets the investigation property value. A summary of investigation details associated with the incident.
+// SetInvestigation sets the investigation property value. A summary of investigation details associated with the incident. Supports $filter.
 func (m *IncidentCase) SetInvestigation(value Investigationable)() {
     err := m.GetBackingStore().Set("investigation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInvestigationIds sets the investigationIds property value. The list of investigation identifiers associated with the incident.
+// SetInvestigationIds sets the investigationIds property value. The list of investigation identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetInvestigationIds(value []string)() {
     err := m.GetBackingStore().Set("investigationIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInvestigationStates sets the investigationStates property value. The list of investigation states associated with the incident.
+// SetInvestigationStates sets the investigationStates property value. The list of investigation states associated with the incident. Supports $filter.
 func (m *IncidentCase) SetInvestigationStates(value []string)() {
     err := m.GetBackingStore().Set("investigationStates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastEventTime sets the lastEventTime property value. The date and time of the most recent event in the incident.
+// SetLastEventTime sets the lastEventTime property value. The date and time of the most recent event in the incident. Supports $filter.
 func (m *IncidentCase) SetLastEventTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastEventTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMachineGroupIds sets the machineGroupIds property value. The list of machine group identifiers associated with the incident.
+// SetMachineGroupIds sets the machineGroupIds property value. The list of machine group identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetMachineGroupIds(value []string)() {
     err := m.GetBackingStore().Set("machineGroupIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOsPlatforms sets the osPlatforms property value. The operating system platforms associated with the incident.
+// SetOsPlatforms sets the osPlatforms property value. The operating system platforms associated with the incident. Supports $filter.
 func (m *IncidentCase) SetOsPlatforms(value []string)() {
     err := m.GetBackingStore().Set("osPlatforms", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyNames sets the policyNames property value. The policy names associated with the incident.
+// SetPolicyNames sets the policyNames property value. The policy names associated with the incident. Supports $filter.
 func (m *IncidentCase) SetPolicyNames(value []string)() {
     err := m.GetBackingStore().Set("policyNames", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriorityScore sets the priorityScore property value. The priority score assigned to the incident.
+// SetPriorityScore sets the priorityScore property value. The priority score assigned to the incident. Supports $filter.
 func (m *IncidentCase) SetPriorityScore(value *int32)() {
     err := m.GetBackingStore().Set("priorityScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProductNames sets the productNames property value. The product names associated with the incident.
+// SetProductNames sets the productNames property value. The product names associated with the incident. Supports $filter.
 func (m *IncidentCase) SetProductNames(value []string)() {
     err := m.GetBackingStore().Set("productNames", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRedirectCaseId sets the redirectCaseId property value. The case identifier to which this case redirects when merged.
+// SetRedirectCaseId sets the redirectCaseId property value. The redirectCaseId property
 func (m *IncidentCase) SetRedirectCaseId(value *int64)() {
     err := m.GetBackingStore().Set("redirectCaseId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRedirectIncidentId sets the redirectIncidentId property value. The incident identifier to which this incident redirects when merged.
+// SetRedirectIncidentId sets the redirectIncidentId property value. The redirectIncidentId property
 func (m *IncidentCase) SetRedirectIncidentId(value *int64)() {
     err := m.GetBackingStore().Set("redirectIncidentId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServiceSources sets the serviceSources property value. The service sources associated with the incident.
+// SetServiceSources sets the serviceSources property value. The service sources associated with the incident. Supports $filter.
 func (m *IncidentCase) SetServiceSources(value []string)() {
     err := m.GetBackingStore().Set("serviceSources", value)
     if err != nil {
@@ -1347,28 +1347,28 @@ func (m *IncidentCase) SetSeverity(value *IncidentSeverity)() {
         panic(err)
     }
 }
-// SetSummary sets the summary property value. A summary of the incident.
+// SetSummary sets the summary property value. A summary of the incident. Supports $filter.
 func (m *IncidentCase) SetSummary(value *string)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSystemTags sets the systemTags property value. The system tags associated with the incident.
+// SetSystemTags sets the systemTags property value. The system tags associated with the incident. Supports $filter.
 func (m *IncidentCase) SetSystemTags(value []string)() {
     err := m.GetBackingStore().Set("systemTags", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTopRiskScore sets the topRiskScore property value. The top risk score associated with the incident.
+// SetTopRiskScore sets the topRiskScore property value. The top risk score associated with the incident. Supports $filter.
 func (m *IncidentCase) SetTopRiskScore(value *int32)() {
     err := m.GetBackingStore().Set("topRiskScore", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorkspaceIds sets the workspaceIds property value. The list of workspace identifiers associated with the incident.
+// SetWorkspaceIds sets the workspaceIds property value. The list of workspace identifiers associated with the incident. Supports $filter.
 func (m *IncidentCase) SetWorkspaceIds(value []string)() {
     err := m.GetBackingStore().Set("workspaceIds", value)
     if err != nil {

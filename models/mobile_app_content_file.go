@@ -164,6 +164,16 @@ func (m *MobileAppContentFile) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["uploadErrorCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMobileAppContentFileUploadErrorCode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUploadErrorCode(val.(*MobileAppContentFileUploadErrorCode))
+        }
+        return nil
+    }
     res["uploadState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMobileAppContentFileUploadState)
         if err != nil {
@@ -257,6 +267,18 @@ func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetUploadErrorCode gets the uploadErrorCode property value. Indicates optional error details when uploadState is indicating an error. For example, when uploadState has commitFileFailed value, this field may have the error code of apkIsInvalid. Read-only.
+// returns a *MobileAppContentFileUploadErrorCode when successful
+func (m *MobileAppContentFile) GetUploadErrorCode()(*MobileAppContentFileUploadErrorCode) {
+    val, err := m.GetBackingStore().Get("uploadErrorCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MobileAppContentFileUploadErrorCode)
     }
     return nil
 }
@@ -393,6 +415,13 @@ func (m *MobileAppContentFile) SetSizeEncrypted(value *int64)() {
         panic(err)
     }
 }
+// SetUploadErrorCode sets the uploadErrorCode property value. Indicates optional error details when uploadState is indicating an error. For example, when uploadState has commitFileFailed value, this field may have the error code of apkIsInvalid. Read-only.
+func (m *MobileAppContentFile) SetUploadErrorCode(value *MobileAppContentFileUploadErrorCode)() {
+    err := m.GetBackingStore().Set("uploadErrorCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUploadState sets the uploadState property value. Contains properties for upload request states.
 func (m *MobileAppContentFile) SetUploadState(value *MobileAppContentFileUploadState)() {
     err := m.GetBackingStore().Set("uploadState", value)
@@ -413,6 +442,7 @@ type MobileAppContentFileable interface {
     GetName()(*string)
     GetSize()(*int64)
     GetSizeEncrypted()(*int64)
+    GetUploadErrorCode()(*MobileAppContentFileUploadErrorCode)
     GetUploadState()(*MobileAppContentFileUploadState)
     SetAzureStorageUri(value *string)()
     SetAzureStorageUriExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -424,5 +454,6 @@ type MobileAppContentFileable interface {
     SetName(value *string)()
     SetSize(value *int64)()
     SetSizeEncrypted(value *int64)()
+    SetUploadErrorCode(value *MobileAppContentFileUploadErrorCode)()
     SetUploadState(value *MobileAppContentFileUploadState)()
 }

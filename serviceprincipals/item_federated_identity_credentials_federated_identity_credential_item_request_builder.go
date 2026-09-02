@@ -58,6 +58,7 @@ func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBu
     return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property federatedIdentityCredentials for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return nil
 }
 // Get get federatedIdentityCredentials from servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a FederatedIdentityCredentialable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, error) {
@@ -94,6 +96,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable), nil
 }
 // Patch update the navigation property federatedIdentityCredentials in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a FederatedIdentityCredentialable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, error) {
@@ -114,6 +117,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable), nil
 }
 // ToDeleteRequestInformation delete navigation property federatedIdentityCredentials for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return requestInfo, nil
 }
 // ToGetRequestInformation get federatedIdentityCredentials from servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property federatedIdentityCredentials in servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) WithUrl(rawUrl string)(*ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) {
     return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

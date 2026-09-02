@@ -58,6 +58,7 @@ func NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentit
     return NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property crossOrganizationGroupMappings for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return nil
 }
 // Get collection of group identity mappings for cross-organization migration.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointGroupIdentityMappingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable, error) {
@@ -94,6 +96,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable), nil
 }
 // Patch perform delta patch operations on group identity mappings for cross-organization migration. This operation supports bulk add, update, and delete actions for both Microsoft 365 groups and regular Microsoft Entra groups. Maximum of 50 items allowed in the value array.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a SharePointGroupIdentityMappingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -117,6 +120,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable), nil
 }
 // ToDeleteRequestInformation delete navigation property crossOrganizationGroupMappings for solutions
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of group identity mappings for cross-organization migration.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return requestInfo, nil
 }
 // ToPatchRequestInformation perform delta patch operations on group identity mappings for cross-organization migration. This operation supports bulk add, update, and delete actions for both Microsoft 365 groups and regular Microsoft Entra groups. Maximum of 50 items allowed in the value array.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointGroupIdentityMappingable, requestConfiguration *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdenti
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder when successful
 func (m *SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) WithUrl(rawUrl string)(*SharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationGroupMappingsSharePointGroupIdentityMappingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

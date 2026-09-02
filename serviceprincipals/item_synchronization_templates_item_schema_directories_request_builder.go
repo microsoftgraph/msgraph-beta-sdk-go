@@ -50,6 +50,7 @@ type ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderPostRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDirectoryDefinitionId provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder when successful
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ByDirectoryDefinitionId(directoryDefinitionId string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesDirectoryDefinitionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) Count(
     return NewItemSynchronizationTemplatesItemSchemaDirectoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get contains the collection of directories and all of their objects.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a DirectoryDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionCollectionResponseable), nil
 }
 // Post create new navigation property to directories for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a DirectoryDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, error) {
@@ -120,6 +123,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) Post(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable), nil
 }
 // ToGetRequestInformation contains the collection of directories and all of their objects.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to directories for servicePrincipals
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *RequestInformation when successful
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryDefinitionable, requestConfiguration *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder when successful
 func (m *ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) WithUrl(rawUrl string)(*ItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder) {
     return NewItemSynchronizationTemplatesItemSchemaDirectoriesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
