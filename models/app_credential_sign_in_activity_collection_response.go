@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type AppCredentialSignInActivityCollectionResponse struct {
-    BaseCollectionPaginationCountResponse
+	BaseCollectionPaginationCountResponse
 }
+
 // NewAppCredentialSignInActivityCollectionResponse instantiates a new AppCredentialSignInActivityCollectionResponse and sets the default values.
-func NewAppCredentialSignInActivityCollectionResponse()(*AppCredentialSignInActivityCollectionResponse) {
-    m := &AppCredentialSignInActivityCollectionResponse{
-        BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
-    }
-    return m
+func NewAppCredentialSignInActivityCollectionResponse() *AppCredentialSignInActivityCollectionResponse {
+	m := &AppCredentialSignInActivityCollectionResponse{
+		BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
+	}
+	return m
 }
+
 // CreateAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAppCredentialSignInActivityCollectionResponse(), nil
+func CreateAppCredentialSignInActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAppCredentialSignInActivityCollectionResponse(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AppCredentialSignInActivityCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppCredentialSignInActivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppCredentialSignInActivityable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AppCredentialSignInActivityable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AppCredentialSignInActivityCollectionResponse) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
+	res["value"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAppCredentialSignInActivityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AppCredentialSignInActivityable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AppCredentialSignInActivityable)
+				}
+			}
+			m.SetValue(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetValue gets the value property value. The value property
 // returns a []AppCredentialSignInActivityable when successful
-func (m *AppCredentialSignInActivityCollectionResponse) GetValue()([]AppCredentialSignInActivityable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AppCredentialSignInActivityable)
-    }
-    return nil
+func (m *AppCredentialSignInActivityCollectionResponse) GetValue() []AppCredentialSignInActivityable {
+	val, err := m.GetBackingStore().Get("value")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AppCredentialSignInActivityable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AppCredentialSignInActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AppCredentialSignInActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetValue() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
+		for i, v := range m.GetValue() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("value", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetValue sets the value property value. The value property
-func (m *AppCredentialSignInActivityCollectionResponse) SetValue(value []AppCredentialSignInActivityable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AppCredentialSignInActivityCollectionResponse) SetValue(value []AppCredentialSignInActivityable) {
+	err := m.GetBackingStore().Set("value", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AppCredentialSignInActivityCollectionResponseable interface {
-    BaseCollectionPaginationCountResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]AppCredentialSignInActivityable)
-    SetValue(value []AppCredentialSignInActivityable)()
+	BaseCollectionPaginationCountResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetValue() []AppCredentialSignInActivityable
+	SetValue(value []AppCredentialSignInActivityable)
 }

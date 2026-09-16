@@ -4,214 +4,227 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type PermissionGrantPolicy struct {
-    PolicyBase
+	PolicyBase
 }
+
 // NewPermissionGrantPolicy instantiates a new PermissionGrantPolicy and sets the default values.
-func NewPermissionGrantPolicy()(*PermissionGrantPolicy) {
-    m := &PermissionGrantPolicy{
-        PolicyBase: *NewPolicyBase(),
-    }
-    odataTypeValue := "#microsoft.graph.permissionGrantPolicy"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewPermissionGrantPolicy() *PermissionGrantPolicy {
+	m := &PermissionGrantPolicy{
+		PolicyBase: *NewPolicyBase(),
+	}
+	odataTypeValue := "#microsoft.graph.permissionGrantPolicy"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreatePermissionGrantPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePermissionGrantPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPermissionGrantPolicy(), nil
+func CreatePermissionGrantPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPermissionGrantPolicy(), nil
 }
+
 // GetExcludes gets the excludes property value. Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
 // returns a []PermissionGrantConditionSetable when successful
-func (m *PermissionGrantPolicy) GetExcludes()([]PermissionGrantConditionSetable) {
-    val, err := m.GetBackingStore().Get("excludes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]PermissionGrantConditionSetable)
-    }
-    return nil
+func (m *PermissionGrantPolicy) GetExcludes() []PermissionGrantConditionSetable {
+	val, err := m.GetBackingStore().Get("excludes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]PermissionGrantConditionSetable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.PolicyBase.GetFieldDeserializers()
-    res["excludes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantConditionSetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PermissionGrantConditionSetable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(PermissionGrantConditionSetable)
-                }
-            }
-            m.SetExcludes(res)
-        }
-        return nil
-    }
-    res["includeAllPreApprovedApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIncludeAllPreApprovedApplications(val)
-        }
-        return nil
-    }
-    res["includes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantConditionSetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PermissionGrantConditionSetable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(PermissionGrantConditionSetable)
-                }
-            }
-            m.SetIncludes(res)
-        }
-        return nil
-    }
-    res["resourceScopeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseResourceScopeType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceScopeType(val.(*ResourceScopeType))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PermissionGrantPolicy) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.PolicyBase.GetFieldDeserializers()
+	res["excludes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantConditionSetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]PermissionGrantConditionSetable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(PermissionGrantConditionSetable)
+				}
+			}
+			m.SetExcludes(res)
+		}
+		return nil
+	}
+	res["includeAllPreApprovedApplications"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIncludeAllPreApprovedApplications(val)
+		}
+		return nil
+	}
+	res["includes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantConditionSetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]PermissionGrantConditionSetable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(PermissionGrantConditionSetable)
+				}
+			}
+			m.SetIncludes(res)
+		}
+		return nil
+	}
+	res["resourceScopeType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseResourceScopeType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetResourceScopeType(val.(*ResourceScopeType))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetIncludeAllPreApprovedApplications gets the includeAllPreApprovedApplications property value. Set to true to create all pre-approval policies in the tenant. Set to false to disable all pre-approval policies in the tenant. The default is false.
 // returns a *bool when successful
-func (m *PermissionGrantPolicy) GetIncludeAllPreApprovedApplications()(*bool) {
-    val, err := m.GetBackingStore().Get("includeAllPreApprovedApplications")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *PermissionGrantPolicy) GetIncludeAllPreApprovedApplications() *bool {
+	val, err := m.GetBackingStore().Get("includeAllPreApprovedApplications")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIncludes gets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
 // returns a []PermissionGrantConditionSetable when successful
-func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSetable) {
-    val, err := m.GetBackingStore().Get("includes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]PermissionGrantConditionSetable)
-    }
-    return nil
+func (m *PermissionGrantPolicy) GetIncludes() []PermissionGrantConditionSetable {
+	val, err := m.GetBackingStore().Get("includes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]PermissionGrantConditionSetable)
+	}
+	return nil
 }
+
 // GetResourceScopeType gets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
 // returns a *ResourceScopeType when successful
-func (m *PermissionGrantPolicy) GetResourceScopeType()(*ResourceScopeType) {
-    val, err := m.GetBackingStore().Get("resourceScopeType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ResourceScopeType)
-    }
-    return nil
+func (m *PermissionGrantPolicy) GetResourceScopeType() *ResourceScopeType {
+	val, err := m.GetBackingStore().Get("resourceScopeType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ResourceScopeType)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.PolicyBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetExcludes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludes()))
-        for i, v := range m.GetExcludes() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("excludes", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("includeAllPreApprovedApplications", m.GetIncludeAllPreApprovedApplications())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetIncludes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludes()))
-        for i, v := range m.GetIncludes() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("includes", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetResourceScopeType() != nil {
-        cast := (*m.GetResourceScopeType()).String()
-        err = writer.WriteStringValue("resourceScopeType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.PolicyBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetExcludes() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExcludes()))
+		for i, v := range m.GetExcludes() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("excludes", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("includeAllPreApprovedApplications", m.GetIncludeAllPreApprovedApplications())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetIncludes() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludes()))
+		for i, v := range m.GetIncludes() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("includes", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetResourceScopeType() != nil {
+		cast := (*m.GetResourceScopeType()).String()
+		err = writer.WriteStringValue("resourceScopeType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetExcludes sets the excludes property value. Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
-func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSetable)() {
-    err := m.GetBackingStore().Set("excludes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSetable) {
+	err := m.GetBackingStore().Set("excludes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIncludeAllPreApprovedApplications sets the includeAllPreApprovedApplications property value. Set to true to create all pre-approval policies in the tenant. Set to false to disable all pre-approval policies in the tenant. The default is false.
-func (m *PermissionGrantPolicy) SetIncludeAllPreApprovedApplications(value *bool)() {
-    err := m.GetBackingStore().Set("includeAllPreApprovedApplications", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PermissionGrantPolicy) SetIncludeAllPreApprovedApplications(value *bool) {
+	err := m.GetBackingStore().Set("includeAllPreApprovedApplications", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIncludes sets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
-func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSetable)() {
-    err := m.GetBackingStore().Set("includes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSetable) {
+	err := m.GetBackingStore().Set("includes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetResourceScopeType sets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
-func (m *PermissionGrantPolicy) SetResourceScopeType(value *ResourceScopeType)() {
-    err := m.GetBackingStore().Set("resourceScopeType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PermissionGrantPolicy) SetResourceScopeType(value *ResourceScopeType) {
+	err := m.GetBackingStore().Set("resourceScopeType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PermissionGrantPolicyable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    PolicyBaseable
-    GetExcludes()([]PermissionGrantConditionSetable)
-    GetIncludeAllPreApprovedApplications()(*bool)
-    GetIncludes()([]PermissionGrantConditionSetable)
-    GetResourceScopeType()(*ResourceScopeType)
-    SetExcludes(value []PermissionGrantConditionSetable)()
-    SetIncludeAllPreApprovedApplications(value *bool)()
-    SetIncludes(value []PermissionGrantConditionSetable)()
-    SetResourceScopeType(value *ResourceScopeType)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	PolicyBaseable
+	GetExcludes() []PermissionGrantConditionSetable
+	GetIncludeAllPreApprovedApplications() *bool
+	GetIncludes() []PermissionGrantConditionSetable
+	GetResourceScopeType() *ResourceScopeType
+	SetExcludes(value []PermissionGrantConditionSetable)
+	SetIncludeAllPreApprovedApplications(value *bool)
+	SetIncludes(value []PermissionGrantConditionSetable)
+	SetResourceScopeType(value *ResourceScopeType)
 }

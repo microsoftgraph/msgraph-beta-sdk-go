@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
 type PersonalProfilePersonalPlayStoreMode int
 
 const (
-    // Not configured.
-    NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE PersonalProfilePersonalPlayStoreMode = iota
-    // Blocked Apps.
-    BLOCKEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
-    // Allowed Apps.
-    ALLOWEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	// Not configured.
+	NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE PersonalProfilePersonalPlayStoreMode = iota
+	// Blocked Apps.
+	BLOCKEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	// Allowed Apps.
+	ALLOWEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
 )
 
 func (i PersonalProfilePersonalPlayStoreMode) String() string {
-    return []string{"notConfigured", "blockedApps", "allowedApps"}[i]
+	return []string{"notConfigured", "blockedApps", "allowedApps"}[i]
 }
+
 func ParsePersonalProfilePersonalPlayStoreMode(v string) (any, error) {
-    result := NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE
-        case "blockedApps":
-            result = BLOCKEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
-        case "allowedApps":
-            result = ALLOWEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	case "blockedApps":
+		result = BLOCKEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	case "allowedApps":
+		result = ALLOWEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePersonalProfilePersonalPlayStoreMode(values []PersonalProfilePersonalPlayStoreMode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PersonalProfilePersonalPlayStoreMode) isMultiValue() bool {
-    return false
+	return false
 }

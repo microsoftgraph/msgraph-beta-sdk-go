@@ -4,91 +4,98 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // AndroidForWorkCustomConfiguration android For Work custom configuration
 type AndroidForWorkCustomConfiguration struct {
-    DeviceConfiguration
+	DeviceConfiguration
 }
+
 // NewAndroidForWorkCustomConfiguration instantiates a new AndroidForWorkCustomConfiguration and sets the default values.
-func NewAndroidForWorkCustomConfiguration()(*AndroidForWorkCustomConfiguration) {
-    m := &AndroidForWorkCustomConfiguration{
-        DeviceConfiguration: *NewDeviceConfiguration(),
-    }
-    odataTypeValue := "#microsoft.graph.androidForWorkCustomConfiguration"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewAndroidForWorkCustomConfiguration() *AndroidForWorkCustomConfiguration {
+	m := &AndroidForWorkCustomConfiguration{
+		DeviceConfiguration: *NewDeviceConfiguration(),
+	}
+	odataTypeValue := "#microsoft.graph.androidForWorkCustomConfiguration"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateAndroidForWorkCustomConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAndroidForWorkCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAndroidForWorkCustomConfiguration(), nil
+func CreateAndroidForWorkCustomConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAndroidForWorkCustomConfiguration(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AndroidForWorkCustomConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["omaSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOmaSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OmaSettingable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(OmaSettingable)
-                }
-            }
-            m.SetOmaSettings(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AndroidForWorkCustomConfiguration) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceConfiguration.GetFieldDeserializers()
+	res["omaSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateOmaSettingFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]OmaSettingable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(OmaSettingable)
+				}
+			}
+			m.SetOmaSettings(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetOmaSettings gets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
 // returns a []OmaSettingable when successful
-func (m *AndroidForWorkCustomConfiguration) GetOmaSettings()([]OmaSettingable) {
-    val, err := m.GetBackingStore().Get("omaSettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]OmaSettingable)
-    }
-    return nil
+func (m *AndroidForWorkCustomConfiguration) GetOmaSettings() []OmaSettingable {
+	val, err := m.GetBackingStore().Get("omaSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]OmaSettingable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AndroidForWorkCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceConfiguration.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetOmaSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOmaSettings()))
-        for i, v := range m.GetOmaSettings() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("omaSettings", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AndroidForWorkCustomConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceConfiguration.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetOmaSettings() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOmaSettings()))
+		for i, v := range m.GetOmaSettings() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("omaSettings", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetOmaSettings sets the omaSettings property value. OMA settings. This collection can contain a maximum of 500 elements.
-func (m *AndroidForWorkCustomConfiguration) SetOmaSettings(value []OmaSettingable)() {
-    err := m.GetBackingStore().Set("omaSettings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AndroidForWorkCustomConfiguration) SetOmaSettings(value []OmaSettingable) {
+	err := m.GetBackingStore().Set("omaSettings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AndroidForWorkCustomConfigurationable interface {
-    DeviceConfigurationable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetOmaSettings()([]OmaSettingable)
-    SetOmaSettings(value []OmaSettingable)()
+	DeviceConfigurationable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetOmaSettings() []OmaSettingable
+	SetOmaSettings(value []OmaSettingable)
 }

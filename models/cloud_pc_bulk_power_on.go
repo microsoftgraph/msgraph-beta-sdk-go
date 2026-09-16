@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type CloudPcBulkPowerOn struct {
-    CloudPcBulkAction
+	CloudPcBulkAction
 }
+
 // NewCloudPcBulkPowerOn instantiates a new CloudPcBulkPowerOn and sets the default values.
-func NewCloudPcBulkPowerOn()(*CloudPcBulkPowerOn) {
-    m := &CloudPcBulkPowerOn{
-        CloudPcBulkAction: *NewCloudPcBulkAction(),
-    }
-    odataTypeValue := "#microsoft.graph.cloudPcBulkPowerOn"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewCloudPcBulkPowerOn() *CloudPcBulkPowerOn {
+	m := &CloudPcBulkPowerOn{
+		CloudPcBulkAction: *NewCloudPcBulkAction(),
+	}
+	odataTypeValue := "#microsoft.graph.cloudPcBulkPowerOn"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateCloudPcBulkPowerOnFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCloudPcBulkPowerOnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCloudPcBulkPowerOn(), nil
+func CreateCloudPcBulkPowerOnFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCloudPcBulkPowerOn(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CloudPcBulkPowerOn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.CloudPcBulkAction.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CloudPcBulkPowerOn) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.CloudPcBulkAction.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *CloudPcBulkPowerOn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.CloudPcBulkAction.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CloudPcBulkPowerOn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.CloudPcBulkAction.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type CloudPcBulkPowerOnable interface {
-    CloudPcBulkActionable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	CloudPcBulkActionable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

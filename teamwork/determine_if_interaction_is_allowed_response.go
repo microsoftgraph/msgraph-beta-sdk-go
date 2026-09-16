@@ -4,27 +4,30 @@
 package teamwork
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use DetermineIfInteractionIsAllowedPostResponseable instead.
 type DetermineIfInteractionIsAllowedResponse struct {
-    DetermineIfInteractionIsAllowedPostResponse
+	DetermineIfInteractionIsAllowedPostResponse
 }
+
 // NewDetermineIfInteractionIsAllowedResponse instantiates a new DetermineIfInteractionIsAllowedResponse and sets the default values.
-func NewDetermineIfInteractionIsAllowedResponse()(*DetermineIfInteractionIsAllowedResponse) {
-    m := &DetermineIfInteractionIsAllowedResponse{
-        DetermineIfInteractionIsAllowedPostResponse: *NewDetermineIfInteractionIsAllowedPostResponse(),
-    }
-    return m
+func NewDetermineIfInteractionIsAllowedResponse() *DetermineIfInteractionIsAllowedResponse {
+	m := &DetermineIfInteractionIsAllowedResponse{
+		DetermineIfInteractionIsAllowedPostResponse: *NewDetermineIfInteractionIsAllowedPostResponse(),
+	}
+	return m
 }
+
 // CreateDetermineIfInteractionIsAllowedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDetermineIfInteractionIsAllowedResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDetermineIfInteractionIsAllowedResponse(), nil
+func CreateDetermineIfInteractionIsAllowedResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDetermineIfInteractionIsAllowedResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use DetermineIfInteractionIsAllowedPostResponseable instead.
 type DetermineIfInteractionIsAllowedResponseable interface {
-    DetermineIfInteractionIsAllowedPostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	DetermineIfInteractionIsAllowedPostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

@@ -4,485 +4,515 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type BrowseQueryResponseItem struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewBrowseQueryResponseItem instantiates a new BrowseQueryResponseItem and sets the default values.
-func NewBrowseQueryResponseItem()(*BrowseQueryResponseItem) {
-    m := &BrowseQueryResponseItem{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewBrowseQueryResponseItem() *BrowseQueryResponseItem {
+	m := &BrowseQueryResponseItem{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreateBrowseQueryResponseItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateBrowseQueryResponseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewBrowseQueryResponseItem(), nil
+func CreateBrowseQueryResponseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewBrowseQueryResponseItem(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *BrowseQueryResponseItem) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *BrowseQueryResponseItem) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *BrowseQueryResponseItem) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *BrowseQueryResponseItem) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetCreatedBy gets the createdBy property value. The identity of the user or application that created the item. Returned only when type is file or folder.
 // returns a IdentitySetable when successful
-func (m *BrowseQueryResponseItem) GetCreatedBy()(IdentitySetable) {
-    val, err := m.GetBackingStore().Get("createdBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySetable)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetCreatedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("createdBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
 }
+
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the item was created. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *BrowseQueryResponseItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *BrowseQueryResponseItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedBy(val.(IdentitySetable))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["itemKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemKey(val)
-        }
-        return nil
-    }
-    res["itemsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemsCount(val)
-        }
-        return nil
-    }
-    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedBy(val.(IdentitySetable))
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetName(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["sizeInBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSizeInBytes(val)
-        }
-        return nil
-    }
-    res["type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBrowseQueryResponseItemType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTypeEscaped(val.(*BrowseQueryResponseItemType))
-        }
-        return nil
-    }
-    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWebUrl(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *BrowseQueryResponseItem) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["createdBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["itemKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetItemKey(val)
+		}
+		return nil
+	}
+	res["itemsCount"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetItemsCount(val)
+		}
+		return nil
+	}
+	res["lastModifiedBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["lastModifiedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedDateTime(val)
+		}
+		return nil
+	}
+	res["name"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetName(val)
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["sizeInBytes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSizeInBytes(val)
+		}
+		return nil
+	}
+	res["type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseBrowseQueryResponseItemType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTypeEscaped(val.(*BrowseQueryResponseItemType))
+		}
+		return nil
+	}
+	res["webUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWebUrl(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetItemKey gets the itemKey property value. Unique identifier of the returned item.
 // returns a *string when successful
-func (m *BrowseQueryResponseItem) GetItemKey()(*string) {
-    val, err := m.GetBackingStore().Get("itemKey")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetItemKey() *string {
+	val, err := m.GetBackingStore().Get("itemKey")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetItemsCount gets the itemsCount property value. The count of items present within the items; for example, the count of files in a folder.
 // returns a *int32 when successful
-func (m *BrowseQueryResponseItem) GetItemsCount()(*int32) {
-    val, err := m.GetBackingStore().Get("itemsCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetItemsCount() *int32 {
+	val, err := m.GetBackingStore().Get("itemsCount")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the user or application that last modified the item. Returned only when type is file or folder.
 // returns a IdentitySetable when successful
-func (m *BrowseQueryResponseItem) GetLastModifiedBy()(IdentitySetable) {
-    val, err := m.GetBackingStore().Get("lastModifiedBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySetable)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetLastModifiedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("lastModifiedBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
 }
+
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the item was last modified. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *BrowseQueryResponseItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetName gets the name property value. The name of the item.
 // returns a *string when successful
-func (m *BrowseQueryResponseItem) GetName()(*string) {
-    val, err := m.GetBackingStore().Get("name")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetName() *string {
+	val, err := m.GetBackingStore().Get("name")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *BrowseQueryResponseItem) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetSizeInBytes gets the sizeInBytes property value. The size of the item in bytes.
 // returns a *string when successful
-func (m *BrowseQueryResponseItem) GetSizeInBytes()(*string) {
-    val, err := m.GetBackingStore().Get("sizeInBytes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetSizeInBytes() *string {
+	val, err := m.GetBackingStore().Get("sizeInBytes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetTypeEscaped gets the type property value. The type property
 // returns a *BrowseQueryResponseItemType when successful
-func (m *BrowseQueryResponseItem) GetTypeEscaped()(*BrowseQueryResponseItemType) {
-    val, err := m.GetBackingStore().Get("typeEscaped")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*BrowseQueryResponseItemType)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetTypeEscaped() *BrowseQueryResponseItemType {
+	val, err := m.GetBackingStore().Get("typeEscaped")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*BrowseQueryResponseItemType)
+	}
+	return nil
 }
+
 // GetWebUrl gets the webUrl property value. The web URL of the item.
 // returns a *string when successful
-func (m *BrowseQueryResponseItem) GetWebUrl()(*string) {
-    val, err := m.GetBackingStore().Get("webUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BrowseQueryResponseItem) GetWebUrl() *string {
+	val, err := m.GetBackingStore().Get("webUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *BrowseQueryResponseItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteObjectValue("createdBy", m.GetCreatedBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("itemKey", m.GetItemKey())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("itemsCount", m.GetItemsCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("name", m.GetName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("sizeInBytes", m.GetSizeInBytes())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTypeEscaped() != nil {
-        cast := (*m.GetTypeEscaped()).String()
-        err := writer.WriteStringValue("type", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("webUrl", m.GetWebUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *BrowseQueryResponseItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteObjectValue("createdBy", m.GetCreatedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("itemKey", m.GetItemKey())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteInt32Value("itemsCount", m.GetItemsCount())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("name", m.GetName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("sizeInBytes", m.GetSizeInBytes())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTypeEscaped() != nil {
+		cast := (*m.GetTypeEscaped()).String()
+		err := writer.WriteStringValue("type", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("webUrl", m.GetWebUrl())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BrowseQueryResponseItem) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *BrowseQueryResponseItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *BrowseQueryResponseItem) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetCreatedBy sets the createdBy property value. The identity of the user or application that created the item. Returned only when type is file or folder.
-func (m *BrowseQueryResponseItem) SetCreatedBy(value IdentitySetable)() {
-    err := m.GetBackingStore().Set("createdBy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetCreatedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("createdBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the item was created. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
-func (m *BrowseQueryResponseItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetItemKey sets the itemKey property value. Unique identifier of the returned item.
-func (m *BrowseQueryResponseItem) SetItemKey(value *string)() {
-    err := m.GetBackingStore().Set("itemKey", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetItemKey(value *string) {
+	err := m.GetBackingStore().Set("itemKey", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetItemsCount sets the itemsCount property value. The count of items present within the items; for example, the count of files in a folder.
-func (m *BrowseQueryResponseItem) SetItemsCount(value *int32)() {
-    err := m.GetBackingStore().Set("itemsCount", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetItemsCount(value *int32) {
+	err := m.GetBackingStore().Set("itemsCount", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity of the user or application that last modified the item. Returned only when type is file or folder.
-func (m *BrowseQueryResponseItem) SetLastModifiedBy(value IdentitySetable)() {
-    err := m.GetBackingStore().Set("lastModifiedBy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetLastModifiedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("lastModifiedBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the item was last modified. Returned only when type is file or folder. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
-func (m *BrowseQueryResponseItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetName sets the name property value. The name of the item.
-func (m *BrowseQueryResponseItem) SetName(value *string)() {
-    err := m.GetBackingStore().Set("name", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetName(value *string) {
+	err := m.GetBackingStore().Set("name", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *BrowseQueryResponseItem) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSizeInBytes sets the sizeInBytes property value. The size of the item in bytes.
-func (m *BrowseQueryResponseItem) SetSizeInBytes(value *string)() {
-    err := m.GetBackingStore().Set("sizeInBytes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetSizeInBytes(value *string) {
+	err := m.GetBackingStore().Set("sizeInBytes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTypeEscaped sets the type property value. The type property
-func (m *BrowseQueryResponseItem) SetTypeEscaped(value *BrowseQueryResponseItemType)() {
-    err := m.GetBackingStore().Set("typeEscaped", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetTypeEscaped(value *BrowseQueryResponseItemType) {
+	err := m.GetBackingStore().Set("typeEscaped", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWebUrl sets the webUrl property value. The web URL of the item.
-func (m *BrowseQueryResponseItem) SetWebUrl(value *string)() {
-    err := m.GetBackingStore().Set("webUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BrowseQueryResponseItem) SetWebUrl(value *string) {
+	err := m.GetBackingStore().Set("webUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type BrowseQueryResponseItemable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCreatedBy()(IdentitySetable)
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetItemKey()(*string)
-    GetItemsCount()(*int32)
-    GetLastModifiedBy()(IdentitySetable)
-    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetName()(*string)
-    GetOdataType()(*string)
-    GetSizeInBytes()(*string)
-    GetTypeEscaped()(*BrowseQueryResponseItemType)
-    GetWebUrl()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCreatedBy(value IdentitySetable)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetItemKey(value *string)()
-    SetItemsCount(value *int32)()
-    SetLastModifiedBy(value IdentitySetable)()
-    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetName(value *string)()
-    SetOdataType(value *string)()
-    SetSizeInBytes(value *string)()
-    SetTypeEscaped(value *BrowseQueryResponseItemType)()
-    SetWebUrl(value *string)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetCreatedBy() IdentitySetable
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetItemKey() *string
+	GetItemsCount() *int32
+	GetLastModifiedBy() IdentitySetable
+	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetName() *string
+	GetOdataType() *string
+	GetSizeInBytes() *string
+	GetTypeEscaped() *BrowseQueryResponseItemType
+	GetWebUrl() *string
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetCreatedBy(value IdentitySetable)
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetItemKey(value *string)
+	SetItemsCount(value *int32)
+	SetLastModifiedBy(value IdentitySetable)
+	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetName(value *string)
+	SetOdataType(value *string)
+	SetSizeInBytes(value *string)
+	SetTypeEscaped(value *BrowseQueryResponseItemType)
+	SetWebUrl(value *string)
 }

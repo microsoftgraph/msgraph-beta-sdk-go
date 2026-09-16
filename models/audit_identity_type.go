@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AuditIdentityType int
 
 const (
-    AGENT_AUDITIDENTITYTYPE AuditIdentityType = iota
-    SERVICEPRINCIPAL_AUDITIDENTITYTYPE
-    UNKNOWNFUTUREVALUE_AUDITIDENTITYTYPE
+	AGENT_AUDITIDENTITYTYPE AuditIdentityType = iota
+	SERVICEPRINCIPAL_AUDITIDENTITYTYPE
+	UNKNOWNFUTUREVALUE_AUDITIDENTITYTYPE
 )
 
 func (i AuditIdentityType) String() string {
-    return []string{"agent", "servicePrincipal", "unknownFutureValue"}[i]
+	return []string{"agent", "servicePrincipal", "unknownFutureValue"}[i]
 }
+
 func ParseAuditIdentityType(v string) (any, error) {
-    result := AGENT_AUDITIDENTITYTYPE
-    switch v {
-        case "agent":
-            result = AGENT_AUDITIDENTITYTYPE
-        case "servicePrincipal":
-            result = SERVICEPRINCIPAL_AUDITIDENTITYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AUDITIDENTITYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AGENT_AUDITIDENTITYTYPE
+	switch v {
+	case "agent":
+		result = AGENT_AUDITIDENTITYTYPE
+	case "servicePrincipal":
+		result = SERVICEPRINCIPAL_AUDITIDENTITYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_AUDITIDENTITYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAuditIdentityType(values []AuditIdentityType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AuditIdentityType) isMultiValue() bool {
-    return false
+	return false
 }

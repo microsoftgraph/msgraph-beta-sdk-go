@@ -4,158 +4,170 @@
 package directory
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // TenantGovernanceGovernanceRequestsRequestBuilder provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
 type TenantGovernanceGovernanceRequestsRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // TenantGovernanceGovernanceRequestsRequestBuilderGetQueryParameters get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
 type TenantGovernanceGovernanceRequestsRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool "uriparametername:\"%24count\""
-    // Expand related entities
-    Expand []string "uriparametername:\"%24expand\""
-    // Filter items by property values
-    Filter *string "uriparametername:\"%24filter\""
-    // Order items by property values
-    Orderby []string "uriparametername:\"%24orderby\""
-    // Search items by search phrases
-    Search *string "uriparametername:\"%24search\""
-    // Select properties to be returned
-    Select []string "uriparametername:\"%24select\""
-    // Skip the first n items
-    Skip *int32 "uriparametername:\"%24skip\""
-    // Show only the first n items
-    Top *int32 "uriparametername:\"%24top\""
+	// Include count of items
+	Count *bool "uriparametername:\"%24count\""
+	// Expand related entities
+	Expand []string "uriparametername:\"%24expand\""
+	// Filter items by property values
+	Filter *string "uriparametername:\"%24filter\""
+	// Order items by property values
+	Orderby []string "uriparametername:\"%24orderby\""
+	// Search items by search phrases
+	Search *string "uriparametername:\"%24search\""
+	// Select properties to be returned
+	Select []string "uriparametername:\"%24select\""
+	// Skip the first n items
+	Skip *int32 "uriparametername:\"%24skip\""
+	// Show only the first n items
+	Top *int32 "uriparametername:\"%24top\""
 }
+
 // TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *TenantGovernanceGovernanceRequestsRequestBuilderGetQueryParameters
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request query parameters
+	QueryParameters *TenantGovernanceGovernanceRequestsRequestBuilderGetQueryParameters
 }
+
 // TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // ByGovernanceRequestId provides operations to manage the governanceRequests property of the microsoft.graph.tenantGovernance entity.
 // returns a *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ByGovernanceRequestId(governanceRequestId string)(*TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if governanceRequestId != "" {
-        urlTplParams["governanceRequest%2Did"] = governanceRequestId
-    }
-    return NewTenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ByGovernanceRequestId(governanceRequestId string) *TenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilder {
+	urlTplParams := make(map[string]string)
+	for idx, item := range m.BaseRequestBuilder.PathParameters {
+		urlTplParams[idx] = item
+	}
+	if governanceRequestId != "" {
+		urlTplParams["governanceRequest%2Did"] = governanceRequestId
+	}
+	return NewTenantGovernanceGovernanceRequestsGovernanceRequestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // NewTenantGovernanceGovernanceRequestsRequestBuilderInternal instantiates a new TenantGovernanceGovernanceRequestsRequestBuilder and sets the default values.
-func NewTenantGovernanceGovernanceRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceGovernanceRequestsRequestBuilder) {
-    m := &TenantGovernanceGovernanceRequestsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/governanceRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
-    }
-    return m
+func NewTenantGovernanceGovernanceRequestsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *TenantGovernanceGovernanceRequestsRequestBuilder {
+	m := &TenantGovernanceGovernanceRequestsRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/governanceRequests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+	}
+	return m
 }
+
 // NewTenantGovernanceGovernanceRequestsRequestBuilder instantiates a new TenantGovernanceGovernanceRequestsRequestBuilder and sets the default values.
-func NewTenantGovernanceGovernanceRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceGovernanceRequestsRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewTenantGovernanceGovernanceRequestsRequestBuilderInternal(urlParams, requestAdapter)
+func NewTenantGovernanceGovernanceRequestsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *TenantGovernanceGovernanceRequestsRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewTenantGovernanceGovernanceRequestsRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Count provides operations to count the resources in the collection.
 // returns a *TenantGovernanceGovernanceRequestsCountRequestBuilder when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Count()(*TenantGovernanceGovernanceRequestsCountRequestBuilder) {
-    return NewTenantGovernanceGovernanceRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Count() *TenantGovernanceGovernanceRequestsCountRequestBuilder {
+	return NewTenantGovernanceGovernanceRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // Get get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
 // returns a GovernanceRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-list-governancerequests?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestCollectionResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable), nil
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable, error) {
+	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestCollectionResponseFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestCollectionResponseable), nil
 }
+
 // Post create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
 // returns a GovernanceRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/tenantgovernanceservices-post-governancerequests?view=graph-rest-beta
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable), nil
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, error) {
+	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateGovernanceRequestFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable), nil
 }
+
 // ToGetRequestInformation get a list of the governanceRequest objects and their properties. This API method returns all governance requests where the calling tenant is either the governing tenant or the governed tenant.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		if requestConfiguration.QueryParameters != nil {
+			requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+		}
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // ToPostRequestInformation create a new governanceRequest to establish a governance relationship with a governed tenant. The governed tenant can then accept or reject the request.
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    return requestInfo, nil
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRequestable, requestConfiguration *TenantGovernanceGovernanceRequestsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *TenantGovernanceGovernanceRequestsRequestBuilder when successful
-func (m *TenantGovernanceGovernanceRequestsRequestBuilder) WithUrl(rawUrl string)(*TenantGovernanceGovernanceRequestsRequestBuilder) {
-    return NewTenantGovernanceGovernanceRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *TenantGovernanceGovernanceRequestsRequestBuilder) WithUrl(rawUrl string) *TenantGovernanceGovernanceRequestsRequestBuilder {
+	return NewTenantGovernanceGovernanceRequestsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

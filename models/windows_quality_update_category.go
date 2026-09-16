@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Windows quality update category
 type WindowsQualityUpdateCategory int
 
 const (
-    // All update type
-    ALL_WINDOWSQUALITYUPDATECATEGORY WindowsQualityUpdateCategory = iota
-    // Security only update type
-    SECURITY_WINDOWSQUALITYUPDATECATEGORY
-    // Non security only update type
-    NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
-    // Quick machine recovery update type
-    QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
+	// All update type
+	ALL_WINDOWSQUALITYUPDATECATEGORY WindowsQualityUpdateCategory = iota
+	// Security only update type
+	SECURITY_WINDOWSQUALITYUPDATECATEGORY
+	// Non security only update type
+	NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
+	// Quick machine recovery update type
+	QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
 )
 
 func (i WindowsQualityUpdateCategory) String() string {
-    return []string{"all", "security", "nonSecurity", "unknownFutureValue", "quickMachineRecovery"}[i]
+	return []string{"all", "security", "nonSecurity", "unknownFutureValue", "quickMachineRecovery"}[i]
 }
+
 func ParseWindowsQualityUpdateCategory(v string) (any, error) {
-    result := ALL_WINDOWSQUALITYUPDATECATEGORY
-    switch v {
-        case "all":
-            result = ALL_WINDOWSQUALITYUPDATECATEGORY
-        case "security":
-            result = SECURITY_WINDOWSQUALITYUPDATECATEGORY
-        case "nonSecurity":
-            result = NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
-        case "quickMachineRecovery":
-            result = QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALL_WINDOWSQUALITYUPDATECATEGORY
+	switch v {
+	case "all":
+		result = ALL_WINDOWSQUALITYUPDATECATEGORY
+	case "security":
+		result = SECURITY_WINDOWSQUALITYUPDATECATEGORY
+	case "nonSecurity":
+		result = NONSECURITY_WINDOWSQUALITYUPDATECATEGORY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WINDOWSQUALITYUPDATECATEGORY
+	case "quickMachineRecovery":
+		result = QUICKMACHINERECOVERY_WINDOWSQUALITYUPDATECATEGORY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsQualityUpdateCategory(values []WindowsQualityUpdateCategory) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsQualityUpdateCategory) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,334 +4,353 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type PeopleAdminSettings struct {
-    Entity
+	Entity
 }
+
 // NewPeopleAdminSettings instantiates a new PeopleAdminSettings and sets the default values.
-func NewPeopleAdminSettings()(*PeopleAdminSettings) {
-    m := &PeopleAdminSettings{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewPeopleAdminSettings() *PeopleAdminSettings {
+	m := &PeopleAdminSettings{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreatePeopleAdminSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePeopleAdminSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPeopleAdminSettings(), nil
+func CreatePeopleAdminSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPeopleAdminSettings(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["itemInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateInsightsSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemInsights(val.(InsightsSettingsable))
-        }
-        return nil
-    }
-    res["namePronunciation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateNamePronunciationSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNamePronunciation(val.(NamePronunciationSettingsable))
-        }
-        return nil
-    }
-    res["photoUpdateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePhotoUpdateSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPhotoUpdateSettings(val.(PhotoUpdateSettingsable))
-        }
-        return nil
-    }
-    res["profileCardProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProfileCardPropertyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProfileCardPropertyable)
-                }
-            }
-            m.SetProfileCardProperties(res)
-        }
-        return nil
-    }
-    res["profilePropertySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProfilePropertySettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProfilePropertySettingable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProfilePropertySettingable)
-                }
-            }
-            m.SetProfilePropertySettings(res)
-        }
-        return nil
-    }
-    res["profileSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProfileSourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProfileSourceable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProfileSourceable)
-                }
-            }
-            m.SetProfileSources(res)
-        }
-        return nil
-    }
-    res["pronouns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPronouns(val.(PronounsSettingsable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PeopleAdminSettings) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["itemInsights"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateInsightsSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetItemInsights(val.(InsightsSettingsable))
+		}
+		return nil
+	}
+	res["namePronunciation"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateNamePronunciationSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetNamePronunciation(val.(NamePronunciationSettingsable))
+		}
+		return nil
+	}
+	res["photoUpdateSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePhotoUpdateSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPhotoUpdateSettings(val.(PhotoUpdateSettingsable))
+		}
+		return nil
+	}
+	res["profileCardProperties"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ProfileCardPropertyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ProfileCardPropertyable)
+				}
+			}
+			m.SetProfileCardProperties(res)
+		}
+		return nil
+	}
+	res["profilePropertySettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateProfilePropertySettingFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ProfilePropertySettingable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ProfilePropertySettingable)
+				}
+			}
+			m.SetProfilePropertySettings(res)
+		}
+		return nil
+	}
+	res["profileSources"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateProfileSourceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ProfileSourceable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ProfileSourceable)
+				}
+			}
+			m.SetProfileSources(res)
+		}
+		return nil
+	}
+	res["pronouns"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPronouns(val.(PronounsSettingsable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetItemInsights gets the itemInsights property value. Administrator settings that manage the support for item insights in an organization.
 // returns a InsightsSettingsable when successful
-func (m *PeopleAdminSettings) GetItemInsights()(InsightsSettingsable) {
-    val, err := m.GetBackingStore().Get("itemInsights")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(InsightsSettingsable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetItemInsights() InsightsSettingsable {
+	val, err := m.GetBackingStore().Get("itemInsights")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(InsightsSettingsable)
+	}
+	return nil
 }
+
 // GetNamePronunciation gets the namePronunciation property value. Administrator settings that manage the support of name pronunciation in an organization.
 // returns a NamePronunciationSettingsable when successful
-func (m *PeopleAdminSettings) GetNamePronunciation()(NamePronunciationSettingsable) {
-    val, err := m.GetBackingStore().Get("namePronunciation")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(NamePronunciationSettingsable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetNamePronunciation() NamePronunciationSettingsable {
+	val, err := m.GetBackingStore().Get("namePronunciation")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(NamePronunciationSettingsable)
+	}
+	return nil
 }
+
 // GetPhotoUpdateSettings gets the photoUpdateSettings property value. Administrator settings that manage the support for item photo updates in an organization.
 // returns a PhotoUpdateSettingsable when successful
-func (m *PeopleAdminSettings) GetPhotoUpdateSettings()(PhotoUpdateSettingsable) {
-    val, err := m.GetBackingStore().Get("photoUpdateSettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PhotoUpdateSettingsable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetPhotoUpdateSettings() PhotoUpdateSettingsable {
+	val, err := m.GetBackingStore().Get("photoUpdateSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PhotoUpdateSettingsable)
+	}
+	return nil
 }
+
 // GetProfileCardProperties gets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 // returns a []ProfileCardPropertyable when successful
-func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
-    val, err := m.GetBackingStore().Get("profileCardProperties")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProfileCardPropertyable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetProfileCardProperties() []ProfileCardPropertyable {
+	val, err := m.GetBackingStore().Get("profileCardProperties")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ProfileCardPropertyable)
+	}
+	return nil
 }
+
 // GetProfilePropertySettings gets the profilePropertySettings property value. A collection of profile property configuration settings defined by an administrator for an organization.
 // returns a []ProfilePropertySettingable when successful
-func (m *PeopleAdminSettings) GetProfilePropertySettings()([]ProfilePropertySettingable) {
-    val, err := m.GetBackingStore().Get("profilePropertySettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProfilePropertySettingable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetProfilePropertySettings() []ProfilePropertySettingable {
+	val, err := m.GetBackingStore().Get("profilePropertySettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ProfilePropertySettingable)
+	}
+	return nil
 }
+
 // GetProfileSources gets the profileSources property value. A collection of profile source settings configured by an administrator in an organization.
 // returns a []ProfileSourceable when successful
-func (m *PeopleAdminSettings) GetProfileSources()([]ProfileSourceable) {
-    val, err := m.GetBackingStore().Get("profileSources")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProfileSourceable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetProfileSources() []ProfileSourceable {
+	val, err := m.GetBackingStore().Get("profileSources")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ProfileSourceable)
+	}
+	return nil
 }
+
 // GetPronouns gets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
 // returns a PronounsSettingsable when successful
-func (m *PeopleAdminSettings) GetPronouns()(PronounsSettingsable) {
-    val, err := m.GetBackingStore().Get("pronouns")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PronounsSettingsable)
-    }
-    return nil
+func (m *PeopleAdminSettings) GetPronouns() PronounsSettingsable {
+	val, err := m.GetBackingStore().Get("pronouns")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PronounsSettingsable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("itemInsights", m.GetItemInsights())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("namePronunciation", m.GetNamePronunciation())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("photoUpdateSettings", m.GetPhotoUpdateSettings())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProfileCardProperties() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
-        for i, v := range m.GetProfileCardProperties() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("profileCardProperties", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProfilePropertySettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfilePropertySettings()))
-        for i, v := range m.GetProfilePropertySettings() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("profilePropertySettings", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProfileSources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileSources()))
-        for i, v := range m.GetProfileSources() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("profileSources", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("pronouns", m.GetPronouns())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("itemInsights", m.GetItemInsights())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("namePronunciation", m.GetNamePronunciation())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("photoUpdateSettings", m.GetPhotoUpdateSettings())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProfileCardProperties() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
+		for i, v := range m.GetProfileCardProperties() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("profileCardProperties", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProfilePropertySettings() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfilePropertySettings()))
+		for i, v := range m.GetProfilePropertySettings() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("profilePropertySettings", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProfileSources() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileSources()))
+		for i, v := range m.GetProfileSources() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("profileSources", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("pronouns", m.GetPronouns())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetItemInsights sets the itemInsights property value. Administrator settings that manage the support for item insights in an organization.
-func (m *PeopleAdminSettings) SetItemInsights(value InsightsSettingsable)() {
-    err := m.GetBackingStore().Set("itemInsights", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetItemInsights(value InsightsSettingsable) {
+	err := m.GetBackingStore().Set("itemInsights", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetNamePronunciation sets the namePronunciation property value. Administrator settings that manage the support of name pronunciation in an organization.
-func (m *PeopleAdminSettings) SetNamePronunciation(value NamePronunciationSettingsable)() {
-    err := m.GetBackingStore().Set("namePronunciation", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetNamePronunciation(value NamePronunciationSettingsable) {
+	err := m.GetBackingStore().Set("namePronunciation", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPhotoUpdateSettings sets the photoUpdateSettings property value. Administrator settings that manage the support for item photo updates in an organization.
-func (m *PeopleAdminSettings) SetPhotoUpdateSettings(value PhotoUpdateSettingsable)() {
-    err := m.GetBackingStore().Set("photoUpdateSettings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetPhotoUpdateSettings(value PhotoUpdateSettingsable) {
+	err := m.GetBackingStore().Set("photoUpdateSettings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProfileCardProperties sets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
-func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
-    err := m.GetBackingStore().Set("profileCardProperties", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable) {
+	err := m.GetBackingStore().Set("profileCardProperties", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProfilePropertySettings sets the profilePropertySettings property value. A collection of profile property configuration settings defined by an administrator for an organization.
-func (m *PeopleAdminSettings) SetProfilePropertySettings(value []ProfilePropertySettingable)() {
-    err := m.GetBackingStore().Set("profilePropertySettings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetProfilePropertySettings(value []ProfilePropertySettingable) {
+	err := m.GetBackingStore().Set("profilePropertySettings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProfileSources sets the profileSources property value. A collection of profile source settings configured by an administrator in an organization.
-func (m *PeopleAdminSettings) SetProfileSources(value []ProfileSourceable)() {
-    err := m.GetBackingStore().Set("profileSources", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetProfileSources(value []ProfileSourceable) {
+	err := m.GetBackingStore().Set("profileSources", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPronouns sets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
-func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
-    err := m.GetBackingStore().Set("pronouns", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable) {
+	err := m.GetBackingStore().Set("pronouns", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PeopleAdminSettingsable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetItemInsights()(InsightsSettingsable)
-    GetNamePronunciation()(NamePronunciationSettingsable)
-    GetPhotoUpdateSettings()(PhotoUpdateSettingsable)
-    GetProfileCardProperties()([]ProfileCardPropertyable)
-    GetProfilePropertySettings()([]ProfilePropertySettingable)
-    GetProfileSources()([]ProfileSourceable)
-    GetPronouns()(PronounsSettingsable)
-    SetItemInsights(value InsightsSettingsable)()
-    SetNamePronunciation(value NamePronunciationSettingsable)()
-    SetPhotoUpdateSettings(value PhotoUpdateSettingsable)()
-    SetProfileCardProperties(value []ProfileCardPropertyable)()
-    SetProfilePropertySettings(value []ProfilePropertySettingable)()
-    SetProfileSources(value []ProfileSourceable)()
-    SetPronouns(value PronounsSettingsable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetItemInsights() InsightsSettingsable
+	GetNamePronunciation() NamePronunciationSettingsable
+	GetPhotoUpdateSettings() PhotoUpdateSettingsable
+	GetProfileCardProperties() []ProfileCardPropertyable
+	GetProfilePropertySettings() []ProfilePropertySettingable
+	GetProfileSources() []ProfileSourceable
+	GetPronouns() PronounsSettingsable
+	SetItemInsights(value InsightsSettingsable)
+	SetNamePronunciation(value NamePronunciationSettingsable)
+	SetPhotoUpdateSettings(value PhotoUpdateSettingsable)
+	SetProfileCardProperties(value []ProfileCardPropertyable)
+	SetProfilePropertySettings(value []ProfilePropertySettingable)
+	SetProfileSources(value []ProfileSourceable)
+	SetPronouns(value PronounsSettingsable)
 }

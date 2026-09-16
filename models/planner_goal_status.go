@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlannerGoalStatus int
 
 const (
-    NOTSTARTED_PLANNERGOALSTATUS PlannerGoalStatus = iota
-    ONTRACK_PLANNERGOALSTATUS
-    BEHIND_PLANNERGOALSTATUS
-    ATRISK_PLANNERGOALSTATUS
-    CLOSED_PLANNERGOALSTATUS
-    UNKNOWNFUTUREVALUE_PLANNERGOALSTATUS
+	NOTSTARTED_PLANNERGOALSTATUS PlannerGoalStatus = iota
+	ONTRACK_PLANNERGOALSTATUS
+	BEHIND_PLANNERGOALSTATUS
+	ATRISK_PLANNERGOALSTATUS
+	CLOSED_PLANNERGOALSTATUS
+	UNKNOWNFUTUREVALUE_PLANNERGOALSTATUS
 )
 
 func (i PlannerGoalStatus) String() string {
-    return []string{"notStarted", "onTrack", "behind", "atRisk", "closed", "unknownFutureValue"}[i]
+	return []string{"notStarted", "onTrack", "behind", "atRisk", "closed", "unknownFutureValue"}[i]
 }
+
 func ParsePlannerGoalStatus(v string) (any, error) {
-    result := NOTSTARTED_PLANNERGOALSTATUS
-    switch v {
-        case "notStarted":
-            result = NOTSTARTED_PLANNERGOALSTATUS
-        case "onTrack":
-            result = ONTRACK_PLANNERGOALSTATUS
-        case "behind":
-            result = BEHIND_PLANNERGOALSTATUS
-        case "atRisk":
-            result = ATRISK_PLANNERGOALSTATUS
-        case "closed":
-            result = CLOSED_PLANNERGOALSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERGOALSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTSTARTED_PLANNERGOALSTATUS
+	switch v {
+	case "notStarted":
+		result = NOTSTARTED_PLANNERGOALSTATUS
+	case "onTrack":
+		result = ONTRACK_PLANNERGOALSTATUS
+	case "behind":
+		result = BEHIND_PLANNERGOALSTATUS
+	case "atRisk":
+		result = ATRISK_PLANNERGOALSTATUS
+	case "closed":
+		result = CLOSED_PLANNERGOALSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLANNERGOALSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlannerGoalStatus(values []PlannerGoalStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlannerGoalStatus) isMultiValue() bool {
-    return false
+	return false
 }

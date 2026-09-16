@@ -4,27 +4,30 @@
 package groups
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemSitesItemRecycleBinItemsRestorePostResponseable instead.
 type ItemSitesItemRecycleBinItemsRestoreResponse struct {
-    ItemSitesItemRecycleBinItemsRestorePostResponse
+	ItemSitesItemRecycleBinItemsRestorePostResponse
 }
+
 // NewItemSitesItemRecycleBinItemsRestoreResponse instantiates a new ItemSitesItemRecycleBinItemsRestoreResponse and sets the default values.
-func NewItemSitesItemRecycleBinItemsRestoreResponse()(*ItemSitesItemRecycleBinItemsRestoreResponse) {
-    m := &ItemSitesItemRecycleBinItemsRestoreResponse{
-        ItemSitesItemRecycleBinItemsRestorePostResponse: *NewItemSitesItemRecycleBinItemsRestorePostResponse(),
-    }
-    return m
+func NewItemSitesItemRecycleBinItemsRestoreResponse() *ItemSitesItemRecycleBinItemsRestoreResponse {
+	m := &ItemSitesItemRecycleBinItemsRestoreResponse{
+		ItemSitesItemRecycleBinItemsRestorePostResponse: *NewItemSitesItemRecycleBinItemsRestorePostResponse(),
+	}
+	return m
 }
+
 // CreateItemSitesItemRecycleBinItemsRestoreResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemSitesItemRecycleBinItemsRestoreResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemSitesItemRecycleBinItemsRestoreResponse(), nil
+func CreateItemSitesItemRecycleBinItemsRestoreResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemSitesItemRecycleBinItemsRestoreResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemSitesItemRecycleBinItemsRestorePostResponseable instead.
 type ItemSitesItemRecycleBinItemsRestoreResponseable interface {
-    ItemSitesItemRecycleBinItemsRestorePostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemSitesItemRecycleBinItemsRestorePostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

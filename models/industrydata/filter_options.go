@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package industrydata
+
 type FilterOptions int
 
 const (
-    ORGEXTERNALID_FILTEROPTIONS FilterOptions = iota
-    UNKNOWNFUTUREVALUE_FILTEROPTIONS
+	ORGEXTERNALID_FILTEROPTIONS FilterOptions = iota
+	UNKNOWNFUTUREVALUE_FILTEROPTIONS
 )
 
 func (i FilterOptions) String() string {
-    return []string{"orgExternalId", "unknownFutureValue"}[i]
+	return []string{"orgExternalId", "unknownFutureValue"}[i]
 }
+
 func ParseFilterOptions(v string) (any, error) {
-    result := ORGEXTERNALID_FILTEROPTIONS
-    switch v {
-        case "orgExternalId":
-            result = ORGEXTERNALID_FILTEROPTIONS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_FILTEROPTIONS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ORGEXTERNALID_FILTEROPTIONS
+	switch v {
+	case "orgExternalId":
+		result = ORGEXTERNALID_FILTEROPTIONS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_FILTEROPTIONS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeFilterOptions(values []FilterOptions) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i FilterOptions) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AgentEndpointConfigurationType int
 
 const (
-    APIBASED_AGENTENDPOINTCONFIGURATIONTYPE AgentEndpointConfigurationType = iota
-    BOTBASED_AGENTENDPOINTCONFIGURATIONTYPE
-    UNKNOWNFUTUREVALUE_AGENTENDPOINTCONFIGURATIONTYPE
+	APIBASED_AGENTENDPOINTCONFIGURATIONTYPE AgentEndpointConfigurationType = iota
+	BOTBASED_AGENTENDPOINTCONFIGURATIONTYPE
+	UNKNOWNFUTUREVALUE_AGENTENDPOINTCONFIGURATIONTYPE
 )
 
 func (i AgentEndpointConfigurationType) String() string {
-    return []string{"apiBased", "botBased", "unknownFutureValue"}[i]
+	return []string{"apiBased", "botBased", "unknownFutureValue"}[i]
 }
+
 func ParseAgentEndpointConfigurationType(v string) (any, error) {
-    result := APIBASED_AGENTENDPOINTCONFIGURATIONTYPE
-    switch v {
-        case "apiBased":
-            result = APIBASED_AGENTENDPOINTCONFIGURATIONTYPE
-        case "botBased":
-            result = BOTBASED_AGENTENDPOINTCONFIGURATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AGENTENDPOINTCONFIGURATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APIBASED_AGENTENDPOINTCONFIGURATIONTYPE
+	switch v {
+	case "apiBased":
+		result = APIBASED_AGENTENDPOINTCONFIGURATIONTYPE
+	case "botBased":
+		result = BOTBASED_AGENTENDPOINTCONFIGURATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_AGENTENDPOINTCONFIGURATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAgentEndpointConfigurationType(values []AgentEndpointConfigurationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AgentEndpointConfigurationType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,293 +4,310 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type CallEvent struct {
-    Entity
+	Entity
 }
+
 // NewCallEvent instantiates a new CallEvent and sets the default values.
-func NewCallEvent()(*CallEvent) {
-    m := &CallEvent{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewCallEvent() *CallEvent {
+	m := &CallEvent{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateCallEventFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCallEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                switch *mappingValue {
-                    case "#microsoft.graph.emergencyCallEvent":
-                        return NewEmergencyCallEvent(), nil
-                }
-            }
-        }
-    }
-    return NewCallEvent(), nil
+func CreateCallEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	if parseNode != nil {
+		mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+		if err != nil {
+			return nil, err
+		}
+		if mappingValueNode != nil {
+			mappingValue, err := mappingValueNode.GetStringValue()
+			if err != nil {
+				return nil, err
+			}
+			if mappingValue != nil {
+				switch *mappingValue {
+				case "#microsoft.graph.emergencyCallEvent":
+					return NewEmergencyCallEvent(), nil
+				}
+			}
+		}
+	}
+	return NewCallEvent(), nil
 }
+
 // GetCallConversationId gets the callConversationId property value. The callConversationId property
 // returns a *string when successful
-func (m *CallEvent) GetCallConversationId()(*string) {
-    val, err := m.GetBackingStore().Get("callConversationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *CallEvent) GetCallConversationId() *string {
+	val, err := m.GetBackingStore().Get("callConversationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetCallEventType gets the callEventType property value. The event type of the call. The possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.
 // returns a *CallEventType when successful
-func (m *CallEvent) GetCallEventType()(*CallEventType) {
-    val, err := m.GetBackingStore().Get("callEventType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*CallEventType)
-    }
-    return nil
+func (m *CallEvent) GetCallEventType() *CallEventType {
+	val, err := m.GetBackingStore().Get("callEventType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*CallEventType)
+	}
+	return nil
 }
+
 // GetEventDateTime gets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("eventDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *CallEvent) GetEventDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("eventDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["callConversationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCallConversationId(val)
-        }
-        return nil
-    }
-    res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCallEventType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCallEventType(val.(*CallEventType))
-        }
-        return nil
-    }
-    res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEventDateTime(val)
-        }
-        return nil
-    }
-    res["participants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Participantable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(Participantable)
-                }
-            }
-            m.SetParticipants(res)
-        }
-        return nil
-    }
-    res["recordingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateRecordingStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecordingState(val.(RecordingStateable))
-        }
-        return nil
-    }
-    res["transcriptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTranscriptionStateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTranscriptionState(val.(TranscriptionStateable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CallEvent) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["callConversationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCallConversationId(val)
+		}
+		return nil
+	}
+	res["callEventType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseCallEventType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCallEventType(val.(*CallEventType))
+		}
+		return nil
+	}
+	res["eventDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEventDateTime(val)
+		}
+		return nil
+	}
+	res["participants"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateParticipantFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]Participantable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(Participantable)
+				}
+			}
+			m.SetParticipants(res)
+		}
+		return nil
+	}
+	res["recordingState"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateRecordingStateFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRecordingState(val.(RecordingStateable))
+		}
+		return nil
+	}
+	res["transcriptionState"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTranscriptionStateFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTranscriptionState(val.(TranscriptionStateable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetParticipants gets the participants property value. Participants collection for the call event.
 // returns a []Participantable when successful
-func (m *CallEvent) GetParticipants()([]Participantable) {
-    val, err := m.GetBackingStore().Get("participants")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]Participantable)
-    }
-    return nil
+func (m *CallEvent) GetParticipants() []Participantable {
+	val, err := m.GetBackingStore().Get("participants")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]Participantable)
+	}
+	return nil
 }
+
 // GetRecordingState gets the recordingState property value. The recordingState property
 // returns a RecordingStateable when successful
-func (m *CallEvent) GetRecordingState()(RecordingStateable) {
-    val, err := m.GetBackingStore().Get("recordingState")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(RecordingStateable)
-    }
-    return nil
+func (m *CallEvent) GetRecordingState() RecordingStateable {
+	val, err := m.GetBackingStore().Get("recordingState")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(RecordingStateable)
+	}
+	return nil
 }
+
 // GetTranscriptionState gets the transcriptionState property value. The transcriptionState property
 // returns a TranscriptionStateable when successful
-func (m *CallEvent) GetTranscriptionState()(TranscriptionStateable) {
-    val, err := m.GetBackingStore().Get("transcriptionState")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(TranscriptionStateable)
-    }
-    return nil
+func (m *CallEvent) GetTranscriptionState() TranscriptionStateable {
+	val, err := m.GetBackingStore().Get("transcriptionState")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TranscriptionStateable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("callConversationId", m.GetCallConversationId())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCallEventType() != nil {
-        cast := (*m.GetCallEventType()).String()
-        err = writer.WriteStringValue("callEventType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetParticipants() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
-        for i, v := range m.GetParticipants() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("participants", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("recordingState", m.GetRecordingState())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("transcriptionState", m.GetTranscriptionState())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("callConversationId", m.GetCallConversationId())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCallEventType() != nil {
+		cast := (*m.GetCallEventType()).String()
+		err = writer.WriteStringValue("callEventType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetParticipants() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetParticipants()))
+		for i, v := range m.GetParticipants() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("participants", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("recordingState", m.GetRecordingState())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("transcriptionState", m.GetTranscriptionState())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetCallConversationId sets the callConversationId property value. The callConversationId property
-func (m *CallEvent) SetCallConversationId(value *string)() {
-    err := m.GetBackingStore().Set("callConversationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetCallConversationId(value *string) {
+	err := m.GetBackingStore().Set("callConversationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCallEventType sets the callEventType property value. The event type of the call. The possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.
-func (m *CallEvent) SetCallEventType(value *CallEventType)() {
-    err := m.GetBackingStore().Set("callEventType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetCallEventType(value *CallEventType) {
+	err := m.GetBackingStore().Set("callEventType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetEventDateTime sets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("eventDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("eventDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetParticipants sets the participants property value. Participants collection for the call event.
-func (m *CallEvent) SetParticipants(value []Participantable)() {
-    err := m.GetBackingStore().Set("participants", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetParticipants(value []Participantable) {
+	err := m.GetBackingStore().Set("participants", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRecordingState sets the recordingState property value. The recordingState property
-func (m *CallEvent) SetRecordingState(value RecordingStateable)() {
-    err := m.GetBackingStore().Set("recordingState", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetRecordingState(value RecordingStateable) {
+	err := m.GetBackingStore().Set("recordingState", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTranscriptionState sets the transcriptionState property value. The transcriptionState property
-func (m *CallEvent) SetTranscriptionState(value TranscriptionStateable)() {
-    err := m.GetBackingStore().Set("transcriptionState", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CallEvent) SetTranscriptionState(value TranscriptionStateable) {
+	err := m.GetBackingStore().Set("transcriptionState", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type CallEventable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCallConversationId()(*string)
-    GetCallEventType()(*CallEventType)
-    GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetParticipants()([]Participantable)
-    GetRecordingState()(RecordingStateable)
-    GetTranscriptionState()(TranscriptionStateable)
-    SetCallConversationId(value *string)()
-    SetCallEventType(value *CallEventType)()
-    SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetParticipants(value []Participantable)()
-    SetRecordingState(value RecordingStateable)()
-    SetTranscriptionState(value TranscriptionStateable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCallConversationId() *string
+	GetCallEventType() *CallEventType
+	GetEventDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetParticipants() []Participantable
+	GetRecordingState() RecordingStateable
+	GetTranscriptionState() TranscriptionStateable
+	SetCallConversationId(value *string)
+	SetCallEventType(value *CallEventType)
+	SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetParticipants(value []Participantable)
+	SetRecordingState(value RecordingStateable)
+	SetTranscriptionState(value TranscriptionStateable)
 }

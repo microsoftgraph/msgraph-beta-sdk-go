@@ -2,82 +2,86 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Define the platform type for which the admin wants to create the device clean up rule
 type DeviceCleanupRulePlatformType int
 
 const (
-    // Default. Indicates that clean up rule is associated with all managed device platform.
-    ALL_DEVICECLEANUPRULEPLATFORMTYPE DeviceCleanupRulePlatformType = iota
-    // Indicates that clean up rule is associated with Android open source project managed device platform.
-    ANDROIDAOSP_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with Android device administrator managed device platform.
-    ANDROIDDEVICEADMINISTRATOR_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with Android dedicated and fully managed and Corporate Owned Work Profile managed device platform.
-    ANDROIDDEDICATEDANDFULLYMANAGEDCORPORATEOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with ChromeOS managed device platform.
-    CHROMEOS_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with Android personally owned work profile managed device platform.
-    ANDROIDPERSONALLYOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with IOS managed device platform.
-    IOS_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with MacOS managed device platform.
-    MACOS_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with Windows managed device platform.
-    WINDOWS_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with Windows Holographic managed device platform.
-    WINDOWSHOLOGRAPHIC_DEVICECLEANUPRULEPLATFORMTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with visionOS managed device platform.
-    VISIONOS_DEVICECLEANUPRULEPLATFORMTYPE
-    // Indicates that clean up rule is associated with tvOS managed device platform.
-    TVOS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Default. Indicates that clean up rule is associated with all managed device platform.
+	ALL_DEVICECLEANUPRULEPLATFORMTYPE DeviceCleanupRulePlatformType = iota
+	// Indicates that clean up rule is associated with Android open source project managed device platform.
+	ANDROIDAOSP_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with Android device administrator managed device platform.
+	ANDROIDDEVICEADMINISTRATOR_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with Android dedicated and fully managed and Corporate Owned Work Profile managed device platform.
+	ANDROIDDEDICATEDANDFULLYMANAGEDCORPORATEOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with ChromeOS managed device platform.
+	CHROMEOS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with Android personally owned work profile managed device platform.
+	ANDROIDPERSONALLYOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with IOS managed device platform.
+	IOS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with MacOS managed device platform.
+	MACOS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with Windows managed device platform.
+	WINDOWS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with Windows Holographic managed device platform.
+	WINDOWSHOLOGRAPHIC_DEVICECLEANUPRULEPLATFORMTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with visionOS managed device platform.
+	VISIONOS_DEVICECLEANUPRULEPLATFORMTYPE
+	// Indicates that clean up rule is associated with tvOS managed device platform.
+	TVOS_DEVICECLEANUPRULEPLATFORMTYPE
 )
 
 func (i DeviceCleanupRulePlatformType) String() string {
-    return []string{"all", "androidAOSP", "androidDeviceAdministrator", "androidDedicatedAndFullyManagedCorporateOwnedWorkProfile", "chromeOS", "androidPersonallyOwnedWorkProfile", "ios", "macOS", "windows", "windowsHolographic", "unknownFutureValue", "visionOS", "tvOS"}[i]
+	return []string{"all", "androidAOSP", "androidDeviceAdministrator", "androidDedicatedAndFullyManagedCorporateOwnedWorkProfile", "chromeOS", "androidPersonallyOwnedWorkProfile", "ios", "macOS", "windows", "windowsHolographic", "unknownFutureValue", "visionOS", "tvOS"}[i]
 }
+
 func ParseDeviceCleanupRulePlatformType(v string) (any, error) {
-    result := ALL_DEVICECLEANUPRULEPLATFORMTYPE
-    switch v {
-        case "all":
-            result = ALL_DEVICECLEANUPRULEPLATFORMTYPE
-        case "androidAOSP":
-            result = ANDROIDAOSP_DEVICECLEANUPRULEPLATFORMTYPE
-        case "androidDeviceAdministrator":
-            result = ANDROIDDEVICEADMINISTRATOR_DEVICECLEANUPRULEPLATFORMTYPE
-        case "androidDedicatedAndFullyManagedCorporateOwnedWorkProfile":
-            result = ANDROIDDEDICATEDANDFULLYMANAGEDCORPORATEOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
-        case "chromeOS":
-            result = CHROMEOS_DEVICECLEANUPRULEPLATFORMTYPE
-        case "androidPersonallyOwnedWorkProfile":
-            result = ANDROIDPERSONALLYOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
-        case "ios":
-            result = IOS_DEVICECLEANUPRULEPLATFORMTYPE
-        case "macOS":
-            result = MACOS_DEVICECLEANUPRULEPLATFORMTYPE
-        case "windows":
-            result = WINDOWS_DEVICECLEANUPRULEPLATFORMTYPE
-        case "windowsHolographic":
-            result = WINDOWSHOLOGRAPHIC_DEVICECLEANUPRULEPLATFORMTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICECLEANUPRULEPLATFORMTYPE
-        case "visionOS":
-            result = VISIONOS_DEVICECLEANUPRULEPLATFORMTYPE
-        case "tvOS":
-            result = TVOS_DEVICECLEANUPRULEPLATFORMTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALL_DEVICECLEANUPRULEPLATFORMTYPE
+	switch v {
+	case "all":
+		result = ALL_DEVICECLEANUPRULEPLATFORMTYPE
+	case "androidAOSP":
+		result = ANDROIDAOSP_DEVICECLEANUPRULEPLATFORMTYPE
+	case "androidDeviceAdministrator":
+		result = ANDROIDDEVICEADMINISTRATOR_DEVICECLEANUPRULEPLATFORMTYPE
+	case "androidDedicatedAndFullyManagedCorporateOwnedWorkProfile":
+		result = ANDROIDDEDICATEDANDFULLYMANAGEDCORPORATEOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
+	case "chromeOS":
+		result = CHROMEOS_DEVICECLEANUPRULEPLATFORMTYPE
+	case "androidPersonallyOwnedWorkProfile":
+		result = ANDROIDPERSONALLYOWNEDWORKPROFILE_DEVICECLEANUPRULEPLATFORMTYPE
+	case "ios":
+		result = IOS_DEVICECLEANUPRULEPLATFORMTYPE
+	case "macOS":
+		result = MACOS_DEVICECLEANUPRULEPLATFORMTYPE
+	case "windows":
+		result = WINDOWS_DEVICECLEANUPRULEPLATFORMTYPE
+	case "windowsHolographic":
+		result = WINDOWSHOLOGRAPHIC_DEVICECLEANUPRULEPLATFORMTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_DEVICECLEANUPRULEPLATFORMTYPE
+	case "visionOS":
+		result = VISIONOS_DEVICECLEANUPRULEPLATFORMTYPE
+	case "tvOS":
+		result = TVOS_DEVICECLEANUPRULEPLATFORMTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceCleanupRulePlatformType(values []DeviceCleanupRulePlatformType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceCleanupRulePlatformType) isMultiValue() bool {
-    return false
+	return false
 }

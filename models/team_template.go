@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type TeamTemplate struct {
-    Entity
+	Entity
 }
+
 // NewTeamTemplate instantiates a new TeamTemplate and sets the default values.
-func NewTeamTemplate()(*TeamTemplate) {
-    m := &TeamTemplate{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewTeamTemplate() *TeamTemplate {
+	m := &TeamTemplate{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateTeamTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTeamTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTeamTemplate(), nil
+func CreateTeamTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewTeamTemplate(), nil
 }
+
 // GetDefinitions gets the definitions property value. A generic representation of a team template definition for a team with a specific structure and configuration.
 // returns a []TeamTemplateDefinitionable when successful
-func (m *TeamTemplate) GetDefinitions()([]TeamTemplateDefinitionable) {
-    val, err := m.GetBackingStore().Get("definitions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TeamTemplateDefinitionable)
-    }
-    return nil
+func (m *TeamTemplate) GetDefinitions() []TeamTemplateDefinitionable {
+	val, err := m.GetBackingStore().Get("definitions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TeamTemplateDefinitionable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TeamTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["definitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTeamTemplateDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TeamTemplateDefinitionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TeamTemplateDefinitionable)
-                }
-            }
-            m.SetDefinitions(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *TeamTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["definitions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTeamTemplateDefinitionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TeamTemplateDefinitionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TeamTemplateDefinitionable)
+				}
+			}
+			m.SetDefinitions(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
-        for i, v := range m.GetDefinitions() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("definitions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *TeamTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetDefinitions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDefinitions()))
+		for i, v := range m.GetDefinitions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("definitions", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetDefinitions sets the definitions property value. A generic representation of a team template definition for a team with a specific structure and configuration.
-func (m *TeamTemplate) SetDefinitions(value []TeamTemplateDefinitionable)() {
-    err := m.GetBackingStore().Set("definitions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *TeamTemplate) SetDefinitions(value []TeamTemplateDefinitionable) {
+	err := m.GetBackingStore().Set("definitions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type TeamTemplateable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDefinitions()([]TeamTemplateDefinitionable)
-    SetDefinitions(value []TeamTemplateDefinitionable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetDefinitions() []TeamTemplateDefinitionable
+	SetDefinitions(value []TeamTemplateDefinitionable)
 }

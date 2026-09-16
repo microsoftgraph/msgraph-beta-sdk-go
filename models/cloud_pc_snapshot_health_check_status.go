@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcSnapshotHealthCheckStatus int
 
 const (
-    UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS CloudPcSnapshotHealthCheckStatus = iota
-    HEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-    UNHEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-    UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS CloudPcSnapshotHealthCheckStatus = iota
+	HEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	UNHEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
 )
 
 func (i CloudPcSnapshotHealthCheckStatus) String() string {
-    return []string{"unknown", "healthy", "unhealthy", "unknownFutureValue"}[i]
+	return []string{"unknown", "healthy", "unhealthy", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcSnapshotHealthCheckStatus(v string) (any, error) {
-    result := UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-    switch v {
-        case "unknown":
-            result = UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-        case "healthy":
-            result = HEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-        case "unhealthy":
-            result = UNHEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	switch v {
+	case "unknown":
+		result = UNKNOWN_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	case "healthy":
+		result = HEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	case "unhealthy":
+		result = UNHEALTHY_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTHEALTHCHECKSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcSnapshotHealthCheckStatus(values []CloudPcSnapshotHealthCheckStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcSnapshotHealthCheckStatus) isMultiValue() bool {
-    return false
+	return false
 }

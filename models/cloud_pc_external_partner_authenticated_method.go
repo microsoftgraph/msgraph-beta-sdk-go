@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcExternalPartnerAuthenticatedMethod int
 
 const (
-    GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD CloudPcExternalPartnerAuthenticatedMethod = iota
-    DAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-    APPONLY_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-    NORMALUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-    GUESTUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-    UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD CloudPcExternalPartnerAuthenticatedMethod = iota
+	DAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	APPONLY_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	NORMALUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	GUESTUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
 )
 
 func (i CloudPcExternalPartnerAuthenticatedMethod) String() string {
-    return []string{"gDAP", "dAP", "appOnly", "normalUser", "guestUser", "unknownFutureValue"}[i]
+	return []string{"gDAP", "dAP", "appOnly", "normalUser", "guestUser", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcExternalPartnerAuthenticatedMethod(v string) (any, error) {
-    result := GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-    switch v {
-        case "gDAP":
-            result = GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        case "dAP":
-            result = DAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        case "appOnly":
-            result = APPONLY_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        case "normalUser":
-            result = NORMALUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        case "guestUser":
-            result = GUESTUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	switch v {
+	case "gDAP":
+		result = GDAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	case "dAP":
+		result = DAP_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	case "appOnly":
+		result = APPONLY_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	case "normalUser":
+		result = NORMALUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	case "guestUser":
+		result = GUESTUSER_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERAUTHENTICATEDMETHOD
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcExternalPartnerAuthenticatedMethod(values []CloudPcExternalPartnerAuthenticatedMethod) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcExternalPartnerAuthenticatedMethod) isMultiValue() bool {
-    return false
+	return false
 }
