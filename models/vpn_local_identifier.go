@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The type of VPN local identifier
 type VpnLocalIdentifier int
 
 const (
-    // Device Fully Qualified Domain Name
-    DEVICEFQDN_VPNLOCALIDENTIFIER VpnLocalIdentifier = iota
-    // Empty
-    EMPTY_VPNLOCALIDENTIFIER
-    // Client Certificate Subject Name
-    CLIENTCERTIFICATESUBJECTNAME_VPNLOCALIDENTIFIER
+	// Device Fully Qualified Domain Name
+	DEVICEFQDN_VPNLOCALIDENTIFIER VpnLocalIdentifier = iota
+	// Empty
+	EMPTY_VPNLOCALIDENTIFIER
+	// Client Certificate Subject Name
+	CLIENTCERTIFICATESUBJECTNAME_VPNLOCALIDENTIFIER
 )
 
 func (i VpnLocalIdentifier) String() string {
-    return []string{"deviceFQDN", "empty", "clientCertificateSubjectName"}[i]
+	return []string{"deviceFQDN", "empty", "clientCertificateSubjectName"}[i]
 }
+
 func ParseVpnLocalIdentifier(v string) (any, error) {
-    result := DEVICEFQDN_VPNLOCALIDENTIFIER
-    switch v {
-        case "deviceFQDN":
-            result = DEVICEFQDN_VPNLOCALIDENTIFIER
-        case "empty":
-            result = EMPTY_VPNLOCALIDENTIFIER
-        case "clientCertificateSubjectName":
-            result = CLIENTCERTIFICATESUBJECTNAME_VPNLOCALIDENTIFIER
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DEVICEFQDN_VPNLOCALIDENTIFIER
+	switch v {
+	case "deviceFQDN":
+		result = DEVICEFQDN_VPNLOCALIDENTIFIER
+	case "empty":
+		result = EMPTY_VPNLOCALIDENTIFIER
+	case "clientCertificateSubjectName":
+		result = CLIENTCERTIFICATESUBJECTNAME_VPNLOCALIDENTIFIER
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeVpnLocalIdentifier(values []VpnLocalIdentifier) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i VpnLocalIdentifier) isMultiValue() bool {
-    return false
+	return false
 }

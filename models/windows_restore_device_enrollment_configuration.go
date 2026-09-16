@@ -4,80 +4,87 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // WindowsRestoreDeviceEnrollmentConfiguration indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during OOBE Windows enrollment
 type WindowsRestoreDeviceEnrollmentConfiguration struct {
-    DeviceEnrollmentConfiguration
+	DeviceEnrollmentConfiguration
 }
+
 // NewWindowsRestoreDeviceEnrollmentConfiguration instantiates a new WindowsRestoreDeviceEnrollmentConfiguration and sets the default values.
-func NewWindowsRestoreDeviceEnrollmentConfiguration()(*WindowsRestoreDeviceEnrollmentConfiguration) {
-    m := &WindowsRestoreDeviceEnrollmentConfiguration{
-        DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
-    }
-    odataTypeValue := "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewWindowsRestoreDeviceEnrollmentConfiguration() *WindowsRestoreDeviceEnrollmentConfiguration {
+	m := &WindowsRestoreDeviceEnrollmentConfiguration{
+		DeviceEnrollmentConfiguration: *NewDeviceEnrollmentConfiguration(),
+	}
+	odataTypeValue := "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateWindowsRestoreDeviceEnrollmentConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateWindowsRestoreDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewWindowsRestoreDeviceEnrollmentConfiguration(), nil
+func CreateWindowsRestoreDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewWindowsRestoreDeviceEnrollmentConfiguration(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *WindowsRestoreDeviceEnrollmentConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
-    res["state"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseEnablement)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetState(val.(*Enablement))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *WindowsRestoreDeviceEnrollmentConfiguration) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceEnrollmentConfiguration.GetFieldDeserializers()
+	res["state"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseEnablement)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetState(val.(*Enablement))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetState gets the state property value. Possible values of a property
 // returns a *Enablement when successful
-func (m *WindowsRestoreDeviceEnrollmentConfiguration) GetState()(*Enablement) {
-    val, err := m.GetBackingStore().Get("state")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*Enablement)
-    }
-    return nil
+func (m *WindowsRestoreDeviceEnrollmentConfiguration) GetState() *Enablement {
+	val, err := m.GetBackingStore().Get("state")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*Enablement)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *WindowsRestoreDeviceEnrollmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceEnrollmentConfiguration.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetState() != nil {
-        cast := (*m.GetState()).String()
-        err = writer.WriteStringValue("state", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *WindowsRestoreDeviceEnrollmentConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceEnrollmentConfiguration.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetState() != nil {
+		cast := (*m.GetState()).String()
+		err = writer.WriteStringValue("state", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetState sets the state property value. Possible values of a property
-func (m *WindowsRestoreDeviceEnrollmentConfiguration) SetState(value *Enablement)() {
-    err := m.GetBackingStore().Set("state", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WindowsRestoreDeviceEnrollmentConfiguration) SetState(value *Enablement) {
+	err := m.GetBackingStore().Set("state", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type WindowsRestoreDeviceEnrollmentConfigurationable interface {
-    DeviceEnrollmentConfigurationable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetState()(*Enablement)
-    SetState(value *Enablement)()
+	DeviceEnrollmentConfigurationable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetState() *Enablement
+	SetState(value *Enablement)
 }

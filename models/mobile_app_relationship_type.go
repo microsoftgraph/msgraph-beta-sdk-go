@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Indicates whether the target of a relationship is the parent or the child in the relationship.
 type MobileAppRelationshipType int
 
 const (
-    // Indicates that the target of a relationship is the child in the relationship.
-    CHILD_MOBILEAPPRELATIONSHIPTYPE MobileAppRelationshipType = iota
-    // Indicates that the target of a relationship is the parent in the relationship.
-    PARENT_MOBILEAPPRELATIONSHIPTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
+	// Indicates that the target of a relationship is the child in the relationship.
+	CHILD_MOBILEAPPRELATIONSHIPTYPE MobileAppRelationshipType = iota
+	// Indicates that the target of a relationship is the parent in the relationship.
+	PARENT_MOBILEAPPRELATIONSHIPTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
 )
 
 func (i MobileAppRelationshipType) String() string {
-    return []string{"child", "parent", "unknownFutureValue"}[i]
+	return []string{"child", "parent", "unknownFutureValue"}[i]
 }
+
 func ParseMobileAppRelationshipType(v string) (any, error) {
-    result := CHILD_MOBILEAPPRELATIONSHIPTYPE
-    switch v {
-        case "child":
-            result = CHILD_MOBILEAPPRELATIONSHIPTYPE
-        case "parent":
-            result = PARENT_MOBILEAPPRELATIONSHIPTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CHILD_MOBILEAPPRELATIONSHIPTYPE
+	switch v {
+	case "child":
+		result = CHILD_MOBILEAPPRELATIONSHIPTYPE
+	case "parent":
+		result = PARENT_MOBILEAPPRELATIONSHIPTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMobileAppRelationshipType(values []MobileAppRelationshipType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MobileAppRelationshipType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PrivateNetworkDestinationType int
 
 const (
-    IPADDRESS_PRIVATENETWORKDESTINATIONTYPE PrivateNetworkDestinationType = iota
-    IPRANGE_PRIVATENETWORKDESTINATIONTYPE
-    IPRANGECIDR_PRIVATENETWORKDESTINATIONTYPE
-    FQDN_PRIVATENETWORKDESTINATIONTYPE
-    DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
-    UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
-    SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
+	IPADDRESS_PRIVATENETWORKDESTINATIONTYPE PrivateNetworkDestinationType = iota
+	IPRANGE_PRIVATENETWORKDESTINATIONTYPE
+	IPRANGECIDR_PRIVATENETWORKDESTINATIONTYPE
+	FQDN_PRIVATENETWORKDESTINATIONTYPE
+	DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
+	UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
+	SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
 )
 
 func (i PrivateNetworkDestinationType) String() string {
-    return []string{"ipAddress", "ipRange", "ipRangeCidr", "fqdn", "dnsSuffix", "unknownFutureValue", "servicePrincipalName"}[i]
+	return []string{"ipAddress", "ipRange", "ipRangeCidr", "fqdn", "dnsSuffix", "unknownFutureValue", "servicePrincipalName"}[i]
 }
+
 func ParsePrivateNetworkDestinationType(v string) (any, error) {
-    result := IPADDRESS_PRIVATENETWORKDESTINATIONTYPE
-    switch v {
-        case "ipAddress":
-            result = IPADDRESS_PRIVATENETWORKDESTINATIONTYPE
-        case "ipRange":
-            result = IPRANGE_PRIVATENETWORKDESTINATIONTYPE
-        case "ipRangeCidr":
-            result = IPRANGECIDR_PRIVATENETWORKDESTINATIONTYPE
-        case "fqdn":
-            result = FQDN_PRIVATENETWORKDESTINATIONTYPE
-        case "dnsSuffix":
-            result = DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
-        case "servicePrincipalName":
-            result = SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := IPADDRESS_PRIVATENETWORKDESTINATIONTYPE
+	switch v {
+	case "ipAddress":
+		result = IPADDRESS_PRIVATENETWORKDESTINATIONTYPE
+	case "ipRange":
+		result = IPRANGE_PRIVATENETWORKDESTINATIONTYPE
+	case "ipRangeCidr":
+		result = IPRANGECIDR_PRIVATENETWORKDESTINATIONTYPE
+	case "fqdn":
+		result = FQDN_PRIVATENETWORKDESTINATIONTYPE
+	case "dnsSuffix":
+		result = DNSSUFFIX_PRIVATENETWORKDESTINATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
+	case "servicePrincipalName":
+		result = SERVICEPRINCIPALNAME_PRIVATENETWORKDESTINATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePrivateNetworkDestinationType(values []PrivateNetworkDestinationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PrivateNetworkDestinationType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ExternalAuthenticationType int
 
 const (
-    PASSTHRU_EXTERNALAUTHENTICATIONTYPE ExternalAuthenticationType = iota
-    AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
+	PASSTHRU_EXTERNALAUTHENTICATIONTYPE ExternalAuthenticationType = iota
+	AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
 )
 
 func (i ExternalAuthenticationType) String() string {
-    return []string{"passthru", "aadPreAuthentication"}[i]
+	return []string{"passthru", "aadPreAuthentication"}[i]
 }
+
 func ParseExternalAuthenticationType(v string) (any, error) {
-    result := PASSTHRU_EXTERNALAUTHENTICATIONTYPE
-    switch v {
-        case "passthru":
-            result = PASSTHRU_EXTERNALAUTHENTICATIONTYPE
-        case "aadPreAuthentication":
-            result = AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := PASSTHRU_EXTERNALAUTHENTICATIONTYPE
+	switch v {
+	case "passthru":
+		result = PASSTHRU_EXTERNALAUTHENTICATIONTYPE
+	case "aadPreAuthentication":
+		result = AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeExternalAuthenticationType(values []ExternalAuthenticationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ExternalAuthenticationType) isMultiValue() bool {
-    return false
+	return false
 }

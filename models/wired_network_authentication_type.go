@@ -2,54 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Wired Network Authentication Type Settings.
 type WiredNetworkAuthenticationType int
 
 const (
-    // None
-    NONE_WIREDNETWORKAUTHENTICATIONTYPE WiredNetworkAuthenticationType = iota
-    // User Authentication
-    USER_WIREDNETWORKAUTHENTICATIONTYPE
-    // Machine Authentication
-    MACHINE_WIREDNETWORKAUTHENTICATIONTYPE
-    // Machine or User Authentication
-    MACHINEORUSER_WIREDNETWORKAUTHENTICATIONTYPE
-    // Guest Authentication
-    GUEST_WIREDNETWORKAUTHENTICATIONTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONTYPE
+	// None
+	NONE_WIREDNETWORKAUTHENTICATIONTYPE WiredNetworkAuthenticationType = iota
+	// User Authentication
+	USER_WIREDNETWORKAUTHENTICATIONTYPE
+	// Machine Authentication
+	MACHINE_WIREDNETWORKAUTHENTICATIONTYPE
+	// Machine or User Authentication
+	MACHINEORUSER_WIREDNETWORKAUTHENTICATIONTYPE
+	// Guest Authentication
+	GUEST_WIREDNETWORKAUTHENTICATIONTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONTYPE
 )
 
 func (i WiredNetworkAuthenticationType) String() string {
-    return []string{"none", "user", "machine", "machineOrUser", "guest", "unknownFutureValue"}[i]
+	return []string{"none", "user", "machine", "machineOrUser", "guest", "unknownFutureValue"}[i]
 }
+
 func ParseWiredNetworkAuthenticationType(v string) (any, error) {
-    result := NONE_WIREDNETWORKAUTHENTICATIONTYPE
-    switch v {
-        case "none":
-            result = NONE_WIREDNETWORKAUTHENTICATIONTYPE
-        case "user":
-            result = USER_WIREDNETWORKAUTHENTICATIONTYPE
-        case "machine":
-            result = MACHINE_WIREDNETWORKAUTHENTICATIONTYPE
-        case "machineOrUser":
-            result = MACHINEORUSER_WIREDNETWORKAUTHENTICATIONTYPE
-        case "guest":
-            result = GUEST_WIREDNETWORKAUTHENTICATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_WIREDNETWORKAUTHENTICATIONTYPE
+	switch v {
+	case "none":
+		result = NONE_WIREDNETWORKAUTHENTICATIONTYPE
+	case "user":
+		result = USER_WIREDNETWORKAUTHENTICATIONTYPE
+	case "machine":
+		result = MACHINE_WIREDNETWORKAUTHENTICATIONTYPE
+	case "machineOrUser":
+		result = MACHINEORUSER_WIREDNETWORKAUTHENTICATIONTYPE
+	case "guest":
+		result = GUEST_WIREDNETWORKAUTHENTICATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWiredNetworkAuthenticationType(values []WiredNetworkAuthenticationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WiredNetworkAuthenticationType) isMultiValue() bool {
-    return false
+	return false
 }

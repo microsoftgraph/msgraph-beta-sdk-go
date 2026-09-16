@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcProvisioningSourceType int
 
 const (
-    IMAGE_CLOUDPCPROVISIONINGSOURCETYPE CloudPcProvisioningSourceType = iota
-    SNAPSHOT_CLOUDPCPROVISIONINGSOURCETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGSOURCETYPE
+	IMAGE_CLOUDPCPROVISIONINGSOURCETYPE CloudPcProvisioningSourceType = iota
+	SNAPSHOT_CLOUDPCPROVISIONINGSOURCETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGSOURCETYPE
 )
 
 func (i CloudPcProvisioningSourceType) String() string {
-    return []string{"image", "snapshot", "unknownFutureValue"}[i]
+	return []string{"image", "snapshot", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcProvisioningSourceType(v string) (any, error) {
-    result := IMAGE_CLOUDPCPROVISIONINGSOURCETYPE
-    switch v {
-        case "image":
-            result = IMAGE_CLOUDPCPROVISIONINGSOURCETYPE
-        case "snapshot":
-            result = SNAPSHOT_CLOUDPCPROVISIONINGSOURCETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGSOURCETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := IMAGE_CLOUDPCPROVISIONINGSOURCETYPE
+	switch v {
+	case "image":
+		result = IMAGE_CLOUDPCPROVISIONINGSOURCETYPE
+	case "snapshot":
+		result = SNAPSHOT_CLOUDPCPROVISIONINGSOURCETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGSOURCETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcProvisioningSourceType(values []CloudPcProvisioningSourceType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcProvisioningSourceType) isMultiValue() bool {
-    return false
+	return false
 }

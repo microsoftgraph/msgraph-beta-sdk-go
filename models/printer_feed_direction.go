@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PrinterFeedDirection int
 
 const (
-    LONGEDGEFIRST_PRINTERFEEDDIRECTION PrinterFeedDirection = iota
-    SHORTEDGEFIRST_PRINTERFEEDDIRECTION
+	LONGEDGEFIRST_PRINTERFEEDDIRECTION PrinterFeedDirection = iota
+	SHORTEDGEFIRST_PRINTERFEEDDIRECTION
 )
 
 func (i PrinterFeedDirection) String() string {
-    return []string{"longEdgeFirst", "shortEdgeFirst"}[i]
+	return []string{"longEdgeFirst", "shortEdgeFirst"}[i]
 }
+
 func ParsePrinterFeedDirection(v string) (any, error) {
-    result := LONGEDGEFIRST_PRINTERFEEDDIRECTION
-    switch v {
-        case "longEdgeFirst":
-            result = LONGEDGEFIRST_PRINTERFEEDDIRECTION
-        case "shortEdgeFirst":
-            result = SHORTEDGEFIRST_PRINTERFEEDDIRECTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := LONGEDGEFIRST_PRINTERFEEDDIRECTION
+	switch v {
+	case "longEdgeFirst":
+		result = LONGEDGEFIRST_PRINTERFEEDDIRECTION
+	case "shortEdgeFirst":
+		result = SHORTEDGEFIRST_PRINTERFEEDDIRECTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePrinterFeedDirection(values []PrinterFeedDirection) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PrinterFeedDirection) isMultiValue() bool {
-    return false
+	return false
 }

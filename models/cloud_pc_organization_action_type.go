@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcOrganizationActionType int
 
 const (
-    ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE CloudPcOrganizationActionType = iota
-    DEACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONTYPE
+	ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE CloudPcOrganizationActionType = iota
+	DEACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONTYPE
 )
 
 func (i CloudPcOrganizationActionType) String() string {
-    return []string{"activate", "deactivate", "unknownFutureValue"}[i]
+	return []string{"activate", "deactivate", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcOrganizationActionType(v string) (any, error) {
-    result := ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
-    switch v {
-        case "activate":
-            result = ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
-        case "deactivate":
-            result = DEACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
+	switch v {
+	case "activate":
+		result = ACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
+	case "deactivate":
+		result = DEACTIVATE_CLOUDPCORGANIZATIONACTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcOrganizationActionType(values []CloudPcOrganizationActionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcOrganizationActionType) isMultiValue() bool {
-    return false
+	return false
 }

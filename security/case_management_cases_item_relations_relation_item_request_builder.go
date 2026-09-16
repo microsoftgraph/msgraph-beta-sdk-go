@@ -4,166 +4,179 @@
 package security
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security/casemanagement"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security/casemanagement"
 )
 
 // CaseManagementCasesItemRelationsRelationItemRequestBuilder provides operations to manage the relations property of the microsoft.graph.security.caseManagement.case entity.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string "uriparametername:\"%24expand\""
-    // Select properties to be returned
-    Select []string "uriparametername:\"%24select\""
+	// Expand related entities
+	Expand []string "uriparametername:\"%24expand\""
+	// Select properties to be returned
+	Select []string "uriparametername:\"%24select\""
 }
+
 // CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request query parameters
+	QueryParameters *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetQueryParameters
 }
+
 // CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal instantiates a new CaseManagementCasesItemRelationsRelationItemRequestBuilder and sets the default values.
-func NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CaseManagementCasesItemRelationsRelationItemRequestBuilder) {
-    m := &CaseManagementCasesItemRelationsRelationItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/caseManagement/cases/{case%2Did}/relations/{relation%2Did}{?%24expand,%24select}", pathParameters),
-    }
-    return m
+func NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CaseManagementCasesItemRelationsRelationItemRequestBuilder {
+	m := &CaseManagementCasesItemRelationsRelationItemRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/caseManagement/cases/{case%2Did}/relations/{relation%2Did}{?%24expand,%24select}", pathParameters),
+	}
+	return m
 }
+
 // NewCaseManagementCasesItemRelationsRelationItemRequestBuilder instantiates a new CaseManagementCasesItemRelationsRelationItemRequestBuilder and sets the default values.
-func NewCaseManagementCasesItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CaseManagementCasesItemRelationsRelationItemRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
+func NewCaseManagementCasesItemRelationsRelationItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CaseManagementCasesItemRelationsRelationItemRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewCaseManagementCasesItemRelationsRelationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Delete delete a concrete relation from a case.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-relation-delete?view=graph-rest-beta
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration) error {
+	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 // Get read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a Relationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-relation-get?view=graph-rest-beta
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CreateRelationFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration) (i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, error) {
+	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CreateRelationFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
 }
+
 // Patch update the properties of a concrete relation object.
 // returns a Relationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-casemanagement-relation-update?view=graph-rest-beta
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Patch(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration)(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, error) {
-    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CreateRelationFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) Patch(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration) (i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, error) {
+	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CreateRelationFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable), nil
 }
+
 // ToDeleteRequestInformation delete a concrete relation from a case.
 // returns a *RequestInformation when successful
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // ToGetRequestInformation read a concrete relation from a case. The response is an incidentRelation, recommendationRelation, or workspaceIndicatorRelation, identified by @odata.type.
 // returns a *RequestInformation when successful
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		if requestConfiguration.QueryParameters != nil {
+			requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+		}
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // ToPatchRequestInformation update the properties of a concrete relation object.
 // returns a *RequestInformation when successful
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    return requestInfo, nil
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.Relationable, requestConfiguration *CaseManagementCasesItemRelationsRelationItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *CaseManagementCasesItemRelationsRelationItemRequestBuilder when successful
-func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) WithUrl(rawUrl string)(*CaseManagementCasesItemRelationsRelationItemRequestBuilder) {
-    return NewCaseManagementCasesItemRelationsRelationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *CaseManagementCasesItemRelationsRelationItemRequestBuilder) WithUrl(rawUrl string) *CaseManagementCasesItemRelationsRelationItemRequestBuilder {
+	return NewCaseManagementCasesItemRelationsRelationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

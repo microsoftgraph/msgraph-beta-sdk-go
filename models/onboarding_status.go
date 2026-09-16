@@ -2,54 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The onboarding status of the tenant.
 type OnboardingStatus int
 
 const (
-    // Unknown
-    UNKNOWN_ONBOARDINGSTATUS OnboardingStatus = iota
-    // In progress
-    INPROGRESS_ONBOARDINGSTATUS
-    // Onboarded
-    ONBOARDED_ONBOARDINGSTATUS
-    // Failed
-    FAILED_ONBOARDINGSTATUS
-    // Offboarding
-    OFFBOARDING_ONBOARDINGSTATUS
-    // UnknownFutureValue
-    UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
+	// Unknown
+	UNKNOWN_ONBOARDINGSTATUS OnboardingStatus = iota
+	// In progress
+	INPROGRESS_ONBOARDINGSTATUS
+	// Onboarded
+	ONBOARDED_ONBOARDINGSTATUS
+	// Failed
+	FAILED_ONBOARDINGSTATUS
+	// Offboarding
+	OFFBOARDING_ONBOARDINGSTATUS
+	// UnknownFutureValue
+	UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
 )
 
 func (i OnboardingStatus) String() string {
-    return []string{"unknown", "inprogress", "onboarded", "failed", "offboarding", "unknownFutureValue"}[i]
+	return []string{"unknown", "inprogress", "onboarded", "failed", "offboarding", "unknownFutureValue"}[i]
 }
+
 func ParseOnboardingStatus(v string) (any, error) {
-    result := UNKNOWN_ONBOARDINGSTATUS
-    switch v {
-        case "unknown":
-            result = UNKNOWN_ONBOARDINGSTATUS
-        case "inprogress":
-            result = INPROGRESS_ONBOARDINGSTATUS
-        case "onboarded":
-            result = ONBOARDED_ONBOARDINGSTATUS
-        case "failed":
-            result = FAILED_ONBOARDINGSTATUS
-        case "offboarding":
-            result = OFFBOARDING_ONBOARDINGSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_ONBOARDINGSTATUS
+	switch v {
+	case "unknown":
+		result = UNKNOWN_ONBOARDINGSTATUS
+	case "inprogress":
+		result = INPROGRESS_ONBOARDINGSTATUS
+	case "onboarded":
+		result = ONBOARDED_ONBOARDINGSTATUS
+	case "failed":
+		result = FAILED_ONBOARDINGSTATUS
+	case "offboarding":
+		result = OFFBOARDING_ONBOARDINGSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeOnboardingStatus(values []OnboardingStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i OnboardingStatus) isMultiValue() bool {
-    return false
+	return false
 }

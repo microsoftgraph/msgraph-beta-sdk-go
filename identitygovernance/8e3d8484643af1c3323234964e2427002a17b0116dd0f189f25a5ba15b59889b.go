@@ -4,84 +4,88 @@
 package identitygovernance
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder provides operations to manage the reprocessedRuns property of the microsoft.graph.identityGovernance.subjectProcessingResult entity.
 type LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetQueryParameters the reprocessed runs associated with this subject processing result.
 type LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string "uriparametername:\"%24expand\""
-    // Select properties to be returned
-    Select []string "uriparametername:\"%24select\""
+	// Expand related entities
+	Expand []string "uriparametername:\"%24expand\""
+	// Select properties to be returned
+	Select []string "uriparametername:\"%24select\""
 }
+
 // LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetQueryParameters
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request query parameters
+	QueryParameters *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetQueryParameters
 }
+
 // NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) {
-    m := &LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/subjectProcessingResults/{subjectProcessingResult%2Did}/reprocessedRuns/{run%2Did1}{?%24expand,%24select}", pathParameters),
-    }
-    return m
+func NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder {
+	m := &LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/runs/{run%2Did}/subjectProcessingResults/{subjectProcessingResult%2Did}/reprocessedRuns/{run%2Did1}{?%24expand,%24select}", pathParameters),
+	}
+	return m
 }
+
 // NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder instantiates a new LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder and sets the default values.
-func NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderInternal(urlParams, requestAdapter)
+func NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Get the reprocessed runs associated with this subject processing result.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a Runable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateRunFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable), nil
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration) (i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable, error) {
+	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateRunFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Runable), nil
 }
+
 // ToGetRequestInformation the reprocessed runs associated with this subject processing result.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		if requestConfiguration.QueryParameters != nil {
+			requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+		}
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder when successful
-func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) WithUrl(rawUrl string)(*LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) {
-    return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder) WithUrl(rawUrl string) *LifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder {
+	return NewLifecycleWorkflowsWorkflowsItemRunsItemSubjectProcessingResultsItemReprocessedRunsRunItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

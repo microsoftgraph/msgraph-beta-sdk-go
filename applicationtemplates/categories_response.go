@@ -4,27 +4,30 @@
 package applicationtemplates
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use CategoriesGetResponseable instead.
 type CategoriesResponse struct {
-    CategoriesGetResponse
+	CategoriesGetResponse
 }
+
 // NewCategoriesResponse instantiates a new CategoriesResponse and sets the default values.
-func NewCategoriesResponse()(*CategoriesResponse) {
-    m := &CategoriesResponse{
-        CategoriesGetResponse: *NewCategoriesGetResponse(),
-    }
-    return m
+func NewCategoriesResponse() *CategoriesResponse {
+	m := &CategoriesResponse{
+		CategoriesGetResponse: *NewCategoriesGetResponse(),
+	}
+	return m
 }
+
 // CreateCategoriesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCategoriesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCategoriesResponse(), nil
+func CreateCategoriesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCategoriesResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use CategoriesGetResponseable instead.
 type CategoriesResponseable interface {
-    CategoriesGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	CategoriesGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

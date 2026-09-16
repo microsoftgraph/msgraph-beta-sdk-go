@@ -4,157 +4,168 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type NotifyUserAction struct {
-    PolicyTipAction
+	PolicyTipAction
 }
+
 // NewNotifyUserAction instantiates a new NotifyUserAction and sets the default values.
-func NewNotifyUserAction()(*NotifyUserAction) {
-    m := &NotifyUserAction{
-        PolicyTipAction: *NewPolicyTipAction(),
-    }
-    return m
+func NewNotifyUserAction() *NotifyUserAction {
+	m := &NotifyUserAction{
+		PolicyTipAction: *NewPolicyTipAction(),
+	}
+	return m
 }
+
 // CreateNotifyUserActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateNotifyUserActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewNotifyUserAction(), nil
+func CreateNotifyUserActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewNotifyUserAction(), nil
 }
+
 // GetActionLastModifiedDateTime gets the actionLastModifiedDateTime property value. Timestamp when the notification action configuration was last modified.
 // returns a *Time when successful
-func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("actionLastModifiedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *NotifyUserAction) GetActionLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("actionLastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetEmailText gets the emailText property value. The body text of the email notification sent to users.
 // returns a *string when successful
-func (m *NotifyUserAction) GetEmailText()(*string) {
-    val, err := m.GetBackingStore().Get("emailText")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *NotifyUserAction) GetEmailText() *string {
+	val, err := m.GetBackingStore().Get("emailText")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.PolicyTipAction.GetFieldDeserializers()
-    res["actionLastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetActionLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["emailText"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEmailText(val)
-        }
-        return nil
-    }
-    res["recipients"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetRecipients(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *NotifyUserAction) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.PolicyTipAction.GetFieldDeserializers()
+	res["actionLastModifiedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetActionLastModifiedDateTime(val)
+		}
+		return nil
+	}
+	res["emailText"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEmailText(val)
+		}
+		return nil
+	}
+	res["recipients"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetRecipients(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetRecipients gets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
 // returns a []string when successful
-func (m *NotifyUserAction) GetRecipients()([]string) {
-    val, err := m.GetBackingStore().Get("recipients")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *NotifyUserAction) GetRecipients() []string {
+	val, err := m.GetBackingStore().Get("recipients")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.PolicyTipAction.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteTimeValue("actionLastModifiedDateTime", m.GetActionLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("emailText", m.GetEmailText())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRecipients() != nil {
-        err = writer.WriteCollectionOfStringValues("recipients", m.GetRecipients())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.PolicyTipAction.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteTimeValue("actionLastModifiedDateTime", m.GetActionLastModifiedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("emailText", m.GetEmailText())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRecipients() != nil {
+		err = writer.WriteCollectionOfStringValues("recipients", m.GetRecipients())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetActionLastModifiedDateTime sets the actionLastModifiedDateTime property value. Timestamp when the notification action configuration was last modified.
-func (m *NotifyUserAction) SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("actionLastModifiedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NotifyUserAction) SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("actionLastModifiedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetEmailText sets the emailText property value. The body text of the email notification sent to users.
-func (m *NotifyUserAction) SetEmailText(value *string)() {
-    err := m.GetBackingStore().Set("emailText", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NotifyUserAction) SetEmailText(value *string) {
+	err := m.GetBackingStore().Set("emailText", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRecipients sets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
-func (m *NotifyUserAction) SetRecipients(value []string)() {
-    err := m.GetBackingStore().Set("recipients", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NotifyUserAction) SetRecipients(value []string) {
+	err := m.GetBackingStore().Set("recipients", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type NotifyUserActionable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    PolicyTipActionable
-    GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetEmailText()(*string)
-    GetRecipients()([]string)
-    SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetEmailText(value *string)()
-    SetRecipients(value []string)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	PolicyTipActionable
+	GetActionLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetEmailText() *string
+	GetRecipients() []string
+	SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetEmailText(value *string)
+	SetRecipients(value []string)
 }

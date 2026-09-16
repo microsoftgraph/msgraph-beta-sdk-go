@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AgentIdentityType int
 
 const (
-    AGENTIDENTITY_AGENTIDENTITYTYPE AgentIdentityType = iota
-    AGENTUSER_AGENTIDENTITYTYPE
-    UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
-    AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
-    USER_AGENTIDENTITYTYPE
-    DISCOVEREDAGENTIDENTITY_AGENTIDENTITYTYPE
+	AGENTIDENTITY_AGENTIDENTITYTYPE AgentIdentityType = iota
+	AGENTUSER_AGENTIDENTITYTYPE
+	UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
+	AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
+	USER_AGENTIDENTITYTYPE
+	DISCOVEREDAGENTIDENTITY_AGENTIDENTITYTYPE
 )
 
 func (i AgentIdentityType) String() string {
-    return []string{"agentIdentity", "agentUser", "unknownFutureValue", "agentIdentityBlueprintPrincipal", "user", "discoveredAgentIdentity"}[i]
+	return []string{"agentIdentity", "agentUser", "unknownFutureValue", "agentIdentityBlueprintPrincipal", "user", "discoveredAgentIdentity"}[i]
 }
+
 func ParseAgentIdentityType(v string) (any, error) {
-    result := AGENTIDENTITY_AGENTIDENTITYTYPE
-    switch v {
-        case "agentIdentity":
-            result = AGENTIDENTITY_AGENTIDENTITYTYPE
-        case "agentUser":
-            result = AGENTUSER_AGENTIDENTITYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
-        case "agentIdentityBlueprintPrincipal":
-            result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
-        case "user":
-            result = USER_AGENTIDENTITYTYPE
-        case "discoveredAgentIdentity":
-            result = DISCOVEREDAGENTIDENTITY_AGENTIDENTITYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AGENTIDENTITY_AGENTIDENTITYTYPE
+	switch v {
+	case "agentIdentity":
+		result = AGENTIDENTITY_AGENTIDENTITYTYPE
+	case "agentUser":
+		result = AGENTUSER_AGENTIDENTITYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_AGENTIDENTITYTYPE
+	case "agentIdentityBlueprintPrincipal":
+		result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTIDENTITYTYPE
+	case "user":
+		result = USER_AGENTIDENTITYTYPE
+	case "discoveredAgentIdentity":
+		result = DISCOVEREDAGENTIDENTITY_AGENTIDENTITYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAgentIdentityType(values []AgentIdentityType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AgentIdentityType) isMultiValue() bool {
-    return false
+	return false
 }

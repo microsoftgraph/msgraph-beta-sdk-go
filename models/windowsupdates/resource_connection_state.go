@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package windowsupdates
+
 type ResourceConnectionState int
 
 const (
-    CONNECTED_RESOURCECONNECTIONSTATE ResourceConnectionState = iota
-    NOTAUTHORIZED_RESOURCECONNECTIONSTATE
-    NOTFOUND_RESOURCECONNECTIONSTATE
-    UNKNOWNFUTUREVALUE_RESOURCECONNECTIONSTATE
+	CONNECTED_RESOURCECONNECTIONSTATE ResourceConnectionState = iota
+	NOTAUTHORIZED_RESOURCECONNECTIONSTATE
+	NOTFOUND_RESOURCECONNECTIONSTATE
+	UNKNOWNFUTUREVALUE_RESOURCECONNECTIONSTATE
 )
 
 func (i ResourceConnectionState) String() string {
-    return []string{"connected", "notAuthorized", "notFound", "unknownFutureValue"}[i]
+	return []string{"connected", "notAuthorized", "notFound", "unknownFutureValue"}[i]
 }
+
 func ParseResourceConnectionState(v string) (any, error) {
-    result := CONNECTED_RESOURCECONNECTIONSTATE
-    switch v {
-        case "connected":
-            result = CONNECTED_RESOURCECONNECTIONSTATE
-        case "notAuthorized":
-            result = NOTAUTHORIZED_RESOURCECONNECTIONSTATE
-        case "notFound":
-            result = NOTFOUND_RESOURCECONNECTIONSTATE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_RESOURCECONNECTIONSTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CONNECTED_RESOURCECONNECTIONSTATE
+	switch v {
+	case "connected":
+		result = CONNECTED_RESOURCECONNECTIONSTATE
+	case "notAuthorized":
+		result = NOTAUTHORIZED_RESOURCECONNECTIONSTATE
+	case "notFound":
+		result = NOTFOUND_RESOURCECONNECTIONSTATE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_RESOURCECONNECTIONSTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeResourceConnectionState(values []ResourceConnectionState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ResourceConnectionState) isMultiValue() bool {
-    return false
+	return false
 }

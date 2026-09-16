@@ -2,54 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Describes current lifecycle state of a template
 type DeviceManagementTemplateLifecycleState int
 
 const (
-    // Invalid
-    INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE DeviceManagementTemplateLifecycleState = iota
-    // Draft
-    DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    // Active
-    ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    // Superseded
-    SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    // Deprecated
-    DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    // Retired
-    RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	// Invalid
+	INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE DeviceManagementTemplateLifecycleState = iota
+	// Draft
+	DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	// Active
+	ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	// Superseded
+	SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	// Deprecated
+	DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	// Retired
+	RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
 )
 
 func (i DeviceManagementTemplateLifecycleState) String() string {
-    return []string{"invalid", "draft", "active", "superseded", "deprecated", "retired"}[i]
+	return []string{"invalid", "draft", "active", "superseded", "deprecated", "retired"}[i]
 }
+
 func ParseDeviceManagementTemplateLifecycleState(v string) (any, error) {
-    result := INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-    switch v {
-        case "invalid":
-            result = INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "draft":
-            result = DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "active":
-            result = ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "superseded":
-            result = SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "deprecated":
-            result = DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        case "retired":
-            result = RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	switch v {
+	case "invalid":
+		result = INVALID_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	case "draft":
+		result = DRAFT_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	case "active":
+		result = ACTIVE_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	case "superseded":
+		result = SUPERSEDED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	case "deprecated":
+		result = DEPRECATED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	case "retired":
+		result = RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceManagementTemplateLifecycleState(values []DeviceManagementTemplateLifecycleState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceManagementTemplateLifecycleState) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,336 +4,358 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type PlannerTaskRecurrence struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewPlannerTaskRecurrence instantiates a new PlannerTaskRecurrence and sets the default values.
-func NewPlannerTaskRecurrence()(*PlannerTaskRecurrence) {
-    m := &PlannerTaskRecurrence{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewPlannerTaskRecurrence() *PlannerTaskRecurrence {
+	m := &PlannerTaskRecurrence{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreatePlannerTaskRecurrenceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePlannerTaskRecurrenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPlannerTaskRecurrence(), nil
+func CreatePlannerTaskRecurrenceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPlannerTaskRecurrence(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *PlannerTaskRecurrence) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *PlannerTaskRecurrence) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *PlannerTaskRecurrence) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *PlannerTaskRecurrence) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PlannerTaskRecurrence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["nextInSeriesTaskId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNextInSeriesTaskId(val)
-        }
-        return nil
-    }
-    res["occurrenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOccurrenceId(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["previousInSeriesTaskId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreviousInSeriesTaskId(val)
-        }
-        return nil
-    }
-    res["recurrenceStartDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecurrenceStartDateTime(val)
-        }
-        return nil
-    }
-    res["schedule"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePlannerRecurrenceScheduleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSchedule(val.(PlannerRecurrenceScheduleable))
-        }
-        return nil
-    }
-    res["seriesId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSeriesId(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PlannerTaskRecurrence) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["nextInSeriesTaskId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetNextInSeriesTaskId(val)
+		}
+		return nil
+	}
+	res["occurrenceId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOccurrenceId(val)
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["previousInSeriesTaskId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPreviousInSeriesTaskId(val)
+		}
+		return nil
+	}
+	res["recurrenceStartDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRecurrenceStartDateTime(val)
+		}
+		return nil
+	}
+	res["schedule"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePlannerRecurrenceScheduleFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSchedule(val.(PlannerRecurrenceScheduleable))
+		}
+		return nil
+	}
+	res["seriesId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSeriesId(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetNextInSeriesTaskId gets the nextInSeriesTaskId property value. The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
 // returns a *string when successful
-func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId()(*string) {
-    val, err := m.GetBackingStore().Get("nextInSeriesTaskId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetNextInSeriesTaskId() *string {
+	val, err := m.GetBackingStore().Get("nextInSeriesTaskId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetOccurrenceId gets the occurrenceId property value. The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
 // returns a *int32 when successful
-func (m *PlannerTaskRecurrence) GetOccurrenceId()(*int32) {
-    val, err := m.GetBackingStore().Get("occurrenceId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetOccurrenceId() *int32 {
+	val, err := m.GetBackingStore().Get("occurrenceId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *PlannerTaskRecurrence) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPreviousInSeriesTaskId gets the previousInSeriesTaskId property value. The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
 // returns a *string when successful
-func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId()(*string) {
-    val, err := m.GetBackingStore().Get("previousInSeriesTaskId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetPreviousInSeriesTaskId() *string {
+	val, err := m.GetBackingStore().Get("previousInSeriesTaskId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetRecurrenceStartDateTime gets the recurrenceStartDateTime property value. The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("recurrenceStartDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetRecurrenceStartDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("recurrenceStartDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetSchedule gets the schedule property value. The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
 // returns a PlannerRecurrenceScheduleable when successful
-func (m *PlannerTaskRecurrence) GetSchedule()(PlannerRecurrenceScheduleable) {
-    val, err := m.GetBackingStore().Get("schedule")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PlannerRecurrenceScheduleable)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetSchedule() PlannerRecurrenceScheduleable {
+	val, err := m.GetBackingStore().Get("schedule")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PlannerRecurrenceScheduleable)
+	}
+	return nil
 }
+
 // GetSeriesId gets the seriesId property value. The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
 // returns a *string when successful
-func (m *PlannerTaskRecurrence) GetSeriesId()(*string) {
-    val, err := m.GetBackingStore().Get("seriesId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PlannerTaskRecurrence) GetSeriesId() *string {
+	val, err := m.GetBackingStore().Get("seriesId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *PlannerTaskRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("nextInSeriesTaskId", m.GetNextInSeriesTaskId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("occurrenceId", m.GetOccurrenceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("previousInSeriesTaskId", m.GetPreviousInSeriesTaskId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteTimeValue("recurrenceStartDateTime", m.GetRecurrenceStartDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("schedule", m.GetSchedule())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("seriesId", m.GetSeriesId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PlannerTaskRecurrence) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteStringValue("nextInSeriesTaskId", m.GetNextInSeriesTaskId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteInt32Value("occurrenceId", m.GetOccurrenceId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("previousInSeriesTaskId", m.GetPreviousInSeriesTaskId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteTimeValue("recurrenceStartDateTime", m.GetRecurrenceStartDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("schedule", m.GetSchedule())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("seriesId", m.GetSeriesId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *PlannerTaskRecurrence) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *PlannerTaskRecurrence) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *PlannerTaskRecurrence) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetNextInSeriesTaskId sets the nextInSeriesTaskId property value. The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
-func (m *PlannerTaskRecurrence) SetNextInSeriesTaskId(value *string)() {
-    err := m.GetBackingStore().Set("nextInSeriesTaskId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetNextInSeriesTaskId(value *string) {
+	err := m.GetBackingStore().Set("nextInSeriesTaskId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOccurrenceId sets the occurrenceId property value. The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
-func (m *PlannerTaskRecurrence) SetOccurrenceId(value *int32)() {
-    err := m.GetBackingStore().Set("occurrenceId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetOccurrenceId(value *int32) {
+	err := m.GetBackingStore().Set("occurrenceId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *PlannerTaskRecurrence) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPreviousInSeriesTaskId sets the previousInSeriesTaskId property value. The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
-func (m *PlannerTaskRecurrence) SetPreviousInSeriesTaskId(value *string)() {
-    err := m.GetBackingStore().Set("previousInSeriesTaskId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetPreviousInSeriesTaskId(value *string) {
+	err := m.GetBackingStore().Set("previousInSeriesTaskId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRecurrenceStartDateTime sets the recurrenceStartDateTime property value. The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId >= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *PlannerTaskRecurrence) SetRecurrenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("recurrenceStartDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetRecurrenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("recurrenceStartDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSchedule sets the schedule property value. The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
-func (m *PlannerTaskRecurrence) SetSchedule(value PlannerRecurrenceScheduleable)() {
-    err := m.GetBackingStore().Set("schedule", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetSchedule(value PlannerRecurrenceScheduleable) {
+	err := m.GetBackingStore().Set("schedule", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSeriesId sets the seriesId property value. The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
-func (m *PlannerTaskRecurrence) SetSeriesId(value *string)() {
-    err := m.GetBackingStore().Set("seriesId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlannerTaskRecurrence) SetSeriesId(value *string) {
+	err := m.GetBackingStore().Set("seriesId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PlannerTaskRecurrenceable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetNextInSeriesTaskId()(*string)
-    GetOccurrenceId()(*int32)
-    GetOdataType()(*string)
-    GetPreviousInSeriesTaskId()(*string)
-    GetRecurrenceStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSchedule()(PlannerRecurrenceScheduleable)
-    GetSeriesId()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetNextInSeriesTaskId(value *string)()
-    SetOccurrenceId(value *int32)()
-    SetOdataType(value *string)()
-    SetPreviousInSeriesTaskId(value *string)()
-    SetRecurrenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSchedule(value PlannerRecurrenceScheduleable)()
-    SetSeriesId(value *string)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetNextInSeriesTaskId() *string
+	GetOccurrenceId() *int32
+	GetOdataType() *string
+	GetPreviousInSeriesTaskId() *string
+	GetRecurrenceStartDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetSchedule() PlannerRecurrenceScheduleable
+	GetSeriesId() *string
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetNextInSeriesTaskId(value *string)
+	SetOccurrenceId(value *int32)
+	SetOdataType(value *string)
+	SetPreviousInSeriesTaskId(value *string)
+	SetRecurrenceStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetSchedule(value PlannerRecurrenceScheduleable)
+	SetSeriesId(value *string)
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type SectionType int
 
 const (
-    USERDEFINED_SECTIONTYPE SectionType = iota
-    SYSTEMDEFINED_SECTIONTYPE
-    UNKNOWNFUTUREVALUE_SECTIONTYPE
+	USERDEFINED_SECTIONTYPE SectionType = iota
+	SYSTEMDEFINED_SECTIONTYPE
+	UNKNOWNFUTUREVALUE_SECTIONTYPE
 )
 
 func (i SectionType) String() string {
-    return []string{"userDefined", "systemDefined", "unknownFutureValue"}[i]
+	return []string{"userDefined", "systemDefined", "unknownFutureValue"}[i]
 }
+
 func ParseSectionType(v string) (any, error) {
-    result := USERDEFINED_SECTIONTYPE
-    switch v {
-        case "userDefined":
-            result = USERDEFINED_SECTIONTYPE
-        case "systemDefined":
-            result = SYSTEMDEFINED_SECTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SECTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := USERDEFINED_SECTIONTYPE
+	switch v {
+	case "userDefined":
+		result = USERDEFINED_SECTIONTYPE
+	case "systemDefined":
+		result = SYSTEMDEFINED_SECTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SECTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSectionType(values []SectionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SectionType) isMultiValue() bool {
-    return false
+	return false
 }

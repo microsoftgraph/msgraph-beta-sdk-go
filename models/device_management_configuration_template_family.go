@@ -2,102 +2,110 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Describes the TemplateFamily for the Template entity
 type DeviceManagementConfigurationTemplateFamily int
 
 const (
-    // Default for Template Family when Policy is not linked to a Template
-    NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY DeviceManagementConfigurationTemplateFamily = iota
-    // Template Family for EndpointSecurityAntivirus that manages the discrete group of antivirus settings for managed devices
-    ENDPOINTSECURITYANTIVIRUS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EndpointSecurityDiskEncryption that provides settings that are relevant for a devices built-in encryption  method, like FileVault or BitLocker
-    ENDPOINTSECURITYDISKENCRYPTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EndpointSecurityFirewall that helps configure a devices built-in firewall for device that run macOS and Windows 10
-    ENDPOINTSECURITYFIREWALL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EndpointSecurityEndpointDetectionAndResponse that facilitates management of the EDR settings and onboard devices to Microsoft Defender for Endpoint
-    ENDPOINTSECURITYENDPOINTDETECTIONANDRESPONSE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EndpointSecurityAttackSurfaceReduction that help reduce your attack surfaces, by minimizing the places where your organization is vulnerable to cyberthreats and attacks
-    ENDPOINTSECURITYATTACKSURFACEREDUCTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EndpointSecurityAccountProtection that facilitates protecting the identity and accounts of users
-    ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
-    ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EPM Elevation Rules
-    ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for EnrollmentConfiguration
-    ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
-    APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for Baseline
-    BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for device configuration scripts
-    DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for device configuration policies
-    DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for windowsOsRecovery that can be applied during a Windows operating system recovery
-    WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Template Family for Company Portal settings
-    COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    // Windows Recovery and Remediation Configuration Policy
-    WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Default for Template Family when Policy is not linked to a Template
+	NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY DeviceManagementConfigurationTemplateFamily = iota
+	// Template Family for EndpointSecurityAntivirus that manages the discrete group of antivirus settings for managed devices
+	ENDPOINTSECURITYANTIVIRUS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EndpointSecurityDiskEncryption that provides settings that are relevant for a devices built-in encryption  method, like FileVault or BitLocker
+	ENDPOINTSECURITYDISKENCRYPTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EndpointSecurityFirewall that helps configure a devices built-in firewall for device that run macOS and Windows 10
+	ENDPOINTSECURITYFIREWALL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EndpointSecurityEndpointDetectionAndResponse that facilitates management of the EDR settings and onboard devices to Microsoft Defender for Endpoint
+	ENDPOINTSECURITYENDPOINTDETECTIONANDRESPONSE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EndpointSecurityAttackSurfaceReduction that help reduce your attack surfaces, by minimizing the places where your organization is vulnerable to cyberthreats and attacks
+	ENDPOINTSECURITYATTACKSURFACEREDUCTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EndpointSecurityAccountProtection that facilitates protecting the identity and accounts of users
+	ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)
+	ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EPM Elevation Rules
+	ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for EnrollmentConfiguration
+	ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates
+	APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for Baseline
+	BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for device configuration scripts
+	DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for device configuration policies
+	DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for windowsOsRecovery that can be applied during a Windows operating system recovery
+	WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Template Family for Company Portal settings
+	COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Windows Recovery and Remediation Configuration Policy
+	WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	// Indicates Template Family for Maintenance Windows templates
+	MAINTENANCEWINDOWS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
 )
 
 func (i DeviceManagementConfigurationTemplateFamily) String() string {
-    return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "windowsOsRecoveryPolicies", "companyPortal", "windowsRecoveryAndRemediationConfiguration"}[i]
+	return []string{"none", "endpointSecurityAntivirus", "endpointSecurityDiskEncryption", "endpointSecurityFirewall", "endpointSecurityEndpointDetectionAndResponse", "endpointSecurityAttackSurfaceReduction", "endpointSecurityAccountProtection", "endpointSecurityApplicationControl", "endpointSecurityEndpointPrivilegeManagement", "enrollmentConfiguration", "appQuietTime", "baseline", "unknownFutureValue", "deviceConfigurationScripts", "deviceConfigurationPolicies", "windowsOsRecoveryPolicies", "companyPortal", "windowsRecoveryAndRemediationConfiguration", "maintenanceWindows"}[i]
 }
+
 func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityAntivirus":
-            result = ENDPOINTSECURITYANTIVIRUS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityDiskEncryption":
-            result = ENDPOINTSECURITYDISKENCRYPTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityFirewall":
-            result = ENDPOINTSECURITYFIREWALL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityEndpointDetectionAndResponse":
-            result = ENDPOINTSECURITYENDPOINTDETECTIONANDRESPONSE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityAttackSurfaceReduction":
-            result = ENDPOINTSECURITYATTACKSURFACEREDUCTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityAccountProtection":
-            result = ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityApplicationControl":
-            result = ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "endpointSecurityEndpointPrivilegeManagement":
-            result = ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "enrollmentConfiguration":
-            result = ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "appQuietTime":
-            result = APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "baseline":
-            result = BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "deviceConfigurationScripts":
-            result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "deviceConfigurationPolicies":
-            result = DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "windowsOsRecoveryPolicies":
-            result = WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "companyPortal":
-            result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        case "windowsRecoveryAndRemediationConfiguration":
-            result = WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	switch v {
+	case "none":
+		result = NONE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityAntivirus":
+		result = ENDPOINTSECURITYANTIVIRUS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityDiskEncryption":
+		result = ENDPOINTSECURITYDISKENCRYPTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityFirewall":
+		result = ENDPOINTSECURITYFIREWALL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityEndpointDetectionAndResponse":
+		result = ENDPOINTSECURITYENDPOINTDETECTIONANDRESPONSE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityAttackSurfaceReduction":
+		result = ENDPOINTSECURITYATTACKSURFACEREDUCTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityAccountProtection":
+		result = ENDPOINTSECURITYACCOUNTPROTECTION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityApplicationControl":
+		result = ENDPOINTSECURITYAPPLICATIONCONTROL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "endpointSecurityEndpointPrivilegeManagement":
+		result = ENDPOINTSECURITYENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "enrollmentConfiguration":
+		result = ENROLLMENTCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "appQuietTime":
+		result = APPQUIETTIME_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "baseline":
+		result = BASELINE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "deviceConfigurationScripts":
+		result = DEVICECONFIGURATIONSCRIPTS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "deviceConfigurationPolicies":
+		result = DEVICECONFIGURATIONPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "windowsOsRecoveryPolicies":
+		result = WINDOWSOSRECOVERYPOLICIES_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "companyPortal":
+		result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "windowsRecoveryAndRemediationConfiguration":
+		result = WINDOWSRECOVERYANDREMEDIATIONCONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	case "maintenanceWindows":
+		result = MAINTENANCEWINDOWS_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceManagementConfigurationTemplateFamily(values []DeviceManagementConfigurationTemplateFamily) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceManagementConfigurationTemplateFamily) isMultiValue() bool {
-    return false
+	return false
 }

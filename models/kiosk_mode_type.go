@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Possible values of Android Kiosk Mode.
 type KioskModeType int
 
 const (
-    // Not configured
-    NOTCONFIGURED_KIOSKMODETYPE KioskModeType = iota
-    // Run in single-app mode
-    SINGLEAPPMODE_KIOSKMODETYPE
-    // Run in multi-app mode
-    MULTIAPPMODE_KIOSKMODETYPE
+	// Not configured
+	NOTCONFIGURED_KIOSKMODETYPE KioskModeType = iota
+	// Run in single-app mode
+	SINGLEAPPMODE_KIOSKMODETYPE
+	// Run in multi-app mode
+	MULTIAPPMODE_KIOSKMODETYPE
 )
 
 func (i KioskModeType) String() string {
-    return []string{"notConfigured", "singleAppMode", "multiAppMode"}[i]
+	return []string{"notConfigured", "singleAppMode", "multiAppMode"}[i]
 }
+
 func ParseKioskModeType(v string) (any, error) {
-    result := NOTCONFIGURED_KIOSKMODETYPE
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_KIOSKMODETYPE
-        case "singleAppMode":
-            result = SINGLEAPPMODE_KIOSKMODETYPE
-        case "multiAppMode":
-            result = MULTIAPPMODE_KIOSKMODETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_KIOSKMODETYPE
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_KIOSKMODETYPE
+	case "singleAppMode":
+		result = SINGLEAPPMODE_KIOSKMODETYPE
+	case "multiAppMode":
+		result = MULTIAPPMODE_KIOSKMODETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeKioskModeType(values []KioskModeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i KioskModeType) isMultiValue() bool {
-    return false
+	return false
 }

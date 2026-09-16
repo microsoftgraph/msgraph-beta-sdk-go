@@ -4,89 +4,96 @@
 package windowsupdates
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type Catalog struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewCatalog instantiates a new Catalog and sets the default values.
-func NewCatalog()(*Catalog) {
-    m := &Catalog{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewCatalog() *Catalog {
+	m := &Catalog{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateCatalogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCatalog(), nil
+func CreateCatalogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCatalog(), nil
 }
+
 // GetEntries gets the entries property value. Lists the content that you can approve for deployment. Read-only.
 // returns a []CatalogEntryable when successful
-func (m *Catalog) GetEntries()([]CatalogEntryable) {
-    val, err := m.GetBackingStore().Get("entries")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]CatalogEntryable)
-    }
-    return nil
+func (m *Catalog) GetEntries() []CatalogEntryable {
+	val, err := m.GetBackingStore().Get("entries")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CatalogEntryable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *Catalog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["entries"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCatalogEntryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CatalogEntryable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(CatalogEntryable)
-                }
-            }
-            m.SetEntries(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *Catalog) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["entries"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCatalogEntryFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CatalogEntryable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CatalogEntryable)
+				}
+			}
+			m.SetEntries(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *Catalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetEntries() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEntries()))
-        for i, v := range m.GetEntries() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("entries", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *Catalog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetEntries() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEntries()))
+		for i, v := range m.GetEntries() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("entries", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetEntries sets the entries property value. Lists the content that you can approve for deployment. Read-only.
-func (m *Catalog) SetEntries(value []CatalogEntryable)() {
-    err := m.GetBackingStore().Set("entries", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Catalog) SetEntries(value []CatalogEntryable) {
+	err := m.GetBackingStore().Set("entries", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type Catalogable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEntries()([]CatalogEntryable)
-    SetEntries(value []CatalogEntryable)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetEntries() []CatalogEntryable
+	SetEntries(value []CatalogEntryable)
 }

@@ -2,66 +2,70 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Subject Name Format Options.
 type SubjectNameFormat int
 
 const (
-    // Common name.
-    COMMONNAME_SUBJECTNAMEFORMAT SubjectNameFormat = iota
-    // Common Name Including Email.
-    COMMONNAMEINCLUDINGEMAIL_SUBJECTNAMEFORMAT
-    // Common Name As Email.
-    COMMONNAMEASEMAIL_SUBJECTNAMEFORMAT
-    // Custom subject name format.
-    CUSTOM_SUBJECTNAMEFORMAT
-    // Common Name As IMEI.
-    COMMONNAMEASIMEI_SUBJECTNAMEFORMAT
-    // Common Name As Serial Number.
-    COMMONNAMEASSERIALNUMBER_SUBJECTNAMEFORMAT
-    // Common Name As Serial Number.
-    COMMONNAMEASAADDEVICEID_SUBJECTNAMEFORMAT
-    // Common Name As Serial Number.
-    COMMONNAMEASINTUNEDEVICEID_SUBJECTNAMEFORMAT
-    // Common Name As Serial Number.
-    COMMONNAMEASDURABLEDEVICEID_SUBJECTNAMEFORMAT
+	// Common name.
+	COMMONNAME_SUBJECTNAMEFORMAT SubjectNameFormat = iota
+	// Common Name Including Email.
+	COMMONNAMEINCLUDINGEMAIL_SUBJECTNAMEFORMAT
+	// Common Name As Email.
+	COMMONNAMEASEMAIL_SUBJECTNAMEFORMAT
+	// Custom subject name format.
+	CUSTOM_SUBJECTNAMEFORMAT
+	// Common Name As IMEI.
+	COMMONNAMEASIMEI_SUBJECTNAMEFORMAT
+	// Common Name As Serial Number.
+	COMMONNAMEASSERIALNUMBER_SUBJECTNAMEFORMAT
+	// Common Name As Serial Number.
+	COMMONNAMEASAADDEVICEID_SUBJECTNAMEFORMAT
+	// Common Name As Serial Number.
+	COMMONNAMEASINTUNEDEVICEID_SUBJECTNAMEFORMAT
+	// Common Name As Serial Number.
+	COMMONNAMEASDURABLEDEVICEID_SUBJECTNAMEFORMAT
 )
 
 func (i SubjectNameFormat) String() string {
-    return []string{"commonName", "commonNameIncludingEmail", "commonNameAsEmail", "custom", "commonNameAsIMEI", "commonNameAsSerialNumber", "commonNameAsAadDeviceId", "commonNameAsIntuneDeviceId", "commonNameAsDurableDeviceId"}[i]
+	return []string{"commonName", "commonNameIncludingEmail", "commonNameAsEmail", "custom", "commonNameAsIMEI", "commonNameAsSerialNumber", "commonNameAsAadDeviceId", "commonNameAsIntuneDeviceId", "commonNameAsDurableDeviceId"}[i]
 }
+
 func ParseSubjectNameFormat(v string) (any, error) {
-    result := COMMONNAME_SUBJECTNAMEFORMAT
-    switch v {
-        case "commonName":
-            result = COMMONNAME_SUBJECTNAMEFORMAT
-        case "commonNameIncludingEmail":
-            result = COMMONNAMEINCLUDINGEMAIL_SUBJECTNAMEFORMAT
-        case "commonNameAsEmail":
-            result = COMMONNAMEASEMAIL_SUBJECTNAMEFORMAT
-        case "custom":
-            result = CUSTOM_SUBJECTNAMEFORMAT
-        case "commonNameAsIMEI":
-            result = COMMONNAMEASIMEI_SUBJECTNAMEFORMAT
-        case "commonNameAsSerialNumber":
-            result = COMMONNAMEASSERIALNUMBER_SUBJECTNAMEFORMAT
-        case "commonNameAsAadDeviceId":
-            result = COMMONNAMEASAADDEVICEID_SUBJECTNAMEFORMAT
-        case "commonNameAsIntuneDeviceId":
-            result = COMMONNAMEASINTUNEDEVICEID_SUBJECTNAMEFORMAT
-        case "commonNameAsDurableDeviceId":
-            result = COMMONNAMEASDURABLEDEVICEID_SUBJECTNAMEFORMAT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := COMMONNAME_SUBJECTNAMEFORMAT
+	switch v {
+	case "commonName":
+		result = COMMONNAME_SUBJECTNAMEFORMAT
+	case "commonNameIncludingEmail":
+		result = COMMONNAMEINCLUDINGEMAIL_SUBJECTNAMEFORMAT
+	case "commonNameAsEmail":
+		result = COMMONNAMEASEMAIL_SUBJECTNAMEFORMAT
+	case "custom":
+		result = CUSTOM_SUBJECTNAMEFORMAT
+	case "commonNameAsIMEI":
+		result = COMMONNAMEASIMEI_SUBJECTNAMEFORMAT
+	case "commonNameAsSerialNumber":
+		result = COMMONNAMEASSERIALNUMBER_SUBJECTNAMEFORMAT
+	case "commonNameAsAadDeviceId":
+		result = COMMONNAMEASAADDEVICEID_SUBJECTNAMEFORMAT
+	case "commonNameAsIntuneDeviceId":
+		result = COMMONNAMEASINTUNEDEVICEID_SUBJECTNAMEFORMAT
+	case "commonNameAsDurableDeviceId":
+		result = COMMONNAMEASDURABLEDEVICEID_SUBJECTNAMEFORMAT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSubjectNameFormat(values []SubjectNameFormat) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SubjectNameFormat) isMultiValue() bool {
-    return false
+	return false
 }

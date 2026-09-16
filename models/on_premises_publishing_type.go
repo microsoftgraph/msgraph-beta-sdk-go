@@ -2,53 +2,57 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type OnPremisesPublishingType int
 
 const (
-    APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE OnPremisesPublishingType = iota
-    EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
-    AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
-    PROVISIONING_ONPREMISESPUBLISHINGTYPE
-    INTUNEPFX_ONPREMISESPUBLISHINGTYPE
-    OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
-    UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
-    PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
+	APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE OnPremisesPublishingType = iota
+	EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
+	AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
+	PROVISIONING_ONPREMISESPUBLISHINGTYPE
+	INTUNEPFX_ONPREMISESPUBLISHINGTYPE
+	OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
+	UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
+	PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
 )
 
 func (i OnPremisesPublishingType) String() string {
-    return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue", "privateAccess"}[i]
+	return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue", "privateAccess"}[i]
 }
+
 func ParseOnPremisesPublishingType(v string) (any, error) {
-    result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
-    switch v {
-        case "applicationProxy":
-            result = APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
-        case "exchangeOnline":
-            result = EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
-        case "authentication":
-            result = AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
-        case "provisioning":
-            result = PROVISIONING_ONPREMISESPUBLISHINGTYPE
-        case "intunePfx":
-            result = INTUNEPFX_ONPREMISESPUBLISHINGTYPE
-        case "oflineDomainJoin":
-            result = OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
-        case "privateAccess":
-            result = PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
+	switch v {
+	case "applicationProxy":
+		result = APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
+	case "exchangeOnline":
+		result = EXCHANGEONLINE_ONPREMISESPUBLISHINGTYPE
+	case "authentication":
+		result = AUTHENTICATION_ONPREMISESPUBLISHINGTYPE
+	case "provisioning":
+		result = PROVISIONING_ONPREMISESPUBLISHINGTYPE
+	case "intunePfx":
+		result = INTUNEPFX_ONPREMISESPUBLISHINGTYPE
+	case "oflineDomainJoin":
+		result = OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
+	case "privateAccess":
+		result = PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeOnPremisesPublishingType(values []OnPremisesPublishingType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i OnPremisesPublishingType) isMultiValue() bool {
-    return false
+	return false
 }

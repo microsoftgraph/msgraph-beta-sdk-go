@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type EducationalActivityCollectionResponse struct {
-    BaseCollectionPaginationCountResponse
+	BaseCollectionPaginationCountResponse
 }
+
 // NewEducationalActivityCollectionResponse instantiates a new EducationalActivityCollectionResponse and sets the default values.
-func NewEducationalActivityCollectionResponse()(*EducationalActivityCollectionResponse) {
-    m := &EducationalActivityCollectionResponse{
-        BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
-    }
-    return m
+func NewEducationalActivityCollectionResponse() *EducationalActivityCollectionResponse {
+	m := &EducationalActivityCollectionResponse{
+		BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
+	}
+	return m
 }
+
 // CreateEducationalActivityCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateEducationalActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewEducationalActivityCollectionResponse(), nil
+func CreateEducationalActivityCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewEducationalActivityCollectionResponse(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *EducationalActivityCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEducationalActivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationalActivityable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(EducationalActivityable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *EducationalActivityCollectionResponse) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
+	res["value"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateEducationalActivityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]EducationalActivityable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(EducationalActivityable)
+				}
+			}
+			m.SetValue(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetValue gets the value property value. The value property
 // returns a []EducationalActivityable when successful
-func (m *EducationalActivityCollectionResponse) GetValue()([]EducationalActivityable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]EducationalActivityable)
-    }
-    return nil
+func (m *EducationalActivityCollectionResponse) GetValue() []EducationalActivityable {
+	val, err := m.GetBackingStore().Get("value")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]EducationalActivityable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *EducationalActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *EducationalActivityCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetValue() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
+		for i, v := range m.GetValue() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("value", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetValue sets the value property value. The value property
-func (m *EducationalActivityCollectionResponse) SetValue(value []EducationalActivityable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *EducationalActivityCollectionResponse) SetValue(value []EducationalActivityable) {
+	err := m.GetBackingStore().Set("value", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type EducationalActivityCollectionResponseable interface {
-    BaseCollectionPaginationCountResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]EducationalActivityable)
-    SetValue(value []EducationalActivityable)()
+	BaseCollectionPaginationCountResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetValue() []EducationalActivityable
+	SetValue(value []EducationalActivityable)
 }

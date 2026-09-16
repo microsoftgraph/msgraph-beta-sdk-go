@@ -4,81 +4,88 @@
 package directory
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder provides operations to manage the appB2BSignInActivityMetrics property of the microsoft.graph.relatedTenant entity.
 type TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters get appB2BSignInActivityMetrics from directory
 type TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters struct {
-    // Expand related entities
-    Expand []string "uriparametername:\"%24expand\""
-    // Select properties to be returned
-    Select []string "uriparametername:\"%24select\""
+	// Expand related entities
+	Expand []string "uriparametername:\"%24expand\""
+	// Select properties to be returned
+	Select []string "uriparametername:\"%24select\""
 }
+
 // TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request query parameters
+	QueryParameters *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetQueryParameters
 }
+
 // NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal instantiates a new TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder and sets the default values.
-func NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) {
-    m := &TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/relatedTenants/{relatedTenant%2Did}/appB2BSignInActivityMetrics{?%24expand,%24select}", pathParameters),
-    }
-    return m
+func NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder {
+	m := &TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/directory/tenantGovernance/relatedTenants/{relatedTenant%2Did}/appB2BSignInActivityMetrics{?%24expand,%24select}", pathParameters),
+	}
+	return m
 }
+
 // NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder instantiates a new TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder and sets the default values.
-func NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(urlParams, requestAdapter)
+func NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Get get appB2BSignInActivityMetrics from directory
 // returns a B2BSignInActivityMetricsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateB2BSignInActivityMetricsFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable), nil
+func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable, error) {
+	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateB2BSignInActivityMetricsFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2BSignInActivityMetricsable), nil
 }
+
 // ToGetRequestInformation get appB2BSignInActivityMetrics from directory
 // returns a *RequestInformation when successful
-func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		if requestConfiguration.QueryParameters != nil {
+			requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+		}
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder when successful
-func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) WithUrl(rawUrl string)(*TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) {
-    return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder) WithUrl(rawUrl string) *TenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder {
+	return NewTenantGovernanceRelatedTenantsItemAppB2BSignInActivityMetricsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

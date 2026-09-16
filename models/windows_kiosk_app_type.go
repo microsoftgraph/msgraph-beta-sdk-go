@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The type of Windows kiosk app.
 type WindowsKioskAppType int
 
 const (
-    // Unknown.
-    UNKNOWN_WINDOWSKIOSKAPPTYPE WindowsKioskAppType = iota
-    // Store App.
-    STORE_WINDOWSKIOSKAPPTYPE
-    // Desktop App.
-    DESKTOP_WINDOWSKIOSKAPPTYPE
-    // Input by AUMID.
-    AUMID_WINDOWSKIOSKAPPTYPE
+	// Unknown.
+	UNKNOWN_WINDOWSKIOSKAPPTYPE WindowsKioskAppType = iota
+	// Store App.
+	STORE_WINDOWSKIOSKAPPTYPE
+	// Desktop App.
+	DESKTOP_WINDOWSKIOSKAPPTYPE
+	// Input by AUMID.
+	AUMID_WINDOWSKIOSKAPPTYPE
 )
 
 func (i WindowsKioskAppType) String() string {
-    return []string{"unknown", "store", "desktop", "aumId"}[i]
+	return []string{"unknown", "store", "desktop", "aumId"}[i]
 }
+
 func ParseWindowsKioskAppType(v string) (any, error) {
-    result := UNKNOWN_WINDOWSKIOSKAPPTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_WINDOWSKIOSKAPPTYPE
-        case "store":
-            result = STORE_WINDOWSKIOSKAPPTYPE
-        case "desktop":
-            result = DESKTOP_WINDOWSKIOSKAPPTYPE
-        case "aumId":
-            result = AUMID_WINDOWSKIOSKAPPTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_WINDOWSKIOSKAPPTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_WINDOWSKIOSKAPPTYPE
+	case "store":
+		result = STORE_WINDOWSKIOSKAPPTYPE
+	case "desktop":
+		result = DESKTOP_WINDOWSKIOSKAPPTYPE
+	case "aumId":
+		result = AUMID_WINDOWSKIOSKAPPTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsKioskAppType(values []WindowsKioskAppType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsKioskAppType) isMultiValue() bool {
-    return false
+	return false
 }

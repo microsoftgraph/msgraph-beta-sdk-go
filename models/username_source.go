@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Username source.
 type UsernameSource int
 
 const (
-    // User principal name.
-    USERPRINCIPALNAME_USERNAMESOURCE UsernameSource = iota
-    // Primary SMTP address.
-    PRIMARYSMTPADDRESS_USERNAMESOURCE
-    // The user sam account name.
-    SAMACCOUNTNAME_USERNAMESOURCE
+	// User principal name.
+	USERPRINCIPALNAME_USERNAMESOURCE UsernameSource = iota
+	// Primary SMTP address.
+	PRIMARYSMTPADDRESS_USERNAMESOURCE
+	// The user sam account name.
+	SAMACCOUNTNAME_USERNAMESOURCE
 )
 
 func (i UsernameSource) String() string {
-    return []string{"userPrincipalName", "primarySmtpAddress", "samAccountName"}[i]
+	return []string{"userPrincipalName", "primarySmtpAddress", "samAccountName"}[i]
 }
+
 func ParseUsernameSource(v string) (any, error) {
-    result := USERPRINCIPALNAME_USERNAMESOURCE
-    switch v {
-        case "userPrincipalName":
-            result = USERPRINCIPALNAME_USERNAMESOURCE
-        case "primarySmtpAddress":
-            result = PRIMARYSMTPADDRESS_USERNAMESOURCE
-        case "samAccountName":
-            result = SAMACCOUNTNAME_USERNAMESOURCE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := USERPRINCIPALNAME_USERNAMESOURCE
+	switch v {
+	case "userPrincipalName":
+		result = USERPRINCIPALNAME_USERNAMESOURCE
+	case "primarySmtpAddress":
+		result = PRIMARYSMTPADDRESS_USERNAMESOURCE
+	case "samAccountName":
+		result = SAMACCOUNTNAME_USERNAMESOURCE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeUsernameSource(values []UsernameSource) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i UsernameSource) isMultiValue() bool {
-    return false
+	return false
 }

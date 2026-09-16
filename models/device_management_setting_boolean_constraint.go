@@ -4,79 +4,86 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DeviceManagementSettingBooleanConstraint constraint the enforces a particular boolean value
 type DeviceManagementSettingBooleanConstraint struct {
-    DeviceManagementConstraint
+	DeviceManagementConstraint
 }
+
 // NewDeviceManagementSettingBooleanConstraint instantiates a new DeviceManagementSettingBooleanConstraint and sets the default values.
-func NewDeviceManagementSettingBooleanConstraint()(*DeviceManagementSettingBooleanConstraint) {
-    m := &DeviceManagementSettingBooleanConstraint{
-        DeviceManagementConstraint: *NewDeviceManagementConstraint(),
-    }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingBooleanConstraint"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDeviceManagementSettingBooleanConstraint() *DeviceManagementSettingBooleanConstraint {
+	m := &DeviceManagementSettingBooleanConstraint{
+		DeviceManagementConstraint: *NewDeviceManagementConstraint(),
+	}
+	odataTypeValue := "#microsoft.graph.deviceManagementSettingBooleanConstraint"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDeviceManagementSettingBooleanConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDeviceManagementSettingBooleanConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDeviceManagementSettingBooleanConstraint(), nil
+func CreateDeviceManagementSettingBooleanConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDeviceManagementSettingBooleanConstraint(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DeviceManagementSettingBooleanConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceManagementConstraint.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetValue(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DeviceManagementSettingBooleanConstraint) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceManagementConstraint.GetFieldDeserializers()
+	res["value"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetValue(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetValue gets the value property value. The boolean value to compare against
 // returns a *bool when successful
-func (m *DeviceManagementSettingBooleanConstraint) GetValue()(*bool) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *DeviceManagementSettingBooleanConstraint) GetValue() *bool {
+	val, err := m.GetBackingStore().Get("value")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *DeviceManagementSettingBooleanConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceManagementConstraint.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteBoolValue("value", m.GetValue())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *DeviceManagementSettingBooleanConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceManagementConstraint.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteBoolValue("value", m.GetValue())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetValue sets the value property value. The boolean value to compare against
-func (m *DeviceManagementSettingBooleanConstraint) SetValue(value *bool)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *DeviceManagementSettingBooleanConstraint) SetValue(value *bool) {
+	err := m.GetBackingStore().Set("value", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type DeviceManagementSettingBooleanConstraintable interface {
-    DeviceManagementConstraintable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()(*bool)
-    SetValue(value *bool)()
+	DeviceManagementConstraintable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetValue() *bool
+	SetValue(value *bool)
 }
