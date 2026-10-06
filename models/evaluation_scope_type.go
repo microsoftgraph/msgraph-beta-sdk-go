@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type EvaluationScopeType int
 
 const (
-    TENANT_EVALUATIONSCOPETYPE EvaluationScopeType = iota
-    AGENT_EVALUATIONSCOPETYPE
-    ANONYMOUSUSER_EVALUATIONSCOPETYPE
-    UNKNOWNFUTUREVALUE_EVALUATIONSCOPETYPE
+	TENANT_EVALUATIONSCOPETYPE EvaluationScopeType = iota
+	AGENT_EVALUATIONSCOPETYPE
+	ANONYMOUSUSER_EVALUATIONSCOPETYPE
+	UNKNOWNFUTUREVALUE_EVALUATIONSCOPETYPE
 )
 
 func (i EvaluationScopeType) String() string {
-    return []string{"tenant", "agent", "anonymousUser", "unknownFutureValue"}[i]
+	return []string{"tenant", "agent", "anonymousUser", "unknownFutureValue"}[i]
 }
+
 func ParseEvaluationScopeType(v string) (any, error) {
-    result := TENANT_EVALUATIONSCOPETYPE
-    switch v {
-        case "tenant":
-            result = TENANT_EVALUATIONSCOPETYPE
-        case "agent":
-            result = AGENT_EVALUATIONSCOPETYPE
-        case "anonymousUser":
-            result = ANONYMOUSUSER_EVALUATIONSCOPETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_EVALUATIONSCOPETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := TENANT_EVALUATIONSCOPETYPE
+	switch v {
+	case "tenant":
+		result = TENANT_EVALUATIONSCOPETYPE
+	case "agent":
+		result = AGENT_EVALUATIONSCOPETYPE
+	case "anonymousUser":
+		result = ANONYMOUSUSER_EVALUATIONSCOPETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_EVALUATIONSCOPETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeEvaluationScopeType(values []EvaluationScopeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i EvaluationScopeType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Wired Network authentication method.
 type WiredNetworkAuthenticationMethod int
 
 const (
-    // Use an identity certificate for authentication.
-    CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD WiredNetworkAuthenticationMethod = iota
-    // Use username and password for authentication.
-    USERNAMEANDPASSWORD_WIREDNETWORKAUTHENTICATIONMETHOD
-    // Use Derived Credential for authentication.
-    DERIVEDCREDENTIAL_WIREDNETWORKAUTHENTICATIONMETHOD
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONMETHOD
+	// Use an identity certificate for authentication.
+	CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD WiredNetworkAuthenticationMethod = iota
+	// Use username and password for authentication.
+	USERNAMEANDPASSWORD_WIREDNETWORKAUTHENTICATIONMETHOD
+	// Use Derived Credential for authentication.
+	DERIVEDCREDENTIAL_WIREDNETWORKAUTHENTICATIONMETHOD
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONMETHOD
 )
 
 func (i WiredNetworkAuthenticationMethod) String() string {
-    return []string{"certificate", "usernameAndPassword", "derivedCredential", "unknownFutureValue"}[i]
+	return []string{"certificate", "usernameAndPassword", "derivedCredential", "unknownFutureValue"}[i]
 }
+
 func ParseWiredNetworkAuthenticationMethod(v string) (any, error) {
-    result := CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD
-    switch v {
-        case "certificate":
-            result = CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD
-        case "usernameAndPassword":
-            result = USERNAMEANDPASSWORD_WIREDNETWORKAUTHENTICATIONMETHOD
-        case "derivedCredential":
-            result = DERIVEDCREDENTIAL_WIREDNETWORKAUTHENTICATIONMETHOD
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONMETHOD
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD
+	switch v {
+	case "certificate":
+		result = CERTIFICATE_WIREDNETWORKAUTHENTICATIONMETHOD
+	case "usernameAndPassword":
+		result = USERNAMEANDPASSWORD_WIREDNETWORKAUTHENTICATIONMETHOD
+	case "derivedCredential":
+		result = DERIVEDCREDENTIAL_WIREDNETWORKAUTHENTICATIONMETHOD
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONMETHOD
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWiredNetworkAuthenticationMethod(values []WiredNetworkAuthenticationMethod) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WiredNetworkAuthenticationMethod) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type RecommendationPriority int
 
 const (
-    LOW_RECOMMENDATIONPRIORITY RecommendationPriority = iota
-    MEDIUM_RECOMMENDATIONPRIORITY
-    HIGH_RECOMMENDATIONPRIORITY
-    CRITICAL_RECOMMENDATIONPRIORITY
-    UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
+	LOW_RECOMMENDATIONPRIORITY RecommendationPriority = iota
+	MEDIUM_RECOMMENDATIONPRIORITY
+	HIGH_RECOMMENDATIONPRIORITY
+	CRITICAL_RECOMMENDATIONPRIORITY
+	UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
 )
 
 func (i RecommendationPriority) String() string {
-    return []string{"low", "medium", "high", "critical", "unknownFutureValue"}[i]
+	return []string{"low", "medium", "high", "critical", "unknownFutureValue"}[i]
 }
+
 func ParseRecommendationPriority(v string) (any, error) {
-    result := LOW_RECOMMENDATIONPRIORITY
-    switch v {
-        case "low":
-            result = LOW_RECOMMENDATIONPRIORITY
-        case "medium":
-            result = MEDIUM_RECOMMENDATIONPRIORITY
-        case "high":
-            result = HIGH_RECOMMENDATIONPRIORITY
-        case "critical":
-            result = CRITICAL_RECOMMENDATIONPRIORITY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := LOW_RECOMMENDATIONPRIORITY
+	switch v {
+	case "low":
+		result = LOW_RECOMMENDATIONPRIORITY
+	case "medium":
+		result = MEDIUM_RECOMMENDATIONPRIORITY
+	case "high":
+		result = HIGH_RECOMMENDATIONPRIORITY
+	case "critical":
+		result = CRITICAL_RECOMMENDATIONPRIORITY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_RECOMMENDATIONPRIORITY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRecommendationPriority(values []RecommendationPriority) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RecommendationPriority) isMultiValue() bool {
-    return false
+	return false
 }

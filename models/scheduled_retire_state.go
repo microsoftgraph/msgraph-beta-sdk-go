@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Cancel or confirm scheduled retire 
 type ScheduledRetireState int
 
 const (
-    // CancelRetire
-    CANCELRETIRE_SCHEDULEDRETIRESTATE ScheduledRetireState = iota
-    // ConfirmRetire
-    CONFIRMRETIRE_SCHEDULEDRETIRESTATE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE
+	// CancelRetire
+	CANCELRETIRE_SCHEDULEDRETIRESTATE ScheduledRetireState = iota
+	// ConfirmRetire
+	CONFIRMRETIRE_SCHEDULEDRETIRESTATE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE
 )
 
 func (i ScheduledRetireState) String() string {
-    return []string{"cancelRetire", "confirmRetire", "unknownFutureValue"}[i]
+	return []string{"cancelRetire", "confirmRetire", "unknownFutureValue"}[i]
 }
+
 func ParseScheduledRetireState(v string) (any, error) {
-    result := CANCELRETIRE_SCHEDULEDRETIRESTATE
-    switch v {
-        case "cancelRetire":
-            result = CANCELRETIRE_SCHEDULEDRETIRESTATE
-        case "confirmRetire":
-            result = CONFIRMRETIRE_SCHEDULEDRETIRESTATE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CANCELRETIRE_SCHEDULEDRETIRESTATE
+	switch v {
+	case "cancelRetire":
+		result = CANCELRETIRE_SCHEDULEDRETIRESTATE
+	case "confirmRetire":
+		result = CONFIRMRETIRE_SCHEDULEDRETIRESTATE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeScheduledRetireState(values []ScheduledRetireState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ScheduledRetireState) isMultiValue() bool {
-    return false
+	return false
 }

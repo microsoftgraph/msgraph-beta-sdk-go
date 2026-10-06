@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcDisasterRecoveryLicenseType int
 
 const (
-    NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE CloudPcDisasterRecoveryLicenseType = iota
-    STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
-    PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE CloudPcDisasterRecoveryLicenseType = iota
+	STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
 )
 
 func (i CloudPcDisasterRecoveryLicenseType) String() string {
-    return []string{"none", "standard", "unknownFutureValue", "plus"}[i]
+	return []string{"none", "standard", "unknownFutureValue", "plus"}[i]
 }
+
 func ParseCloudPcDisasterRecoveryLicenseType(v string) (any, error) {
-    result := NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE
-    switch v {
-        case "none":
-            result = NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE
-        case "standard":
-            result = STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
-        case "plus":
-            result = PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	switch v {
+	case "none":
+		result = NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	case "standard":
+		result = STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	case "plus":
+		result = PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcDisasterRecoveryLicenseType(values []CloudPcDisasterRecoveryLicenseType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcDisasterRecoveryLicenseType) isMultiValue() bool {
-    return false
+	return false
 }

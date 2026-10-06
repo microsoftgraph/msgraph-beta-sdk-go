@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcConnectivityEventResult int
 
 const (
-    UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT CloudPcConnectivityEventResult = iota
-    SUCCESS_CLOUDPCCONNECTIVITYEVENTRESULT
-    FAILURE_CLOUDPCCONNECTIVITYEVENTRESULT
-    UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYEVENTRESULT
+	UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT CloudPcConnectivityEventResult = iota
+	SUCCESS_CLOUDPCCONNECTIVITYEVENTRESULT
+	FAILURE_CLOUDPCCONNECTIVITYEVENTRESULT
+	UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYEVENTRESULT
 )
 
 func (i CloudPcConnectivityEventResult) String() string {
-    return []string{"unknown", "success", "failure", "unknownFutureValue"}[i]
+	return []string{"unknown", "success", "failure", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcConnectivityEventResult(v string) (any, error) {
-    result := UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT
-    switch v {
-        case "unknown":
-            result = UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT
-        case "success":
-            result = SUCCESS_CLOUDPCCONNECTIVITYEVENTRESULT
-        case "failure":
-            result = FAILURE_CLOUDPCCONNECTIVITYEVENTRESULT
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYEVENTRESULT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT
+	switch v {
+	case "unknown":
+		result = UNKNOWN_CLOUDPCCONNECTIVITYEVENTRESULT
+	case "success":
+		result = SUCCESS_CLOUDPCCONNECTIVITYEVENTRESULT
+	case "failure":
+		result = FAILURE_CLOUDPCCONNECTIVITYEVENTRESULT
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYEVENTRESULT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcConnectivityEventResult(values []CloudPcConnectivityEventResult) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcConnectivityEventResult) isMultiValue() bool {
-    return false
+	return false
 }

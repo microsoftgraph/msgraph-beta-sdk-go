@@ -2,58 +2,62 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Apple network interface type.
 type WiredNetworkInterface int
 
 const (
-    // Any Ethernet.
-    ANYETHERNET_WIREDNETWORKINTERFACE WiredNetworkInterface = iota
-    // First active Ethernet.
-    FIRSTACTIVEETHERNET_WIREDNETWORKINTERFACE
-    // Second active Ethernet.
-    SECONDACTIVEETHERNET_WIREDNETWORKINTERFACE
-    // Third active Ethernet.
-    THIRDACTIVEETHERNET_WIREDNETWORKINTERFACE
-    // First Ethernet.
-    FIRSTETHERNET_WIREDNETWORKINTERFACE
-    // Second Ethernet.
-    SECONDETHERNET_WIREDNETWORKINTERFACE
-    // Third Ethernet.
-    THIRDETHERNET_WIREDNETWORKINTERFACE
+	// Any Ethernet.
+	ANYETHERNET_WIREDNETWORKINTERFACE WiredNetworkInterface = iota
+	// First active Ethernet.
+	FIRSTACTIVEETHERNET_WIREDNETWORKINTERFACE
+	// Second active Ethernet.
+	SECONDACTIVEETHERNET_WIREDNETWORKINTERFACE
+	// Third active Ethernet.
+	THIRDACTIVEETHERNET_WIREDNETWORKINTERFACE
+	// First Ethernet.
+	FIRSTETHERNET_WIREDNETWORKINTERFACE
+	// Second Ethernet.
+	SECONDETHERNET_WIREDNETWORKINTERFACE
+	// Third Ethernet.
+	THIRDETHERNET_WIREDNETWORKINTERFACE
 )
 
 func (i WiredNetworkInterface) String() string {
-    return []string{"anyEthernet", "firstActiveEthernet", "secondActiveEthernet", "thirdActiveEthernet", "firstEthernet", "secondEthernet", "thirdEthernet"}[i]
+	return []string{"anyEthernet", "firstActiveEthernet", "secondActiveEthernet", "thirdActiveEthernet", "firstEthernet", "secondEthernet", "thirdEthernet"}[i]
 }
+
 func ParseWiredNetworkInterface(v string) (any, error) {
-    result := ANYETHERNET_WIREDNETWORKINTERFACE
-    switch v {
-        case "anyEthernet":
-            result = ANYETHERNET_WIREDNETWORKINTERFACE
-        case "firstActiveEthernet":
-            result = FIRSTACTIVEETHERNET_WIREDNETWORKINTERFACE
-        case "secondActiveEthernet":
-            result = SECONDACTIVEETHERNET_WIREDNETWORKINTERFACE
-        case "thirdActiveEthernet":
-            result = THIRDACTIVEETHERNET_WIREDNETWORKINTERFACE
-        case "firstEthernet":
-            result = FIRSTETHERNET_WIREDNETWORKINTERFACE
-        case "secondEthernet":
-            result = SECONDETHERNET_WIREDNETWORKINTERFACE
-        case "thirdEthernet":
-            result = THIRDETHERNET_WIREDNETWORKINTERFACE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ANYETHERNET_WIREDNETWORKINTERFACE
+	switch v {
+	case "anyEthernet":
+		result = ANYETHERNET_WIREDNETWORKINTERFACE
+	case "firstActiveEthernet":
+		result = FIRSTACTIVEETHERNET_WIREDNETWORKINTERFACE
+	case "secondActiveEthernet":
+		result = SECONDACTIVEETHERNET_WIREDNETWORKINTERFACE
+	case "thirdActiveEthernet":
+		result = THIRDACTIVEETHERNET_WIREDNETWORKINTERFACE
+	case "firstEthernet":
+		result = FIRSTETHERNET_WIREDNETWORKINTERFACE
+	case "secondEthernet":
+		result = SECONDETHERNET_WIREDNETWORKINTERFACE
+	case "thirdEthernet":
+		result = THIRDETHERNET_WIREDNETWORKINTERFACE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWiredNetworkInterface(values []WiredNetworkInterface) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WiredNetworkInterface) isMultiValue() bool {
-    return false
+	return false
 }

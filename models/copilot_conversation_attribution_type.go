@@ -2,40 +2,44 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The type of attribution.
 type CopilotConversationAttributionType int
 
 const (
-    CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE CopilotConversationAttributionType = iota
-    ANNOTATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
-    // A marker value for members added after the release of this API.
-    UNKNOWNFUTUREVALUE_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE CopilotConversationAttributionType = iota
+	ANNOTATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	// A marker value for members added after the release of this API.
+	UNKNOWNFUTUREVALUE_COPILOTCONVERSATIONATTRIBUTIONTYPE
 )
 
 func (i CopilotConversationAttributionType) String() string {
-    return []string{"citation", "annotation", "unknownFutureValue"}[i]
+	return []string{"citation", "annotation", "unknownFutureValue"}[i]
 }
+
 func ParseCopilotConversationAttributionType(v string) (any, error) {
-    result := CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
-    switch v {
-        case "citation":
-            result = CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
-        case "annotation":
-            result = ANNOTATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_COPILOTCONVERSATIONATTRIBUTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	switch v {
+	case "citation":
+		result = CITATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	case "annotation":
+		result = ANNOTATION_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_COPILOTCONVERSATIONATTRIBUTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCopilotConversationAttributionType(values []CopilotConversationAttributionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CopilotConversationAttributionType) isMultiValue() bool {
-    return false
+	return false
 }

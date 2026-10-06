@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // App source options for macOS Gatekeeper.
 type MacOSGatekeeperAppSources int
 
 const (
-    // Device default value, no intent.
-    NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES MacOSGatekeeperAppSources = iota
-    // Only apps from the Mac AppStore can be run.
-    MACAPPSTORE_MACOSGATEKEEPERAPPSOURCES
-    // Only apps from the Mac AppStore and identified developers can be run.
-    MACAPPSTOREANDIDENTIFIEDDEVELOPERS_MACOSGATEKEEPERAPPSOURCES
-    // Apps from anywhere can be run.
-    ANYWHERE_MACOSGATEKEEPERAPPSOURCES
+	// Device default value, no intent.
+	NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES MacOSGatekeeperAppSources = iota
+	// Only apps from the Mac AppStore can be run.
+	MACAPPSTORE_MACOSGATEKEEPERAPPSOURCES
+	// Only apps from the Mac AppStore and identified developers can be run.
+	MACAPPSTOREANDIDENTIFIEDDEVELOPERS_MACOSGATEKEEPERAPPSOURCES
+	// Apps from anywhere can be run.
+	ANYWHERE_MACOSGATEKEEPERAPPSOURCES
 )
 
 func (i MacOSGatekeeperAppSources) String() string {
-    return []string{"notConfigured", "macAppStore", "macAppStoreAndIdentifiedDevelopers", "anywhere"}[i]
+	return []string{"notConfigured", "macAppStore", "macAppStoreAndIdentifiedDevelopers", "anywhere"}[i]
 }
+
 func ParseMacOSGatekeeperAppSources(v string) (any, error) {
-    result := NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES
-        case "macAppStore":
-            result = MACAPPSTORE_MACOSGATEKEEPERAPPSOURCES
-        case "macAppStoreAndIdentifiedDevelopers":
-            result = MACAPPSTOREANDIDENTIFIEDDEVELOPERS_MACOSGATEKEEPERAPPSOURCES
-        case "anywhere":
-            result = ANYWHERE_MACOSGATEKEEPERAPPSOURCES
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_MACOSGATEKEEPERAPPSOURCES
+	case "macAppStore":
+		result = MACAPPSTORE_MACOSGATEKEEPERAPPSOURCES
+	case "macAppStoreAndIdentifiedDevelopers":
+		result = MACAPPSTOREANDIDENTIFIEDDEVELOPERS_MACOSGATEKEEPERAPPSOURCES
+	case "anywhere":
+		result = ANYWHERE_MACOSGATEKEEPERAPPSOURCES
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMacOSGatekeeperAppSources(values []MacOSGatekeeperAppSources) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MacOSGatekeeperAppSources) isMultiValue() bool {
-    return false
+	return false
 }

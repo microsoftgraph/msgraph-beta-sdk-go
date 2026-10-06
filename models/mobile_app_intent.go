@@ -2,58 +2,62 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Indicates the status of the mobile app on the device.
 type MobileAppIntent int
 
 const (
-    // Available
-    AVAILABLE_MOBILEAPPINTENT MobileAppIntent = iota
-    // Not Available
-    NOTAVAILABLE_MOBILEAPPINTENT
-    // Required Install
-    REQUIREDINSTALL_MOBILEAPPINTENT
-    // Required Uninstall
-    REQUIREDUNINSTALL_MOBILEAPPINTENT
-    // RequiredAndAvailableInstall
-    REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
-    // AvailableInstallWithoutEnrollment
-    AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
-    // Exclude
-    EXCLUDE_MOBILEAPPINTENT
+	// Available
+	AVAILABLE_MOBILEAPPINTENT MobileAppIntent = iota
+	// Not Available
+	NOTAVAILABLE_MOBILEAPPINTENT
+	// Required Install
+	REQUIREDINSTALL_MOBILEAPPINTENT
+	// Required Uninstall
+	REQUIREDUNINSTALL_MOBILEAPPINTENT
+	// RequiredAndAvailableInstall
+	REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
+	// AvailableInstallWithoutEnrollment
+	AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
+	// Exclude
+	EXCLUDE_MOBILEAPPINTENT
 )
 
 func (i MobileAppIntent) String() string {
-    return []string{"available", "notAvailable", "requiredInstall", "requiredUninstall", "requiredAndAvailableInstall", "availableInstallWithoutEnrollment", "exclude"}[i]
+	return []string{"available", "notAvailable", "requiredInstall", "requiredUninstall", "requiredAndAvailableInstall", "availableInstallWithoutEnrollment", "exclude"}[i]
 }
+
 func ParseMobileAppIntent(v string) (any, error) {
-    result := AVAILABLE_MOBILEAPPINTENT
-    switch v {
-        case "available":
-            result = AVAILABLE_MOBILEAPPINTENT
-        case "notAvailable":
-            result = NOTAVAILABLE_MOBILEAPPINTENT
-        case "requiredInstall":
-            result = REQUIREDINSTALL_MOBILEAPPINTENT
-        case "requiredUninstall":
-            result = REQUIREDUNINSTALL_MOBILEAPPINTENT
-        case "requiredAndAvailableInstall":
-            result = REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
-        case "availableInstallWithoutEnrollment":
-            result = AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
-        case "exclude":
-            result = EXCLUDE_MOBILEAPPINTENT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AVAILABLE_MOBILEAPPINTENT
+	switch v {
+	case "available":
+		result = AVAILABLE_MOBILEAPPINTENT
+	case "notAvailable":
+		result = NOTAVAILABLE_MOBILEAPPINTENT
+	case "requiredInstall":
+		result = REQUIREDINSTALL_MOBILEAPPINTENT
+	case "requiredUninstall":
+		result = REQUIREDUNINSTALL_MOBILEAPPINTENT
+	case "requiredAndAvailableInstall":
+		result = REQUIREDANDAVAILABLEINSTALL_MOBILEAPPINTENT
+	case "availableInstallWithoutEnrollment":
+		result = AVAILABLEINSTALLWITHOUTENROLLMENT_MOBILEAPPINTENT
+	case "exclude":
+		result = EXCLUDE_MOBILEAPPINTENT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMobileAppIntent(values []MobileAppIntent) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MobileAppIntent) isMultiValue() bool {
-    return false
+	return false
 }

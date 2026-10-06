@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package managedtenants
+
 type DelegatedPrivilegeStatus int
 
 const (
-    NONE_DELEGATEDPRIVILEGESTATUS DelegatedPrivilegeStatus = iota
-    DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-    UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
-    GRANULARDELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-    DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	NONE_DELEGATEDPRIVILEGESTATUS DelegatedPrivilegeStatus = iota
+	DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
+	GRANULARDELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
 )
 
 func (i DelegatedPrivilegeStatus) String() string {
-    return []string{"none", "delegatedAdminPrivileges", "unknownFutureValue", "granularDelegatedAdminPrivileges", "delegatedAndGranularDelegetedAdminPrivileges"}[i]
+	return []string{"none", "delegatedAdminPrivileges", "unknownFutureValue", "granularDelegatedAdminPrivileges", "delegatedAndGranularDelegetedAdminPrivileges"}[i]
 }
+
 func ParseDelegatedPrivilegeStatus(v string) (any, error) {
-    result := NONE_DELEGATEDPRIVILEGESTATUS
-    switch v {
-        case "none":
-            result = NONE_DELEGATEDPRIVILEGESTATUS
-        case "delegatedAdminPrivileges":
-            result = DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
-        case "granularDelegatedAdminPrivileges":
-            result = GRANULARDELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-        case "delegatedAndGranularDelegetedAdminPrivileges":
-            result = DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_DELEGATEDPRIVILEGESTATUS
+	switch v {
+	case "none":
+		result = NONE_DELEGATEDPRIVILEGESTATUS
+	case "delegatedAdminPrivileges":
+		result = DELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_DELEGATEDPRIVILEGESTATUS
+	case "granularDelegatedAdminPrivileges":
+		result = GRANULARDELEGATEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	case "delegatedAndGranularDelegetedAdminPrivileges":
+		result = DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDelegatedPrivilegeStatus(values []DelegatedPrivilegeStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DelegatedPrivilegeStatus) isMultiValue() bool {
-    return false
+	return false
 }

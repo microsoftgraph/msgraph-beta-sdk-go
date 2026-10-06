@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcUserExperienceType int
 
 const (
-    CLOUDPC_CLOUDPCUSEREXPERIENCETYPE CloudPcUserExperienceType = iota
-    CLOUDAPP_CLOUDPCUSEREXPERIENCETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCUSEREXPERIENCETYPE
+	CLOUDPC_CLOUDPCUSEREXPERIENCETYPE CloudPcUserExperienceType = iota
+	CLOUDAPP_CLOUDPCUSEREXPERIENCETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCUSEREXPERIENCETYPE
 )
 
 func (i CloudPcUserExperienceType) String() string {
-    return []string{"cloudPc", "cloudApp", "unknownFutureValue"}[i]
+	return []string{"cloudPc", "cloudApp", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcUserExperienceType(v string) (any, error) {
-    result := CLOUDPC_CLOUDPCUSEREXPERIENCETYPE
-    switch v {
-        case "cloudPc":
-            result = CLOUDPC_CLOUDPCUSEREXPERIENCETYPE
-        case "cloudApp":
-            result = CLOUDAPP_CLOUDPCUSEREXPERIENCETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCUSEREXPERIENCETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CLOUDPC_CLOUDPCUSEREXPERIENCETYPE
+	switch v {
+	case "cloudPc":
+		result = CLOUDPC_CLOUDPCUSEREXPERIENCETYPE
+	case "cloudApp":
+		result = CLOUDAPP_CLOUDPCUSEREXPERIENCETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCUSEREXPERIENCETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcUserExperienceType(values []CloudPcUserExperienceType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcUserExperienceType) isMultiValue() bool {
-    return false
+	return false
 }

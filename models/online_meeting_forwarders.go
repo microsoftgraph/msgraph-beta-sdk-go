@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type OnlineMeetingForwarders int
 
 const (
-    EVERYONE_ONLINEMEETINGFORWARDERS OnlineMeetingForwarders = iota
-    ORGANIZER_ONLINEMEETINGFORWARDERS
-    UNKNOWNFUTUREVALUE_ONLINEMEETINGFORWARDERS
+	EVERYONE_ONLINEMEETINGFORWARDERS OnlineMeetingForwarders = iota
+	ORGANIZER_ONLINEMEETINGFORWARDERS
+	UNKNOWNFUTUREVALUE_ONLINEMEETINGFORWARDERS
 )
 
 func (i OnlineMeetingForwarders) String() string {
-    return []string{"everyone", "organizer", "unknownFutureValue"}[i]
+	return []string{"everyone", "organizer", "unknownFutureValue"}[i]
 }
+
 func ParseOnlineMeetingForwarders(v string) (any, error) {
-    result := EVERYONE_ONLINEMEETINGFORWARDERS
-    switch v {
-        case "everyone":
-            result = EVERYONE_ONLINEMEETINGFORWARDERS
-        case "organizer":
-            result = ORGANIZER_ONLINEMEETINGFORWARDERS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ONLINEMEETINGFORWARDERS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := EVERYONE_ONLINEMEETINGFORWARDERS
+	switch v {
+	case "everyone":
+		result = EVERYONE_ONLINEMEETINGFORWARDERS
+	case "organizer":
+		result = ORGANIZER_ONLINEMEETINGFORWARDERS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ONLINEMEETINGFORWARDERS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeOnlineMeetingForwarders(values []OnlineMeetingForwarders) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i OnlineMeetingForwarders) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,74 +2,78 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcDeviceImageErrorCode int
 
 const (
-    INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE CloudPcDeviceImageErrorCode = iota
-    SOURCEIMAGENOTFOUND_CLOUDPCDEVICEIMAGEERRORCODE
-    OSVERSIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGEERRORCODE
-    UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEERRORCODE
-    VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGEERRORCODE
-    PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-    SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-    FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-    STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
+	INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE CloudPcDeviceImageErrorCode = iota
+	SOURCEIMAGENOTFOUND_CLOUDPCDEVICEIMAGEERRORCODE
+	OSVERSIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGEERRORCODE
+	UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEERRORCODE
+	VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGEERRORCODE
+	PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
 )
 
 func (i CloudPcDeviceImageErrorCode) String() string {
-    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation", "sourceImageWithDataDiskNotSupported", "sourceImageWithDiskEncryptionSetNotSupported", "sourceImageWithAzureDiskEncryptionNotSupported", "fSLogixInstalledSourceImageNotSupported", "startMenuAppLimitExceeded"}[i]
+	return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation", "sourceImageWithDataDiskNotSupported", "sourceImageWithDiskEncryptionSetNotSupported", "sourceImageWithAzureDiskEncryptionNotSupported", "fSLogixInstalledSourceImageNotSupported", "startMenuAppLimitExceeded"}[i]
 }
+
 func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
-    result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
-    switch v {
-        case "internalServerError":
-            result = INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageNotFound":
-            result = SOURCEIMAGENOTFOUND_CLOUDPCDEVICEIMAGEERRORCODE
-        case "osVersionNotSupported":
-            result = OSVERSIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageInvalid":
-            result = SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageNotGeneralized":
-            result = SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEERRORCODE
-        case "vmAlreadyAzureAdjoined":
-            result = VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "paidSourceImageNotSupport":
-            result = PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageNotSupportCustomizeVMName":
-            result = SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageSizeExceedsLimitation":
-            result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageWithDataDiskNotSupported":
-            result = SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageWithDiskEncryptionSetNotSupported":
-            result = SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "sourceImageWithAzureDiskEncryptionNotSupported":
-            result = SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "fSLogixInstalledSourceImageNotSupported":
-            result = FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
-        case "startMenuAppLimitExceeded":
-            result = STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
+	switch v {
+	case "internalServerError":
+		result = INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageNotFound":
+		result = SOURCEIMAGENOTFOUND_CLOUDPCDEVICEIMAGEERRORCODE
+	case "osVersionNotSupported":
+		result = OSVERSIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageInvalid":
+		result = SOURCEIMAGEINVALID_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageNotGeneralized":
+		result = SOURCEIMAGENOTGENERALIZED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGEERRORCODE
+	case "vmAlreadyAzureAdjoined":
+		result = VMALREADYAZUREADJOINED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "paidSourceImageNotSupport":
+		result = PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageNotSupportCustomizeVMName":
+		result = SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageSizeExceedsLimitation":
+		result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageWithDataDiskNotSupported":
+		result = SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageWithDiskEncryptionSetNotSupported":
+		result = SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "sourceImageWithAzureDiskEncryptionNotSupported":
+		result = SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "fSLogixInstalledSourceImageNotSupported":
+		result = FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+	case "startMenuAppLimitExceeded":
+		result = STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcDeviceImageErrorCode(values []CloudPcDeviceImageErrorCode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcDeviceImageErrorCode) isMultiValue() bool {
-    return false
+	return false
 }

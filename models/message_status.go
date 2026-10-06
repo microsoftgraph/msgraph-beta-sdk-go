@@ -2,53 +2,57 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type MessageStatus int
 
 const (
-    GETTINGSTATUS_MESSAGESTATUS MessageStatus = iota
-    PENDING_MESSAGESTATUS
-    FAILED_MESSAGESTATUS
-    DELIVERED_MESSAGESTATUS
-    EXPANDED_MESSAGESTATUS
-    QUARANTINED_MESSAGESTATUS
-    FILTEREDASSPAM_MESSAGESTATUS
-    UNKNOWNFUTUREVALUE_MESSAGESTATUS
+	GETTINGSTATUS_MESSAGESTATUS MessageStatus = iota
+	PENDING_MESSAGESTATUS
+	FAILED_MESSAGESTATUS
+	DELIVERED_MESSAGESTATUS
+	EXPANDED_MESSAGESTATUS
+	QUARANTINED_MESSAGESTATUS
+	FILTEREDASSPAM_MESSAGESTATUS
+	UNKNOWNFUTUREVALUE_MESSAGESTATUS
 )
 
 func (i MessageStatus) String() string {
-    return []string{"gettingStatus", "pending", "failed", "delivered", "expanded", "quarantined", "filteredAsSpam", "unknownFutureValue"}[i]
+	return []string{"gettingStatus", "pending", "failed", "delivered", "expanded", "quarantined", "filteredAsSpam", "unknownFutureValue"}[i]
 }
+
 func ParseMessageStatus(v string) (any, error) {
-    result := GETTINGSTATUS_MESSAGESTATUS
-    switch v {
-        case "gettingStatus":
-            result = GETTINGSTATUS_MESSAGESTATUS
-        case "pending":
-            result = PENDING_MESSAGESTATUS
-        case "failed":
-            result = FAILED_MESSAGESTATUS
-        case "delivered":
-            result = DELIVERED_MESSAGESTATUS
-        case "expanded":
-            result = EXPANDED_MESSAGESTATUS
-        case "quarantined":
-            result = QUARANTINED_MESSAGESTATUS
-        case "filteredAsSpam":
-            result = FILTEREDASSPAM_MESSAGESTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MESSAGESTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GETTINGSTATUS_MESSAGESTATUS
+	switch v {
+	case "gettingStatus":
+		result = GETTINGSTATUS_MESSAGESTATUS
+	case "pending":
+		result = PENDING_MESSAGESTATUS
+	case "failed":
+		result = FAILED_MESSAGESTATUS
+	case "delivered":
+		result = DELIVERED_MESSAGESTATUS
+	case "expanded":
+		result = EXPANDED_MESSAGESTATUS
+	case "quarantined":
+		result = QUARANTINED_MESSAGESTATUS
+	case "filteredAsSpam":
+		result = FILTEREDASSPAM_MESSAGESTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MESSAGESTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMessageStatus(values []MessageStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MessageStatus) isMultiValue() bool {
-    return false
+	return false
 }

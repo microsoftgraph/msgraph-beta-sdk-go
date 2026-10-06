@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlannerCreationSourceKind int
 
 const (
-    NONE_PLANNERCREATIONSOURCEKIND PlannerCreationSourceKind = iota
-    EXTERNAL_PLANNERCREATIONSOURCEKIND
-    PUBLICATION_PLANNERCREATIONSOURCEKIND
-    UNKNOWNFUTUREVALUE_PLANNERCREATIONSOURCEKIND
+	NONE_PLANNERCREATIONSOURCEKIND PlannerCreationSourceKind = iota
+	EXTERNAL_PLANNERCREATIONSOURCEKIND
+	PUBLICATION_PLANNERCREATIONSOURCEKIND
+	UNKNOWNFUTUREVALUE_PLANNERCREATIONSOURCEKIND
 )
 
 func (i PlannerCreationSourceKind) String() string {
-    return []string{"none", "external", "publication", "unknownFutureValue"}[i]
+	return []string{"none", "external", "publication", "unknownFutureValue"}[i]
 }
+
 func ParsePlannerCreationSourceKind(v string) (any, error) {
-    result := NONE_PLANNERCREATIONSOURCEKIND
-    switch v {
-        case "none":
-            result = NONE_PLANNERCREATIONSOURCEKIND
-        case "external":
-            result = EXTERNAL_PLANNERCREATIONSOURCEKIND
-        case "publication":
-            result = PUBLICATION_PLANNERCREATIONSOURCEKIND
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERCREATIONSOURCEKIND
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_PLANNERCREATIONSOURCEKIND
+	switch v {
+	case "none":
+		result = NONE_PLANNERCREATIONSOURCEKIND
+	case "external":
+		result = EXTERNAL_PLANNERCREATIONSOURCEKIND
+	case "publication":
+		result = PUBLICATION_PLANNERCREATIONSOURCEKIND
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLANNERCREATIONSOURCEKIND
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlannerCreationSourceKind(values []PlannerCreationSourceKind) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlannerCreationSourceKind) isMultiValue() bool {
-    return false
+	return false
 }

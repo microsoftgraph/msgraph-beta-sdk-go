@@ -4,41 +4,46 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type GroupResource struct {
-    DirectoryObject
+	DirectoryObject
 }
+
 // NewGroupResource instantiates a new GroupResource and sets the default values.
-func NewGroupResource()(*GroupResource) {
-    m := &GroupResource{
-        DirectoryObject: *NewDirectoryObject(),
-    }
-    odataTypeValue := "#microsoft.graph.groupResource"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewGroupResource() *GroupResource {
+	m := &GroupResource{
+		DirectoryObject: *NewDirectoryObject(),
+	}
+	odataTypeValue := "#microsoft.graph.groupResource"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateGroupResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateGroupResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewGroupResource(), nil
+func CreateGroupResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewGroupResource(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *GroupResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DirectoryObject.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *GroupResource) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DirectoryObject.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *GroupResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DirectoryObject.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *GroupResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DirectoryObject.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type GroupResourceable interface {
-    DirectoryObjectable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	DirectoryObjectable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

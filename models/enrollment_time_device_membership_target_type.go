@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Represents the type of the targets that devices will become members of when enrolled with the associated profile. Possible values are staticSecurityGroup.
 type EnrollmentTimeDeviceMembershipTargetType int
 
 const (
-    // Indicates the device membership target specified refer to static Entra Security Groups.
-    STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE EnrollmentTimeDeviceMembershipTargetType = iota
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+	// Indicates the device membership target specified refer to static Entra Security Groups.
+	STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE EnrollmentTimeDeviceMembershipTargetType = iota
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
 )
 
 func (i EnrollmentTimeDeviceMembershipTargetType) String() string {
-    return []string{"staticSecurityGroup", "unknownFutureValue"}[i]
+	return []string{"staticSecurityGroup", "unknownFutureValue"}[i]
 }
+
 func ParseEnrollmentTimeDeviceMembershipTargetType(v string) (any, error) {
-    result := STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
-    switch v {
-        case "staticSecurityGroup":
-            result = STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+	switch v {
+	case "staticSecurityGroup":
+		result = STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeEnrollmentTimeDeviceMembershipTargetType(values []EnrollmentTimeDeviceMembershipTargetType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i EnrollmentTimeDeviceMembershipTargetType) isMultiValue() bool {
-    return false
+	return false
 }

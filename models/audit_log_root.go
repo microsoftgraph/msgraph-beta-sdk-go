@@ -4,554 +4,582 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type AuditLogRoot struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewAuditLogRoot instantiates a new AuditLogRoot and sets the default values.
-func NewAuditLogRoot()(*AuditLogRoot) {
-    m := &AuditLogRoot{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewAuditLogRoot() *AuditLogRoot {
+	m := &AuditLogRoot{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreateAuditLogRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAuditLogRoot(), nil
+func CreateAuditLogRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAuditLogRoot(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *AuditLogRoot) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *AuditLogRoot) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetAuditActivityTypes gets the auditActivityTypes property value. Represents an audit activity type which includes the associated service and category for a specific activity.
 // returns a []AuditActivityTypeable when successful
-func (m *AuditLogRoot) GetAuditActivityTypes()([]AuditActivityTypeable) {
-    val, err := m.GetBackingStore().Get("auditActivityTypes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AuditActivityTypeable)
-    }
-    return nil
+func (m *AuditLogRoot) GetAuditActivityTypes() []AuditActivityTypeable {
+	val, err := m.GetBackingStore().Get("auditActivityTypes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AuditActivityTypeable)
+	}
+	return nil
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *AuditLogRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *AuditLogRoot) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetCustomSecurityAttributeAudits gets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
 // returns a []CustomSecurityAttributeAuditable when successful
-func (m *AuditLogRoot) GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable) {
-    val, err := m.GetBackingStore().Get("customSecurityAttributeAudits")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]CustomSecurityAttributeAuditable)
-    }
-    return nil
+func (m *AuditLogRoot) GetCustomSecurityAttributeAudits() []CustomSecurityAttributeAuditable {
+	val, err := m.GetBackingStore().Get("customSecurityAttributeAudits")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CustomSecurityAttributeAuditable)
+	}
+	return nil
 }
+
 // GetDirectoryAudits gets the directoryAudits property value. The directoryAudits property
 // returns a []DirectoryAuditable when successful
-func (m *AuditLogRoot) GetDirectoryAudits()([]DirectoryAuditable) {
-    val, err := m.GetBackingStore().Get("directoryAudits")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DirectoryAuditable)
-    }
-    return nil
+func (m *AuditLogRoot) GetDirectoryAudits() []DirectoryAuditable {
+	val, err := m.GetBackingStore().Get("directoryAudits")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]DirectoryAuditable)
+	}
+	return nil
 }
+
 // GetDirectoryProvisioning gets the directoryProvisioning property value. The directoryProvisioning property
 // returns a []ProvisioningObjectSummaryable when successful
-func (m *AuditLogRoot) GetDirectoryProvisioning()([]ProvisioningObjectSummaryable) {
-    val, err := m.GetBackingStore().Get("directoryProvisioning")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProvisioningObjectSummaryable)
-    }
-    return nil
+func (m *AuditLogRoot) GetDirectoryProvisioning() []ProvisioningObjectSummaryable {
+	val, err := m.GetBackingStore().Get("directoryProvisioning")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ProvisioningObjectSummaryable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["auditActivityTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuditActivityTypeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuditActivityTypeable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AuditActivityTypeable)
-                }
-            }
-            m.SetAuditActivityTypes(res)
-        }
-        return nil
-    }
-    res["customSecurityAttributeAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeAuditFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CustomSecurityAttributeAuditable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(CustomSecurityAttributeAuditable)
-                }
-            }
-            m.SetCustomSecurityAttributeAudits(res)
-        }
-        return nil
-    }
-    res["directoryAudits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDirectoryAuditFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DirectoryAuditable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DirectoryAuditable)
-                }
-            }
-            m.SetDirectoryAudits(res)
-        }
-        return nil
-    }
-    res["directoryProvisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProvisioningObjectSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProvisioningObjectSummaryable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProvisioningObjectSummaryable)
-                }
-            }
-            m.SetDirectoryProvisioning(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["provisioning"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateProvisioningObjectSummaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ProvisioningObjectSummaryable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ProvisioningObjectSummaryable)
-                }
-            }
-            m.SetProvisioning(res)
-        }
-        return nil
-    }
-    res["signInEventsAppSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSignInEventsAppActivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SignInEventsAppActivityable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(SignInEventsAppActivityable)
-                }
-            }
-            m.SetSignInEventsAppSummary(res)
-        }
-        return nil
-    }
-    res["signInEventsSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSignInEventsActivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SignInEventsActivityable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(SignInEventsActivityable)
-                }
-            }
-            m.SetSignInEventsSummary(res)
-        }
-        return nil
-    }
-    res["signIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSignInFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SignInable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(SignInable)
-                }
-            }
-            m.SetSignIns(res)
-        }
-        return nil
-    }
-    res["signUps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSelfServiceSignUpFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]SelfServiceSignUpable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(SelfServiceSignUpable)
-                }
-            }
-            m.SetSignUps(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AuditLogRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["auditActivityTypes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAuditActivityTypeFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AuditActivityTypeable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AuditActivityTypeable)
+				}
+			}
+			m.SetAuditActivityTypes(res)
+		}
+		return nil
+	}
+	res["customSecurityAttributeAudits"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCustomSecurityAttributeAuditFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CustomSecurityAttributeAuditable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CustomSecurityAttributeAuditable)
+				}
+			}
+			m.SetCustomSecurityAttributeAudits(res)
+		}
+		return nil
+	}
+	res["directoryAudits"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateDirectoryAuditFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]DirectoryAuditable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(DirectoryAuditable)
+				}
+			}
+			m.SetDirectoryAudits(res)
+		}
+		return nil
+	}
+	res["directoryProvisioning"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateProvisioningObjectSummaryFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ProvisioningObjectSummaryable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ProvisioningObjectSummaryable)
+				}
+			}
+			m.SetDirectoryProvisioning(res)
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["provisioning"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateProvisioningObjectSummaryFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ProvisioningObjectSummaryable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ProvisioningObjectSummaryable)
+				}
+			}
+			m.SetProvisioning(res)
+		}
+		return nil
+	}
+	res["signInEventsAppSummary"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSignInEventsAppActivityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SignInEventsAppActivityable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SignInEventsAppActivityable)
+				}
+			}
+			m.SetSignInEventsAppSummary(res)
+		}
+		return nil
+	}
+	res["signInEventsSummary"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSignInEventsActivityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SignInEventsActivityable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SignInEventsActivityable)
+				}
+			}
+			m.SetSignInEventsSummary(res)
+		}
+		return nil
+	}
+	res["signIns"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSignInFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SignInable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SignInable)
+				}
+			}
+			m.SetSignIns(res)
+		}
+		return nil
+	}
+	res["signUps"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSelfServiceSignUpFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SelfServiceSignUpable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SelfServiceSignUpable)
+				}
+			}
+			m.SetSignUps(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *AuditLogRoot) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AuditLogRoot) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetProvisioning gets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
 // returns a []ProvisioningObjectSummaryable when successful
-func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
-    val, err := m.GetBackingStore().Get("provisioning")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ProvisioningObjectSummaryable)
-    }
-    return nil
+func (m *AuditLogRoot) GetProvisioning() []ProvisioningObjectSummaryable {
+	val, err := m.GetBackingStore().Get("provisioning")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ProvisioningObjectSummaryable)
+	}
+	return nil
 }
+
 // GetSignInEventsAppSummary gets the signInEventsAppSummary property value. Represents the number of sign-in events for a specific application.
 // returns a []SignInEventsAppActivityable when successful
-func (m *AuditLogRoot) GetSignInEventsAppSummary()([]SignInEventsAppActivityable) {
-    val, err := m.GetBackingStore().Get("signInEventsAppSummary")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]SignInEventsAppActivityable)
-    }
-    return nil
+func (m *AuditLogRoot) GetSignInEventsAppSummary() []SignInEventsAppActivityable {
+	val, err := m.GetBackingStore().Get("signInEventsAppSummary")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SignInEventsAppActivityable)
+	}
+	return nil
 }
+
 // GetSignInEventsSummary gets the signInEventsSummary property value. Represents the total number of sign-in events for a specific day.
 // returns a []SignInEventsActivityable when successful
-func (m *AuditLogRoot) GetSignInEventsSummary()([]SignInEventsActivityable) {
-    val, err := m.GetBackingStore().Get("signInEventsSummary")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]SignInEventsActivityable)
-    }
-    return nil
+func (m *AuditLogRoot) GetSignInEventsSummary() []SignInEventsActivityable {
+	val, err := m.GetBackingStore().Get("signInEventsSummary")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SignInEventsActivityable)
+	}
+	return nil
 }
+
 // GetSignIns gets the signIns property value. Represents Microsoft Entra sign-in events. Read-only. Nullable.
 // returns a []SignInable when successful
-func (m *AuditLogRoot) GetSignIns()([]SignInable) {
-    val, err := m.GetBackingStore().Get("signIns")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]SignInable)
-    }
-    return nil
+func (m *AuditLogRoot) GetSignIns() []SignInable {
+	val, err := m.GetBackingStore().Get("signIns")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SignInable)
+	}
+	return nil
 }
+
 // GetSignUps gets the signUps property value. Represents sign up events in Microsoft Entra External ID. Read-only. Nullable.
 // returns a []SelfServiceSignUpable when successful
-func (m *AuditLogRoot) GetSignUps()([]SelfServiceSignUpable) {
-    val, err := m.GetBackingStore().Get("signUps")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]SelfServiceSignUpable)
-    }
-    return nil
+func (m *AuditLogRoot) GetSignUps() []SelfServiceSignUpable {
+	val, err := m.GetBackingStore().Get("signUps")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SelfServiceSignUpable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetAuditActivityTypes() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditActivityTypes()))
-        for i, v := range m.GetAuditActivityTypes() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("auditActivityTypes", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCustomSecurityAttributeAudits() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeAudits()))
-        for i, v := range m.GetCustomSecurityAttributeAudits() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("customSecurityAttributeAudits", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDirectoryAudits() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryAudits()))
-        for i, v := range m.GetDirectoryAudits() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("directoryAudits", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDirectoryProvisioning() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryProvisioning()))
-        for i, v := range m.GetDirectoryProvisioning() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("directoryProvisioning", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProvisioning() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioning()))
-        for i, v := range m.GetProvisioning() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("provisioning", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSignInEventsAppSummary() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInEventsAppSummary()))
-        for i, v := range m.GetSignInEventsAppSummary() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("signInEventsAppSummary", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSignInEventsSummary() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInEventsSummary()))
-        for i, v := range m.GetSignInEventsSummary() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("signInEventsSummary", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSignIns() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignIns()))
-        for i, v := range m.GetSignIns() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("signIns", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSignUps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignUps()))
-        for i, v := range m.GetSignUps() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("signUps", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	if m.GetAuditActivityTypes() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuditActivityTypes()))
+		for i, v := range m.GetAuditActivityTypes() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("auditActivityTypes", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCustomSecurityAttributeAudits() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomSecurityAttributeAudits()))
+		for i, v := range m.GetCustomSecurityAttributeAudits() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("customSecurityAttributeAudits", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetDirectoryAudits() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryAudits()))
+		for i, v := range m.GetDirectoryAudits() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("directoryAudits", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetDirectoryProvisioning() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDirectoryProvisioning()))
+		for i, v := range m.GetDirectoryProvisioning() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("directoryProvisioning", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProvisioning() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProvisioning()))
+		for i, v := range m.GetProvisioning() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("provisioning", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSignInEventsAppSummary() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInEventsAppSummary()))
+		for i, v := range m.GetSignInEventsAppSummary() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("signInEventsAppSummary", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSignInEventsSummary() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInEventsSummary()))
+		for i, v := range m.GetSignInEventsSummary() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("signInEventsSummary", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSignIns() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignIns()))
+		for i, v := range m.GetSignIns() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("signIns", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSignUps() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignUps()))
+		for i, v := range m.GetSignUps() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("signUps", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AuditLogRoot) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuditActivityTypes sets the auditActivityTypes property value. Represents an audit activity type which includes the associated service and category for a specific activity.
-func (m *AuditLogRoot) SetAuditActivityTypes(value []AuditActivityTypeable)() {
-    err := m.GetBackingStore().Set("auditActivityTypes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetAuditActivityTypes(value []AuditActivityTypeable) {
+	err := m.GetBackingStore().Set("auditActivityTypes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *AuditLogRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *AuditLogRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetCustomSecurityAttributeAudits sets the customSecurityAttributeAudits property value. Represents a custom security attribute audit log.
-func (m *AuditLogRoot) SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)() {
-    err := m.GetBackingStore().Set("customSecurityAttributeAudits", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable) {
+	err := m.GetBackingStore().Set("customSecurityAttributeAudits", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDirectoryAudits sets the directoryAudits property value. The directoryAudits property
-func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable)() {
-    err := m.GetBackingStore().Set("directoryAudits", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetDirectoryAudits(value []DirectoryAuditable) {
+	err := m.GetBackingStore().Set("directoryAudits", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDirectoryProvisioning sets the directoryProvisioning property value. The directoryProvisioning property
-func (m *AuditLogRoot) SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)() {
-    err := m.GetBackingStore().Set("directoryProvisioning", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetDirectoryProvisioning(value []ProvisioningObjectSummaryable) {
+	err := m.GetBackingStore().Set("directoryProvisioning", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AuditLogRoot) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProvisioning sets the provisioning property value. Represents an action performed by the Microsoft Entra provisioning service and its associated properties.
-func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() {
-    err := m.GetBackingStore().Set("provisioning", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable) {
+	err := m.GetBackingStore().Set("provisioning", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSignInEventsAppSummary sets the signInEventsAppSummary property value. Represents the number of sign-in events for a specific application.
-func (m *AuditLogRoot) SetSignInEventsAppSummary(value []SignInEventsAppActivityable)() {
-    err := m.GetBackingStore().Set("signInEventsAppSummary", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetSignInEventsAppSummary(value []SignInEventsAppActivityable) {
+	err := m.GetBackingStore().Set("signInEventsAppSummary", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSignInEventsSummary sets the signInEventsSummary property value. Represents the total number of sign-in events for a specific day.
-func (m *AuditLogRoot) SetSignInEventsSummary(value []SignInEventsActivityable)() {
-    err := m.GetBackingStore().Set("signInEventsSummary", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetSignInEventsSummary(value []SignInEventsActivityable) {
+	err := m.GetBackingStore().Set("signInEventsSummary", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSignIns sets the signIns property value. Represents Microsoft Entra sign-in events. Read-only. Nullable.
-func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
-    err := m.GetBackingStore().Set("signIns", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetSignIns(value []SignInable) {
+	err := m.GetBackingStore().Set("signIns", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSignUps sets the signUps property value. Represents sign up events in Microsoft Entra External ID. Read-only. Nullable.
-func (m *AuditLogRoot) SetSignUps(value []SelfServiceSignUpable)() {
-    err := m.GetBackingStore().Set("signUps", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AuditLogRoot) SetSignUps(value []SelfServiceSignUpable) {
+	err := m.GetBackingStore().Set("signUps", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AuditLogRootable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuditActivityTypes()([]AuditActivityTypeable)
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCustomSecurityAttributeAudits()([]CustomSecurityAttributeAuditable)
-    GetDirectoryAudits()([]DirectoryAuditable)
-    GetDirectoryProvisioning()([]ProvisioningObjectSummaryable)
-    GetOdataType()(*string)
-    GetProvisioning()([]ProvisioningObjectSummaryable)
-    GetSignInEventsAppSummary()([]SignInEventsAppActivityable)
-    GetSignInEventsSummary()([]SignInEventsActivityable)
-    GetSignIns()([]SignInable)
-    GetSignUps()([]SelfServiceSignUpable)
-    SetAuditActivityTypes(value []AuditActivityTypeable)()
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)()
-    SetDirectoryAudits(value []DirectoryAuditable)()
-    SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)()
-    SetOdataType(value *string)()
-    SetProvisioning(value []ProvisioningObjectSummaryable)()
-    SetSignInEventsAppSummary(value []SignInEventsAppActivityable)()
-    SetSignInEventsSummary(value []SignInEventsActivityable)()
-    SetSignIns(value []SignInable)()
-    SetSignUps(value []SelfServiceSignUpable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAuditActivityTypes() []AuditActivityTypeable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetCustomSecurityAttributeAudits() []CustomSecurityAttributeAuditable
+	GetDirectoryAudits() []DirectoryAuditable
+	GetDirectoryProvisioning() []ProvisioningObjectSummaryable
+	GetOdataType() *string
+	GetProvisioning() []ProvisioningObjectSummaryable
+	GetSignInEventsAppSummary() []SignInEventsAppActivityable
+	GetSignInEventsSummary() []SignInEventsActivityable
+	GetSignIns() []SignInable
+	GetSignUps() []SelfServiceSignUpable
+	SetAuditActivityTypes(value []AuditActivityTypeable)
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)
+	SetDirectoryAudits(value []DirectoryAuditable)
+	SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)
+	SetOdataType(value *string)
+	SetProvisioning(value []ProvisioningObjectSummaryable)
+	SetSignInEventsAppSummary(value []SignInEventsAppActivityable)
+	SetSignInEventsSummary(value []SignInEventsActivityable)
+	SetSignIns(value []SignInable)
+	SetSignUps(value []SelfServiceSignUpable)
 }

@@ -4,286 +4,301 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type ExchangeProtectionPolicy struct {
-    ProtectionPolicyBase
+	ProtectionPolicyBase
 }
+
 // NewExchangeProtectionPolicy instantiates a new ExchangeProtectionPolicy and sets the default values.
-func NewExchangeProtectionPolicy()(*ExchangeProtectionPolicy) {
-    m := &ExchangeProtectionPolicy{
-        ProtectionPolicyBase: *NewProtectionPolicyBase(),
-    }
-    odataTypeValue := "#microsoft.graph.exchangeProtectionPolicy"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewExchangeProtectionPolicy() *ExchangeProtectionPolicy {
+	m := &ExchangeProtectionPolicy{
+		ProtectionPolicyBase: *NewProtectionPolicyBase(),
+	}
+	odataTypeValue := "#microsoft.graph.exchangeProtectionPolicy"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateExchangeProtectionPolicyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateExchangeProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewExchangeProtectionPolicy(), nil
+func CreateExchangeProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewExchangeProtectionPolicy(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ExchangeProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ProtectionPolicyBase.GetFieldDeserializers()
-    res["mailboxExclusionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MailboxExclusionUnitable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MailboxExclusionUnitable)
-                }
-            }
-            m.SetMailboxExclusionUnits(res)
-        }
-        return nil
-    }
-    res["mailboxExclusionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MailboxExclusionUnitsBulkAdditionJobable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MailboxExclusionUnitsBulkAdditionJobable)
-                }
-            }
-            m.SetMailboxExclusionUnitsBulkAdditionJobs(res)
-        }
-        return nil
-    }
-    res["mailboxInclusionRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionRuleFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MailboxProtectionRuleable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MailboxProtectionRuleable)
-                }
-            }
-            m.SetMailboxInclusionRules(res)
-        }
-        return nil
-    }
-    res["mailboxProtectionUnits"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionUnitFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MailboxProtectionUnitable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MailboxProtectionUnitable)
-                }
-            }
-            m.SetMailboxProtectionUnits(res)
-        }
-        return nil
-    }
-    res["mailboxProtectionUnitsBulkAdditionJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MailboxProtectionUnitsBulkAdditionJobable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MailboxProtectionUnitsBulkAdditionJobable)
-                }
-            }
-            m.SetMailboxProtectionUnitsBulkAdditionJobs(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *ExchangeProtectionPolicy) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ProtectionPolicyBase.GetFieldDeserializers()
+	res["mailboxExclusionUnits"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MailboxExclusionUnitable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MailboxExclusionUnitable)
+				}
+			}
+			m.SetMailboxExclusionUnits(res)
+		}
+		return nil
+	}
+	res["mailboxExclusionUnitsBulkAdditionJobs"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMailboxExclusionUnitsBulkAdditionJobFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MailboxExclusionUnitsBulkAdditionJobable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MailboxExclusionUnitsBulkAdditionJobable)
+				}
+			}
+			m.SetMailboxExclusionUnitsBulkAdditionJobs(res)
+		}
+		return nil
+	}
+	res["mailboxInclusionRules"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionRuleFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MailboxProtectionRuleable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MailboxProtectionRuleable)
+				}
+			}
+			m.SetMailboxInclusionRules(res)
+		}
+		return nil
+	}
+	res["mailboxProtectionUnits"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionUnitFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MailboxProtectionUnitable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MailboxProtectionUnitable)
+				}
+			}
+			m.SetMailboxProtectionUnits(res)
+		}
+		return nil
+	}
+	res["mailboxProtectionUnitsBulkAdditionJobs"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMailboxProtectionUnitsBulkAdditionJobFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MailboxProtectionUnitsBulkAdditionJobable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MailboxProtectionUnitsBulkAdditionJobable)
+				}
+			}
+			m.SetMailboxProtectionUnitsBulkAdditionJobs(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetMailboxExclusionUnits gets the mailboxExclusionUnits property value. The mailbox exclusion units associated with the Exchange protection policy.
 // returns a []MailboxExclusionUnitable when successful
-func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnits()([]MailboxExclusionUnitable) {
-    val, err := m.GetBackingStore().Get("mailboxExclusionUnits")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MailboxExclusionUnitable)
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnits() []MailboxExclusionUnitable {
+	val, err := m.GetBackingStore().Get("mailboxExclusionUnits")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MailboxExclusionUnitable)
+	}
+	return nil
 }
+
 // GetMailboxExclusionUnitsBulkAdditionJobs gets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.
 // returns a []MailboxExclusionUnitsBulkAdditionJobable when successful
-func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable) {
-    val, err := m.GetBackingStore().Get("mailboxExclusionUnitsBulkAdditionJobs")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MailboxExclusionUnitsBulkAdditionJobable)
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) GetMailboxExclusionUnitsBulkAdditionJobs() []MailboxExclusionUnitsBulkAdditionJobable {
+	val, err := m.GetBackingStore().Get("mailboxExclusionUnitsBulkAdditionJobs")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MailboxExclusionUnitsBulkAdditionJobable)
+	}
+	return nil
 }
+
 // GetMailboxInclusionRules gets the mailboxInclusionRules property value. The rules associated with the Exchange protection policy.
 // returns a []MailboxProtectionRuleable when successful
-func (m *ExchangeProtectionPolicy) GetMailboxInclusionRules()([]MailboxProtectionRuleable) {
-    val, err := m.GetBackingStore().Get("mailboxInclusionRules")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MailboxProtectionRuleable)
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) GetMailboxInclusionRules() []MailboxProtectionRuleable {
+	val, err := m.GetBackingStore().Get("mailboxInclusionRules")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MailboxProtectionRuleable)
+	}
+	return nil
 }
+
 // GetMailboxProtectionUnits gets the mailboxProtectionUnits property value. The protection units (mailboxes) that are  protected under the Exchange protection policy.
 // returns a []MailboxProtectionUnitable when successful
-func (m *ExchangeProtectionPolicy) GetMailboxProtectionUnits()([]MailboxProtectionUnitable) {
-    val, err := m.GetBackingStore().Get("mailboxProtectionUnits")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MailboxProtectionUnitable)
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) GetMailboxProtectionUnits() []MailboxProtectionUnitable {
+	val, err := m.GetBackingStore().Get("mailboxProtectionUnits")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MailboxProtectionUnitable)
+	}
+	return nil
 }
+
 // GetMailboxProtectionUnitsBulkAdditionJobs gets the mailboxProtectionUnitsBulkAdditionJobs property value. The mailboxProtectionUnitsBulkAdditionJobs property
 // returns a []MailboxProtectionUnitsBulkAdditionJobable when successful
-func (m *ExchangeProtectionPolicy) GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable) {
-    val, err := m.GetBackingStore().Get("mailboxProtectionUnitsBulkAdditionJobs")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MailboxProtectionUnitsBulkAdditionJobable)
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) GetMailboxProtectionUnitsBulkAdditionJobs() []MailboxProtectionUnitsBulkAdditionJobable {
+	val, err := m.GetBackingStore().Get("mailboxProtectionUnitsBulkAdditionJobs")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MailboxProtectionUnitsBulkAdditionJobable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *ExchangeProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ProtectionPolicyBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetMailboxExclusionUnits() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnits()))
-        for i, v := range m.GetMailboxExclusionUnits() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnits", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMailboxExclusionUnitsBulkAdditionJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnitsBulkAdditionJobs()))
-        for i, v := range m.GetMailboxExclusionUnitsBulkAdditionJobs() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnitsBulkAdditionJobs", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMailboxInclusionRules() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxInclusionRules()))
-        for i, v := range m.GetMailboxInclusionRules() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mailboxInclusionRules", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMailboxProtectionUnits() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxProtectionUnits()))
-        for i, v := range m.GetMailboxProtectionUnits() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnits", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMailboxProtectionUnitsBulkAdditionJobs() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxProtectionUnitsBulkAdditionJobs()))
-        for i, v := range m.GetMailboxProtectionUnitsBulkAdditionJobs() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnitsBulkAdditionJobs", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *ExchangeProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ProtectionPolicyBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetMailboxExclusionUnits() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnits()))
+		for i, v := range m.GetMailboxExclusionUnits() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnits", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMailboxExclusionUnitsBulkAdditionJobs() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxExclusionUnitsBulkAdditionJobs()))
+		for i, v := range m.GetMailboxExclusionUnitsBulkAdditionJobs() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mailboxExclusionUnitsBulkAdditionJobs", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMailboxInclusionRules() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxInclusionRules()))
+		for i, v := range m.GetMailboxInclusionRules() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mailboxInclusionRules", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMailboxProtectionUnits() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxProtectionUnits()))
+		for i, v := range m.GetMailboxProtectionUnits() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnits", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMailboxProtectionUnitsBulkAdditionJobs() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMailboxProtectionUnitsBulkAdditionJobs()))
+		for i, v := range m.GetMailboxProtectionUnitsBulkAdditionJobs() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mailboxProtectionUnitsBulkAdditionJobs", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetMailboxExclusionUnits sets the mailboxExclusionUnits property value. The mailbox exclusion units associated with the Exchange protection policy.
-func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnits(value []MailboxExclusionUnitable)() {
-    err := m.GetBackingStore().Set("mailboxExclusionUnits", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnits(value []MailboxExclusionUnitable) {
+	err := m.GetBackingStore().Set("mailboxExclusionUnits", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMailboxExclusionUnitsBulkAdditionJobs sets the mailboxExclusionUnitsBulkAdditionJobs property value. The list of bulk addition jobs for mailbox exclusion units associated with the Exchange protection policy.
-func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)() {
-    err := m.GetBackingStore().Set("mailboxExclusionUnitsBulkAdditionJobs", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ExchangeProtectionPolicy) SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable) {
+	err := m.GetBackingStore().Set("mailboxExclusionUnitsBulkAdditionJobs", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMailboxInclusionRules sets the mailboxInclusionRules property value. The rules associated with the Exchange protection policy.
-func (m *ExchangeProtectionPolicy) SetMailboxInclusionRules(value []MailboxProtectionRuleable)() {
-    err := m.GetBackingStore().Set("mailboxInclusionRules", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ExchangeProtectionPolicy) SetMailboxInclusionRules(value []MailboxProtectionRuleable) {
+	err := m.GetBackingStore().Set("mailboxInclusionRules", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMailboxProtectionUnits sets the mailboxProtectionUnits property value. The protection units (mailboxes) that are  protected under the Exchange protection policy.
-func (m *ExchangeProtectionPolicy) SetMailboxProtectionUnits(value []MailboxProtectionUnitable)() {
-    err := m.GetBackingStore().Set("mailboxProtectionUnits", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ExchangeProtectionPolicy) SetMailboxProtectionUnits(value []MailboxProtectionUnitable) {
+	err := m.GetBackingStore().Set("mailboxProtectionUnits", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMailboxProtectionUnitsBulkAdditionJobs sets the mailboxProtectionUnitsBulkAdditionJobs property value. The mailboxProtectionUnitsBulkAdditionJobs property
-func (m *ExchangeProtectionPolicy) SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)() {
-    err := m.GetBackingStore().Set("mailboxProtectionUnitsBulkAdditionJobs", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ExchangeProtectionPolicy) SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable) {
+	err := m.GetBackingStore().Set("mailboxProtectionUnitsBulkAdditionJobs", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type ExchangeProtectionPolicyable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    ProtectionPolicyBaseable
-    GetMailboxExclusionUnits()([]MailboxExclusionUnitable)
-    GetMailboxExclusionUnitsBulkAdditionJobs()([]MailboxExclusionUnitsBulkAdditionJobable)
-    GetMailboxInclusionRules()([]MailboxProtectionRuleable)
-    GetMailboxProtectionUnits()([]MailboxProtectionUnitable)
-    GetMailboxProtectionUnitsBulkAdditionJobs()([]MailboxProtectionUnitsBulkAdditionJobable)
-    SetMailboxExclusionUnits(value []MailboxExclusionUnitable)()
-    SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)()
-    SetMailboxInclusionRules(value []MailboxProtectionRuleable)()
-    SetMailboxProtectionUnits(value []MailboxProtectionUnitable)()
-    SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ProtectionPolicyBaseable
+	GetMailboxExclusionUnits() []MailboxExclusionUnitable
+	GetMailboxExclusionUnitsBulkAdditionJobs() []MailboxExclusionUnitsBulkAdditionJobable
+	GetMailboxInclusionRules() []MailboxProtectionRuleable
+	GetMailboxProtectionUnits() []MailboxProtectionUnitable
+	GetMailboxProtectionUnitsBulkAdditionJobs() []MailboxProtectionUnitsBulkAdditionJobable
+	SetMailboxExclusionUnits(value []MailboxExclusionUnitable)
+	SetMailboxExclusionUnitsBulkAdditionJobs(value []MailboxExclusionUnitsBulkAdditionJobable)
+	SetMailboxInclusionRules(value []MailboxProtectionRuleable)
+	SetMailboxProtectionUnits(value []MailboxProtectionUnitable)
+	SetMailboxProtectionUnitsBulkAdditionJobs(value []MailboxProtectionUnitsBulkAdditionJobable)
 }

@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Defender TamperProtection setting options
 type WindowsDefenderTamperProtectionOptions int
 
 const (
-    // Not Configured
-    NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS WindowsDefenderTamperProtectionOptions = iota
-    // Enable windows defender tamper protection
-    ENABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
-    // Disable windows defender tamper protection
-    DISABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	// Not Configured
+	NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS WindowsDefenderTamperProtectionOptions = iota
+	// Enable windows defender tamper protection
+	ENABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	// Disable windows defender tamper protection
+	DISABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
 )
 
 func (i WindowsDefenderTamperProtectionOptions) String() string {
-    return []string{"notConfigured", "enable", "disable"}[i]
+	return []string{"notConfigured", "enable", "disable"}[i]
 }
+
 func ParseWindowsDefenderTamperProtectionOptions(v string) (any, error) {
-    result := NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
-        case "enable":
-            result = ENABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
-        case "disable":
-            result = DISABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	case "enable":
+		result = ENABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	case "disable":
+		result = DISABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsDefenderTamperProtectionOptions(values []WindowsDefenderTamperProtectionOptions) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsDefenderTamperProtectionOptions) isMultiValue() bool {
-    return false
+	return false
 }

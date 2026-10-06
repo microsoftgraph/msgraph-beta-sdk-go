@@ -4,27 +4,30 @@
 package groups
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemTeamChannelsItemJoinedUsersAddPostResponseable instead.
 type ItemTeamChannelsItemJoinedUsersAddResponse struct {
-    ItemTeamChannelsItemJoinedUsersAddPostResponse
+	ItemTeamChannelsItemJoinedUsersAddPostResponse
 }
+
 // NewItemTeamChannelsItemJoinedUsersAddResponse instantiates a new ItemTeamChannelsItemJoinedUsersAddResponse and sets the default values.
-func NewItemTeamChannelsItemJoinedUsersAddResponse()(*ItemTeamChannelsItemJoinedUsersAddResponse) {
-    m := &ItemTeamChannelsItemJoinedUsersAddResponse{
-        ItemTeamChannelsItemJoinedUsersAddPostResponse: *NewItemTeamChannelsItemJoinedUsersAddPostResponse(),
-    }
-    return m
+func NewItemTeamChannelsItemJoinedUsersAddResponse() *ItemTeamChannelsItemJoinedUsersAddResponse {
+	m := &ItemTeamChannelsItemJoinedUsersAddResponse{
+		ItemTeamChannelsItemJoinedUsersAddPostResponse: *NewItemTeamChannelsItemJoinedUsersAddPostResponse(),
+	}
+	return m
 }
+
 // CreateItemTeamChannelsItemJoinedUsersAddResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemTeamChannelsItemJoinedUsersAddResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemTeamChannelsItemJoinedUsersAddResponse(), nil
+func CreateItemTeamChannelsItemJoinedUsersAddResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemTeamChannelsItemJoinedUsersAddResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemTeamChannelsItemJoinedUsersAddPostResponseable instead.
 type ItemTeamChannelsItemJoinedUsersAddResponseable interface {
-    ItemTeamChannelsItemJoinedUsersAddPostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemTeamChannelsItemJoinedUsersAddPostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

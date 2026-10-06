@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Android For Work default app permission policy type.
 type AndroidForWorkDefaultAppPermissionPolicyType int
 
 const (
-    // Device default value, no intent.
-    DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE AndroidForWorkDefaultAppPermissionPolicyType = iota
-    // Prompt.
-    PROMPT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-    // Auto grant.
-    AUTOGRANT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-    // Auto deny.
-    AUTODENY_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	// Device default value, no intent.
+	DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE AndroidForWorkDefaultAppPermissionPolicyType = iota
+	// Prompt.
+	PROMPT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	// Auto grant.
+	AUTOGRANT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	// Auto deny.
+	AUTODENY_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
 )
 
 func (i AndroidForWorkDefaultAppPermissionPolicyType) String() string {
-    return []string{"deviceDefault", "prompt", "autoGrant", "autoDeny"}[i]
+	return []string{"deviceDefault", "prompt", "autoGrant", "autoDeny"}[i]
 }
+
 func ParseAndroidForWorkDefaultAppPermissionPolicyType(v string) (any, error) {
-    result := DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-    switch v {
-        case "deviceDefault":
-            result = DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-        case "prompt":
-            result = PROMPT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-        case "autoGrant":
-            result = AUTOGRANT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-        case "autoDeny":
-            result = AUTODENY_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	switch v {
+	case "deviceDefault":
+		result = DEVICEDEFAULT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	case "prompt":
+		result = PROMPT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	case "autoGrant":
+		result = AUTOGRANT_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	case "autoDeny":
+		result = AUTODENY_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAndroidForWorkDefaultAppPermissionPolicyType(values []AndroidForWorkDefaultAppPermissionPolicyType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AndroidForWorkDefaultAppPermissionPolicyType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Max severity of CVE
 type WindowsUpdateCveSeverityLevel int
 
 const (
-    // Severity of Critical
-    CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL WindowsUpdateCveSeverityLevel = iota
-    // Severity of Important
-    IMPORTANT_WINDOWSUPDATECVESEVERITYLEVEL
-    // Severity of Moderate
-    MODERATE_WINDOWSUPDATECVESEVERITYLEVEL
-    // Reserved value of UnknownFutureValue
-    UNKNOWNFUTUREVALUE_WINDOWSUPDATECVESEVERITYLEVEL
+	// Severity of Critical
+	CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL WindowsUpdateCveSeverityLevel = iota
+	// Severity of Important
+	IMPORTANT_WINDOWSUPDATECVESEVERITYLEVEL
+	// Severity of Moderate
+	MODERATE_WINDOWSUPDATECVESEVERITYLEVEL
+	// Reserved value of UnknownFutureValue
+	UNKNOWNFUTUREVALUE_WINDOWSUPDATECVESEVERITYLEVEL
 )
 
 func (i WindowsUpdateCveSeverityLevel) String() string {
-    return []string{"critical", "important", "moderate", "unknownFutureValue"}[i]
+	return []string{"critical", "important", "moderate", "unknownFutureValue"}[i]
 }
+
 func ParseWindowsUpdateCveSeverityLevel(v string) (any, error) {
-    result := CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL
-    switch v {
-        case "critical":
-            result = CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL
-        case "important":
-            result = IMPORTANT_WINDOWSUPDATECVESEVERITYLEVEL
-        case "moderate":
-            result = MODERATE_WINDOWSUPDATECVESEVERITYLEVEL
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WINDOWSUPDATECVESEVERITYLEVEL
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL
+	switch v {
+	case "critical":
+		result = CRITICAL_WINDOWSUPDATECVESEVERITYLEVEL
+	case "important":
+		result = IMPORTANT_WINDOWSUPDATECVESEVERITYLEVEL
+	case "moderate":
+		result = MODERATE_WINDOWSUPDATECVESEVERITYLEVEL
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WINDOWSUPDATECVESEVERITYLEVEL
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsUpdateCveSeverityLevel(values []WindowsUpdateCveSeverityLevel) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsUpdateCveSeverityLevel) isMultiValue() bool {
-    return false
+	return false
 }

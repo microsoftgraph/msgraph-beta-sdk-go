@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcOrganizationActionStatus int
 
 const (
-    INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS CloudPcOrganizationActionStatus = iota
-    SUCCEEDED_CLOUDPCORGANIZATIONACTIONSTATUS
-    FAILED_CLOUDPCORGANIZATIONACTIONSTATUS
-    UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONSTATUS
+	INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS CloudPcOrganizationActionStatus = iota
+	SUCCEEDED_CLOUDPCORGANIZATIONACTIONSTATUS
+	FAILED_CLOUDPCORGANIZATIONACTIONSTATUS
+	UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONSTATUS
 )
 
 func (i CloudPcOrganizationActionStatus) String() string {
-    return []string{"inProgress", "succeeded", "failed", "unknownFutureValue"}[i]
+	return []string{"inProgress", "succeeded", "failed", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcOrganizationActionStatus(v string) (any, error) {
-    result := INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS
-    switch v {
-        case "inProgress":
-            result = INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS
-        case "succeeded":
-            result = SUCCEEDED_CLOUDPCORGANIZATIONACTIONSTATUS
-        case "failed":
-            result = FAILED_CLOUDPCORGANIZATIONACTIONSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS
+	switch v {
+	case "inProgress":
+		result = INPROGRESS_CLOUDPCORGANIZATIONACTIONSTATUS
+	case "succeeded":
+		result = SUCCEEDED_CLOUDPCORGANIZATIONACTIONSTATUS
+	case "failed":
+		result = FAILED_CLOUDPCORGANIZATIONACTIONSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCORGANIZATIONACTIONSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcOrganizationActionStatus(values []CloudPcOrganizationActionStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcOrganizationActionStatus) isMultiValue() bool {
-    return false
+	return false
 }

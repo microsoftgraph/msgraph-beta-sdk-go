@@ -4,42 +4,47 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DeviceManagementConfigurationSettingGroupCollectionInstance setting instance within policy
 type DeviceManagementConfigurationSettingGroupCollectionInstance struct {
-    DeviceManagementConfigurationSettingInstance
+	DeviceManagementConfigurationSettingInstance
 }
+
 // NewDeviceManagementConfigurationSettingGroupCollectionInstance instantiates a new DeviceManagementConfigurationSettingGroupCollectionInstance and sets the default values.
-func NewDeviceManagementConfigurationSettingGroupCollectionInstance()(*DeviceManagementConfigurationSettingGroupCollectionInstance) {
-    m := &DeviceManagementConfigurationSettingGroupCollectionInstance{
-        DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
-    }
-    odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDeviceManagementConfigurationSettingGroupCollectionInstance() *DeviceManagementConfigurationSettingGroupCollectionInstance {
+	m := &DeviceManagementConfigurationSettingGroupCollectionInstance{
+		DeviceManagementConfigurationSettingInstance: *NewDeviceManagementConfigurationSettingInstance(),
+	}
+	odataTypeValue := "#microsoft.graph.deviceManagementConfigurationSettingGroupCollectionInstance"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDeviceManagementConfigurationSettingGroupCollectionInstance(), nil
+func CreateDeviceManagementConfigurationSettingGroupCollectionInstanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDeviceManagementConfigurationSettingGroupCollectionInstance(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceManagementConfigurationSettingInstance.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceManagementConfigurationSettingInstance.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *DeviceManagementConfigurationSettingGroupCollectionInstance) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceManagementConfigurationSettingInstance.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type DeviceManagementConfigurationSettingGroupCollectionInstanceable interface {
-    DeviceManagementConfigurationSettingInstanceable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	DeviceManagementConfigurationSettingInstanceable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

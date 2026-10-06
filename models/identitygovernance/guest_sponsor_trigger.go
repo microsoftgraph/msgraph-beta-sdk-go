@@ -4,78 +4,85 @@
 package identitygovernance
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type GuestSponsorTrigger struct {
-    WorkflowExecutionTrigger
+	WorkflowExecutionTrigger
 }
+
 // NewGuestSponsorTrigger instantiates a new GuestSponsorTrigger and sets the default values.
-func NewGuestSponsorTrigger()(*GuestSponsorTrigger) {
-    m := &GuestSponsorTrigger{
-        WorkflowExecutionTrigger: *NewWorkflowExecutionTrigger(),
-    }
-    odataTypeValue := "#microsoft.graph.identityGovernance.guestSponsorTrigger"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewGuestSponsorTrigger() *GuestSponsorTrigger {
+	m := &GuestSponsorTrigger{
+		WorkflowExecutionTrigger: *NewWorkflowExecutionTrigger(),
+	}
+	odataTypeValue := "#microsoft.graph.identityGovernance.guestSponsorTrigger"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateGuestSponsorTriggerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateGuestSponsorTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewGuestSponsorTrigger(), nil
+func CreateGuestSponsorTriggerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewGuestSponsorTrigger(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *GuestSponsorTrigger) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.WorkflowExecutionTrigger.GetFieldDeserializers()
-    res["minimumRequiredSponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMinimumRequiredSponsors(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *GuestSponsorTrigger) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.WorkflowExecutionTrigger.GetFieldDeserializers()
+	res["minimumRequiredSponsors"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMinimumRequiredSponsors(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetMinimumRequiredSponsors gets the minimumRequiredSponsors property value. The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
 // returns a *int32 when successful
-func (m *GuestSponsorTrigger) GetMinimumRequiredSponsors()(*int32) {
-    val, err := m.GetBackingStore().Get("minimumRequiredSponsors")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *GuestSponsorTrigger) GetMinimumRequiredSponsors() *int32 {
+	val, err := m.GetBackingStore().Get("minimumRequiredSponsors")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *GuestSponsorTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.WorkflowExecutionTrigger.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteInt32Value("minimumRequiredSponsors", m.GetMinimumRequiredSponsors())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *GuestSponsorTrigger) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.WorkflowExecutionTrigger.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteInt32Value("minimumRequiredSponsors", m.GetMinimumRequiredSponsors())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetMinimumRequiredSponsors sets the minimumRequiredSponsors property value. The minimum number of sponsors required for a guest user. When a guest has fewer sponsors than this value, the workflow is triggered.
-func (m *GuestSponsorTrigger) SetMinimumRequiredSponsors(value *int32)() {
-    err := m.GetBackingStore().Set("minimumRequiredSponsors", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *GuestSponsorTrigger) SetMinimumRequiredSponsors(value *int32) {
+	err := m.GetBackingStore().Set("minimumRequiredSponsors", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type GuestSponsorTriggerable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    WorkflowExecutionTriggerable
-    GetMinimumRequiredSponsors()(*int32)
-    SetMinimumRequiredSponsors(value *int32)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	WorkflowExecutionTriggerable
+	GetMinimumRequiredSponsors() *int32
+	SetMinimumRequiredSponsors(value *int32)
 }

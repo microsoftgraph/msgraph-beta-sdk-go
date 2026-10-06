@@ -2,86 +2,90 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Describes the TemplateFamily for the Template entity
 type DeviceEnrollmentConfigurationType int
 
 const (
-    // Default. Set to unknown if the configuration type cannot be determined.
-    UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE DeviceEnrollmentConfigurationType = iota
-    // Indicates that configuration is of type limit which refers to number of devices a user is allowed to enroll.
-    LIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type platform restriction which refers to types of devices a user is allowed to enroll.
-    PLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type Windows Hello which refers to authentication method devices would use.
-    WINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type default limit which refers to types of devices a user is allowed to enroll by default.
-    DEFAULTLIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type default platform restriction which refers to types of devices a user is allowed to enroll by default.
-    DEFAULTPLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type default Windows Hello which refers to authentication method devices would use by default.
-    DEFAULTWINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type default Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices by default.
-    DEFAULTWINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices.
-    WINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type Comanagement Authority which refers to policies applied to Co-Managed devices.
-    DEVICECOMANAGEMENTAUTHORITYCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
-    SINGLEPLATFORMRESTRICTION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
-    ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
-    WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Default. Set to unknown if the configuration type cannot be determined.
+	UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE DeviceEnrollmentConfigurationType = iota
+	// Indicates that configuration is of type limit which refers to number of devices a user is allowed to enroll.
+	LIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type platform restriction which refers to types of devices a user is allowed to enroll.
+	PLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type Windows Hello which refers to authentication method devices would use.
+	WINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type default limit which refers to types of devices a user is allowed to enroll by default.
+	DEFAULTLIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type default platform restriction which refers to types of devices a user is allowed to enroll by default.
+	DEFAULTPLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type default Windows Hello which refers to authentication method devices would use by default.
+	DEFAULTWINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type default Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices by default.
+	DEFAULTWINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type Enrollment status page which refers to startup page displayed during OOBE in Autopilot devices.
+	WINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type Comanagement Authority which refers to policies applied to Co-Managed devices.
+	DEVICECOMANAGEMENTAUTHORITYCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
+	SINGLEPLATFORMRESTRICTION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
+	ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	// Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+	WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
 )
 
 func (i DeviceEnrollmentConfigurationType) String() string {
-    return []string{"unknown", "limit", "platformRestrictions", "windowsHelloForBusiness", "defaultLimit", "defaultPlatformRestrictions", "defaultWindowsHelloForBusiness", "defaultWindows10EnrollmentCompletionPageConfiguration", "windows10EnrollmentCompletionPageConfiguration", "deviceComanagementAuthorityConfiguration", "singlePlatformRestriction", "unknownFutureValue", "enrollmentNotificationsConfiguration", "windowsRestore"}[i]
+	return []string{"unknown", "limit", "platformRestrictions", "windowsHelloForBusiness", "defaultLimit", "defaultPlatformRestrictions", "defaultWindowsHelloForBusiness", "defaultWindows10EnrollmentCompletionPageConfiguration", "windows10EnrollmentCompletionPageConfiguration", "deviceComanagementAuthorityConfiguration", "singlePlatformRestriction", "unknownFutureValue", "enrollmentNotificationsConfiguration", "windowsRestore"}[i]
 }
+
 func ParseDeviceEnrollmentConfigurationType(v string) (any, error) {
-    result := UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "limit":
-            result = LIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "platformRestrictions":
-            result = PLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "windowsHelloForBusiness":
-            result = WINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "defaultLimit":
-            result = DEFAULTLIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "defaultPlatformRestrictions":
-            result = DEFAULTPLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "defaultWindowsHelloForBusiness":
-            result = DEFAULTWINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "defaultWindows10EnrollmentCompletionPageConfiguration":
-            result = DEFAULTWINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "windows10EnrollmentCompletionPageConfiguration":
-            result = WINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "deviceComanagementAuthorityConfiguration":
-            result = DEVICECOMANAGEMENTAUTHORITYCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "singlePlatformRestriction":
-            result = SINGLEPLATFORMRESTRICTION_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "enrollmentNotificationsConfiguration":
-            result = ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
-        case "windowsRestore":
-            result = WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "limit":
+		result = LIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "platformRestrictions":
+		result = PLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "windowsHelloForBusiness":
+		result = WINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "defaultLimit":
+		result = DEFAULTLIMIT_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "defaultPlatformRestrictions":
+		result = DEFAULTPLATFORMRESTRICTIONS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "defaultWindowsHelloForBusiness":
+		result = DEFAULTWINDOWSHELLOFORBUSINESS_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "defaultWindows10EnrollmentCompletionPageConfiguration":
+		result = DEFAULTWINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "windows10EnrollmentCompletionPageConfiguration":
+		result = WINDOWS10ENROLLMENTCOMPLETIONPAGECONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "deviceComanagementAuthorityConfiguration":
+		result = DEVICECOMANAGEMENTAUTHORITYCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "singlePlatformRestriction":
+		result = SINGLEPLATFORMRESTRICTION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "enrollmentNotificationsConfiguration":
+		result = ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+	case "windowsRestore":
+		result = WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceEnrollmentConfigurationType(values []DeviceEnrollmentConfigurationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceEnrollmentConfigurationType) isMultiValue() bool {
-    return false
+	return false
 }
