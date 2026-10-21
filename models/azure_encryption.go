@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type AzureEncryption int
 
 const (
-    MICROSOFTSTORAGE_AZUREENCRYPTION AzureEncryption = iota
-    MICROSOFTKEYVAULT_AZUREENCRYPTION
-    CUSTOMER_AZUREENCRYPTION
-    UNKNOWNFUTUREVALUE_AZUREENCRYPTION
+	MICROSOFTSTORAGE_AZUREENCRYPTION AzureEncryption = iota
+	MICROSOFTKEYVAULT_AZUREENCRYPTION
+	CUSTOMER_AZUREENCRYPTION
+	UNKNOWNFUTUREVALUE_AZUREENCRYPTION
 )
 
 func (i AzureEncryption) String() string {
-    return []string{"microsoftStorage", "microsoftKeyVault", "customer", "unknownFutureValue"}[i]
+	return []string{"microsoftStorage", "microsoftKeyVault", "customer", "unknownFutureValue"}[i]
 }
+
 func ParseAzureEncryption(v string) (any, error) {
-    result := MICROSOFTSTORAGE_AZUREENCRYPTION
-    switch v {
-        case "microsoftStorage":
-            result = MICROSOFTSTORAGE_AZUREENCRYPTION
-        case "microsoftKeyVault":
-            result = MICROSOFTKEYVAULT_AZUREENCRYPTION
-        case "customer":
-            result = CUSTOMER_AZUREENCRYPTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AZUREENCRYPTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MICROSOFTSTORAGE_AZUREENCRYPTION
+	switch v {
+	case "microsoftStorage":
+		result = MICROSOFTSTORAGE_AZUREENCRYPTION
+	case "microsoftKeyVault":
+		result = MICROSOFTKEYVAULT_AZUREENCRYPTION
+	case "customer":
+		result = CUSTOMER_AZUREENCRYPTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_AZUREENCRYPTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAzureEncryption(values []AzureEncryption) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AzureEncryption) isMultiValue() bool {
-    return false
+	return false
 }

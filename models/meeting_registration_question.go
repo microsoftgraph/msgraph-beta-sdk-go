@@ -4,194 +4,207 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type MeetingRegistrationQuestion struct {
-    Entity
+	Entity
 }
+
 // NewMeetingRegistrationQuestion instantiates a new MeetingRegistrationQuestion and sets the default values.
-func NewMeetingRegistrationQuestion()(*MeetingRegistrationQuestion) {
-    m := &MeetingRegistrationQuestion{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewMeetingRegistrationQuestion() *MeetingRegistrationQuestion {
+	m := &MeetingRegistrationQuestion{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateMeetingRegistrationQuestionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewMeetingRegistrationQuestion(), nil
+func CreateMeetingRegistrationQuestionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewMeetingRegistrationQuestion(), nil
 }
+
 // GetAnswerInputType gets the answerInputType property value. Answer input type of the custom registration question.
 // returns a *AnswerInputType when successful
-func (m *MeetingRegistrationQuestion) GetAnswerInputType()(*AnswerInputType) {
-    val, err := m.GetBackingStore().Get("answerInputType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*AnswerInputType)
-    }
-    return nil
+func (m *MeetingRegistrationQuestion) GetAnswerInputType() *AnswerInputType {
+	val, err := m.GetBackingStore().Get("answerInputType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*AnswerInputType)
+	}
+	return nil
 }
+
 // GetAnswerOptions gets the answerOptions property value. Answer options when answerInputType is radioButton.
 // returns a []string when successful
-func (m *MeetingRegistrationQuestion) GetAnswerOptions()([]string) {
-    val, err := m.GetBackingStore().Get("answerOptions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *MeetingRegistrationQuestion) GetAnswerOptions() []string {
+	val, err := m.GetBackingStore().Get("answerOptions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetDisplayName gets the displayName property value. Display name of the custom registration question.
 // returns a *string when successful
-func (m *MeetingRegistrationQuestion) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *MeetingRegistrationQuestion) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *MeetingRegistrationQuestion) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["answerInputType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAnswerInputType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAnswerInputType(val.(*AnswerInputType))
-        }
-        return nil
-    }
-    res["answerOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetAnswerOptions(res)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["isRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsRequired(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *MeetingRegistrationQuestion) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["answerInputType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseAnswerInputType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAnswerInputType(val.(*AnswerInputType))
+		}
+		return nil
+	}
+	res["answerOptions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetAnswerOptions(res)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["isRequired"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsRequired(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetIsRequired gets the isRequired property value. Indicates whether the question is required. Default value is false.
 // returns a *bool when successful
-func (m *MeetingRegistrationQuestion) GetIsRequired()(*bool) {
-    val, err := m.GetBackingStore().Get("isRequired")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MeetingRegistrationQuestion) GetIsRequired() *bool {
+	val, err := m.GetBackingStore().Get("isRequired")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetAnswerInputType() != nil {
-        cast := (*m.GetAnswerInputType()).String()
-        err = writer.WriteStringValue("answerInputType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAnswerOptions() != nil {
-        err = writer.WriteCollectionOfStringValues("answerOptions", m.GetAnswerOptions())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isRequired", m.GetIsRequired())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *MeetingRegistrationQuestion) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetAnswerInputType() != nil {
+		cast := (*m.GetAnswerInputType()).String()
+		err = writer.WriteStringValue("answerInputType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAnswerOptions() != nil {
+		err = writer.WriteCollectionOfStringValues("answerOptions", m.GetAnswerOptions())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isRequired", m.GetIsRequired())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAnswerInputType sets the answerInputType property value. Answer input type of the custom registration question.
-func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType)() {
-    err := m.GetBackingStore().Set("answerInputType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MeetingRegistrationQuestion) SetAnswerInputType(value *AnswerInputType) {
+	err := m.GetBackingStore().Set("answerInputType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAnswerOptions sets the answerOptions property value. Answer options when answerInputType is radioButton.
-func (m *MeetingRegistrationQuestion) SetAnswerOptions(value []string)() {
-    err := m.GetBackingStore().Set("answerOptions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MeetingRegistrationQuestion) SetAnswerOptions(value []string) {
+	err := m.GetBackingStore().Set("answerOptions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDisplayName sets the displayName property value. Display name of the custom registration question.
-func (m *MeetingRegistrationQuestion) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MeetingRegistrationQuestion) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsRequired sets the isRequired property value. Indicates whether the question is required. Default value is false.
-func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool)() {
-    err := m.GetBackingStore().Set("isRequired", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MeetingRegistrationQuestion) SetIsRequired(value *bool) {
+	err := m.GetBackingStore().Set("isRequired", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type MeetingRegistrationQuestionable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAnswerInputType()(*AnswerInputType)
-    GetAnswerOptions()([]string)
-    GetDisplayName()(*string)
-    GetIsRequired()(*bool)
-    SetAnswerInputType(value *AnswerInputType)()
-    SetAnswerOptions(value []string)()
-    SetDisplayName(value *string)()
-    SetIsRequired(value *bool)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAnswerInputType() *AnswerInputType
+	GetAnswerOptions() []string
+	GetDisplayName() *string
+	GetIsRequired() *bool
+	SetAnswerInputType(value *AnswerInputType)
+	SetAnswerOptions(value []string)
+	SetDisplayName(value *string)
+	SetIsRequired(value *bool)
 }

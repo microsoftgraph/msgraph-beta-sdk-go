@@ -4,263 +4,280 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type CrossTenantIdentitySyncPolicyPartner struct {
-    PolicyDeletableItem
+	PolicyDeletableItem
 }
+
 // NewCrossTenantIdentitySyncPolicyPartner instantiates a new CrossTenantIdentitySyncPolicyPartner and sets the default values.
-func NewCrossTenantIdentitySyncPolicyPartner()(*CrossTenantIdentitySyncPolicyPartner) {
-    m := &CrossTenantIdentitySyncPolicyPartner{
-        PolicyDeletableItem: *NewPolicyDeletableItem(),
-    }
-    odataTypeValue := "#microsoft.graph.crossTenantIdentitySyncPolicyPartner"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewCrossTenantIdentitySyncPolicyPartner() *CrossTenantIdentitySyncPolicyPartner {
+	m := &CrossTenantIdentitySyncPolicyPartner{
+		PolicyDeletableItem: *NewPolicyDeletableItem(),
+	}
+	odataTypeValue := "#microsoft.graph.crossTenantIdentitySyncPolicyPartner"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCrossTenantIdentitySyncPolicyPartner(), nil
+func CreateCrossTenantIdentitySyncPolicyPartnerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCrossTenantIdentitySyncPolicyPartner(), nil
 }
+
 // GetDisplayName gets the displayName property value. Display name for the cross-tenant user and group synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
 // returns a *string when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetExternalCloudAuthorizedApplicationId gets the externalCloudAuthorizedApplicationId property value. The externalCloudAuthorizedApplicationId property
 // returns a *string when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetExternalCloudAuthorizedApplicationId()(*string) {
-    val, err := m.GetBackingStore().Get("externalCloudAuthorizedApplicationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetExternalCloudAuthorizedApplicationId() *string {
+	val, err := m.GetBackingStore().Get("externalCloudAuthorizedApplicationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.PolicyDeletableItem.GetFieldDeserializers()
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["externalCloudAuthorizedApplicationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExternalCloudAuthorizedApplicationId(val)
-        }
-        return nil
-    }
-    res["groupSyncInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCrossTenantGroupSyncInboundFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGroupSyncInbound(val.(CrossTenantGroupSyncInboundable))
-        }
-        return nil
-    }
-    res["roleEnabledGroupSyncInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCrossTenantRoleEnabledGroupSyncInboundFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRoleEnabledGroupSyncInbound(val.(CrossTenantRoleEnabledGroupSyncInboundable))
-        }
-        return nil
-    }
-    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantId(val)
-        }
-        return nil
-    }
-    res["userSyncInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCrossTenantUserSyncInboundFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserSyncInbound(val.(CrossTenantUserSyncInboundable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.PolicyDeletableItem.GetFieldDeserializers()
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["externalCloudAuthorizedApplicationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExternalCloudAuthorizedApplicationId(val)
+		}
+		return nil
+	}
+	res["groupSyncInbound"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCrossTenantGroupSyncInboundFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGroupSyncInbound(val.(CrossTenantGroupSyncInboundable))
+		}
+		return nil
+	}
+	res["roleEnabledGroupSyncInbound"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCrossTenantRoleEnabledGroupSyncInboundFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRoleEnabledGroupSyncInbound(val.(CrossTenantRoleEnabledGroupSyncInboundable))
+		}
+		return nil
+	}
+	res["tenantId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTenantId(val)
+		}
+		return nil
+	}
+	res["userSyncInbound"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCrossTenantUserSyncInboundFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUserSyncInbound(val.(CrossTenantUserSyncInboundable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetGroupSyncInbound gets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant.
 // returns a CrossTenantGroupSyncInboundable when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound()(CrossTenantGroupSyncInboundable) {
-    val, err := m.GetBackingStore().Get("groupSyncInbound")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CrossTenantGroupSyncInboundable)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound() CrossTenantGroupSyncInboundable {
+	val, err := m.GetBackingStore().Get("groupSyncInbound")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CrossTenantGroupSyncInboundable)
+	}
+	return nil
 }
+
 // GetRoleEnabledGroupSyncInbound gets the roleEnabledGroupSyncInbound property value. The roleEnabledGroupSyncInbound property
 // returns a CrossTenantRoleEnabledGroupSyncInboundable when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetRoleEnabledGroupSyncInbound()(CrossTenantRoleEnabledGroupSyncInboundable) {
-    val, err := m.GetBackingStore().Get("roleEnabledGroupSyncInbound")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CrossTenantRoleEnabledGroupSyncInboundable)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetRoleEnabledGroupSyncInbound() CrossTenantRoleEnabledGroupSyncInboundable {
+	val, err := m.GetBackingStore().Get("roleEnabledGroupSyncInbound")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CrossTenantRoleEnabledGroupSyncInboundable)
+	}
+	return nil
 }
+
 // GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.
 // returns a *string when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId()(*string) {
-    val, err := m.GetBackingStore().Get("tenantId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetTenantId() *string {
+	val, err := m.GetBackingStore().Get("tenantId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetUserSyncInbound gets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
 // returns a CrossTenantUserSyncInboundable when successful
-func (m *CrossTenantIdentitySyncPolicyPartner) GetUserSyncInbound()(CrossTenantUserSyncInboundable) {
-    val, err := m.GetBackingStore().Get("userSyncInbound")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CrossTenantUserSyncInboundable)
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) GetUserSyncInbound() CrossTenantUserSyncInboundable {
+	val, err := m.GetBackingStore().Get("userSyncInbound")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CrossTenantUserSyncInboundable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *CrossTenantIdentitySyncPolicyPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.PolicyDeletableItem.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("externalCloudAuthorizedApplicationId", m.GetExternalCloudAuthorizedApplicationId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("groupSyncInbound", m.GetGroupSyncInbound())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("roleEnabledGroupSyncInbound", m.GetRoleEnabledGroupSyncInbound())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("tenantId", m.GetTenantId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("userSyncInbound", m.GetUserSyncInbound())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *CrossTenantIdentitySyncPolicyPartner) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.PolicyDeletableItem.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("externalCloudAuthorizedApplicationId", m.GetExternalCloudAuthorizedApplicationId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("groupSyncInbound", m.GetGroupSyncInbound())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("roleEnabledGroupSyncInbound", m.GetRoleEnabledGroupSyncInbound())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("tenantId", m.GetTenantId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("userSyncInbound", m.GetUserSyncInbound())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetDisplayName sets the displayName property value. Display name for the cross-tenant user and group synchronization policy. Use the name of the partner Microsoft Entra tenant to easily identify the policy. Optional.
-func (m *CrossTenantIdentitySyncPolicyPartner) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExternalCloudAuthorizedApplicationId sets the externalCloudAuthorizedApplicationId property value. The externalCloudAuthorizedApplicationId property
-func (m *CrossTenantIdentitySyncPolicyPartner) SetExternalCloudAuthorizedApplicationId(value *string)() {
-    err := m.GetBackingStore().Set("externalCloudAuthorizedApplicationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetExternalCloudAuthorizedApplicationId(value *string) {
+	err := m.GetBackingStore().Set("externalCloudAuthorizedApplicationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetGroupSyncInbound sets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant.
-func (m *CrossTenantIdentitySyncPolicyPartner) SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)() {
-    err := m.GetBackingStore().Set("groupSyncInbound", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetGroupSyncInbound(value CrossTenantGroupSyncInboundable) {
+	err := m.GetBackingStore().Set("groupSyncInbound", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRoleEnabledGroupSyncInbound sets the roleEnabledGroupSyncInbound property value. The roleEnabledGroupSyncInbound property
-func (m *CrossTenantIdentitySyncPolicyPartner) SetRoleEnabledGroupSyncInbound(value CrossTenantRoleEnabledGroupSyncInboundable)() {
-    err := m.GetBackingStore().Set("roleEnabledGroupSyncInbound", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetRoleEnabledGroupSyncInbound(value CrossTenantRoleEnabledGroupSyncInboundable) {
+	err := m.GetBackingStore().Set("roleEnabledGroupSyncInbound", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTenantId sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Key. Read-only.
-func (m *CrossTenantIdentitySyncPolicyPartner) SetTenantId(value *string)() {
-    err := m.GetBackingStore().Set("tenantId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetTenantId(value *string) {
+	err := m.GetBackingStore().Set("tenantId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUserSyncInbound sets the userSyncInbound property value. Defines whether users can be synchronized from the partner tenant.
-func (m *CrossTenantIdentitySyncPolicyPartner) SetUserSyncInbound(value CrossTenantUserSyncInboundable)() {
-    err := m.GetBackingStore().Set("userSyncInbound", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CrossTenantIdentitySyncPolicyPartner) SetUserSyncInbound(value CrossTenantUserSyncInboundable) {
+	err := m.GetBackingStore().Set("userSyncInbound", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type CrossTenantIdentitySyncPolicyPartnerable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    PolicyDeletableItemable
-    GetDisplayName()(*string)
-    GetExternalCloudAuthorizedApplicationId()(*string)
-    GetGroupSyncInbound()(CrossTenantGroupSyncInboundable)
-    GetRoleEnabledGroupSyncInbound()(CrossTenantRoleEnabledGroupSyncInboundable)
-    GetTenantId()(*string)
-    GetUserSyncInbound()(CrossTenantUserSyncInboundable)
-    SetDisplayName(value *string)()
-    SetExternalCloudAuthorizedApplicationId(value *string)()
-    SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)()
-    SetRoleEnabledGroupSyncInbound(value CrossTenantRoleEnabledGroupSyncInboundable)()
-    SetTenantId(value *string)()
-    SetUserSyncInbound(value CrossTenantUserSyncInboundable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	PolicyDeletableItemable
+	GetDisplayName() *string
+	GetExternalCloudAuthorizedApplicationId() *string
+	GetGroupSyncInbound() CrossTenantGroupSyncInboundable
+	GetRoleEnabledGroupSyncInbound() CrossTenantRoleEnabledGroupSyncInboundable
+	GetTenantId() *string
+	GetUserSyncInbound() CrossTenantUserSyncInboundable
+	SetDisplayName(value *string)
+	SetExternalCloudAuthorizedApplicationId(value *string)
+	SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)
+	SetRoleEnabledGroupSyncInbound(value CrossTenantRoleEnabledGroupSyncInboundable)
+	SetTenantId(value *string)
+	SetUserSyncInbound(value CrossTenantUserSyncInboundable)
 }

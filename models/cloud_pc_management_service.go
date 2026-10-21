@@ -2,62 +2,67 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 import (
-    "math"
-    "strings"
+	"math"
+	"strings"
 )
+
 type CloudPcManagementService int
 
 const (
-    WINDOWS365_CLOUDPCMANAGEMENTSERVICE = 1
-    DEVBOX_CLOUDPCMANAGEMENTSERVICE = 2
-    UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE = 4
-    RPABOX_CLOUDPCMANAGEMENTSERVICE = 8
-    MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE = 16
-    MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE = 32
+	WINDOWS365_CLOUDPCMANAGEMENTSERVICE          = 1
+	DEVBOX_CLOUDPCMANAGEMENTSERVICE              = 2
+	UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE  = 4
+	RPABOX_CLOUDPCMANAGEMENTSERVICE              = 8
+	MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE    = 16
+	MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE = 32
 )
 
 func (i CloudPcManagementService) String() string {
-    var values []string
-    options := []string{"windows365", "devBox", "unknownFutureValue", "rpaBox", "microsoft365Opal", "microsoft365BizChat"}
-    for p := 0; p < 6; p++ {
-        mantis := CloudPcManagementService(int(math.Pow(2, float64(p))))
-        if i&mantis == mantis {
-            values = append(values, options[p])
-        }
-    }
-    return strings.Join(values, ",")
+	var values []string
+	options := []string{"windows365", "devBox", "unknownFutureValue", "rpaBox", "microsoft365Opal", "microsoft365BizChat"}
+	for p := 0; p < 6; p++ {
+		mantis := CloudPcManagementService(int(math.Pow(2, float64(p))))
+		if i&mantis == mantis {
+			values = append(values, options[p])
+		}
+	}
+	return strings.Join(values, ",")
 }
+
 func ParseCloudPcManagementService(v string) (any, error) {
-    var result CloudPcManagementService
-    values := strings.Split(v, ",")
-    for _, str := range values {
-        switch str {
-            case "windows365":
-                result |= WINDOWS365_CLOUDPCMANAGEMENTSERVICE
-            case "devBox":
-                result |= DEVBOX_CLOUDPCMANAGEMENTSERVICE
-            case "unknownFutureValue":
-                result |= UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
-            case "rpaBox":
-                result |= RPABOX_CLOUDPCMANAGEMENTSERVICE
-            case "microsoft365Opal":
-                result |= MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE
-            case "microsoft365BizChat":
-                result |= MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE
-            default:
-                return nil, nil
-        }
-    }
-    return &result, nil
+	var result CloudPcManagementService
+	values := strings.Split(v, ",")
+	for _, str := range values {
+		switch str {
+		case "windows365":
+			result |= WINDOWS365_CLOUDPCMANAGEMENTSERVICE
+		case "devBox":
+			result |= DEVBOX_CLOUDPCMANAGEMENTSERVICE
+		case "unknownFutureValue":
+			result |= UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
+		case "rpaBox":
+			result |= RPABOX_CLOUDPCMANAGEMENTSERVICE
+		case "microsoft365Opal":
+			result |= MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE
+		case "microsoft365BizChat":
+			result |= MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE
+		default:
+			return nil, nil
+		}
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcManagementService(values []CloudPcManagementService) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcManagementService) isMultiValue() bool {
-    return true
+	return true
 }

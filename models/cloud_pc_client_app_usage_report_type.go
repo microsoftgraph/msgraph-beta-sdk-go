@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcClientAppUsageReportType int
 
 const (
-    MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE CloudPcClientAppUsageReportType = iota
-    UNKNOWNFUTUREVALUE_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
+	MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE CloudPcClientAppUsageReportType = iota
+	UNKNOWNFUTUREVALUE_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
 )
 
 func (i CloudPcClientAppUsageReportType) String() string {
-    return []string{"microsoftRemoteDesktopClientUsageReport", "unknownFutureValue"}[i]
+	return []string{"microsoftRemoteDesktopClientUsageReport", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcClientAppUsageReportType(v string) (any, error) {
-    result := MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
-    switch v {
-        case "microsoftRemoteDesktopClientUsageReport":
-            result = MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
+	switch v {
+	case "microsoftRemoteDesktopClientUsageReport":
+		result = MICROSOFTREMOTEDESKTOPCLIENTUSAGEREPORT_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCCLIENTAPPUSAGEREPORTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcClientAppUsageReportType(values []CloudPcClientAppUsageReportType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcClientAppUsageReportType) isMultiValue() bool {
-    return false
+	return false
 }

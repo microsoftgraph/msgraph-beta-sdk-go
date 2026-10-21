@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type DeviceManagementAutopilotPolicyType int
 
 const (
-    UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE DeviceManagementAutopilotPolicyType = iota
-    APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-    APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-    CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE DeviceManagementAutopilotPolicyType = iota
+	APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
 )
 
 func (i DeviceManagementAutopilotPolicyType) String() string {
-    return []string{"unknown", "application", "appModel", "configurationPolicy"}[i]
+	return []string{"unknown", "application", "appModel", "configurationPolicy"}[i]
 }
+
 func ParseDeviceManagementAutopilotPolicyType(v string) (any, error) {
-    result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "application":
-            result = APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "appModel":
-            result = APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        case "configurationPolicy":
-            result = CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	case "application":
+		result = APPLICATION_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	case "appModel":
+		result = APPMODEL_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	case "configurationPolicy":
+		result = CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceManagementAutopilotPolicyType(values []DeviceManagementAutopilotPolicyType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceManagementAutopilotPolicyType) isMultiValue() bool {
-    return false
+	return false
 }

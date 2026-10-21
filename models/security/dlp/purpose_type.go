@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package dlp
+
 type PurposeType int
 
 const (
-    AUDIT_PURPOSETYPE PurposeType = iota
-    DI_PURPOSETYPE
-    UNKNOWNFUTUREVALUE_PURPOSETYPE
+	AUDIT_PURPOSETYPE PurposeType = iota
+	DI_PURPOSETYPE
+	UNKNOWNFUTUREVALUE_PURPOSETYPE
 )
 
 func (i PurposeType) String() string {
-    return []string{"audit", "di", "unknownFutureValue"}[i]
+	return []string{"audit", "di", "unknownFutureValue"}[i]
 }
+
 func ParsePurposeType(v string) (any, error) {
-    result := AUDIT_PURPOSETYPE
-    switch v {
-        case "audit":
-            result = AUDIT_PURPOSETYPE
-        case "di":
-            result = DI_PURPOSETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PURPOSETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AUDIT_PURPOSETYPE
+	switch v {
+	case "audit":
+		result = AUDIT_PURPOSETYPE
+	case "di":
+		result = DI_PURPOSETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PURPOSETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePurposeType(values []PurposeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PurposeType) isMultiValue() bool {
-    return false
+	return false
 }

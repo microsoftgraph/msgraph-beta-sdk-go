@@ -2,62 +2,66 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type RecommendationStatus int
 
 const (
-    ACTIVE_RECOMMENDATIONSTATUS RecommendationStatus = iota
-    COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
-    COMPLETEDBYUSER_RECOMMENDATIONSTATUS
-    DISMISSED_RECOMMENDATIONSTATUS
-    POSTPONED_RECOMMENDATIONSTATUS
-    UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
-    RISKACCEPTED_RECOMMENDATIONSTATUS
-    THIRDPARTY_RECOMMENDATIONSTATUS
-    PLANNED_RECOMMENDATIONSTATUS
-    ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
-    NEEDSMOREACTION_RECOMMENDATIONSTATUS
+	ACTIVE_RECOMMENDATIONSTATUS RecommendationStatus = iota
+	COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
+	COMPLETEDBYUSER_RECOMMENDATIONSTATUS
+	DISMISSED_RECOMMENDATIONSTATUS
+	POSTPONED_RECOMMENDATIONSTATUS
+	UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
+	RISKACCEPTED_RECOMMENDATIONSTATUS
+	THIRDPARTY_RECOMMENDATIONSTATUS
+	PLANNED_RECOMMENDATIONSTATUS
+	ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
+	NEEDSMOREACTION_RECOMMENDATIONSTATUS
 )
 
 func (i RecommendationStatus) String() string {
-    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue", "riskAccepted", "thirdParty", "planned", "alternateMitigation", "needsMoreAction"}[i]
+	return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue", "riskAccepted", "thirdParty", "planned", "alternateMitigation", "needsMoreAction"}[i]
 }
+
 func ParseRecommendationStatus(v string) (any, error) {
-    result := ACTIVE_RECOMMENDATIONSTATUS
-    switch v {
-        case "active":
-            result = ACTIVE_RECOMMENDATIONSTATUS
-        case "completedBySystem":
-            result = COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
-        case "completedByUser":
-            result = COMPLETEDBYUSER_RECOMMENDATIONSTATUS
-        case "dismissed":
-            result = DISMISSED_RECOMMENDATIONSTATUS
-        case "postponed":
-            result = POSTPONED_RECOMMENDATIONSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
-        case "riskAccepted":
-            result = RISKACCEPTED_RECOMMENDATIONSTATUS
-        case "thirdParty":
-            result = THIRDPARTY_RECOMMENDATIONSTATUS
-        case "planned":
-            result = PLANNED_RECOMMENDATIONSTATUS
-        case "alternateMitigation":
-            result = ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
-        case "needsMoreAction":
-            result = NEEDSMOREACTION_RECOMMENDATIONSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ACTIVE_RECOMMENDATIONSTATUS
+	switch v {
+	case "active":
+		result = ACTIVE_RECOMMENDATIONSTATUS
+	case "completedBySystem":
+		result = COMPLETEDBYSYSTEM_RECOMMENDATIONSTATUS
+	case "completedByUser":
+		result = COMPLETEDBYUSER_RECOMMENDATIONSTATUS
+	case "dismissed":
+		result = DISMISSED_RECOMMENDATIONSTATUS
+	case "postponed":
+		result = POSTPONED_RECOMMENDATIONSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
+	case "riskAccepted":
+		result = RISKACCEPTED_RECOMMENDATIONSTATUS
+	case "thirdParty":
+		result = THIRDPARTY_RECOMMENDATIONSTATUS
+	case "planned":
+		result = PLANNED_RECOMMENDATIONSTATUS
+	case "alternateMitigation":
+		result = ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
+	case "needsMoreAction":
+		result = NEEDSMOREACTION_RECOMMENDATIONSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRecommendationStatus(values []RecommendationStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RecommendationStatus) isMultiValue() bool {
-    return false
+	return false
 }

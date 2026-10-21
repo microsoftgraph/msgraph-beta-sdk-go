@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PageOrientation int
 
 const (
-    HORIZONTAL_PAGEORIENTATION PageOrientation = iota
-    DIAGONAL_PAGEORIENTATION
+	HORIZONTAL_PAGEORIENTATION PageOrientation = iota
+	DIAGONAL_PAGEORIENTATION
 )
 
 func (i PageOrientation) String() string {
-    return []string{"horizontal", "diagonal"}[i]
+	return []string{"horizontal", "diagonal"}[i]
 }
+
 func ParsePageOrientation(v string) (any, error) {
-    result := HORIZONTAL_PAGEORIENTATION
-    switch v {
-        case "horizontal":
-            result = HORIZONTAL_PAGEORIENTATION
-        case "diagonal":
-            result = DIAGONAL_PAGEORIENTATION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := HORIZONTAL_PAGEORIENTATION
+	switch v {
+	case "horizontal":
+		result = HORIZONTAL_PAGEORIENTATION
+	case "diagonal":
+		result = DIAGONAL_PAGEORIENTATION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePageOrientation(values []PageOrientation) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PageOrientation) isMultiValue() bool {
-    return false
+	return false
 }

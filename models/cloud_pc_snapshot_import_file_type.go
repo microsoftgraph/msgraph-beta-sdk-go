@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcSnapshotImportFileType int
 
 const (
-    DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE CloudPcSnapshotImportFileType = iota
-    VIRTUALMACHINEGUESTSTATE_CLOUDPCSNAPSHOTIMPORTFILETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE CloudPcSnapshotImportFileType = iota
+	VIRTUALMACHINEGUESTSTATE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTFILETYPE
 )
 
 func (i CloudPcSnapshotImportFileType) String() string {
-    return []string{"dataFile", "virtualMachineGuestState", "unknownFutureValue"}[i]
+	return []string{"dataFile", "virtualMachineGuestState", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcSnapshotImportFileType(v string) (any, error) {
-    result := DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE
-    switch v {
-        case "dataFile":
-            result = DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE
-        case "virtualMachineGuestState":
-            result = VIRTUALMACHINEGUESTSTATE_CLOUDPCSNAPSHOTIMPORTFILETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTFILETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	switch v {
+	case "dataFile":
+		result = DATAFILE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	case "virtualMachineGuestState":
+		result = VIRTUALMACHINEGUESTSTATE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTFILETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcSnapshotImportFileType(values []CloudPcSnapshotImportFileType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcSnapshotImportFileType) isMultiValue() bool {
-    return false
+	return false
 }

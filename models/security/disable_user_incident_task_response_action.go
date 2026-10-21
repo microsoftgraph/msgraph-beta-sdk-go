@@ -4,41 +4,46 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type DisableUserIncidentTaskResponseAction struct {
-    IncidentTaskResponseAction
+	IncidentTaskResponseAction
 }
+
 // NewDisableUserIncidentTaskResponseAction instantiates a new DisableUserIncidentTaskResponseAction and sets the default values.
-func NewDisableUserIncidentTaskResponseAction()(*DisableUserIncidentTaskResponseAction) {
-    m := &DisableUserIncidentTaskResponseAction{
-        IncidentTaskResponseAction: *NewIncidentTaskResponseAction(),
-    }
-    odataTypeValue := "#microsoft.graph.security.disableUserIncidentTaskResponseAction"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDisableUserIncidentTaskResponseAction() *DisableUserIncidentTaskResponseAction {
+	m := &DisableUserIncidentTaskResponseAction{
+		IncidentTaskResponseAction: *NewIncidentTaskResponseAction(),
+	}
+	odataTypeValue := "#microsoft.graph.security.disableUserIncidentTaskResponseAction"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDisableUserIncidentTaskResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDisableUserIncidentTaskResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDisableUserIncidentTaskResponseAction(), nil
+func CreateDisableUserIncidentTaskResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDisableUserIncidentTaskResponseAction(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DisableUserIncidentTaskResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.IncidentTaskResponseAction.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DisableUserIncidentTaskResponseAction) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.IncidentTaskResponseAction.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DisableUserIncidentTaskResponseAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.IncidentTaskResponseAction.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *DisableUserIncidentTaskResponseAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.IncidentTaskResponseAction.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type DisableUserIncidentTaskResponseActionable interface {
-    IncidentTaskResponseActionable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	IncidentTaskResponseActionable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

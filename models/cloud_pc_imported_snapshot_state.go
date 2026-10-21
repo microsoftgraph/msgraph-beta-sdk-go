@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcImportedSnapshotState int
 
 const (
-    NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE CloudPcImportedSnapshotState = iota
-    INUSE_CLOUDPCIMPORTEDSNAPSHOTSTATE
-    EXPIRED_CLOUDPCIMPORTEDSNAPSHOTSTATE
-    UNKNOWNFUTUREVALUE_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE CloudPcImportedSnapshotState = iota
+	INUSE_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	EXPIRED_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	UNKNOWNFUTUREVALUE_CLOUDPCIMPORTEDSNAPSHOTSTATE
 )
 
 func (i CloudPcImportedSnapshotState) String() string {
-    return []string{"notUsed", "inUse", "expired", "unknownFutureValue"}[i]
+	return []string{"notUsed", "inUse", "expired", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcImportedSnapshotState(v string) (any, error) {
-    result := NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE
-    switch v {
-        case "notUsed":
-            result = NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE
-        case "inUse":
-            result = INUSE_CLOUDPCIMPORTEDSNAPSHOTSTATE
-        case "expired":
-            result = EXPIRED_CLOUDPCIMPORTEDSNAPSHOTSTATE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCIMPORTEDSNAPSHOTSTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	switch v {
+	case "notUsed":
+		result = NOTUSED_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	case "inUse":
+		result = INUSE_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	case "expired":
+		result = EXPIRED_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCIMPORTEDSNAPSHOTSTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcImportedSnapshotState(values []CloudPcImportedSnapshotState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcImportedSnapshotState) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // PFX Import Options.
 type IntendedPurpose int
 
 const (
-    // Unassigned
-    UNASSIGNED_INTENDEDPURPOSE IntendedPurpose = iota
-    // SmimeEncryption
-    SMIMEENCRYPTION_INTENDEDPURPOSE
-    // SmimeSigning
-    SMIMESIGNING_INTENDEDPURPOSE
-    // VPN
-    VPN_INTENDEDPURPOSE
-    // Wifi
-    WIFI_INTENDEDPURPOSE
+	// Unassigned
+	UNASSIGNED_INTENDEDPURPOSE IntendedPurpose = iota
+	// SmimeEncryption
+	SMIMEENCRYPTION_INTENDEDPURPOSE
+	// SmimeSigning
+	SMIMESIGNING_INTENDEDPURPOSE
+	// VPN
+	VPN_INTENDEDPURPOSE
+	// Wifi
+	WIFI_INTENDEDPURPOSE
 )
 
 func (i IntendedPurpose) String() string {
-    return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
+	return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
 }
+
 func ParseIntendedPurpose(v string) (any, error) {
-    result := UNASSIGNED_INTENDEDPURPOSE
-    switch v {
-        case "unassigned":
-            result = UNASSIGNED_INTENDEDPURPOSE
-        case "smimeEncryption":
-            result = SMIMEENCRYPTION_INTENDEDPURPOSE
-        case "smimeSigning":
-            result = SMIMESIGNING_INTENDEDPURPOSE
-        case "vpn":
-            result = VPN_INTENDEDPURPOSE
-        case "wifi":
-            result = WIFI_INTENDEDPURPOSE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNASSIGNED_INTENDEDPURPOSE
+	switch v {
+	case "unassigned":
+		result = UNASSIGNED_INTENDEDPURPOSE
+	case "smimeEncryption":
+		result = SMIMEENCRYPTION_INTENDEDPURPOSE
+	case "smimeSigning":
+		result = SMIMESIGNING_INTENDEDPURPOSE
+	case "vpn":
+		result = VPN_INTENDEDPURPOSE
+	case "wifi":
+		result = WIFI_INTENDEDPURPOSE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeIntendedPurpose(values []IntendedPurpose) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i IntendedPurpose) isMultiValue() bool {
-    return false
+	return false
 }

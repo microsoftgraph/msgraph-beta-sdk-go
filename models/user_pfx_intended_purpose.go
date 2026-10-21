@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Supported values for the intended purpose of a user PFX certificate.
 type UserPfxIntendedPurpose int
 
 const (
-    // No roles/usages assigned.
-    UNASSIGNED_USERPFXINTENDEDPURPOSE UserPfxIntendedPurpose = iota
-    // Valid for S/MIME encryption.
-    SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
-    // Valid for S/MIME signing.
-    SMIMESIGNING_USERPFXINTENDEDPURPOSE
-    // Valid for use in VPN.
-    VPN_USERPFXINTENDEDPURPOSE
-    // Valid for use in WiFi.
-    WIFI_USERPFXINTENDEDPURPOSE
+	// No roles/usages assigned.
+	UNASSIGNED_USERPFXINTENDEDPURPOSE UserPfxIntendedPurpose = iota
+	// Valid for S/MIME encryption.
+	SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
+	// Valid for S/MIME signing.
+	SMIMESIGNING_USERPFXINTENDEDPURPOSE
+	// Valid for use in VPN.
+	VPN_USERPFXINTENDEDPURPOSE
+	// Valid for use in WiFi.
+	WIFI_USERPFXINTENDEDPURPOSE
 )
 
 func (i UserPfxIntendedPurpose) String() string {
-    return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
+	return []string{"unassigned", "smimeEncryption", "smimeSigning", "vpn", "wifi"}[i]
 }
+
 func ParseUserPfxIntendedPurpose(v string) (any, error) {
-    result := UNASSIGNED_USERPFXINTENDEDPURPOSE
-    switch v {
-        case "unassigned":
-            result = UNASSIGNED_USERPFXINTENDEDPURPOSE
-        case "smimeEncryption":
-            result = SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
-        case "smimeSigning":
-            result = SMIMESIGNING_USERPFXINTENDEDPURPOSE
-        case "vpn":
-            result = VPN_USERPFXINTENDEDPURPOSE
-        case "wifi":
-            result = WIFI_USERPFXINTENDEDPURPOSE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNASSIGNED_USERPFXINTENDEDPURPOSE
+	switch v {
+	case "unassigned":
+		result = UNASSIGNED_USERPFXINTENDEDPURPOSE
+	case "smimeEncryption":
+		result = SMIMEENCRYPTION_USERPFXINTENDEDPURPOSE
+	case "smimeSigning":
+		result = SMIMESIGNING_USERPFXINTENDEDPURPOSE
+	case "vpn":
+		result = VPN_USERPFXINTENDEDPURPOSE
+	case "wifi":
+		result = WIFI_USERPFXINTENDEDPURPOSE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeUserPfxIntendedPurpose(values []UserPfxIntendedPurpose) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i UserPfxIntendedPurpose) isMultiValue() bool {
-    return false
+	return false
 }

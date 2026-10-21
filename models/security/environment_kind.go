@@ -2,65 +2,82 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+
+// The kind of cloud environment onboarded to security posture management.
 type EnvironmentKind int
 
 const (
-    AZURESUBSCRIPTION_ENVIRONMENTKIND EnvironmentKind = iota
-    AWSORGANIZATION_ENVIRONMENTKIND
-    AWSACCOUNT_ENVIRONMENTKIND
-    GCPORGANIZATION_ENVIRONMENTKIND
-    GCPPROJECT_ENVIRONMENTKIND
-    DOCKERSHUBORGANIZATION_ENVIRONMENTKIND
-    DEVOPSCONNECTION_ENVIRONMENTKIND
-    AZUREDEVOPSORGANIZATION_ENVIRONMENTKIND
-    GITHUBORGANIZATION_ENVIRONMENTKIND
-    GITLABGROUP_ENVIRONMENTKIND
-    JFROGARTIFACTORY_ENVIRONMENTKIND
-    UNKNOWNFUTUREVALUE_ENVIRONMENTKIND
+	// An Azure subscription.
+	AZURESUBSCRIPTION_ENVIRONMENTKIND EnvironmentKind = iota
+	// An AWS organization.
+	AWSORGANIZATION_ENVIRONMENTKIND
+	// An AWS account.
+	AWSACCOUNT_ENVIRONMENTKIND
+	// A GCP organization.
+	GCPORGANIZATION_ENVIRONMENTKIND
+	// A GCP project.
+	GCPPROJECT_ENVIRONMENTKIND
+	// A Docker Hub organization.
+	DOCKERSHUBORGANIZATION_ENVIRONMENTKIND
+	// A DevOps connection.
+	DEVOPSCONNECTION_ENVIRONMENTKIND
+	// An Azure DevOps organization.
+	AZUREDEVOPSORGANIZATION_ENVIRONMENTKIND
+	// A GitHub organization.
+	GITHUBORGANIZATION_ENVIRONMENTKIND
+	// A GitLab group.
+	GITLABGROUP_ENVIRONMENTKIND
+	// A JFrog Artifactory instance.
+	JFROGARTIFACTORY_ENVIRONMENTKIND
+	// A marker value for members added after the release of this API.
+	UNKNOWNFUTUREVALUE_ENVIRONMENTKIND
 )
 
 func (i EnvironmentKind) String() string {
-    return []string{"azureSubscription", "awsOrganization", "awsAccount", "gcpOrganization", "gcpProject", "dockersHubOrganization", "devOpsConnection", "azureDevOpsOrganization", "gitHubOrganization", "gitLabGroup", "jFrogArtifactory", "unknownFutureValue"}[i]
+	return []string{"azureSubscription", "awsOrganization", "awsAccount", "gcpOrganization", "gcpProject", "dockersHubOrganization", "devOpsConnection", "azureDevOpsOrganization", "gitHubOrganization", "gitLabGroup", "jFrogArtifactory", "unknownFutureValue"}[i]
 }
+
 func ParseEnvironmentKind(v string) (any, error) {
-    result := AZURESUBSCRIPTION_ENVIRONMENTKIND
-    switch v {
-        case "azureSubscription":
-            result = AZURESUBSCRIPTION_ENVIRONMENTKIND
-        case "awsOrganization":
-            result = AWSORGANIZATION_ENVIRONMENTKIND
-        case "awsAccount":
-            result = AWSACCOUNT_ENVIRONMENTKIND
-        case "gcpOrganization":
-            result = GCPORGANIZATION_ENVIRONMENTKIND
-        case "gcpProject":
-            result = GCPPROJECT_ENVIRONMENTKIND
-        case "dockersHubOrganization":
-            result = DOCKERSHUBORGANIZATION_ENVIRONMENTKIND
-        case "devOpsConnection":
-            result = DEVOPSCONNECTION_ENVIRONMENTKIND
-        case "azureDevOpsOrganization":
-            result = AZUREDEVOPSORGANIZATION_ENVIRONMENTKIND
-        case "gitHubOrganization":
-            result = GITHUBORGANIZATION_ENVIRONMENTKIND
-        case "gitLabGroup":
-            result = GITLABGROUP_ENVIRONMENTKIND
-        case "jFrogArtifactory":
-            result = JFROGARTIFACTORY_ENVIRONMENTKIND
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ENVIRONMENTKIND
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AZURESUBSCRIPTION_ENVIRONMENTKIND
+	switch v {
+	case "azureSubscription":
+		result = AZURESUBSCRIPTION_ENVIRONMENTKIND
+	case "awsOrganization":
+		result = AWSORGANIZATION_ENVIRONMENTKIND
+	case "awsAccount":
+		result = AWSACCOUNT_ENVIRONMENTKIND
+	case "gcpOrganization":
+		result = GCPORGANIZATION_ENVIRONMENTKIND
+	case "gcpProject":
+		result = GCPPROJECT_ENVIRONMENTKIND
+	case "dockersHubOrganization":
+		result = DOCKERSHUBORGANIZATION_ENVIRONMENTKIND
+	case "devOpsConnection":
+		result = DEVOPSCONNECTION_ENVIRONMENTKIND
+	case "azureDevOpsOrganization":
+		result = AZUREDEVOPSORGANIZATION_ENVIRONMENTKIND
+	case "gitHubOrganization":
+		result = GITHUBORGANIZATION_ENVIRONMENTKIND
+	case "gitLabGroup":
+		result = GITLABGROUP_ENVIRONMENTKIND
+	case "jFrogArtifactory":
+		result = JFROGARTIFACTORY_ENVIRONMENTKIND
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ENVIRONMENTKIND
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeEnvironmentKind(values []EnvironmentKind) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i EnvironmentKind) isMultiValue() bool {
-    return false
+	return false
 }

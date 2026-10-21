@@ -4,114 +4,122 @@
 package serviceprincipals
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
-    i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/identitygovernance"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // ItemLifecycleComplianceIssuesRequestBuilder provides operations to manage the complianceIssues property of the microsoft.graph.identityGovernance.identityLifecycle entity.
 type ItemLifecycleComplianceIssuesRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemLifecycleComplianceIssuesRequestBuilderGetQueryParameters get complianceIssues from servicePrincipals
+
+// ItemLifecycleComplianceIssuesRequestBuilderGetQueryParameters get a list of the complianceIssue objects and their properties for the identityLifecycle of a servicePrincipal. Each issue includes the ruleType that generated it.
 type ItemLifecycleComplianceIssuesRequestBuilderGetQueryParameters struct {
-    // Include count of items
-    Count *bool "uriparametername:\"%24count\""
-    // Expand related entities
-    Expand []string "uriparametername:\"%24expand\""
-    // Filter items by property values
-    Filter *string "uriparametername:\"%24filter\""
-    // Order items by property values
-    Orderby []string "uriparametername:\"%24orderby\""
-    // Search items by search phrases
-    Search *string "uriparametername:\"%24search\""
-    // Select properties to be returned
-    Select []string "uriparametername:\"%24select\""
-    // Skip the first n items
-    Skip *int32 "uriparametername:\"%24skip\""
-    // Show only the first n items
-    Top *int32 "uriparametername:\"%24top\""
+	// Include count of items
+	Count *bool "uriparametername:\"%24count\""
+	// Expand related entities
+	Expand []string "uriparametername:\"%24expand\""
+	// Filter items by property values
+	Filter *string "uriparametername:\"%24filter\""
+	// Order items by property values
+	Orderby []string "uriparametername:\"%24orderby\""
+	// Search items by search phrases
+	Search *string "uriparametername:\"%24search\""
+	// Select properties to be returned
+	Select []string "uriparametername:\"%24select\""
+	// Skip the first n items
+	Skip *int32 "uriparametername:\"%24skip\""
+	// Show only the first n items
+	Top *int32 "uriparametername:\"%24top\""
 }
+
 // ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-    // Request query parameters
-    QueryParameters *ItemLifecycleComplianceIssuesRequestBuilderGetQueryParameters
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request query parameters
+	QueryParameters *ItemLifecycleComplianceIssuesRequestBuilderGetQueryParameters
 }
+
 // ByComplianceIssueId provides operations to manage the complianceIssues property of the microsoft.graph.identityGovernance.identityLifecycle entity.
-// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemLifecycleComplianceIssuesComplianceIssueItemRequestBuilder when successful
-func (m *ItemLifecycleComplianceIssuesRequestBuilder) ByComplianceIssueId(complianceIssueId string)(*ItemLifecycleComplianceIssuesComplianceIssueItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if complianceIssueId != "" {
-        urlTplParams["complianceIssue%2Did"] = complianceIssueId
-    }
-    return NewItemLifecycleComplianceIssuesComplianceIssueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+func (m *ItemLifecycleComplianceIssuesRequestBuilder) ByComplianceIssueId(complianceIssueId string) *ItemLifecycleComplianceIssuesComplianceIssueItemRequestBuilder {
+	urlTplParams := make(map[string]string)
+	for idx, item := range m.BaseRequestBuilder.PathParameters {
+		urlTplParams[idx] = item
+	}
+	if complianceIssueId != "" {
+		urlTplParams["complianceIssue%2Did"] = complianceIssueId
+	}
+	return NewItemLifecycleComplianceIssuesComplianceIssueItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
+
 // NewItemLifecycleComplianceIssuesRequestBuilderInternal instantiates a new ItemLifecycleComplianceIssuesRequestBuilder and sets the default values.
-func NewItemLifecycleComplianceIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemLifecycleComplianceIssuesRequestBuilder) {
-    m := &ItemLifecycleComplianceIssuesRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/lifecycle/complianceIssues{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
-    }
-    return m
+func NewItemLifecycleComplianceIssuesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ItemLifecycleComplianceIssuesRequestBuilder {
+	m := &ItemLifecycleComplianceIssuesRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/lifecycle/complianceIssues{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+	}
+	return m
 }
+
 // NewItemLifecycleComplianceIssuesRequestBuilder instantiates a new ItemLifecycleComplianceIssuesRequestBuilder and sets the default values.
-func NewItemLifecycleComplianceIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemLifecycleComplianceIssuesRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewItemLifecycleComplianceIssuesRequestBuilderInternal(urlParams, requestAdapter)
+func NewItemLifecycleComplianceIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ItemLifecycleComplianceIssuesRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewItemLifecycleComplianceIssuesRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Count provides operations to count the resources in the collection.
 // returns a *ItemLifecycleComplianceIssuesCountRequestBuilder when successful
-func (m *ItemLifecycleComplianceIssuesRequestBuilder) Count()(*ItemLifecycleComplianceIssuesCountRequestBuilder) {
-    return NewItemLifecycleComplianceIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+func (m *ItemLifecycleComplianceIssuesRequestBuilder) Count() *ItemLifecycleComplianceIssuesCountRequestBuilder {
+	return NewItemLifecycleComplianceIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get complianceIssues from servicePrincipals
-// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
+
+// Get get a list of the complianceIssue objects and their properties for the identityLifecycle of a servicePrincipal. Each issue includes the ruleType that generated it.
 // returns a ComplianceIssueCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemLifecycleComplianceIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.ComplianceIssueCollectionResponseable, error) {
-    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateComplianceIssueCollectionResponseFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.ComplianceIssueCollectionResponseable), nil
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-identitylifecycle-list-complianceissues?view=graph-rest-beta
+func (m *ItemLifecycleComplianceIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration) (i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.ComplianceIssueCollectionResponseable, error) {
+	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.CreateComplianceIssueCollectionResponseFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.ComplianceIssueCollectionResponseable), nil
 }
-// ToGetRequestInformation get complianceIssues from servicePrincipals
-// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
+
+// ToGetRequestInformation get a list of the complianceIssue objects and their properties for the identityLifecycle of a servicePrincipal. Each issue includes the ruleType that generated it.
 // returns a *RequestInformation when successful
-func (m *ItemLifecycleComplianceIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        if requestConfiguration.QueryParameters != nil {
-            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
-        }
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *ItemLifecycleComplianceIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemLifecycleComplianceIssuesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		if requestConfiguration.QueryParameters != nil {
+			requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+		}
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for correlations report as of 2025-08/correlations on 2025-08-01 and will be removed 2026-08-01
 // returns a *ItemLifecycleComplianceIssuesRequestBuilder when successful
-func (m *ItemLifecycleComplianceIssuesRequestBuilder) WithUrl(rawUrl string)(*ItemLifecycleComplianceIssuesRequestBuilder) {
-    return NewItemLifecycleComplianceIssuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *ItemLifecycleComplianceIssuesRequestBuilder) WithUrl(rawUrl string) *ItemLifecycleComplianceIssuesRequestBuilder {
+	return NewItemLifecycleComplianceIssuesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

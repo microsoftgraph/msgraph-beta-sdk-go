@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package securitycopilot
+
 type SkillPreviewState int
 
 const (
-    GA_SKILLPREVIEWSTATE SkillPreviewState = iota
-    PUBLIC_SKILLPREVIEWSTATE
-    PRIVATE_SKILLPREVIEWSTATE
-    UNKNOWNFUTUREVALUE_SKILLPREVIEWSTATE
+	GA_SKILLPREVIEWSTATE SkillPreviewState = iota
+	PUBLIC_SKILLPREVIEWSTATE
+	PRIVATE_SKILLPREVIEWSTATE
+	UNKNOWNFUTUREVALUE_SKILLPREVIEWSTATE
 )
 
 func (i SkillPreviewState) String() string {
-    return []string{"ga", "public", "private", "unknownFutureValue"}[i]
+	return []string{"ga", "public", "private", "unknownFutureValue"}[i]
 }
+
 func ParseSkillPreviewState(v string) (any, error) {
-    result := GA_SKILLPREVIEWSTATE
-    switch v {
-        case "ga":
-            result = GA_SKILLPREVIEWSTATE
-        case "public":
-            result = PUBLIC_SKILLPREVIEWSTATE
-        case "private":
-            result = PRIVATE_SKILLPREVIEWSTATE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SKILLPREVIEWSTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GA_SKILLPREVIEWSTATE
+	switch v {
+	case "ga":
+		result = GA_SKILLPREVIEWSTATE
+	case "public":
+		result = PUBLIC_SKILLPREVIEWSTATE
+	case "private":
+		result = PRIVATE_SKILLPREVIEWSTATE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SKILLPREVIEWSTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSkillPreviewState(values []SkillPreviewState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SkillPreviewState) isMultiValue() bool {
-    return false
+	return false
 }

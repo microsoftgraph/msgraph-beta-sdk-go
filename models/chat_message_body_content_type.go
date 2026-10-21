@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ChatMessageBodyContentType int
 
 const (
-    TEXT_CHATMESSAGEBODYCONTENTTYPE ChatMessageBodyContentType = iota
-    HTML_CHATMESSAGEBODYCONTENTTYPE
-    MARKDOWN_CHATMESSAGEBODYCONTENTTYPE
-    UNKNOWNFUTUREVALUE_CHATMESSAGEBODYCONTENTTYPE
+	TEXT_CHATMESSAGEBODYCONTENTTYPE ChatMessageBodyContentType = iota
+	HTML_CHATMESSAGEBODYCONTENTTYPE
+	MARKDOWN_CHATMESSAGEBODYCONTENTTYPE
+	UNKNOWNFUTUREVALUE_CHATMESSAGEBODYCONTENTTYPE
 )
 
 func (i ChatMessageBodyContentType) String() string {
-    return []string{"text", "html", "markdown", "unknownFutureValue"}[i]
+	return []string{"text", "html", "markdown", "unknownFutureValue"}[i]
 }
+
 func ParseChatMessageBodyContentType(v string) (any, error) {
-    result := TEXT_CHATMESSAGEBODYCONTENTTYPE
-    switch v {
-        case "text":
-            result = TEXT_CHATMESSAGEBODYCONTENTTYPE
-        case "html":
-            result = HTML_CHATMESSAGEBODYCONTENTTYPE
-        case "markdown":
-            result = MARKDOWN_CHATMESSAGEBODYCONTENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CHATMESSAGEBODYCONTENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := TEXT_CHATMESSAGEBODYCONTENTTYPE
+	switch v {
+	case "text":
+		result = TEXT_CHATMESSAGEBODYCONTENTTYPE
+	case "html":
+		result = HTML_CHATMESSAGEBODYCONTENTTYPE
+	case "markdown":
+		result = MARKDOWN_CHATMESSAGEBODYCONTENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CHATMESSAGEBODYCONTENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeChatMessageBodyContentType(values []ChatMessageBodyContentType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ChatMessageBodyContentType) isMultiValue() bool {
-    return false
+	return false
 }

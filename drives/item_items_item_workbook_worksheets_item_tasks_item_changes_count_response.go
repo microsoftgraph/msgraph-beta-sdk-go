@@ -4,27 +4,30 @@
 package drives
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse struct {
-    ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse
+	ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse
 }
+
 // NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse instantiates a new ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse and sets the default values.
-func NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse()(*ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse) {
-    m := &ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse{
-        ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse: *NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse(),
-    }
-    return m
+func NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse() *ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse {
+	m := &ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse{
+		ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse: *NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponse(),
+	}
+	return m
 }
+
 // CreateItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse(), nil
+func CreateItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponseable instead.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountResponseable interface {
-    ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemItemsItemWorkbookWorksheetsItemTasksItemChangesCountGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

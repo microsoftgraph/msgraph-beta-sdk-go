@@ -4,569 +4,602 @@
 package models
 
 import (
-    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // IosDdmVppAppAssignmentSettings contains properties used to assign an iOS Declarative Device Management (DDM) VPP mobile app to a group.
 type IosDdmVppAppAssignmentSettings struct {
-    MobileAppAssignmentSettings
+	MobileAppAssignmentSettings
 }
+
 // NewIosDdmVppAppAssignmentSettings instantiates a new IosDdmVppAppAssignmentSettings and sets the default values.
-func NewIosDdmVppAppAssignmentSettings()(*IosDdmVppAppAssignmentSettings) {
-    m := &IosDdmVppAppAssignmentSettings{
-        MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
-    }
-    odataTypeValue := "#microsoft.graph.iosDdmVppAppAssignmentSettings"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewIosDdmVppAppAssignmentSettings() *IosDdmVppAppAssignmentSettings {
+	m := &IosDdmVppAppAssignmentSettings{
+		MobileAppAssignmentSettings: *NewMobileAppAssignmentSettings(),
+	}
+	odataTypeValue := "#microsoft.graph.iosDdmVppAppAssignmentSettings"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateIosDdmVppAppAssignmentSettingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateIosDdmVppAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewIosDdmVppAppAssignmentSettings(), nil
+func CreateIosDdmVppAppAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewIosDdmVppAppAssignmentSettings(), nil
 }
+
 // GetAllowDownloadsOverCellular gets the allowDownloadsOverCellular property value. Specifies whether the app may be downloaded over cellular connections. Possible values are: 'alwaysOn', 'alwaysOff', 'storeSettings'. By default, this value is set to 'storeSettings'.
 // returns a *DdmAppAllowDownloadsOverCellular when successful
-func (m *IosDdmVppAppAssignmentSettings) GetAllowDownloadsOverCellular()(*DdmAppAllowDownloadsOverCellular) {
-    val, err := m.GetBackingStore().Get("allowDownloadsOverCellular")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DdmAppAllowDownloadsOverCellular)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetAllowDownloadsOverCellular() *DdmAppAllowDownloadsOverCellular {
+	val, err := m.GetBackingStore().Get("allowDownloadsOverCellular")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*DdmAppAllowDownloadsOverCellular)
+	}
+	return nil
 }
+
 // GetAssociatedDomains gets the associatedDomains property value. Domain names to associate with the app
 // returns a []string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetAssociatedDomains()([]string) {
-    val, err := m.GetBackingStore().Get("associatedDomains")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetAssociatedDomains() []string {
+	val, err := m.GetBackingStore().Get("associatedDomains")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetAssociatedDomainsDirectDownloadAllowed gets the associatedDomainsDirectDownloadAllowed property value. When true, the system allows direct downloads for the AssociatedDomains. When false, the system will not allow direct downloads for the AssociatedDomains. Default is false.
 // returns a *bool when successful
-func (m *IosDdmVppAppAssignmentSettings) GetAssociatedDomainsDirectDownloadAllowed()(*bool) {
-    val, err := m.GetBackingStore().Get("associatedDomainsDirectDownloadAllowed")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetAssociatedDomainsDirectDownloadAllowed() *bool {
+	val, err := m.GetBackingStore().Get("associatedDomainsDirectDownloadAllowed")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAutomaticAppUpdates gets the automaticAppUpdates property value. Specifies whether the device automatically updates the app. Possible values are: 'alwaysOn', 'alwaysOff', 'storeSettings'. By default, this value is set to 'storeSettings'.
 // returns a *DdmAppAutomaticAppUpdates when successful
-func (m *IosDdmVppAppAssignmentSettings) GetAutomaticAppUpdates()(*DdmAppAutomaticAppUpdates) {
-    val, err := m.GetBackingStore().Get("automaticAppUpdates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DdmAppAutomaticAppUpdates)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetAutomaticAppUpdates() *DdmAppAutomaticAppUpdates {
+	val, err := m.GetBackingStore().Get("automaticAppUpdates")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*DdmAppAutomaticAppUpdates)
+	}
+	return nil
 }
+
 // GetCellularSliceConfigurationId gets the cellularSliceConfigurationId property value. The cellular slice identifier, which can be the data network name (DNN) or app category. For DNN, encode the value as 'DNN:name', where 'name' is the carrier-provided DNN name. For app category, encode the value as 'AppCategory:category', where 'category' is a carrier-provided string such as 'Enterprise1'.
 // returns a *string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetCellularSliceConfigurationId()(*string) {
-    val, err := m.GetBackingStore().Get("cellularSliceConfigurationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetCellularSliceConfigurationId() *string {
+	val, err := m.GetBackingStore().Get("cellularSliceConfigurationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetContentFilterConfigurationId gets the contentFilterConfigurationId property value. The unique identifier of the content filter to associate with the app.
 // returns a *string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetContentFilterConfigurationId()(*string) {
-    val, err := m.GetBackingStore().Get("contentFilterConfigurationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetContentFilterConfigurationId() *string {
+	val, err := m.GetBackingStore().Get("contentFilterConfigurationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDdmAppConfigId gets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
 // returns a *UUID when successful
-func (m *IosDdmVppAppAssignmentSettings) GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
-    val, err := m.GetBackingStore().Get("ddmAppConfigId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetDdmAppConfigId() *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID {
+	val, err := m.GetBackingStore().Get("ddmAppConfigId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+	}
+	return nil
 }
+
 // GetDnsProxyConfigurationId gets the dnsProxyConfigurationId property value. The unique identifier of the DNS proxy to associate with the app.
 // returns a *string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetDnsProxyConfigurationId()(*string) {
-    val, err := m.GetBackingStore().Get("dnsProxyConfigurationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetDnsProxyConfigurationId() *string {
+	val, err := m.GetBackingStore().Get("dnsProxyConfigurationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *IosDdmVppAppAssignmentSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
-    res["allowDownloadsOverCellular"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDdmAppAllowDownloadsOverCellular)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowDownloadsOverCellular(val.(*DdmAppAllowDownloadsOverCellular))
-        }
-        return nil
-    }
-    res["associatedDomains"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetAssociatedDomains(res)
-        }
-        return nil
-    }
-    res["associatedDomainsDirectDownloadAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAssociatedDomainsDirectDownloadAllowed(val)
-        }
-        return nil
-    }
-    res["automaticAppUpdates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDdmAppAutomaticAppUpdates)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutomaticAppUpdates(val.(*DdmAppAutomaticAppUpdates))
-        }
-        return nil
-    }
-    res["cellularSliceConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCellularSliceConfigurationId(val)
-        }
-        return nil
-    }
-    res["contentFilterConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentFilterConfigurationId(val)
-        }
-        return nil
-    }
-    res["ddmAppConfigId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetUUIDValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDdmAppConfigId(val)
-        }
-        return nil
-    }
-    res["dnsProxyConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDnsProxyConfigurationId(val)
-        }
-        return nil
-    }
-    res["preventManagedAppBackup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreventManagedAppBackup(val)
-        }
-        return nil
-    }
-    res["relayConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRelayConfigurationId(val)
-        }
-        return nil
-    }
-    res["tapToPayScreenLockEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTapToPayScreenLockEnabled(val)
-        }
-        return nil
-    }
-    res["useDeviceLicensing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUseDeviceLicensing(val)
-        }
-        return nil
-    }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
-        }
-        return nil
-    }
-    res["vpnConfigurationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVpnConfigurationId(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *IosDdmVppAppAssignmentSettings) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.MobileAppAssignmentSettings.GetFieldDeserializers()
+	res["allowDownloadsOverCellular"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseDdmAppAllowDownloadsOverCellular)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAllowDownloadsOverCellular(val.(*DdmAppAllowDownloadsOverCellular))
+		}
+		return nil
+	}
+	res["associatedDomains"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetAssociatedDomains(res)
+		}
+		return nil
+	}
+	res["associatedDomainsDirectDownloadAllowed"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAssociatedDomainsDirectDownloadAllowed(val)
+		}
+		return nil
+	}
+	res["automaticAppUpdates"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseDdmAppAutomaticAppUpdates)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAutomaticAppUpdates(val.(*DdmAppAutomaticAppUpdates))
+		}
+		return nil
+	}
+	res["cellularSliceConfigurationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCellularSliceConfigurationId(val)
+		}
+		return nil
+	}
+	res["contentFilterConfigurationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetContentFilterConfigurationId(val)
+		}
+		return nil
+	}
+	res["ddmAppConfigId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetUUIDValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDdmAppConfigId(val)
+		}
+		return nil
+	}
+	res["dnsProxyConfigurationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDnsProxyConfigurationId(val)
+		}
+		return nil
+	}
+	res["preventManagedAppBackup"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPreventManagedAppBackup(val)
+		}
+		return nil
+	}
+	res["relayConfigurationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRelayConfigurationId(val)
+		}
+		return nil
+	}
+	res["tapToPayScreenLockEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTapToPayScreenLockEnabled(val)
+		}
+		return nil
+	}
+	res["useDeviceLicensing"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUseDeviceLicensing(val)
+		}
+		return nil
+	}
+	res["version"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVersion(val)
+		}
+		return nil
+	}
+	res["vpnConfigurationId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVpnConfigurationId(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetPreventManagedAppBackup gets the preventManagedAppBackup property value. When true, indicates that the app should not be backed up to iCloud. When false, indicates that the app may be backed up to iCloud. Default is false.
 // returns a *bool when successful
-func (m *IosDdmVppAppAssignmentSettings) GetPreventManagedAppBackup()(*bool) {
-    val, err := m.GetBackingStore().Get("preventManagedAppBackup")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetPreventManagedAppBackup() *bool {
+	val, err := m.GetBackingStore().Get("preventManagedAppBackup")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetRelayConfigurationId gets the relayConfigurationId property value. The unique identifier of the relay to associate with the app.
 // returns a *string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetRelayConfigurationId()(*string) {
-    val, err := m.GetBackingStore().Get("relayConfigurationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetRelayConfigurationId() *string {
+	val, err := m.GetBackingStore().Get("relayConfigurationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetTapToPayScreenLockEnabled gets the tapToPayScreenLockEnabled property value. When true, the device locks its screen after every transaction that requires a customer's card PIN. When false, the user can choose the behavior. Default value is false.
 // returns a *bool when successful
-func (m *IosDdmVppAppAssignmentSettings) GetTapToPayScreenLockEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("tapToPayScreenLockEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetTapToPayScreenLockEnabled() *bool {
+	val, err := m.GetBackingStore().Get("tapToPayScreenLockEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetUseDeviceLicensing gets the useDeviceLicensing property value. Whether or not to use device licensing.
 // returns a *bool when successful
-func (m *IosDdmVppAppAssignmentSettings) GetUseDeviceLicensing()(*bool) {
-    val, err := m.GetBackingStore().Get("useDeviceLicensing")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetUseDeviceLicensing() *bool {
+	val, err := m.GetBackingStore().Get("useDeviceLicensing")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetVersion gets the version property value. Specifies the version of the VPP app to install. When not set, the device installs the latest version. When set, the device installs the specified version. The device never installs an older version of the app over a newer version. This property maps to the Version key in Apple's AppManagedInstallBehaviorObject declaration.
 // returns a *int32 when successful
-func (m *IosDdmVppAppAssignmentSettings) GetVersion()(*int32) {
-    val, err := m.GetBackingStore().Get("version")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetVersion() *int32 {
+	val, err := m.GetBackingStore().Get("version")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetVpnConfigurationId gets the vpnConfigurationId property value. The unique identifier of the VPN Configuration to apply to the app.
 // returns a *string when successful
-func (m *IosDdmVppAppAssignmentSettings) GetVpnConfigurationId()(*string) {
-    val, err := m.GetBackingStore().Get("vpnConfigurationId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) GetVpnConfigurationId() *string {
+	val, err := m.GetBackingStore().Get("vpnConfigurationId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *IosDdmVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.MobileAppAssignmentSettings.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetAllowDownloadsOverCellular() != nil {
-        cast := (*m.GetAllowDownloadsOverCellular()).String()
-        err = writer.WriteStringValue("allowDownloadsOverCellular", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAssociatedDomains() != nil {
-        err = writer.WriteCollectionOfStringValues("associatedDomains", m.GetAssociatedDomains())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("associatedDomainsDirectDownloadAllowed", m.GetAssociatedDomainsDirectDownloadAllowed())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAutomaticAppUpdates() != nil {
-        cast := (*m.GetAutomaticAppUpdates()).String()
-        err = writer.WriteStringValue("automaticAppUpdates", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("cellularSliceConfigurationId", m.GetCellularSliceConfigurationId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("contentFilterConfigurationId", m.GetContentFilterConfigurationId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteUUIDValue("ddmAppConfigId", m.GetDdmAppConfigId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("dnsProxyConfigurationId", m.GetDnsProxyConfigurationId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("preventManagedAppBackup", m.GetPreventManagedAppBackup())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("relayConfigurationId", m.GetRelayConfigurationId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("tapToPayScreenLockEnabled", m.GetTapToPayScreenLockEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("useDeviceLicensing", m.GetUseDeviceLicensing())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("version", m.GetVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("vpnConfigurationId", m.GetVpnConfigurationId())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *IosDdmVppAppAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.MobileAppAssignmentSettings.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetAllowDownloadsOverCellular() != nil {
+		cast := (*m.GetAllowDownloadsOverCellular()).String()
+		err = writer.WriteStringValue("allowDownloadsOverCellular", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAssociatedDomains() != nil {
+		err = writer.WriteCollectionOfStringValues("associatedDomains", m.GetAssociatedDomains())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("associatedDomainsDirectDownloadAllowed", m.GetAssociatedDomainsDirectDownloadAllowed())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAutomaticAppUpdates() != nil {
+		cast := (*m.GetAutomaticAppUpdates()).String()
+		err = writer.WriteStringValue("automaticAppUpdates", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("cellularSliceConfigurationId", m.GetCellularSliceConfigurationId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("contentFilterConfigurationId", m.GetContentFilterConfigurationId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteUUIDValue("ddmAppConfigId", m.GetDdmAppConfigId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("dnsProxyConfigurationId", m.GetDnsProxyConfigurationId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("preventManagedAppBackup", m.GetPreventManagedAppBackup())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("relayConfigurationId", m.GetRelayConfigurationId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("tapToPayScreenLockEnabled", m.GetTapToPayScreenLockEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("useDeviceLicensing", m.GetUseDeviceLicensing())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("version", m.GetVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("vpnConfigurationId", m.GetVpnConfigurationId())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAllowDownloadsOverCellular sets the allowDownloadsOverCellular property value. Specifies whether the app may be downloaded over cellular connections. Possible values are: 'alwaysOn', 'alwaysOff', 'storeSettings'. By default, this value is set to 'storeSettings'.
-func (m *IosDdmVppAppAssignmentSettings) SetAllowDownloadsOverCellular(value *DdmAppAllowDownloadsOverCellular)() {
-    err := m.GetBackingStore().Set("allowDownloadsOverCellular", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetAllowDownloadsOverCellular(value *DdmAppAllowDownloadsOverCellular) {
+	err := m.GetBackingStore().Set("allowDownloadsOverCellular", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAssociatedDomains sets the associatedDomains property value. Domain names to associate with the app
-func (m *IosDdmVppAppAssignmentSettings) SetAssociatedDomains(value []string)() {
-    err := m.GetBackingStore().Set("associatedDomains", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetAssociatedDomains(value []string) {
+	err := m.GetBackingStore().Set("associatedDomains", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAssociatedDomainsDirectDownloadAllowed sets the associatedDomainsDirectDownloadAllowed property value. When true, the system allows direct downloads for the AssociatedDomains. When false, the system will not allow direct downloads for the AssociatedDomains. Default is false.
-func (m *IosDdmVppAppAssignmentSettings) SetAssociatedDomainsDirectDownloadAllowed(value *bool)() {
-    err := m.GetBackingStore().Set("associatedDomainsDirectDownloadAllowed", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetAssociatedDomainsDirectDownloadAllowed(value *bool) {
+	err := m.GetBackingStore().Set("associatedDomainsDirectDownloadAllowed", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAutomaticAppUpdates sets the automaticAppUpdates property value. Specifies whether the device automatically updates the app. Possible values are: 'alwaysOn', 'alwaysOff', 'storeSettings'. By default, this value is set to 'storeSettings'.
-func (m *IosDdmVppAppAssignmentSettings) SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates)() {
-    err := m.GetBackingStore().Set("automaticAppUpdates", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates) {
+	err := m.GetBackingStore().Set("automaticAppUpdates", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCellularSliceConfigurationId sets the cellularSliceConfigurationId property value. The cellular slice identifier, which can be the data network name (DNN) or app category. For DNN, encode the value as 'DNN:name', where 'name' is the carrier-provided DNN name. For app category, encode the value as 'AppCategory:category', where 'category' is a carrier-provided string such as 'Enterprise1'.
-func (m *IosDdmVppAppAssignmentSettings) SetCellularSliceConfigurationId(value *string)() {
-    err := m.GetBackingStore().Set("cellularSliceConfigurationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetCellularSliceConfigurationId(value *string) {
+	err := m.GetBackingStore().Set("cellularSliceConfigurationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetContentFilterConfigurationId sets the contentFilterConfigurationId property value. The unique identifier of the content filter to associate with the app.
-func (m *IosDdmVppAppAssignmentSettings) SetContentFilterConfigurationId(value *string)() {
-    err := m.GetBackingStore().Set("contentFilterConfigurationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetContentFilterConfigurationId(value *string) {
+	err := m.GetBackingStore().Set("contentFilterConfigurationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDdmAppConfigId sets the ddmAppConfigId property value. The unique identifier of the DDM app configuration to associate with the app.
-func (m *IosDdmVppAppAssignmentSettings) SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
-    err := m.GetBackingStore().Set("ddmAppConfigId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+	err := m.GetBackingStore().Set("ddmAppConfigId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDnsProxyConfigurationId sets the dnsProxyConfigurationId property value. The unique identifier of the DNS proxy to associate with the app.
-func (m *IosDdmVppAppAssignmentSettings) SetDnsProxyConfigurationId(value *string)() {
-    err := m.GetBackingStore().Set("dnsProxyConfigurationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetDnsProxyConfigurationId(value *string) {
+	err := m.GetBackingStore().Set("dnsProxyConfigurationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPreventManagedAppBackup sets the preventManagedAppBackup property value. When true, indicates that the app should not be backed up to iCloud. When false, indicates that the app may be backed up to iCloud. Default is false.
-func (m *IosDdmVppAppAssignmentSettings) SetPreventManagedAppBackup(value *bool)() {
-    err := m.GetBackingStore().Set("preventManagedAppBackup", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetPreventManagedAppBackup(value *bool) {
+	err := m.GetBackingStore().Set("preventManagedAppBackup", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRelayConfigurationId sets the relayConfigurationId property value. The unique identifier of the relay to associate with the app.
-func (m *IosDdmVppAppAssignmentSettings) SetRelayConfigurationId(value *string)() {
-    err := m.GetBackingStore().Set("relayConfigurationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetRelayConfigurationId(value *string) {
+	err := m.GetBackingStore().Set("relayConfigurationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTapToPayScreenLockEnabled sets the tapToPayScreenLockEnabled property value. When true, the device locks its screen after every transaction that requires a customer's card PIN. When false, the user can choose the behavior. Default value is false.
-func (m *IosDdmVppAppAssignmentSettings) SetTapToPayScreenLockEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("tapToPayScreenLockEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetTapToPayScreenLockEnabled(value *bool) {
+	err := m.GetBackingStore().Set("tapToPayScreenLockEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUseDeviceLicensing sets the useDeviceLicensing property value. Whether or not to use device licensing.
-func (m *IosDdmVppAppAssignmentSettings) SetUseDeviceLicensing(value *bool)() {
-    err := m.GetBackingStore().Set("useDeviceLicensing", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetUseDeviceLicensing(value *bool) {
+	err := m.GetBackingStore().Set("useDeviceLicensing", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVersion sets the version property value. Specifies the version of the VPP app to install. When not set, the device installs the latest version. When set, the device installs the specified version. The device never installs an older version of the app over a newer version. This property maps to the Version key in Apple's AppManagedInstallBehaviorObject declaration.
-func (m *IosDdmVppAppAssignmentSettings) SetVersion(value *int32)() {
-    err := m.GetBackingStore().Set("version", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetVersion(value *int32) {
+	err := m.GetBackingStore().Set("version", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVpnConfigurationId sets the vpnConfigurationId property value. The unique identifier of the VPN Configuration to apply to the app.
-func (m *IosDdmVppAppAssignmentSettings) SetVpnConfigurationId(value *string)() {
-    err := m.GetBackingStore().Set("vpnConfigurationId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *IosDdmVppAppAssignmentSettings) SetVpnConfigurationId(value *string) {
+	err := m.GetBackingStore().Set("vpnConfigurationId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type IosDdmVppAppAssignmentSettingsable interface {
-    MobileAppAssignmentSettingsable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowDownloadsOverCellular()(*DdmAppAllowDownloadsOverCellular)
-    GetAssociatedDomains()([]string)
-    GetAssociatedDomainsDirectDownloadAllowed()(*bool)
-    GetAutomaticAppUpdates()(*DdmAppAutomaticAppUpdates)
-    GetCellularSliceConfigurationId()(*string)
-    GetContentFilterConfigurationId()(*string)
-    GetDdmAppConfigId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
-    GetDnsProxyConfigurationId()(*string)
-    GetPreventManagedAppBackup()(*bool)
-    GetRelayConfigurationId()(*string)
-    GetTapToPayScreenLockEnabled()(*bool)
-    GetUseDeviceLicensing()(*bool)
-    GetVersion()(*int32)
-    GetVpnConfigurationId()(*string)
-    SetAllowDownloadsOverCellular(value *DdmAppAllowDownloadsOverCellular)()
-    SetAssociatedDomains(value []string)()
-    SetAssociatedDomainsDirectDownloadAllowed(value *bool)()
-    SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates)()
-    SetCellularSliceConfigurationId(value *string)()
-    SetContentFilterConfigurationId(value *string)()
-    SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
-    SetDnsProxyConfigurationId(value *string)()
-    SetPreventManagedAppBackup(value *bool)()
-    SetRelayConfigurationId(value *string)()
-    SetTapToPayScreenLockEnabled(value *bool)()
-    SetUseDeviceLicensing(value *bool)()
-    SetVersion(value *int32)()
-    SetVpnConfigurationId(value *string)()
+	MobileAppAssignmentSettingsable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAllowDownloadsOverCellular() *DdmAppAllowDownloadsOverCellular
+	GetAssociatedDomains() []string
+	GetAssociatedDomainsDirectDownloadAllowed() *bool
+	GetAutomaticAppUpdates() *DdmAppAutomaticAppUpdates
+	GetCellularSliceConfigurationId() *string
+	GetContentFilterConfigurationId() *string
+	GetDdmAppConfigId() *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
+	GetDnsProxyConfigurationId() *string
+	GetPreventManagedAppBackup() *bool
+	GetRelayConfigurationId() *string
+	GetTapToPayScreenLockEnabled() *bool
+	GetUseDeviceLicensing() *bool
+	GetVersion() *int32
+	GetVpnConfigurationId() *string
+	SetAllowDownloadsOverCellular(value *DdmAppAllowDownloadsOverCellular)
+	SetAssociatedDomains(value []string)
+	SetAssociatedDomainsDirectDownloadAllowed(value *bool)
+	SetAutomaticAppUpdates(value *DdmAppAutomaticAppUpdates)
+	SetCellularSliceConfigurationId(value *string)
+	SetContentFilterConfigurationId(value *string)
+	SetDdmAppConfigId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+	SetDnsProxyConfigurationId(value *string)
+	SetPreventManagedAppBackup(value *bool)
+	SetRelayConfigurationId(value *string)
+	SetTapToPayScreenLockEnabled(value *bool)
+	SetUseDeviceLicensing(value *bool)
+	SetVersion(value *int32)
+	SetVpnConfigurationId(value *string)
 }

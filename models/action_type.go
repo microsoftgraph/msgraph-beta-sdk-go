@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ActionType int
 
 const (
-    TUNNEL_ACTIONTYPE ActionType = iota
-    EXCLUDE_ACTIONTYPE
-    UNKNOWNFUTUREVALUE_ACTIONTYPE
+	TUNNEL_ACTIONTYPE ActionType = iota
+	EXCLUDE_ACTIONTYPE
+	UNKNOWNFUTUREVALUE_ACTIONTYPE
 )
 
 func (i ActionType) String() string {
-    return []string{"tunnel", "exclude", "unknownFutureValue"}[i]
+	return []string{"tunnel", "exclude", "unknownFutureValue"}[i]
 }
+
 func ParseActionType(v string) (any, error) {
-    result := TUNNEL_ACTIONTYPE
-    switch v {
-        case "tunnel":
-            result = TUNNEL_ACTIONTYPE
-        case "exclude":
-            result = EXCLUDE_ACTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ACTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := TUNNEL_ACTIONTYPE
+	switch v {
+	case "tunnel":
+		result = TUNNEL_ACTIONTYPE
+	case "exclude":
+		result = EXCLUDE_ACTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ACTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeActionType(values []ActionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ActionType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,1195 +4,1262 @@
 package networkaccess
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type Connection struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewConnection instantiates a new Connection and sets the default values.
-func NewConnection()(*Connection) {
-    m := &Connection{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewConnection() *Connection {
+	m := &Connection{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateConnectionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewConnection(), nil
+func CreateConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewConnection(), nil
 }
+
 // GetAgentVersion gets the agentVersion property value. The version of the client that initiated the connection.
 // returns a *string when successful
-func (m *Connection) GetAgentVersion()(*string) {
-    val, err := m.GetBackingStore().Get("agentVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetAgentVersion() *string {
+	val, err := m.GetBackingStore().Get("agentVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetApplicationSnapshot gets the applicationSnapshot property value. appId (or client ID) of the destination Microsoft Entra application.
 // returns a ApplicationSnapshotable when successful
-func (m *Connection) GetApplicationSnapshot()(ApplicationSnapshotable) {
-    val, err := m.GetBackingStore().Get("applicationSnapshot")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ApplicationSnapshotable)
-    }
-    return nil
+func (m *Connection) GetApplicationSnapshot() ApplicationSnapshotable {
+	val, err := m.GetBackingStore().Get("applicationSnapshot")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ApplicationSnapshotable)
+	}
+	return nil
 }
+
 // GetCreatedDateTime gets the createdDateTime property value. The time the connection was created.
 // returns a *Time when successful
-func (m *Connection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Connection) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetCrossTenantAccessType gets the crossTenantAccessType property value. Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
 // returns a *CrossTenantAccessType when successful
-func (m *Connection) GetCrossTenantAccessType()(*CrossTenantAccessType) {
-    val, err := m.GetBackingStore().Get("crossTenantAccessType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*CrossTenantAccessType)
-    }
-    return nil
+func (m *Connection) GetCrossTenantAccessType() *CrossTenantAccessType {
+	val, err := m.GetBackingStore().Get("crossTenantAccessType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*CrossTenantAccessType)
+	}
+	return nil
 }
+
 // GetDestinationFqdn gets the destinationFqdn property value. The destination FQDN of the connection.
 // returns a *string when successful
-func (m *Connection) GetDestinationFqdn()(*string) {
-    val, err := m.GetBackingStore().Get("destinationFqdn")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetDestinationFqdn() *string {
+	val, err := m.GetBackingStore().Get("destinationFqdn")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDestinationIp gets the destinationIp property value. The destination IP of the connection.
 // returns a *string when successful
-func (m *Connection) GetDestinationIp()(*string) {
-    val, err := m.GetBackingStore().Get("destinationIp")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetDestinationIp() *string {
+	val, err := m.GetBackingStore().Get("destinationIp")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDestinationPort gets the destinationPort property value. The destination port of the connection.
 // returns a *int32 when successful
-func (m *Connection) GetDestinationPort()(*int32) {
-    val, err := m.GetBackingStore().Get("destinationPort")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *Connection) GetDestinationPort() *int32 {
+	val, err := m.GetBackingStore().Get("destinationPort")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetDeviceCategory gets the deviceCategory property value. The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.
 // returns a *DeviceCategory when successful
-func (m *Connection) GetDeviceCategory()(*DeviceCategory) {
-    val, err := m.GetBackingStore().Get("deviceCategory")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DeviceCategory)
-    }
-    return nil
+func (m *Connection) GetDeviceCategory() *DeviceCategory {
+	val, err := m.GetBackingStore().Get("deviceCategory")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*DeviceCategory)
+	}
+	return nil
 }
+
 // GetDeviceId gets the deviceId property value. The DeviceID.
 // returns a *string when successful
-func (m *Connection) GetDeviceId()(*string) {
-    val, err := m.GetBackingStore().Get("deviceId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetDeviceId() *string {
+	val, err := m.GetBackingStore().Get("deviceId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDeviceJoinType gets the deviceJoinType property value. Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
 // returns a *DeviceJoinType when successful
-func (m *Connection) GetDeviceJoinType()(*DeviceJoinType) {
-    val, err := m.GetBackingStore().Get("deviceJoinType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DeviceJoinType)
-    }
-    return nil
+func (m *Connection) GetDeviceJoinType() *DeviceJoinType {
+	val, err := m.GetBackingStore().Get("deviceJoinType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*DeviceJoinType)
+	}
+	return nil
 }
+
 // GetDeviceOperatingSystem gets the deviceOperatingSystem property value. The device operating system type.
 // returns a *string when successful
-func (m *Connection) GetDeviceOperatingSystem()(*string) {
-    val, err := m.GetBackingStore().Get("deviceOperatingSystem")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetDeviceOperatingSystem() *string {
+	val, err := m.GetBackingStore().Get("deviceOperatingSystem")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDeviceOperatingSystemVersion gets the deviceOperatingSystemVersion property value. The device operating system version.
 // returns a *string when successful
-func (m *Connection) GetDeviceOperatingSystemVersion()(*string) {
-    val, err := m.GetBackingStore().Get("deviceOperatingSystemVersion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetDeviceOperatingSystemVersion() *string {
+	val, err := m.GetBackingStore().Get("deviceOperatingSystemVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetEndDateTime gets the endDateTime property value. The time the connection was terminated.
 // returns a *Time when successful
-func (m *Connection) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("endDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Connection) GetEndDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("endDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["agentVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAgentVersion(val)
-        }
-        return nil
-    }
-    res["applicationSnapshot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateApplicationSnapshotFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationSnapshot(val.(ApplicationSnapshotable))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["crossTenantAccessType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCrossTenantAccessType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCrossTenantAccessType(val.(*CrossTenantAccessType))
-        }
-        return nil
-    }
-    res["destinationFqdn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDestinationFqdn(val)
-        }
-        return nil
-    }
-    res["destinationIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDestinationIp(val)
-        }
-        return nil
-    }
-    res["destinationPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDestinationPort(val)
-        }
-        return nil
-    }
-    res["deviceCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceCategory)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceCategory(val.(*DeviceCategory))
-        }
-        return nil
-    }
-    res["deviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceId(val)
-        }
-        return nil
-    }
-    res["deviceJoinType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDeviceJoinType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceJoinType(val.(*DeviceJoinType))
-        }
-        return nil
-    }
-    res["deviceOperatingSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceOperatingSystem(val)
-        }
-        return nil
-    }
-    res["deviceOperatingSystemVersion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceOperatingSystemVersion(val)
-        }
-        return nil
-    }
-    res["endDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEndDateTime(val)
-        }
-        return nil
-    }
-    res["homeTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetHomeTenantId(val)
-        }
-        return nil
-    }
-    res["initiatingProcessName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInitiatingProcessName(val)
-        }
-        return nil
-    }
-    res["lastUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastUpdateDateTime(val)
-        }
-        return nil
-    }
-    res["networkProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkingProtocol)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkProtocol(val.(*NetworkingProtocol))
-        }
-        return nil
-    }
-    res["popProcessingRegion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPopProcessingRegion(val)
-        }
-        return nil
-    }
-    res["privateAccessDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePrivateAccessDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPrivateAccessDetails(val.(PrivateAccessDetailsable))
-        }
-        return nil
-    }
-    res["receivedBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReceivedBytes(val)
-        }
-        return nil
-    }
-    res["sentBytes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt64Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSentBytes(val)
-        }
-        return nil
-    }
-    res["sourceIp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSourceIp(val)
-        }
-        return nil
-    }
-    res["sourcePort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSourcePort(val)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseConnectionStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*ConnectionStatus))
-        }
-        return nil
-    }
-    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantId(val)
-        }
-        return nil
-    }
-    res["trafficType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrafficType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTrafficType(val.(*TrafficType))
-        }
-        return nil
-    }
-    res["transactionBlockCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTransactionBlockCount(val)
-        }
-        return nil
-    }
-    res["transactionCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTransactionCount(val)
-        }
-        return nil
-    }
-    res["transportProtocol"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNetworkingProtocol)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTransportProtocol(val.(*NetworkingProtocol))
-        }
-        return nil
-    }
-    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserId(val)
-        }
-        return nil
-    }
-    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUserPrincipalName(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *Connection) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["agentVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAgentVersion(val)
+		}
+		return nil
+	}
+	res["applicationSnapshot"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateApplicationSnapshotFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApplicationSnapshot(val.(ApplicationSnapshotable))
+		}
+		return nil
+	}
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["crossTenantAccessType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseCrossTenantAccessType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCrossTenantAccessType(val.(*CrossTenantAccessType))
+		}
+		return nil
+	}
+	res["destinationFqdn"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDestinationFqdn(val)
+		}
+		return nil
+	}
+	res["destinationIp"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDestinationIp(val)
+		}
+		return nil
+	}
+	res["destinationPort"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDestinationPort(val)
+		}
+		return nil
+	}
+	res["deviceCategory"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseDeviceCategory)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceCategory(val.(*DeviceCategory))
+		}
+		return nil
+	}
+	res["deviceId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceId(val)
+		}
+		return nil
+	}
+	res["deviceJoinType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseDeviceJoinType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceJoinType(val.(*DeviceJoinType))
+		}
+		return nil
+	}
+	res["deviceOperatingSystem"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceOperatingSystem(val)
+		}
+		return nil
+	}
+	res["deviceOperatingSystemVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceOperatingSystemVersion(val)
+		}
+		return nil
+	}
+	res["endDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEndDateTime(val)
+		}
+		return nil
+	}
+	res["homeTenantId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetHomeTenantId(val)
+		}
+		return nil
+	}
+	res["initiatingProcessName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetInitiatingProcessName(val)
+		}
+		return nil
+	}
+	res["lastUpdateDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastUpdateDateTime(val)
+		}
+		return nil
+	}
+	res["networkProtocol"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseNetworkingProtocol)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetNetworkProtocol(val.(*NetworkingProtocol))
+		}
+		return nil
+	}
+	res["popProcessingRegion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPopProcessingRegion(val)
+		}
+		return nil
+	}
+	res["privateAccessDetails"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePrivateAccessDetailsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPrivateAccessDetails(val.(PrivateAccessDetailsable))
+		}
+		return nil
+	}
+	res["receivedBytes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt64Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetReceivedBytes(val)
+		}
+		return nil
+	}
+	res["sentBytes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt64Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSentBytes(val)
+		}
+		return nil
+	}
+	res["sourceIp"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSourceIp(val)
+		}
+		return nil
+	}
+	res["sourcePort"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSourcePort(val)
+		}
+		return nil
+	}
+	res["status"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseConnectionStatus)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetStatus(val.(*ConnectionStatus))
+		}
+		return nil
+	}
+	res["tenantId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTenantId(val)
+		}
+		return nil
+	}
+	res["trafficType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseTrafficType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTrafficType(val.(*TrafficType))
+		}
+		return nil
+	}
+	res["transactionBlockCount"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTransactionBlockCount(val)
+		}
+		return nil
+	}
+	res["transactionCount"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTransactionCount(val)
+		}
+		return nil
+	}
+	res["transportProtocol"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseNetworkingProtocol)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTransportProtocol(val.(*NetworkingProtocol))
+		}
+		return nil
+	}
+	res["userId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUserId(val)
+		}
+		return nil
+	}
+	res["userPrincipalName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUserPrincipalName(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetHomeTenantId gets the homeTenantId property value. The identifier of the home tenant, for Entra B2B scenarios.
 // returns a *string when successful
-func (m *Connection) GetHomeTenantId()(*string) {
-    val, err := m.GetBackingStore().Get("homeTenantId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetHomeTenantId() *string {
+	val, err := m.GetBackingStore().Get("homeTenantId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetInitiatingProcessName gets the initiatingProcessName property value. The process initiating the traffic connection.
 // returns a *string when successful
-func (m *Connection) GetInitiatingProcessName()(*string) {
-    val, err := m.GetBackingStore().Get("initiatingProcessName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetInitiatingProcessName() *string {
+	val, err := m.GetBackingStore().Get("initiatingProcessName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the connection was last updated.
 // returns a *Time when successful
-func (m *Connection) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastUpdateDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Connection) GetLastUpdateDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastUpdateDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetNetworkProtocol gets the networkProtocol property value. The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 // returns a *NetworkingProtocol when successful
-func (m *Connection) GetNetworkProtocol()(*NetworkingProtocol) {
-    val, err := m.GetBackingStore().Get("networkProtocol")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*NetworkingProtocol)
-    }
-    return nil
+func (m *Connection) GetNetworkProtocol() *NetworkingProtocol {
+	val, err := m.GetBackingStore().Get("networkProtocol")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*NetworkingProtocol)
+	}
+	return nil
 }
+
 // GetPopProcessingRegion gets the popProcessingRegion property value. The Point-of-Presence processing region of the traffic.
 // returns a *string when successful
-func (m *Connection) GetPopProcessingRegion()(*string) {
-    val, err := m.GetBackingStore().Get("popProcessingRegion")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetPopProcessingRegion() *string {
+	val, err := m.GetBackingStore().Get("popProcessingRegion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPrivateAccessDetails gets the privateAccessDetails property value. Private access details.
 // returns a PrivateAccessDetailsable when successful
-func (m *Connection) GetPrivateAccessDetails()(PrivateAccessDetailsable) {
-    val, err := m.GetBackingStore().Get("privateAccessDetails")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PrivateAccessDetailsable)
-    }
-    return nil
+func (m *Connection) GetPrivateAccessDetails() PrivateAccessDetailsable {
+	val, err := m.GetBackingStore().Get("privateAccessDetails")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PrivateAccessDetailsable)
+	}
+	return nil
 }
+
 // GetReceivedBytes gets the receivedBytes property value. Accumulative bytes received.
 // returns a *int64 when successful
-func (m *Connection) GetReceivedBytes()(*int64) {
-    val, err := m.GetBackingStore().Get("receivedBytes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int64)
-    }
-    return nil
+func (m *Connection) GetReceivedBytes() *int64 {
+	val, err := m.GetBackingStore().Get("receivedBytes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int64)
+	}
+	return nil
 }
+
 // GetSentBytes gets the sentBytes property value. Accumulative bytes sent.
 // returns a *int64 when successful
-func (m *Connection) GetSentBytes()(*int64) {
-    val, err := m.GetBackingStore().Get("sentBytes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int64)
-    }
-    return nil
+func (m *Connection) GetSentBytes() *int64 {
+	val, err := m.GetBackingStore().Get("sentBytes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int64)
+	}
+	return nil
 }
+
 // GetSourceIp gets the sourceIp property value. The source IP of the connection.
 // returns a *string when successful
-func (m *Connection) GetSourceIp()(*string) {
-    val, err := m.GetBackingStore().Get("sourceIp")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetSourceIp() *string {
+	val, err := m.GetBackingStore().Get("sourceIp")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetSourcePort gets the sourcePort property value. The source port of the connection.
 // returns a *int32 when successful
-func (m *Connection) GetSourcePort()(*int32) {
-    val, err := m.GetBackingStore().Get("sourcePort")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *Connection) GetSourcePort() *int32 {
+	val, err := m.GetBackingStore().Get("sourcePort")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetStatus gets the status property value. Status of the connection. The possible values are: open, active, closed, unknownFutureValue.
 // returns a *ConnectionStatus when successful
-func (m *Connection) GetStatus()(*ConnectionStatus) {
-    val, err := m.GetBackingStore().Get("status")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ConnectionStatus)
-    }
-    return nil
+func (m *Connection) GetStatus() *ConnectionStatus {
+	val, err := m.GetBackingStore().Get("status")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ConnectionStatus)
+	}
+	return nil
 }
+
 // GetTenantId gets the tenantId property value. The ID of the tenant where the connection was initiated.
 // returns a *string when successful
-func (m *Connection) GetTenantId()(*string) {
-    val, err := m.GetBackingStore().Get("tenantId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetTenantId() *string {
+	val, err := m.GetBackingStore().Get("tenantId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetTrafficType gets the trafficType property value. The trafficType property
 // returns a *TrafficType when successful
-func (m *Connection) GetTrafficType()(*TrafficType) {
-    val, err := m.GetBackingStore().Get("trafficType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*TrafficType)
-    }
-    return nil
+func (m *Connection) GetTrafficType() *TrafficType {
+	val, err := m.GetBackingStore().Get("trafficType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*TrafficType)
+	}
+	return nil
 }
+
 // GetTransactionBlockCount gets the transactionBlockCount property value. The number of blocked transactions belonging to the connection.
 // returns a *int32 when successful
-func (m *Connection) GetTransactionBlockCount()(*int32) {
-    val, err := m.GetBackingStore().Get("transactionBlockCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *Connection) GetTransactionBlockCount() *int32 {
+	val, err := m.GetBackingStore().Get("transactionBlockCount")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetTransactionCount gets the transactionCount property value. The number of transactions belonging to the connection.
 // returns a *int32 when successful
-func (m *Connection) GetTransactionCount()(*int32) {
-    val, err := m.GetBackingStore().Get("transactionCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *Connection) GetTransactionCount() *int32 {
+	val, err := m.GetBackingStore().Get("transactionCount")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetTransportProtocol gets the transportProtocol property value. The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 // returns a *NetworkingProtocol when successful
-func (m *Connection) GetTransportProtocol()(*NetworkingProtocol) {
-    val, err := m.GetBackingStore().Get("transportProtocol")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*NetworkingProtocol)
-    }
-    return nil
+func (m *Connection) GetTransportProtocol() *NetworkingProtocol {
+	val, err := m.GetBackingStore().Get("transportProtocol")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*NetworkingProtocol)
+	}
+	return nil
 }
+
 // GetUserId gets the userId property value. The user ID.
 // returns a *string when successful
-func (m *Connection) GetUserId()(*string) {
-    val, err := m.GetBackingStore().Get("userId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetUserId() *string {
+	val, err := m.GetBackingStore().Get("userId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetUserPrincipalName gets the userPrincipalName property value. The principal name of the user.
 // returns a *string when successful
-func (m *Connection) GetUserPrincipalName()(*string) {
-    val, err := m.GetBackingStore().Get("userPrincipalName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Connection) GetUserPrincipalName() *string {
+	val, err := m.GetBackingStore().Get("userPrincipalName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("agentVersion", m.GetAgentVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("applicationSnapshot", m.GetApplicationSnapshot())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCrossTenantAccessType() != nil {
-        cast := (*m.GetCrossTenantAccessType()).String()
-        err = writer.WriteStringValue("crossTenantAccessType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("destinationFqdn", m.GetDestinationFqdn())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("destinationIp", m.GetDestinationIp())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("destinationPort", m.GetDestinationPort())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDeviceCategory() != nil {
-        cast := (*m.GetDeviceCategory()).String()
-        err = writer.WriteStringValue("deviceCategory", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("deviceId", m.GetDeviceId())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDeviceJoinType() != nil {
-        cast := (*m.GetDeviceJoinType()).String()
-        err = writer.WriteStringValue("deviceJoinType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("deviceOperatingSystem", m.GetDeviceOperatingSystem())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("deviceOperatingSystemVersion", m.GetDeviceOperatingSystemVersion())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("initiatingProcessName", m.GetInitiatingProcessName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetNetworkProtocol() != nil {
-        cast := (*m.GetNetworkProtocol()).String()
-        err = writer.WriteStringValue("networkProtocol", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("popProcessingRegion", m.GetPopProcessingRegion())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("privateAccessDetails", m.GetPrivateAccessDetails())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("receivedBytes", m.GetReceivedBytes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt64Value("sentBytes", m.GetSentBytes())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("sourceIp", m.GetSourceIp())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("sourcePort", m.GetSourcePort())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetStatus() != nil {
-        cast := (*m.GetStatus()).String()
-        err = writer.WriteStringValue("status", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("tenantId", m.GetTenantId())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTrafficType() != nil {
-        cast := (*m.GetTrafficType()).String()
-        err = writer.WriteStringValue("trafficType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("transactionBlockCount", m.GetTransactionBlockCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("transactionCount", m.GetTransactionCount())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTransportProtocol() != nil {
-        cast := (*m.GetTransportProtocol()).String()
-        err = writer.WriteStringValue("transportProtocol", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userId", m.GetUserId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("agentVersion", m.GetAgentVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("applicationSnapshot", m.GetApplicationSnapshot())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCrossTenantAccessType() != nil {
+		cast := (*m.GetCrossTenantAccessType()).String()
+		err = writer.WriteStringValue("crossTenantAccessType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("destinationFqdn", m.GetDestinationFqdn())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("destinationIp", m.GetDestinationIp())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("destinationPort", m.GetDestinationPort())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetDeviceCategory() != nil {
+		cast := (*m.GetDeviceCategory()).String()
+		err = writer.WriteStringValue("deviceCategory", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("deviceId", m.GetDeviceId())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetDeviceJoinType() != nil {
+		cast := (*m.GetDeviceJoinType()).String()
+		err = writer.WriteStringValue("deviceJoinType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("deviceOperatingSystem", m.GetDeviceOperatingSystem())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("deviceOperatingSystemVersion", m.GetDeviceOperatingSystemVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("endDateTime", m.GetEndDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("initiatingProcessName", m.GetInitiatingProcessName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetNetworkProtocol() != nil {
+		cast := (*m.GetNetworkProtocol()).String()
+		err = writer.WriteStringValue("networkProtocol", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("popProcessingRegion", m.GetPopProcessingRegion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("privateAccessDetails", m.GetPrivateAccessDetails())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt64Value("receivedBytes", m.GetReceivedBytes())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt64Value("sentBytes", m.GetSentBytes())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("sourceIp", m.GetSourceIp())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("sourcePort", m.GetSourcePort())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetStatus() != nil {
+		cast := (*m.GetStatus()).String()
+		err = writer.WriteStringValue("status", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("tenantId", m.GetTenantId())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTrafficType() != nil {
+		cast := (*m.GetTrafficType()).String()
+		err = writer.WriteStringValue("trafficType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("transactionBlockCount", m.GetTransactionBlockCount())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("transactionCount", m.GetTransactionCount())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTransportProtocol() != nil {
+		cast := (*m.GetTransportProtocol()).String()
+		err = writer.WriteStringValue("transportProtocol", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("userId", m.GetUserId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAgentVersion sets the agentVersion property value. The version of the client that initiated the connection.
-func (m *Connection) SetAgentVersion(value *string)() {
-    err := m.GetBackingStore().Set("agentVersion", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetAgentVersion(value *string) {
+	err := m.GetBackingStore().Set("agentVersion", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetApplicationSnapshot sets the applicationSnapshot property value. appId (or client ID) of the destination Microsoft Entra application.
-func (m *Connection) SetApplicationSnapshot(value ApplicationSnapshotable)() {
-    err := m.GetBackingStore().Set("applicationSnapshot", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetApplicationSnapshot(value ApplicationSnapshotable) {
+	err := m.GetBackingStore().Set("applicationSnapshot", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreatedDateTime sets the createdDateTime property value. The time the connection was created.
-func (m *Connection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCrossTenantAccessType sets the crossTenantAccessType property value. Cross tenant access details, for B2B scenarios. The possible values are: none, b2bCollaboration, unknownFutureValue.
-func (m *Connection) SetCrossTenantAccessType(value *CrossTenantAccessType)() {
-    err := m.GetBackingStore().Set("crossTenantAccessType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetCrossTenantAccessType(value *CrossTenantAccessType) {
+	err := m.GetBackingStore().Set("crossTenantAccessType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDestinationFqdn sets the destinationFqdn property value. The destination FQDN of the connection.
-func (m *Connection) SetDestinationFqdn(value *string)() {
-    err := m.GetBackingStore().Set("destinationFqdn", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDestinationFqdn(value *string) {
+	err := m.GetBackingStore().Set("destinationFqdn", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDestinationIp sets the destinationIp property value. The destination IP of the connection.
-func (m *Connection) SetDestinationIp(value *string)() {
-    err := m.GetBackingStore().Set("destinationIp", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDestinationIp(value *string) {
+	err := m.GetBackingStore().Set("destinationIp", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDestinationPort sets the destinationPort property value. The destination port of the connection.
-func (m *Connection) SetDestinationPort(value *int32)() {
-    err := m.GetBackingStore().Set("destinationPort", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDestinationPort(value *int32) {
+	err := m.GetBackingStore().Set("destinationPort", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceCategory sets the deviceCategory property value. The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.
-func (m *Connection) SetDeviceCategory(value *DeviceCategory)() {
-    err := m.GetBackingStore().Set("deviceCategory", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDeviceCategory(value *DeviceCategory) {
+	err := m.GetBackingStore().Set("deviceCategory", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceId sets the deviceId property value. The DeviceID.
-func (m *Connection) SetDeviceId(value *string)() {
-    err := m.GetBackingStore().Set("deviceId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDeviceId(value *string) {
+	err := m.GetBackingStore().Set("deviceId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceJoinType sets the deviceJoinType property value. Device registration type, for BYOD scenarios. The possible values are: none, microsoftEntraJoined, microsoftEntraRegistered, unknownFutureValue.
-func (m *Connection) SetDeviceJoinType(value *DeviceJoinType)() {
-    err := m.GetBackingStore().Set("deviceJoinType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDeviceJoinType(value *DeviceJoinType) {
+	err := m.GetBackingStore().Set("deviceJoinType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceOperatingSystem sets the deviceOperatingSystem property value. The device operating system type.
-func (m *Connection) SetDeviceOperatingSystem(value *string)() {
-    err := m.GetBackingStore().Set("deviceOperatingSystem", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDeviceOperatingSystem(value *string) {
+	err := m.GetBackingStore().Set("deviceOperatingSystem", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceOperatingSystemVersion sets the deviceOperatingSystemVersion property value. The device operating system version.
-func (m *Connection) SetDeviceOperatingSystemVersion(value *string)() {
-    err := m.GetBackingStore().Set("deviceOperatingSystemVersion", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetDeviceOperatingSystemVersion(value *string) {
+	err := m.GetBackingStore().Set("deviceOperatingSystemVersion", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetEndDateTime sets the endDateTime property value. The time the connection was terminated.
-func (m *Connection) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("endDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("endDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetHomeTenantId sets the homeTenantId property value. The identifier of the home tenant, for Entra B2B scenarios.
-func (m *Connection) SetHomeTenantId(value *string)() {
-    err := m.GetBackingStore().Set("homeTenantId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetHomeTenantId(value *string) {
+	err := m.GetBackingStore().Set("homeTenantId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetInitiatingProcessName sets the initiatingProcessName property value. The process initiating the traffic connection.
-func (m *Connection) SetInitiatingProcessName(value *string)() {
-    err := m.GetBackingStore().Set("initiatingProcessName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetInitiatingProcessName(value *string) {
+	err := m.GetBackingStore().Set("initiatingProcessName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. When the connection was last updated.
-func (m *Connection) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastUpdateDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastUpdateDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetNetworkProtocol sets the networkProtocol property value. The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
-func (m *Connection) SetNetworkProtocol(value *NetworkingProtocol)() {
-    err := m.GetBackingStore().Set("networkProtocol", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetNetworkProtocol(value *NetworkingProtocol) {
+	err := m.GetBackingStore().Set("networkProtocol", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPopProcessingRegion sets the popProcessingRegion property value. The Point-of-Presence processing region of the traffic.
-func (m *Connection) SetPopProcessingRegion(value *string)() {
-    err := m.GetBackingStore().Set("popProcessingRegion", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetPopProcessingRegion(value *string) {
+	err := m.GetBackingStore().Set("popProcessingRegion", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPrivateAccessDetails sets the privateAccessDetails property value. Private access details.
-func (m *Connection) SetPrivateAccessDetails(value PrivateAccessDetailsable)() {
-    err := m.GetBackingStore().Set("privateAccessDetails", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetPrivateAccessDetails(value PrivateAccessDetailsable) {
+	err := m.GetBackingStore().Set("privateAccessDetails", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetReceivedBytes sets the receivedBytes property value. Accumulative bytes received.
-func (m *Connection) SetReceivedBytes(value *int64)() {
-    err := m.GetBackingStore().Set("receivedBytes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetReceivedBytes(value *int64) {
+	err := m.GetBackingStore().Set("receivedBytes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSentBytes sets the sentBytes property value. Accumulative bytes sent.
-func (m *Connection) SetSentBytes(value *int64)() {
-    err := m.GetBackingStore().Set("sentBytes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetSentBytes(value *int64) {
+	err := m.GetBackingStore().Set("sentBytes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSourceIp sets the sourceIp property value. The source IP of the connection.
-func (m *Connection) SetSourceIp(value *string)() {
-    err := m.GetBackingStore().Set("sourceIp", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetSourceIp(value *string) {
+	err := m.GetBackingStore().Set("sourceIp", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSourcePort sets the sourcePort property value. The source port of the connection.
-func (m *Connection) SetSourcePort(value *int32)() {
-    err := m.GetBackingStore().Set("sourcePort", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetSourcePort(value *int32) {
+	err := m.GetBackingStore().Set("sourcePort", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetStatus sets the status property value. Status of the connection. The possible values are: open, active, closed, unknownFutureValue.
-func (m *Connection) SetStatus(value *ConnectionStatus)() {
-    err := m.GetBackingStore().Set("status", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetStatus(value *ConnectionStatus) {
+	err := m.GetBackingStore().Set("status", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTenantId sets the tenantId property value. The ID of the tenant where the connection was initiated.
-func (m *Connection) SetTenantId(value *string)() {
-    err := m.GetBackingStore().Set("tenantId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetTenantId(value *string) {
+	err := m.GetBackingStore().Set("tenantId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTrafficType sets the trafficType property value. The trafficType property
-func (m *Connection) SetTrafficType(value *TrafficType)() {
-    err := m.GetBackingStore().Set("trafficType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetTrafficType(value *TrafficType) {
+	err := m.GetBackingStore().Set("trafficType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTransactionBlockCount sets the transactionBlockCount property value. The number of blocked transactions belonging to the connection.
-func (m *Connection) SetTransactionBlockCount(value *int32)() {
-    err := m.GetBackingStore().Set("transactionBlockCount", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetTransactionBlockCount(value *int32) {
+	err := m.GetBackingStore().Set("transactionBlockCount", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTransactionCount sets the transactionCount property value. The number of transactions belonging to the connection.
-func (m *Connection) SetTransactionCount(value *int32)() {
-    err := m.GetBackingStore().Set("transactionCount", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetTransactionCount(value *int32) {
+	err := m.GetBackingStore().Set("transactionCount", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTransportProtocol sets the transportProtocol property value. The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
-func (m *Connection) SetTransportProtocol(value *NetworkingProtocol)() {
-    err := m.GetBackingStore().Set("transportProtocol", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetTransportProtocol(value *NetworkingProtocol) {
+	err := m.GetBackingStore().Set("transportProtocol", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUserId sets the userId property value. The user ID.
-func (m *Connection) SetUserId(value *string)() {
-    err := m.GetBackingStore().Set("userId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetUserId(value *string) {
+	err := m.GetBackingStore().Set("userId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUserPrincipalName sets the userPrincipalName property value. The principal name of the user.
-func (m *Connection) SetUserPrincipalName(value *string)() {
-    err := m.GetBackingStore().Set("userPrincipalName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Connection) SetUserPrincipalName(value *string) {
+	err := m.GetBackingStore().Set("userPrincipalName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type Connectionable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAgentVersion()(*string)
-    GetApplicationSnapshot()(ApplicationSnapshotable)
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetCrossTenantAccessType()(*CrossTenantAccessType)
-    GetDestinationFqdn()(*string)
-    GetDestinationIp()(*string)
-    GetDestinationPort()(*int32)
-    GetDeviceCategory()(*DeviceCategory)
-    GetDeviceId()(*string)
-    GetDeviceJoinType()(*DeviceJoinType)
-    GetDeviceOperatingSystem()(*string)
-    GetDeviceOperatingSystemVersion()(*string)
-    GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetHomeTenantId()(*string)
-    GetInitiatingProcessName()(*string)
-    GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetNetworkProtocol()(*NetworkingProtocol)
-    GetPopProcessingRegion()(*string)
-    GetPrivateAccessDetails()(PrivateAccessDetailsable)
-    GetReceivedBytes()(*int64)
-    GetSentBytes()(*int64)
-    GetSourceIp()(*string)
-    GetSourcePort()(*int32)
-    GetStatus()(*ConnectionStatus)
-    GetTenantId()(*string)
-    GetTrafficType()(*TrafficType)
-    GetTransactionBlockCount()(*int32)
-    GetTransactionCount()(*int32)
-    GetTransportProtocol()(*NetworkingProtocol)
-    GetUserId()(*string)
-    GetUserPrincipalName()(*string)
-    SetAgentVersion(value *string)()
-    SetApplicationSnapshot(value ApplicationSnapshotable)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetCrossTenantAccessType(value *CrossTenantAccessType)()
-    SetDestinationFqdn(value *string)()
-    SetDestinationIp(value *string)()
-    SetDestinationPort(value *int32)()
-    SetDeviceCategory(value *DeviceCategory)()
-    SetDeviceId(value *string)()
-    SetDeviceJoinType(value *DeviceJoinType)()
-    SetDeviceOperatingSystem(value *string)()
-    SetDeviceOperatingSystemVersion(value *string)()
-    SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetHomeTenantId(value *string)()
-    SetInitiatingProcessName(value *string)()
-    SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetNetworkProtocol(value *NetworkingProtocol)()
-    SetPopProcessingRegion(value *string)()
-    SetPrivateAccessDetails(value PrivateAccessDetailsable)()
-    SetReceivedBytes(value *int64)()
-    SetSentBytes(value *int64)()
-    SetSourceIp(value *string)()
-    SetSourcePort(value *int32)()
-    SetStatus(value *ConnectionStatus)()
-    SetTenantId(value *string)()
-    SetTrafficType(value *TrafficType)()
-    SetTransactionBlockCount(value *int32)()
-    SetTransactionCount(value *int32)()
-    SetTransportProtocol(value *NetworkingProtocol)()
-    SetUserId(value *string)()
-    SetUserPrincipalName(value *string)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAgentVersion() *string
+	GetApplicationSnapshot() ApplicationSnapshotable
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetCrossTenantAccessType() *CrossTenantAccessType
+	GetDestinationFqdn() *string
+	GetDestinationIp() *string
+	GetDestinationPort() *int32
+	GetDeviceCategory() *DeviceCategory
+	GetDeviceId() *string
+	GetDeviceJoinType() *DeviceJoinType
+	GetDeviceOperatingSystem() *string
+	GetDeviceOperatingSystemVersion() *string
+	GetEndDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetHomeTenantId() *string
+	GetInitiatingProcessName() *string
+	GetLastUpdateDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetNetworkProtocol() *NetworkingProtocol
+	GetPopProcessingRegion() *string
+	GetPrivateAccessDetails() PrivateAccessDetailsable
+	GetReceivedBytes() *int64
+	GetSentBytes() *int64
+	GetSourceIp() *string
+	GetSourcePort() *int32
+	GetStatus() *ConnectionStatus
+	GetTenantId() *string
+	GetTrafficType() *TrafficType
+	GetTransactionBlockCount() *int32
+	GetTransactionCount() *int32
+	GetTransportProtocol() *NetworkingProtocol
+	GetUserId() *string
+	GetUserPrincipalName() *string
+	SetAgentVersion(value *string)
+	SetApplicationSnapshot(value ApplicationSnapshotable)
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetCrossTenantAccessType(value *CrossTenantAccessType)
+	SetDestinationFqdn(value *string)
+	SetDestinationIp(value *string)
+	SetDestinationPort(value *int32)
+	SetDeviceCategory(value *DeviceCategory)
+	SetDeviceId(value *string)
+	SetDeviceJoinType(value *DeviceJoinType)
+	SetDeviceOperatingSystem(value *string)
+	SetDeviceOperatingSystemVersion(value *string)
+	SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetHomeTenantId(value *string)
+	SetInitiatingProcessName(value *string)
+	SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetNetworkProtocol(value *NetworkingProtocol)
+	SetPopProcessingRegion(value *string)
+	SetPrivateAccessDetails(value PrivateAccessDetailsable)
+	SetReceivedBytes(value *int64)
+	SetSentBytes(value *int64)
+	SetSourceIp(value *string)
+	SetSourcePort(value *int32)
+	SetStatus(value *ConnectionStatus)
+	SetTenantId(value *string)
+	SetTrafficType(value *TrafficType)
+	SetTransactionBlockCount(value *int32)
+	SetTransactionCount(value *int32)
+	SetTransportProtocol(value *NetworkingProtocol)
+	SetUserId(value *string)
+	SetUserPrincipalName(value *string)
 }

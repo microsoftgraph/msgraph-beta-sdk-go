@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlannerTaskChatMessageType int
 
 const (
-    RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE PlannerTaskChatMessageType = iota
-    PLAINTEXT_PLANNERTASKCHATMESSAGETYPE
-    UNKNOWNFUTUREVALUE_PLANNERTASKCHATMESSAGETYPE
+	RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE PlannerTaskChatMessageType = iota
+	PLAINTEXT_PLANNERTASKCHATMESSAGETYPE
+	UNKNOWNFUTUREVALUE_PLANNERTASKCHATMESSAGETYPE
 )
 
 func (i PlannerTaskChatMessageType) String() string {
-    return []string{"richTextHtml", "plainText", "unknownFutureValue"}[i]
+	return []string{"richTextHtml", "plainText", "unknownFutureValue"}[i]
 }
+
 func ParsePlannerTaskChatMessageType(v string) (any, error) {
-    result := RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE
-    switch v {
-        case "richTextHtml":
-            result = RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE
-        case "plainText":
-            result = PLAINTEXT_PLANNERTASKCHATMESSAGETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERTASKCHATMESSAGETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE
+	switch v {
+	case "richTextHtml":
+		result = RICHTEXTHTML_PLANNERTASKCHATMESSAGETYPE
+	case "plainText":
+		result = PLAINTEXT_PLANNERTASKCHATMESSAGETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLANNERTASKCHATMESSAGETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlannerTaskChatMessageType(values []PlannerTaskChatMessageType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlannerTaskChatMessageType) isMultiValue() bool {
-    return false
+	return false
 }

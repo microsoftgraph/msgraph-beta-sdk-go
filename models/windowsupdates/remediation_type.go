@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package windowsupdates
+
 type RemediationType int
 
 const (
-    INPLACEUPGRADE_REMEDIATIONTYPE RemediationType = iota
-    UNKNOWNFUTUREVALUE_REMEDIATIONTYPE
+	INPLACEUPGRADE_REMEDIATIONTYPE RemediationType = iota
+	UNKNOWNFUTUREVALUE_REMEDIATIONTYPE
 )
 
 func (i RemediationType) String() string {
-    return []string{"inPlaceUpgrade", "unknownFutureValue"}[i]
+	return []string{"inPlaceUpgrade", "unknownFutureValue"}[i]
 }
+
 func ParseRemediationType(v string) (any, error) {
-    result := INPLACEUPGRADE_REMEDIATIONTYPE
-    switch v {
-        case "inPlaceUpgrade":
-            result = INPLACEUPGRADE_REMEDIATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_REMEDIATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INPLACEUPGRADE_REMEDIATIONTYPE
+	switch v {
+	case "inPlaceUpgrade":
+		result = INPLACEUPGRADE_REMEDIATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_REMEDIATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRemediationType(values []RemediationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RemediationType) isMultiValue() bool {
-    return false
+	return false
 }

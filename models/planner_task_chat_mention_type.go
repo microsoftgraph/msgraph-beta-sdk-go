@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlannerTaskChatMentionType int
 
 const (
-    USER_PLANNERTASKCHATMENTIONTYPE PlannerTaskChatMentionType = iota
-    APPLICATION_PLANNERTASKCHATMENTIONTYPE
-    UNKNOWNFUTUREVALUE_PLANNERTASKCHATMENTIONTYPE
+	USER_PLANNERTASKCHATMENTIONTYPE PlannerTaskChatMentionType = iota
+	APPLICATION_PLANNERTASKCHATMENTIONTYPE
+	UNKNOWNFUTUREVALUE_PLANNERTASKCHATMENTIONTYPE
 )
 
 func (i PlannerTaskChatMentionType) String() string {
-    return []string{"user", "application", "unknownFutureValue"}[i]
+	return []string{"user", "application", "unknownFutureValue"}[i]
 }
+
 func ParsePlannerTaskChatMentionType(v string) (any, error) {
-    result := USER_PLANNERTASKCHATMENTIONTYPE
-    switch v {
-        case "user":
-            result = USER_PLANNERTASKCHATMENTIONTYPE
-        case "application":
-            result = APPLICATION_PLANNERTASKCHATMENTIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERTASKCHATMENTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := USER_PLANNERTASKCHATMENTIONTYPE
+	switch v {
+	case "user":
+		result = USER_PLANNERTASKCHATMENTIONTYPE
+	case "application":
+		result = APPLICATION_PLANNERTASKCHATMENTIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLANNERTASKCHATMENTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlannerTaskChatMentionType(values []PlannerTaskChatMentionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlannerTaskChatMentionType) isMultiValue() bool {
-    return false
+	return false
 }

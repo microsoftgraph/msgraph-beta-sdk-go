@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcCloudAppActionFailedErrorCode int
 
 const (
-    CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE CloudPcCloudAppActionFailedErrorCode = iota
-    CLOUDPCLICENSENOTFOUND_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    INTERNALSERVERERROR_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE CloudPcCloudAppActionFailedErrorCode = iota
+	CLOUDPCLICENSENOTFOUND_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	INTERNALSERVERERROR_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
 )
 
 func (i CloudPcCloudAppActionFailedErrorCode) String() string {
-    return []string{"cloudAppQuotaExceeded", "cloudPcLicenseNotFound", "internalServerError", "appDiscoveryFailed", "unknownFutureValue", "iconPathInvalid", "filePathInvalid"}[i]
+	return []string{"cloudAppQuotaExceeded", "cloudPcLicenseNotFound", "internalServerError", "appDiscoveryFailed", "unknownFutureValue", "iconPathInvalid", "filePathInvalid"}[i]
 }
+
 func ParseCloudPcCloudAppActionFailedErrorCode(v string) (any, error) {
-    result := CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-    switch v {
-        case "cloudAppQuotaExceeded":
-            result = CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "cloudPcLicenseNotFound":
-            result = CLOUDPCLICENSENOTFOUND_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "internalServerError":
-            result = INTERNALSERVERERROR_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "appDiscoveryFailed":
-            result = APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "iconPathInvalid":
-            result = ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        case "filePathInvalid":
-            result = FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	switch v {
+	case "cloudAppQuotaExceeded":
+		result = CLOUDAPPQUOTAEXCEEDED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "cloudPcLicenseNotFound":
+		result = CLOUDPCLICENSENOTFOUND_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "internalServerError":
+		result = INTERNALSERVERERROR_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "appDiscoveryFailed":
+		result = APPDISCOVERYFAILED_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "iconPathInvalid":
+		result = ICONPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	case "filePathInvalid":
+		result = FILEPATHINVALID_CLOUDPCCLOUDAPPACTIONFAILEDERRORCODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcCloudAppActionFailedErrorCode(values []CloudPcCloudAppActionFailedErrorCode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcCloudAppActionFailedErrorCode) isMultiValue() bool {
-    return false
+	return false
 }

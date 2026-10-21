@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PermissionType int
 
 const (
-    APPLICATION_PERMISSIONTYPE PermissionType = iota
-    DELEGATED_PERMISSIONTYPE
-    DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
+	APPLICATION_PERMISSIONTYPE PermissionType = iota
+	DELEGATED_PERMISSIONTYPE
+	DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
 )
 
 func (i PermissionType) String() string {
-    return []string{"application", "delegated", "delegatedUserConsentable"}[i]
+	return []string{"application", "delegated", "delegatedUserConsentable"}[i]
 }
+
 func ParsePermissionType(v string) (any, error) {
-    result := APPLICATION_PERMISSIONTYPE
-    switch v {
-        case "application":
-            result = APPLICATION_PERMISSIONTYPE
-        case "delegated":
-            result = DELEGATED_PERMISSIONTYPE
-        case "delegatedUserConsentable":
-            result = DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APPLICATION_PERMISSIONTYPE
+	switch v {
+	case "application":
+		result = APPLICATION_PERMISSIONTYPE
+	case "delegated":
+		result = DELEGATED_PERMISSIONTYPE
+	case "delegatedUserConsentable":
+		result = DELEGATEDUSERCONSENTABLE_PERMISSIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePermissionType(values []PermissionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PermissionType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The type of certificate the VPN server will present to the VPN client for authentication
 type VpnServerCertificateType int
 
 const (
-    // RSA
-    RSA_VPNSERVERCERTIFICATETYPE VpnServerCertificateType = iota
-    // ECDSA256
-    ECDSA256_VPNSERVERCERTIFICATETYPE
-    // ECDSA384
-    ECDSA384_VPNSERVERCERTIFICATETYPE
-    // ECDSA521
-    ECDSA521_VPNSERVERCERTIFICATETYPE
+	// RSA
+	RSA_VPNSERVERCERTIFICATETYPE VpnServerCertificateType = iota
+	// ECDSA256
+	ECDSA256_VPNSERVERCERTIFICATETYPE
+	// ECDSA384
+	ECDSA384_VPNSERVERCERTIFICATETYPE
+	// ECDSA521
+	ECDSA521_VPNSERVERCERTIFICATETYPE
 )
 
 func (i VpnServerCertificateType) String() string {
-    return []string{"rsa", "ecdsa256", "ecdsa384", "ecdsa521"}[i]
+	return []string{"rsa", "ecdsa256", "ecdsa384", "ecdsa521"}[i]
 }
+
 func ParseVpnServerCertificateType(v string) (any, error) {
-    result := RSA_VPNSERVERCERTIFICATETYPE
-    switch v {
-        case "rsa":
-            result = RSA_VPNSERVERCERTIFICATETYPE
-        case "ecdsa256":
-            result = ECDSA256_VPNSERVERCERTIFICATETYPE
-        case "ecdsa384":
-            result = ECDSA384_VPNSERVERCERTIFICATETYPE
-        case "ecdsa521":
-            result = ECDSA521_VPNSERVERCERTIFICATETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := RSA_VPNSERVERCERTIFICATETYPE
+	switch v {
+	case "rsa":
+		result = RSA_VPNSERVERCERTIFICATETYPE
+	case "ecdsa256":
+		result = ECDSA256_VPNSERVERCERTIFICATETYPE
+	case "ecdsa384":
+		result = ECDSA384_VPNSERVERCERTIFICATETYPE
+	case "ecdsa521":
+		result = ECDSA521_VPNSERVERCERTIFICATETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeVpnServerCertificateType(values []VpnServerCertificateType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i VpnServerCertificateType) isMultiValue() bool {
-    return false
+	return false
 }

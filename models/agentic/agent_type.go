@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package agentic
+
 type AgentType int
 
 const (
-    NOTAGENTIC_AGENTTYPE AgentType = iota
-    AGENTICAPP_AGENTTYPE
-    AGENTICAPPINSTANCE_AGENTTYPE
-    AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
-    AGENTIDUSER_AGENTTYPE
-    UNKNOWNFUTUREVALUE_AGENTTYPE
+	NOTAGENTIC_AGENTTYPE AgentType = iota
+	AGENTICAPP_AGENTTYPE
+	AGENTICAPPINSTANCE_AGENTTYPE
+	AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
+	AGENTIDUSER_AGENTTYPE
+	UNKNOWNFUTUREVALUE_AGENTTYPE
 )
 
 func (i AgentType) String() string {
-    return []string{"notAgentic", "agenticApp", "agenticAppInstance", "agentIdentityBlueprintPrincipal", "agentIDuser", "unknownFutureValue"}[i]
+	return []string{"notAgentic", "agenticApp", "agenticAppInstance", "agentIdentityBlueprintPrincipal", "agentIDuser", "unknownFutureValue"}[i]
 }
+
 func ParseAgentType(v string) (any, error) {
-    result := NOTAGENTIC_AGENTTYPE
-    switch v {
-        case "notAgentic":
-            result = NOTAGENTIC_AGENTTYPE
-        case "agenticApp":
-            result = AGENTICAPP_AGENTTYPE
-        case "agenticAppInstance":
-            result = AGENTICAPPINSTANCE_AGENTTYPE
-        case "agentIdentityBlueprintPrincipal":
-            result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
-        case "agentIDuser":
-            result = AGENTIDUSER_AGENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_AGENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTAGENTIC_AGENTTYPE
+	switch v {
+	case "notAgentic":
+		result = NOTAGENTIC_AGENTTYPE
+	case "agenticApp":
+		result = AGENTICAPP_AGENTTYPE
+	case "agenticAppInstance":
+		result = AGENTICAPPINSTANCE_AGENTTYPE
+	case "agentIdentityBlueprintPrincipal":
+		result = AGENTIDENTITYBLUEPRINTPRINCIPAL_AGENTTYPE
+	case "agentIDuser":
+		result = AGENTIDUSER_AGENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_AGENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAgentType(values []AgentType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AgentType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type RealTimeTranscript struct {
-    Entity
+	Entity
 }
+
 // NewRealTimeTranscript instantiates a new RealTimeTranscript and sets the default values.
-func NewRealTimeTranscript()(*RealTimeTranscript) {
-    m := &RealTimeTranscript{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewRealTimeTranscript() *RealTimeTranscript {
+	m := &RealTimeTranscript{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateRealTimeTranscriptFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRealTimeTranscriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRealTimeTranscript(), nil
+func CreateRealTimeTranscriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRealTimeTranscript(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RealTimeTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["payloads"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTranscriptPayloadFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TranscriptPayloadable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TranscriptPayloadable)
-                }
-            }
-            m.SetPayloads(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RealTimeTranscript) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["payloads"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTranscriptPayloadFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TranscriptPayloadable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TranscriptPayloadable)
+				}
+			}
+			m.SetPayloads(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetPayloads gets the payloads property value. The payloads property
 // returns a []TranscriptPayloadable when successful
-func (m *RealTimeTranscript) GetPayloads()([]TranscriptPayloadable) {
-    val, err := m.GetBackingStore().Get("payloads")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TranscriptPayloadable)
-    }
-    return nil
+func (m *RealTimeTranscript) GetPayloads() []TranscriptPayloadable {
+	val, err := m.GetBackingStore().Get("payloads")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TranscriptPayloadable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *RealTimeTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetPayloads() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPayloads()))
-        for i, v := range m.GetPayloads() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("payloads", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *RealTimeTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetPayloads() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPayloads()))
+		for i, v := range m.GetPayloads() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("payloads", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetPayloads sets the payloads property value. The payloads property
-func (m *RealTimeTranscript) SetPayloads(value []TranscriptPayloadable)() {
-    err := m.GetBackingStore().Set("payloads", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RealTimeTranscript) SetPayloads(value []TranscriptPayloadable) {
+	err := m.GetBackingStore().Set("payloads", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type RealTimeTranscriptable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetPayloads()([]TranscriptPayloadable)
-    SetPayloads(value []TranscriptPayloadable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetPayloads() []TranscriptPayloadable
+	SetPayloads(value []TranscriptPayloadable)
 }

@@ -2,59 +2,63 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package networkaccess
+
 type TlsCertificateStatus int
 
 const (
-    CSRGENERATED_TLSCERTIFICATESTATUS TlsCertificateStatus = iota
-    ENROLLING_TLSCERTIFICATESTATUS
-    ACTIVE_TLSCERTIFICATESTATUS
-    UNKNOWNFUTUREVALUE_TLSCERTIFICATESTATUS
-    EXPIRING_TLSCERTIFICATESTATUS
-    EXPIRED_TLSCERTIFICATESTATUS
-    ENABLED_TLSCERTIFICATESTATUS
-    DISABLED_TLSCERTIFICATESTATUS
-    CREATING_TLSCERTIFICATESTATUS
-    REVOKED_TLSCERTIFICATESTATUS
+	CSRGENERATED_TLSCERTIFICATESTATUS TlsCertificateStatus = iota
+	ENROLLING_TLSCERTIFICATESTATUS
+	ACTIVE_TLSCERTIFICATESTATUS
+	UNKNOWNFUTUREVALUE_TLSCERTIFICATESTATUS
+	EXPIRING_TLSCERTIFICATESTATUS
+	EXPIRED_TLSCERTIFICATESTATUS
+	ENABLED_TLSCERTIFICATESTATUS
+	DISABLED_TLSCERTIFICATESTATUS
+	CREATING_TLSCERTIFICATESTATUS
+	REVOKED_TLSCERTIFICATESTATUS
 )
 
 func (i TlsCertificateStatus) String() string {
-    return []string{"csrGenerated", "enrolling", "active", "unknownFutureValue", "expiring", "expired", "enabled", "disabled", "creating", "revoked"}[i]
+	return []string{"csrGenerated", "enrolling", "active", "unknownFutureValue", "expiring", "expired", "enabled", "disabled", "creating", "revoked"}[i]
 }
+
 func ParseTlsCertificateStatus(v string) (any, error) {
-    result := CSRGENERATED_TLSCERTIFICATESTATUS
-    switch v {
-        case "csrGenerated":
-            result = CSRGENERATED_TLSCERTIFICATESTATUS
-        case "enrolling":
-            result = ENROLLING_TLSCERTIFICATESTATUS
-        case "active":
-            result = ACTIVE_TLSCERTIFICATESTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_TLSCERTIFICATESTATUS
-        case "expiring":
-            result = EXPIRING_TLSCERTIFICATESTATUS
-        case "expired":
-            result = EXPIRED_TLSCERTIFICATESTATUS
-        case "enabled":
-            result = ENABLED_TLSCERTIFICATESTATUS
-        case "disabled":
-            result = DISABLED_TLSCERTIFICATESTATUS
-        case "creating":
-            result = CREATING_TLSCERTIFICATESTATUS
-        case "revoked":
-            result = REVOKED_TLSCERTIFICATESTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CSRGENERATED_TLSCERTIFICATESTATUS
+	switch v {
+	case "csrGenerated":
+		result = CSRGENERATED_TLSCERTIFICATESTATUS
+	case "enrolling":
+		result = ENROLLING_TLSCERTIFICATESTATUS
+	case "active":
+		result = ACTIVE_TLSCERTIFICATESTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_TLSCERTIFICATESTATUS
+	case "expiring":
+		result = EXPIRING_TLSCERTIFICATESTATUS
+	case "expired":
+		result = EXPIRED_TLSCERTIFICATESTATUS
+	case "enabled":
+		result = ENABLED_TLSCERTIFICATESTATUS
+	case "disabled":
+		result = DISABLED_TLSCERTIFICATESTATUS
+	case "creating":
+		result = CREATING_TLSCERTIFICATESTATUS
+	case "revoked":
+		result = REVOKED_TLSCERTIFICATESTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeTlsCertificateStatus(values []TlsCertificateStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i TlsCertificateStatus) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,445 +4,468 @@
 package identitygovernance
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type LifecycleWorkflowsContainer struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewLifecycleWorkflowsContainer instantiates a new LifecycleWorkflowsContainer and sets the default values.
-func NewLifecycleWorkflowsContainer()(*LifecycleWorkflowsContainer) {
-    m := &LifecycleWorkflowsContainer{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewLifecycleWorkflowsContainer() *LifecycleWorkflowsContainer {
+	m := &LifecycleWorkflowsContainer{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateLifecycleWorkflowsContainerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateLifecycleWorkflowsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewLifecycleWorkflowsContainer(), nil
+func CreateLifecycleWorkflowsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewLifecycleWorkflowsContainer(), nil
 }
+
 // GetCustomTaskExtensions gets the customTaskExtensions property value. The customTaskExtension instance.
 // returns a []CustomTaskExtensionable when successful
-func (m *LifecycleWorkflowsContainer) GetCustomTaskExtensions()([]CustomTaskExtensionable) {
-    val, err := m.GetBackingStore().Get("customTaskExtensions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]CustomTaskExtensionable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetCustomTaskExtensions() []CustomTaskExtensionable {
+	val, err := m.GetBackingStore().Get("customTaskExtensions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CustomTaskExtensionable)
+	}
+	return nil
 }
+
 // GetDeletedItems gets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
 // returns a DeletedItemContainerable when successful
-func (m *LifecycleWorkflowsContainer) GetDeletedItems()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable) {
-    val, err := m.GetBackingStore().Get("deletedItems")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetDeletedItems() ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable {
+	val, err := m.GetBackingStore().Get("deletedItems")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["customTaskExtensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCustomTaskExtensionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CustomTaskExtensionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(CustomTaskExtensionable)
-                }
-            }
-            m.SetCustomTaskExtensions(res)
-        }
-        return nil
-    }
-    res["deletedItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedItemContainerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeletedItems(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable))
-        }
-        return nil
-    }
-    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateInsightsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInsights(val.(Insightsable))
-        }
-        return nil
-    }
-    res["lifecyclePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]LifecyclePolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(LifecyclePolicyable)
-                }
-            }
-            m.SetLifecyclePolicies(res)
-        }
-        return nil
-    }
-    res["lifecyclePolicyPriorityConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyPriorityConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]LifecyclePolicyPriorityConfigurationable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(LifecyclePolicyPriorityConfigurationable)
-                }
-            }
-            m.SetLifecyclePolicyPriorityConfigurations(res)
-        }
-        return nil
-    }
-    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateLifecycleManagementSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettings(val.(LifecycleManagementSettingsable))
-        }
-        return nil
-    }
-    res["taskDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTaskDefinitionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TaskDefinitionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TaskDefinitionable)
-                }
-            }
-            m.SetTaskDefinitions(res)
-        }
-        return nil
-    }
-    res["workflows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWorkflowFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Workflowable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(Workflowable)
-                }
-            }
-            m.SetWorkflows(res)
-        }
-        return nil
-    }
-    res["workflowTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWorkflowTemplateFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WorkflowTemplateable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(WorkflowTemplateable)
-                }
-            }
-            m.SetWorkflowTemplates(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *LifecycleWorkflowsContainer) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["customTaskExtensions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCustomTaskExtensionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CustomTaskExtensionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CustomTaskExtensionable)
+				}
+			}
+			m.SetCustomTaskExtensions(res)
+		}
+		return nil
+	}
+	res["deletedItems"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeletedItemContainerFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedItems(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable))
+		}
+		return nil
+	}
+	res["insights"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateInsightsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetInsights(val.(Insightsable))
+		}
+		return nil
+	}
+	res["lifecyclePolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]LifecyclePolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(LifecyclePolicyable)
+				}
+			}
+			m.SetLifecyclePolicies(res)
+		}
+		return nil
+	}
+	res["lifecyclePolicyPriorityConfigurations"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateLifecyclePolicyPriorityConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]LifecyclePolicyPriorityConfigurationable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(LifecyclePolicyPriorityConfigurationable)
+				}
+			}
+			m.SetLifecyclePolicyPriorityConfigurations(res)
+		}
+		return nil
+	}
+	res["settings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateLifecycleManagementSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSettings(val.(LifecycleManagementSettingsable))
+		}
+		return nil
+	}
+	res["taskDefinitions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTaskDefinitionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TaskDefinitionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TaskDefinitionable)
+				}
+			}
+			m.SetTaskDefinitions(res)
+		}
+		return nil
+	}
+	res["workflows"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWorkflowFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]Workflowable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(Workflowable)
+				}
+			}
+			m.SetWorkflows(res)
+		}
+		return nil
+	}
+	res["workflowTemplates"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWorkflowTemplateFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]WorkflowTemplateable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(WorkflowTemplateable)
+				}
+			}
+			m.SetWorkflowTemplates(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetInsights gets the insights property value. The insight container holding workflow insight summaries for a tenant.
 // returns a Insightsable when successful
-func (m *LifecycleWorkflowsContainer) GetInsights()(Insightsable) {
-    val, err := m.GetBackingStore().Get("insights")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Insightsable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetInsights() Insightsable {
+	val, err := m.GetBackingStore().Get("insights")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(Insightsable)
+	}
+	return nil
 }
-// GetLifecyclePolicies gets the lifecyclePolicies property value. The lifecyclePolicies property
+
+// GetLifecyclePolicies gets the lifecyclePolicies property value. The lifecycle policies in this tenant.
 // returns a []LifecyclePolicyable when successful
-func (m *LifecycleWorkflowsContainer) GetLifecyclePolicies()([]LifecyclePolicyable) {
-    val, err := m.GetBackingStore().Get("lifecyclePolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]LifecyclePolicyable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetLifecyclePolicies() []LifecyclePolicyable {
+	val, err := m.GetBackingStore().Get("lifecyclePolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]LifecyclePolicyable)
+	}
+	return nil
 }
-// GetLifecyclePolicyPriorityConfigurations gets the lifecyclePolicyPriorityConfigurations property value. The lifecyclePolicyPriorityConfigurations property
+
+// GetLifecyclePolicyPriorityConfigurations gets the lifecyclePolicyPriorityConfigurations property value. The priority ordering of lifecycle policies per subject type.
 // returns a []LifecyclePolicyPriorityConfigurationable when successful
-func (m *LifecycleWorkflowsContainer) GetLifecyclePolicyPriorityConfigurations()([]LifecyclePolicyPriorityConfigurationable) {
-    val, err := m.GetBackingStore().Get("lifecyclePolicyPriorityConfigurations")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]LifecyclePolicyPriorityConfigurationable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetLifecyclePolicyPriorityConfigurations() []LifecyclePolicyPriorityConfigurationable {
+	val, err := m.GetBackingStore().Get("lifecyclePolicyPriorityConfigurations")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]LifecyclePolicyPriorityConfigurationable)
+	}
+	return nil
 }
+
 // GetSettings gets the settings property value. The settings property
 // returns a LifecycleManagementSettingsable when successful
-func (m *LifecycleWorkflowsContainer) GetSettings()(LifecycleManagementSettingsable) {
-    val, err := m.GetBackingStore().Get("settings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(LifecycleManagementSettingsable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetSettings() LifecycleManagementSettingsable {
+	val, err := m.GetBackingStore().Get("settings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(LifecycleManagementSettingsable)
+	}
+	return nil
 }
+
 // GetTaskDefinitions gets the taskDefinitions property value. The definition of tasks within the lifecycle workflows instance.
 // returns a []TaskDefinitionable when successful
-func (m *LifecycleWorkflowsContainer) GetTaskDefinitions()([]TaskDefinitionable) {
-    val, err := m.GetBackingStore().Get("taskDefinitions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TaskDefinitionable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetTaskDefinitions() []TaskDefinitionable {
+	val, err := m.GetBackingStore().Get("taskDefinitions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TaskDefinitionable)
+	}
+	return nil
 }
+
 // GetWorkflows gets the workflows property value. The workflows in the lifecycle workflows instance.
 // returns a []Workflowable when successful
-func (m *LifecycleWorkflowsContainer) GetWorkflows()([]Workflowable) {
-    val, err := m.GetBackingStore().Get("workflows")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]Workflowable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetWorkflows() []Workflowable {
+	val, err := m.GetBackingStore().Get("workflows")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]Workflowable)
+	}
+	return nil
 }
+
 // GetWorkflowTemplates gets the workflowTemplates property value. The workflow templates in the lifecycle workflow instance.
 // returns a []WorkflowTemplateable when successful
-func (m *LifecycleWorkflowsContainer) GetWorkflowTemplates()([]WorkflowTemplateable) {
-    val, err := m.GetBackingStore().Get("workflowTemplates")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WorkflowTemplateable)
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) GetWorkflowTemplates() []WorkflowTemplateable {
+	val, err := m.GetBackingStore().Get("workflowTemplates")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]WorkflowTemplateable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetCustomTaskExtensions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomTaskExtensions()))
-        for i, v := range m.GetCustomTaskExtensions() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("customTaskExtensions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("insights", m.GetInsights())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetLifecyclePolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicies()))
-        for i, v := range m.GetLifecyclePolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("lifecyclePolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetLifecyclePolicyPriorityConfigurations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicyPriorityConfigurations()))
-        for i, v := range m.GetLifecyclePolicyPriorityConfigurations() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("lifecyclePolicyPriorityConfigurations", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("settings", m.GetSettings())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTaskDefinitions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskDefinitions()))
-        for i, v := range m.GetTaskDefinitions() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("taskDefinitions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetWorkflows() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflows()))
-        for i, v := range m.GetWorkflows() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("workflows", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetWorkflowTemplates() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflowTemplates()))
-        for i, v := range m.GetWorkflowTemplates() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("workflowTemplates", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetCustomTaskExtensions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCustomTaskExtensions()))
+		for i, v := range m.GetCustomTaskExtensions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("customTaskExtensions", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("insights", m.GetInsights())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetLifecyclePolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicies()))
+		for i, v := range m.GetLifecyclePolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("lifecyclePolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetLifecyclePolicyPriorityConfigurations() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLifecyclePolicyPriorityConfigurations()))
+		for i, v := range m.GetLifecyclePolicyPriorityConfigurations() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("lifecyclePolicyPriorityConfigurations", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("settings", m.GetSettings())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTaskDefinitions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTaskDefinitions()))
+		for i, v := range m.GetTaskDefinitions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("taskDefinitions", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetWorkflows() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflows()))
+		for i, v := range m.GetWorkflows() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("workflows", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetWorkflowTemplates() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWorkflowTemplates()))
+		for i, v := range m.GetWorkflowTemplates() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("workflowTemplates", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetCustomTaskExtensions sets the customTaskExtensions property value. The customTaskExtension instance.
-func (m *LifecycleWorkflowsContainer) SetCustomTaskExtensions(value []CustomTaskExtensionable)() {
-    err := m.GetBackingStore().Set("customTaskExtensions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetCustomTaskExtensions(value []CustomTaskExtensionable) {
+	err := m.GetBackingStore().Set("customTaskExtensions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeletedItems sets the deletedItems property value. Deleted workflows in your lifecycle workflows instance.
-func (m *LifecycleWorkflowsContainer) SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)() {
-    err := m.GetBackingStore().Set("deletedItems", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable) {
+	err := m.GetBackingStore().Set("deletedItems", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetInsights sets the insights property value. The insight container holding workflow insight summaries for a tenant.
-func (m *LifecycleWorkflowsContainer) SetInsights(value Insightsable)() {
-    err := m.GetBackingStore().Set("insights", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetInsights(value Insightsable) {
+	err := m.GetBackingStore().Set("insights", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetLifecyclePolicies sets the lifecyclePolicies property value. The lifecyclePolicies property
-func (m *LifecycleWorkflowsContainer) SetLifecyclePolicies(value []LifecyclePolicyable)() {
-    err := m.GetBackingStore().Set("lifecyclePolicies", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetLifecyclePolicies sets the lifecyclePolicies property value. The lifecycle policies in this tenant.
+func (m *LifecycleWorkflowsContainer) SetLifecyclePolicies(value []LifecyclePolicyable) {
+	err := m.GetBackingStore().Set("lifecyclePolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetLifecyclePolicyPriorityConfigurations sets the lifecyclePolicyPriorityConfigurations property value. The lifecyclePolicyPriorityConfigurations property
-func (m *LifecycleWorkflowsContainer) SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable)() {
-    err := m.GetBackingStore().Set("lifecyclePolicyPriorityConfigurations", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetLifecyclePolicyPriorityConfigurations sets the lifecyclePolicyPriorityConfigurations property value. The priority ordering of lifecycle policies per subject type.
+func (m *LifecycleWorkflowsContainer) SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable) {
+	err := m.GetBackingStore().Set("lifecyclePolicyPriorityConfigurations", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSettings sets the settings property value. The settings property
-func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable)() {
-    err := m.GetBackingStore().Set("settings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable) {
+	err := m.GetBackingStore().Set("settings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTaskDefinitions sets the taskDefinitions property value. The definition of tasks within the lifecycle workflows instance.
-func (m *LifecycleWorkflowsContainer) SetTaskDefinitions(value []TaskDefinitionable)() {
-    err := m.GetBackingStore().Set("taskDefinitions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetTaskDefinitions(value []TaskDefinitionable) {
+	err := m.GetBackingStore().Set("taskDefinitions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWorkflows sets the workflows property value. The workflows in the lifecycle workflows instance.
-func (m *LifecycleWorkflowsContainer) SetWorkflows(value []Workflowable)() {
-    err := m.GetBackingStore().Set("workflows", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetWorkflows(value []Workflowable) {
+	err := m.GetBackingStore().Set("workflows", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWorkflowTemplates sets the workflowTemplates property value. The workflow templates in the lifecycle workflow instance.
-func (m *LifecycleWorkflowsContainer) SetWorkflowTemplates(value []WorkflowTemplateable)() {
-    err := m.GetBackingStore().Set("workflowTemplates", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *LifecycleWorkflowsContainer) SetWorkflowTemplates(value []WorkflowTemplateable) {
+	err := m.GetBackingStore().Set("workflowTemplates", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type LifecycleWorkflowsContainerable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCustomTaskExtensions()([]CustomTaskExtensionable)
-    GetDeletedItems()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
-    GetInsights()(Insightsable)
-    GetLifecyclePolicies()([]LifecyclePolicyable)
-    GetLifecyclePolicyPriorityConfigurations()([]LifecyclePolicyPriorityConfigurationable)
-    GetSettings()(LifecycleManagementSettingsable)
-    GetTaskDefinitions()([]TaskDefinitionable)
-    GetWorkflows()([]Workflowable)
-    GetWorkflowTemplates()([]WorkflowTemplateable)
-    SetCustomTaskExtensions(value []CustomTaskExtensionable)()
-    SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)()
-    SetInsights(value Insightsable)()
-    SetLifecyclePolicies(value []LifecyclePolicyable)()
-    SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable)()
-    SetSettings(value LifecycleManagementSettingsable)()
-    SetTaskDefinitions(value []TaskDefinitionable)()
-    SetWorkflows(value []Workflowable)()
-    SetWorkflowTemplates(value []WorkflowTemplateable)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCustomTaskExtensions() []CustomTaskExtensionable
+	GetDeletedItems() ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable
+	GetInsights() Insightsable
+	GetLifecyclePolicies() []LifecyclePolicyable
+	GetLifecyclePolicyPriorityConfigurations() []LifecyclePolicyPriorityConfigurationable
+	GetSettings() LifecycleManagementSettingsable
+	GetTaskDefinitions() []TaskDefinitionable
+	GetWorkflows() []Workflowable
+	GetWorkflowTemplates() []WorkflowTemplateable
+	SetCustomTaskExtensions(value []CustomTaskExtensionable)
+	SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
+	SetInsights(value Insightsable)
+	SetLifecyclePolicies(value []LifecyclePolicyable)
+	SetLifecyclePolicyPriorityConfigurations(value []LifecyclePolicyPriorityConfigurationable)
+	SetSettings(value LifecycleManagementSettingsable)
+	SetTaskDefinitions(value []TaskDefinitionable)
+	SetWorkflows(value []Workflowable)
+	SetWorkflowTemplates(value []WorkflowTemplateable)
 }

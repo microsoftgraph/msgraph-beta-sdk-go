@@ -4,76 +4,83 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type CopilotPeopleAdminSetting struct {
-    Entity
+	Entity
 }
+
 // NewCopilotPeopleAdminSetting instantiates a new CopilotPeopleAdminSetting and sets the default values.
-func NewCopilotPeopleAdminSetting()(*CopilotPeopleAdminSetting) {
-    m := &CopilotPeopleAdminSetting{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewCopilotPeopleAdminSetting() *CopilotPeopleAdminSetting {
+	m := &CopilotPeopleAdminSetting{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateCopilotPeopleAdminSettingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCopilotPeopleAdminSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCopilotPeopleAdminSetting(), nil
+func CreateCopilotPeopleAdminSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCopilotPeopleAdminSetting(), nil
 }
+
 // GetEnhancedPersonalization gets the enhancedPersonalization property value. The enhancedPersonalization property
 // returns a EnhancedPersonalizationSettingable when successful
-func (m *CopilotPeopleAdminSetting) GetEnhancedPersonalization()(EnhancedPersonalizationSettingable) {
-    val, err := m.GetBackingStore().Get("enhancedPersonalization")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(EnhancedPersonalizationSettingable)
-    }
-    return nil
+func (m *CopilotPeopleAdminSetting) GetEnhancedPersonalization() EnhancedPersonalizationSettingable {
+	val, err := m.GetBackingStore().Get("enhancedPersonalization")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(EnhancedPersonalizationSettingable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CopilotPeopleAdminSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["enhancedPersonalization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEnhancedPersonalizationSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEnhancedPersonalization(val.(EnhancedPersonalizationSettingable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CopilotPeopleAdminSetting) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["enhancedPersonalization"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateEnhancedPersonalizationSettingFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEnhancedPersonalization(val.(EnhancedPersonalizationSettingable))
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *CopilotPeopleAdminSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("enhancedPersonalization", m.GetEnhancedPersonalization())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *CopilotPeopleAdminSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("enhancedPersonalization", m.GetEnhancedPersonalization())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetEnhancedPersonalization sets the enhancedPersonalization property value. The enhancedPersonalization property
-func (m *CopilotPeopleAdminSetting) SetEnhancedPersonalization(value EnhancedPersonalizationSettingable)() {
-    err := m.GetBackingStore().Set("enhancedPersonalization", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CopilotPeopleAdminSetting) SetEnhancedPersonalization(value EnhancedPersonalizationSettingable) {
+	err := m.GetBackingStore().Set("enhancedPersonalization", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type CopilotPeopleAdminSettingable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEnhancedPersonalization()(EnhancedPersonalizationSettingable)
-    SetEnhancedPersonalization(value EnhancedPersonalizationSettingable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetEnhancedPersonalization() EnhancedPersonalizationSettingable
+	SetEnhancedPersonalization(value EnhancedPersonalizationSettingable)
 }

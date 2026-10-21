@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The ODJ request states.
 type DeviceManagementDomainJoinConnectorState int
 
 const (
-    // Connector is actively pinging Intune.
-    ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE DeviceManagementDomainJoinConnectorState = iota
-    // There is no heart-beat from connector from last one hour.
-    ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
-    // There is no heart-beat from connector from last 5 days.
-    INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	// Connector is actively pinging Intune.
+	ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE DeviceManagementDomainJoinConnectorState = iota
+	// There is no heart-beat from connector from last one hour.
+	ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	// There is no heart-beat from connector from last 5 days.
+	INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
 )
 
 func (i DeviceManagementDomainJoinConnectorState) String() string {
-    return []string{"active", "error", "inactive"}[i]
+	return []string{"active", "error", "inactive"}[i]
 }
+
 func ParseDeviceManagementDomainJoinConnectorState(v string) (any, error) {
-    result := ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
-    switch v {
-        case "active":
-            result = ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
-        case "error":
-            result = ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
-        case "inactive":
-            result = INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	switch v {
+	case "active":
+		result = ACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	case "error":
+		result = ERROR_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	case "inactive":
+		result = INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceManagementDomainJoinConnectorState(values []DeviceManagementDomainJoinConnectorState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceManagementDomainJoinConnectorState) isMultiValue() bool {
-    return false
+	return false
 }

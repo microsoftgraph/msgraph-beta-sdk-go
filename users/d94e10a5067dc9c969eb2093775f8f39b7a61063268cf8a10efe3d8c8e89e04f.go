@@ -4,71 +4,77 @@
 package users
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder provides operations to call the batchApplyCustomDataProvidedResourceDecisions method.
 type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal instantiates a new ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder and sets the default values.
-func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
-    m := &ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/batchApplyCustomDataProvidedResourceDecisions", pathParameters),
-    }
-    return m
+func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder {
+	m := &ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/batchApplyCustomDataProvidedResourceDecisions", pathParameters),
+	}
+	return m
 }
+
 // NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder instantiates a new ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder and sets the default values.
-func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(urlParams, requestAdapter)
+func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+
+// Post enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-batchapplycustomdataprovidedresourcedecisions?view=graph-rest-beta
-func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) Post(ctx context.Context, body ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) Post(ctx context.Context, body ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration) error {
+	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
-// ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state.
+
+// ToPostRequestInformation enables reviewers to set the applyResult and applyDescription on all accessReviewInstanceDecisionItem objects in a specific accessReviewInstance in batches by using customDataProvidedResourceId. NOTE: The access review instance must be in an Applying state. This action is part of the unified access reviews surface and is available only through the /identityGovernance/accessReviews/unified route. For more information, see unifiedRoot.
 // returns a *RequestInformation when successful
-func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    return requestInfo, nil
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder when successful
-func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) {
-    return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder) WithUrl(rawUrl string) *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder {
+	return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceBatchApplyCustomDataProvidedResourceDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

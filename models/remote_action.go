@@ -2,202 +2,206 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Remote actions Intune supports.
 type RemoteAction int
 
 const (
-    // Indicate user initiates an unknown action.
-    UNKNOWN_REMOTEACTION RemoteAction = iota
-    // Indicate user initiates an action to factory reset a device. 
-    FACTORYRESET_REMOTEACTION
-    // Indicate user initiates an action to remove company data from a device. 
-    REMOVECOMPANYDATA_REMOTEACTION
-    // Indicate user initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device. 
-    RESETPASSCODE_REMOTEACTION
-    // Indicate user initiates an action to remote lock a device.
-    REMOTELOCK_REMOTEACTION
-    // Indicate user initiates an action to enable lost mode on a supervised iOS device.
-    ENABLELOSTMODE_REMOTEACTION
-    // Indicate user initiates an action to disable lost mode on a supervised iOS device.
-    DISABLELOSTMODE_REMOTEACTION
-    // Indicate user initiates an action to locate a supervised iOS device.
-    LOCATEDEVICE_REMOTEACTION
-    // Indicate user initiates an action to reboot the device.
-    REBOOTNOW_REMOTEACTION
-    // Indicate user initiates an action to reset the pin for passport for work on windows phone device.
-    RECOVERPASSCODE_REMOTEACTION
-    // Indicate user initiates an action to clean up windows device.
-    CLEANWINDOWSDEVICE_REMOTEACTION
-    // Indicate user initiates an action to log out current user on shared apple device.
-    LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
-    // Indicate user initiates an action to run quick scan on device.
-    QUICKSCAN_REMOTEACTION
-    // Indicate user initiates an action to run full scan on device.
-    FULLSCAN_REMOTEACTION
-    // Indicate user initiates an action to update malware signatures on device.
-    WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
-    // Indicate user initiates an action remote wipe device with keeping enrollment data.
-    FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
-    // Indicate user initiates an action to update account on device.
-    UPDATEDEVICEACCOUNT_REMOTEACTION
-    // Indicate user initiates an action to automatic redeploy the device
-    AUTOMATICREDEPLOYMENT_REMOTEACTION
-    // Indicate user initiates an action to shut down the device.
-    SHUTDOWN_REMOTEACTION
-    // Indicate user initiates an action to Rotate BitLockerKeys on the device.
-    ROTATEBITLOCKERKEYS_REMOTEACTION
-    // Indicate user initiates an action to Rotate FileVaultKey on mac.
-    ROTATEFILEVAULTKEY_REMOTEACTION
-    // Indicate user initiates an action to Get FileVaultKey on mac.
-    GETFILEVAULTKEY_REMOTEACTION
-    // Indicate user initiates an action to Set Device Name on the device.
-    SETDEVICENAME_REMOTEACTION
-    // Indicate user initiates an action to Activate eSIM on the device.
-    ACTIVATEDEVICEESIM_REMOTEACTION
-    // Indicate user initiates an action to deprovision the device.
-    DEPROVISION_REMOTEACTION
-    // Indicate user initiates an action to disable the device.
-    DISABLE_REMOTEACTION
-    // Indicate user initiates an action to reenable the device.
-    REENABLE_REMOTEACTION
-    // Indicate user initiates an action to move the device to a new organizational unit.
-    MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
-    // Add device action of InitiateMobileDeviceManagementKeyRecovery
-    INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
-    // Add device action of InitiateOnDemandProactiveRemediation
-    INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
-    // Add device action of RotateLocalAdminPassword
-    ROTATELOCALADMINPASSWORD_REMOTEACTION
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_REMOTEACTION
-    // Add device action of Remote Help Launch
-    LAUNCHREMOTEHELP_REMOTEACTION
-    // Revoke all Apple Vpp licenses for a device
-    REVOKEAPPLEVPPLICENSES_REMOTEACTION
-    // Indicate IT Admin initiates an action to remove devices from Device Firmware Configuration Interface management
-    REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
-    // Indicates an action has been initiated to pause configuration refresh for the device.
-    PAUSECONFIGURATIONREFRESH_REMOTEACTION
-    // Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.
-    INITIATEDEVICEATTESTATION_REMOTEACTION
-    // Indicates remote device action to override assignments for a Device.
-    CHANGEASSIGNMENTS_REMOTEACTION
-    // Indicates remote device action to delete a device from Intune portal.
-    DELETE_REMOTEACTION
-    // Indicates remote device action to temporarily suspend the Managed Home Screen kiosk app.
-    SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
-    // Indicates remote device action to restore the Managed Home Screen kiosk app.
-    RESTOREMANAGEDHOMESCREEN_REMOTEACTION
-    // Indicates remote device action to trigger an AppleCare-authorized enhanced log collection session on a supervised Apple device.
-    TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
-    // Indicates remote device action to cancel an in-progress enhanced log collection session on a supervised Apple device.
-    CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
+	// Indicate user initiates an unknown action.
+	UNKNOWN_REMOTEACTION RemoteAction = iota
+	// Indicate user initiates an action to factory reset a device.
+	FACTORYRESET_REMOTEACTION
+	// Indicate user initiates an action to remove company data from a device.
+	REMOVECOMPANYDATA_REMOTEACTION
+	// Indicate user initiates an action to remove the passcode of an iOS device, or reset the passcode of Android / Windows device.
+	RESETPASSCODE_REMOTEACTION
+	// Indicate user initiates an action to remote lock a device.
+	REMOTELOCK_REMOTEACTION
+	// Indicate user initiates an action to enable lost mode on a supervised iOS device.
+	ENABLELOSTMODE_REMOTEACTION
+	// Indicate user initiates an action to disable lost mode on a supervised iOS device.
+	DISABLELOSTMODE_REMOTEACTION
+	// Indicate user initiates an action to locate a supervised iOS device.
+	LOCATEDEVICE_REMOTEACTION
+	// Indicate user initiates an action to reboot the device.
+	REBOOTNOW_REMOTEACTION
+	// Indicate user initiates an action to reset the pin for passport for work on windows phone device.
+	RECOVERPASSCODE_REMOTEACTION
+	// Indicate user initiates an action to clean up windows device.
+	CLEANWINDOWSDEVICE_REMOTEACTION
+	// Indicate user initiates an action to log out current user on shared apple device.
+	LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
+	// Indicate user initiates an action to run quick scan on device.
+	QUICKSCAN_REMOTEACTION
+	// Indicate user initiates an action to run full scan on device.
+	FULLSCAN_REMOTEACTION
+	// Indicate user initiates an action to update malware signatures on device.
+	WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
+	// Indicate user initiates an action remote wipe device with keeping enrollment data.
+	FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
+	// Indicate user initiates an action to update account on device.
+	UPDATEDEVICEACCOUNT_REMOTEACTION
+	// Indicate user initiates an action to automatic redeploy the device
+	AUTOMATICREDEPLOYMENT_REMOTEACTION
+	// Indicate user initiates an action to shut down the device.
+	SHUTDOWN_REMOTEACTION
+	// Indicate user initiates an action to Rotate BitLockerKeys on the device.
+	ROTATEBITLOCKERKEYS_REMOTEACTION
+	// Indicate user initiates an action to Rotate FileVaultKey on mac.
+	ROTATEFILEVAULTKEY_REMOTEACTION
+	// Indicate user initiates an action to Get FileVaultKey on mac.
+	GETFILEVAULTKEY_REMOTEACTION
+	// Indicate user initiates an action to Set Device Name on the device.
+	SETDEVICENAME_REMOTEACTION
+	// Indicate user initiates an action to Activate eSIM on the device.
+	ACTIVATEDEVICEESIM_REMOTEACTION
+	// Indicate user initiates an action to deprovision the device.
+	DEPROVISION_REMOTEACTION
+	// Indicate user initiates an action to disable the device.
+	DISABLE_REMOTEACTION
+	// Indicate user initiates an action to reenable the device.
+	REENABLE_REMOTEACTION
+	// Indicate user initiates an action to move the device to a new organizational unit.
+	MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
+	// Add device action of InitiateMobileDeviceManagementKeyRecovery
+	INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
+	// Add device action of InitiateOnDemandProactiveRemediation
+	INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
+	// Add device action of RotateLocalAdminPassword
+	ROTATELOCALADMINPASSWORD_REMOTEACTION
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_REMOTEACTION
+	// Add device action of Remote Help Launch
+	LAUNCHREMOTEHELP_REMOTEACTION
+	// Revoke all Apple Vpp licenses for a device
+	REVOKEAPPLEVPPLICENSES_REMOTEACTION
+	// Indicate IT Admin initiates an action to remove devices from Device Firmware Configuration Interface management
+	REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
+	// Indicates an action has been initiated to pause configuration refresh for the device.
+	PAUSECONFIGURATIONREFRESH_REMOTEACTION
+	// Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.
+	INITIATEDEVICEATTESTATION_REMOTEACTION
+	// Indicates remote device action to override assignments for a Device.
+	CHANGEASSIGNMENTS_REMOTEACTION
+	// Indicates remote device action to delete a device from Intune portal.
+	DELETE_REMOTEACTION
+	// Indicates remote device action to temporarily suspend the Managed Home Screen kiosk app.
+	SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
+	// Indicates remote device action to restore the Managed Home Screen kiosk app.
+	RESTOREMANAGEDHOMESCREEN_REMOTEACTION
+	// Indicates remote device action to trigger an AppleCare-authorized enhanced log collection session on a supervised Apple device.
+	TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
+	// Indicates remote device action to cancel an in-progress enhanced log collection session on a supervised Apple device.
+	CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete", "suspendManagedHomeScreen", "restoreManagedHomeScreen", "triggerEnhancedLogCollection", "cancelEnhancedLogCollection"}[i]
+	return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete", "suspendManagedHomeScreen", "restoreManagedHomeScreen", "triggerEnhancedLogCollection", "cancelEnhancedLogCollection"}[i]
 }
+
 func ParseRemoteAction(v string) (any, error) {
-    result := UNKNOWN_REMOTEACTION
-    switch v {
-        case "unknown":
-            result = UNKNOWN_REMOTEACTION
-        case "factoryReset":
-            result = FACTORYRESET_REMOTEACTION
-        case "removeCompanyData":
-            result = REMOVECOMPANYDATA_REMOTEACTION
-        case "resetPasscode":
-            result = RESETPASSCODE_REMOTEACTION
-        case "remoteLock":
-            result = REMOTELOCK_REMOTEACTION
-        case "enableLostMode":
-            result = ENABLELOSTMODE_REMOTEACTION
-        case "disableLostMode":
-            result = DISABLELOSTMODE_REMOTEACTION
-        case "locateDevice":
-            result = LOCATEDEVICE_REMOTEACTION
-        case "rebootNow":
-            result = REBOOTNOW_REMOTEACTION
-        case "recoverPasscode":
-            result = RECOVERPASSCODE_REMOTEACTION
-        case "cleanWindowsDevice":
-            result = CLEANWINDOWSDEVICE_REMOTEACTION
-        case "logoutSharedAppleDeviceActiveUser":
-            result = LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
-        case "quickScan":
-            result = QUICKSCAN_REMOTEACTION
-        case "fullScan":
-            result = FULLSCAN_REMOTEACTION
-        case "windowsDefenderUpdateSignatures":
-            result = WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
-        case "factoryResetKeepEnrollmentData":
-            result = FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
-        case "updateDeviceAccount":
-            result = UPDATEDEVICEACCOUNT_REMOTEACTION
-        case "automaticRedeployment":
-            result = AUTOMATICREDEPLOYMENT_REMOTEACTION
-        case "shutDown":
-            result = SHUTDOWN_REMOTEACTION
-        case "rotateBitLockerKeys":
-            result = ROTATEBITLOCKERKEYS_REMOTEACTION
-        case "rotateFileVaultKey":
-            result = ROTATEFILEVAULTKEY_REMOTEACTION
-        case "getFileVaultKey":
-            result = GETFILEVAULTKEY_REMOTEACTION
-        case "setDeviceName":
-            result = SETDEVICENAME_REMOTEACTION
-        case "activateDeviceEsim":
-            result = ACTIVATEDEVICEESIM_REMOTEACTION
-        case "deprovision":
-            result = DEPROVISION_REMOTEACTION
-        case "disable":
-            result = DISABLE_REMOTEACTION
-        case "reenable":
-            result = REENABLE_REMOTEACTION
-        case "moveDeviceToOrganizationalUnit":
-            result = MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
-        case "initiateMobileDeviceManagementKeyRecovery":
-            result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
-        case "initiateOnDemandProactiveRemediation":
-            result = INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
-        case "rotateLocalAdminPassword":
-            result = ROTATELOCALADMINPASSWORD_REMOTEACTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_REMOTEACTION
-        case "launchRemoteHelp":
-            result = LAUNCHREMOTEHELP_REMOTEACTION
-        case "revokeAppleVppLicenses":
-            result = REVOKEAPPLEVPPLICENSES_REMOTEACTION
-        case "removeDeviceFirmwareConfigurationInterfaceManagement":
-            result = REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
-        case "pauseConfigurationRefresh":
-            result = PAUSECONFIGURATIONREFRESH_REMOTEACTION
-        case "initiateDeviceAttestation":
-            result = INITIATEDEVICEATTESTATION_REMOTEACTION
-        case "changeAssignments":
-            result = CHANGEASSIGNMENTS_REMOTEACTION
-        case "delete":
-            result = DELETE_REMOTEACTION
-        case "suspendManagedHomeScreen":
-            result = SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
-        case "restoreManagedHomeScreen":
-            result = RESTOREMANAGEDHOMESCREEN_REMOTEACTION
-        case "triggerEnhancedLogCollection":
-            result = TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
-        case "cancelEnhancedLogCollection":
-            result = CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_REMOTEACTION
+	switch v {
+	case "unknown":
+		result = UNKNOWN_REMOTEACTION
+	case "factoryReset":
+		result = FACTORYRESET_REMOTEACTION
+	case "removeCompanyData":
+		result = REMOVECOMPANYDATA_REMOTEACTION
+	case "resetPasscode":
+		result = RESETPASSCODE_REMOTEACTION
+	case "remoteLock":
+		result = REMOTELOCK_REMOTEACTION
+	case "enableLostMode":
+		result = ENABLELOSTMODE_REMOTEACTION
+	case "disableLostMode":
+		result = DISABLELOSTMODE_REMOTEACTION
+	case "locateDevice":
+		result = LOCATEDEVICE_REMOTEACTION
+	case "rebootNow":
+		result = REBOOTNOW_REMOTEACTION
+	case "recoverPasscode":
+		result = RECOVERPASSCODE_REMOTEACTION
+	case "cleanWindowsDevice":
+		result = CLEANWINDOWSDEVICE_REMOTEACTION
+	case "logoutSharedAppleDeviceActiveUser":
+		result = LOGOUTSHAREDAPPLEDEVICEACTIVEUSER_REMOTEACTION
+	case "quickScan":
+		result = QUICKSCAN_REMOTEACTION
+	case "fullScan":
+		result = FULLSCAN_REMOTEACTION
+	case "windowsDefenderUpdateSignatures":
+		result = WINDOWSDEFENDERUPDATESIGNATURES_REMOTEACTION
+	case "factoryResetKeepEnrollmentData":
+		result = FACTORYRESETKEEPENROLLMENTDATA_REMOTEACTION
+	case "updateDeviceAccount":
+		result = UPDATEDEVICEACCOUNT_REMOTEACTION
+	case "automaticRedeployment":
+		result = AUTOMATICREDEPLOYMENT_REMOTEACTION
+	case "shutDown":
+		result = SHUTDOWN_REMOTEACTION
+	case "rotateBitLockerKeys":
+		result = ROTATEBITLOCKERKEYS_REMOTEACTION
+	case "rotateFileVaultKey":
+		result = ROTATEFILEVAULTKEY_REMOTEACTION
+	case "getFileVaultKey":
+		result = GETFILEVAULTKEY_REMOTEACTION
+	case "setDeviceName":
+		result = SETDEVICENAME_REMOTEACTION
+	case "activateDeviceEsim":
+		result = ACTIVATEDEVICEESIM_REMOTEACTION
+	case "deprovision":
+		result = DEPROVISION_REMOTEACTION
+	case "disable":
+		result = DISABLE_REMOTEACTION
+	case "reenable":
+		result = REENABLE_REMOTEACTION
+	case "moveDeviceToOrganizationalUnit":
+		result = MOVEDEVICETOORGANIZATIONALUNIT_REMOTEACTION
+	case "initiateMobileDeviceManagementKeyRecovery":
+		result = INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_REMOTEACTION
+	case "initiateOnDemandProactiveRemediation":
+		result = INITIATEONDEMANDPROACTIVEREMEDIATION_REMOTEACTION
+	case "rotateLocalAdminPassword":
+		result = ROTATELOCALADMINPASSWORD_REMOTEACTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_REMOTEACTION
+	case "launchRemoteHelp":
+		result = LAUNCHREMOTEHELP_REMOTEACTION
+	case "revokeAppleVppLicenses":
+		result = REVOKEAPPLEVPPLICENSES_REMOTEACTION
+	case "removeDeviceFirmwareConfigurationInterfaceManagement":
+		result = REMOVEDEVICEFIRMWARECONFIGURATIONINTERFACEMANAGEMENT_REMOTEACTION
+	case "pauseConfigurationRefresh":
+		result = PAUSECONFIGURATIONREFRESH_REMOTEACTION
+	case "initiateDeviceAttestation":
+		result = INITIATEDEVICEATTESTATION_REMOTEACTION
+	case "changeAssignments":
+		result = CHANGEASSIGNMENTS_REMOTEACTION
+	case "delete":
+		result = DELETE_REMOTEACTION
+	case "suspendManagedHomeScreen":
+		result = SUSPENDMANAGEDHOMESCREEN_REMOTEACTION
+	case "restoreManagedHomeScreen":
+		result = RESTOREMANAGEDHOMESCREEN_REMOTEACTION
+	case "triggerEnhancedLogCollection":
+		result = TRIGGERENHANCEDLOGCOLLECTION_REMOTEACTION
+	case "cancelEnhancedLogCollection":
+		result = CANCELENHANCEDLOGCOLLECTION_REMOTEACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRemoteAction(values []RemoteAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RemoteAction) isMultiValue() bool {
-    return false
+	return false
 }

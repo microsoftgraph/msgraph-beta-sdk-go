@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+
 type SubmissionClientSource int
 
 const (
-    MICROSOFT_SUBMISSIONCLIENTSOURCE SubmissionClientSource = iota
-    OTHER_SUBMISSIONCLIENTSOURCE
-    UNKNOWNFUTUREVALUE_SUBMISSIONCLIENTSOURCE
+	MICROSOFT_SUBMISSIONCLIENTSOURCE SubmissionClientSource = iota
+	OTHER_SUBMISSIONCLIENTSOURCE
+	UNKNOWNFUTUREVALUE_SUBMISSIONCLIENTSOURCE
 )
 
 func (i SubmissionClientSource) String() string {
-    return []string{"microsoft", "other", "unknownFutureValue"}[i]
+	return []string{"microsoft", "other", "unknownFutureValue"}[i]
 }
+
 func ParseSubmissionClientSource(v string) (any, error) {
-    result := MICROSOFT_SUBMISSIONCLIENTSOURCE
-    switch v {
-        case "microsoft":
-            result = MICROSOFT_SUBMISSIONCLIENTSOURCE
-        case "other":
-            result = OTHER_SUBMISSIONCLIENTSOURCE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SUBMISSIONCLIENTSOURCE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MICROSOFT_SUBMISSIONCLIENTSOURCE
+	switch v {
+	case "microsoft":
+		result = MICROSOFT_SUBMISSIONCLIENTSOURCE
+	case "other":
+		result = OTHER_SUBMISSIONCLIENTSOURCE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SUBMISSIONCLIENTSOURCE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSubmissionClientSource(values []SubmissionClientSource) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SubmissionClientSource) isMultiValue() bool {
-    return false
+	return false
 }
