@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 type LocalSecurityOptionsSmartCardRemovalBehaviorType int
 
 const (
-    // No Action
-    NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE LocalSecurityOptionsSmartCardRemovalBehaviorType = iota
-    // Lock Workstation
-    LOCKWORKSTATION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-    // Force Logoff
-    FORCELOGOFF_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-    // Disconnect if a remote Remote Desktop Services session
-    DISCONNECTREMOTEDESKTOPSESSION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	// No Action
+	NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE LocalSecurityOptionsSmartCardRemovalBehaviorType = iota
+	// Lock Workstation
+	LOCKWORKSTATION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	// Force Logoff
+	FORCELOGOFF_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	// Disconnect if a remote Remote Desktop Services session
+	DISCONNECTREMOTEDESKTOPSESSION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
 )
 
 func (i LocalSecurityOptionsSmartCardRemovalBehaviorType) String() string {
-    return []string{"noAction", "lockWorkstation", "forceLogoff", "disconnectRemoteDesktopSession"}[i]
+	return []string{"noAction", "lockWorkstation", "forceLogoff", "disconnectRemoteDesktopSession"}[i]
 }
+
 func ParseLocalSecurityOptionsSmartCardRemovalBehaviorType(v string) (any, error) {
-    result := NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-    switch v {
-        case "noAction":
-            result = NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-        case "lockWorkstation":
-            result = LOCKWORKSTATION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-        case "forceLogoff":
-            result = FORCELOGOFF_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-        case "disconnectRemoteDesktopSession":
-            result = DISCONNECTREMOTEDESKTOPSESSION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	switch v {
+	case "noAction":
+		result = NOACTION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	case "lockWorkstation":
+		result = LOCKWORKSTATION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	case "forceLogoff":
+		result = FORCELOGOFF_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	case "disconnectRemoteDesktopSession":
+		result = DISCONNECTREMOTEDESKTOPSESSION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeLocalSecurityOptionsSmartCardRemovalBehaviorType(values []LocalSecurityOptionsSmartCardRemovalBehaviorType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i LocalSecurityOptionsSmartCardRemovalBehaviorType) isMultiValue() bool {
-    return false
+	return false
 }

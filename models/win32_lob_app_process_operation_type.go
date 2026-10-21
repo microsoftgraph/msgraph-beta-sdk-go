@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // A list of possible operations for rules used to make determinations about whether an application is in-use based on process state.
 type Win32LobAppProcessOperationType int
 
 const (
-    // Default. Not configured.
-    NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE Win32LobAppProcessOperationType = iota
-    // Indicates that the rule evaluates whether the specified process exists (is running) on the device.
-    EXISTS_WIN32LOBAPPPROCESSOPERATIONTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WIN32LOBAPPPROCESSOPERATIONTYPE
+	// Default. Not configured.
+	NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE Win32LobAppProcessOperationType = iota
+	// Indicates that the rule evaluates whether the specified process exists (is running) on the device.
+	EXISTS_WIN32LOBAPPPROCESSOPERATIONTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_WIN32LOBAPPPROCESSOPERATIONTYPE
 )
 
 func (i Win32LobAppProcessOperationType) String() string {
-    return []string{"notConfigured", "exists", "unknownFutureValue"}[i]
+	return []string{"notConfigured", "exists", "unknownFutureValue"}[i]
 }
+
 func ParseWin32LobAppProcessOperationType(v string) (any, error) {
-    result := NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE
-        case "exists":
-            result = EXISTS_WIN32LOBAPPPROCESSOPERATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WIN32LOBAPPPROCESSOPERATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_WIN32LOBAPPPROCESSOPERATIONTYPE
+	case "exists":
+		result = EXISTS_WIN32LOBAPPPROCESSOPERATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WIN32LOBAPPPROCESSOPERATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWin32LobAppProcessOperationType(values []Win32LobAppProcessOperationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i Win32LobAppProcessOperationType) isMultiValue() bool {
-    return false
+	return false
 }

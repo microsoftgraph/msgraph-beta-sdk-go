@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PolicyFileStatus int
 
 const (
-    MODIFIED_POLICYFILESTATUS PolicyFileStatus = iota
-    NOTMODIFIED_POLICYFILESTATUS
-    NOCONTENT_POLICYFILESTATUS
-    UNKNOWNFUTUREVALUE_POLICYFILESTATUS
+	MODIFIED_POLICYFILESTATUS PolicyFileStatus = iota
+	NOTMODIFIED_POLICYFILESTATUS
+	NOCONTENT_POLICYFILESTATUS
+	UNKNOWNFUTUREVALUE_POLICYFILESTATUS
 )
 
 func (i PolicyFileStatus) String() string {
-    return []string{"modified", "notModified", "noContent", "unknownFutureValue"}[i]
+	return []string{"modified", "notModified", "noContent", "unknownFutureValue"}[i]
 }
+
 func ParsePolicyFileStatus(v string) (any, error) {
-    result := MODIFIED_POLICYFILESTATUS
-    switch v {
-        case "modified":
-            result = MODIFIED_POLICYFILESTATUS
-        case "notModified":
-            result = NOTMODIFIED_POLICYFILESTATUS
-        case "noContent":
-            result = NOCONTENT_POLICYFILESTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_POLICYFILESTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MODIFIED_POLICYFILESTATUS
+	switch v {
+	case "modified":
+		result = MODIFIED_POLICYFILESTATUS
+	case "notModified":
+		result = NOTMODIFIED_POLICYFILESTATUS
+	case "noContent":
+		result = NOCONTENT_POLICYFILESTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_POLICYFILESTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePolicyFileStatus(values []PolicyFileStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PolicyFileStatus) isMultiValue() bool {
-    return false
+	return false
 }

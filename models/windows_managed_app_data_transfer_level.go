@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Data can be transferred from/to these classes of apps
 type WindowsManagedAppDataTransferLevel int
 
 const (
-    // All apps.
-    ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL WindowsManagedAppDataTransferLevel = iota
-    // No apps.
-    NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-    // Selected apps only. Allowed locations are specified by the child property.
-    SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	// All apps.
+	ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL WindowsManagedAppDataTransferLevel = iota
+	// No apps.
+	NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	// Selected apps only. Allowed locations are specified by the child property.
+	SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
 )
 
 func (i WindowsManagedAppDataTransferLevel) String() string {
-    return []string{"allApps", "none", "selectedApps", "unknownFutureValue"}[i]
+	return []string{"allApps", "none", "selectedApps", "unknownFutureValue"}[i]
 }
+
 func ParseWindowsManagedAppDataTransferLevel(v string) (any, error) {
-    result := ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-    switch v {
-        case "allApps":
-            result = ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-        case "none":
-            result = NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-        case "selectedApps":
-            result = SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	switch v {
+	case "allApps":
+		result = ALLAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	case "none":
+		result = NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	case "selectedApps":
+		result = SELECTEDAPPS_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsManagedAppDataTransferLevel(values []WindowsManagedAppDataTransferLevel) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsManagedAppDataTransferLevel) isMultiValue() bool {
-    return false
+	return false
 }

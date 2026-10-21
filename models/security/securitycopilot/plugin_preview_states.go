@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package securitycopilot
+
 type PluginPreviewStates int
 
 const (
-    GA_PLUGINPREVIEWSTATES PluginPreviewStates = iota
-    PUBLIC_PLUGINPREVIEWSTATES
-    PRIVATE_PLUGINPREVIEWSTATES
-    UNKNOWNFUTUREVALUE_PLUGINPREVIEWSTATES
+	GA_PLUGINPREVIEWSTATES PluginPreviewStates = iota
+	PUBLIC_PLUGINPREVIEWSTATES
+	PRIVATE_PLUGINPREVIEWSTATES
+	UNKNOWNFUTUREVALUE_PLUGINPREVIEWSTATES
 )
 
 func (i PluginPreviewStates) String() string {
-    return []string{"ga", "public", "private", "unknownFutureValue"}[i]
+	return []string{"ga", "public", "private", "unknownFutureValue"}[i]
 }
+
 func ParsePluginPreviewStates(v string) (any, error) {
-    result := GA_PLUGINPREVIEWSTATES
-    switch v {
-        case "ga":
-            result = GA_PLUGINPREVIEWSTATES
-        case "public":
-            result = PUBLIC_PLUGINPREVIEWSTATES
-        case "private":
-            result = PRIVATE_PLUGINPREVIEWSTATES
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLUGINPREVIEWSTATES
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GA_PLUGINPREVIEWSTATES
+	switch v {
+	case "ga":
+		result = GA_PLUGINPREVIEWSTATES
+	case "public":
+		result = PUBLIC_PLUGINPREVIEWSTATES
+	case "private":
+		result = PRIVATE_PLUGINPREVIEWSTATES
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLUGINPREVIEWSTATES
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePluginPreviewStates(values []PluginPreviewStates) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PluginPreviewStates) isMultiValue() bool {
-    return false
+	return false
 }

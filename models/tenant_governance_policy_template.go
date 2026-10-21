@@ -4,360 +4,381 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type TenantGovernancePolicyTemplate struct {
-    Entity
+	Entity
 }
+
 // NewTenantGovernancePolicyTemplate instantiates a new TenantGovernancePolicyTemplate and sets the default values.
-func NewTenantGovernancePolicyTemplate()(*TenantGovernancePolicyTemplate) {
-    m := &TenantGovernancePolicyTemplate{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewTenantGovernancePolicyTemplate() *TenantGovernancePolicyTemplate {
+	m := &TenantGovernancePolicyTemplate{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateTenantGovernancePolicyTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTenantGovernancePolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTenantGovernancePolicyTemplate(), nil
+func CreateTenantGovernancePolicyTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewTenantGovernancePolicyTemplate(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
-func (m *TenantGovernancePolicyTemplate) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
-// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
+
+// GetDelegatedAdministrationRoleAssignments gets the delegatedAdministrationRoleAssignments property value. A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
 // returns a []DelegatedAdministrationRoleAssignmentable when successful
-func (m *TenantGovernancePolicyTemplate) GetDelegatedAdministrationRoleAssignments()([]DelegatedAdministrationRoleAssignmentable) {
-    val, err := m.GetBackingStore().Get("delegatedAdministrationRoleAssignments")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DelegatedAdministrationRoleAssignmentable)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetDelegatedAdministrationRoleAssignments() []DelegatedAdministrationRoleAssignmentable {
+	val, err := m.GetBackingStore().Get("delegatedAdministrationRoleAssignments")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]DelegatedAdministrationRoleAssignmentable)
+	}
+	return nil
 }
-// GetDescription gets the description property value. The description property
+
+// GetDescription gets the description property value. A description of the policy template. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
-func (m *TenantGovernancePolicyTemplate) GetDescription()(*string) {
-    val, err := m.GetBackingStore().Get("description")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetDescription() *string {
+	val, err := m.GetBackingStore().Get("description")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+
+// GetDisplayName gets the displayName property value. The display name of the policy template. Supports $filter (eq, ne) and $orderBy.
 // returns a *string when successful
-func (m *TenantGovernancePolicyTemplate) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TenantGovernancePolicyTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["delegatedAdministrationRoleAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdministrationRoleAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DelegatedAdministrationRoleAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DelegatedAdministrationRoleAssignmentable)
-                }
-            }
-            m.SetDelegatedAdministrationRoleAssignments(res)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["governedTenantCanTerminate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGovernedTenantCanTerminate(val)
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["multiTenantApplicationsToProvision"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMultiTenantApplicationsToProvisionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MultiTenantApplicationsToProvisionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MultiTenantApplicationsToProvisionable)
-                }
-            }
-            m.SetMultiTenantApplicationsToProvision(res)
-        }
-        return nil
-    }
-    res["version"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVersion(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *TenantGovernancePolicyTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["delegatedAdministrationRoleAssignments"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateDelegatedAdministrationRoleAssignmentFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]DelegatedAdministrationRoleAssignmentable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(DelegatedAdministrationRoleAssignmentable)
+				}
+			}
+			m.SetDelegatedAdministrationRoleAssignments(res)
+		}
+		return nil
+	}
+	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDescription(val)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["governedTenantCanTerminate"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGovernedTenantCanTerminate(val)
+		}
+		return nil
+	}
+	res["lastModifiedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedDateTime(val)
+		}
+		return nil
+	}
+	res["multiTenantApplicationsToProvision"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMultiTenantApplicationsToProvisionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MultiTenantApplicationsToProvisionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MultiTenantApplicationsToProvisionable)
+				}
+			}
+			m.SetMultiTenantApplicationsToProvision(res)
+		}
+		return nil
+	}
+	res["version"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVersion(val)
+		}
+		return nil
+	}
+	return res
 }
-// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
+
+// GetGovernedTenantCanTerminate gets the governedTenantCanTerminate property value. Not implemented.
 // returns a *bool when successful
-func (m *TenantGovernancePolicyTemplate) GetGovernedTenantCanTerminate()(*bool) {
-    val, err := m.GetBackingStore().Get("governedTenantCanTerminate")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetGovernedTenantCanTerminate() *bool {
+	val, err := m.GetBackingStore().Get("governedTenantCanTerminate")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *Time when successful
-func (m *TenantGovernancePolicyTemplate) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
-// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
+
+// GetMultiTenantApplicationsToProvision gets the multiTenantApplicationsToProvision property value. A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
 // returns a []MultiTenantApplicationsToProvisionable when successful
-func (m *TenantGovernancePolicyTemplate) GetMultiTenantApplicationsToProvision()([]MultiTenantApplicationsToProvisionable) {
-    val, err := m.GetBackingStore().Get("multiTenantApplicationsToProvision")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MultiTenantApplicationsToProvisionable)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetMultiTenantApplicationsToProvision() []MultiTenantApplicationsToProvisionable {
+	val, err := m.GetBackingStore().Get("multiTenantApplicationsToProvision")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MultiTenantApplicationsToProvisionable)
+	}
+	return nil
 }
-// GetVersion gets the version property value. The version property
+
+// GetVersion gets the version property value. The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
 // returns a *string when successful
-func (m *TenantGovernancePolicyTemplate) GetVersion()(*string) {
-    val, err := m.GetBackingStore().Get("version")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) GetVersion() *string {
+	val, err := m.GetBackingStore().Get("version")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *TenantGovernancePolicyTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDelegatedAdministrationRoleAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedAdministrationRoleAssignments()))
-        for i, v := range m.GetDelegatedAdministrationRoleAssignments() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("delegatedAdministrationRoleAssignments", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("governedTenantCanTerminate", m.GetGovernedTenantCanTerminate())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMultiTenantApplicationsToProvision() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiTenantApplicationsToProvision()))
-        for i, v := range m.GetMultiTenantApplicationsToProvision() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("multiTenantApplicationsToProvision", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("version", m.GetVersion())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *TenantGovernancePolicyTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetDelegatedAdministrationRoleAssignments() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDelegatedAdministrationRoleAssignments()))
+		for i, v := range m.GetDelegatedAdministrationRoleAssignments() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("delegatedAdministrationRoleAssignments", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("description", m.GetDescription())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("governedTenantCanTerminate", m.GetGovernedTenantCanTerminate())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMultiTenantApplicationsToProvision() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMultiTenantApplicationsToProvision()))
+		for i, v := range m.GetMultiTenantApplicationsToProvision() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("multiTenantApplicationsToProvision", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("version", m.GetVersion())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
-func (m *TenantGovernancePolicyTemplate) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
+func (m *TenantGovernancePolicyTemplate) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. The delegatedAdministrationRoleAssignments property
-func (m *TenantGovernancePolicyTemplate) SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentable)() {
-    err := m.GetBackingStore().Set("delegatedAdministrationRoleAssignments", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetDelegatedAdministrationRoleAssignments sets the delegatedAdministrationRoleAssignments property value. A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.
+func (m *TenantGovernancePolicyTemplate) SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentable) {
+	err := m.GetBackingStore().Set("delegatedAdministrationRoleAssignments", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetDescription sets the description property value. The description property
-func (m *TenantGovernancePolicyTemplate) SetDescription(value *string)() {
-    err := m.GetBackingStore().Set("description", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetDescription sets the description property value. A description of the policy template. Supports $filter (eq, ne) and $orderBy.
+func (m *TenantGovernancePolicyTemplate) SetDescription(value *string) {
+	err := m.GetBackingStore().Set("description", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetDisplayName sets the displayName property value. The displayName property
-func (m *TenantGovernancePolicyTemplate) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetDisplayName sets the displayName property value. The display name of the policy template. Supports $filter (eq, ne) and $orderBy.
+func (m *TenantGovernancePolicyTemplate) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. The governedTenantCanTerminate property
-func (m *TenantGovernancePolicyTemplate) SetGovernedTenantCanTerminate(value *bool)() {
-    err := m.GetBackingStore().Set("governedTenantCanTerminate", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetGovernedTenantCanTerminate sets the governedTenantCanTerminate property value. Not implemented.
+func (m *TenantGovernancePolicyTemplate) SetGovernedTenantCanTerminate(value *bool) {
+	err := m.GetBackingStore().Set("governedTenantCanTerminate", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-func (m *TenantGovernancePolicyTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
+func (m *TenantGovernancePolicyTemplate) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. The multiTenantApplicationsToProvision property
-func (m *TenantGovernancePolicyTemplate) SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionable)() {
-    err := m.GetBackingStore().Set("multiTenantApplicationsToProvision", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetMultiTenantApplicationsToProvision sets the multiTenantApplicationsToProvision property value. A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.
+func (m *TenantGovernancePolicyTemplate) SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionable) {
+	err := m.GetBackingStore().Set("multiTenantApplicationsToProvision", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetVersion sets the version property value. The version property
-func (m *TenantGovernancePolicyTemplate) SetVersion(value *string)() {
-    err := m.GetBackingStore().Set("version", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetVersion sets the version property value. The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.
+func (m *TenantGovernancePolicyTemplate) SetVersion(value *string) {
+	err := m.GetBackingStore().Set("version", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type TenantGovernancePolicyTemplateable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDelegatedAdministrationRoleAssignments()([]DelegatedAdministrationRoleAssignmentable)
-    GetDescription()(*string)
-    GetDisplayName()(*string)
-    GetGovernedTenantCanTerminate()(*bool)
-    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetMultiTenantApplicationsToProvision()([]MultiTenantApplicationsToProvisionable)
-    GetVersion()(*string)
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentable)()
-    SetDescription(value *string)()
-    SetDisplayName(value *string)()
-    SetGovernedTenantCanTerminate(value *bool)()
-    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionable)()
-    SetVersion(value *string)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetDelegatedAdministrationRoleAssignments() []DelegatedAdministrationRoleAssignmentable
+	GetDescription() *string
+	GetDisplayName() *string
+	GetGovernedTenantCanTerminate() *bool
+	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetMultiTenantApplicationsToProvision() []MultiTenantApplicationsToProvisionable
+	GetVersion() *string
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetDelegatedAdministrationRoleAssignments(value []DelegatedAdministrationRoleAssignmentable)
+	SetDescription(value *string)
+	SetDisplayName(value *string)
+	SetGovernedTenantCanTerminate(value *bool)
+	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetMultiTenantApplicationsToProvision(value []MultiTenantApplicationsToProvisionable)
+	SetVersion(value *string)
 }

@@ -4,163 +4,174 @@
 package managedtenants
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type ManagementActionTenantDeploymentStatus struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewManagementActionTenantDeploymentStatus instantiates a new ManagementActionTenantDeploymentStatus and sets the default values.
-func NewManagementActionTenantDeploymentStatus()(*ManagementActionTenantDeploymentStatus) {
-    m := &ManagementActionTenantDeploymentStatus{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewManagementActionTenantDeploymentStatus() *ManagementActionTenantDeploymentStatus {
+	m := &ManagementActionTenantDeploymentStatus{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewManagementActionTenantDeploymentStatus(), nil
+func CreateManagementActionTenantDeploymentStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewManagementActionTenantDeploymentStatus(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["statuses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateManagementActionDeploymentStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ManagementActionDeploymentStatusable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ManagementActionDeploymentStatusable)
-                }
-            }
-            m.SetStatuses(res)
-        }
-        return nil
-    }
-    res["tenantGroupId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantGroupId(val)
-        }
-        return nil
-    }
-    res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantId(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *ManagementActionTenantDeploymentStatus) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["statuses"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateManagementActionDeploymentStatusFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ManagementActionDeploymentStatusable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ManagementActionDeploymentStatusable)
+				}
+			}
+			m.SetStatuses(res)
+		}
+		return nil
+	}
+	res["tenantGroupId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTenantGroupId(val)
+		}
+		return nil
+	}
+	res["tenantId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTenantId(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetStatuses gets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
 // returns a []ManagementActionDeploymentStatusable when successful
-func (m *ManagementActionTenantDeploymentStatus) GetStatuses()([]ManagementActionDeploymentStatusable) {
-    val, err := m.GetBackingStore().Get("statuses")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ManagementActionDeploymentStatusable)
-    }
-    return nil
+func (m *ManagementActionTenantDeploymentStatus) GetStatuses() []ManagementActionDeploymentStatusable {
+	val, err := m.GetBackingStore().Get("statuses")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ManagementActionDeploymentStatusable)
+	}
+	return nil
 }
+
 // GetTenantGroupId gets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
 // returns a *string when successful
-func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId()(*string) {
-    val, err := m.GetBackingStore().Get("tenantGroupId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *ManagementActionTenantDeploymentStatus) GetTenantGroupId() *string {
+	val, err := m.GetBackingStore().Get("tenantGroupId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetTenantId gets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
 // returns a *string when successful
-func (m *ManagementActionTenantDeploymentStatus) GetTenantId()(*string) {
-    val, err := m.GetBackingStore().Get("tenantId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *ManagementActionTenantDeploymentStatus) GetTenantId() *string {
+	val, err := m.GetBackingStore().Get("tenantId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetStatuses() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatuses()))
-        for i, v := range m.GetStatuses() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("statuses", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("tenantGroupId", m.GetTenantGroupId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("tenantId", m.GetTenantId())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *ManagementActionTenantDeploymentStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetStatuses() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatuses()))
+		for i, v := range m.GetStatuses() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("statuses", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("tenantGroupId", m.GetTenantGroupId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("tenantId", m.GetTenantId())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetStatuses sets the statuses property value. The collection of deployment status for each instance of a management action. Optional.
-func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable)() {
-    err := m.GetBackingStore().Set("statuses", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ManagementActionTenantDeploymentStatus) SetStatuses(value []ManagementActionDeploymentStatusable) {
+	err := m.GetBackingStore().Set("statuses", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTenantGroupId sets the tenantGroupId property value. The identifier for the tenant group that is associated with the management action. Required. Read-only.
-func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string)() {
-    err := m.GetBackingStore().Set("tenantGroupId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ManagementActionTenantDeploymentStatus) SetTenantGroupId(value *string) {
+	err := m.GetBackingStore().Set("tenantGroupId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTenantId sets the tenantId property value. The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.
-func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string)() {
-    err := m.GetBackingStore().Set("tenantId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ManagementActionTenantDeploymentStatus) SetTenantId(value *string) {
+	err := m.GetBackingStore().Set("tenantId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type ManagementActionTenantDeploymentStatusable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetStatuses()([]ManagementActionDeploymentStatusable)
-    GetTenantGroupId()(*string)
-    GetTenantId()(*string)
-    SetStatuses(value []ManagementActionDeploymentStatusable)()
-    SetTenantGroupId(value *string)()
-    SetTenantId(value *string)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetStatuses() []ManagementActionDeploymentStatusable
+	GetTenantGroupId() *string
+	GetTenantId() *string
+	SetStatuses(value []ManagementActionDeploymentStatusable)
+	SetTenantGroupId(value *string)
+	SetTenantId(value *string)
 }

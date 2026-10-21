@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcSupportedRegionStatus int
 
 const (
-    AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS CloudPcSupportedRegionStatus = iota
-    RESTRICTED_CLOUDPCSUPPORTEDREGIONSTATUS
-    UNAVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
-    UNKNOWNFUTUREVALUE_CLOUDPCSUPPORTEDREGIONSTATUS
+	AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS CloudPcSupportedRegionStatus = iota
+	RESTRICTED_CLOUDPCSUPPORTEDREGIONSTATUS
+	UNAVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
+	UNKNOWNFUTUREVALUE_CLOUDPCSUPPORTEDREGIONSTATUS
 )
 
 func (i CloudPcSupportedRegionStatus) String() string {
-    return []string{"available", "restricted", "unavailable", "unknownFutureValue"}[i]
+	return []string{"available", "restricted", "unavailable", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcSupportedRegionStatus(v string) (any, error) {
-    result := AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
-    switch v {
-        case "available":
-            result = AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
-        case "restricted":
-            result = RESTRICTED_CLOUDPCSUPPORTEDREGIONSTATUS
-        case "unavailable":
-            result = UNAVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCSUPPORTEDREGIONSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
+	switch v {
+	case "available":
+		result = AVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
+	case "restricted":
+		result = RESTRICTED_CLOUDPCSUPPORTEDREGIONSTATUS
+	case "unavailable":
+		result = UNAVAILABLE_CLOUDPCSUPPORTEDREGIONSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCSUPPORTEDREGIONSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcSupportedRegionStatus(values []CloudPcSupportedRegionStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcSupportedRegionStatus) isMultiValue() bool {
-    return false
+	return false
 }

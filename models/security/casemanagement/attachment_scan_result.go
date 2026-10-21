@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package casemanagement
+
 type AttachmentScanResult int
 
 const (
-    UNSCANNED_ATTACHMENTSCANRESULT AttachmentScanResult = iota
-    NOTHREATSFOUND_ATTACHMENTSCANRESULT
-    MALICIOUS_ATTACHMENTSCANRESULT
-    UNKNOWNFUTUREVALUE_ATTACHMENTSCANRESULT
+	UNSCANNED_ATTACHMENTSCANRESULT AttachmentScanResult = iota
+	NOTHREATSFOUND_ATTACHMENTSCANRESULT
+	MALICIOUS_ATTACHMENTSCANRESULT
+	UNKNOWNFUTUREVALUE_ATTACHMENTSCANRESULT
 )
 
 func (i AttachmentScanResult) String() string {
-    return []string{"unscanned", "noThreatsFound", "malicious", "unknownFutureValue"}[i]
+	return []string{"unscanned", "noThreatsFound", "malicious", "unknownFutureValue"}[i]
 }
+
 func ParseAttachmentScanResult(v string) (any, error) {
-    result := UNSCANNED_ATTACHMENTSCANRESULT
-    switch v {
-        case "unscanned":
-            result = UNSCANNED_ATTACHMENTSCANRESULT
-        case "noThreatsFound":
-            result = NOTHREATSFOUND_ATTACHMENTSCANRESULT
-        case "malicious":
-            result = MALICIOUS_ATTACHMENTSCANRESULT
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ATTACHMENTSCANRESULT
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNSCANNED_ATTACHMENTSCANRESULT
+	switch v {
+	case "unscanned":
+		result = UNSCANNED_ATTACHMENTSCANRESULT
+	case "noThreatsFound":
+		result = NOTHREATSFOUND_ATTACHMENTSCANRESULT
+	case "malicious":
+		result = MALICIOUS_ATTACHMENTSCANRESULT
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ATTACHMENTSCANRESULT
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAttachmentScanResult(values []AttachmentScanResult) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AttachmentScanResult) isMultiValue() bool {
-    return false
+	return false
 }

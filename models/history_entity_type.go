@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type HistoryEntityType int
 
 const (
-    TASK_HISTORYENTITYTYPE HistoryEntityType = iota
-    UNKNOWNFUTUREVALUE_HISTORYENTITYTYPE
+	TASK_HISTORYENTITYTYPE HistoryEntityType = iota
+	UNKNOWNFUTUREVALUE_HISTORYENTITYTYPE
 )
 
 func (i HistoryEntityType) String() string {
-    return []string{"task", "unknownFutureValue"}[i]
+	return []string{"task", "unknownFutureValue"}[i]
 }
+
 func ParseHistoryEntityType(v string) (any, error) {
-    result := TASK_HISTORYENTITYTYPE
-    switch v {
-        case "task":
-            result = TASK_HISTORYENTITYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_HISTORYENTITYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := TASK_HISTORYENTITYTYPE
+	switch v {
+	case "task":
+		result = TASK_HISTORYENTITYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_HISTORYENTITYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeHistoryEntityType(values []HistoryEntityType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i HistoryEntityType) isMultiValue() bool {
-    return false
+	return false
 }

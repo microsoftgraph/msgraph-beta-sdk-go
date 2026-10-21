@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package devicemanagement
+
 type NotificationChannelType int
 
 const (
-    PORTAL_NOTIFICATIONCHANNELTYPE NotificationChannelType = iota
-    EMAIL_NOTIFICATIONCHANNELTYPE
-    PHONECALL_NOTIFICATIONCHANNELTYPE
-    SMS_NOTIFICATIONCHANNELTYPE
-    UNKNOWNFUTUREVALUE_NOTIFICATIONCHANNELTYPE
+	PORTAL_NOTIFICATIONCHANNELTYPE NotificationChannelType = iota
+	EMAIL_NOTIFICATIONCHANNELTYPE
+	PHONECALL_NOTIFICATIONCHANNELTYPE
+	SMS_NOTIFICATIONCHANNELTYPE
+	UNKNOWNFUTUREVALUE_NOTIFICATIONCHANNELTYPE
 )
 
 func (i NotificationChannelType) String() string {
-    return []string{"portal", "email", "phoneCall", "sms", "unknownFutureValue"}[i]
+	return []string{"portal", "email", "phoneCall", "sms", "unknownFutureValue"}[i]
 }
+
 func ParseNotificationChannelType(v string) (any, error) {
-    result := PORTAL_NOTIFICATIONCHANNELTYPE
-    switch v {
-        case "portal":
-            result = PORTAL_NOTIFICATIONCHANNELTYPE
-        case "email":
-            result = EMAIL_NOTIFICATIONCHANNELTYPE
-        case "phoneCall":
-            result = PHONECALL_NOTIFICATIONCHANNELTYPE
-        case "sms":
-            result = SMS_NOTIFICATIONCHANNELTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_NOTIFICATIONCHANNELTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := PORTAL_NOTIFICATIONCHANNELTYPE
+	switch v {
+	case "portal":
+		result = PORTAL_NOTIFICATIONCHANNELTYPE
+	case "email":
+		result = EMAIL_NOTIFICATIONCHANNELTYPE
+	case "phoneCall":
+		result = PHONECALL_NOTIFICATIONCHANNELTYPE
+	case "sms":
+		result = SMS_NOTIFICATIONCHANNELTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_NOTIFICATIONCHANNELTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeNotificationChannelType(values []NotificationChannelType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i NotificationChannelType) isMultiValue() bool {
-    return false
+	return false
 }

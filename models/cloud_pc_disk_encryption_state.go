@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcDiskEncryptionState int
 
 const (
-    NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE CloudPcDiskEncryptionState = iota
-    NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
-    ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
-    ENCRYPTEDUSINGCUSTOMERMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
-    UNKNOWNFUTUREVALUE_CLOUDPCDISKENCRYPTIONSTATE
+	NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE CloudPcDiskEncryptionState = iota
+	NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
+	ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
+	ENCRYPTEDUSINGCUSTOMERMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
+	UNKNOWNFUTUREVALUE_CLOUDPCDISKENCRYPTIONSTATE
 )
 
 func (i CloudPcDiskEncryptionState) String() string {
-    return []string{"notAvailable", "notEncrypted", "encryptedUsingPlatformManagedKey", "encryptedUsingCustomerManagedKey", "unknownFutureValue"}[i]
+	return []string{"notAvailable", "notEncrypted", "encryptedUsingPlatformManagedKey", "encryptedUsingCustomerManagedKey", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcDiskEncryptionState(v string) (any, error) {
-    result := NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
-    switch v {
-        case "notAvailable":
-            result = NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
-        case "notEncrypted":
-            result = NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
-        case "encryptedUsingPlatformManagedKey":
-            result = ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
-        case "encryptedUsingCustomerManagedKey":
-            result = ENCRYPTEDUSINGCUSTOMERMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCDISKENCRYPTIONSTATE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
+	switch v {
+	case "notAvailable":
+		result = NOTAVAILABLE_CLOUDPCDISKENCRYPTIONSTATE
+	case "notEncrypted":
+		result = NOTENCRYPTED_CLOUDPCDISKENCRYPTIONSTATE
+	case "encryptedUsingPlatformManagedKey":
+		result = ENCRYPTEDUSINGPLATFORMMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
+	case "encryptedUsingCustomerManagedKey":
+		result = ENCRYPTEDUSINGCUSTOMERMANAGEDKEY_CLOUDPCDISKENCRYPTIONSTATE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCDISKENCRYPTIONSTATE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcDiskEncryptionState(values []CloudPcDiskEncryptionState) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcDiskEncryptionState) isMultiValue() bool {
-    return false
+	return false
 }

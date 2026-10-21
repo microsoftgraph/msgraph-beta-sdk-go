@@ -4,115 +4,124 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type TaskHistoryItem struct {
-    PlannerHistoryItem
+	PlannerHistoryItem
 }
+
 // NewTaskHistoryItem instantiates a new TaskHistoryItem and sets the default values.
-func NewTaskHistoryItem()(*TaskHistoryItem) {
-    m := &TaskHistoryItem{
-        PlannerHistoryItem: *NewPlannerHistoryItem(),
-    }
-    odataTypeValue := "#microsoft.graph.taskHistoryItem"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewTaskHistoryItem() *TaskHistoryItem {
+	m := &TaskHistoryItem{
+		PlannerHistoryItem: *NewPlannerHistoryItem(),
+	}
+	odataTypeValue := "#microsoft.graph.taskHistoryItem"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateTaskHistoryItemFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateTaskHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewTaskHistoryItem(), nil
+func CreateTaskHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewTaskHistoryItem(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *TaskHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.PlannerHistoryItem.GetFieldDeserializers()
-    res["newData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePlannerTaskDataFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNewData(val.(PlannerTaskDataable))
-        }
-        return nil
-    }
-    res["oldData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePlannerTaskDataFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOldData(val.(PlannerTaskDataable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *TaskHistoryItem) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.PlannerHistoryItem.GetFieldDeserializers()
+	res["newData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePlannerTaskDataFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetNewData(val.(PlannerTaskDataable))
+		}
+		return nil
+	}
+	res["oldData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePlannerTaskDataFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOldData(val.(PlannerTaskDataable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetNewData gets the newData property value. A snapshot of the task state after the change. This property is null for deletion events.
 // returns a PlannerTaskDataable when successful
-func (m *TaskHistoryItem) GetNewData()(PlannerTaskDataable) {
-    val, err := m.GetBackingStore().Get("newData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PlannerTaskDataable)
-    }
-    return nil
+func (m *TaskHistoryItem) GetNewData() PlannerTaskDataable {
+	val, err := m.GetBackingStore().Get("newData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PlannerTaskDataable)
+	}
+	return nil
 }
+
 // GetOldData gets the oldData property value. A snapshot of the task state before the change. This property is null for creation and undeletion events.
 // returns a PlannerTaskDataable when successful
-func (m *TaskHistoryItem) GetOldData()(PlannerTaskDataable) {
-    val, err := m.GetBackingStore().Get("oldData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PlannerTaskDataable)
-    }
-    return nil
+func (m *TaskHistoryItem) GetOldData() PlannerTaskDataable {
+	val, err := m.GetBackingStore().Get("oldData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PlannerTaskDataable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *TaskHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.PlannerHistoryItem.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("newData", m.GetNewData())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("oldData", m.GetOldData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *TaskHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.PlannerHistoryItem.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("newData", m.GetNewData())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("oldData", m.GetOldData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetNewData sets the newData property value. A snapshot of the task state after the change. This property is null for deletion events.
-func (m *TaskHistoryItem) SetNewData(value PlannerTaskDataable)() {
-    err := m.GetBackingStore().Set("newData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *TaskHistoryItem) SetNewData(value PlannerTaskDataable) {
+	err := m.GetBackingStore().Set("newData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOldData sets the oldData property value. A snapshot of the task state before the change. This property is null for creation and undeletion events.
-func (m *TaskHistoryItem) SetOldData(value PlannerTaskDataable)() {
-    err := m.GetBackingStore().Set("oldData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *TaskHistoryItem) SetOldData(value PlannerTaskDataable) {
+	err := m.GetBackingStore().Set("oldData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type TaskHistoryItemable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    PlannerHistoryItemable
-    GetNewData()(PlannerTaskDataable)
-    GetOldData()(PlannerTaskDataable)
-    SetNewData(value PlannerTaskDataable)()
-    SetOldData(value PlannerTaskDataable)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	PlannerHistoryItemable
+	GetNewData() PlannerTaskDataable
+	GetOldData() PlannerTaskDataable
+	SetNewData(value PlannerTaskDataable)
+	SetOldData(value PlannerTaskDataable)
 }

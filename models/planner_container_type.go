@@ -2,56 +2,69 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlannerContainerType int
 
 const (
-    GROUP_PLANNERCONTAINERTYPE PlannerContainerType = iota
-    UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
-    ROSTER_PLANNERCONTAINERTYPE
-    PROJECT_PLANNERCONTAINERTYPE
-    DRIVEITEM_PLANNERCONTAINERTYPE
-    USER_PLANNERCONTAINERTYPE
-    TEAMSCHANNEL_PLANNERCONTAINERTYPE
-    ONLINEMEETING_PLANNERCONTAINERTYPE
-    PLANNERTASK_PLANNERCONTAINERTYPE
+	GROUP_PLANNERCONTAINERTYPE PlannerContainerType = iota
+	UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
+	ROSTER_PLANNERCONTAINERTYPE
+	PROJECT_PLANNERCONTAINERTYPE
+	DRIVEITEM_PLANNERCONTAINERTYPE
+	USER_PLANNERCONTAINERTYPE
+	TEAMSCHANNEL_PLANNERCONTAINERTYPE
+	ONLINEMEETING_PLANNERCONTAINERTYPE
+	PLANNERTASK_PLANNERCONTAINERTYPE
+	OFFICEDOCUMENT_PLANNERCONTAINERTYPE
+	MEETING_PLANNERCONTAINERTYPE
+	DATAVERSEPROJECT_PLANNERCONTAINERTYPE
 )
 
 func (i PlannerContainerType) String() string {
-    return []string{"group", "unknownFutureValue", "roster", "project", "driveItem", "user", "teamsChannel", "onlineMeeting", "plannerTask"}[i]
+	return []string{"group", "unknownFutureValue", "roster", "project", "driveItem", "user", "teamsChannel", "onlineMeeting", "plannerTask", "officeDocument", "meeting", "dataverseProject"}[i]
 }
+
 func ParsePlannerContainerType(v string) (any, error) {
-    result := GROUP_PLANNERCONTAINERTYPE
-    switch v {
-        case "group":
-            result = GROUP_PLANNERCONTAINERTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
-        case "roster":
-            result = ROSTER_PLANNERCONTAINERTYPE
-        case "project":
-            result = PROJECT_PLANNERCONTAINERTYPE
-        case "driveItem":
-            result = DRIVEITEM_PLANNERCONTAINERTYPE
-        case "user":
-            result = USER_PLANNERCONTAINERTYPE
-        case "teamsChannel":
-            result = TEAMSCHANNEL_PLANNERCONTAINERTYPE
-        case "onlineMeeting":
-            result = ONLINEMEETING_PLANNERCONTAINERTYPE
-        case "plannerTask":
-            result = PLANNERTASK_PLANNERCONTAINERTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GROUP_PLANNERCONTAINERTYPE
+	switch v {
+	case "group":
+		result = GROUP_PLANNERCONTAINERTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLANNERCONTAINERTYPE
+	case "roster":
+		result = ROSTER_PLANNERCONTAINERTYPE
+	case "project":
+		result = PROJECT_PLANNERCONTAINERTYPE
+	case "driveItem":
+		result = DRIVEITEM_PLANNERCONTAINERTYPE
+	case "user":
+		result = USER_PLANNERCONTAINERTYPE
+	case "teamsChannel":
+		result = TEAMSCHANNEL_PLANNERCONTAINERTYPE
+	case "onlineMeeting":
+		result = ONLINEMEETING_PLANNERCONTAINERTYPE
+	case "plannerTask":
+		result = PLANNERTASK_PLANNERCONTAINERTYPE
+	case "officeDocument":
+		result = OFFICEDOCUMENT_PLANNERCONTAINERTYPE
+	case "meeting":
+		result = MEETING_PLANNERCONTAINERTYPE
+	case "dataverseProject":
+		result = DATAVERSEPROJECT_PLANNERCONTAINERTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlannerContainerType(values []PlannerContainerType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlannerContainerType) isMultiValue() bool {
-    return false
+	return false
 }

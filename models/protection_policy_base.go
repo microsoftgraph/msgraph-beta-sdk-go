@@ -4,520 +4,551 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type ProtectionPolicyBase struct {
-    Entity
+	Entity
 }
+
 // NewProtectionPolicyBase instantiates a new ProtectionPolicyBase and sets the default values.
-func NewProtectionPolicyBase()(*ProtectionPolicyBase) {
-    m := &ProtectionPolicyBase{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewProtectionPolicyBase() *ProtectionPolicyBase {
+	m := &ProtectionPolicyBase{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateProtectionPolicyBaseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateProtectionPolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                switch *mappingValue {
-                    case "#microsoft.graph.exchangeProtectionPolicy":
-                        return NewExchangeProtectionPolicy(), nil
-                    case "#microsoft.graph.oneDriveForBusinessProtectionPolicy":
-                        return NewOneDriveForBusinessProtectionPolicy(), nil
-                    case "#microsoft.graph.sharePointProtectionPolicy":
-                        return NewSharePointProtectionPolicy(), nil
-                }
-            }
-        }
-    }
-    return NewProtectionPolicyBase(), nil
+func CreateProtectionPolicyBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	if parseNode != nil {
+		mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+		if err != nil {
+			return nil, err
+		}
+		if mappingValueNode != nil {
+			mappingValue, err := mappingValueNode.GetStringValue()
+			if err != nil {
+				return nil, err
+			}
+			if mappingValue != nil {
+				switch *mappingValue {
+				case "#microsoft.graph.entraProtectionPolicy":
+					return NewEntraProtectionPolicy(), nil
+				case "#microsoft.graph.exchangeProtectionPolicy":
+					return NewExchangeProtectionPolicy(), nil
+				case "#microsoft.graph.oneDriveForBusinessProtectionPolicy":
+					return NewOneDriveForBusinessProtectionPolicy(), nil
+				case "#microsoft.graph.sharePointProtectionPolicy":
+					return NewSharePointProtectionPolicy(), nil
+				}
+			}
+		}
+	}
+	return NewProtectionPolicyBase(), nil
 }
+
 // GetBillingPolicyId gets the billingPolicyId property value. The billingPolicyId property
 // returns a *string when successful
-func (m *ProtectionPolicyBase) GetBillingPolicyId()(*string) {
-    val, err := m.GetBackingStore().Get("billingPolicyId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetBillingPolicyId() *string {
+	val, err := m.GetBackingStore().Get("billingPolicyId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetCreatedBy gets the createdBy property value. The identity of the person who created the policy.
 // returns a IdentitySetable when successful
-func (m *ProtectionPolicyBase) GetCreatedBy()(IdentitySetable) {
-    val, err := m.GetBackingStore().Get("createdBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySetable)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetCreatedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("createdBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
 }
+
 // GetCreatedDateTime gets the createdDateTime property value. The date and time when the policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *ProtectionPolicyBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("createdDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetDisplayName gets the displayName property value. The name of the policy.
 // returns a *string when successful
-func (m *ProtectionPolicyBase) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["billingPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBillingPolicyId(val)
-        }
-        return nil
-    }
-    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedBy(val.(IdentitySetable))
-        }
-        return nil
-    }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsEnabled(val)
-        }
-        return nil
-    }
-    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedBy(val.(IdentitySetable))
-        }
-        return nil
-    }
-    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastModifiedDateTime(val)
-        }
-        return nil
-    }
-    res["offboardRequestedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOffboardRequestedDateTime(val)
-        }
-        return nil
-    }
-    res["protectionMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseBackupPolicyProtectionMode)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProtectionMode(val.(*BackupPolicyProtectionMode))
-        }
-        return nil
-    }
-    res["protectionPolicyArtifactCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateProtectionPolicyArtifactCountFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProtectionPolicyArtifactCount(val.(ProtectionPolicyArtifactCountable))
-        }
-        return nil
-    }
-    res["retentionSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRetentionSettingFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RetentionSettingable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(RetentionSettingable)
-                }
-            }
-            m.SetRetentionSettings(res)
-        }
-        return nil
-    }
-    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseProtectionPolicyStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetStatus(val.(*ProtectionPolicyStatus))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *ProtectionPolicyBase) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["billingPolicyId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetBillingPolicyId(val)
+		}
+		return nil
+	}
+	res["createdBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["createdDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["isEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsEnabled(val)
+		}
+		return nil
+	}
+	res["lastModifiedBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedBy(val.(IdentitySetable))
+		}
+		return nil
+	}
+	res["lastModifiedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastModifiedDateTime(val)
+		}
+		return nil
+	}
+	res["offboardRequestedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOffboardRequestedDateTime(val)
+		}
+		return nil
+	}
+	res["protectionMode"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseBackupPolicyProtectionMode)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProtectionMode(val.(*BackupPolicyProtectionMode))
+		}
+		return nil
+	}
+	res["protectionPolicyArtifactCount"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateProtectionPolicyArtifactCountFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProtectionPolicyArtifactCount(val.(ProtectionPolicyArtifactCountable))
+		}
+		return nil
+	}
+	res["retentionSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateRetentionSettingFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]RetentionSettingable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(RetentionSettingable)
+				}
+			}
+			m.SetRetentionSettings(res)
+		}
+		return nil
+	}
+	res["status"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseProtectionPolicyStatus)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetStatus(val.(*ProtectionPolicyStatus))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetIsEnabled gets the isEnabled property value. Indicates whether the policy is enabled.
 // returns a *bool when successful
-func (m *ProtectionPolicyBase) GetIsEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetIsEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetLastModifiedBy gets the lastModifiedBy property value. The identity of the person who last modified the policy.
 // returns a IdentitySetable when successful
-func (m *ProtectionPolicyBase) GetLastModifiedBy()(IdentitySetable) {
-    val, err := m.GetBackingStore().Get("lastModifiedBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySetable)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetLastModifiedBy() IdentitySetable {
+	val, err := m.GetBackingStore().Get("lastModifiedBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySetable)
+	}
+	return nil
 }
+
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *ProtectionPolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetOffboardRequestedDateTime gets the offboardRequestedDateTime property value. The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
-func (m *ProtectionPolicyBase) GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("offboardRequestedDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetOffboardRequestedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("offboardRequestedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetProtectionMode gets the protectionMode property value. The backup mode for the protection policy. The possible values are: standard, fullServiceBackup, unknownFutureValue. When set to fullServiceBackup, the entire workload is backed up and specific items can be excluded using exclusion units. When set to standard, only the items explicitly added as protection units are backed up.
 // returns a *BackupPolicyProtectionMode when successful
-func (m *ProtectionPolicyBase) GetProtectionMode()(*BackupPolicyProtectionMode) {
-    val, err := m.GetBackingStore().Get("protectionMode")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*BackupPolicyProtectionMode)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetProtectionMode() *BackupPolicyProtectionMode {
+	val, err := m.GetBackingStore().Get("protectionMode")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*BackupPolicyProtectionMode)
+	}
+	return nil
 }
+
 // GetProtectionPolicyArtifactCount gets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
 // returns a ProtectionPolicyArtifactCountable when successful
-func (m *ProtectionPolicyBase) GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable) {
-    val, err := m.GetBackingStore().Get("protectionPolicyArtifactCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ProtectionPolicyArtifactCountable)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetProtectionPolicyArtifactCount() ProtectionPolicyArtifactCountable {
+	val, err := m.GetBackingStore().Get("protectionPolicyArtifactCount")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ProtectionPolicyArtifactCountable)
+	}
+	return nil
 }
+
 // GetRetentionSettings gets the retentionSettings property value. Contains the retention setting details for the policy.
 // returns a []RetentionSettingable when successful
-func (m *ProtectionPolicyBase) GetRetentionSettings()([]RetentionSettingable) {
-    val, err := m.GetBackingStore().Get("retentionSettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]RetentionSettingable)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetRetentionSettings() []RetentionSettingable {
+	val, err := m.GetBackingStore().Get("retentionSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]RetentionSettingable)
+	}
+	return nil
 }
+
 // GetStatus gets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.
 // returns a *ProtectionPolicyStatus when successful
-func (m *ProtectionPolicyBase) GetStatus()(*ProtectionPolicyStatus) {
-    val, err := m.GetBackingStore().Get("status")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ProtectionPolicyStatus)
-    }
-    return nil
+func (m *ProtectionPolicyBase) GetStatus() *ProtectionPolicyStatus {
+	val, err := m.GetBackingStore().Get("status")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ProtectionPolicyStatus)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("billingPolicyId", m.GetBillingPolicyId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("offboardRequestedDateTime", m.GetOffboardRequestedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProtectionMode() != nil {
-        cast := (*m.GetProtectionMode()).String()
-        err = writer.WriteStringValue("protectionMode", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("protectionPolicyArtifactCount", m.GetProtectionPolicyArtifactCount())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRetentionSettings() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionSettings()))
-        for i, v := range m.GetRetentionSettings() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("retentionSettings", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetStatus() != nil {
-        cast := (*m.GetStatus()).String()
-        err = writer.WriteStringValue("status", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("billingPolicyId", m.GetBillingPolicyId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("offboardRequestedDateTime", m.GetOffboardRequestedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProtectionMode() != nil {
+		cast := (*m.GetProtectionMode()).String()
+		err = writer.WriteStringValue("protectionMode", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("protectionPolicyArtifactCount", m.GetProtectionPolicyArtifactCount())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRetentionSettings() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRetentionSettings()))
+		for i, v := range m.GetRetentionSettings() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("retentionSettings", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetStatus() != nil {
+		cast := (*m.GetStatus()).String()
+		err = writer.WriteStringValue("status", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetBillingPolicyId sets the billingPolicyId property value. The billingPolicyId property
-func (m *ProtectionPolicyBase) SetBillingPolicyId(value *string)() {
-    err := m.GetBackingStore().Set("billingPolicyId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetBillingPolicyId(value *string) {
+	err := m.GetBackingStore().Set("billingPolicyId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreatedBy sets the createdBy property value. The identity of the person who created the policy.
-func (m *ProtectionPolicyBase) SetCreatedBy(value IdentitySetable)() {
-    err := m.GetBackingStore().Set("createdBy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetCreatedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("createdBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreatedDateTime sets the createdDateTime property value. The date and time when the policy was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *ProtectionPolicyBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("createdDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDisplayName sets the displayName property value. The name of the policy.
-func (m *ProtectionPolicyBase) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsEnabled sets the isEnabled property value. Indicates whether the policy is enabled.
-func (m *ProtectionPolicyBase) SetIsEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetIsEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastModifiedBy sets the lastModifiedBy property value. The identity of the person who last modified the policy.
-func (m *ProtectionPolicyBase) SetLastModifiedBy(value IdentitySetable)() {
-    err := m.GetBackingStore().Set("lastModifiedBy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetLastModifiedBy(value IdentitySetable) {
+	err := m.GetBackingStore().Set("lastModifiedBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the policy was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOffboardRequestedDateTime sets the offboardRequestedDateTime property value. The date and time when offboarding was requested for the protection policy. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-func (m *ProtectionPolicyBase) SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("offboardRequestedDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("offboardRequestedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProtectionMode sets the protectionMode property value. The backup mode for the protection policy. The possible values are: standard, fullServiceBackup, unknownFutureValue. When set to fullServiceBackup, the entire workload is backed up and specific items can be excluded using exclusion units. When set to standard, only the items explicitly added as protection units are backed up.
-func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMode)() {
-    err := m.GetBackingStore().Set("protectionMode", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMode) {
+	err := m.GetBackingStore().Set("protectionMode", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
-func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)() {
-    err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable) {
+	err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRetentionSettings sets the retentionSettings property value. Contains the retention setting details for the policy.
-func (m *ProtectionPolicyBase) SetRetentionSettings(value []RetentionSettingable)() {
-    err := m.GetBackingStore().Set("retentionSettings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetRetentionSettings(value []RetentionSettingable) {
+	err := m.GetBackingStore().Set("retentionSettings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetStatus sets the status property value. The aggregated status of the protection units associated with the policy. The possible values are: inactive, activeWithErrors, updating, active, unknownFutureValue, offboardRequested, offboarded. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: offboardRequested, offboarded.
-func (m *ProtectionPolicyBase) SetStatus(value *ProtectionPolicyStatus)() {
-    err := m.GetBackingStore().Set("status", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *ProtectionPolicyBase) SetStatus(value *ProtectionPolicyStatus) {
+	err := m.GetBackingStore().Set("status", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type ProtectionPolicyBaseable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBillingPolicyId()(*string)
-    GetCreatedBy()(IdentitySetable)
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDisplayName()(*string)
-    GetIsEnabled()(*bool)
-    GetLastModifiedBy()(IdentitySetable)
-    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetProtectionMode()(*BackupPolicyProtectionMode)
-    GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable)
-    GetRetentionSettings()([]RetentionSettingable)
-    GetStatus()(*ProtectionPolicyStatus)
-    SetBillingPolicyId(value *string)()
-    SetCreatedBy(value IdentitySetable)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDisplayName(value *string)()
-    SetIsEnabled(value *bool)()
-    SetLastModifiedBy(value IdentitySetable)()
-    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetProtectionMode(value *BackupPolicyProtectionMode)()
-    SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)()
-    SetRetentionSettings(value []RetentionSettingable)()
-    SetStatus(value *ProtectionPolicyStatus)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBillingPolicyId() *string
+	GetCreatedBy() IdentitySetable
+	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetDisplayName() *string
+	GetIsEnabled() *bool
+	GetLastModifiedBy() IdentitySetable
+	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetOffboardRequestedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetProtectionMode() *BackupPolicyProtectionMode
+	GetProtectionPolicyArtifactCount() ProtectionPolicyArtifactCountable
+	GetRetentionSettings() []RetentionSettingable
+	GetStatus() *ProtectionPolicyStatus
+	SetBillingPolicyId(value *string)
+	SetCreatedBy(value IdentitySetable)
+	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetDisplayName(value *string)
+	SetIsEnabled(value *bool)
+	SetLastModifiedBy(value IdentitySetable)
+	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetProtectionMode(value *BackupPolicyProtectionMode)
+	SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)
+	SetRetentionSettings(value []RetentionSettingable)
+	SetStatus(value *ProtectionPolicyStatus)
 }

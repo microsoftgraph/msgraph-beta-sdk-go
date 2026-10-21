@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type TokenProtectionStatus int
 
 const (
-    NONE_TOKENPROTECTIONSTATUS TokenProtectionStatus = iota
-    BOUND_TOKENPROTECTIONSTATUS
-    UNBOUND_TOKENPROTECTIONSTATUS
-    UNKNOWNFUTUREVALUE_TOKENPROTECTIONSTATUS
+	NONE_TOKENPROTECTIONSTATUS TokenProtectionStatus = iota
+	BOUND_TOKENPROTECTIONSTATUS
+	UNBOUND_TOKENPROTECTIONSTATUS
+	UNKNOWNFUTUREVALUE_TOKENPROTECTIONSTATUS
 )
 
 func (i TokenProtectionStatus) String() string {
-    return []string{"none", "bound", "unbound", "unknownFutureValue"}[i]
+	return []string{"none", "bound", "unbound", "unknownFutureValue"}[i]
 }
+
 func ParseTokenProtectionStatus(v string) (any, error) {
-    result := NONE_TOKENPROTECTIONSTATUS
-    switch v {
-        case "none":
-            result = NONE_TOKENPROTECTIONSTATUS
-        case "bound":
-            result = BOUND_TOKENPROTECTIONSTATUS
-        case "unbound":
-            result = UNBOUND_TOKENPROTECTIONSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_TOKENPROTECTIONSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_TOKENPROTECTIONSTATUS
+	switch v {
+	case "none":
+		result = NONE_TOKENPROTECTIONSTATUS
+	case "bound":
+		result = BOUND_TOKENPROTECTIONSTATUS
+	case "unbound":
+		result = UNBOUND_TOKENPROTECTIONSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_TOKENPROTECTIONSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeTokenProtectionStatus(values []TokenProtectionStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i TokenProtectionStatus) isMultiValue() bool {
-    return false
+	return false
 }

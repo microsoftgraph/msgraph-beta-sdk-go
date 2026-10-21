@@ -4,115 +4,124 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type EducationAssignmentPointsGrade struct {
-    EducationAssignmentGrade
+	EducationAssignmentGrade
 }
+
 // NewEducationAssignmentPointsGrade instantiates a new EducationAssignmentPointsGrade and sets the default values.
-func NewEducationAssignmentPointsGrade()(*EducationAssignmentPointsGrade) {
-    m := &EducationAssignmentPointsGrade{
-        EducationAssignmentGrade: *NewEducationAssignmentGrade(),
-    }
-    odataTypeValue := "#microsoft.graph.educationAssignmentPointsGrade"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewEducationAssignmentPointsGrade() *EducationAssignmentPointsGrade {
+	m := &EducationAssignmentPointsGrade{
+		EducationAssignmentGrade: *NewEducationAssignmentGrade(),
+	}
+	odataTypeValue := "#microsoft.graph.educationAssignmentPointsGrade"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateEducationAssignmentPointsGradeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateEducationAssignmentPointsGradeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewEducationAssignmentPointsGrade(), nil
+func CreateEducationAssignmentPointsGradeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewEducationAssignmentPointsGrade(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *EducationAssignmentPointsGrade) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.EducationAssignmentGrade.GetFieldDeserializers()
-    res["grade"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGrade(val)
-        }
-        return nil
-    }
-    res["points"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPoints(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *EducationAssignmentPointsGrade) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.EducationAssignmentGrade.GetFieldDeserializers()
+	res["grade"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGrade(val)
+		}
+		return nil
+	}
+	res["points"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetFloat32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPoints(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetGrade gets the grade property value. The grade letter from the grading scheme that corresponds to the given number of points.
 // returns a *string when successful
-func (m *EducationAssignmentPointsGrade) GetGrade()(*string) {
-    val, err := m.GetBackingStore().Get("grade")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *EducationAssignmentPointsGrade) GetGrade() *string {
+	val, err := m.GetBackingStore().Get("grade")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPoints gets the points property value. Number of points a teacher gives to this submission object.
 // returns a *float32 when successful
-func (m *EducationAssignmentPointsGrade) GetPoints()(*float32) {
-    val, err := m.GetBackingStore().Get("points")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*float32)
-    }
-    return nil
+func (m *EducationAssignmentPointsGrade) GetPoints() *float32 {
+	val, err := m.GetBackingStore().Get("points")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*float32)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *EducationAssignmentPointsGrade) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.EducationAssignmentGrade.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("grade", m.GetGrade())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteFloat32Value("points", m.GetPoints())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *EducationAssignmentPointsGrade) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.EducationAssignmentGrade.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("grade", m.GetGrade())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteFloat32Value("points", m.GetPoints())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetGrade sets the grade property value. The grade letter from the grading scheme that corresponds to the given number of points.
-func (m *EducationAssignmentPointsGrade) SetGrade(value *string)() {
-    err := m.GetBackingStore().Set("grade", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *EducationAssignmentPointsGrade) SetGrade(value *string) {
+	err := m.GetBackingStore().Set("grade", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPoints sets the points property value. Number of points a teacher gives to this submission object.
-func (m *EducationAssignmentPointsGrade) SetPoints(value *float32)() {
-    err := m.GetBackingStore().Set("points", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *EducationAssignmentPointsGrade) SetPoints(value *float32) {
+	err := m.GetBackingStore().Set("points", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type EducationAssignmentPointsGradeable interface {
-    EducationAssignmentGradeable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetGrade()(*string)
-    GetPoints()(*float32)
-    SetGrade(value *string)()
-    SetPoints(value *float32)()
+	EducationAssignmentGradeable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetGrade() *string
+	GetPoints() *float32
+	SetGrade(value *string)
+	SetPoints(value *float32)
 }

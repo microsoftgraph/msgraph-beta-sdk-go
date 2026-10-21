@@ -4,85 +4,92 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DeviceManagementSettingEnrollmentTypeConstraint constraint that enforces the enrollment types applied to a setting
 type DeviceManagementSettingEnrollmentTypeConstraint struct {
-    DeviceManagementConstraint
+	DeviceManagementConstraint
 }
+
 // NewDeviceManagementSettingEnrollmentTypeConstraint instantiates a new DeviceManagementSettingEnrollmentTypeConstraint and sets the default values.
-func NewDeviceManagementSettingEnrollmentTypeConstraint()(*DeviceManagementSettingEnrollmentTypeConstraint) {
-    m := &DeviceManagementSettingEnrollmentTypeConstraint{
-        DeviceManagementConstraint: *NewDeviceManagementConstraint(),
-    }
-    odataTypeValue := "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDeviceManagementSettingEnrollmentTypeConstraint() *DeviceManagementSettingEnrollmentTypeConstraint {
+	m := &DeviceManagementSettingEnrollmentTypeConstraint{
+		DeviceManagementConstraint: *NewDeviceManagementConstraint(),
+	}
+	odataTypeValue := "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDeviceManagementSettingEnrollmentTypeConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDeviceManagementSettingEnrollmentTypeConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDeviceManagementSettingEnrollmentTypeConstraint(), nil
+func CreateDeviceManagementSettingEnrollmentTypeConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDeviceManagementSettingEnrollmentTypeConstraint(), nil
 }
+
 // GetEnrollmentTypes gets the enrollmentTypes property value. List of enrollment types
 // returns a []string when successful
-func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetEnrollmentTypes()([]string) {
-    val, err := m.GetBackingStore().Get("enrollmentTypes")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetEnrollmentTypes() []string {
+	val, err := m.GetBackingStore().Get("enrollmentTypes")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceManagementConstraint.GetFieldDeserializers()
-    res["enrollmentTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetEnrollmentTypes(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DeviceManagementSettingEnrollmentTypeConstraint) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceManagementConstraint.GetFieldDeserializers()
+	res["enrollmentTypes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetEnrollmentTypes(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DeviceManagementSettingEnrollmentTypeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceManagementConstraint.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetEnrollmentTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("enrollmentTypes", m.GetEnrollmentTypes())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *DeviceManagementSettingEnrollmentTypeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceManagementConstraint.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetEnrollmentTypes() != nil {
+		err = writer.WriteCollectionOfStringValues("enrollmentTypes", m.GetEnrollmentTypes())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetEnrollmentTypes sets the enrollmentTypes property value. List of enrollment types
-func (m *DeviceManagementSettingEnrollmentTypeConstraint) SetEnrollmentTypes(value []string)() {
-    err := m.GetBackingStore().Set("enrollmentTypes", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *DeviceManagementSettingEnrollmentTypeConstraint) SetEnrollmentTypes(value []string) {
+	err := m.GetBackingStore().Set("enrollmentTypes", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type DeviceManagementSettingEnrollmentTypeConstraintable interface {
-    DeviceManagementConstraintable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetEnrollmentTypes()([]string)
-    SetEnrollmentTypes(value []string)()
+	DeviceManagementConstraintable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetEnrollmentTypes() []string
+	SetEnrollmentTypes(value []string)
 }

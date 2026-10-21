@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type SiteTemplateType int
 
 const (
-    SITEPAGEPUBLISHING_SITETEMPLATETYPE SiteTemplateType = iota
-    STS_SITETEMPLATETYPE
-    UNKNOWNFUTUREVALUE_SITETEMPLATETYPE
+	SITEPAGEPUBLISHING_SITETEMPLATETYPE SiteTemplateType = iota
+	STS_SITETEMPLATETYPE
+	UNKNOWNFUTUREVALUE_SITETEMPLATETYPE
 )
 
 func (i SiteTemplateType) String() string {
-    return []string{"sitepagepublishing", "sts", "unknownFutureValue"}[i]
+	return []string{"sitepagepublishing", "sts", "unknownFutureValue"}[i]
 }
+
 func ParseSiteTemplateType(v string) (any, error) {
-    result := SITEPAGEPUBLISHING_SITETEMPLATETYPE
-    switch v {
-        case "sitepagepublishing":
-            result = SITEPAGEPUBLISHING_SITETEMPLATETYPE
-        case "sts":
-            result = STS_SITETEMPLATETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SITETEMPLATETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := SITEPAGEPUBLISHING_SITETEMPLATETYPE
+	switch v {
+	case "sitepagepublishing":
+		result = SITEPAGEPUBLISHING_SITETEMPLATETYPE
+	case "sts":
+		result = STS_SITETEMPLATETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SITETEMPLATETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSiteTemplateType(values []SiteTemplateType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SiteTemplateType) isMultiValue() bool {
-    return false
+	return false
 }

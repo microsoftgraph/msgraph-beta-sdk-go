@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package networkaccess
+
 type ClientFallbackAction int
 
 const (
-    BYPASS_CLIENTFALLBACKACTION ClientFallbackAction = iota
-    BLOCK_CLIENTFALLBACKACTION
-    DEFAULT_CLIENTFALLBACKACTION
-    UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
+	BYPASS_CLIENTFALLBACKACTION ClientFallbackAction = iota
+	BLOCK_CLIENTFALLBACKACTION
+	DEFAULT_CLIENTFALLBACKACTION
+	UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
 )
 
 func (i ClientFallbackAction) String() string {
-    return []string{"bypass", "block", "default", "unknownFutureValue"}[i]
+	return []string{"bypass", "block", "default", "unknownFutureValue"}[i]
 }
+
 func ParseClientFallbackAction(v string) (any, error) {
-    result := BYPASS_CLIENTFALLBACKACTION
-    switch v {
-        case "bypass":
-            result = BYPASS_CLIENTFALLBACKACTION
-        case "block":
-            result = BLOCK_CLIENTFALLBACKACTION
-        case "default":
-            result = DEFAULT_CLIENTFALLBACKACTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := BYPASS_CLIENTFALLBACKACTION
+	switch v {
+	case "bypass":
+		result = BYPASS_CLIENTFALLBACKACTION
+	case "block":
+		result = BLOCK_CLIENTFALLBACKACTION
+	case "default":
+		result = DEFAULT_CLIENTFALLBACKACTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLIENTFALLBACKACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeClientFallbackAction(values []ClientFallbackAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ClientFallbackAction) isMultiValue() bool {
-    return false
+	return false
 }

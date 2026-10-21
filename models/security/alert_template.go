@@ -4,514 +4,544 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type AlertTemplate struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewAlertTemplate instantiates a new AlertTemplate and sets the default values.
-func NewAlertTemplate()(*AlertTemplate) {
-    m := &AlertTemplate{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewAlertTemplate() *AlertTemplate {
+	m := &AlertTemplate{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreateAlertTemplateFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAlertTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAlertTemplate(), nil
+func CreateAlertTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAlertTemplate(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *AlertTemplate) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *AlertTemplate) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *AlertTemplate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *AlertTemplate) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetCategory gets the category property value. Indicates the category assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 // returns a *string when successful
-func (m *AlertTemplate) GetCategory()(*string) {
-    val, err := m.GetBackingStore().Get("category")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AlertTemplate) GetCategory() *string {
+	val, err := m.GetBackingStore().Get("category")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetCustomDetails gets the customDetails property value. Custom key-value detail pairs to include in the alert. Each value identifies the detection query column that supplies the corresponding custom detail.
 // returns a AlertCustomDetailsable when successful
-func (m *AlertTemplate) GetCustomDetails()(AlertCustomDetailsable) {
-    val, err := m.GetBackingStore().Get("customDetails")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AlertCustomDetailsable)
-    }
-    return nil
+func (m *AlertTemplate) GetCustomDetails() AlertCustomDetailsable {
+	val, err := m.GetBackingStore().Get("customDetails")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AlertCustomDetailsable)
+	}
+	return nil
 }
+
 // GetDescription gets the description property value. Description of the alert triggered by the custom detection rule.
 // returns a *string when successful
-func (m *AlertTemplate) GetDescription()(*string) {
-    val, err := m.GetBackingStore().Get("description")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AlertTemplate) GetDescription() *string {
+	val, err := m.GetBackingStore().Get("description")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetEntityMappings gets the entityMappings property value. The entityMappings property
 // returns a EntityMappingConfigurationable when successful
-func (m *AlertTemplate) GetEntityMappings()(EntityMappingConfigurationable) {
-    val, err := m.GetBackingStore().Get("entityMappings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(EntityMappingConfigurationable)
-    }
-    return nil
+func (m *AlertTemplate) GetEntityMappings() EntityMappingConfigurationable {
+	val, err := m.GetBackingStore().Get("entityMappings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(EntityMappingConfigurationable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AlertTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCategory(val)
-        }
-        return nil
-    }
-    res["customDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAlertCustomDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCustomDetails(val.(AlertCustomDetailsable))
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["entityMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntityMappingConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetEntityMappings(val.(EntityMappingConfigurationable))
-        }
-        return nil
-    }
-    res["impactedAssets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateImpactedAssetFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ImpactedAssetable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ImpactedAssetable)
-                }
-            }
-            m.SetImpactedAssets(res)
-        }
-        return nil
-    }
-    res["mitreTechniques"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetMitreTechniques(res)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["recommendedActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRecommendedActions(val)
-        }
-        return nil
-    }
-    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSeverity(val.(*AlertSeverity))
-        }
-        return nil
-    }
-    res["tactics"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMitreTacticFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MitreTacticable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MitreTacticable)
-                }
-            }
-            m.SetTactics(res)
-        }
-        return nil
-    }
-    res["title"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTitle(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AlertTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["category"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCategory(val)
+		}
+		return nil
+	}
+	res["customDetails"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAlertCustomDetailsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCustomDetails(val.(AlertCustomDetailsable))
+		}
+		return nil
+	}
+	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDescription(val)
+		}
+		return nil
+	}
+	res["entityMappings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateEntityMappingConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEntityMappings(val.(EntityMappingConfigurationable))
+		}
+		return nil
+	}
+	res["impactedAssets"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateImpactedAssetFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ImpactedAssetable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ImpactedAssetable)
+				}
+			}
+			m.SetImpactedAssets(res)
+		}
+		return nil
+	}
+	res["mitreTechniques"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetMitreTechniques(res)
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["recommendedActions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRecommendedActions(val)
+		}
+		return nil
+	}
+	res["severity"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseAlertSeverity)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSeverity(val.(*AlertSeverity))
+		}
+		return nil
+	}
+	res["tactics"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMitreTacticFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MitreTacticable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MitreTacticable)
+				}
+			}
+			m.SetTactics(res)
+		}
+		return nil
+	}
+	res["title"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTitle(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetImpactedAssets gets the impactedAssets property value. Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
 // returns a []ImpactedAssetable when successful
-func (m *AlertTemplate) GetImpactedAssets()([]ImpactedAssetable) {
-    val, err := m.GetBackingStore().Get("impactedAssets")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ImpactedAssetable)
-    }
-    return nil
+func (m *AlertTemplate) GetImpactedAssets() []ImpactedAssetable {
+	val, err := m.GetBackingStore().Get("impactedAssets")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ImpactedAssetable)
+	}
+	return nil
 }
+
 // GetMitreTechniques gets the mitreTechniques property value. Indicates the MITRE techniques assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
 // returns a []string when successful
-func (m *AlertTemplate) GetMitreTechniques()([]string) {
-    val, err := m.GetBackingStore().Get("mitreTechniques")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *AlertTemplate) GetMitreTechniques() []string {
+	val, err := m.GetBackingStore().Get("mitreTechniques")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *AlertTemplate) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AlertTemplate) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetRecommendedActions gets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
 // returns a *string when successful
-func (m *AlertTemplate) GetRecommendedActions()(*string) {
-    val, err := m.GetBackingStore().Get("recommendedActions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AlertTemplate) GetRecommendedActions() *string {
+	val, err := m.GetBackingStore().Get("recommendedActions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetSeverity gets the severity property value. The severity property
 // returns a *AlertSeverity when successful
-func (m *AlertTemplate) GetSeverity()(*AlertSeverity) {
-    val, err := m.GetBackingStore().Get("severity")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*AlertSeverity)
-    }
-    return nil
+func (m *AlertTemplate) GetSeverity() *AlertSeverity {
+	val, err := m.GetBackingStore().Get("severity")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*AlertSeverity)
+	}
+	return nil
 }
+
 // GetTactics gets the tactics property value. The MITRE ATT&CK tactics framing for this alert.
 // returns a []MitreTacticable when successful
-func (m *AlertTemplate) GetTactics()([]MitreTacticable) {
-    val, err := m.GetBackingStore().Get("tactics")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MitreTacticable)
-    }
-    return nil
+func (m *AlertTemplate) GetTactics() []MitreTacticable {
+	val, err := m.GetBackingStore().Get("tactics")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MitreTacticable)
+	}
+	return nil
 }
+
 // GetTitle gets the title property value. Name of the alert triggered by the custom detection rule.
 // returns a *string when successful
-func (m *AlertTemplate) GetTitle()(*string) {
-    val, err := m.GetBackingStore().Get("title")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AlertTemplate) GetTitle() *string {
+	val, err := m.GetBackingStore().Get("title")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AlertTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("category", m.GetCategory())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("customDetails", m.GetCustomDetails())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("entityMappings", m.GetEntityMappings())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetImpactedAssets() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImpactedAssets()))
-        for i, v := range m.GetImpactedAssets() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("impactedAssets", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMitreTechniques() != nil {
-        err := writer.WriteCollectionOfStringValues("mitreTechniques", m.GetMitreTechniques())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("recommendedActions", m.GetRecommendedActions())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSeverity() != nil {
-        cast := (*m.GetSeverity()).String()
-        err := writer.WriteStringValue("severity", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTactics() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTactics()))
-        for i, v := range m.GetTactics() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("tactics", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("title", m.GetTitle())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AlertTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteStringValue("category", m.GetCategory())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("customDetails", m.GetCustomDetails())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("description", m.GetDescription())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("entityMappings", m.GetEntityMappings())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetImpactedAssets() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImpactedAssets()))
+		for i, v := range m.GetImpactedAssets() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("impactedAssets", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMitreTechniques() != nil {
+		err := writer.WriteCollectionOfStringValues("mitreTechniques", m.GetMitreTechniques())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("recommendedActions", m.GetRecommendedActions())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSeverity() != nil {
+		cast := (*m.GetSeverity()).String()
+		err := writer.WriteStringValue("severity", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTactics() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTactics()))
+		for i, v := range m.GetTactics() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("tactics", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("title", m.GetTitle())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *AlertTemplate) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *AlertTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *AlertTemplate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetCategory sets the category property value. Indicates the category assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
-func (m *AlertTemplate) SetCategory(value *string)() {
-    err := m.GetBackingStore().Set("category", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetCategory(value *string) {
+	err := m.GetBackingStore().Set("category", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCustomDetails sets the customDetails property value. Custom key-value detail pairs to include in the alert. Each value identifies the detection query column that supplies the corresponding custom detail.
-func (m *AlertTemplate) SetCustomDetails(value AlertCustomDetailsable)() {
-    err := m.GetBackingStore().Set("customDetails", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetCustomDetails(value AlertCustomDetailsable) {
+	err := m.GetBackingStore().Set("customDetails", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDescription sets the description property value. Description of the alert triggered by the custom detection rule.
-func (m *AlertTemplate) SetDescription(value *string)() {
-    err := m.GetBackingStore().Set("description", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetDescription(value *string) {
+	err := m.GetBackingStore().Set("description", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetEntityMappings sets the entityMappings property value. The entityMappings property
-func (m *AlertTemplate) SetEntityMappings(value EntityMappingConfigurationable)() {
-    err := m.GetBackingStore().Set("entityMappings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetEntityMappings(value EntityMappingConfigurationable) {
+	err := m.GetBackingStore().Set("entityMappings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetImpactedAssets sets the impactedAssets property value. Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
-func (m *AlertTemplate) SetImpactedAssets(value []ImpactedAssetable)() {
-    err := m.GetBackingStore().Set("impactedAssets", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetImpactedAssets(value []ImpactedAssetable) {
+	err := m.GetBackingStore().Set("impactedAssets", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMitreTechniques sets the mitreTechniques property value. Indicates the MITRE techniques assigned to the alert triggered by the custom detection rule. Deprecated. Use tactics instead. This property will be removed from this resource on 2026-10-01.
-func (m *AlertTemplate) SetMitreTechniques(value []string)() {
-    err := m.GetBackingStore().Set("mitreTechniques", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetMitreTechniques(value []string) {
+	err := m.GetBackingStore().Set("mitreTechniques", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *AlertTemplate) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRecommendedActions sets the recommendedActions property value. Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.
-func (m *AlertTemplate) SetRecommendedActions(value *string)() {
-    err := m.GetBackingStore().Set("recommendedActions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetRecommendedActions(value *string) {
+	err := m.GetBackingStore().Set("recommendedActions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSeverity sets the severity property value. The severity property
-func (m *AlertTemplate) SetSeverity(value *AlertSeverity)() {
-    err := m.GetBackingStore().Set("severity", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetSeverity(value *AlertSeverity) {
+	err := m.GetBackingStore().Set("severity", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTactics sets the tactics property value. The MITRE ATT&CK tactics framing for this alert.
-func (m *AlertTemplate) SetTactics(value []MitreTacticable)() {
-    err := m.GetBackingStore().Set("tactics", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetTactics(value []MitreTacticable) {
+	err := m.GetBackingStore().Set("tactics", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTitle sets the title property value. Name of the alert triggered by the custom detection rule.
-func (m *AlertTemplate) SetTitle(value *string)() {
-    err := m.GetBackingStore().Set("title", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AlertTemplate) SetTitle(value *string) {
+	err := m.GetBackingStore().Set("title", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AlertTemplateable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCategory()(*string)
-    GetCustomDetails()(AlertCustomDetailsable)
-    GetDescription()(*string)
-    GetEntityMappings()(EntityMappingConfigurationable)
-    GetImpactedAssets()([]ImpactedAssetable)
-    GetMitreTechniques()([]string)
-    GetOdataType()(*string)
-    GetRecommendedActions()(*string)
-    GetSeverity()(*AlertSeverity)
-    GetTactics()([]MitreTacticable)
-    GetTitle()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCategory(value *string)()
-    SetCustomDetails(value AlertCustomDetailsable)()
-    SetDescription(value *string)()
-    SetEntityMappings(value EntityMappingConfigurationable)()
-    SetImpactedAssets(value []ImpactedAssetable)()
-    SetMitreTechniques(value []string)()
-    SetOdataType(value *string)()
-    SetRecommendedActions(value *string)()
-    SetSeverity(value *AlertSeverity)()
-    SetTactics(value []MitreTacticable)()
-    SetTitle(value *string)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetCategory() *string
+	GetCustomDetails() AlertCustomDetailsable
+	GetDescription() *string
+	GetEntityMappings() EntityMappingConfigurationable
+	GetImpactedAssets() []ImpactedAssetable
+	GetMitreTechniques() []string
+	GetOdataType() *string
+	GetRecommendedActions() *string
+	GetSeverity() *AlertSeverity
+	GetTactics() []MitreTacticable
+	GetTitle() *string
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetCategory(value *string)
+	SetCustomDetails(value AlertCustomDetailsable)
+	SetDescription(value *string)
+	SetEntityMappings(value EntityMappingConfigurationable)
+	SetImpactedAssets(value []ImpactedAssetable)
+	SetMitreTechniques(value []string)
+	SetOdataType(value *string)
+	SetRecommendedActions(value *string)
+	SetSeverity(value *AlertSeverity)
+	SetTactics(value []MitreTacticable)
+	SetTitle(value *string)
 }

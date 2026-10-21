@@ -4,266 +4,284 @@
 package solutions
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type BackupRestoreBrowseSessionsItemBrowsePostRequestBody struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody instantiates a new BackupRestoreBrowseSessionsItemBrowsePostRequestBody and sets the default values.
-func NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody()(*BackupRestoreBrowseSessionsItemBrowsePostRequestBody) {
-    m := &BackupRestoreBrowseSessionsItemBrowsePostRequestBody{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    optimizedBrowseValue := false
-    m.SetOptimizedBrowse(&optimizedBrowseValue)
-    return m
+func NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody() *BackupRestoreBrowseSessionsItemBrowsePostRequestBody {
+	m := &BackupRestoreBrowseSessionsItemBrowsePostRequestBody{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	optimizedBrowseValue := false
+	m.SetOptimizedBrowse(&optimizedBrowseValue)
+	return m
 }
+
 // CreateBackupRestoreBrowseSessionsItemBrowsePostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateBackupRestoreBrowseSessionsItemBrowsePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody(), nil
+func CreateBackupRestoreBrowseSessionsItemBrowsePostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewBackupRestoreBrowseSessionsItemBrowsePostRequestBody(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetBrowseLocationItemKey gets the browseLocationItemKey property value. The browseLocationItemKey property
 // returns a *string when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBrowseLocationItemKey()(*string) {
-    val, err := m.GetBackingStore().Get("browseLocationItemKey")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBrowseLocationItemKey() *string {
+	val, err := m.GetBackingStore().Get("browseLocationItemKey")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetBrowseResourceType gets the browseResourceType property value. The browseResourceType property
 // returns a *BrowsableResourceType when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBrowseResourceType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType) {
-    val, err := m.GetBackingStore().Get("browseResourceType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetBrowseResourceType() *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType {
+	val, err := m.GetBackingStore().Get("browseResourceType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["browseLocationItemKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowseLocationItemKey(val)
-        }
-        return nil
-    }
-    res["browseResourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseBrowsableResourceType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetBrowseResourceType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType))
-        }
-        return nil
-    }
-    res["filter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFilter(val)
-        }
-        return nil
-    }
-    res["optimizedBrowse"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOptimizedBrowse(val)
-        }
-        return nil
-    }
-    res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseBrowseQueryOrder)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOrderBy(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["browseLocationItemKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetBrowseLocationItemKey(val)
+		}
+		return nil
+	}
+	res["browseResourceType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseBrowsableResourceType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetBrowseResourceType(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType))
+		}
+		return nil
+	}
+	res["filter"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetFilter(val)
+		}
+		return nil
+	}
+	res["optimizedBrowse"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOptimizedBrowse(val)
+		}
+		return nil
+	}
+	res["orderBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseBrowseQueryOrder)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOrderBy(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetFilter gets the filter property value. The filter property
 // returns a *string when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFilter()(*string) {
-    val, err := m.GetBackingStore().Get("filter")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetFilter() *string {
+	val, err := m.GetBackingStore().Get("filter")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetOptimizedBrowse gets the optimizedBrowse property value. The optimizedBrowse property
 // returns a *bool when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetOptimizedBrowse()(*bool) {
-    val, err := m.GetBackingStore().Get("optimizedBrowse")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetOptimizedBrowse() *bool {
+	val, err := m.GetBackingStore().Get("optimizedBrowse")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetOrderBy gets the orderBy property value. The orderBy property
 // returns a *BrowseQueryOrder when successful
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetOrderBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder) {
-    val, err := m.GetBackingStore().Get("orderBy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) GetOrderBy() *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder {
+	val, err := m.GetBackingStore().Get("orderBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("browseLocationItemKey", m.GetBrowseLocationItemKey())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetBrowseResourceType() != nil {
-        cast := (*m.GetBrowseResourceType()).String()
-        err := writer.WriteStringValue("browseResourceType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("filter", m.GetFilter())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("optimizedBrowse", m.GetOptimizedBrowse())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetOrderBy() != nil {
-        cast := (*m.GetOrderBy()).String()
-        err := writer.WriteStringValue("orderBy", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteStringValue("browseLocationItemKey", m.GetBrowseLocationItemKey())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetBrowseResourceType() != nil {
+		cast := (*m.GetBrowseResourceType()).String()
+		err := writer.WriteStringValue("browseResourceType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("filter", m.GetFilter())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("optimizedBrowse", m.GetOptimizedBrowse())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetOrderBy() != nil {
+		cast := (*m.GetOrderBy()).String()
+		err := writer.WriteStringValue("orderBy", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetBrowseLocationItemKey sets the browseLocationItemKey property value. The browseLocationItemKey property
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBrowseLocationItemKey(value *string)() {
-    err := m.GetBackingStore().Set("browseLocationItemKey", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBrowseLocationItemKey(value *string) {
+	err := m.GetBackingStore().Set("browseLocationItemKey", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBrowseResourceType sets the browseResourceType property value. The browseResourceType property
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBrowseResourceType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)() {
-    err := m.GetBackingStore().Set("browseResourceType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetBrowseResourceType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType) {
+	err := m.GetBackingStore().Set("browseResourceType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFilter sets the filter property value. The filter property
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetFilter(value *string)() {
-    err := m.GetBackingStore().Set("filter", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetFilter(value *string) {
+	err := m.GetBackingStore().Set("filter", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOptimizedBrowse sets the optimizedBrowse property value. The optimizedBrowse property
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOptimizedBrowse(value *bool)() {
-    err := m.GetBackingStore().Set("optimizedBrowse", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOptimizedBrowse(value *bool) {
+	err := m.GetBackingStore().Set("optimizedBrowse", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOrderBy sets the orderBy property value. The orderBy property
-func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)() {
-    err := m.GetBackingStore().Set("orderBy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *BackupRestoreBrowseSessionsItemBrowsePostRequestBody) SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder) {
+	err := m.GetBackingStore().Set("orderBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type BackupRestoreBrowseSessionsItemBrowsePostRequestBodyable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetBrowseLocationItemKey()(*string)
-    GetBrowseResourceType()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)
-    GetFilter()(*string)
-    GetOptimizedBrowse()(*bool)
-    GetOrderBy()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetBrowseLocationItemKey(value *string)()
-    SetBrowseResourceType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)()
-    SetFilter(value *string)()
-    SetOptimizedBrowse(value *bool)()
-    SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetBrowseLocationItemKey() *string
+	GetBrowseResourceType() *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType
+	GetFilter() *string
+	GetOptimizedBrowse() *bool
+	GetOrderBy() *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetBrowseLocationItemKey(value *string)
+	SetBrowseResourceType(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowsableResourceType)
+	SetFilter(value *string)
+	SetOptimizedBrowse(value *bool)
+	SetOrderBy(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BrowseQueryOrder)
 }

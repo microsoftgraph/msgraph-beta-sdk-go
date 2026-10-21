@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Defender’s action to take on detected Potentially Unwanted Application (PUA).
 type DefenderPotentiallyUnwantedAppAction int
 
 const (
-    // PUA Protection is off. Defender will not protect against potentially unwanted applications.
-    DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION DefenderPotentiallyUnwantedAppAction = iota
-    // PUA Protection is on. Detected items are blocked. They will show in history along with other threats.
-    BLOCK_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
-    // Audit mode. Defender will detect potentially unwanted applications, but take no actions. You can review information about applications Defender would have taken action against by searching for events created by Defender in the Event Viewer.
-    AUDIT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	// PUA Protection is off. Defender will not protect against potentially unwanted applications.
+	DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION DefenderPotentiallyUnwantedAppAction = iota
+	// PUA Protection is on. Detected items are blocked. They will show in history along with other threats.
+	BLOCK_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	// Audit mode. Defender will detect potentially unwanted applications, but take no actions. You can review information about applications Defender would have taken action against by searching for events created by Defender in the Event Viewer.
+	AUDIT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
 )
 
 func (i DefenderPotentiallyUnwantedAppAction) String() string {
-    return []string{"deviceDefault", "block", "audit"}[i]
+	return []string{"deviceDefault", "block", "audit"}[i]
 }
+
 func ParseDefenderPotentiallyUnwantedAppAction(v string) (any, error) {
-    result := DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
-    switch v {
-        case "deviceDefault":
-            result = DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
-        case "block":
-            result = BLOCK_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
-        case "audit":
-            result = AUDIT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	switch v {
+	case "deviceDefault":
+		result = DEVICEDEFAULT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	case "block":
+		result = BLOCK_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	case "audit":
+		result = AUDIT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDefenderPotentiallyUnwantedAppAction(values []DefenderPotentiallyUnwantedAppAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DefenderPotentiallyUnwantedAppAction) isMultiValue() bool {
-    return false
+	return false
 }

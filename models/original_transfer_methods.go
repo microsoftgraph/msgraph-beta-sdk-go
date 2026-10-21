@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type OriginalTransferMethods int
 
 const (
-    NONE_ORIGINALTRANSFERMETHODS OriginalTransferMethods = iota
-    DEVICECODEFLOW_ORIGINALTRANSFERMETHODS
-    AUTHENTICATIONTRANSFER_ORIGINALTRANSFERMETHODS
-    UNKNOWNFUTUREVALUE_ORIGINALTRANSFERMETHODS
+	NONE_ORIGINALTRANSFERMETHODS OriginalTransferMethods = iota
+	DEVICECODEFLOW_ORIGINALTRANSFERMETHODS
+	AUTHENTICATIONTRANSFER_ORIGINALTRANSFERMETHODS
+	UNKNOWNFUTUREVALUE_ORIGINALTRANSFERMETHODS
 )
 
 func (i OriginalTransferMethods) String() string {
-    return []string{"none", "deviceCodeFlow", "authenticationTransfer", "unknownFutureValue"}[i]
+	return []string{"none", "deviceCodeFlow", "authenticationTransfer", "unknownFutureValue"}[i]
 }
+
 func ParseOriginalTransferMethods(v string) (any, error) {
-    result := NONE_ORIGINALTRANSFERMETHODS
-    switch v {
-        case "none":
-            result = NONE_ORIGINALTRANSFERMETHODS
-        case "deviceCodeFlow":
-            result = DEVICECODEFLOW_ORIGINALTRANSFERMETHODS
-        case "authenticationTransfer":
-            result = AUTHENTICATIONTRANSFER_ORIGINALTRANSFERMETHODS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ORIGINALTRANSFERMETHODS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_ORIGINALTRANSFERMETHODS
+	switch v {
+	case "none":
+		result = NONE_ORIGINALTRANSFERMETHODS
+	case "deviceCodeFlow":
+		result = DEVICECODEFLOW_ORIGINALTRANSFERMETHODS
+	case "authenticationTransfer":
+		result = AUTHENTICATIONTRANSFER_ORIGINALTRANSFERMETHODS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ORIGINALTRANSFERMETHODS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeOriginalTransferMethods(values []OriginalTransferMethods) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i OriginalTransferMethods) isMultiValue() bool {
-    return false
+	return false
 }

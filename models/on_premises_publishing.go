@@ -4,1212 +4,1280 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type OnPremisesPublishing struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	// Stores model information.
+	backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+
 // NewOnPremisesPublishing instantiates a new OnPremisesPublishing and sets the default values.
-func NewOnPremisesPublishing()(*OnPremisesPublishing) {
-    m := &OnPremisesPublishing{
-    }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
-    return m
+func NewOnPremisesPublishing() *OnPremisesPublishing {
+	m := &OnPremisesPublishing{}
+	m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance()
+	m.SetAdditionalData(make(map[string]any))
+	return m
 }
+
 // CreateOnPremisesPublishingFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewOnPremisesPublishing(), nil
+func CreateOnPremisesPublishingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewOnPremisesPublishing(), nil
 }
+
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
+func (m *OnPremisesPublishing) GetAdditionalData() map[string]any {
+	val, err := m.backingStore.Get("additionalData")
+	if err != nil {
+		panic(err)
+	}
+	if val == nil {
+		var value = make(map[string]any)
+		m.SetAdditionalData(value)
+	}
+	return val.(map[string]any)
 }
+
 // GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
-    val, err := m.GetBackingStore().Get("alternateUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetAlternateUrl() *string {
+	val, err := m.GetBackingStore().Get("alternateUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetApplicationServerTimeout gets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
-    val, err := m.GetBackingStore().Get("applicationServerTimeout")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetApplicationServerTimeout() *string {
+	val, err := m.GetBackingStore().Get("applicationServerTimeout")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetApplicationType gets the applicationType property value. System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetApplicationType()(*string) {
-    val, err := m.GetBackingStore().Get("applicationType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetApplicationType() *string {
+	val, err := m.GetBackingStore().Get("applicationType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
+func (m *OnPremisesPublishing) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore {
+	return m.backingStore
 }
+
 // GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
 // returns a *ExternalAuthenticationType when successful
-func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
-    val, err := m.GetBackingStore().Get("externalAuthenticationType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*ExternalAuthenticationType)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetExternalAuthenticationType() *ExternalAuthenticationType {
+	val, err := m.GetBackingStore().Get("externalAuthenticationType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ExternalAuthenticationType)
+	}
+	return nil
 }
+
 // GetExternalUrl gets the externalUrl property value. The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
-    val, err := m.GetBackingStore().Get("externalUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetExternalUrl() *string {
+	val, err := m.GetBackingStore().Get("externalUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["alternateUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAlternateUrl(val)
-        }
-        return nil
-    }
-    res["applicationServerTimeout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationServerTimeout(val)
-        }
-        return nil
-    }
-    res["applicationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApplicationType(val)
-        }
-        return nil
-    }
-    res["externalAuthenticationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseExternalAuthenticationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExternalAuthenticationType(val.(*ExternalAuthenticationType))
-        }
-        return nil
-    }
-    res["externalUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExternalUrl(val)
-        }
-        return nil
-    }
-    res["internalUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetInternalUrl(val)
-        }
-        return nil
-    }
-    res["isAccessibleViaZTNAClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsAccessibleViaZTNAClient(val)
-        }
-        return nil
-    }
-    res["isBackendCertificateValidationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsBackendCertificateValidationEnabled(val)
-        }
-        return nil
-    }
-    res["isContinuousAccessEvaluationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsContinuousAccessEvaluationEnabled(val)
-        }
-        return nil
-    }
-    res["isDeviceAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsDeviceAccessEnabled(val)
-        }
-        return nil
-    }
-    res["isDnsResolutionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsDnsResolutionEnabled(val)
-        }
-        return nil
-    }
-    res["isHttpOnlyCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsHttpOnlyCookieEnabled(val)
-        }
-        return nil
-    }
-    res["isOnPremPublishingEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsOnPremPublishingEnabled(val)
-        }
-        return nil
-    }
-    res["isPersistentCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsPersistentCookieEnabled(val)
-        }
-        return nil
-    }
-    res["isSecureCookieEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsSecureCookieEnabled(val)
-        }
-        return nil
-    }
-    res["isStateSessionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsStateSessionEnabled(val)
-        }
-        return nil
-    }
-    res["isTranslateHostHeaderEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsTranslateHostHeaderEnabled(val)
-        }
-        return nil
-    }
-    res["isTranslateLinksInBodyEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsTranslateLinksInBodyEnabled(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    res["onPremisesApplicationSegments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOnPremisesApplicationSegmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OnPremisesApplicationSegmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(OnPremisesApplicationSegmentable)
-                }
-            }
-            m.SetOnPremisesApplicationSegments(res)
-        }
-        return nil
-    }
-    res["segmentsConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSegmentConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSegmentsConfiguration(val.(SegmentConfigurationable))
-        }
-        return nil
-    }
-    res["singleSignOnSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSingleSignOnSettings(val.(OnPremisesPublishingSingleSignOnable))
-        }
-        return nil
-    }
-    res["trafficRoutingMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseTrafficRoutingMethod)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTrafficRoutingMethod(val.(*TrafficRoutingMethod))
-        }
-        return nil
-    }
-    res["useAlternateUrlForTranslationAndRedirect"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUseAlternateUrlForTranslationAndRedirect(val)
-        }
-        return nil
-    }
-    res["verifiedCustomDomainCertificatesMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVerifiedCustomDomainCertificatesMetadata(val.(VerifiedCustomDomainCertificatesMetadataable))
-        }
-        return nil
-    }
-    res["verifiedCustomDomainKeyCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateKeyCredentialFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVerifiedCustomDomainKeyCredential(val.(KeyCredentialable))
-        }
-        return nil
-    }
-    res["verifiedCustomDomainPasswordCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePasswordCredentialFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVerifiedCustomDomainPasswordCredential(val.(PasswordCredentialable))
-        }
-        return nil
-    }
-    res["wafAllowedHeaders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWafAllowedHeadersDictionaryFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWafAllowedHeaders(val.(WafAllowedHeadersDictionaryable))
-        }
-        return nil
-    }
-    res["wafIpRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IpRangeable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(IpRangeable)
-                }
-            }
-            m.SetWafIpRanges(res)
-        }
-        return nil
-    }
-    res["wafProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWafProvider(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *OnPremisesPublishing) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["alternateUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAlternateUrl(val)
+		}
+		return nil
+	}
+	res["applicationServerTimeout"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApplicationServerTimeout(val)
+		}
+		return nil
+	}
+	res["applicationType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApplicationType(val)
+		}
+		return nil
+	}
+	res["externalAuthenticationType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseExternalAuthenticationType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExternalAuthenticationType(val.(*ExternalAuthenticationType))
+		}
+		return nil
+	}
+	res["externalUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExternalUrl(val)
+		}
+		return nil
+	}
+	res["internalUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetInternalUrl(val)
+		}
+		return nil
+	}
+	res["isAccessibleViaZTNAClient"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsAccessibleViaZTNAClient(val)
+		}
+		return nil
+	}
+	res["isBackendCertificateValidationEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsBackendCertificateValidationEnabled(val)
+		}
+		return nil
+	}
+	res["isContinuousAccessEvaluationEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsContinuousAccessEvaluationEnabled(val)
+		}
+		return nil
+	}
+	res["isDeviceAccessEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsDeviceAccessEnabled(val)
+		}
+		return nil
+	}
+	res["isDnsResolutionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsDnsResolutionEnabled(val)
+		}
+		return nil
+	}
+	res["isHttpOnlyCookieEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHttpOnlyCookieEnabled(val)
+		}
+		return nil
+	}
+	res["isOnPremPublishingEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsOnPremPublishingEnabled(val)
+		}
+		return nil
+	}
+	res["isPersistentCookieEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsPersistentCookieEnabled(val)
+		}
+		return nil
+	}
+	res["isSecureCookieEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsSecureCookieEnabled(val)
+		}
+		return nil
+	}
+	res["isStateSessionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsStateSessionEnabled(val)
+		}
+		return nil
+	}
+	res["isTranslateHostHeaderEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsTranslateHostHeaderEnabled(val)
+		}
+		return nil
+	}
+	res["isTranslateLinksInBodyEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsTranslateLinksInBodyEnabled(val)
+		}
+		return nil
+	}
+	res["@odata.type"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOdataType(val)
+		}
+		return nil
+	}
+	res["onPremisesApplicationSegments"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateOnPremisesApplicationSegmentFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]OnPremisesApplicationSegmentable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(OnPremisesApplicationSegmentable)
+				}
+			}
+			m.SetOnPremisesApplicationSegments(res)
+		}
+		return nil
+	}
+	res["segmentsConfiguration"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateSegmentConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSegmentsConfiguration(val.(SegmentConfigurationable))
+		}
+		return nil
+	}
+	res["singleSignOnSettings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateOnPremisesPublishingSingleSignOnFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSingleSignOnSettings(val.(OnPremisesPublishingSingleSignOnable))
+		}
+		return nil
+	}
+	res["trafficRoutingMethod"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseTrafficRoutingMethod)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTrafficRoutingMethod(val.(*TrafficRoutingMethod))
+		}
+		return nil
+	}
+	res["useAlternateUrlForTranslationAndRedirect"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUseAlternateUrlForTranslationAndRedirect(val)
+		}
+		return nil
+	}
+	res["verifiedCustomDomainCertificatesMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateVerifiedCustomDomainCertificatesMetadataFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVerifiedCustomDomainCertificatesMetadata(val.(VerifiedCustomDomainCertificatesMetadataable))
+		}
+		return nil
+	}
+	res["verifiedCustomDomainKeyCredential"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateKeyCredentialFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVerifiedCustomDomainKeyCredential(val.(KeyCredentialable))
+		}
+		return nil
+	}
+	res["verifiedCustomDomainPasswordCredential"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePasswordCredentialFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVerifiedCustomDomainPasswordCredential(val.(PasswordCredentialable))
+		}
+		return nil
+	}
+	res["wafAllowedHeaders"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWafAllowedHeadersDictionaryFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWafAllowedHeaders(val.(WafAllowedHeadersDictionaryable))
+		}
+		return nil
+	}
+	res["wafIpRanges"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]IpRangeable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(IpRangeable)
+				}
+			}
+			m.SetWafIpRanges(res)
+		}
+		return nil
+	}
+	res["wafProvider"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWafProvider(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
-    val, err := m.GetBackingStore().Get("internalUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetInternalUrl() *string {
+	val, err := m.GetBackingStore().Get("internalUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetIsAccessibleViaZTNAClient gets the isAccessibleViaZTNAClient property value. Indicates whether the application is accessible via a Global Secure Access client on a managed device.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
-    val, err := m.GetBackingStore().Get("isAccessibleViaZTNAClient")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient() *bool {
+	val, err := m.GetBackingStore().Get("isAccessibleViaZTNAClient")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsBackendCertificateValidationEnabled gets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsContinuousAccessEvaluationEnabled gets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsContinuousAccessEvaluationEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isContinuousAccessEvaluationEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsContinuousAccessEvaluationEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isContinuousAccessEvaluationEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
-// GetIsDeviceAccessEnabled gets the isDeviceAccessEnabled property value. The isDeviceAccessEnabled property
+
+// GetIsDeviceAccessEnabled gets the isDeviceAccessEnabled property value. Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. false by default.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsDeviceAccessEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isDeviceAccessEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsDeviceAccessEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isDeviceAccessEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsDnsResolutionEnabled gets the isDnsResolutionEnabled property value. Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isDnsResolutionEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isDnsResolutionEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsHttpOnlyCookieEnabled gets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isHttpOnlyCookieEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsHttpOnlyCookieEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isHttpOnlyCookieEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsOnPremPublishingEnabled gets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isOnPremPublishingEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsOnPremPublishingEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isOnPremPublishingEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsPersistentCookieEnabled gets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isPersistentCookieEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsPersistentCookieEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isPersistentCookieEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsSecureCookieEnabled gets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsSecureCookieEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isSecureCookieEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsSecureCookieEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isSecureCookieEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsStateSessionEnabled gets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsStateSessionEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isStateSessionEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsStateSessionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isStateSessionEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsTranslateHostHeaderEnabled gets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isTranslateHostHeaderEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsTranslateHostHeaderEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isTranslateHostHeaderEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIsTranslateLinksInBodyEnabled gets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isTranslateLinksInBodyEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetIsTranslateLinksInBodyEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isTranslateLinksInBodyEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetOdataType() *string {
+	val, err := m.GetBackingStore().Get("odataType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application. This property is deprecated and will stop returning data on June 1, 2023. Use segmentsConfiguration instead.
 // returns a []OnPremisesApplicationSegmentable when successful
-func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
-    val, err := m.GetBackingStore().Get("onPremisesApplicationSegments")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]OnPremisesApplicationSegmentable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments() []OnPremisesApplicationSegmentable {
+	val, err := m.GetBackingStore().Get("onPremisesApplicationSegments")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]OnPremisesApplicationSegmentable)
+	}
+	return nil
 }
+
 // GetSegmentsConfiguration gets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
 // returns a SegmentConfigurationable when successful
-func (m *OnPremisesPublishing) GetSegmentsConfiguration()(SegmentConfigurationable) {
-    val, err := m.GetBackingStore().Get("segmentsConfiguration")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(SegmentConfigurationable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetSegmentsConfiguration() SegmentConfigurationable {
+	val, err := m.GetBackingStore().Get("segmentsConfiguration")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(SegmentConfigurationable)
+	}
+	return nil
 }
+
 // GetSingleSignOnSettings gets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
 // returns a OnPremisesPublishingSingleSignOnable when successful
-func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable) {
-    val, err := m.GetBackingStore().Get("singleSignOnSettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(OnPremisesPublishingSingleSignOnable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetSingleSignOnSettings() OnPremisesPublishingSingleSignOnable {
+	val, err := m.GetBackingStore().Get("singleSignOnSettings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(OnPremisesPublishingSingleSignOnable)
+	}
+	return nil
 }
+
 // GetTrafficRoutingMethod gets the trafficRoutingMethod property value. The trafficRoutingMethod property
 // returns a *TrafficRoutingMethod when successful
-func (m *OnPremisesPublishing) GetTrafficRoutingMethod()(*TrafficRoutingMethod) {
-    val, err := m.GetBackingStore().Get("trafficRoutingMethod")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*TrafficRoutingMethod)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetTrafficRoutingMethod() *TrafficRoutingMethod {
+	val, err := m.GetBackingStore().Get("trafficRoutingMethod")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*TrafficRoutingMethod)
+	}
+	return nil
 }
+
 // GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 // returns a *bool when successful
-func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
-    val, err := m.GetBackingStore().Get("useAlternateUrlForTranslationAndRedirect")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect() *bool {
+	val, err := m.GetBackingStore().Get("useAlternateUrlForTranslationAndRedirect")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetVerifiedCustomDomainCertificatesMetadata gets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
 // returns a VerifiedCustomDomainCertificatesMetadataable when successful
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable) {
-    val, err := m.GetBackingStore().Get("verifiedCustomDomainCertificatesMetadata")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(VerifiedCustomDomainCertificatesMetadataable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainCertificatesMetadata() VerifiedCustomDomainCertificatesMetadataable {
+	val, err := m.GetBackingStore().Get("verifiedCustomDomainCertificatesMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(VerifiedCustomDomainCertificatesMetadataable)
+	}
+	return nil
 }
+
 // GetVerifiedCustomDomainKeyCredential gets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
 // returns a KeyCredentialable when successful
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential()(KeyCredentialable) {
-    val, err := m.GetBackingStore().Get("verifiedCustomDomainKeyCredential")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(KeyCredentialable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainKeyCredential() KeyCredentialable {
+	val, err := m.GetBackingStore().Get("verifiedCustomDomainKeyCredential")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(KeyCredentialable)
+	}
+	return nil
 }
+
 // GetVerifiedCustomDomainPasswordCredential gets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
 // returns a PasswordCredentialable when successful
-func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable) {
-    val, err := m.GetBackingStore().Get("verifiedCustomDomainPasswordCredential")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PasswordCredentialable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential() PasswordCredentialable {
+	val, err := m.GetBackingStore().Get("verifiedCustomDomainPasswordCredential")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PasswordCredentialable)
+	}
+	return nil
 }
+
 // GetWafAllowedHeaders gets the wafAllowedHeaders property value. The wafAllowedHeaders property
 // returns a WafAllowedHeadersDictionaryable when successful
-func (m *OnPremisesPublishing) GetWafAllowedHeaders()(WafAllowedHeadersDictionaryable) {
-    val, err := m.GetBackingStore().Get("wafAllowedHeaders")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WafAllowedHeadersDictionaryable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetWafAllowedHeaders() WafAllowedHeadersDictionaryable {
+	val, err := m.GetBackingStore().Get("wafAllowedHeaders")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WafAllowedHeadersDictionaryable)
+	}
+	return nil
 }
+
 // GetWafIpRanges gets the wafIpRanges property value. The wafIpRanges property
 // returns a []IpRangeable when successful
-func (m *OnPremisesPublishing) GetWafIpRanges()([]IpRangeable) {
-    val, err := m.GetBackingStore().Get("wafIpRanges")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]IpRangeable)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetWafIpRanges() []IpRangeable {
+	val, err := m.GetBackingStore().Get("wafIpRanges")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]IpRangeable)
+	}
+	return nil
 }
+
 // GetWafProvider gets the wafProvider property value. The wafProvider property
 // returns a *string when successful
-func (m *OnPremisesPublishing) GetWafProvider()(*string) {
-    val, err := m.GetBackingStore().Get("wafProvider")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *OnPremisesPublishing) GetWafProvider() *string {
+	val, err := m.GetBackingStore().Get("wafProvider")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    {
-        err := writer.WriteStringValue("alternateUrl", m.GetAlternateUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("applicationServerTimeout", m.GetApplicationServerTimeout())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("applicationType", m.GetApplicationType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetExternalAuthenticationType() != nil {
-        cast := (*m.GetExternalAuthenticationType()).String()
-        err := writer.WriteStringValue("externalAuthenticationType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("externalUrl", m.GetExternalUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("internalUrl", m.GetInternalUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isAccessibleViaZTNAClient", m.GetIsAccessibleViaZTNAClient())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isBackendCertificateValidationEnabled", m.GetIsBackendCertificateValidationEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", m.GetIsContinuousAccessEvaluationEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isDeviceAccessEnabled", m.GetIsDeviceAccessEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isDnsResolutionEnabled", m.GetIsDnsResolutionEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isHttpOnlyCookieEnabled", m.GetIsHttpOnlyCookieEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isOnPremPublishingEnabled", m.GetIsOnPremPublishingEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isPersistentCookieEnabled", m.GetIsPersistentCookieEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isSecureCookieEnabled", m.GetIsSecureCookieEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isStateSessionEnabled", m.GetIsStateSessionEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isTranslateHostHeaderEnabled", m.GetIsTranslateHostHeaderEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("isTranslateLinksInBodyEnabled", m.GetIsTranslateLinksInBodyEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetOnPremisesApplicationSegments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesApplicationSegments()))
-        for i, v := range m.GetOnPremisesApplicationSegments() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("onPremisesApplicationSegments", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("segmentsConfiguration", m.GetSegmentsConfiguration())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("singleSignOnSettings", m.GetSingleSignOnSettings())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTrafficRoutingMethod() != nil {
-        cast := (*m.GetTrafficRoutingMethod()).String()
-        err := writer.WriteStringValue("trafficRoutingMethod", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", m.GetUseAlternateUrlForTranslationAndRedirect())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("verifiedCustomDomainCertificatesMetadata", m.GetVerifiedCustomDomainCertificatesMetadata())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("verifiedCustomDomainKeyCredential", m.GetVerifiedCustomDomainKeyCredential())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("verifiedCustomDomainPasswordCredential", m.GetVerifiedCustomDomainPasswordCredential())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteObjectValue("wafAllowedHeaders", m.GetWafAllowedHeaders())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetWafIpRanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWafIpRanges()))
-        for i, v := range m.GetWafIpRanges() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("wafIpRanges", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("wafProvider", m.GetWafProvider())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteStringValue("alternateUrl", m.GetAlternateUrl())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("applicationServerTimeout", m.GetApplicationServerTimeout())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("applicationType", m.GetApplicationType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetExternalAuthenticationType() != nil {
+		cast := (*m.GetExternalAuthenticationType()).String()
+		err := writer.WriteStringValue("externalAuthenticationType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("externalUrl", m.GetExternalUrl())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("internalUrl", m.GetInternalUrl())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isAccessibleViaZTNAClient", m.GetIsAccessibleViaZTNAClient())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isBackendCertificateValidationEnabled", m.GetIsBackendCertificateValidationEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", m.GetIsContinuousAccessEvaluationEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isDeviceAccessEnabled", m.GetIsDeviceAccessEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isDnsResolutionEnabled", m.GetIsDnsResolutionEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isHttpOnlyCookieEnabled", m.GetIsHttpOnlyCookieEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isOnPremPublishingEnabled", m.GetIsOnPremPublishingEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isPersistentCookieEnabled", m.GetIsPersistentCookieEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isSecureCookieEnabled", m.GetIsSecureCookieEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isStateSessionEnabled", m.GetIsStateSessionEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isTranslateHostHeaderEnabled", m.GetIsTranslateHostHeaderEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("isTranslateLinksInBodyEnabled", m.GetIsTranslateLinksInBodyEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetOnPremisesApplicationSegments() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesApplicationSegments()))
+		for i, v := range m.GetOnPremisesApplicationSegments() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("onPremisesApplicationSegments", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("segmentsConfiguration", m.GetSegmentsConfiguration())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("singleSignOnSettings", m.GetSingleSignOnSettings())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTrafficRoutingMethod() != nil {
+		cast := (*m.GetTrafficRoutingMethod()).String()
+		err := writer.WriteStringValue("trafficRoutingMethod", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", m.GetUseAlternateUrlForTranslationAndRedirect())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("verifiedCustomDomainCertificatesMetadata", m.GetVerifiedCustomDomainCertificatesMetadata())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("verifiedCustomDomainKeyCredential", m.GetVerifiedCustomDomainKeyCredential())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("verifiedCustomDomainPasswordCredential", m.GetVerifiedCustomDomainPasswordCredential())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("wafAllowedHeaders", m.GetWafAllowedHeaders())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetWafIpRanges() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWafIpRanges()))
+		for i, v := range m.GetWafIpRanges() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("wafIpRanges", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("wafProvider", m.GetWafProvider())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteAdditionalData(m.GetAdditionalData())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *OnPremisesPublishing) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetAdditionalData(value map[string]any) {
+	err := m.GetBackingStore().Set("additionalData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.
-func (m *OnPremisesPublishing) SetAlternateUrl(value *string)() {
-    err := m.GetBackingStore().Set("alternateUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetAlternateUrl(value *string) {
+	err := m.GetBackingStore().Set("alternateUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetApplicationServerTimeout sets the applicationServerTimeout property value. The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is 'Backend Timeout'. Default value is default.
-func (m *OnPremisesPublishing) SetApplicationServerTimeout(value *string)() {
-    err := m.GetBackingStore().Set("applicationServerTimeout", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetApplicationServerTimeout(value *string) {
+	err := m.GetBackingStore().Set("applicationServerTimeout", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetApplicationType sets the applicationType property value. System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.
-func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
-    err := m.GetBackingStore().Set("applicationType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetApplicationType(value *string) {
+	err := m.GetBackingStore().Set("applicationType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
+func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+	m.backingStore = value
 }
+
 // SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
-func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
-    err := m.GetBackingStore().Set("externalAuthenticationType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType) {
+	err := m.GetBackingStore().Set("externalAuthenticationType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExternalUrl sets the externalUrl property value. The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.
-func (m *OnPremisesPublishing) SetExternalUrl(value *string)() {
-    err := m.GetBackingStore().Set("externalUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetExternalUrl(value *string) {
+	err := m.GetBackingStore().Set("externalUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetInternalUrl sets the internalUrl property value. The internal url of the application. For example, https://intranet/.
-func (m *OnPremisesPublishing) SetInternalUrl(value *string)() {
-    err := m.GetBackingStore().Set("internalUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetInternalUrl(value *string) {
+	err := m.GetBackingStore().Set("internalUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsAccessibleViaZTNAClient sets the isAccessibleViaZTNAClient property value. Indicates whether the application is accessible via a Global Secure Access client on a managed device.
-func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool)() {
-    err := m.GetBackingStore().Set("isAccessibleViaZTNAClient", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool) {
+	err := m.GetBackingStore().Set("isAccessibleViaZTNAClient", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsBackendCertificateValidationEnabled sets the isBackendCertificateValidationEnabled property value. Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.
-func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isBackendCertificateValidationEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isBackendCertificateValidationEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsContinuousAccessEvaluationEnabled sets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
-func (m *OnPremisesPublishing) SetIsContinuousAccessEvaluationEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isContinuousAccessEvaluationEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsContinuousAccessEvaluationEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isContinuousAccessEvaluationEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetIsDeviceAccessEnabled sets the isDeviceAccessEnabled property value. The isDeviceAccessEnabled property
-func (m *OnPremisesPublishing) SetIsDeviceAccessEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isDeviceAccessEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetIsDeviceAccessEnabled sets the isDeviceAccessEnabled property value. Indicates whether the Microsoft Entra Private Access application is accessible or available in device access mode. false by default.
+func (m *OnPremisesPublishing) SetIsDeviceAccessEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isDeviceAccessEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsDnsResolutionEnabled sets the isDnsResolutionEnabled property value. Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
-func (m *OnPremisesPublishing) SetIsDnsResolutionEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isDnsResolutionEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsDnsResolutionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isDnsResolutionEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsHttpOnlyCookieEnabled sets the isHttpOnlyCookieEnabled property value. Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.
-func (m *OnPremisesPublishing) SetIsHttpOnlyCookieEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isHttpOnlyCookieEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsHttpOnlyCookieEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isHttpOnlyCookieEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsOnPremPublishingEnabled sets the isOnPremPublishingEnabled property value. Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.
-func (m *OnPremisesPublishing) SetIsOnPremPublishingEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isOnPremPublishingEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsOnPremPublishingEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isOnPremPublishingEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsPersistentCookieEnabled sets the isPersistentCookieEnabled property value. Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can't share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.
-func (m *OnPremisesPublishing) SetIsPersistentCookieEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isPersistentCookieEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsPersistentCookieEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isPersistentCookieEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsSecureCookieEnabled sets the isSecureCookieEnabled property value. Indicates if the Secure cookie flag should be set in the HTTP response headers. Set this value to true to transmit cookies over a secure channel such as an encrypted HTTPS request. Default value is true.
-func (m *OnPremisesPublishing) SetIsSecureCookieEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isSecureCookieEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsSecureCookieEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isSecureCookieEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsStateSessionEnabled sets the isStateSessionEnabled property value. Indicates whether validation of the state parameter when the client uses the OAuth 2.0 authorization code grant flow is enabled. This setting allows admins to specify whether they want to enable CSRF protection for their apps.
-func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isStateSessionEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsStateSessionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isStateSessionEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsTranslateHostHeaderEnabled sets the isTranslateHostHeaderEnabled property value. Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.
-func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isTranslateHostHeaderEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsTranslateHostHeaderEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isTranslateHostHeaderEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsTranslateLinksInBodyEnabled sets the isTranslateLinksInBodyEnabled property value. Indicates if the application should translate urls in the application body. Keep this value as false unless you have hardcoded HTML links to other on-premises applications and don't use custom domains. For more information, see Link translation with Application Proxy. Default value is false.
-func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isTranslateLinksInBodyEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetIsTranslateLinksInBodyEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isTranslateLinksInBodyEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *OnPremisesPublishing) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetOdataType(value *string) {
+	err := m.GetBackingStore().Set("odataType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application. This property is deprecated and will stop returning data on June 1, 2023. Use segmentsConfiguration instead.
-func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
-    err := m.GetBackingStore().Set("onPremisesApplicationSegments", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable) {
+	err := m.GetBackingStore().Set("onPremisesApplicationSegments", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSegmentsConfiguration sets the segmentsConfiguration property value. Represents the collection of application segments for an on-premises wildcard application that's published through Microsoft Entra application proxy.
-func (m *OnPremisesPublishing) SetSegmentsConfiguration(value SegmentConfigurationable)() {
-    err := m.GetBackingStore().Set("segmentsConfiguration", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetSegmentsConfiguration(value SegmentConfigurationable) {
+	err := m.GetBackingStore().Set("segmentsConfiguration", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSingleSignOnSettings sets the singleSignOnSettings property value. Represents the single sign-on configuration for the on-premises application.
-func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)() {
-    err := m.GetBackingStore().Set("singleSignOnSettings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable) {
+	err := m.GetBackingStore().Set("singleSignOnSettings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTrafficRoutingMethod sets the trafficRoutingMethod property value. The trafficRoutingMethod property
-func (m *OnPremisesPublishing) SetTrafficRoutingMethod(value *TrafficRoutingMethod)() {
-    err := m.GetBackingStore().Set("trafficRoutingMethod", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetTrafficRoutingMethod(value *TrafficRoutingMethod) {
+	err := m.GetBackingStore().Set("trafficRoutingMethod", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
-func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool)() {
-    err := m.GetBackingStore().Set("useAlternateUrlForTranslationAndRedirect", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool) {
+	err := m.GetBackingStore().Set("useAlternateUrlForTranslationAndRedirect", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVerifiedCustomDomainCertificatesMetadata sets the verifiedCustomDomainCertificatesMetadata property value. Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)() {
-    err := m.GetBackingStore().Set("verifiedCustomDomainCertificatesMetadata", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable) {
+	err := m.GetBackingStore().Set("verifiedCustomDomainCertificatesMetadata", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVerifiedCustomDomainKeyCredential sets the verifiedCustomDomainKeyCredential property value. The associated key credential for the custom domain used.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)() {
-    err := m.GetBackingStore().Set("verifiedCustomDomainKeyCredential", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainKeyCredential(value KeyCredentialable) {
+	err := m.GetBackingStore().Set("verifiedCustomDomainKeyCredential", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVerifiedCustomDomainPasswordCredential sets the verifiedCustomDomainPasswordCredential property value. The associated password credential for the custom domain used.
-func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)() {
-    err := m.GetBackingStore().Set("verifiedCustomDomainPasswordCredential", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable) {
+	err := m.GetBackingStore().Set("verifiedCustomDomainPasswordCredential", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWafAllowedHeaders sets the wafAllowedHeaders property value. The wafAllowedHeaders property
-func (m *OnPremisesPublishing) SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable)() {
-    err := m.GetBackingStore().Set("wafAllowedHeaders", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable) {
+	err := m.GetBackingStore().Set("wafAllowedHeaders", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWafIpRanges sets the wafIpRanges property value. The wafIpRanges property
-func (m *OnPremisesPublishing) SetWafIpRanges(value []IpRangeable)() {
-    err := m.GetBackingStore().Set("wafIpRanges", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetWafIpRanges(value []IpRangeable) {
+	err := m.GetBackingStore().Set("wafIpRanges", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWafProvider sets the wafProvider property value. The wafProvider property
-func (m *OnPremisesPublishing) SetWafProvider(value *string)() {
-    err := m.GetBackingStore().Set("wafProvider", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *OnPremisesPublishing) SetWafProvider(value *string) {
+	err := m.GetBackingStore().Set("wafProvider", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type OnPremisesPublishingable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAlternateUrl()(*string)
-    GetApplicationServerTimeout()(*string)
-    GetApplicationType()(*string)
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetExternalAuthenticationType()(*ExternalAuthenticationType)
-    GetExternalUrl()(*string)
-    GetInternalUrl()(*string)
-    GetIsAccessibleViaZTNAClient()(*bool)
-    GetIsBackendCertificateValidationEnabled()(*bool)
-    GetIsContinuousAccessEvaluationEnabled()(*bool)
-    GetIsDeviceAccessEnabled()(*bool)
-    GetIsDnsResolutionEnabled()(*bool)
-    GetIsHttpOnlyCookieEnabled()(*bool)
-    GetIsOnPremPublishingEnabled()(*bool)
-    GetIsPersistentCookieEnabled()(*bool)
-    GetIsSecureCookieEnabled()(*bool)
-    GetIsStateSessionEnabled()(*bool)
-    GetIsTranslateHostHeaderEnabled()(*bool)
-    GetIsTranslateLinksInBodyEnabled()(*bool)
-    GetOdataType()(*string)
-    GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable)
-    GetSegmentsConfiguration()(SegmentConfigurationable)
-    GetSingleSignOnSettings()(OnPremisesPublishingSingleSignOnable)
-    GetTrafficRoutingMethod()(*TrafficRoutingMethod)
-    GetUseAlternateUrlForTranslationAndRedirect()(*bool)
-    GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable)
-    GetVerifiedCustomDomainKeyCredential()(KeyCredentialable)
-    GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable)
-    GetWafAllowedHeaders()(WafAllowedHeadersDictionaryable)
-    GetWafIpRanges()([]IpRangeable)
-    GetWafProvider()(*string)
-    SetAlternateUrl(value *string)()
-    SetApplicationServerTimeout(value *string)()
-    SetApplicationType(value *string)()
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetExternalAuthenticationType(value *ExternalAuthenticationType)()
-    SetExternalUrl(value *string)()
-    SetInternalUrl(value *string)()
-    SetIsAccessibleViaZTNAClient(value *bool)()
-    SetIsBackendCertificateValidationEnabled(value *bool)()
-    SetIsContinuousAccessEvaluationEnabled(value *bool)()
-    SetIsDeviceAccessEnabled(value *bool)()
-    SetIsDnsResolutionEnabled(value *bool)()
-    SetIsHttpOnlyCookieEnabled(value *bool)()
-    SetIsOnPremPublishingEnabled(value *bool)()
-    SetIsPersistentCookieEnabled(value *bool)()
-    SetIsSecureCookieEnabled(value *bool)()
-    SetIsStateSessionEnabled(value *bool)()
-    SetIsTranslateHostHeaderEnabled(value *bool)()
-    SetIsTranslateLinksInBodyEnabled(value *bool)()
-    SetOdataType(value *string)()
-    SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)()
-    SetSegmentsConfiguration(value SegmentConfigurationable)()
-    SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)()
-    SetTrafficRoutingMethod(value *TrafficRoutingMethod)()
-    SetUseAlternateUrlForTranslationAndRedirect(value *bool)()
-    SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)()
-    SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)()
-    SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)()
-    SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable)()
-    SetWafIpRanges(value []IpRangeable)()
-    SetWafProvider(value *string)()
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAlternateUrl() *string
+	GetApplicationServerTimeout() *string
+	GetApplicationType() *string
+	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetExternalAuthenticationType() *ExternalAuthenticationType
+	GetExternalUrl() *string
+	GetInternalUrl() *string
+	GetIsAccessibleViaZTNAClient() *bool
+	GetIsBackendCertificateValidationEnabled() *bool
+	GetIsContinuousAccessEvaluationEnabled() *bool
+	GetIsDeviceAccessEnabled() *bool
+	GetIsDnsResolutionEnabled() *bool
+	GetIsHttpOnlyCookieEnabled() *bool
+	GetIsOnPremPublishingEnabled() *bool
+	GetIsPersistentCookieEnabled() *bool
+	GetIsSecureCookieEnabled() *bool
+	GetIsStateSessionEnabled() *bool
+	GetIsTranslateHostHeaderEnabled() *bool
+	GetIsTranslateLinksInBodyEnabled() *bool
+	GetOdataType() *string
+	GetOnPremisesApplicationSegments() []OnPremisesApplicationSegmentable
+	GetSegmentsConfiguration() SegmentConfigurationable
+	GetSingleSignOnSettings() OnPremisesPublishingSingleSignOnable
+	GetTrafficRoutingMethod() *TrafficRoutingMethod
+	GetUseAlternateUrlForTranslationAndRedirect() *bool
+	GetVerifiedCustomDomainCertificatesMetadata() VerifiedCustomDomainCertificatesMetadataable
+	GetVerifiedCustomDomainKeyCredential() KeyCredentialable
+	GetVerifiedCustomDomainPasswordCredential() PasswordCredentialable
+	GetWafAllowedHeaders() WafAllowedHeadersDictionaryable
+	GetWafIpRanges() []IpRangeable
+	GetWafProvider() *string
+	SetAlternateUrl(value *string)
+	SetApplicationServerTimeout(value *string)
+	SetApplicationType(value *string)
+	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetExternalAuthenticationType(value *ExternalAuthenticationType)
+	SetExternalUrl(value *string)
+	SetInternalUrl(value *string)
+	SetIsAccessibleViaZTNAClient(value *bool)
+	SetIsBackendCertificateValidationEnabled(value *bool)
+	SetIsContinuousAccessEvaluationEnabled(value *bool)
+	SetIsDeviceAccessEnabled(value *bool)
+	SetIsDnsResolutionEnabled(value *bool)
+	SetIsHttpOnlyCookieEnabled(value *bool)
+	SetIsOnPremPublishingEnabled(value *bool)
+	SetIsPersistentCookieEnabled(value *bool)
+	SetIsSecureCookieEnabled(value *bool)
+	SetIsStateSessionEnabled(value *bool)
+	SetIsTranslateHostHeaderEnabled(value *bool)
+	SetIsTranslateLinksInBodyEnabled(value *bool)
+	SetOdataType(value *string)
+	SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)
+	SetSegmentsConfiguration(value SegmentConfigurationable)
+	SetSingleSignOnSettings(value OnPremisesPublishingSingleSignOnable)
+	SetTrafficRoutingMethod(value *TrafficRoutingMethod)
+	SetUseAlternateUrlForTranslationAndRedirect(value *bool)
+	SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)
+	SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)
+	SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)
+	SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable)
+	SetWafIpRanges(value []IpRangeable)
+	SetWafProvider(value *string)
 }

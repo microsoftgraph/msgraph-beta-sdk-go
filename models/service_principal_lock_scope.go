@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ServicePrincipalLockScope int
 
 const (
-    NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE ServicePrincipalLockScope = iota
-    FOREIGNTENANTONLY_SERVICEPRINCIPALLOCKSCOPE
-    EVERYWHERE_SERVICEPRINCIPALLOCKSCOPE
-    UNKNOWNFUTUREVALUE_SERVICEPRINCIPALLOCKSCOPE
+	NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE ServicePrincipalLockScope = iota
+	FOREIGNTENANTONLY_SERVICEPRINCIPALLOCKSCOPE
+	EVERYWHERE_SERVICEPRINCIPALLOCKSCOPE
+	UNKNOWNFUTUREVALUE_SERVICEPRINCIPALLOCKSCOPE
 )
 
 func (i ServicePrincipalLockScope) String() string {
-    return []string{"notConfigured", "foreignTenantOnly", "everywhere", "unknownFutureValue"}[i]
+	return []string{"notConfigured", "foreignTenantOnly", "everywhere", "unknownFutureValue"}[i]
 }
+
 func ParseServicePrincipalLockScope(v string) (any, error) {
-    result := NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE
-        case "foreignTenantOnly":
-            result = FOREIGNTENANTONLY_SERVICEPRINCIPALLOCKSCOPE
-        case "everywhere":
-            result = EVERYWHERE_SERVICEPRINCIPALLOCKSCOPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SERVICEPRINCIPALLOCKSCOPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_SERVICEPRINCIPALLOCKSCOPE
+	case "foreignTenantOnly":
+		result = FOREIGNTENANTONLY_SERVICEPRINCIPALLOCKSCOPE
+	case "everywhere":
+		result = EVERYWHERE_SERVICEPRINCIPALLOCKSCOPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SERVICEPRINCIPALLOCKSCOPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeServicePrincipalLockScope(values []ServicePrincipalLockScope) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ServicePrincipalLockScope) isMultiValue() bool {
-    return false
+	return false
 }

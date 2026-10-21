@@ -4,267 +4,284 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type RestoreTaskActivityLog struct {
-    ActivityLogBase
+	ActivityLogBase
 }
+
 // NewRestoreTaskActivityLog instantiates a new RestoreTaskActivityLog and sets the default values.
-func NewRestoreTaskActivityLog()(*RestoreTaskActivityLog) {
-    m := &RestoreTaskActivityLog{
-        ActivityLogBase: *NewActivityLogBase(),
-    }
-    odataTypeValue := "#microsoft.graph.restoreTaskActivityLog"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewRestoreTaskActivityLog() *RestoreTaskActivityLog {
+	m := &RestoreTaskActivityLog{
+		ActivityLogBase: *NewActivityLogBase(),
+	}
+	odataTypeValue := "#microsoft.graph.restoreTaskActivityLog"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateRestoreTaskActivityLogFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRestoreTaskActivityLogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRestoreTaskActivityLog(), nil
+func CreateRestoreTaskActivityLogFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRestoreTaskActivityLog(), nil
 }
+
 // GetDestinationType gets the destinationType property value. The destinationType property
 // returns a *DestinationType when successful
-func (m *RestoreTaskActivityLog) GetDestinationType()(*DestinationType) {
-    val, err := m.GetBackingStore().Get("destinationType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*DestinationType)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetDestinationType() *DestinationType {
+	val, err := m.GetBackingStore().Get("destinationType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*DestinationType)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RestoreTaskActivityLog) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ActivityLogBase.GetFieldDeserializers()
-    res["destinationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseDestinationType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDestinationType(val.(*DestinationType))
-        }
-        return nil
-    }
-    res["restoreArtifactDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateRestoreArtifactDetailsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestoreArtifactDetails(val.(RestoreArtifactDetailsable))
-        }
-        return nil
-    }
-    res["restoreCompletionDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestoreCompletionDateTime(val)
-        }
-        return nil
-    }
-    res["restoreSessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestoreSessionId(val)
-        }
-        return nil
-    }
-    res["restoreSessionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRestoreSessionStatus)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestoreSessionStatus(val.(*RestoreSessionStatus))
-        }
-        return nil
-    }
-    res["tags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRestorePointTags)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTags(val.(*RestorePointTags))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RestoreTaskActivityLog) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ActivityLogBase.GetFieldDeserializers()
+	res["destinationType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseDestinationType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDestinationType(val.(*DestinationType))
+		}
+		return nil
+	}
+	res["restoreArtifactDetails"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateRestoreArtifactDetailsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRestoreArtifactDetails(val.(RestoreArtifactDetailsable))
+		}
+		return nil
+	}
+	res["restoreCompletionDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRestoreCompletionDateTime(val)
+		}
+		return nil
+	}
+	res["restoreSessionId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRestoreSessionId(val)
+		}
+		return nil
+	}
+	res["restoreSessionStatus"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseRestoreSessionStatus)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRestoreSessionStatus(val.(*RestoreSessionStatus))
+		}
+		return nil
+	}
+	res["tags"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseRestorePointTags)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTags(val.(*RestorePointTags))
+		}
+		return nil
+	}
+	return res
 }
-// GetRestoreArtifactDetails gets the restoreArtifactDetails property value. The restoreArtifactDetails property
+
+// GetRestoreArtifactDetails gets the restoreArtifactDetails property value. Contains detailed information about the artifacts being restored, including counts and status of restored items.
 // returns a RestoreArtifactDetailsable when successful
-func (m *RestoreTaskActivityLog) GetRestoreArtifactDetails()(RestoreArtifactDetailsable) {
-    val, err := m.GetBackingStore().Get("restoreArtifactDetails")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(RestoreArtifactDetailsable)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetRestoreArtifactDetails() RestoreArtifactDetailsable {
+	val, err := m.GetBackingStore().Get("restoreArtifactDetails")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(RestoreArtifactDetailsable)
+	}
+	return nil
 }
-// GetRestoreCompletionDateTime gets the restoreCompletionDateTime property value. The restoreCompletionDateTime property
+
+// GetRestoreCompletionDateTime gets the restoreCompletionDateTime property value. The date and time when the restore task was completed.
 // returns a *Time when successful
-func (m *RestoreTaskActivityLog) GetRestoreCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("restoreCompletionDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetRestoreCompletionDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("restoreCompletionDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
-// GetRestoreSessionId gets the restoreSessionId property value. The restoreSessionId property
+
+// GetRestoreSessionId gets the restoreSessionId property value. The unique identifier of the restore session associated with this activity log.
 // returns a *string when successful
-func (m *RestoreTaskActivityLog) GetRestoreSessionId()(*string) {
-    val, err := m.GetBackingStore().Get("restoreSessionId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetRestoreSessionId() *string {
+	val, err := m.GetBackingStore().Get("restoreSessionId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetRestoreSessionStatus gets the restoreSessionStatus property value. The restoreSessionStatus property
 // returns a *RestoreSessionStatus when successful
-func (m *RestoreTaskActivityLog) GetRestoreSessionStatus()(*RestoreSessionStatus) {
-    val, err := m.GetBackingStore().Get("restoreSessionStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*RestoreSessionStatus)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetRestoreSessionStatus() *RestoreSessionStatus {
+	val, err := m.GetBackingStore().Get("restoreSessionStatus")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*RestoreSessionStatus)
+	}
+	return nil
 }
+
 // GetTags gets the tags property value. The tags property
 // returns a *RestorePointTags when successful
-func (m *RestoreTaskActivityLog) GetTags()(*RestorePointTags) {
-    val, err := m.GetBackingStore().Get("tags")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*RestorePointTags)
-    }
-    return nil
+func (m *RestoreTaskActivityLog) GetTags() *RestorePointTags {
+	val, err := m.GetBackingStore().Get("tags")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*RestorePointTags)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *RestoreTaskActivityLog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ActivityLogBase.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetDestinationType() != nil {
-        cast := (*m.GetDestinationType()).String()
-        err = writer.WriteStringValue("destinationType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("restoreArtifactDetails", m.GetRestoreArtifactDetails())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("restoreCompletionDateTime", m.GetRestoreCompletionDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("restoreSessionId", m.GetRestoreSessionId())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRestoreSessionStatus() != nil {
-        cast := (*m.GetRestoreSessionStatus()).String()
-        err = writer.WriteStringValue("restoreSessionStatus", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTags() != nil {
-        cast := (*m.GetTags()).String()
-        err = writer.WriteStringValue("tags", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *RestoreTaskActivityLog) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ActivityLogBase.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetDestinationType() != nil {
+		cast := (*m.GetDestinationType()).String()
+		err = writer.WriteStringValue("destinationType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("restoreArtifactDetails", m.GetRestoreArtifactDetails())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("restoreCompletionDateTime", m.GetRestoreCompletionDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("restoreSessionId", m.GetRestoreSessionId())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRestoreSessionStatus() != nil {
+		cast := (*m.GetRestoreSessionStatus()).String()
+		err = writer.WriteStringValue("restoreSessionStatus", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTags() != nil {
+		cast := (*m.GetTags()).String()
+		err = writer.WriteStringValue("tags", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetDestinationType sets the destinationType property value. The destinationType property
-func (m *RestoreTaskActivityLog) SetDestinationType(value *DestinationType)() {
-    err := m.GetBackingStore().Set("destinationType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RestoreTaskActivityLog) SetDestinationType(value *DestinationType) {
+	err := m.GetBackingStore().Set("destinationType", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetRestoreArtifactDetails sets the restoreArtifactDetails property value. The restoreArtifactDetails property
-func (m *RestoreTaskActivityLog) SetRestoreArtifactDetails(value RestoreArtifactDetailsable)() {
-    err := m.GetBackingStore().Set("restoreArtifactDetails", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetRestoreArtifactDetails sets the restoreArtifactDetails property value. Contains detailed information about the artifacts being restored, including counts and status of restored items.
+func (m *RestoreTaskActivityLog) SetRestoreArtifactDetails(value RestoreArtifactDetailsable) {
+	err := m.GetBackingStore().Set("restoreArtifactDetails", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetRestoreCompletionDateTime sets the restoreCompletionDateTime property value. The restoreCompletionDateTime property
-func (m *RestoreTaskActivityLog) SetRestoreCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("restoreCompletionDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetRestoreCompletionDateTime sets the restoreCompletionDateTime property value. The date and time when the restore task was completed.
+func (m *RestoreTaskActivityLog) SetRestoreCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("restoreCompletionDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
-// SetRestoreSessionId sets the restoreSessionId property value. The restoreSessionId property
-func (m *RestoreTaskActivityLog) SetRestoreSessionId(value *string)() {
-    err := m.GetBackingStore().Set("restoreSessionId", value)
-    if err != nil {
-        panic(err)
-    }
+
+// SetRestoreSessionId sets the restoreSessionId property value. The unique identifier of the restore session associated with this activity log.
+func (m *RestoreTaskActivityLog) SetRestoreSessionId(value *string) {
+	err := m.GetBackingStore().Set("restoreSessionId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRestoreSessionStatus sets the restoreSessionStatus property value. The restoreSessionStatus property
-func (m *RestoreTaskActivityLog) SetRestoreSessionStatus(value *RestoreSessionStatus)() {
-    err := m.GetBackingStore().Set("restoreSessionStatus", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RestoreTaskActivityLog) SetRestoreSessionStatus(value *RestoreSessionStatus) {
+	err := m.GetBackingStore().Set("restoreSessionStatus", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTags sets the tags property value. The tags property
-func (m *RestoreTaskActivityLog) SetTags(value *RestorePointTags)() {
-    err := m.GetBackingStore().Set("tags", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *RestoreTaskActivityLog) SetTags(value *RestorePointTags) {
+	err := m.GetBackingStore().Set("tags", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type RestoreTaskActivityLogable interface {
-    ActivityLogBaseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDestinationType()(*DestinationType)
-    GetRestoreArtifactDetails()(RestoreArtifactDetailsable)
-    GetRestoreCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetRestoreSessionId()(*string)
-    GetRestoreSessionStatus()(*RestoreSessionStatus)
-    GetTags()(*RestorePointTags)
-    SetDestinationType(value *DestinationType)()
-    SetRestoreArtifactDetails(value RestoreArtifactDetailsable)()
-    SetRestoreCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetRestoreSessionId(value *string)()
-    SetRestoreSessionStatus(value *RestoreSessionStatus)()
-    SetTags(value *RestorePointTags)()
+	ActivityLogBaseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetDestinationType() *DestinationType
+	GetRestoreArtifactDetails() RestoreArtifactDetailsable
+	GetRestoreCompletionDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetRestoreSessionId() *string
+	GetRestoreSessionStatus() *RestoreSessionStatus
+	GetTags() *RestorePointTags
+	SetDestinationType(value *DestinationType)
+	SetRestoreArtifactDetails(value RestoreArtifactDetailsable)
+	SetRestoreCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetRestoreSessionId(value *string)
+	SetRestoreSessionStatus(value *RestoreSessionStatus)
+	SetTags(value *RestorePointTags)
 }

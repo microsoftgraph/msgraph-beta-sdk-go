@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcSnapshotType int
 
 const (
-    AUTOMATIC_CLOUDPCSNAPSHOTTYPE CloudPcSnapshotType = iota
-    MANUAL_CLOUDPCSNAPSHOTTYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
-    RETENTION_CLOUDPCSNAPSHOTTYPE
+	AUTOMATIC_CLOUDPCSNAPSHOTTYPE CloudPcSnapshotType = iota
+	MANUAL_CLOUDPCSNAPSHOTTYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
+	RETENTION_CLOUDPCSNAPSHOTTYPE
 )
 
 func (i CloudPcSnapshotType) String() string {
-    return []string{"automatic", "manual", "unknownFutureValue", "retention"}[i]
+	return []string{"automatic", "manual", "unknownFutureValue", "retention"}[i]
 }
+
 func ParseCloudPcSnapshotType(v string) (any, error) {
-    result := AUTOMATIC_CLOUDPCSNAPSHOTTYPE
-    switch v {
-        case "automatic":
-            result = AUTOMATIC_CLOUDPCSNAPSHOTTYPE
-        case "manual":
-            result = MANUAL_CLOUDPCSNAPSHOTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
-        case "retention":
-            result = RETENTION_CLOUDPCSNAPSHOTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AUTOMATIC_CLOUDPCSNAPSHOTTYPE
+	switch v {
+	case "automatic":
+		result = AUTOMATIC_CLOUDPCSNAPSHOTTYPE
+	case "manual":
+		result = MANUAL_CLOUDPCSNAPSHOTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
+	case "retention":
+		result = RETENTION_CLOUDPCSNAPSHOTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcSnapshotType(values []CloudPcSnapshotType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcSnapshotType) isMultiValue() bool {
-    return false
+	return false
 }

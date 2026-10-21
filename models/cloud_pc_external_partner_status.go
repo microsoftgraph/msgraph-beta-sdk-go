@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcExternalPartnerStatus int
 
 const (
-    NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS CloudPcExternalPartnerStatus = iota
-    AVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
-    HEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
-    UNHEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
-    UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERSTATUS
+	NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS CloudPcExternalPartnerStatus = iota
+	AVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
+	HEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
+	UNHEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
+	UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERSTATUS
 )
 
 func (i CloudPcExternalPartnerStatus) String() string {
-    return []string{"notAvailable", "available", "healthy", "unhealthy", "unknownFutureValue"}[i]
+	return []string{"notAvailable", "available", "healthy", "unhealthy", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcExternalPartnerStatus(v string) (any, error) {
-    result := NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
-    switch v {
-        case "notAvailable":
-            result = NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
-        case "available":
-            result = AVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
-        case "healthy":
-            result = HEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
-        case "unhealthy":
-            result = UNHEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
+	switch v {
+	case "notAvailable":
+		result = NOTAVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
+	case "available":
+		result = AVAILABLE_CLOUDPCEXTERNALPARTNERSTATUS
+	case "healthy":
+		result = HEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
+	case "unhealthy":
+		result = UNHEALTHY_CLOUDPCEXTERNALPARTNERSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCEXTERNALPARTNERSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcExternalPartnerStatus(values []CloudPcExternalPartnerStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcExternalPartnerStatus) isMultiValue() bool {
-    return false
+	return false
 }

@@ -4,275 +4,292 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type PersonInterest struct {
-    ItemFacet
+	ItemFacet
 }
+
 // NewPersonInterest instantiates a new PersonInterest and sets the default values.
-func NewPersonInterest()(*PersonInterest) {
-    m := &PersonInterest{
-        ItemFacet: *NewItemFacet(),
-    }
-    odataTypeValue := "#microsoft.graph.personInterest"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewPersonInterest() *PersonInterest {
+	m := &PersonInterest{
+		ItemFacet: *NewItemFacet(),
+	}
+	odataTypeValue := "#microsoft.graph.personInterest"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreatePersonInterestFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePersonInterestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPersonInterest(), nil
+func CreatePersonInterestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPersonInterest(), nil
 }
+
 // GetCategories gets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
 // returns a []string when successful
-func (m *PersonInterest) GetCategories()([]string) {
-    val, err := m.GetBackingStore().Get("categories")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *PersonInterest) GetCategories() []string {
+	val, err := m.GetBackingStore().Get("categories")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetCollaborationTags gets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
 // returns a []string when successful
-func (m *PersonInterest) GetCollaborationTags()([]string) {
-    val, err := m.GetBackingStore().Get("collaborationTags")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *PersonInterest) GetCollaborationTags() []string {
+	val, err := m.GetBackingStore().Get("collaborationTags")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetDescription gets the description property value. Contains a description of the interest.
 // returns a *string when successful
-func (m *PersonInterest) GetDescription()(*string) {
-    val, err := m.GetBackingStore().Get("description")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PersonInterest) GetDescription() *string {
+	val, err := m.GetBackingStore().Get("description")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDisplayName gets the displayName property value. Contains a friendly name for the interest.
 // returns a *string when successful
-func (m *PersonInterest) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PersonInterest) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PersonInterest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ItemFacet.GetFieldDeserializers()
-    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetCategories(res)
-        }
-        return nil
-    }
-    res["collaborationTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetCollaborationTags(res)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["thumbnailUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetThumbnailUrl(val)
-        }
-        return nil
-    }
-    res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWebUrl(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PersonInterest) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ItemFacet.GetFieldDeserializers()
+	res["categories"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetCategories(res)
+		}
+		return nil
+	}
+	res["collaborationTags"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetCollaborationTags(res)
+		}
+		return nil
+	}
+	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDescription(val)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["thumbnailUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetThumbnailUrl(val)
+		}
+		return nil
+	}
+	res["webUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWebUrl(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetThumbnailUrl gets the thumbnailUrl property value. The thumbnailUrl property
 // returns a *string when successful
-func (m *PersonInterest) GetThumbnailUrl()(*string) {
-    val, err := m.GetBackingStore().Get("thumbnailUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PersonInterest) GetThumbnailUrl() *string {
+	val, err := m.GetBackingStore().Get("thumbnailUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetWebUrl gets the webUrl property value. Contains a link to a web page or resource about the interest.
 // returns a *string when successful
-func (m *PersonInterest) GetWebUrl()(*string) {
-    val, err := m.GetBackingStore().Get("webUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *PersonInterest) GetWebUrl() *string {
+	val, err := m.GetBackingStore().Get("webUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *PersonInterest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ItemFacet.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetCategories() != nil {
-        err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCollaborationTags() != nil {
-        err = writer.WriteCollectionOfStringValues("collaborationTags", m.GetCollaborationTags())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("thumbnailUrl", m.GetThumbnailUrl())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("webUrl", m.GetWebUrl())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PersonInterest) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ItemFacet.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetCategories() != nil {
+		err = writer.WriteCollectionOfStringValues("categories", m.GetCategories())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCollaborationTags() != nil {
+		err = writer.WriteCollectionOfStringValues("collaborationTags", m.GetCollaborationTags())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("description", m.GetDescription())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("thumbnailUrl", m.GetThumbnailUrl())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("webUrl", m.GetWebUrl())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetCategories sets the categories property value. Contains categories a user has associated with the interest (for example, personal, recipies).
-func (m *PersonInterest) SetCategories(value []string)() {
-    err := m.GetBackingStore().Set("categories", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetCategories(value []string) {
+	err := m.GetBackingStore().Set("categories", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCollaborationTags sets the collaborationTags property value. Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
-func (m *PersonInterest) SetCollaborationTags(value []string)() {
-    err := m.GetBackingStore().Set("collaborationTags", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetCollaborationTags(value []string) {
+	err := m.GetBackingStore().Set("collaborationTags", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDescription sets the description property value. Contains a description of the interest.
-func (m *PersonInterest) SetDescription(value *string)() {
-    err := m.GetBackingStore().Set("description", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetDescription(value *string) {
+	err := m.GetBackingStore().Set("description", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDisplayName sets the displayName property value. Contains a friendly name for the interest.
-func (m *PersonInterest) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetThumbnailUrl sets the thumbnailUrl property value. The thumbnailUrl property
-func (m *PersonInterest) SetThumbnailUrl(value *string)() {
-    err := m.GetBackingStore().Set("thumbnailUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetThumbnailUrl(value *string) {
+	err := m.GetBackingStore().Set("thumbnailUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWebUrl sets the webUrl property value. Contains a link to a web page or resource about the interest.
-func (m *PersonInterest) SetWebUrl(value *string)() {
-    err := m.GetBackingStore().Set("webUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PersonInterest) SetWebUrl(value *string) {
+	err := m.GetBackingStore().Set("webUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PersonInterestable interface {
-    ItemFacetable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCategories()([]string)
-    GetCollaborationTags()([]string)
-    GetDescription()(*string)
-    GetDisplayName()(*string)
-    GetThumbnailUrl()(*string)
-    GetWebUrl()(*string)
-    SetCategories(value []string)()
-    SetCollaborationTags(value []string)()
-    SetDescription(value *string)()
-    SetDisplayName(value *string)()
-    SetThumbnailUrl(value *string)()
-    SetWebUrl(value *string)()
+	ItemFacetable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCategories() []string
+	GetCollaborationTags() []string
+	GetDescription() *string
+	GetDisplayName() *string
+	GetThumbnailUrl() *string
+	GetWebUrl() *string
+	SetCategories(value []string)
+	SetCollaborationTags(value []string)
+	SetDescription(value *string)
+	SetDisplayName(value *string)
+	SetThumbnailUrl(value *string)
+	SetWebUrl(value *string)
 }

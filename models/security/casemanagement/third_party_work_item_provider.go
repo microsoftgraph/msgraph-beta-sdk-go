@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package casemanagement
+
 type ThirdPartyWorkItemProvider int
 
 const (
-    SERVICENOW_THIRDPARTYWORKITEMPROVIDER ThirdPartyWorkItemProvider = iota
-    UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMPROVIDER
+	SERVICENOW_THIRDPARTYWORKITEMPROVIDER ThirdPartyWorkItemProvider = iota
+	UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMPROVIDER
 )
 
 func (i ThirdPartyWorkItemProvider) String() string {
-    return []string{"serviceNow", "unknownFutureValue"}[i]
+	return []string{"serviceNow", "unknownFutureValue"}[i]
 }
+
 func ParseThirdPartyWorkItemProvider(v string) (any, error) {
-    result := SERVICENOW_THIRDPARTYWORKITEMPROVIDER
-    switch v {
-        case "serviceNow":
-            result = SERVICENOW_THIRDPARTYWORKITEMPROVIDER
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMPROVIDER
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := SERVICENOW_THIRDPARTYWORKITEMPROVIDER
+	switch v {
+	case "serviceNow":
+		result = SERVICENOW_THIRDPARTYWORKITEMPROVIDER
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMPROVIDER
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeThirdPartyWorkItemProvider(values []ThirdPartyWorkItemProvider) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ThirdPartyWorkItemProvider) isMultiValue() bool {
-    return false
+	return false
 }

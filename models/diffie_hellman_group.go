@@ -2,54 +2,58 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Diffie Hellman Group values for Windows10 VPN policies with IKEv2 connection type.
 type DiffieHellmanGroup int
 
 const (
-    // Group1
-    GROUP1_DIFFIEHELLMANGROUP DiffieHellmanGroup = iota
-    // Group2
-    GROUP2_DIFFIEHELLMANGROUP
-    // Group14
-    GROUP14_DIFFIEHELLMANGROUP
-    // ECP256
-    ECP256_DIFFIEHELLMANGROUP
-    // ECP384
-    ECP384_DIFFIEHELLMANGROUP
-    // Group24
-    GROUP24_DIFFIEHELLMANGROUP
+	// Group1
+	GROUP1_DIFFIEHELLMANGROUP DiffieHellmanGroup = iota
+	// Group2
+	GROUP2_DIFFIEHELLMANGROUP
+	// Group14
+	GROUP14_DIFFIEHELLMANGROUP
+	// ECP256
+	ECP256_DIFFIEHELLMANGROUP
+	// ECP384
+	ECP384_DIFFIEHELLMANGROUP
+	// Group24
+	GROUP24_DIFFIEHELLMANGROUP
 )
 
 func (i DiffieHellmanGroup) String() string {
-    return []string{"group1", "group2", "group14", "ecp256", "ecp384", "group24"}[i]
+	return []string{"group1", "group2", "group14", "ecp256", "ecp384", "group24"}[i]
 }
+
 func ParseDiffieHellmanGroup(v string) (any, error) {
-    result := GROUP1_DIFFIEHELLMANGROUP
-    switch v {
-        case "group1":
-            result = GROUP1_DIFFIEHELLMANGROUP
-        case "group2":
-            result = GROUP2_DIFFIEHELLMANGROUP
-        case "group14":
-            result = GROUP14_DIFFIEHELLMANGROUP
-        case "ecp256":
-            result = ECP256_DIFFIEHELLMANGROUP
-        case "ecp384":
-            result = ECP384_DIFFIEHELLMANGROUP
-        case "group24":
-            result = GROUP24_DIFFIEHELLMANGROUP
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GROUP1_DIFFIEHELLMANGROUP
+	switch v {
+	case "group1":
+		result = GROUP1_DIFFIEHELLMANGROUP
+	case "group2":
+		result = GROUP2_DIFFIEHELLMANGROUP
+	case "group14":
+		result = GROUP14_DIFFIEHELLMANGROUP
+	case "ecp256":
+		result = ECP256_DIFFIEHELLMANGROUP
+	case "ecp384":
+		result = ECP384_DIFFIEHELLMANGROUP
+	case "group24":
+		result = GROUP24_DIFFIEHELLMANGROUP
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDiffieHellmanGroup(values []DiffieHellmanGroup) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DiffieHellmanGroup) isMultiValue() bool {
-    return false
+	return false
 }

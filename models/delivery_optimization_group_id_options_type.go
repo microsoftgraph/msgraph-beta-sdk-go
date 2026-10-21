@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 type DeliveryOptimizationGroupIdOptionsType int
 
 const (
-    // Not configured.
-    NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE DeliveryOptimizationGroupIdOptionsType = iota
-    // Active Directory site.
-    ADSITE_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-    // Authenticated domain SID.
-    AUTHENTICATEDDOMAINSID_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-    // DHCP user option.
-    DHCPUSEROPTION_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-    // DNS suffix.
-    DNSSUFFIX_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	// Not configured.
+	NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE DeliveryOptimizationGroupIdOptionsType = iota
+	// Active Directory site.
+	ADSITE_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	// Authenticated domain SID.
+	AUTHENTICATEDDOMAINSID_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	// DHCP user option.
+	DHCPUSEROPTION_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	// DNS suffix.
+	DNSSUFFIX_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
 )
 
 func (i DeliveryOptimizationGroupIdOptionsType) String() string {
-    return []string{"notConfigured", "adSite", "authenticatedDomainSid", "dhcpUserOption", "dnsSuffix"}[i]
+	return []string{"notConfigured", "adSite", "authenticatedDomainSid", "dhcpUserOption", "dnsSuffix"}[i]
 }
+
 func ParseDeliveryOptimizationGroupIdOptionsType(v string) (any, error) {
-    result := NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-        case "adSite":
-            result = ADSITE_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-        case "authenticatedDomainSid":
-            result = AUTHENTICATEDDOMAINSID_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-        case "dhcpUserOption":
-            result = DHCPUSEROPTION_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-        case "dnsSuffix":
-            result = DNSSUFFIX_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	case "adSite":
+		result = ADSITE_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	case "authenticatedDomainSid":
+		result = AUTHENTICATEDDOMAINSID_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	case "dhcpUserOption":
+		result = DHCPUSEROPTION_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	case "dnsSuffix":
+		result = DNSSUFFIX_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeliveryOptimizationGroupIdOptionsType(values []DeliveryOptimizationGroupIdOptionsType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeliveryOptimizationGroupIdOptionsType) isMultiValue() bool {
-    return false
+	return false
 }

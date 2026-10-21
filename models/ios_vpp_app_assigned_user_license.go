@@ -4,40 +4,45 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // IosVppAppAssignedUserLicense iOS Volume Purchase Program user license assignment. This class does not support Create, Delete, or Update.
 type IosVppAppAssignedUserLicense struct {
-    IosVppAppAssignedLicense
+	IosVppAppAssignedLicense
 }
+
 // NewIosVppAppAssignedUserLicense instantiates a new IosVppAppAssignedUserLicense and sets the default values.
-func NewIosVppAppAssignedUserLicense()(*IosVppAppAssignedUserLicense) {
-    m := &IosVppAppAssignedUserLicense{
-        IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),
-    }
-    return m
+func NewIosVppAppAssignedUserLicense() *IosVppAppAssignedUserLicense {
+	m := &IosVppAppAssignedUserLicense{
+		IosVppAppAssignedLicense: *NewIosVppAppAssignedLicense(),
+	}
+	return m
 }
+
 // CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewIosVppAppAssignedUserLicense(), nil
+func CreateIosVppAppAssignedUserLicenseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewIosVppAppAssignedUserLicense(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *IosVppAppAssignedUserLicense) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.IosVppAppAssignedLicense.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *IosVppAppAssignedUserLicense) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.IosVppAppAssignedLicense.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *IosVppAppAssignedUserLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.IosVppAppAssignedLicense.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *IosVppAppAssignedUserLicense) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.IosVppAppAssignedLicense.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type IosVppAppAssignedUserLicenseable interface {
-    IosVppAppAssignedLicenseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	IosVppAppAssignedLicenseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

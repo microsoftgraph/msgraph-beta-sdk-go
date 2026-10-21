@@ -4,42 +4,47 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // DeviceManagementIntentSettingSecretConstraint constraint indicating that this value is a secret and will be encrypted.
 type DeviceManagementIntentSettingSecretConstraint struct {
-    DeviceManagementConstraint
+	DeviceManagementConstraint
 }
+
 // NewDeviceManagementIntentSettingSecretConstraint instantiates a new DeviceManagementIntentSettingSecretConstraint and sets the default values.
-func NewDeviceManagementIntentSettingSecretConstraint()(*DeviceManagementIntentSettingSecretConstraint) {
-    m := &DeviceManagementIntentSettingSecretConstraint{
-        DeviceManagementConstraint: *NewDeviceManagementConstraint(),
-    }
-    odataTypeValue := "#microsoft.graph.deviceManagementIntentSettingSecretConstraint"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDeviceManagementIntentSettingSecretConstraint() *DeviceManagementIntentSettingSecretConstraint {
+	m := &DeviceManagementIntentSettingSecretConstraint{
+		DeviceManagementConstraint: *NewDeviceManagementConstraint(),
+	}
+	odataTypeValue := "#microsoft.graph.deviceManagementIntentSettingSecretConstraint"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDeviceManagementIntentSettingSecretConstraint(), nil
+func CreateDeviceManagementIntentSettingSecretConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDeviceManagementIntentSettingSecretConstraint(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DeviceManagementIntentSettingSecretConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceManagementConstraint.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DeviceManagementIntentSettingSecretConstraint) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceManagementConstraint.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DeviceManagementIntentSettingSecretConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceManagementConstraint.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *DeviceManagementIntentSettingSecretConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceManagementConstraint.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type DeviceManagementIntentSettingSecretConstraintable interface {
-    DeviceManagementConstraintable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	DeviceManagementConstraintable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

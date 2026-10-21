@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type SensorStatus int
 
 const (
-    ACTIVE_SENSORSTATUS SensorStatus = iota
-    INACTIVE_SENSORSTATUS
-    UNKNOWNFUTUREVALUE_SENSORSTATUS
+	ACTIVE_SENSORSTATUS SensorStatus = iota
+	INACTIVE_SENSORSTATUS
+	UNKNOWNFUTUREVALUE_SENSORSTATUS
 )
 
 func (i SensorStatus) String() string {
-    return []string{"active", "inactive", "unknownFutureValue"}[i]
+	return []string{"active", "inactive", "unknownFutureValue"}[i]
 }
+
 func ParseSensorStatus(v string) (any, error) {
-    result := ACTIVE_SENSORSTATUS
-    switch v {
-        case "active":
-            result = ACTIVE_SENSORSTATUS
-        case "inactive":
-            result = INACTIVE_SENSORSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SENSORSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ACTIVE_SENSORSTATUS
+	switch v {
+	case "active":
+		result = ACTIVE_SENSORSTATUS
+	case "inactive":
+		result = INACTIVE_SENSORSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SENSORSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSensorStatus(values []SensorStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SensorStatus) isMultiValue() bool {
-    return false
+	return false
 }

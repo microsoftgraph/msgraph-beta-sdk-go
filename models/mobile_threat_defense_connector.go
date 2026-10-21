@@ -4,856 +4,1256 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 // MobileThreatDefenseConnector entity which represents a connection to Mobile Threat Defense partner.
 type MobileThreatDefenseConnector struct {
-    Entity
+	Entity
 }
+
 // NewMobileThreatDefenseConnector instantiates a new MobileThreatDefenseConnector and sets the default values.
-func NewMobileThreatDefenseConnector()(*MobileThreatDefenseConnector) {
-    m := &MobileThreatDefenseConnector{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewMobileThreatDefenseConnector() *MobileThreatDefenseConnector {
+	m := &MobileThreatDefenseConnector{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateMobileThreatDefenseConnectorFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateMobileThreatDefenseConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewMobileThreatDefenseConnector(), nil
+func CreateMobileThreatDefenseConnectorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewMobileThreatDefenseConnector(), nil
 }
+
 // GetAllowPartnerToCollectIOSApplicationMetadata gets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMetadata()(*bool) {
-    val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSApplicationMetadata")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMetadata() *bool {
+	val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSApplicationMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAllowPartnerToCollectIosCertificateMetadata gets the allowPartnerToCollectIosCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, indicates that metadata about installed certificates will not be collected. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosCertificateMetadata()(*bool) {
-    val, err := m.GetBackingStore().Get("allowPartnerToCollectIosCertificateMetadata")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosCertificateMetadata() *bool {
+	val, err := m.GetBackingStore().Get("allowPartnerToCollectIosCertificateMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAllowPartnerToCollectIOSPersonalApplicationMetadata gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool) {
-    val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSPersonalApplicationMetadata")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplicationMetadata() *bool {
+	val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSPersonalApplicationMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAllowPartnerToCollectIosPersonalCertificateMetadata gets the allowPartnerToCollectIosPersonalCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on personally owned iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled personally owned iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, no metadata for installed certificates is sent for personally owned iOS/iPadOS devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosPersonalCertificateMetadata()(*bool) {
-    val, err := m.GetBackingStore().Get("allowPartnerToCollectIosPersonalCertificateMetadata")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosPersonalCertificateMetadata() *bool {
+	val, err := m.GetBackingStore().Get("allowPartnerToCollectIosPersonalCertificateMetadata")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAndroidDeviceBlockedOnMissingPartnerData gets the androidDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerData()(*bool) {
-    val, err := m.GetBackingStore().Get("androidDeviceBlockedOnMissingPartnerData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAndroidDeviceBlockedOnMissingPartnerData() *bool {
+	val, err := m.GetBackingStore().Get("androidDeviceBlockedOnMissingPartnerData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAndroidEnabled gets the androidEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAndroidEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("androidEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAndroidEnabled() *bool {
+	val, err := m.GetBackingStore().Get("androidEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetAndroidMobileApplicationManagementEnabled gets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetAndroidMobileApplicationManagementEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("androidMobileApplicationManagementEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetAndroidMobileApplicationManagementEnabled() *bool {
+	val, err := m.GetBackingStore().Get("androidMobileApplicationManagementEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["allowPartnerToCollectIOSApplicationMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowPartnerToCollectIOSApplicationMetadata(val)
-        }
-        return nil
-    }
-    res["allowPartnerToCollectIosCertificateMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowPartnerToCollectIosCertificateMetadata(val)
-        }
-        return nil
-    }
-    res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowPartnerToCollectIOSPersonalApplicationMetadata(val)
-        }
-        return nil
-    }
-    res["allowPartnerToCollectIosPersonalCertificateMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowPartnerToCollectIosPersonalCertificateMetadata(val)
-        }
-        return nil
-    }
-    res["androidDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidDeviceBlockedOnMissingPartnerData(val)
-        }
-        return nil
-    }
-    res["androidEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidEnabled(val)
-        }
-        return nil
-    }
-    res["androidMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAndroidMobileApplicationManagementEnabled(val)
-        }
-        return nil
-    }
-    res["grantMobileThreatDefensePartnerRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGrantMobileThreatDefensePartnerRole(val)
-        }
-        return nil
-    }
-    res["iosDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosDeviceBlockedOnMissingPartnerData(val)
-        }
-        return nil
-    }
-    res["iosEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosEnabled(val)
-        }
-        return nil
-    }
-    res["iosMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIosMobileApplicationManagementEnabled(val)
-        }
-        return nil
-    }
-    res["lastHeartbeatDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastHeartbeatDateTime(val)
-        }
-        return nil
-    }
-    res["launchMobileThreatDefensePartnerOnSetupEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLaunchMobileThreatDefensePartnerOnSetupEnabled(val)
-        }
-        return nil
-    }
-    res["macDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacDeviceBlockedOnMissingPartnerData(val)
-        }
-        return nil
-    }
-    res["macEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMacEnabled(val)
-        }
-        return nil
-    }
-    res["microsoftDefenderForEndpointAttachEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMicrosoftDefenderForEndpointAttachEnabled(val)
-        }
-        return nil
-    }
-    res["partnerState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMobileThreatPartnerTenantState)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerState(val.(*MobileThreatPartnerTenantState))
-        }
-        return nil
-    }
-    res["partnerUnresponsivenessThresholdInDays"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerUnresponsivenessThresholdInDays(val)
-        }
-        return nil
-    }
-    res["partnerUnsupportedOsVersionBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPartnerUnsupportedOsVersionBlocked(val)
-        }
-        return nil
-    }
-    res["windowsDeviceBlockedOnMissingPartnerData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsDeviceBlockedOnMissingPartnerData(val)
-        }
-        return nil
-    }
-    res["windowsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsEnabled(val)
-        }
-        return nil
-    }
-    res["windowsMobileApplicationManagementEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWindowsMobileApplicationManagementEnabled(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *MobileThreatDefenseConnector) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["allowPartnerToCollectIOSApplicationMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAllowPartnerToCollectIOSApplicationMetadata(val)
+		}
+		return nil
+	}
+	res["allowPartnerToCollectIosCertificateMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAllowPartnerToCollectIosCertificateMetadata(val)
+		}
+		return nil
+	}
+	res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAllowPartnerToCollectIOSPersonalApplicationMetadata(val)
+		}
+		return nil
+	}
+	res["allowPartnerToCollectIosPersonalCertificateMetadata"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAllowPartnerToCollectIosPersonalCertificateMetadata(val)
+		}
+		return nil
+	}
+	res["androidDeviceBlockedOnMissingPartnerData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAndroidDeviceBlockedOnMissingPartnerData(val)
+		}
+		return nil
+	}
+	res["androidEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAndroidEnabled(val)
+		}
+		return nil
+	}
+	res["androidMobileApplicationManagementEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAndroidMobileApplicationManagementEnabled(val)
+		}
+		return nil
+	}
+	res["grantMobileThreatDefensePartnerRole"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGrantMobileThreatDefensePartnerRole(val)
+		}
+		return nil
+	}
+	res["iosDeviceBlockedOnMissingPartnerData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIosDeviceBlockedOnMissingPartnerData(val)
+		}
+		return nil
+	}
+	res["iosEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIosEnabled(val)
+		}
+		return nil
+	}
+	res["iosMobileApplicationManagementEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIosMobileApplicationManagementEnabled(val)
+		}
+		return nil
+	}
+	res["lastHeartbeatDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastHeartbeatDateTime(val)
+		}
+		return nil
+	}
+	res["launchMobileThreatDefensePartnerOnSetupEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLaunchMobileThreatDefensePartnerOnSetupEnabled(val)
+		}
+		return nil
+	}
+	res["macDeviceBlockedOnMissingPartnerData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMacDeviceBlockedOnMissingPartnerData(val)
+		}
+		return nil
+	}
+	res["macEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMacEnabled(val)
+		}
+		return nil
+	}
+	res["microsoftDefenderForEndpointAttachEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMicrosoftDefenderForEndpointAttachEnabled(val)
+		}
+		return nil
+	}
+	res["partnerDisplayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerDisplayName(val)
+		}
+		return nil
+	}
+	res["partnerMinimumSupportedAndroidVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerMinimumSupportedAndroidVersion(val)
+		}
+		return nil
+	}
+	res["partnerMinimumSupportedIosVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerMinimumSupportedIosVersion(val)
+		}
+		return nil
+	}
+	res["partnerMinimumSupportedMacVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerMinimumSupportedMacVersion(val)
+		}
+		return nil
+	}
+	res["partnerMinimumSupportedWindowsVersion"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerMinimumSupportedWindowsVersion(val)
+		}
+		return nil
+	}
+	res["partnerState"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseMobileThreatPartnerTenantState)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerState(val.(*MobileThreatPartnerTenantState))
+		}
+		return nil
+	}
+	res["partnerSupportsAndroidMam"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerSupportsAndroidMam(val)
+		}
+		return nil
+	}
+	res["partnerSupportsIosCertificateSync"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerSupportsIosCertificateSync(val)
+		}
+		return nil
+	}
+	res["partnerSupportsIosMam"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerSupportsIosMam(val)
+		}
+		return nil
+	}
+	res["partnerSupportsWindowsMam"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerSupportsWindowsMam(val)
+		}
+		return nil
+	}
+	res["partnerUnresponsivenessThresholdInDays"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerUnresponsivenessThresholdInDays(val)
+		}
+		return nil
+	}
+	res["partnerUnsupportedOsVersionBlocked"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPartnerUnsupportedOsVersionBlocked(val)
+		}
+		return nil
+	}
+	res["windowsDeviceBlockedOnMissingPartnerData"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWindowsDeviceBlockedOnMissingPartnerData(val)
+		}
+		return nil
+	}
+	res["windowsEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWindowsEnabled(val)
+		}
+		return nil
+	}
+	res["windowsMobileApplicationManagementEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWindowsMobileApplicationManagementEnabled(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetGrantMobileThreatDefensePartnerRole gets the grantMobileThreatDefensePartnerRole property value. When TRUE, indicates that the Mobile Threat Defense partner is granted the Mobile Threat Defense role on enrolled Android Corporate Owned Business Only and Corporate Owned Personally Enabled devices. When FALSE, indicates that the Mobile Threat Defense partner is not granted the Mobile Threat Defense role. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetGrantMobileThreatDefensePartnerRole()(*bool) {
-    val, err := m.GetBackingStore().Get("grantMobileThreatDefensePartnerRole")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetGrantMobileThreatDefensePartnerRole() *bool {
+	val, err := m.GetBackingStore().Get("grantMobileThreatDefensePartnerRole")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIosDeviceBlockedOnMissingPartnerData gets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData()(*bool) {
-    val, err := m.GetBackingStore().Get("iosDeviceBlockedOnMissingPartnerData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetIosDeviceBlockedOnMissingPartnerData() *bool {
+	val, err := m.GetBackingStore().Get("iosDeviceBlockedOnMissingPartnerData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIosEnabled gets the iosEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetIosEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("iosEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetIosEnabled() *bool {
+	val, err := m.GetBackingStore().Get("iosEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetIosMobileApplicationManagementEnabled gets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("iosMobileApplicationManagementEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetIosMobileApplicationManagementEnabled() *bool {
+	val, err := m.GetBackingStore().Get("iosMobileApplicationManagementEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetLastHeartbeatDateTime gets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
 // returns a *Time when successful
-func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetLastHeartbeatDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastHeartbeatDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetLaunchMobileThreatDefensePartnerOnSetupEnabled gets the launchMobileThreatDefensePartnerOnSetupEnabled property value. When TRUE, indicates that the Mobile Threat Defense partner will be automatically launched during Android Corporate Owned Business Only and Corporate Owned Personally Enabled device setup. When FALSE, indicates that the Mobile Threat Defense partner will not be automatically launched during setup. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetLaunchMobileThreatDefensePartnerOnSetupEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("launchMobileThreatDefensePartnerOnSetupEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetLaunchMobileThreatDefensePartnerOnSetupEnabled() *bool {
+	val, err := m.GetBackingStore().Get("launchMobileThreatDefensePartnerOnSetupEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetMacDeviceBlockedOnMissingPartnerData gets the macDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetMacDeviceBlockedOnMissingPartnerData()(*bool) {
-    val, err := m.GetBackingStore().Get("macDeviceBlockedOnMissingPartnerData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetMacDeviceBlockedOnMissingPartnerData() *bool {
+	val, err := m.GetBackingStore().Get("macDeviceBlockedOnMissingPartnerData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetMacEnabled gets the macEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Mac devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Mac devices. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetMacEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("macEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetMacEnabled() *bool {
+	val, err := m.GetBackingStore().Get("macEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetMicrosoftDefenderForEndpointAttachEnabled gets the microsoftDefenderForEndpointAttachEnabled property value. When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("microsoftDefenderForEndpointAttachEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetMicrosoftDefenderForEndpointAttachEnabled() *bool {
+	val, err := m.GetBackingStore().Get("microsoftDefenderForEndpointAttachEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
+// GetPartnerDisplayName gets the partnerDisplayName property value. The display name of the Mobile Threat Defense partner. This is a read-only property determined by the partner metadata.
+// returns a *string when successful
+func (m *MobileThreatDefenseConnector) GetPartnerDisplayName() *string {
+	val, err := m.GetBackingStore().Get("partnerDisplayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetPartnerMinimumSupportedAndroidVersion gets the partnerMinimumSupportedAndroidVersion property value. The minimum Android version supported by the Mobile Threat Defense partner.
+// returns a *string when successful
+func (m *MobileThreatDefenseConnector) GetPartnerMinimumSupportedAndroidVersion() *string {
+	val, err := m.GetBackingStore().Get("partnerMinimumSupportedAndroidVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetPartnerMinimumSupportedIosVersion gets the partnerMinimumSupportedIosVersion property value. The minimum iOS version supported by the Mobile Threat Defense partner.
+// returns a *string when successful
+func (m *MobileThreatDefenseConnector) GetPartnerMinimumSupportedIosVersion() *string {
+	val, err := m.GetBackingStore().Get("partnerMinimumSupportedIosVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetPartnerMinimumSupportedMacVersion gets the partnerMinimumSupportedMacVersion property value. The minimum macOS version supported by the Mobile Threat Defense partner.
+// returns a *string when successful
+func (m *MobileThreatDefenseConnector) GetPartnerMinimumSupportedMacVersion() *string {
+	val, err := m.GetBackingStore().Get("partnerMinimumSupportedMacVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetPartnerMinimumSupportedWindowsVersion gets the partnerMinimumSupportedWindowsVersion property value. The minimum Windows version supported by the Mobile Threat Defense partner.
+// returns a *string when successful
+func (m *MobileThreatDefenseConnector) GetPartnerMinimumSupportedWindowsVersion() *string {
+	val, err := m.GetBackingStore().Get("partnerMinimumSupportedWindowsVersion")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
 // GetPartnerState gets the partnerState property value. Partner state of this tenant.
 // returns a *MobileThreatPartnerTenantState when successful
-func (m *MobileThreatDefenseConnector) GetPartnerState()(*MobileThreatPartnerTenantState) {
-    val, err := m.GetBackingStore().Get("partnerState")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*MobileThreatPartnerTenantState)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetPartnerState() *MobileThreatPartnerTenantState {
+	val, err := m.GetBackingStore().Get("partnerState")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*MobileThreatPartnerTenantState)
+	}
+	return nil
 }
+
+// GetPartnerSupportsAndroidMam gets the partnerSupportsAndroidMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports Android Mobile Application Management.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetPartnerSupportsAndroidMam() *bool {
+	val, err := m.GetBackingStore().Get("partnerSupportsAndroidMam")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetPartnerSupportsIosCertificateSync gets the partnerSupportsIosCertificateSync property value. When TRUE, indicates that the Mobile Threat Defense partner supports iOS certificate sync.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetPartnerSupportsIosCertificateSync() *bool {
+	val, err := m.GetBackingStore().Get("partnerSupportsIosCertificateSync")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetPartnerSupportsIosMam gets the partnerSupportsIosMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports iOS Mobile Application Management.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetPartnerSupportsIosMam() *bool {
+	val, err := m.GetBackingStore().Get("partnerSupportsIosMam")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetPartnerSupportsWindowsMam gets the partnerSupportsWindowsMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports Windows Mobile Application Management.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetPartnerSupportsWindowsMam() *bool {
+	val, err := m.GetBackingStore().Get("partnerSupportsWindowsMam")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
 // GetPartnerUnresponsivenessThresholdInDays gets the partnerUnresponsivenessThresholdInDays property value. Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.
 // returns a *int32 when successful
-func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays()(*int32) {
-    val, err := m.GetBackingStore().Get("partnerUnresponsivenessThresholdInDays")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetPartnerUnresponsivenessThresholdInDays() *int32 {
+	val, err := m.GetBackingStore().Get("partnerUnresponsivenessThresholdInDays")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetPartnerUnsupportedOsVersionBlocked gets the partnerUnsupportedOsVersionBlocked property value. When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked()(*bool) {
-    val, err := m.GetBackingStore().Get("partnerUnsupportedOsVersionBlocked")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetPartnerUnsupportedOsVersionBlocked() *bool {
+	val, err := m.GetBackingStore().Get("partnerUnsupportedOsVersionBlocked")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetWindowsDeviceBlockedOnMissingPartnerData gets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerData()(*bool) {
-    val, err := m.GetBackingStore().Get("windowsDeviceBlockedOnMissingPartnerData")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetWindowsDeviceBlockedOnMissingPartnerData() *bool {
+	val, err := m.GetBackingStore().Get("windowsDeviceBlockedOnMissingPartnerData")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetWindowsEnabled gets the windowsEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetWindowsEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("windowsEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetWindowsEnabled() *bool {
+	val, err := m.GetBackingStore().Get("windowsEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetWindowsMobileApplicationManagementEnabled gets the windowsMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
 // returns a *bool when successful
-func (m *MobileThreatDefenseConnector) GetWindowsMobileApplicationManagementEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("windowsMobileApplicationManagementEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) GetWindowsMobileApplicationManagementEnabled() *bool {
+	val, err := m.GetBackingStore().Get("windowsMobileApplicationManagementEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteBoolValue("allowPartnerToCollectIOSApplicationMetadata", m.GetAllowPartnerToCollectIOSApplicationMetadata())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("allowPartnerToCollectIosCertificateMetadata", m.GetAllowPartnerToCollectIosCertificateMetadata())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("allowPartnerToCollectIOSPersonalApplicationMetadata", m.GetAllowPartnerToCollectIOSPersonalApplicationMetadata())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("allowPartnerToCollectIosPersonalCertificateMetadata", m.GetAllowPartnerToCollectIosPersonalCertificateMetadata())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("androidDeviceBlockedOnMissingPartnerData", m.GetAndroidDeviceBlockedOnMissingPartnerData())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("androidEnabled", m.GetAndroidEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("androidMobileApplicationManagementEnabled", m.GetAndroidMobileApplicationManagementEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("grantMobileThreatDefensePartnerRole", m.GetGrantMobileThreatDefensePartnerRole())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("iosDeviceBlockedOnMissingPartnerData", m.GetIosDeviceBlockedOnMissingPartnerData())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("iosEnabled", m.GetIosEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("iosMobileApplicationManagementEnabled", m.GetIosMobileApplicationManagementEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastHeartbeatDateTime", m.GetLastHeartbeatDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("launchMobileThreatDefensePartnerOnSetupEnabled", m.GetLaunchMobileThreatDefensePartnerOnSetupEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("macDeviceBlockedOnMissingPartnerData", m.GetMacDeviceBlockedOnMissingPartnerData())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("macEnabled", m.GetMacEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("microsoftDefenderForEndpointAttachEnabled", m.GetMicrosoftDefenderForEndpointAttachEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPartnerState() != nil {
-        cast := (*m.GetPartnerState()).String()
-        err = writer.WriteStringValue("partnerState", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("partnerUnresponsivenessThresholdInDays", m.GetPartnerUnresponsivenessThresholdInDays())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("partnerUnsupportedOsVersionBlocked", m.GetPartnerUnsupportedOsVersionBlocked())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("windowsDeviceBlockedOnMissingPartnerData", m.GetWindowsDeviceBlockedOnMissingPartnerData())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("windowsEnabled", m.GetWindowsEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("windowsMobileApplicationManagementEnabled", m.GetWindowsMobileApplicationManagementEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteBoolValue("allowPartnerToCollectIOSApplicationMetadata", m.GetAllowPartnerToCollectIOSApplicationMetadata())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("allowPartnerToCollectIosCertificateMetadata", m.GetAllowPartnerToCollectIosCertificateMetadata())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("allowPartnerToCollectIOSPersonalApplicationMetadata", m.GetAllowPartnerToCollectIOSPersonalApplicationMetadata())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("allowPartnerToCollectIosPersonalCertificateMetadata", m.GetAllowPartnerToCollectIosPersonalCertificateMetadata())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("androidDeviceBlockedOnMissingPartnerData", m.GetAndroidDeviceBlockedOnMissingPartnerData())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("androidEnabled", m.GetAndroidEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("androidMobileApplicationManagementEnabled", m.GetAndroidMobileApplicationManagementEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("grantMobileThreatDefensePartnerRole", m.GetGrantMobileThreatDefensePartnerRole())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("iosDeviceBlockedOnMissingPartnerData", m.GetIosDeviceBlockedOnMissingPartnerData())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("iosEnabled", m.GetIosEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("iosMobileApplicationManagementEnabled", m.GetIosMobileApplicationManagementEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("lastHeartbeatDateTime", m.GetLastHeartbeatDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("launchMobileThreatDefensePartnerOnSetupEnabled", m.GetLaunchMobileThreatDefensePartnerOnSetupEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("macDeviceBlockedOnMissingPartnerData", m.GetMacDeviceBlockedOnMissingPartnerData())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("macEnabled", m.GetMacEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("microsoftDefenderForEndpointAttachEnabled", m.GetMicrosoftDefenderForEndpointAttachEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("partnerDisplayName", m.GetPartnerDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("partnerMinimumSupportedAndroidVersion", m.GetPartnerMinimumSupportedAndroidVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("partnerMinimumSupportedIosVersion", m.GetPartnerMinimumSupportedIosVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("partnerMinimumSupportedMacVersion", m.GetPartnerMinimumSupportedMacVersion())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("partnerMinimumSupportedWindowsVersion", m.GetPartnerMinimumSupportedWindowsVersion())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetPartnerState() != nil {
+		cast := (*m.GetPartnerState()).String()
+		err = writer.WriteStringValue("partnerState", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("partnerSupportsAndroidMam", m.GetPartnerSupportsAndroidMam())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("partnerSupportsIosCertificateSync", m.GetPartnerSupportsIosCertificateSync())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("partnerSupportsIosMam", m.GetPartnerSupportsIosMam())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("partnerSupportsWindowsMam", m.GetPartnerSupportsWindowsMam())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("partnerUnresponsivenessThresholdInDays", m.GetPartnerUnresponsivenessThresholdInDays())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("partnerUnsupportedOsVersionBlocked", m.GetPartnerUnsupportedOsVersionBlocked())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("windowsDeviceBlockedOnMissingPartnerData", m.GetWindowsDeviceBlockedOnMissingPartnerData())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("windowsEnabled", m.GetWindowsEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("windowsMobileApplicationManagementEnabled", m.GetWindowsMobileApplicationManagementEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAllowPartnerToCollectIOSApplicationMetadata sets the allowPartnerToCollectIOSApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)() {
-    err := m.GetBackingStore().Set("allowPartnerToCollectIOSApplicationMetadata", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSApplicationMetadata(value *bool) {
+	err := m.GetBackingStore().Set("allowPartnerToCollectIOSApplicationMetadata", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAllowPartnerToCollectIosCertificateMetadata sets the allowPartnerToCollectIosCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, indicates that metadata about installed certificates will not be collected. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosCertificateMetadata(value *bool)() {
-    err := m.GetBackingStore().Set("allowPartnerToCollectIosCertificateMetadata", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosCertificateMetadata(value *bool) {
+	err := m.GetBackingStore().Set("allowPartnerToCollectIosCertificateMetadata", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAllowPartnerToCollectIOSPersonalApplicationMetadata sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)() {
-    err := m.GetBackingStore().Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool) {
+	err := m.GetBackingStore().Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAllowPartnerToCollectIosPersonalCertificateMetadata sets the allowPartnerToCollectIosPersonalCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on personally owned iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled personally owned iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, no metadata for installed certificates is sent for personally owned iOS/iPadOS devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool)() {
-    err := m.GetBackingStore().Set("allowPartnerToCollectIosPersonalCertificateMetadata", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool) {
+	err := m.GetBackingStore().Set("allowPartnerToCollectIosPersonalCertificateMetadata", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAndroidDeviceBlockedOnMissingPartnerData sets the androidDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.
-func (m *MobileThreatDefenseConnector) SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)() {
-    err := m.GetBackingStore().Set("androidDeviceBlockedOnMissingPartnerData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAndroidDeviceBlockedOnMissingPartnerData(value *bool) {
+	err := m.GetBackingStore().Set("androidDeviceBlockedOnMissingPartnerData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAndroidEnabled sets the androidEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAndroidEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("androidEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAndroidEnabled(value *bool) {
+	err := m.GetBackingStore().Set("androidEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAndroidMobileApplicationManagementEnabled sets the androidMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetAndroidMobileApplicationManagementEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("androidMobileApplicationManagementEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetAndroidMobileApplicationManagementEnabled(value *bool) {
+	err := m.GetBackingStore().Set("androidMobileApplicationManagementEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetGrantMobileThreatDefensePartnerRole sets the grantMobileThreatDefensePartnerRole property value. When TRUE, indicates that the Mobile Threat Defense partner is granted the Mobile Threat Defense role on enrolled Android Corporate Owned Business Only and Corporate Owned Personally Enabled devices. When FALSE, indicates that the Mobile Threat Defense partner is not granted the Mobile Threat Defense role. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetGrantMobileThreatDefensePartnerRole(value *bool)() {
-    err := m.GetBackingStore().Set("grantMobileThreatDefensePartnerRole", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetGrantMobileThreatDefensePartnerRole(value *bool) {
+	err := m.GetBackingStore().Set("grantMobileThreatDefensePartnerRole", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIosDeviceBlockedOnMissingPartnerData sets the iosDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetIosDeviceBlockedOnMissingPartnerData(value *bool)() {
-    err := m.GetBackingStore().Set("iosDeviceBlockedOnMissingPartnerData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetIosDeviceBlockedOnMissingPartnerData(value *bool) {
+	err := m.GetBackingStore().Set("iosDeviceBlockedOnMissingPartnerData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIosEnabled sets the iosEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetIosEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("iosEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetIosEnabled(value *bool) {
+	err := m.GetBackingStore().Set("iosEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIosMobileApplicationManagementEnabled sets the iosMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetIosMobileApplicationManagementEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("iosMobileApplicationManagementEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetIosMobileApplicationManagementEnabled(value *bool) {
+	err := m.GetBackingStore().Set("iosMobileApplicationManagementEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastHeartbeatDateTime sets the lastHeartbeatDateTime property value. DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
-func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastHeartbeatDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastHeartbeatDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLaunchMobileThreatDefensePartnerOnSetupEnabled sets the launchMobileThreatDefensePartnerOnSetupEnabled property value. When TRUE, indicates that the Mobile Threat Defense partner will be automatically launched during Android Corporate Owned Business Only and Corporate Owned Personally Enabled device setup. When FALSE, indicates that the Mobile Threat Defense partner will not be automatically launched during setup. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("launchMobileThreatDefensePartnerOnSetupEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool) {
+	err := m.GetBackingStore().Set("launchMobileThreatDefensePartnerOnSetupEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMacDeviceBlockedOnMissingPartnerData sets the macDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a Mac device compliant. When FALSE, indicates that Intune may mark a Mac device compliant prior to receiving data from the Mobile Threat Defense partner. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetMacDeviceBlockedOnMissingPartnerData(value *bool)() {
-    err := m.GetBackingStore().Set("macDeviceBlockedOnMissingPartnerData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetMacDeviceBlockedOnMissingPartnerData(value *bool) {
+	err := m.GetBackingStore().Set("macDeviceBlockedOnMissingPartnerData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMacEnabled sets the macEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Mac devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Mac devices. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetMacEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("macEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetMacEnabled(value *bool) {
+	err := m.GetBackingStore().Set("macEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMicrosoftDefenderForEndpointAttachEnabled sets the microsoftDefenderForEndpointAttachEnabled property value. When TRUE, inidicates that configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, inidicates that configuration profile management via Microsoft Defender for Endpoint is disabled. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetMicrosoftDefenderForEndpointAttachEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("microsoftDefenderForEndpointAttachEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetMicrosoftDefenderForEndpointAttachEnabled(value *bool) {
+	err := m.GetBackingStore().Set("microsoftDefenderForEndpointAttachEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
+// SetPartnerDisplayName sets the partnerDisplayName property value. The display name of the Mobile Threat Defense partner. This is a read-only property determined by the partner metadata.
+func (m *MobileThreatDefenseConnector) SetPartnerDisplayName(value *string) {
+	err := m.GetBackingStore().Set("partnerDisplayName", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerMinimumSupportedAndroidVersion sets the partnerMinimumSupportedAndroidVersion property value. The minimum Android version supported by the Mobile Threat Defense partner.
+func (m *MobileThreatDefenseConnector) SetPartnerMinimumSupportedAndroidVersion(value *string) {
+	err := m.GetBackingStore().Set("partnerMinimumSupportedAndroidVersion", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerMinimumSupportedIosVersion sets the partnerMinimumSupportedIosVersion property value. The minimum iOS version supported by the Mobile Threat Defense partner.
+func (m *MobileThreatDefenseConnector) SetPartnerMinimumSupportedIosVersion(value *string) {
+	err := m.GetBackingStore().Set("partnerMinimumSupportedIosVersion", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerMinimumSupportedMacVersion sets the partnerMinimumSupportedMacVersion property value. The minimum macOS version supported by the Mobile Threat Defense partner.
+func (m *MobileThreatDefenseConnector) SetPartnerMinimumSupportedMacVersion(value *string) {
+	err := m.GetBackingStore().Set("partnerMinimumSupportedMacVersion", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerMinimumSupportedWindowsVersion sets the partnerMinimumSupportedWindowsVersion property value. The minimum Windows version supported by the Mobile Threat Defense partner.
+func (m *MobileThreatDefenseConnector) SetPartnerMinimumSupportedWindowsVersion(value *string) {
+	err := m.GetBackingStore().Set("partnerMinimumSupportedWindowsVersion", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetPartnerState sets the partnerState property value. Partner state of this tenant.
-func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState)() {
-    err := m.GetBackingStore().Set("partnerState", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetPartnerState(value *MobileThreatPartnerTenantState) {
+	err := m.GetBackingStore().Set("partnerState", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
+// SetPartnerSupportsAndroidMam sets the partnerSupportsAndroidMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports Android Mobile Application Management.
+func (m *MobileThreatDefenseConnector) SetPartnerSupportsAndroidMam(value *bool) {
+	err := m.GetBackingStore().Set("partnerSupportsAndroidMam", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerSupportsIosCertificateSync sets the partnerSupportsIosCertificateSync property value. When TRUE, indicates that the Mobile Threat Defense partner supports iOS certificate sync.
+func (m *MobileThreatDefenseConnector) SetPartnerSupportsIosCertificateSync(value *bool) {
+	err := m.GetBackingStore().Set("partnerSupportsIosCertificateSync", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerSupportsIosMam sets the partnerSupportsIosMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports iOS Mobile Application Management.
+func (m *MobileThreatDefenseConnector) SetPartnerSupportsIosMam(value *bool) {
+	err := m.GetBackingStore().Set("partnerSupportsIosMam", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetPartnerSupportsWindowsMam sets the partnerSupportsWindowsMam property value. When TRUE, indicates that the Mobile Threat Defense partner supports Windows Mobile Application Management.
+func (m *MobileThreatDefenseConnector) SetPartnerSupportsWindowsMam(value *bool) {
+	err := m.GetBackingStore().Set("partnerSupportsWindowsMam", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetPartnerUnresponsivenessThresholdInDays sets the partnerUnresponsivenessThresholdInDays property value. Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.
-func (m *MobileThreatDefenseConnector) SetPartnerUnresponsivenessThresholdInDays(value *int32)() {
-    err := m.GetBackingStore().Set("partnerUnresponsivenessThresholdInDays", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetPartnerUnresponsivenessThresholdInDays(value *int32) {
+	err := m.GetBackingStore().Set("partnerUnresponsivenessThresholdInDays", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPartnerUnsupportedOsVersionBlocked sets the partnerUnsupportedOsVersionBlocked property value. When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetPartnerUnsupportedOsVersionBlocked(value *bool)() {
-    err := m.GetBackingStore().Set("partnerUnsupportedOsVersionBlocked", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetPartnerUnsupportedOsVersionBlocked(value *bool) {
+	err := m.GetBackingStore().Set("partnerUnsupportedOsVersionBlocked", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWindowsDeviceBlockedOnMissingPartnerData sets the windowsDeviceBlockedOnMissingPartnerData property value. When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetWindowsDeviceBlockedOnMissingPartnerData(value *bool)() {
-    err := m.GetBackingStore().Set("windowsDeviceBlockedOnMissingPartnerData", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetWindowsDeviceBlockedOnMissingPartnerData(value *bool) {
+	err := m.GetBackingStore().Set("windowsDeviceBlockedOnMissingPartnerData", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWindowsEnabled sets the windowsEnabled property value. When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetWindowsEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("windowsEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetWindowsEnabled(value *bool) {
+	err := m.GetBackingStore().Set("windowsEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWindowsMobileApplicationManagementEnabled sets the windowsMobileApplicationManagementEnabled property value. When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
-func (m *MobileThreatDefenseConnector) SetWindowsMobileApplicationManagementEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("windowsMobileApplicationManagementEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileThreatDefenseConnector) SetWindowsMobileApplicationManagementEnabled(value *bool) {
+	err := m.GetBackingStore().Set("windowsMobileApplicationManagementEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type MobileThreatDefenseConnectorable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowPartnerToCollectIOSApplicationMetadata()(*bool)
-    GetAllowPartnerToCollectIosCertificateMetadata()(*bool)
-    GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool)
-    GetAllowPartnerToCollectIosPersonalCertificateMetadata()(*bool)
-    GetAndroidDeviceBlockedOnMissingPartnerData()(*bool)
-    GetAndroidEnabled()(*bool)
-    GetAndroidMobileApplicationManagementEnabled()(*bool)
-    GetGrantMobileThreatDefensePartnerRole()(*bool)
-    GetIosDeviceBlockedOnMissingPartnerData()(*bool)
-    GetIosEnabled()(*bool)
-    GetIosMobileApplicationManagementEnabled()(*bool)
-    GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetLaunchMobileThreatDefensePartnerOnSetupEnabled()(*bool)
-    GetMacDeviceBlockedOnMissingPartnerData()(*bool)
-    GetMacEnabled()(*bool)
-    GetMicrosoftDefenderForEndpointAttachEnabled()(*bool)
-    GetPartnerState()(*MobileThreatPartnerTenantState)
-    GetPartnerUnresponsivenessThresholdInDays()(*int32)
-    GetPartnerUnsupportedOsVersionBlocked()(*bool)
-    GetWindowsDeviceBlockedOnMissingPartnerData()(*bool)
-    GetWindowsEnabled()(*bool)
-    GetWindowsMobileApplicationManagementEnabled()(*bool)
-    SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)()
-    SetAllowPartnerToCollectIosCertificateMetadata(value *bool)()
-    SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)()
-    SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool)()
-    SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)()
-    SetAndroidEnabled(value *bool)()
-    SetAndroidMobileApplicationManagementEnabled(value *bool)()
-    SetGrantMobileThreatDefensePartnerRole(value *bool)()
-    SetIosDeviceBlockedOnMissingPartnerData(value *bool)()
-    SetIosEnabled(value *bool)()
-    SetIosMobileApplicationManagementEnabled(value *bool)()
-    SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool)()
-    SetMacDeviceBlockedOnMissingPartnerData(value *bool)()
-    SetMacEnabled(value *bool)()
-    SetMicrosoftDefenderForEndpointAttachEnabled(value *bool)()
-    SetPartnerState(value *MobileThreatPartnerTenantState)()
-    SetPartnerUnresponsivenessThresholdInDays(value *int32)()
-    SetPartnerUnsupportedOsVersionBlocked(value *bool)()
-    SetWindowsDeviceBlockedOnMissingPartnerData(value *bool)()
-    SetWindowsEnabled(value *bool)()
-    SetWindowsMobileApplicationManagementEnabled(value *bool)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAllowPartnerToCollectIOSApplicationMetadata() *bool
+	GetAllowPartnerToCollectIosCertificateMetadata() *bool
+	GetAllowPartnerToCollectIOSPersonalApplicationMetadata() *bool
+	GetAllowPartnerToCollectIosPersonalCertificateMetadata() *bool
+	GetAndroidDeviceBlockedOnMissingPartnerData() *bool
+	GetAndroidEnabled() *bool
+	GetAndroidMobileApplicationManagementEnabled() *bool
+	GetGrantMobileThreatDefensePartnerRole() *bool
+	GetIosDeviceBlockedOnMissingPartnerData() *bool
+	GetIosEnabled() *bool
+	GetIosMobileApplicationManagementEnabled() *bool
+	GetLastHeartbeatDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetLaunchMobileThreatDefensePartnerOnSetupEnabled() *bool
+	GetMacDeviceBlockedOnMissingPartnerData() *bool
+	GetMacEnabled() *bool
+	GetMicrosoftDefenderForEndpointAttachEnabled() *bool
+	GetPartnerDisplayName() *string
+	GetPartnerMinimumSupportedAndroidVersion() *string
+	GetPartnerMinimumSupportedIosVersion() *string
+	GetPartnerMinimumSupportedMacVersion() *string
+	GetPartnerMinimumSupportedWindowsVersion() *string
+	GetPartnerState() *MobileThreatPartnerTenantState
+	GetPartnerSupportsAndroidMam() *bool
+	GetPartnerSupportsIosCertificateSync() *bool
+	GetPartnerSupportsIosMam() *bool
+	GetPartnerSupportsWindowsMam() *bool
+	GetPartnerUnresponsivenessThresholdInDays() *int32
+	GetPartnerUnsupportedOsVersionBlocked() *bool
+	GetWindowsDeviceBlockedOnMissingPartnerData() *bool
+	GetWindowsEnabled() *bool
+	GetWindowsMobileApplicationManagementEnabled() *bool
+	SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)
+	SetAllowPartnerToCollectIosCertificateMetadata(value *bool)
+	SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)
+	SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool)
+	SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)
+	SetAndroidEnabled(value *bool)
+	SetAndroidMobileApplicationManagementEnabled(value *bool)
+	SetGrantMobileThreatDefensePartnerRole(value *bool)
+	SetIosDeviceBlockedOnMissingPartnerData(value *bool)
+	SetIosEnabled(value *bool)
+	SetIosMobileApplicationManagementEnabled(value *bool)
+	SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetLaunchMobileThreatDefensePartnerOnSetupEnabled(value *bool)
+	SetMacDeviceBlockedOnMissingPartnerData(value *bool)
+	SetMacEnabled(value *bool)
+	SetMicrosoftDefenderForEndpointAttachEnabled(value *bool)
+	SetPartnerDisplayName(value *string)
+	SetPartnerMinimumSupportedAndroidVersion(value *string)
+	SetPartnerMinimumSupportedIosVersion(value *string)
+	SetPartnerMinimumSupportedMacVersion(value *string)
+	SetPartnerMinimumSupportedWindowsVersion(value *string)
+	SetPartnerState(value *MobileThreatPartnerTenantState)
+	SetPartnerSupportsAndroidMam(value *bool)
+	SetPartnerSupportsIosCertificateSync(value *bool)
+	SetPartnerSupportsIosMam(value *bool)
+	SetPartnerSupportsWindowsMam(value *bool)
+	SetPartnerUnresponsivenessThresholdInDays(value *int32)
+	SetPartnerUnsupportedOsVersionBlocked(value *bool)
+	SetWindowsDeviceBlockedOnMissingPartnerData(value *bool)
+	SetWindowsEnabled(value *bool)
+	SetWindowsMobileApplicationManagementEnabled(value *bool)
 }

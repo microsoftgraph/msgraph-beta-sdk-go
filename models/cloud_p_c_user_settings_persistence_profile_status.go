@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPCUserSettingsPersistenceProfileStatus int
 
 const (
-    CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS CloudPCUserSettingsPersistenceProfileStatus = iota
-    NOTCONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-    DELETING_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-    UNKNOWNFUTUREVALUE_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS CloudPCUserSettingsPersistenceProfileStatus = iota
+	NOTCONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	DELETING_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	UNKNOWNFUTUREVALUE_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
 )
 
 func (i CloudPCUserSettingsPersistenceProfileStatus) String() string {
-    return []string{"connected", "notConnected", "deleting", "unknownFutureValue"}[i]
+	return []string{"connected", "notConnected", "deleting", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPCUserSettingsPersistenceProfileStatus(v string) (any, error) {
-    result := CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-    switch v {
-        case "connected":
-            result = CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-        case "notConnected":
-            result = NOTCONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-        case "deleting":
-            result = DELETING_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	switch v {
+	case "connected":
+		result = CONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	case "notConnected":
+		result = NOTCONNECTED_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	case "deleting":
+		result = DELETING_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCUSERSETTINGSPERSISTENCEPROFILESTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPCUserSettingsPersistenceProfileStatus(values []CloudPCUserSettingsPersistenceProfileStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPCUserSettingsPersistenceProfileStatus) isMultiValue() bool {
-    return false
+	return false
 }

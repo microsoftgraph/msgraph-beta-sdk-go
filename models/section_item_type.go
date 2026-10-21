@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type SectionItemType int
 
 const (
-    CHAT_SECTIONITEMTYPE SectionItemType = iota
-    CHANNEL_SECTIONITEMTYPE
-    MEETING_SECTIONITEMTYPE
-    COMMUNITY_SECTIONITEMTYPE
-    UNKNOWNFUTUREVALUE_SECTIONITEMTYPE
+	CHAT_SECTIONITEMTYPE SectionItemType = iota
+	CHANNEL_SECTIONITEMTYPE
+	MEETING_SECTIONITEMTYPE
+	COMMUNITY_SECTIONITEMTYPE
+	UNKNOWNFUTUREVALUE_SECTIONITEMTYPE
 )
 
 func (i SectionItemType) String() string {
-    return []string{"chat", "channel", "meeting", "community", "unknownFutureValue"}[i]
+	return []string{"chat", "channel", "meeting", "community", "unknownFutureValue"}[i]
 }
+
 func ParseSectionItemType(v string) (any, error) {
-    result := CHAT_SECTIONITEMTYPE
-    switch v {
-        case "chat":
-            result = CHAT_SECTIONITEMTYPE
-        case "channel":
-            result = CHANNEL_SECTIONITEMTYPE
-        case "meeting":
-            result = MEETING_SECTIONITEMTYPE
-        case "community":
-            result = COMMUNITY_SECTIONITEMTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SECTIONITEMTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CHAT_SECTIONITEMTYPE
+	switch v {
+	case "chat":
+		result = CHAT_SECTIONITEMTYPE
+	case "channel":
+		result = CHANNEL_SECTIONITEMTYPE
+	case "meeting":
+		result = MEETING_SECTIONITEMTYPE
+	case "community":
+		result = COMMUNITY_SECTIONITEMTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SECTIONITEMTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSectionItemType(values []SectionItemType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SectionItemType) isMultiValue() bool {
-    return false
+	return false
 }
