@@ -4,77 +4,84 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type PlayPromptOperation struct {
-    CommsOperation
+	CommsOperation
 }
+
 // NewPlayPromptOperation instantiates a new PlayPromptOperation and sets the default values.
-func NewPlayPromptOperation()(*PlayPromptOperation) {
-    m := &PlayPromptOperation{
-        CommsOperation: *NewCommsOperation(),
-    }
-    return m
+func NewPlayPromptOperation() *PlayPromptOperation {
+	m := &PlayPromptOperation{
+		CommsOperation: *NewCommsOperation(),
+	}
+	return m
 }
+
 // CreatePlayPromptOperationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPlayPromptOperation(), nil
+func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPlayPromptOperation(), nil
 }
+
 // GetCompletionReason gets the completionReason property value. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 // returns a *PlayPromptCompletionReason when successful
-func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
-    val, err := m.GetBackingStore().Get("completionReason")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*PlayPromptCompletionReason)
-    }
-    return nil
+func (m *PlayPromptOperation) GetCompletionReason() *PlayPromptCompletionReason {
+	val, err := m.GetBackingStore().Get("completionReason")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*PlayPromptCompletionReason)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PlayPromptOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.CommsOperation.GetFieldDeserializers()
-    res["completionReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParsePlayPromptCompletionReason)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCompletionReason(val.(*PlayPromptCompletionReason))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PlayPromptOperation) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.CommsOperation.GetFieldDeserializers()
+	res["completionReason"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParsePlayPromptCompletionReason)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCompletionReason(val.(*PlayPromptCompletionReason))
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *PlayPromptOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.CommsOperation.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetCompletionReason() != nil {
-        cast := (*m.GetCompletionReason()).String()
-        err = writer.WriteStringValue("completionReason", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PlayPromptOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.CommsOperation.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetCompletionReason() != nil {
+		cast := (*m.GetCompletionReason()).String()
+		err = writer.WriteStringValue("completionReason", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetCompletionReason sets the completionReason property value. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
-func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
-    err := m.GetBackingStore().Set("completionReason", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason) {
+	err := m.GetBackingStore().Set("completionReason", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PlayPromptOperationable interface {
-    CommsOperationable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCompletionReason()(*PlayPromptCompletionReason)
-    SetCompletionReason(value *PlayPromptCompletionReason)()
+	CommsOperationable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCompletionReason() *PlayPromptCompletionReason
+	SetCompletionReason(value *PlayPromptCompletionReason)
 }

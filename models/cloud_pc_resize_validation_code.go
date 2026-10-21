@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcResizeValidationCode int
 
 const (
-    SUCCESS_CLOUDPCRESIZEVALIDATIONCODE CloudPcResizeValidationCode = iota
-    CLOUDPCNOTFOUND_CLOUDPCRESIZEVALIDATIONCODE
-    OPERATIONCONFLICT_CLOUDPCRESIZEVALIDATIONCODE
-    OPERATIONNOTSUPPORTED_CLOUDPCRESIZEVALIDATIONCODE
-    TARGETLICENSEHASASSIGNED_CLOUDPCRESIZEVALIDATIONCODE
-    INTERNALSERVERERROR_CLOUDPCRESIZEVALIDATIONCODE
-    UNKNOWNFUTUREVALUE_CLOUDPCRESIZEVALIDATIONCODE
+	SUCCESS_CLOUDPCRESIZEVALIDATIONCODE CloudPcResizeValidationCode = iota
+	CLOUDPCNOTFOUND_CLOUDPCRESIZEVALIDATIONCODE
+	OPERATIONCONFLICT_CLOUDPCRESIZEVALIDATIONCODE
+	OPERATIONNOTSUPPORTED_CLOUDPCRESIZEVALIDATIONCODE
+	TARGETLICENSEHASASSIGNED_CLOUDPCRESIZEVALIDATIONCODE
+	INTERNALSERVERERROR_CLOUDPCRESIZEVALIDATIONCODE
+	UNKNOWNFUTUREVALUE_CLOUDPCRESIZEVALIDATIONCODE
 )
 
 func (i CloudPcResizeValidationCode) String() string {
-    return []string{"success", "cloudPcNotFound", "operationConflict", "operationNotSupported", "targetLicenseHasAssigned", "internalServerError", "unknownFutureValue"}[i]
+	return []string{"success", "cloudPcNotFound", "operationConflict", "operationNotSupported", "targetLicenseHasAssigned", "internalServerError", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcResizeValidationCode(v string) (any, error) {
-    result := SUCCESS_CLOUDPCRESIZEVALIDATIONCODE
-    switch v {
-        case "success":
-            result = SUCCESS_CLOUDPCRESIZEVALIDATIONCODE
-        case "cloudPcNotFound":
-            result = CLOUDPCNOTFOUND_CLOUDPCRESIZEVALIDATIONCODE
-        case "operationConflict":
-            result = OPERATIONCONFLICT_CLOUDPCRESIZEVALIDATIONCODE
-        case "operationNotSupported":
-            result = OPERATIONNOTSUPPORTED_CLOUDPCRESIZEVALIDATIONCODE
-        case "targetLicenseHasAssigned":
-            result = TARGETLICENSEHASASSIGNED_CLOUDPCRESIZEVALIDATIONCODE
-        case "internalServerError":
-            result = INTERNALSERVERERROR_CLOUDPCRESIZEVALIDATIONCODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCRESIZEVALIDATIONCODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := SUCCESS_CLOUDPCRESIZEVALIDATIONCODE
+	switch v {
+	case "success":
+		result = SUCCESS_CLOUDPCRESIZEVALIDATIONCODE
+	case "cloudPcNotFound":
+		result = CLOUDPCNOTFOUND_CLOUDPCRESIZEVALIDATIONCODE
+	case "operationConflict":
+		result = OPERATIONCONFLICT_CLOUDPCRESIZEVALIDATIONCODE
+	case "operationNotSupported":
+		result = OPERATIONNOTSUPPORTED_CLOUDPCRESIZEVALIDATIONCODE
+	case "targetLicenseHasAssigned":
+		result = TARGETLICENSEHASASSIGNED_CLOUDPCRESIZEVALIDATIONCODE
+	case "internalServerError":
+		result = INTERNALSERVERERROR_CLOUDPCRESIZEVALIDATIONCODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCRESIZEVALIDATIONCODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcResizeValidationCode(values []CloudPcResizeValidationCode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcResizeValidationCode) isMultiValue() bool {
-    return false
+	return false
 }

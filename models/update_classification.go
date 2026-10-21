@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Possible values for automatic update classification.
 type UpdateClassification int
 
 const (
-    // User Defined, default value, no intent.
-    USERDEFINED_UPDATECLASSIFICATION UpdateClassification = iota
-    // Recommended and important.
-    RECOMMENDEDANDIMPORTANT_UPDATECLASSIFICATION
-    // Important.
-    IMPORTANT_UPDATECLASSIFICATION
-    // None.
-    NONE_UPDATECLASSIFICATION
+	// User Defined, default value, no intent.
+	USERDEFINED_UPDATECLASSIFICATION UpdateClassification = iota
+	// Recommended and important.
+	RECOMMENDEDANDIMPORTANT_UPDATECLASSIFICATION
+	// Important.
+	IMPORTANT_UPDATECLASSIFICATION
+	// None.
+	NONE_UPDATECLASSIFICATION
 )
 
 func (i UpdateClassification) String() string {
-    return []string{"userDefined", "recommendedAndImportant", "important", "none"}[i]
+	return []string{"userDefined", "recommendedAndImportant", "important", "none"}[i]
 }
+
 func ParseUpdateClassification(v string) (any, error) {
-    result := USERDEFINED_UPDATECLASSIFICATION
-    switch v {
-        case "userDefined":
-            result = USERDEFINED_UPDATECLASSIFICATION
-        case "recommendedAndImportant":
-            result = RECOMMENDEDANDIMPORTANT_UPDATECLASSIFICATION
-        case "important":
-            result = IMPORTANT_UPDATECLASSIFICATION
-        case "none":
-            result = NONE_UPDATECLASSIFICATION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := USERDEFINED_UPDATECLASSIFICATION
+	switch v {
+	case "userDefined":
+		result = USERDEFINED_UPDATECLASSIFICATION
+	case "recommendedAndImportant":
+		result = RECOMMENDEDANDIMPORTANT_UPDATECLASSIFICATION
+	case "important":
+		result = IMPORTANT_UPDATECLASSIFICATION
+	case "none":
+		result = NONE_UPDATECLASSIFICATION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeUpdateClassification(values []UpdateClassification) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i UpdateClassification) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type VerifiedIdUsageConfigurationPurpose int
 
 const (
-    RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE VerifiedIdUsageConfigurationPurpose = iota
-    ONBOARDING_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-    ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-    UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-    VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE VerifiedIdUsageConfigurationPurpose = iota
+	ONBOARDING_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
 )
 
 func (i VerifiedIdUsageConfigurationPurpose) String() string {
-    return []string{"recovery", "onboarding", "all", "unknownFutureValue", "verification"}[i]
+	return []string{"recovery", "onboarding", "all", "unknownFutureValue", "verification"}[i]
 }
+
 func ParseVerifiedIdUsageConfigurationPurpose(v string) (any, error) {
-    result := RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-    switch v {
-        case "recovery":
-            result = RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-        case "onboarding":
-            result = ONBOARDING_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-        case "all":
-            result = ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-        case "verification":
-            result = VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	switch v {
+	case "recovery":
+		result = RECOVERY_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	case "onboarding":
+		result = ONBOARDING_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	case "all":
+		result = ALL_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	case "verification":
+		result = VERIFICATION_VERIFIEDIDUSAGECONFIGURATIONPURPOSE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeVerifiedIdUsageConfigurationPurpose(values []VerifiedIdUsageConfigurationPurpose) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i VerifiedIdUsageConfigurationPurpose) isMultiValue() bool {
-    return false
+	return false
 }

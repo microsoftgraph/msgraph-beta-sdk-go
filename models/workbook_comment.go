@@ -4,322 +4,341 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type WorkbookComment struct {
-    Entity
+	Entity
 }
+
 // NewWorkbookComment instantiates a new WorkbookComment and sets the default values.
-func NewWorkbookComment()(*WorkbookComment) {
-    m := &WorkbookComment{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewWorkbookComment() *WorkbookComment {
+	m := &WorkbookComment{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateWorkbookCommentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateWorkbookCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewWorkbookComment(), nil
+func CreateWorkbookCommentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewWorkbookComment(), nil
 }
+
 // GetCellAddress gets the cellAddress property value. The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.
 // returns a *string when successful
-func (m *WorkbookComment) GetCellAddress()(*string) {
-    val, err := m.GetBackingStore().Get("cellAddress")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WorkbookComment) GetCellAddress() *string {
+	val, err := m.GetBackingStore().Get("cellAddress")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetContent gets the content property value. The content of the comment that is the String displayed to end-users.
 // returns a *string when successful
-func (m *WorkbookComment) GetContent()(*string) {
-    val, err := m.GetBackingStore().Get("content")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WorkbookComment) GetContent() *string {
+	val, err := m.GetBackingStore().Get("content")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetContentType gets the contentType property value. The content type of the comment. Supported values are: plain, mention.
 // returns a *string when successful
-func (m *WorkbookComment) GetContentType()(*string) {
-    val, err := m.GetBackingStore().Get("contentType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WorkbookComment) GetContentType() *string {
+	val, err := m.GetBackingStore().Get("contentType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["cellAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCellAddress(val)
-        }
-        return nil
-    }
-    res["content"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContent(val)
-        }
-        return nil
-    }
-    res["contentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetContentType(val)
-        }
-        return nil
-    }
-    res["mentions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentMentionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WorkbookCommentMentionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(WorkbookCommentMentionable)
-                }
-            }
-            m.SetMentions(res)
-        }
-        return nil
-    }
-    res["replies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentReplyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]WorkbookCommentReplyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(WorkbookCommentReplyable)
-                }
-            }
-            m.SetReplies(res)
-        }
-        return nil
-    }
-    res["richContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRichContent(val)
-        }
-        return nil
-    }
-    res["task"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateWorkbookDocumentTaskFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTask(val.(WorkbookDocumentTaskable))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *WorkbookComment) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["cellAddress"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCellAddress(val)
+		}
+		return nil
+	}
+	res["content"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetContent(val)
+		}
+		return nil
+	}
+	res["contentType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetContentType(val)
+		}
+		return nil
+	}
+	res["mentions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentMentionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]WorkbookCommentMentionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(WorkbookCommentMentionable)
+				}
+			}
+			m.SetMentions(res)
+		}
+		return nil
+	}
+	res["replies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateWorkbookCommentReplyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]WorkbookCommentReplyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(WorkbookCommentReplyable)
+				}
+			}
+			m.SetReplies(res)
+		}
+		return nil
+	}
+	res["richContent"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRichContent(val)
+		}
+		return nil
+	}
+	res["task"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateWorkbookDocumentTaskFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTask(val.(WorkbookDocumentTaskable))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetMentions gets the mentions property value. A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.
 // returns a []WorkbookCommentMentionable when successful
-func (m *WorkbookComment) GetMentions()([]WorkbookCommentMentionable) {
-    val, err := m.GetBackingStore().Get("mentions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WorkbookCommentMentionable)
-    }
-    return nil
+func (m *WorkbookComment) GetMentions() []WorkbookCommentMentionable {
+	val, err := m.GetBackingStore().Get("mentions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]WorkbookCommentMentionable)
+	}
+	return nil
 }
+
 // GetReplies gets the replies property value. The list of replies to the comment. Read-only. Nullable.
 // returns a []WorkbookCommentReplyable when successful
-func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
-    val, err := m.GetBackingStore().Get("replies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]WorkbookCommentReplyable)
-    }
-    return nil
+func (m *WorkbookComment) GetReplies() []WorkbookCommentReplyable {
+	val, err := m.GetBackingStore().Get("replies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]WorkbookCommentReplyable)
+	}
+	return nil
 }
+
 // GetRichContent gets the richContent property value. The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.
 // returns a *string when successful
-func (m *WorkbookComment) GetRichContent()(*string) {
-    val, err := m.GetBackingStore().Get("richContent")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *WorkbookComment) GetRichContent() *string {
+	val, err := m.GetBackingStore().Get("richContent")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetTask gets the task property value. The task associated with the comment. Read-only. Nullable.
 // returns a WorkbookDocumentTaskable when successful
-func (m *WorkbookComment) GetTask()(WorkbookDocumentTaskable) {
-    val, err := m.GetBackingStore().Get("task")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(WorkbookDocumentTaskable)
-    }
-    return nil
+func (m *WorkbookComment) GetTask() WorkbookDocumentTaskable {
+	val, err := m.GetBackingStore().Get("task")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(WorkbookDocumentTaskable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("cellAddress", m.GetCellAddress())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("content", m.GetContent())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("contentType", m.GetContentType())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMentions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMentions()))
-        for i, v := range m.GetMentions() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mentions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetReplies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReplies()))
-        for i, v := range m.GetReplies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("replies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("richContent", m.GetRichContent())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("task", m.GetTask())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *WorkbookComment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("cellAddress", m.GetCellAddress())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("content", m.GetContent())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("contentType", m.GetContentType())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMentions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMentions()))
+		for i, v := range m.GetMentions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mentions", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetReplies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReplies()))
+		for i, v := range m.GetReplies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("replies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("richContent", m.GetRichContent())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("task", m.GetTask())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetCellAddress sets the cellAddress property value. The cell where the comment is located. The address value is in A1-style, which contains the sheet reference (for example, Sheet1!A1). Read-only.
-func (m *WorkbookComment) SetCellAddress(value *string)() {
-    err := m.GetBackingStore().Set("cellAddress", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetCellAddress(value *string) {
+	err := m.GetBackingStore().Set("cellAddress", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetContent sets the content property value. The content of the comment that is the String displayed to end-users.
-func (m *WorkbookComment) SetContent(value *string)() {
-    err := m.GetBackingStore().Set("content", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetContent(value *string) {
+	err := m.GetBackingStore().Set("content", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetContentType sets the contentType property value. The content type of the comment. Supported values are: plain, mention.
-func (m *WorkbookComment) SetContentType(value *string)() {
-    err := m.GetBackingStore().Set("contentType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetContentType(value *string) {
+	err := m.GetBackingStore().Set("contentType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMentions sets the mentions property value. A collection that contains all the people mentioned within the comment. When contentType is plain, this property is an empty array. Read-only.
-func (m *WorkbookComment) SetMentions(value []WorkbookCommentMentionable)() {
-    err := m.GetBackingStore().Set("mentions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetMentions(value []WorkbookCommentMentionable) {
+	err := m.GetBackingStore().Set("mentions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetReplies sets the replies property value. The list of replies to the comment. Read-only. Nullable.
-func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
-    err := m.GetBackingStore().Set("replies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable) {
+	err := m.GetBackingStore().Set("replies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRichContent sets the richContent property value. The rich content of the comment (for example, comment content with mentions, where the first mentioned entity has an ID attribute of 0 and the second has an ID attribute of 1). When contentType is plain, this property is empty. Read-only.
-func (m *WorkbookComment) SetRichContent(value *string)() {
-    err := m.GetBackingStore().Set("richContent", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetRichContent(value *string) {
+	err := m.GetBackingStore().Set("richContent", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTask sets the task property value. The task associated with the comment. Read-only. Nullable.
-func (m *WorkbookComment) SetTask(value WorkbookDocumentTaskable)() {
-    err := m.GetBackingStore().Set("task", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *WorkbookComment) SetTask(value WorkbookDocumentTaskable) {
+	err := m.GetBackingStore().Set("task", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type WorkbookCommentable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetCellAddress()(*string)
-    GetContent()(*string)
-    GetContentType()(*string)
-    GetMentions()([]WorkbookCommentMentionable)
-    GetReplies()([]WorkbookCommentReplyable)
-    GetRichContent()(*string)
-    GetTask()(WorkbookDocumentTaskable)
-    SetCellAddress(value *string)()
-    SetContent(value *string)()
-    SetContentType(value *string)()
-    SetMentions(value []WorkbookCommentMentionable)()
-    SetReplies(value []WorkbookCommentReplyable)()
-    SetRichContent(value *string)()
-    SetTask(value WorkbookDocumentTaskable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCellAddress() *string
+	GetContent() *string
+	GetContentType() *string
+	GetMentions() []WorkbookCommentMentionable
+	GetReplies() []WorkbookCommentReplyable
+	GetRichContent() *string
+	GetTask() WorkbookDocumentTaskable
+	SetCellAddress(value *string)
+	SetContent(value *string)
+	SetContentType(value *string)
+	SetMentions(value []WorkbookCommentMentionable)
+	SetReplies(value []WorkbookCommentReplyable)
+	SetRichContent(value *string)
+	SetTask(value WorkbookDocumentTaskable)
 }

@@ -4,84 +4,91 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type DriveExclusionUnitsBulkAdditionJob struct {
-    ExclusionUnitBulkAdditionJob
+	ExclusionUnitBulkAdditionJob
 }
+
 // NewDriveExclusionUnitsBulkAdditionJob instantiates a new DriveExclusionUnitsBulkAdditionJob and sets the default values.
-func NewDriveExclusionUnitsBulkAdditionJob()(*DriveExclusionUnitsBulkAdditionJob) {
-    m := &DriveExclusionUnitsBulkAdditionJob{
-        ExclusionUnitBulkAdditionJob: *NewExclusionUnitBulkAdditionJob(),
-    }
-    odataTypeValue := "#microsoft.graph.driveExclusionUnitsBulkAdditionJob"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewDriveExclusionUnitsBulkAdditionJob() *DriveExclusionUnitsBulkAdditionJob {
+	m := &DriveExclusionUnitsBulkAdditionJob{
+		ExclusionUnitBulkAdditionJob: *NewExclusionUnitBulkAdditionJob(),
+	}
+	odataTypeValue := "#microsoft.graph.driveExclusionUnitsBulkAdditionJob"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDriveExclusionUnitsBulkAdditionJob(), nil
+func CreateDriveExclusionUnitsBulkAdditionJobFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDriveExclusionUnitsBulkAdditionJob(), nil
 }
+
 // GetDrives gets the drives property value. The email addresses or user principal names of the users whose OneDrive drives are to be added as exclusion units to the protection policy.
 // returns a []string when successful
-func (m *DriveExclusionUnitsBulkAdditionJob) GetDrives()([]string) {
-    val, err := m.GetBackingStore().Get("drives")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *DriveExclusionUnitsBulkAdditionJob) GetDrives() []string {
+	val, err := m.GetBackingStore().Get("drives")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DriveExclusionUnitsBulkAdditionJob) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ExclusionUnitBulkAdditionJob.GetFieldDeserializers()
-    res["drives"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetDrives(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DriveExclusionUnitsBulkAdditionJob) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ExclusionUnitBulkAdditionJob.GetFieldDeserializers()
+	res["drives"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetDrives(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *DriveExclusionUnitsBulkAdditionJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ExclusionUnitBulkAdditionJob.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetDrives() != nil {
-        err = writer.WriteCollectionOfStringValues("drives", m.GetDrives())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *DriveExclusionUnitsBulkAdditionJob) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ExclusionUnitBulkAdditionJob.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetDrives() != nil {
+		err = writer.WriteCollectionOfStringValues("drives", m.GetDrives())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetDrives sets the drives property value. The email addresses or user principal names of the users whose OneDrive drives are to be added as exclusion units to the protection policy.
-func (m *DriveExclusionUnitsBulkAdditionJob) SetDrives(value []string)() {
-    err := m.GetBackingStore().Set("drives", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *DriveExclusionUnitsBulkAdditionJob) SetDrives(value []string) {
+	err := m.GetBackingStore().Set("drives", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type DriveExclusionUnitsBulkAdditionJobable interface {
-    ExclusionUnitBulkAdditionJobable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetDrives()([]string)
-    SetDrives(value []string)()
+	ExclusionUnitBulkAdditionJobable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetDrives() []string
+	SetDrives(value []string)
 }

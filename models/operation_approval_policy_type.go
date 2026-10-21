@@ -2,66 +2,74 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // The set of available policy types that can be configured for approval. The policy type must always be defined in an OperationApprovalRequest.
 type OperationApprovalPolicyType int
 
 const (
-    // Default. Indicates that the configured policy type is unknown. Not a valid policy type in an OperationApprovalPolicy.
-    UNKNOWN_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
-    // Indicates that the configured policy type is for a Device Wipe Action.
-    DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is for a Device Retire Action
-    DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is for a Device Delete Action.
-    DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.
-    APP_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is a script type, such as PowerShell scripts or remediation scripts.
-    SCRIPT_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type type is for Intune roles, such as application administrator or a custom role.
-    ROLE_OPERATIONAPPROVALPOLICYTYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is for Tenant Configuration operations.
-    TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
+	// Default. Indicates that the configured policy type is unknown. Not a valid policy type in an OperationApprovalPolicy.
+	UNKNOWN_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
+	// Indicates that the configured policy type is for a Device Wipe Action.
+	DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is for a Device Retire Action
+	DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is for a Device Delete Action.
+	DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.
+	APP_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is a script type, such as PowerShell scripts or remediation scripts.
+	SCRIPT_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type type is for Intune roles, such as application administrator or a custom role.
+	ROLE_OPERATIONAPPROVALPOLICYTYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is for Tenant Configuration operations.
+	TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
+	// Indicates that the configured policy type is for a Device Deprovision Action.
+	DEVICEDEPROVISION_OPERATIONAPPROVALPOLICYTYPE
 )
 
 func (i OperationApprovalPolicyType) String() string {
-    return []string{"unknown", "deviceWipe", "deviceRetire", "deviceDelete", "app", "script", "role", "unknownFutureValue", "tenantConfiguration"}[i]
+	return []string{"unknown", "deviceWipe", "deviceRetire", "deviceDelete", "app", "script", "role", "unknownFutureValue", "tenantConfiguration", "deviceDeprovision"}[i]
 }
+
 func ParseOperationApprovalPolicyType(v string) (any, error) {
-    result := UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
-        case "deviceWipe":
-            result = DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
-        case "deviceRetire":
-            result = DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
-        case "deviceDelete":
-            result = DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
-        case "app":
-            result = APP_OPERATIONAPPROVALPOLICYTYPE
-        case "script":
-            result = SCRIPT_OPERATIONAPPROVALPOLICYTYPE
-        case "role":
-            result = ROLE_OPERATIONAPPROVALPOLICYTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
-        case "tenantConfiguration":
-            result = TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
+	case "deviceWipe":
+		result = DEVICEWIPE_OPERATIONAPPROVALPOLICYTYPE
+	case "deviceRetire":
+		result = DEVICERETIRE_OPERATIONAPPROVALPOLICYTYPE
+	case "deviceDelete":
+		result = DEVICEDELETE_OPERATIONAPPROVALPOLICYTYPE
+	case "app":
+		result = APP_OPERATIONAPPROVALPOLICYTYPE
+	case "script":
+		result = SCRIPT_OPERATIONAPPROVALPOLICYTYPE
+	case "role":
+		result = ROLE_OPERATIONAPPROVALPOLICYTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
+	case "tenantConfiguration":
+		result = TENANTCONFIGURATION_OPERATIONAPPROVALPOLICYTYPE
+	case "deviceDeprovision":
+		result = DEVICEDEPROVISION_OPERATIONAPPROVALPOLICYTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeOperationApprovalPolicyType(values []OperationApprovalPolicyType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i OperationApprovalPolicyType) isMultiValue() bool {
-    return false
+	return false
 }

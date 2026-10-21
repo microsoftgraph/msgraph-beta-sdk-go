@@ -4,77 +4,252 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type CloudPCUserSettingsPersistenceDetail struct {
-    Entity
+	Entity
 }
+
 // NewCloudPCUserSettingsPersistenceDetail instantiates a new CloudPCUserSettingsPersistenceDetail and sets the default values.
-func NewCloudPCUserSettingsPersistenceDetail()(*CloudPCUserSettingsPersistenceDetail) {
-    m := &CloudPCUserSettingsPersistenceDetail{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewCloudPCUserSettingsPersistenceDetail() *CloudPCUserSettingsPersistenceDetail {
+	m := &CloudPCUserSettingsPersistenceDetail{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateCloudPCUserSettingsPersistenceDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCloudPCUserSettingsPersistenceDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCloudPCUserSettingsPersistenceDetail(), nil
+func CreateCloudPCUserSettingsPersistenceDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewCloudPCUserSettingsPersistenceDetail(), nil
 }
+
+// GetAutoCleanupDetail gets the autoCleanupDetail property value. The autoCleanupDetail property
+// returns a CloudPCUserSettingsPersistenceAutoCleanupDetailable when successful
+func (m *CloudPCUserSettingsPersistenceDetail) GetAutoCleanupDetail() CloudPCUserSettingsPersistenceAutoCleanupDetailable {
+	val, err := m.GetBackingStore().Get("autoCleanupDetail")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CloudPCUserSettingsPersistenceAutoCleanupDetailable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *CloudPCUserSettingsPersistenceDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["gracePeriodEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetGracePeriodEndDateTime(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *CloudPCUserSettingsPersistenceDetail) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["autoCleanupDetail"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCloudPCUserSettingsPersistenceAutoCleanupDetailFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAutoCleanupDetail(val.(CloudPCUserSettingsPersistenceAutoCleanupDetailable))
+		}
+		return nil
+	}
+	res["gracePeriodEndDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGracePeriodEndDateTime(val)
+		}
+		return nil
+	}
+	res["snapshotConfiguration"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCloudPcUserSettingsPersistenceSnapshotConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSnapshotConfiguration(val.(CloudPcUserSettingsPersistenceSnapshotConfigurationable))
+		}
+		return nil
+	}
+	res["storageConfiguration"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCloudPcStorageConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetStorageConfiguration(val.(CloudPcStorageConfigurationable))
+		}
+		return nil
+	}
+	res["userProfileSnapshots"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCloudPcUserProfileSnapshotFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CloudPcUserProfileSnapshotable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CloudPcUserProfileSnapshotable)
+				}
+			}
+			m.SetUserProfileSnapshots(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetGracePeriodEndDateTime gets the gracePeriodEndDateTime property value. Indicates the grace period end time when user settings persistence exceeds the available quota. If usage exceeds the available quota when the grace period expires, the system automatically deletes the profile with the oldest last attached timestamp. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
-func (m *CloudPCUserSettingsPersistenceDetail) GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("gracePeriodEndDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *CloudPCUserSettingsPersistenceDetail) GetGracePeriodEndDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("gracePeriodEndDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
+// GetSnapshotConfiguration gets the snapshotConfiguration property value. The snapshotConfiguration property
+// returns a CloudPcUserSettingsPersistenceSnapshotConfigurationable when successful
+func (m *CloudPCUserSettingsPersistenceDetail) GetSnapshotConfiguration() CloudPcUserSettingsPersistenceSnapshotConfigurationable {
+	val, err := m.GetBackingStore().Get("snapshotConfiguration")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CloudPcUserSettingsPersistenceSnapshotConfigurationable)
+	}
+	return nil
+}
+
+// GetStorageConfiguration gets the storageConfiguration property value. The storageConfiguration property
+// returns a CloudPcStorageConfigurationable when successful
+func (m *CloudPCUserSettingsPersistenceDetail) GetStorageConfiguration() CloudPcStorageConfigurationable {
+	val, err := m.GetBackingStore().Get("storageConfiguration")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CloudPcStorageConfigurationable)
+	}
+	return nil
+}
+
+// GetUserProfileSnapshots gets the userProfileSnapshots property value. The userProfileSnapshots property
+// returns a []CloudPcUserProfileSnapshotable when successful
+func (m *CloudPCUserSettingsPersistenceDetail) GetUserProfileSnapshots() []CloudPcUserProfileSnapshotable {
+	val, err := m.GetBackingStore().Get("userProfileSnapshots")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CloudPcUserProfileSnapshotable)
+	}
+	return nil
+}
+
 // Serialize serializes information the current object
-func (m *CloudPCUserSettingsPersistenceDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteTimeValue("gracePeriodEndDateTime", m.GetGracePeriodEndDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *CloudPCUserSettingsPersistenceDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("autoCleanupDetail", m.GetAutoCleanupDetail())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("gracePeriodEndDateTime", m.GetGracePeriodEndDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("snapshotConfiguration", m.GetSnapshotConfiguration())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("storageConfiguration", m.GetStorageConfiguration())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetUserProfileSnapshots() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserProfileSnapshots()))
+		for i, v := range m.GetUserProfileSnapshots() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("userProfileSnapshots", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
+// SetAutoCleanupDetail sets the autoCleanupDetail property value. The autoCleanupDetail property
+func (m *CloudPCUserSettingsPersistenceDetail) SetAutoCleanupDetail(value CloudPCUserSettingsPersistenceAutoCleanupDetailable) {
+	err := m.GetBackingStore().Set("autoCleanupDetail", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetGracePeriodEndDateTime sets the gracePeriodEndDateTime property value. Indicates the grace period end time when user settings persistence exceeds the available quota. If usage exceeds the available quota when the grace period expires, the system automatically deletes the profile with the oldest last attached timestamp. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-func (m *CloudPCUserSettingsPersistenceDetail) SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("gracePeriodEndDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *CloudPCUserSettingsPersistenceDetail) SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("gracePeriodEndDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
+// SetSnapshotConfiguration sets the snapshotConfiguration property value. The snapshotConfiguration property
+func (m *CloudPCUserSettingsPersistenceDetail) SetSnapshotConfiguration(value CloudPcUserSettingsPersistenceSnapshotConfigurationable) {
+	err := m.GetBackingStore().Set("snapshotConfiguration", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetStorageConfiguration sets the storageConfiguration property value. The storageConfiguration property
+func (m *CloudPCUserSettingsPersistenceDetail) SetStorageConfiguration(value CloudPcStorageConfigurationable) {
+	err := m.GetBackingStore().Set("storageConfiguration", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetUserProfileSnapshots sets the userProfileSnapshots property value. The userProfileSnapshots property
+func (m *CloudPCUserSettingsPersistenceDetail) SetUserProfileSnapshots(value []CloudPcUserProfileSnapshotable) {
+	err := m.GetBackingStore().Set("userProfileSnapshots", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type CloudPCUserSettingsPersistenceDetailable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAutoCleanupDetail() CloudPCUserSettingsPersistenceAutoCleanupDetailable
+	GetGracePeriodEndDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetSnapshotConfiguration() CloudPcUserSettingsPersistenceSnapshotConfigurationable
+	GetStorageConfiguration() CloudPcStorageConfigurationable
+	GetUserProfileSnapshots() []CloudPcUserProfileSnapshotable
+	SetAutoCleanupDetail(value CloudPCUserSettingsPersistenceAutoCleanupDetailable)
+	SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetSnapshotConfiguration(value CloudPcUserSettingsPersistenceSnapshotConfigurationable)
+	SetStorageConfiguration(value CloudPcStorageConfigurationable)
+	SetUserProfileSnapshots(value []CloudPcUserProfileSnapshotable)
 }

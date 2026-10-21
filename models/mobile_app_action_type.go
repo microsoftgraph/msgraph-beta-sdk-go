@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Defines the Action Types for an Intune Application.
 type MobileAppActionType int
 
 const (
-    // Unknown result.
-    UNKNOWN_MOBILEAPPACTIONTYPE MobileAppActionType = iota
-    // Application install command was sent.
-    INSTALLCOMMANDSENT_MOBILEAPPACTIONTYPE
-    // Application installed.
-    INSTALLED_MOBILEAPPACTIONTYPE
-    // Application uninstalled.
-    UNINSTALLED_MOBILEAPPACTIONTYPE
-    // User requested installation
-    USERREQUESTEDINSTALL_MOBILEAPPACTIONTYPE
+	// Unknown result.
+	UNKNOWN_MOBILEAPPACTIONTYPE MobileAppActionType = iota
+	// Application install command was sent.
+	INSTALLCOMMANDSENT_MOBILEAPPACTIONTYPE
+	// Application installed.
+	INSTALLED_MOBILEAPPACTIONTYPE
+	// Application uninstalled.
+	UNINSTALLED_MOBILEAPPACTIONTYPE
+	// User requested installation
+	USERREQUESTEDINSTALL_MOBILEAPPACTIONTYPE
 )
 
 func (i MobileAppActionType) String() string {
-    return []string{"unknown", "installCommandSent", "installed", "uninstalled", "userRequestedInstall"}[i]
+	return []string{"unknown", "installCommandSent", "installed", "uninstalled", "userRequestedInstall"}[i]
 }
+
 func ParseMobileAppActionType(v string) (any, error) {
-    result := UNKNOWN_MOBILEAPPACTIONTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_MOBILEAPPACTIONTYPE
-        case "installCommandSent":
-            result = INSTALLCOMMANDSENT_MOBILEAPPACTIONTYPE
-        case "installed":
-            result = INSTALLED_MOBILEAPPACTIONTYPE
-        case "uninstalled":
-            result = UNINSTALLED_MOBILEAPPACTIONTYPE
-        case "userRequestedInstall":
-            result = USERREQUESTEDINSTALL_MOBILEAPPACTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_MOBILEAPPACTIONTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_MOBILEAPPACTIONTYPE
+	case "installCommandSent":
+		result = INSTALLCOMMANDSENT_MOBILEAPPACTIONTYPE
+	case "installed":
+		result = INSTALLED_MOBILEAPPACTIONTYPE
+	case "uninstalled":
+		result = UNINSTALLED_MOBILEAPPACTIONTYPE
+	case "userRequestedInstall":
+		result = USERREQUESTEDINSTALL_MOBILEAPPACTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMobileAppActionType(values []MobileAppActionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MobileAppActionType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type GroupTypeEnum int
 
 const (
-    ISCLOUDGROUP_GROUPTYPEENUM GroupTypeEnum = iota
-    ISONPREMISEGROUP_GROUPTYPEENUM
-    ISSOFTDELETEDGROUP_GROUPTYPEENUM
+	ISCLOUDGROUP_GROUPTYPEENUM GroupTypeEnum = iota
+	ISONPREMISEGROUP_GROUPTYPEENUM
+	ISSOFTDELETEDGROUP_GROUPTYPEENUM
 )
 
 func (i GroupTypeEnum) String() string {
-    return []string{"isCloudGroup", "isOnPremiseGroup", "isSoftDeletedGroup"}[i]
+	return []string{"isCloudGroup", "isOnPremiseGroup", "isSoftDeletedGroup"}[i]
 }
+
 func ParseGroupTypeEnum(v string) (any, error) {
-    result := ISCLOUDGROUP_GROUPTYPEENUM
-    switch v {
-        case "isCloudGroup":
-            result = ISCLOUDGROUP_GROUPTYPEENUM
-        case "isOnPremiseGroup":
-            result = ISONPREMISEGROUP_GROUPTYPEENUM
-        case "isSoftDeletedGroup":
-            result = ISSOFTDELETEDGROUP_GROUPTYPEENUM
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ISCLOUDGROUP_GROUPTYPEENUM
+	switch v {
+	case "isCloudGroup":
+		result = ISCLOUDGROUP_GROUPTYPEENUM
+	case "isOnPremiseGroup":
+		result = ISONPREMISEGROUP_GROUPTYPEENUM
+	case "isSoftDeletedGroup":
+		result = ISSOFTDELETEDGROUP_GROUPTYPEENUM
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeGroupTypeEnum(values []GroupTypeEnum) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i GroupTypeEnum) isMultiValue() bool {
-    return false
+	return false
 }

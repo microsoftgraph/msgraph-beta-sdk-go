@@ -4,1488 +4,1559 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type PolicyRoot struct {
-    Entity
+	Entity
 }
+
 // NewPolicyRoot instantiates a new PolicyRoot and sets the default values.
-func NewPolicyRoot()(*PolicyRoot) {
-    m := &PolicyRoot{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewPolicyRoot() *PolicyRoot {
+	m := &PolicyRoot{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreatePolicyRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreatePolicyRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewPolicyRoot(), nil
+func CreatePolicyRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewPolicyRoot(), nil
 }
+
 // GetAccessReviewPolicy gets the accessReviewPolicy property value. The policy that contains directory-level access review settings.
 // returns a AccessReviewPolicyable when successful
-func (m *PolicyRoot) GetAccessReviewPolicy()(AccessReviewPolicyable) {
-    val, err := m.GetBackingStore().Get("accessReviewPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AccessReviewPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAccessReviewPolicy() AccessReviewPolicyable {
+	val, err := m.GetBackingStore().Get("accessReviewPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AccessReviewPolicyable)
+	}
+	return nil
 }
+
 // GetActivityBasedTimeoutPolicies gets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
 // returns a []ActivityBasedTimeoutPolicyable when successful
-func (m *PolicyRoot) GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPolicyable) {
-    val, err := m.GetBackingStore().Get("activityBasedTimeoutPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ActivityBasedTimeoutPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetActivityBasedTimeoutPolicies() []ActivityBasedTimeoutPolicyable {
+	val, err := m.GetBackingStore().Get("activityBasedTimeoutPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ActivityBasedTimeoutPolicyable)
+	}
+	return nil
 }
+
 // GetAdminConsentRequestPolicy gets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
 // returns a AdminConsentRequestPolicyable when successful
-func (m *PolicyRoot) GetAdminConsentRequestPolicy()(AdminConsentRequestPolicyable) {
-    val, err := m.GetBackingStore().Get("adminConsentRequestPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AdminConsentRequestPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAdminConsentRequestPolicy() AdminConsentRequestPolicyable {
+	val, err := m.GetBackingStore().Get("adminConsentRequestPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AdminConsentRequestPolicyable)
+	}
+	return nil
 }
+
 // GetAppManagementPolicies gets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 // returns a []AppManagementPolicyable when successful
-func (m *PolicyRoot) GetAppManagementPolicies()([]AppManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("appManagementPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AppManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAppManagementPolicies() []AppManagementPolicyable {
+	val, err := m.GetBackingStore().Get("appManagementPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AppManagementPolicyable)
+	}
+	return nil
 }
+
 // GetAuthenticationFlowsPolicy gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
 // returns a AuthenticationFlowsPolicyable when successful
-func (m *PolicyRoot) GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyable) {
-    val, err := m.GetBackingStore().Get("authenticationFlowsPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AuthenticationFlowsPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAuthenticationFlowsPolicy() AuthenticationFlowsPolicyable {
+	val, err := m.GetBackingStore().Get("authenticationFlowsPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AuthenticationFlowsPolicyable)
+	}
+	return nil
 }
+
 // GetAuthenticationMethodsPolicy gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
 // returns a AuthenticationMethodsPolicyable when successful
-func (m *PolicyRoot) GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable) {
-    val, err := m.GetBackingStore().Get("authenticationMethodsPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AuthenticationMethodsPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAuthenticationMethodsPolicy() AuthenticationMethodsPolicyable {
+	val, err := m.GetBackingStore().Get("authenticationMethodsPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AuthenticationMethodsPolicyable)
+	}
+	return nil
 }
+
 // GetAuthenticationStrengthPolicies gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
 // returns a []AuthenticationStrengthPolicyable when successful
-func (m *PolicyRoot) GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable) {
-    val, err := m.GetBackingStore().Get("authenticationStrengthPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AuthenticationStrengthPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAuthenticationStrengthPolicies() []AuthenticationStrengthPolicyable {
+	val, err := m.GetBackingStore().Get("authenticationStrengthPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AuthenticationStrengthPolicyable)
+	}
+	return nil
 }
+
 // GetAuthorizationPolicy gets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
 // returns a []AuthorizationPolicyable when successful
-func (m *PolicyRoot) GetAuthorizationPolicy()([]AuthorizationPolicyable) {
-    val, err := m.GetBackingStore().Get("authorizationPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AuthorizationPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetAuthorizationPolicy() []AuthorizationPolicyable {
+	val, err := m.GetBackingStore().Get("authorizationPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AuthorizationPolicyable)
+	}
+	return nil
 }
+
 // GetB2bManagementPolicies gets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
 // returns a []B2bManagementPolicyable when successful
-func (m *PolicyRoot) GetB2bManagementPolicies()([]B2bManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("b2bManagementPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]B2bManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetB2bManagementPolicies() []B2bManagementPolicyable {
+	val, err := m.GetBackingStore().Get("b2bManagementPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]B2bManagementPolicyable)
+	}
+	return nil
 }
+
 // GetB2cAuthenticationMethodsPolicy gets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 // returns a B2cAuthenticationMethodsPolicyable when successful
-func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable) {
-    val, err := m.GetBackingStore().Get("b2cAuthenticationMethodsPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(B2cAuthenticationMethodsPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy() B2cAuthenticationMethodsPolicyable {
+	val, err := m.GetBackingStore().Get("b2cAuthenticationMethodsPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(B2cAuthenticationMethodsPolicyable)
+	}
+	return nil
 }
+
 // GetClaimsMappingPolicies gets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
 // returns a []ClaimsMappingPolicyable when successful
-func (m *PolicyRoot) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable) {
-    val, err := m.GetBackingStore().Get("claimsMappingPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ClaimsMappingPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetClaimsMappingPolicies() []ClaimsMappingPolicyable {
+	val, err := m.GetBackingStore().Get("claimsMappingPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ClaimsMappingPolicyable)
+	}
+	return nil
 }
+
 // GetConditionalAccessPolicies gets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
 // returns a []ConditionalAccessPolicyable when successful
-func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("conditionalAccessPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConditionalAccessPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetConditionalAccessPolicies() []ConditionalAccessPolicyable {
+	val, err := m.GetBackingStore().Get("conditionalAccessPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ConditionalAccessPolicyable)
+	}
+	return nil
 }
+
 // GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 // returns a CrossTenantAccessPolicyable when successful
-func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("crossTenantAccessPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CrossTenantAccessPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetCrossTenantAccessPolicy() CrossTenantAccessPolicyable {
+	val, err := m.GetBackingStore().Get("crossTenantAccessPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CrossTenantAccessPolicyable)
+	}
+	return nil
 }
+
 // GetDefaultAppManagementPolicy gets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
 // returns a TenantAppManagementPolicyable when successful
-func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("defaultAppManagementPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(TenantAppManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetDefaultAppManagementPolicy() TenantAppManagementPolicyable {
+	val, err := m.GetBackingStore().Get("defaultAppManagementPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TenantAppManagementPolicyable)
+	}
+	return nil
 }
+
 // GetDeletedItems gets the deletedItems property value. Policies that support soft-delete functionality and can be restored within 30 days.
 // returns a PolicyDeletableRootable when successful
-func (m *PolicyRoot) GetDeletedItems()(PolicyDeletableRootable) {
-    val, err := m.GetBackingStore().Get("deletedItems")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(PolicyDeletableRootable)
-    }
-    return nil
+func (m *PolicyRoot) GetDeletedItems() PolicyDeletableRootable {
+	val, err := m.GetBackingStore().Get("deletedItems")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(PolicyDeletableRootable)
+	}
+	return nil
 }
+
 // GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 // returns a DeviceRegistrationPolicyable when successful
-func (m *PolicyRoot) GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable) {
-    val, err := m.GetBackingStore().Get("deviceRegistrationPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(DeviceRegistrationPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetDeviceRegistrationPolicy() DeviceRegistrationPolicyable {
+	val, err := m.GetBackingStore().Get("deviceRegistrationPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(DeviceRegistrationPolicyable)
+	}
+	return nil
 }
+
 // GetDirectoryRoleAccessReviewPolicy gets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property
 // returns a DirectoryRoleAccessReviewPolicyable when successful
-func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessReviewPolicyable) {
-    val, err := m.GetBackingStore().Get("directoryRoleAccessReviewPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(DirectoryRoleAccessReviewPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetDirectoryRoleAccessReviewPolicy() DirectoryRoleAccessReviewPolicyable {
+	val, err := m.GetBackingStore().Get("directoryRoleAccessReviewPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(DirectoryRoleAccessReviewPolicyable)
+	}
+	return nil
 }
+
 // GetExternalIdentitiesPolicy gets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
 // returns a ExternalIdentitiesPolicyable when successful
-func (m *PolicyRoot) GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable) {
-    val, err := m.GetBackingStore().Get("externalIdentitiesPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ExternalIdentitiesPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetExternalIdentitiesPolicy() ExternalIdentitiesPolicyable {
+	val, err := m.GetBackingStore().Get("externalIdentitiesPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ExternalIdentitiesPolicyable)
+	}
+	return nil
 }
+
 // GetFeatureRolloutPolicies gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
 // returns a []FeatureRolloutPolicyable when successful
-func (m *PolicyRoot) GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable) {
-    val, err := m.GetBackingStore().Get("featureRolloutPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]FeatureRolloutPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetFeatureRolloutPolicies() []FeatureRolloutPolicyable {
+	val, err := m.GetBackingStore().Get("featureRolloutPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]FeatureRolloutPolicyable)
+	}
+	return nil
 }
+
 // GetFederatedTokenValidationPolicy gets the federatedTokenValidationPolicy property value. Represents a policy to control enabling or disabling validation of federation authentication tokens.
 // returns a FederatedTokenValidationPolicyable when successful
-func (m *PolicyRoot) GetFederatedTokenValidationPolicy()(FederatedTokenValidationPolicyable) {
-    val, err := m.GetBackingStore().Get("federatedTokenValidationPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(FederatedTokenValidationPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetFederatedTokenValidationPolicy() FederatedTokenValidationPolicyable {
+	val, err := m.GetBackingStore().Get("federatedTokenValidationPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(FederatedTokenValidationPolicyable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["accessReviewPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessReviewPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessReviewPolicy(val.(AccessReviewPolicyable))
-        }
-        return nil
-    }
-    res["activityBasedTimeoutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateActivityBasedTimeoutPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ActivityBasedTimeoutPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ActivityBasedTimeoutPolicyable)
-                }
-            }
-            m.SetActivityBasedTimeoutPolicies(res)
-        }
-        return nil
-    }
-    res["adminConsentRequestPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAdminConsentRequestPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAdminConsentRequestPolicy(val.(AdminConsentRequestPolicyable))
-        }
-        return nil
-    }
-    res["appManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAppManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AppManagementPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AppManagementPolicyable)
-                }
-            }
-            m.SetAppManagementPolicies(res)
-        }
-        return nil
-    }
-    res["authenticationFlowsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAuthenticationFlowsPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationFlowsPolicy(val.(AuthenticationFlowsPolicyable))
-        }
-        return nil
-    }
-    res["authenticationMethodsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAuthenticationMethodsPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAuthenticationMethodsPolicy(val.(AuthenticationMethodsPolicyable))
-        }
-        return nil
-    }
-    res["authenticationStrengthPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthenticationStrengthPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AuthenticationStrengthPolicyable)
-                }
-            }
-            m.SetAuthenticationStrengthPolicies(res)
-        }
-        return nil
-    }
-    res["authorizationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAuthorizationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AuthorizationPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AuthorizationPolicyable)
-                }
-            }
-            m.SetAuthorizationPolicy(res)
-        }
-        return nil
-    }
-    res["b2bManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateB2bManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]B2bManagementPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(B2bManagementPolicyable)
-                }
-            }
-            m.SetB2bManagementPolicies(res)
-        }
-        return nil
-    }
-    res["b2cAuthenticationMethodsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetB2cAuthenticationMethodsPolicy(val.(B2cAuthenticationMethodsPolicyable))
-        }
-        return nil
-    }
-    res["claimsMappingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateClaimsMappingPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ClaimsMappingPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ClaimsMappingPolicyable)
-                }
-            }
-            m.SetClaimsMappingPolicies(res)
-        }
-        return nil
-    }
-    res["conditionalAccessPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConditionalAccessPolicyable)
-                }
-            }
-            m.SetConditionalAccessPolicies(res)
-        }
-        return nil
-    }
-    res["crossTenantAccessPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCrossTenantAccessPolicy(val.(CrossTenantAccessPolicyable))
-        }
-        return nil
-    }
-    res["defaultAppManagementPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTenantAppManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDefaultAppManagementPolicy(val.(TenantAppManagementPolicyable))
-        }
-        return nil
-    }
-    res["deletedItems"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreatePolicyDeletableRootFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeletedItems(val.(PolicyDeletableRootable))
-        }
-        return nil
-    }
-    res["deviceRegistrationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDeviceRegistrationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDeviceRegistrationPolicy(val.(DeviceRegistrationPolicyable))
-        }
-        return nil
-    }
-    res["directoryRoleAccessReviewPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDirectoryRoleAccessReviewPolicy(val.(DirectoryRoleAccessReviewPolicyable))
-        }
-        return nil
-    }
-    res["externalIdentitiesPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateExternalIdentitiesPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExternalIdentitiesPolicy(val.(ExternalIdentitiesPolicyable))
-        }
-        return nil
-    }
-    res["featureRolloutPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FeatureRolloutPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(FeatureRolloutPolicyable)
-                }
-            }
-            m.SetFeatureRolloutPolicies(res)
-        }
-        return nil
-    }
-    res["federatedTokenValidationPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateFederatedTokenValidationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFederatedTokenValidationPolicy(val.(FederatedTokenValidationPolicyable))
-        }
-        return nil
-    }
-    res["homeRealmDiscoveryPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]HomeRealmDiscoveryPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(HomeRealmDiscoveryPolicyable)
-                }
-            }
-            m.SetHomeRealmDiscoveryPolicies(res)
-        }
-        return nil
-    }
-    res["identitySecurityDefaultsEnforcementPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIdentitySecurityDefaultsEnforcementPolicy(val.(IdentitySecurityDefaultsEnforcementPolicyable))
-        }
-        return nil
-    }
-    res["mobileAppManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobileAppManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MobileAppManagementPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MobileAppManagementPolicyable)
-                }
-            }
-            m.SetMobileAppManagementPolicies(res)
-        }
-        return nil
-    }
-    res["mobileDeviceManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobileDeviceManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MobileDeviceManagementPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MobileDeviceManagementPolicyable)
-                }
-            }
-            m.SetMobileDeviceManagementPolicies(res)
-        }
-        return nil
-    }
-    res["onPremAuthenticationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateOnPremAuthenticationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]OnPremAuthenticationPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(OnPremAuthenticationPolicyable)
-                }
-            }
-            m.SetOnPremAuthenticationPolicies(res)
-        }
-        return nil
-    }
-    res["ownerlessGroupPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateOwnerlessGroupPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOwnerlessGroupPolicy(val.(OwnerlessGroupPolicyable))
-        }
-        return nil
-    }
-    res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PermissionGrantPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(PermissionGrantPolicyable)
-                }
-            }
-            m.SetPermissionGrantPolicies(res)
-        }
-        return nil
-    }
-    res["permissionGrantPreApprovalPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPreApprovalPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]PermissionGrantPreApprovalPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(PermissionGrantPreApprovalPolicyable)
-                }
-            }
-            m.SetPermissionGrantPreApprovalPolicies(res)
-        }
-        return nil
-    }
-    res["roleManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleManagementPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(UnifiedRoleManagementPolicyable)
-                }
-            }
-            m.SetRoleManagementPolicies(res)
-        }
-        return nil
-    }
-    res["roleManagementPolicyAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]UnifiedRoleManagementPolicyAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(UnifiedRoleManagementPolicyAssignmentable)
-                }
-            }
-            m.SetRoleManagementPolicyAssignments(res)
-        }
-        return nil
-    }
-    res["servicePrincipalCreationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ServicePrincipalCreationPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ServicePrincipalCreationPolicyable)
-                }
-            }
-            m.SetServicePrincipalCreationPolicies(res)
-        }
-        return nil
-    }
-    res["tokenIssuancePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TokenIssuancePolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TokenIssuancePolicyable)
-                }
-            }
-            m.SetTokenIssuancePolicies(res)
-        }
-        return nil
-    }
-    res["tokenLifetimePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TokenLifetimePolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TokenLifetimePolicyable)
-                }
-            }
-            m.SetTokenLifetimePolicies(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *PolicyRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["accessReviewPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAccessReviewPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAccessReviewPolicy(val.(AccessReviewPolicyable))
+		}
+		return nil
+	}
+	res["activityBasedTimeoutPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateActivityBasedTimeoutPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ActivityBasedTimeoutPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ActivityBasedTimeoutPolicyable)
+				}
+			}
+			m.SetActivityBasedTimeoutPolicies(res)
+		}
+		return nil
+	}
+	res["adminConsentRequestPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAdminConsentRequestPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAdminConsentRequestPolicy(val.(AdminConsentRequestPolicyable))
+		}
+		return nil
+	}
+	res["appManagementPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAppManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AppManagementPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AppManagementPolicyable)
+				}
+			}
+			m.SetAppManagementPolicies(res)
+		}
+		return nil
+	}
+	res["authenticationFlowsPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAuthenticationFlowsPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAuthenticationFlowsPolicy(val.(AuthenticationFlowsPolicyable))
+		}
+		return nil
+	}
+	res["authenticationMethodsPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAuthenticationMethodsPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAuthenticationMethodsPolicy(val.(AuthenticationMethodsPolicyable))
+		}
+		return nil
+	}
+	res["authenticationStrengthPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAuthenticationStrengthPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AuthenticationStrengthPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AuthenticationStrengthPolicyable)
+				}
+			}
+			m.SetAuthenticationStrengthPolicies(res)
+		}
+		return nil
+	}
+	res["authorizationPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAuthorizationPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AuthorizationPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AuthorizationPolicyable)
+				}
+			}
+			m.SetAuthorizationPolicy(res)
+		}
+		return nil
+	}
+	res["b2bManagementPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateB2bManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]B2bManagementPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(B2bManagementPolicyable)
+				}
+			}
+			m.SetB2bManagementPolicies(res)
+		}
+		return nil
+	}
+	res["b2cAuthenticationMethodsPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetB2cAuthenticationMethodsPolicy(val.(B2cAuthenticationMethodsPolicyable))
+		}
+		return nil
+	}
+	res["claimsMappingPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateClaimsMappingPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ClaimsMappingPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ClaimsMappingPolicyable)
+				}
+			}
+			m.SetClaimsMappingPolicies(res)
+		}
+		return nil
+	}
+	res["conditionalAccessPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ConditionalAccessPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ConditionalAccessPolicyable)
+				}
+			}
+			m.SetConditionalAccessPolicies(res)
+		}
+		return nil
+	}
+	res["crossTenantAccessPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCrossTenantAccessPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCrossTenantAccessPolicy(val.(CrossTenantAccessPolicyable))
+		}
+		return nil
+	}
+	res["defaultAppManagementPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTenantAppManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDefaultAppManagementPolicy(val.(TenantAppManagementPolicyable))
+		}
+		return nil
+	}
+	res["deletedItems"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreatePolicyDeletableRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedItems(val.(PolicyDeletableRootable))
+		}
+		return nil
+	}
+	res["deviceRegistrationPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateDeviceRegistrationPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeviceRegistrationPolicy(val.(DeviceRegistrationPolicyable))
+		}
+		return nil
+	}
+	res["directoryRoleAccessReviewPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateDirectoryRoleAccessReviewPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDirectoryRoleAccessReviewPolicy(val.(DirectoryRoleAccessReviewPolicyable))
+		}
+		return nil
+	}
+	res["externalIdentitiesPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateExternalIdentitiesPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExternalIdentitiesPolicy(val.(ExternalIdentitiesPolicyable))
+		}
+		return nil
+	}
+	res["featureRolloutPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateFeatureRolloutPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]FeatureRolloutPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(FeatureRolloutPolicyable)
+				}
+			}
+			m.SetFeatureRolloutPolicies(res)
+		}
+		return nil
+	}
+	res["federatedTokenValidationPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateFederatedTokenValidationPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetFederatedTokenValidationPolicy(val.(FederatedTokenValidationPolicyable))
+		}
+		return nil
+	}
+	res["homeRealmDiscoveryPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateHomeRealmDiscoveryPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]HomeRealmDiscoveryPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(HomeRealmDiscoveryPolicyable)
+				}
+			}
+			m.SetHomeRealmDiscoveryPolicies(res)
+		}
+		return nil
+	}
+	res["identitySecurityDefaultsEnforcementPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentitySecurityDefaultsEnforcementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIdentitySecurityDefaultsEnforcementPolicy(val.(IdentitySecurityDefaultsEnforcementPolicyable))
+		}
+		return nil
+	}
+	res["mobileAppManagementPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMobileAppManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MobileAppManagementPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MobileAppManagementPolicyable)
+				}
+			}
+			m.SetMobileAppManagementPolicies(res)
+		}
+		return nil
+	}
+	res["mobileDeviceManagementPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMobileDeviceManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MobileDeviceManagementPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MobileDeviceManagementPolicyable)
+				}
+			}
+			m.SetMobileDeviceManagementPolicies(res)
+		}
+		return nil
+	}
+	res["onPremAuthenticationPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateOnPremAuthenticationPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]OnPremAuthenticationPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(OnPremAuthenticationPolicyable)
+				}
+			}
+			m.SetOnPremAuthenticationPolicies(res)
+		}
+		return nil
+	}
+	res["ownerlessGroupPolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateOwnerlessGroupPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOwnerlessGroupPolicy(val.(OwnerlessGroupPolicyable))
+		}
+		return nil
+	}
+	res["permissionGrantPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]PermissionGrantPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(PermissionGrantPolicyable)
+				}
+			}
+			m.SetPermissionGrantPolicies(res)
+		}
+		return nil
+	}
+	res["permissionGrantPreApprovalPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPreApprovalPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]PermissionGrantPreApprovalPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(PermissionGrantPreApprovalPolicyable)
+				}
+			}
+			m.SetPermissionGrantPreApprovalPolicies(res)
+		}
+		return nil
+	}
+	res["roleManagementPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]UnifiedRoleManagementPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(UnifiedRoleManagementPolicyable)
+				}
+			}
+			m.SetRoleManagementPolicies(res)
+		}
+		return nil
+	}
+	res["roleManagementPolicyAssignments"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyAssignmentFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]UnifiedRoleManagementPolicyAssignmentable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(UnifiedRoleManagementPolicyAssignmentable)
+				}
+			}
+			m.SetRoleManagementPolicyAssignments(res)
+		}
+		return nil
+	}
+	res["servicePrincipalCreationPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateServicePrincipalCreationPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ServicePrincipalCreationPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ServicePrincipalCreationPolicyable)
+				}
+			}
+			m.SetServicePrincipalCreationPolicies(res)
+		}
+		return nil
+	}
+	res["tokenIssuancePolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTokenIssuancePolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TokenIssuancePolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TokenIssuancePolicyable)
+				}
+			}
+			m.SetTokenIssuancePolicies(res)
+		}
+		return nil
+	}
+	res["tokenLifetimePolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTokenLifetimePolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TokenLifetimePolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TokenLifetimePolicyable)
+				}
+			}
+			m.SetTokenLifetimePolicies(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetHomeRealmDiscoveryPolicies gets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
 // returns a []HomeRealmDiscoveryPolicyable when successful
-func (m *PolicyRoot) GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable) {
-    val, err := m.GetBackingStore().Get("homeRealmDiscoveryPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]HomeRealmDiscoveryPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryPolicyable {
+	val, err := m.GetBackingStore().Get("homeRealmDiscoveryPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]HomeRealmDiscoveryPolicyable)
+	}
+	return nil
 }
+
 // GetIdentitySecurityDefaultsEnforcementPolicy gets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
 // returns a IdentitySecurityDefaultsEnforcementPolicyable when successful
-func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable) {
-    val, err := m.GetBackingStore().Get("identitySecurityDefaultsEnforcementPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(IdentitySecurityDefaultsEnforcementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetIdentitySecurityDefaultsEnforcementPolicy() IdentitySecurityDefaultsEnforcementPolicyable {
+	val, err := m.GetBackingStore().Get("identitySecurityDefaultsEnforcementPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentitySecurityDefaultsEnforcementPolicyable)
+	}
+	return nil
 }
+
 // GetMobileAppManagementPolicies gets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
 // returns a []MobileAppManagementPolicyable when successful
-func (m *PolicyRoot) GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("mobileAppManagementPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MobileAppManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetMobileAppManagementPolicies() []MobileAppManagementPolicyable {
+	val, err := m.GetBackingStore().Get("mobileAppManagementPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MobileAppManagementPolicyable)
+	}
+	return nil
 }
+
 // GetMobileDeviceManagementPolicies gets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
 // returns a []MobileDeviceManagementPolicyable when successful
-func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("mobileDeviceManagementPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MobileDeviceManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetMobileDeviceManagementPolicies() []MobileDeviceManagementPolicyable {
+	val, err := m.GetBackingStore().Get("mobileDeviceManagementPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MobileDeviceManagementPolicyable)
+	}
+	return nil
 }
+
 // GetOnPremAuthenticationPolicies gets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
 // returns a []OnPremAuthenticationPolicyable when successful
-func (m *PolicyRoot) GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable) {
-    val, err := m.GetBackingStore().Get("onPremAuthenticationPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]OnPremAuthenticationPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetOnPremAuthenticationPolicies() []OnPremAuthenticationPolicyable {
+	val, err := m.GetBackingStore().Get("onPremAuthenticationPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]OnPremAuthenticationPolicyable)
+	}
+	return nil
 }
+
 // GetOwnerlessGroupPolicy gets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
 // returns a OwnerlessGroupPolicyable when successful
-func (m *PolicyRoot) GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable) {
-    val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(OwnerlessGroupPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetOwnerlessGroupPolicy() OwnerlessGroupPolicyable {
+	val, err := m.GetBackingStore().Get("ownerlessGroupPolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(OwnerlessGroupPolicyable)
+	}
+	return nil
 }
+
 // GetPermissionGrantPolicies gets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 // returns a []PermissionGrantPolicyable when successful
-func (m *PolicyRoot) GetPermissionGrantPolicies()([]PermissionGrantPolicyable) {
-    val, err := m.GetBackingStore().Get("permissionGrantPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]PermissionGrantPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetPermissionGrantPolicies() []PermissionGrantPolicyable {
+	val, err := m.GetBackingStore().Get("permissionGrantPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]PermissionGrantPolicyable)
+	}
+	return nil
 }
+
 // GetPermissionGrantPreApprovalPolicies gets the permissionGrantPreApprovalPolicies property value. Policies that specify the conditions under which consent can be granted to a specific application.
 // returns a []PermissionGrantPreApprovalPolicyable when successful
-func (m *PolicyRoot) GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable) {
-    val, err := m.GetBackingStore().Get("permissionGrantPreApprovalPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]PermissionGrantPreApprovalPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetPermissionGrantPreApprovalPolicies() []PermissionGrantPreApprovalPolicyable {
+	val, err := m.GetBackingStore().Get("permissionGrantPreApprovalPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]PermissionGrantPreApprovalPolicyable)
+	}
+	return nil
 }
+
 // GetRoleManagementPolicies gets the roleManagementPolicies property value. Represents the role management policies.
 // returns a []UnifiedRoleManagementPolicyable when successful
-func (m *PolicyRoot) GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable) {
-    val, err := m.GetBackingStore().Get("roleManagementPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]UnifiedRoleManagementPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetRoleManagementPolicies() []UnifiedRoleManagementPolicyable {
+	val, err := m.GetBackingStore().Get("roleManagementPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]UnifiedRoleManagementPolicyable)
+	}
+	return nil
 }
+
 // GetRoleManagementPolicyAssignments gets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
 // returns a []UnifiedRoleManagementPolicyAssignmentable when successful
-func (m *PolicyRoot) GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable) {
-    val, err := m.GetBackingStore().Get("roleManagementPolicyAssignments")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]UnifiedRoleManagementPolicyAssignmentable)
-    }
-    return nil
+func (m *PolicyRoot) GetRoleManagementPolicyAssignments() []UnifiedRoleManagementPolicyAssignmentable {
+	val, err := m.GetBackingStore().Get("roleManagementPolicyAssignments")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]UnifiedRoleManagementPolicyAssignmentable)
+	}
+	return nil
 }
+
 // GetServicePrincipalCreationPolicies gets the servicePrincipalCreationPolicies property value. The servicePrincipalCreationPolicies property
 // returns a []ServicePrincipalCreationPolicyable when successful
-func (m *PolicyRoot) GetServicePrincipalCreationPolicies()([]ServicePrincipalCreationPolicyable) {
-    val, err := m.GetBackingStore().Get("servicePrincipalCreationPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ServicePrincipalCreationPolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetServicePrincipalCreationPolicies() []ServicePrincipalCreationPolicyable {
+	val, err := m.GetBackingStore().Get("servicePrincipalCreationPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ServicePrincipalCreationPolicyable)
+	}
+	return nil
 }
+
 // GetTokenIssuancePolicies gets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
 // returns a []TokenIssuancePolicyable when successful
-func (m *PolicyRoot) GetTokenIssuancePolicies()([]TokenIssuancePolicyable) {
-    val, err := m.GetBackingStore().Get("tokenIssuancePolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TokenIssuancePolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetTokenIssuancePolicies() []TokenIssuancePolicyable {
+	val, err := m.GetBackingStore().Get("tokenIssuancePolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TokenIssuancePolicyable)
+	}
+	return nil
 }
+
 // GetTokenLifetimePolicies gets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
 // returns a []TokenLifetimePolicyable when successful
-func (m *PolicyRoot) GetTokenLifetimePolicies()([]TokenLifetimePolicyable) {
-    val, err := m.GetBackingStore().Get("tokenLifetimePolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TokenLifetimePolicyable)
-    }
-    return nil
+func (m *PolicyRoot) GetTokenLifetimePolicies() []TokenLifetimePolicyable {
+	val, err := m.GetBackingStore().Get("tokenLifetimePolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TokenLifetimePolicyable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("accessReviewPolicy", m.GetAccessReviewPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetActivityBasedTimeoutPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivityBasedTimeoutPolicies()))
-        for i, v := range m.GetActivityBasedTimeoutPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("activityBasedTimeoutPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("adminConsentRequestPolicy", m.GetAdminConsentRequestPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAppManagementPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppManagementPolicies()))
-        for i, v := range m.GetAppManagementPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("authenticationFlowsPolicy", m.GetAuthenticationFlowsPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("authenticationMethodsPolicy", m.GetAuthenticationMethodsPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAuthenticationStrengthPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationStrengthPolicies()))
-        for i, v := range m.GetAuthenticationStrengthPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAuthorizationPolicy() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthorizationPolicy()))
-        for i, v := range m.GetAuthorizationPolicy() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("authorizationPolicy", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetB2bManagementPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2bManagementPolicies()))
-        for i, v := range m.GetB2bManagementPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("b2bManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetClaimsMappingPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClaimsMappingPolicies()))
-        for i, v := range m.GetClaimsMappingPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetConditionalAccessPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicies()))
-        for i, v := range m.GetConditionalAccessPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("directoryRoleAccessReviewPolicy", m.GetDirectoryRoleAccessReviewPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("externalIdentitiesPolicy", m.GetExternalIdentitiesPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetFeatureRolloutPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
-        for i, v := range m.GetFeatureRolloutPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("federatedTokenValidationPolicy", m.GetFederatedTokenValidationPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetHomeRealmDiscoveryPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
-        for i, v := range m.GetHomeRealmDiscoveryPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("identitySecurityDefaultsEnforcementPolicy", m.GetIdentitySecurityDefaultsEnforcementPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMobileAppManagementPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppManagementPolicies()))
-        for i, v := range m.GetMobileAppManagementPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mobileAppManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetMobileDeviceManagementPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileDeviceManagementPolicies()))
-        for i, v := range m.GetMobileDeviceManagementPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetOnPremAuthenticationPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremAuthenticationPolicies()))
-        for i, v := range m.GetOnPremAuthenticationPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("onPremAuthenticationPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("ownerlessGroupPolicy", m.GetOwnerlessGroupPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPermissionGrantPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
-        for i, v := range m.GetPermissionGrantPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("permissionGrantPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPermissionGrantPreApprovalPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPreApprovalPolicies()))
-        for i, v := range m.GetPermissionGrantPreApprovalPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("permissionGrantPreApprovalPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRoleManagementPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicies()))
-        for i, v := range m.GetRoleManagementPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRoleManagementPolicyAssignments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicyAssignments()))
-        for i, v := range m.GetRoleManagementPolicyAssignments() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetServicePrincipalCreationPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePrincipalCreationPolicies()))
-        for i, v := range m.GetServicePrincipalCreationPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("servicePrincipalCreationPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTokenIssuancePolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
-        for i, v := range m.GetTokenIssuancePolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTokenLifetimePolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenLifetimePolicies()))
-        for i, v := range m.GetTokenLifetimePolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("accessReviewPolicy", m.GetAccessReviewPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetActivityBasedTimeoutPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActivityBasedTimeoutPolicies()))
+		for i, v := range m.GetActivityBasedTimeoutPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("activityBasedTimeoutPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("adminConsentRequestPolicy", m.GetAdminConsentRequestPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAppManagementPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAppManagementPolicies()))
+		for i, v := range m.GetAppManagementPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("appManagementPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("authenticationFlowsPolicy", m.GetAuthenticationFlowsPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("authenticationMethodsPolicy", m.GetAuthenticationMethodsPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAuthenticationStrengthPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthenticationStrengthPolicies()))
+		for i, v := range m.GetAuthenticationStrengthPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("authenticationStrengthPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAuthorizationPolicy() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthorizationPolicy()))
+		for i, v := range m.GetAuthorizationPolicy() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("authorizationPolicy", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetB2bManagementPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2bManagementPolicies()))
+		for i, v := range m.GetB2bManagementPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("b2bManagementPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetClaimsMappingPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetClaimsMappingPolicies()))
+		for i, v := range m.GetClaimsMappingPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("claimsMappingPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetConditionalAccessPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicies()))
+		for i, v := range m.GetConditionalAccessPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("defaultAppManagementPolicy", m.GetDefaultAppManagementPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("deletedItems", m.GetDeletedItems())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("deviceRegistrationPolicy", m.GetDeviceRegistrationPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("directoryRoleAccessReviewPolicy", m.GetDirectoryRoleAccessReviewPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("externalIdentitiesPolicy", m.GetExternalIdentitiesPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetFeatureRolloutPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFeatureRolloutPolicies()))
+		for i, v := range m.GetFeatureRolloutPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("featureRolloutPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("federatedTokenValidationPolicy", m.GetFederatedTokenValidationPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetHomeRealmDiscoveryPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHomeRealmDiscoveryPolicies()))
+		for i, v := range m.GetHomeRealmDiscoveryPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("homeRealmDiscoveryPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("identitySecurityDefaultsEnforcementPolicy", m.GetIdentitySecurityDefaultsEnforcementPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMobileAppManagementPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileAppManagementPolicies()))
+		for i, v := range m.GetMobileAppManagementPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mobileAppManagementPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetMobileDeviceManagementPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMobileDeviceManagementPolicies()))
+		for i, v := range m.GetMobileDeviceManagementPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetOnPremAuthenticationPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremAuthenticationPolicies()))
+		for i, v := range m.GetOnPremAuthenticationPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("onPremAuthenticationPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("ownerlessGroupPolicy", m.GetOwnerlessGroupPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetPermissionGrantPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPolicies()))
+		for i, v := range m.GetPermissionGrantPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("permissionGrantPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetPermissionGrantPreApprovalPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPreApprovalPolicies()))
+		for i, v := range m.GetPermissionGrantPreApprovalPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("permissionGrantPreApprovalPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRoleManagementPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicies()))
+		for i, v := range m.GetRoleManagementPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("roleManagementPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRoleManagementPolicyAssignments() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicyAssignments()))
+		for i, v := range m.GetRoleManagementPolicyAssignments() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("roleManagementPolicyAssignments", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetServicePrincipalCreationPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServicePrincipalCreationPolicies()))
+		for i, v := range m.GetServicePrincipalCreationPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("servicePrincipalCreationPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTokenIssuancePolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenIssuancePolicies()))
+		for i, v := range m.GetTokenIssuancePolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("tokenIssuancePolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTokenLifetimePolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTokenLifetimePolicies()))
+		for i, v := range m.GetTokenLifetimePolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("tokenLifetimePolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAccessReviewPolicy sets the accessReviewPolicy property value. The policy that contains directory-level access review settings.
-func (m *PolicyRoot) SetAccessReviewPolicy(value AccessReviewPolicyable)() {
-    err := m.GetBackingStore().Set("accessReviewPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAccessReviewPolicy(value AccessReviewPolicyable) {
+	err := m.GetBackingStore().Set("accessReviewPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetActivityBasedTimeoutPolicies sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time-out for web sessions for applications.
-func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)() {
-    err := m.GetBackingStore().Set("activityBasedTimeoutPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable) {
+	err := m.GetBackingStore().Set("activityBasedTimeoutPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAdminConsentRequestPolicy sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
-func (m *PolicyRoot) SetAdminConsentRequestPolicy(value AdminConsentRequestPolicyable)() {
-    err := m.GetBackingStore().Set("adminConsentRequestPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAdminConsentRequestPolicy(value AdminConsentRequestPolicyable) {
+	err := m.GetBackingStore().Set("adminConsentRequestPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAppManagementPolicies sets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-func (m *PolicyRoot) SetAppManagementPolicies(value []AppManagementPolicyable)() {
-    err := m.GetBackingStore().Set("appManagementPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAppManagementPolicies(value []AppManagementPolicyable) {
+	err := m.GetBackingStore().Set("appManagementPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuthenticationFlowsPolicy sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of guests.
-func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)() {
-    err := m.GetBackingStore().Set("authenticationFlowsPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable) {
+	err := m.GetBackingStore().Set("authenticationFlowsPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuthenticationMethodsPolicy sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.
-func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)() {
-    err := m.GetBackingStore().Set("authenticationMethodsPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable) {
+	err := m.GetBackingStore().Set("authenticationMethodsPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuthenticationStrengthPolicies sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
-func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)() {
-    err := m.GetBackingStore().Set("authenticationStrengthPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable) {
+	err := m.GetBackingStore().Set("authenticationStrengthPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAuthorizationPolicy sets the authorizationPolicy property value. The policy that controls Microsoft Entra authorization settings.
-func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable)() {
-    err := m.GetBackingStore().Set("authorizationPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable) {
+	err := m.GetBackingStore().Set("authorizationPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetB2bManagementPolicies sets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
-func (m *PolicyRoot) SetB2bManagementPolicies(value []B2bManagementPolicyable)() {
-    err := m.GetBackingStore().Set("b2bManagementPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetB2bManagementPolicies(value []B2bManagementPolicyable) {
+	err := m.GetBackingStore().Set("b2bManagementPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetB2cAuthenticationMethodsPolicy sets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
-func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)() {
-    err := m.GetBackingStore().Set("b2cAuthenticationMethodsPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable) {
+	err := m.GetBackingStore().Set("b2cAuthenticationMethodsPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetClaimsMappingPolicies sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)() {
-    err := m.GetBackingStore().Set("claimsMappingPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable) {
+	err := m.GetBackingStore().Set("claimsMappingPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetConditionalAccessPolicies sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
-func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)() {
-    err := m.GetBackingStore().Set("conditionalAccessPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable) {
+	err := m.GetBackingStore().Set("conditionalAccessPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
-func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
-    err := m.GetBackingStore().Set("crossTenantAccessPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable) {
+	err := m.GetBackingStore().Set("crossTenantAccessPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDefaultAppManagementPolicy sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)() {
-    err := m.GetBackingStore().Set("defaultAppManagementPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable) {
+	err := m.GetBackingStore().Set("defaultAppManagementPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeletedItems sets the deletedItems property value. Policies that support soft-delete functionality and can be restored within 30 days.
-func (m *PolicyRoot) SetDeletedItems(value PolicyDeletableRootable)() {
-    err := m.GetBackingStore().Set("deletedItems", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetDeletedItems(value PolicyDeletableRootable) {
+	err := m.GetBackingStore().Set("deletedItems", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
-func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)() {
-    err := m.GetBackingStore().Set("deviceRegistrationPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable) {
+	err := m.GetBackingStore().Set("deviceRegistrationPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDirectoryRoleAccessReviewPolicy sets the directoryRoleAccessReviewPolicy property value. The directoryRoleAccessReviewPolicy property
-func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable)() {
-    err := m.GetBackingStore().Set("directoryRoleAccessReviewPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable) {
+	err := m.GetBackingStore().Set("directoryRoleAccessReviewPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExternalIdentitiesPolicy sets the externalIdentitiesPolicy property value. Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
-func (m *PolicyRoot) SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)() {
-    err := m.GetBackingStore().Set("externalIdentitiesPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable) {
+	err := m.GetBackingStore().Set("externalIdentitiesPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFeatureRolloutPolicies sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
-func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)() {
-    err := m.GetBackingStore().Set("featureRolloutPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable) {
+	err := m.GetBackingStore().Set("featureRolloutPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFederatedTokenValidationPolicy sets the federatedTokenValidationPolicy property value. Represents a policy to control enabling or disabling validation of federation authentication tokens.
-func (m *PolicyRoot) SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable)() {
-    err := m.GetBackingStore().Set("federatedTokenValidationPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable) {
+	err := m.GetBackingStore().Set("federatedTokenValidationPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetHomeRealmDiscoveryPolicies sets the homeRealmDiscoveryPolicies property value. The policy to control Microsoft Entra authentication behavior for federated users.
-func (m *PolicyRoot) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)() {
-    err := m.GetBackingStore().Set("homeRealmDiscoveryPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable) {
+	err := m.GetBackingStore().Set("homeRealmDiscoveryPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIdentitySecurityDefaultsEnforcementPolicy sets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
-func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)() {
-    err := m.GetBackingStore().Set("identitySecurityDefaultsEnforcementPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable) {
+	err := m.GetBackingStore().Set("identitySecurityDefaultsEnforcementPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMobileAppManagementPolicies sets the mobileAppManagementPolicies property value. The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
-func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)() {
-    err := m.GetBackingStore().Set("mobileAppManagementPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable) {
+	err := m.GetBackingStore().Set("mobileAppManagementPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetMobileDeviceManagementPolicies sets the mobileDeviceManagementPolicies property value. The mobileDeviceManagementPolicies property
-func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)() {
-    err := m.GetBackingStore().Set("mobileDeviceManagementPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable) {
+	err := m.GetBackingStore().Set("mobileDeviceManagementPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOnPremAuthenticationPolicies sets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
-func (m *PolicyRoot) SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)() {
-    err := m.GetBackingStore().Set("onPremAuthenticationPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable) {
+	err := m.GetBackingStore().Set("onPremAuthenticationPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOwnerlessGroupPolicy sets the ownerlessGroupPolicy property value. The policy configuration for managing groups that have lost their sole owner.
-func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)() {
-    err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable) {
+	err := m.GetBackingStore().Set("ownerlessGroupPolicy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
-func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
-    err := m.GetBackingStore().Set("permissionGrantPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable) {
+	err := m.GetBackingStore().Set("permissionGrantPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPermissionGrantPreApprovalPolicies sets the permissionGrantPreApprovalPolicies property value. Policies that specify the conditions under which consent can be granted to a specific application.
-func (m *PolicyRoot) SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)() {
-    err := m.GetBackingStore().Set("permissionGrantPreApprovalPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable) {
+	err := m.GetBackingStore().Set("permissionGrantPreApprovalPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRoleManagementPolicies sets the roleManagementPolicies property value. Represents the role management policies.
-func (m *PolicyRoot) SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)() {
-    err := m.GetBackingStore().Set("roleManagementPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable) {
+	err := m.GetBackingStore().Set("roleManagementPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRoleManagementPolicyAssignments sets the roleManagementPolicyAssignments property value. Represents the role management policy assignments.
-func (m *PolicyRoot) SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)() {
-    err := m.GetBackingStore().Set("roleManagementPolicyAssignments", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable) {
+	err := m.GetBackingStore().Set("roleManagementPolicyAssignments", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetServicePrincipalCreationPolicies sets the servicePrincipalCreationPolicies property value. The servicePrincipalCreationPolicies property
-func (m *PolicyRoot) SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable)() {
-    err := m.GetBackingStore().Set("servicePrincipalCreationPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable) {
+	err := m.GetBackingStore().Set("servicePrincipalCreationPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTokenIssuancePolicies sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
-func (m *PolicyRoot) SetTokenIssuancePolicies(value []TokenIssuancePolicyable)() {
-    err := m.GetBackingStore().Set("tokenIssuancePolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetTokenIssuancePolicies(value []TokenIssuancePolicyable) {
+	err := m.GetBackingStore().Set("tokenIssuancePolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTokenLifetimePolicies sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.
-func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicyable)() {
-    err := m.GetBackingStore().Set("tokenLifetimePolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *PolicyRoot) SetTokenLifetimePolicies(value []TokenLifetimePolicyable) {
+	err := m.GetBackingStore().Set("tokenLifetimePolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type PolicyRootable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAccessReviewPolicy()(AccessReviewPolicyable)
-    GetActivityBasedTimeoutPolicies()([]ActivityBasedTimeoutPolicyable)
-    GetAdminConsentRequestPolicy()(AdminConsentRequestPolicyable)
-    GetAppManagementPolicies()([]AppManagementPolicyable)
-    GetAuthenticationFlowsPolicy()(AuthenticationFlowsPolicyable)
-    GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable)
-    GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable)
-    GetAuthorizationPolicy()([]AuthorizationPolicyable)
-    GetB2bManagementPolicies()([]B2bManagementPolicyable)
-    GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable)
-    GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
-    GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
-    GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable)
-    GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable)
-    GetDeletedItems()(PolicyDeletableRootable)
-    GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable)
-    GetDirectoryRoleAccessReviewPolicy()(DirectoryRoleAccessReviewPolicyable)
-    GetExternalIdentitiesPolicy()(ExternalIdentitiesPolicyable)
-    GetFeatureRolloutPolicies()([]FeatureRolloutPolicyable)
-    GetFederatedTokenValidationPolicy()(FederatedTokenValidationPolicyable)
-    GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
-    GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
-    GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable)
-    GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable)
-    GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable)
-    GetOwnerlessGroupPolicy()(OwnerlessGroupPolicyable)
-    GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
-    GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
-    GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
-    GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
-    GetServicePrincipalCreationPolicies()([]ServicePrincipalCreationPolicyable)
-    GetTokenIssuancePolicies()([]TokenIssuancePolicyable)
-    GetTokenLifetimePolicies()([]TokenLifetimePolicyable)
-    SetAccessReviewPolicy(value AccessReviewPolicyable)()
-    SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)()
-    SetAdminConsentRequestPolicy(value AdminConsentRequestPolicyable)()
-    SetAppManagementPolicies(value []AppManagementPolicyable)()
-    SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)()
-    SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)()
-    SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)()
-    SetAuthorizationPolicy(value []AuthorizationPolicyable)()
-    SetB2bManagementPolicies(value []B2bManagementPolicyable)()
-    SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)()
-    SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
-    SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
-    SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)()
-    SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)()
-    SetDeletedItems(value PolicyDeletableRootable)()
-    SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)()
-    SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable)()
-    SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)()
-    SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)()
-    SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable)()
-    SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
-    SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
-    SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)()
-    SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)()
-    SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)()
-    SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)()
-    SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
-    SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
-    SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
-    SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()
-    SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable)()
-    SetTokenIssuancePolicies(value []TokenIssuancePolicyable)()
-    SetTokenLifetimePolicies(value []TokenLifetimePolicyable)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAccessReviewPolicy() AccessReviewPolicyable
+	GetActivityBasedTimeoutPolicies() []ActivityBasedTimeoutPolicyable
+	GetAdminConsentRequestPolicy() AdminConsentRequestPolicyable
+	GetAppManagementPolicies() []AppManagementPolicyable
+	GetAuthenticationFlowsPolicy() AuthenticationFlowsPolicyable
+	GetAuthenticationMethodsPolicy() AuthenticationMethodsPolicyable
+	GetAuthenticationStrengthPolicies() []AuthenticationStrengthPolicyable
+	GetAuthorizationPolicy() []AuthorizationPolicyable
+	GetB2bManagementPolicies() []B2bManagementPolicyable
+	GetB2cAuthenticationMethodsPolicy() B2cAuthenticationMethodsPolicyable
+	GetClaimsMappingPolicies() []ClaimsMappingPolicyable
+	GetConditionalAccessPolicies() []ConditionalAccessPolicyable
+	GetCrossTenantAccessPolicy() CrossTenantAccessPolicyable
+	GetDefaultAppManagementPolicy() TenantAppManagementPolicyable
+	GetDeletedItems() PolicyDeletableRootable
+	GetDeviceRegistrationPolicy() DeviceRegistrationPolicyable
+	GetDirectoryRoleAccessReviewPolicy() DirectoryRoleAccessReviewPolicyable
+	GetExternalIdentitiesPolicy() ExternalIdentitiesPolicyable
+	GetFeatureRolloutPolicies() []FeatureRolloutPolicyable
+	GetFederatedTokenValidationPolicy() FederatedTokenValidationPolicyable
+	GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryPolicyable
+	GetIdentitySecurityDefaultsEnforcementPolicy() IdentitySecurityDefaultsEnforcementPolicyable
+	GetMobileAppManagementPolicies() []MobileAppManagementPolicyable
+	GetMobileDeviceManagementPolicies() []MobileDeviceManagementPolicyable
+	GetOnPremAuthenticationPolicies() []OnPremAuthenticationPolicyable
+	GetOwnerlessGroupPolicy() OwnerlessGroupPolicyable
+	GetPermissionGrantPolicies() []PermissionGrantPolicyable
+	GetPermissionGrantPreApprovalPolicies() []PermissionGrantPreApprovalPolicyable
+	GetRoleManagementPolicies() []UnifiedRoleManagementPolicyable
+	GetRoleManagementPolicyAssignments() []UnifiedRoleManagementPolicyAssignmentable
+	GetServicePrincipalCreationPolicies() []ServicePrincipalCreationPolicyable
+	GetTokenIssuancePolicies() []TokenIssuancePolicyable
+	GetTokenLifetimePolicies() []TokenLifetimePolicyable
+	SetAccessReviewPolicy(value AccessReviewPolicyable)
+	SetActivityBasedTimeoutPolicies(value []ActivityBasedTimeoutPolicyable)
+	SetAdminConsentRequestPolicy(value AdminConsentRequestPolicyable)
+	SetAppManagementPolicies(value []AppManagementPolicyable)
+	SetAuthenticationFlowsPolicy(value AuthenticationFlowsPolicyable)
+	SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)
+	SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)
+	SetAuthorizationPolicy(value []AuthorizationPolicyable)
+	SetB2bManagementPolicies(value []B2bManagementPolicyable)
+	SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)
+	SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)
+	SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)
+	SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)
+	SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)
+	SetDeletedItems(value PolicyDeletableRootable)
+	SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)
+	SetDirectoryRoleAccessReviewPolicy(value DirectoryRoleAccessReviewPolicyable)
+	SetExternalIdentitiesPolicy(value ExternalIdentitiesPolicyable)
+	SetFeatureRolloutPolicies(value []FeatureRolloutPolicyable)
+	SetFederatedTokenValidationPolicy(value FederatedTokenValidationPolicyable)
+	SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)
+	SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)
+	SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)
+	SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)
+	SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)
+	SetOwnerlessGroupPolicy(value OwnerlessGroupPolicyable)
+	SetPermissionGrantPolicies(value []PermissionGrantPolicyable)
+	SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)
+	SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)
+	SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)
+	SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable)
+	SetTokenIssuancePolicies(value []TokenIssuancePolicyable)
+	SetTokenLifetimePolicies(value []TokenLifetimePolicyable)
 }

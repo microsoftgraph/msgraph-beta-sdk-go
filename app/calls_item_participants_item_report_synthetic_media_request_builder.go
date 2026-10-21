@@ -4,71 +4,77 @@
 package app
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // CallsItemParticipantsItemReportSyntheticMediaRequestBuilder provides operations to call the reportSyntheticMedia method.
 type CallsItemParticipantsItemReportSyntheticMediaRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal instantiates a new CallsItemParticipantsItemReportSyntheticMediaRequestBuilder and sets the default values.
-func NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) {
-    m := &CallsItemParticipantsItemReportSyntheticMediaRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants/{participant%2Did}/reportSyntheticMedia", pathParameters),
-    }
-    return m
+func NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder {
+	m := &CallsItemParticipantsItemReportSyntheticMediaRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants/{participant%2Did}/reportSyntheticMedia", pathParameters),
+	}
+	return m
 }
+
 // NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilder instantiates a new CallsItemParticipantsItemReportSyntheticMediaRequestBuilder and sets the default values.
-func NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal(urlParams, requestAdapter)
+func NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Post report synthetic media detections for a participant in a meeting call. This action is intended for certified third-party audio and video synthetic media detection bots admitted to the meeting call. The detection bot calls this action to flag a participant whose stream it identifies as AI-generated or synthetic media. The detection result is propagated to all participants via roster updates. After a successful request, the service stores the detection on the participant as a syntheticMediaDetectionInfo object in the participant's syntheticMediaDetection property and delivers it to all participants in a roster update notification. Each request with a new id creates a separate detection record; the service doesn't deduplicate or merge reports. When a participant has multiple detection records, the syntheticMediaDetection property reflects the most recent report. Third-party bots can invoke this action only when the meeting tenant administrator grants the app the Calls.ReportSyntheticMedia.All application permission. The detection bot must be admitted to the call before it can call this action. For more information about registering a calling bot and joining calls, see Calls and online meetings. The bot obtains the call ID and participant ID from the call roster and subsequent participant roster update notifications, and uses the call's id as {call-id} and the participant's id as {participant-id} in the request URL.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/participant-reportsyntheticmedia?view=graph-rest-beta
-func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsItemReportSyntheticMediaPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsItemReportSyntheticMediaPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration) error {
+	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 // ToPostRequestInformation report synthetic media detections for a participant in a meeting call. This action is intended for certified third-party audio and video synthetic media detection bots admitted to the meeting call. The detection bot calls this action to flag a participant whose stream it identifies as AI-generated or synthetic media. The detection result is propagated to all participants via roster updates. After a successful request, the service stores the detection on the participant as a syntheticMediaDetectionInfo object in the participant's syntheticMediaDetection property and delivers it to all participants in a roster update notification. Each request with a new id creates a separate detection record; the service doesn't deduplicate or merge reports. When a participant has multiple detection records, the syntheticMediaDetection property reflects the most recent report. Third-party bots can invoke this action only when the meeting tenant administrator grants the app the Calls.ReportSyntheticMedia.All application permission. The detection bot must be admitted to the call before it can call this action. For more information about registering a calling bot and joining calls, see Calls and online meetings. The bot obtains the call ID and participant ID from the call roster and subsequent participant roster update notifications, and uses the call's id as {call-id} and the participant's id as {participant-id} in the request URL.
 // returns a *RequestInformation when successful
-func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsItemReportSyntheticMediaPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    return requestInfo, nil
+func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) ToPostRequestInformation(ctx context.Context, body CallsItemParticipantsItemReportSyntheticMediaPostRequestBodyable, requestConfiguration *CallsItemParticipantsItemReportSyntheticMediaRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder when successful
-func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) WithUrl(rawUrl string)(*CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) {
-    return NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder) WithUrl(rawUrl string) *CallsItemParticipantsItemReportSyntheticMediaRequestBuilder {
+	return NewCallsItemParticipantsItemReportSyntheticMediaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

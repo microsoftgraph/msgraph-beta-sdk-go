@@ -4,788 +4,831 @@
 package networkaccess
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type Alert struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewAlert instantiates a new Alert and sets the default values.
-func NewAlert()(*Alert) {
-    m := &Alert{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewAlert() *Alert {
+	m := &Alert{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateAlertFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAlert(), nil
+func CreateAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAlert(), nil
 }
+
 // GetActions gets the actions property value. List of possible action items to take based on the alert (if applicable).
 // returns a []AlertActionable when successful
-func (m *Alert) GetActions()([]AlertActionable) {
-    val, err := m.GetBackingStore().Get("actions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]AlertActionable)
-    }
-    return nil
+func (m *Alert) GetActions() []AlertActionable {
+	val, err := m.GetBackingStore().Get("actions")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]AlertActionable)
+	}
+	return nil
 }
+
 // GetAlertType gets the alertType property value. The alertType property
 // returns a *AlertType when successful
-func (m *Alert) GetAlertType()(*AlertType) {
-    val, err := m.GetBackingStore().Get("alertType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*AlertType)
-    }
-    return nil
+func (m *Alert) GetAlertType() *AlertType {
+	val, err := m.GetBackingStore().Get("alertType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*AlertType)
+	}
+	return nil
 }
+
 // GetCategories gets the categories property value. Categories associated with the alert.
 // returns a []IntentCategory when successful
-func (m *Alert) GetCategories()([]IntentCategory) {
-    val, err := m.GetBackingStore().Get("categories")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]IntentCategory)
-    }
-    return nil
+func (m *Alert) GetCategories() []IntentCategory {
+	val, err := m.GetBackingStore().Get("categories")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]IntentCategory)
+	}
+	return nil
 }
+
 // GetComponentName gets the componentName property value. Component name related to the alert.
 // returns a *string when successful
-func (m *Alert) GetComponentName()(*string) {
-    val, err := m.GetBackingStore().Get("componentName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetComponentName() *string {
+	val, err := m.GetBackingStore().Get("componentName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetCreationDateTime gets the creationDateTime property value. The time the alert was created in the system. Required.
 // returns a *Time when successful
-func (m *Alert) GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("creationDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Alert) GetCreationDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("creationDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetDescription gets the description property value. Text description explaining the alert.
 // returns a *string when successful
-func (m *Alert) GetDescription()(*string) {
-    val, err := m.GetBackingStore().Get("description")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetDescription() *string {
+	val, err := m.GetBackingStore().Get("description")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDetectionTechnology gets the detectionTechnology property value. Alert detection technology.
 // returns a *string when successful
-func (m *Alert) GetDetectionTechnology()(*string) {
-    val, err := m.GetBackingStore().Get("detectionTechnology")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetDetectionTechnology() *string {
+	val, err := m.GetBackingStore().Get("detectionTechnology")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDisplayName gets the displayName property value. The display name of the alert. Required.
 // returns a *string when successful
-func (m *Alert) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetExtendedProperties gets the extendedProperties property value. Extended properties for the alert.
 // returns a ExtendedPropertiesable when successful
-func (m *Alert) GetExtendedProperties()(ExtendedPropertiesable) {
-    val, err := m.GetBackingStore().Get("extendedProperties")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ExtendedPropertiesable)
-    }
-    return nil
+func (m *Alert) GetExtendedProperties() ExtendedPropertiesable {
+	val, err := m.GetBackingStore().Get("extendedProperties")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ExtendedPropertiesable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["actions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAlertActionFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]AlertActionable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(AlertActionable)
-                }
-            }
-            m.SetActions(res)
-        }
-        return nil
-    }
-    res["alertType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAlertType(val.(*AlertType))
-        }
-        return nil
-    }
-    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseIntentCategory)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]IntentCategory, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*IntentCategory))
-                }
-            }
-            m.SetCategories(res)
-        }
-        return nil
-    }
-    res["componentName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetComponentName(val)
-        }
-        return nil
-    }
-    res["creationDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreationDateTime(val)
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["detectionTechnology"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDetectionTechnology(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["extendedProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateExtendedPropertiesFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetExtendedProperties(val.(ExtendedPropertiesable))
-        }
-        return nil
-    }
-    res["firstActivityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetFirstActivityDateTime(val)
-        }
-        return nil
-    }
-    res["isPreview"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsPreview(val)
-        }
-        return nil
-    }
-    res["lastActivityDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLastActivityDateTime(val)
-        }
-        return nil
-    }
-    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateFilteringPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPolicy(val.(FilteringPolicyable))
-        }
-        return nil
-    }
-    res["productName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProductName(val)
-        }
-        return nil
-    }
-    res["relatedResources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateRelatedResourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]RelatedResourceable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(RelatedResourceable)
-                }
-            }
-            m.SetRelatedResources(res)
-        }
-        return nil
-    }
-    res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAlertSeverity)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSeverity(val.(*AlertSeverity))
-        }
-        return nil
-    }
-    res["subTechniques"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetSubTechniques(res)
-        }
-        return nil
-    }
-    res["techniques"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetTechniques(res)
-        }
-        return nil
-    }
-    res["vendorName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetVendorName(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *Alert) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["actions"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAlertActionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]AlertActionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(AlertActionable)
+				}
+			}
+			m.SetActions(res)
+		}
+		return nil
+	}
+	res["alertType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseAlertType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAlertType(val.(*AlertType))
+		}
+		return nil
+	}
+	res["categories"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfEnumValues(ParseIntentCategory)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]IntentCategory, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*IntentCategory))
+				}
+			}
+			m.SetCategories(res)
+		}
+		return nil
+	}
+	res["componentName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetComponentName(val)
+		}
+		return nil
+	}
+	res["creationDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetCreationDateTime(val)
+		}
+		return nil
+	}
+	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDescription(val)
+		}
+		return nil
+	}
+	res["detectionTechnology"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDetectionTechnology(val)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["extendedProperties"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateExtendedPropertiesFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetExtendedProperties(val.(ExtendedPropertiesable))
+		}
+		return nil
+	}
+	res["firstActivityDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetFirstActivityDateTime(val)
+		}
+		return nil
+	}
+	res["isPreview"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsPreview(val)
+		}
+		return nil
+	}
+	res["lastActivityDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLastActivityDateTime(val)
+		}
+		return nil
+	}
+	res["policy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateFilteringPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPolicy(val.(FilteringPolicyable))
+		}
+		return nil
+	}
+	res["productName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProductName(val)
+		}
+		return nil
+	}
+	res["relatedResources"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateRelatedResourceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]RelatedResourceable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(RelatedResourceable)
+				}
+			}
+			m.SetRelatedResources(res)
+		}
+		return nil
+	}
+	res["severity"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseAlertSeverity)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSeverity(val.(*AlertSeverity))
+		}
+		return nil
+	}
+	res["subTechniques"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetSubTechniques(res)
+		}
+		return nil
+	}
+	res["techniques"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetTechniques(res)
+		}
+		return nil
+	}
+	res["vendorName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetVendorName(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetFirstActivityDateTime gets the firstActivityDateTime property value. The time of the first activity related to the alert.
 // returns a *Time when successful
-func (m *Alert) GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("firstActivityDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Alert) GetFirstActivityDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("firstActivityDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetIsPreview gets the isPreview property value. Indicates if the alert is a preview.
 // returns a *bool when successful
-func (m *Alert) GetIsPreview()(*bool) {
-    val, err := m.GetBackingStore().Get("isPreview")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *Alert) GetIsPreview() *bool {
+	val, err := m.GetBackingStore().Get("isPreview")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetLastActivityDateTime gets the lastActivityDateTime property value. The time of the last activity related to the alert.
 // returns a *Time when successful
-func (m *Alert) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("lastActivityDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
+func (m *Alert) GetLastActivityDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("lastActivityDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
 }
+
 // GetPolicy gets the policy property value. The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
 // returns a FilteringPolicyable when successful
-func (m *Alert) GetPolicy()(FilteringPolicyable) {
-    val, err := m.GetBackingStore().Get("policy")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(FilteringPolicyable)
-    }
-    return nil
+func (m *Alert) GetPolicy() FilteringPolicyable {
+	val, err := m.GetBackingStore().Get("policy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(FilteringPolicyable)
+	}
+	return nil
 }
+
 // GetProductName gets the productName property value. The name of the product that raised the alert.
 // returns a *string when successful
-func (m *Alert) GetProductName()(*string) {
-    val, err := m.GetBackingStore().Get("productName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetProductName() *string {
+	val, err := m.GetBackingStore().Get("productName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetRelatedResources gets the relatedResources property value. List of related resources to the alert (if applicable).
 // returns a []RelatedResourceable when successful
-func (m *Alert) GetRelatedResources()([]RelatedResourceable) {
-    val, err := m.GetBackingStore().Get("relatedResources")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]RelatedResourceable)
-    }
-    return nil
+func (m *Alert) GetRelatedResources() []RelatedResourceable {
+	val, err := m.GetBackingStore().Get("relatedResources")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]RelatedResourceable)
+	}
+	return nil
 }
+
 // GetSeverity gets the severity property value. The severity property
 // returns a *AlertSeverity when successful
-func (m *Alert) GetSeverity()(*AlertSeverity) {
-    val, err := m.GetBackingStore().Get("severity")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*AlertSeverity)
-    }
-    return nil
+func (m *Alert) GetSeverity() *AlertSeverity {
+	val, err := m.GetBackingStore().Get("severity")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*AlertSeverity)
+	}
+	return nil
 }
+
 // GetSubTechniques gets the subTechniques property value. Sub-techniques associated with the alert.
 // returns a []string when successful
-func (m *Alert) GetSubTechniques()([]string) {
-    val, err := m.GetBackingStore().Get("subTechniques")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *Alert) GetSubTechniques() []string {
+	val, err := m.GetBackingStore().Get("subTechniques")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetTechniques gets the techniques property value. Techniques associated with the alert.
 // returns a []string when successful
-func (m *Alert) GetTechniques()([]string) {
-    val, err := m.GetBackingStore().Get("techniques")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *Alert) GetTechniques() []string {
+	val, err := m.GetBackingStore().Get("techniques")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetVendorName gets the vendorName property value. The name of the vendor that raised the alert.
 // returns a *string when successful
-func (m *Alert) GetVendorName()(*string) {
-    val, err := m.GetBackingStore().Get("vendorName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *Alert) GetVendorName() *string {
+	val, err := m.GetBackingStore().Get("vendorName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetActions() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActions()))
-        for i, v := range m.GetActions() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("actions", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetAlertType() != nil {
-        cast := (*m.GetAlertType()).String()
-        err = writer.WriteStringValue("alertType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCategories() != nil {
-        err = writer.WriteCollectionOfStringValues("categories", SerializeIntentCategory(m.GetCategories()))
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("componentName", m.GetComponentName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("creationDateTime", m.GetCreationDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("detectionTechnology", m.GetDetectionTechnology())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("extendedProperties", m.GetExtendedProperties())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("firstActivityDateTime", m.GetFirstActivityDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isPreview", m.GetIsPreview())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteTimeValue("lastActivityDateTime", m.GetLastActivityDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("policy", m.GetPolicy())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("productName", m.GetProductName())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRelatedResources() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRelatedResources()))
-        for i, v := range m.GetRelatedResources() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("relatedResources", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSeverity() != nil {
-        cast := (*m.GetSeverity()).String()
-        err = writer.WriteStringValue("severity", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSubTechniques() != nil {
-        err = writer.WriteCollectionOfStringValues("subTechniques", m.GetSubTechniques())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTechniques() != nil {
-        err = writer.WriteCollectionOfStringValues("techniques", m.GetTechniques())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("vendorName", m.GetVendorName())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetActions() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActions()))
+		for i, v := range m.GetActions() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("actions", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetAlertType() != nil {
+		cast := (*m.GetAlertType()).String()
+		err = writer.WriteStringValue("alertType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCategories() != nil {
+		err = writer.WriteCollectionOfStringValues("categories", SerializeIntentCategory(m.GetCategories()))
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("componentName", m.GetComponentName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("creationDateTime", m.GetCreationDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("description", m.GetDescription())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("detectionTechnology", m.GetDetectionTechnology())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("extendedProperties", m.GetExtendedProperties())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("firstActivityDateTime", m.GetFirstActivityDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isPreview", m.GetIsPreview())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteTimeValue("lastActivityDateTime", m.GetLastActivityDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("policy", m.GetPolicy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("productName", m.GetProductName())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetRelatedResources() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRelatedResources()))
+		for i, v := range m.GetRelatedResources() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("relatedResources", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSeverity() != nil {
+		cast := (*m.GetSeverity()).String()
+		err = writer.WriteStringValue("severity", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetSubTechniques() != nil {
+		err = writer.WriteCollectionOfStringValues("subTechniques", m.GetSubTechniques())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTechniques() != nil {
+		err = writer.WriteCollectionOfStringValues("techniques", m.GetTechniques())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("vendorName", m.GetVendorName())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetActions sets the actions property value. List of possible action items to take based on the alert (if applicable).
-func (m *Alert) SetActions(value []AlertActionable)() {
-    err := m.GetBackingStore().Set("actions", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetActions(value []AlertActionable) {
+	err := m.GetBackingStore().Set("actions", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetAlertType sets the alertType property value. The alertType property
-func (m *Alert) SetAlertType(value *AlertType)() {
-    err := m.GetBackingStore().Set("alertType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetAlertType(value *AlertType) {
+	err := m.GetBackingStore().Set("alertType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCategories sets the categories property value. Categories associated with the alert.
-func (m *Alert) SetCategories(value []IntentCategory)() {
-    err := m.GetBackingStore().Set("categories", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetCategories(value []IntentCategory) {
+	err := m.GetBackingStore().Set("categories", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetComponentName sets the componentName property value. Component name related to the alert.
-func (m *Alert) SetComponentName(value *string)() {
-    err := m.GetBackingStore().Set("componentName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetComponentName(value *string) {
+	err := m.GetBackingStore().Set("componentName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCreationDateTime sets the creationDateTime property value. The time the alert was created in the system. Required.
-func (m *Alert) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("creationDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("creationDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDescription sets the description property value. Text description explaining the alert.
-func (m *Alert) SetDescription(value *string)() {
-    err := m.GetBackingStore().Set("description", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetDescription(value *string) {
+	err := m.GetBackingStore().Set("description", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDetectionTechnology sets the detectionTechnology property value. Alert detection technology.
-func (m *Alert) SetDetectionTechnology(value *string)() {
-    err := m.GetBackingStore().Set("detectionTechnology", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetDetectionTechnology(value *string) {
+	err := m.GetBackingStore().Set("detectionTechnology", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDisplayName sets the displayName property value. The display name of the alert. Required.
-func (m *Alert) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetExtendedProperties sets the extendedProperties property value. Extended properties for the alert.
-func (m *Alert) SetExtendedProperties(value ExtendedPropertiesable)() {
-    err := m.GetBackingStore().Set("extendedProperties", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetExtendedProperties(value ExtendedPropertiesable) {
+	err := m.GetBackingStore().Set("extendedProperties", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFirstActivityDateTime sets the firstActivityDateTime property value. The time of the first activity related to the alert.
-func (m *Alert) SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("firstActivityDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("firstActivityDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsPreview sets the isPreview property value. Indicates if the alert is a preview.
-func (m *Alert) SetIsPreview(value *bool)() {
-    err := m.GetBackingStore().Set("isPreview", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetIsPreview(value *bool) {
+	err := m.GetBackingStore().Set("isPreview", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLastActivityDateTime sets the lastActivityDateTime property value. The time of the last activity related to the alert.
-func (m *Alert) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("lastActivityDateTime", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("lastActivityDateTime", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPolicy sets the policy property value. The filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
-func (m *Alert) SetPolicy(value FilteringPolicyable)() {
-    err := m.GetBackingStore().Set("policy", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetPolicy(value FilteringPolicyable) {
+	err := m.GetBackingStore().Set("policy", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProductName sets the productName property value. The name of the product that raised the alert.
-func (m *Alert) SetProductName(value *string)() {
-    err := m.GetBackingStore().Set("productName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetProductName(value *string) {
+	err := m.GetBackingStore().Set("productName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRelatedResources sets the relatedResources property value. List of related resources to the alert (if applicable).
-func (m *Alert) SetRelatedResources(value []RelatedResourceable)() {
-    err := m.GetBackingStore().Set("relatedResources", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetRelatedResources(value []RelatedResourceable) {
+	err := m.GetBackingStore().Set("relatedResources", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSeverity sets the severity property value. The severity property
-func (m *Alert) SetSeverity(value *AlertSeverity)() {
-    err := m.GetBackingStore().Set("severity", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetSeverity(value *AlertSeverity) {
+	err := m.GetBackingStore().Set("severity", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSubTechniques sets the subTechniques property value. Sub-techniques associated with the alert.
-func (m *Alert) SetSubTechniques(value []string)() {
-    err := m.GetBackingStore().Set("subTechniques", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetSubTechniques(value []string) {
+	err := m.GetBackingStore().Set("subTechniques", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTechniques sets the techniques property value. Techniques associated with the alert.
-func (m *Alert) SetTechniques(value []string)() {
-    err := m.GetBackingStore().Set("techniques", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetTechniques(value []string) {
+	err := m.GetBackingStore().Set("techniques", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetVendorName sets the vendorName property value. The name of the vendor that raised the alert.
-func (m *Alert) SetVendorName(value *string)() {
-    err := m.GetBackingStore().Set("vendorName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *Alert) SetVendorName(value *string) {
+	err := m.GetBackingStore().Set("vendorName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type Alertable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActions()([]AlertActionable)
-    GetAlertType()(*AlertType)
-    GetCategories()([]IntentCategory)
-    GetComponentName()(*string)
-    GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDescription()(*string)
-    GetDetectionTechnology()(*string)
-    GetDisplayName()(*string)
-    GetExtendedProperties()(ExtendedPropertiesable)
-    GetFirstActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetIsPreview()(*bool)
-    GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetPolicy()(FilteringPolicyable)
-    GetProductName()(*string)
-    GetRelatedResources()([]RelatedResourceable)
-    GetSeverity()(*AlertSeverity)
-    GetSubTechniques()([]string)
-    GetTechniques()([]string)
-    GetVendorName()(*string)
-    SetActions(value []AlertActionable)()
-    SetAlertType(value *AlertType)()
-    SetCategories(value []IntentCategory)()
-    SetComponentName(value *string)()
-    SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDescription(value *string)()
-    SetDetectionTechnology(value *string)()
-    SetDisplayName(value *string)()
-    SetExtendedProperties(value ExtendedPropertiesable)()
-    SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetIsPreview(value *bool)()
-    SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetPolicy(value FilteringPolicyable)()
-    SetProductName(value *string)()
-    SetRelatedResources(value []RelatedResourceable)()
-    SetSeverity(value *AlertSeverity)()
-    SetSubTechniques(value []string)()
-    SetTechniques(value []string)()
-    SetVendorName(value *string)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetActions() []AlertActionable
+	GetAlertType() *AlertType
+	GetCategories() []IntentCategory
+	GetComponentName() *string
+	GetCreationDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetDescription() *string
+	GetDetectionTechnology() *string
+	GetDisplayName() *string
+	GetExtendedProperties() ExtendedPropertiesable
+	GetFirstActivityDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetIsPreview() *bool
+	GetLastActivityDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetPolicy() FilteringPolicyable
+	GetProductName() *string
+	GetRelatedResources() []RelatedResourceable
+	GetSeverity() *AlertSeverity
+	GetSubTechniques() []string
+	GetTechniques() []string
+	GetVendorName() *string
+	SetActions(value []AlertActionable)
+	SetAlertType(value *AlertType)
+	SetCategories(value []IntentCategory)
+	SetComponentName(value *string)
+	SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetDescription(value *string)
+	SetDetectionTechnology(value *string)
+	SetDisplayName(value *string)
+	SetExtendedProperties(value ExtendedPropertiesable)
+	SetFirstActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetIsPreview(value *bool)
+	SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetPolicy(value FilteringPolicyable)
+	SetProductName(value *string)
+	SetRelatedResources(value []RelatedResourceable)
+	SetSeverity(value *AlertSeverity)
+	SetSubTechniques(value []string)
+	SetTechniques(value []string)
+	SetVendorName(value *string)
 }

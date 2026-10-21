@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 type WindowsDefenderApplicationControlSupplementalPolicyStatuses int
 
 const (
-    // The status of the WindowsDefenderApplicationControl supplemental policy is not known.
-    UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES WindowsDefenderApplicationControlSupplementalPolicyStatuses = iota
-    // The WindowsDefenderApplicationControl supplemental policy is in effect.
-    SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-    // The WindowsDefenderApplicationControl supplemental policy is structurally okay but there is an error with authorizing the token.
-    TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-    // The token does not authorize this WindowsDefenderApplicationControl supplemental policy.
-    NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-    // The WindowsDefenderApplicationControl supplemental policy is not found.
-    POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	// The status of the WindowsDefenderApplicationControl supplemental policy is not known.
+	UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES WindowsDefenderApplicationControlSupplementalPolicyStatuses = iota
+	// The WindowsDefenderApplicationControl supplemental policy is in effect.
+	SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	// The WindowsDefenderApplicationControl supplemental policy is structurally okay but there is an error with authorizing the token.
+	TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	// The token does not authorize this WindowsDefenderApplicationControl supplemental policy.
+	NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	// The WindowsDefenderApplicationControl supplemental policy is not found.
+	POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
 )
 
 func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) String() string {
-    return []string{"unknown", "success", "tokenError", "notAuthorizedByToken", "policyNotFound"}[i]
+	return []string{"unknown", "success", "tokenError", "notAuthorizedByToken", "policyNotFound"}[i]
 }
+
 func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) (any, error) {
-    result := UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-    switch v {
-        case "unknown":
-            result = UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "success":
-            result = SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "tokenError":
-            result = TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "notAuthorizedByToken":
-            result = NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        case "policyNotFound":
-            result = POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	switch v {
+	case "unknown":
+		result = UNKNOWN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	case "success":
+		result = SUCCESS_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	case "tokenError":
+		result = TOKENERROR_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	case "notAuthorizedByToken":
+		result = NOTAUTHORIZEDBYTOKEN_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	case "policyNotFound":
+		result = POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsDefenderApplicationControlSupplementalPolicyStatuses(values []WindowsDefenderApplicationControlSupplementalPolicyStatuses) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsDefenderApplicationControlSupplementalPolicyStatuses) isMultiValue() bool {
-    return false
+	return false
 }

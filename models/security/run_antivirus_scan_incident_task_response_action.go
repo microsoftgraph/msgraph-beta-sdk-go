@@ -4,41 +4,46 @@
 package security
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type RunAntivirusScanIncidentTaskResponseAction struct {
-    IncidentTaskResponseAction
+	IncidentTaskResponseAction
 }
+
 // NewRunAntivirusScanIncidentTaskResponseAction instantiates a new RunAntivirusScanIncidentTaskResponseAction and sets the default values.
-func NewRunAntivirusScanIncidentTaskResponseAction()(*RunAntivirusScanIncidentTaskResponseAction) {
-    m := &RunAntivirusScanIncidentTaskResponseAction{
-        IncidentTaskResponseAction: *NewIncidentTaskResponseAction(),
-    }
-    odataTypeValue := "#microsoft.graph.security.runAntivirusScanIncidentTaskResponseAction"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewRunAntivirusScanIncidentTaskResponseAction() *RunAntivirusScanIncidentTaskResponseAction {
+	m := &RunAntivirusScanIncidentTaskResponseAction{
+		IncidentTaskResponseAction: *NewIncidentTaskResponseAction(),
+	}
+	odataTypeValue := "#microsoft.graph.security.runAntivirusScanIncidentTaskResponseAction"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateRunAntivirusScanIncidentTaskResponseActionFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRunAntivirusScanIncidentTaskResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRunAntivirusScanIncidentTaskResponseAction(), nil
+func CreateRunAntivirusScanIncidentTaskResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRunAntivirusScanIncidentTaskResponseAction(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RunAntivirusScanIncidentTaskResponseAction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.IncidentTaskResponseAction.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RunAntivirusScanIncidentTaskResponseAction) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.IncidentTaskResponseAction.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *RunAntivirusScanIncidentTaskResponseAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.IncidentTaskResponseAction.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *RunAntivirusScanIncidentTaskResponseAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.IncidentTaskResponseAction.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type RunAntivirusScanIncidentTaskResponseActionable interface {
-    IncidentTaskResponseActionable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	IncidentTaskResponseActionable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

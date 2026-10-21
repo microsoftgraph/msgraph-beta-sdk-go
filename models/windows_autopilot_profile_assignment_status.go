@@ -2,57 +2,61 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type WindowsAutopilotProfileAssignmentStatus int
 
 const (
-    // Unknown assignment status
-    UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS WindowsAutopilotProfileAssignmentStatus = iota
-    // Assigned successfully in Intune and in sync with Windows auto pilot program
-    ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    // Assigned successfully in Intune and not in sync with Windows auto pilot program
-    ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    // Assigned successfully in Intune and either in-sync or out of sync with Windows auto pilot program
-    ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    // Not assigned
-    NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    // Pending assignment
-    PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    //  Assignment failed
-    FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	// Unknown assignment status
+	UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS WindowsAutopilotProfileAssignmentStatus = iota
+	// Assigned successfully in Intune and in sync with Windows auto pilot program
+	ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	// Assigned successfully in Intune and not in sync with Windows auto pilot program
+	ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	// Assigned successfully in Intune and either in-sync or out of sync with Windows auto pilot program
+	ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	// Not assigned
+	NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	// Pending assignment
+	PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	//  Assignment failed
+	FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
 )
 
 func (i WindowsAutopilotProfileAssignmentStatus) String() string {
-    return []string{"unknown", "assignedInSync", "assignedOutOfSync", "assignedUnkownSyncState", "notAssigned", "pending", "failed"}[i]
+	return []string{"unknown", "assignedInSync", "assignedOutOfSync", "assignedUnkownSyncState", "notAssigned", "pending", "failed"}[i]
 }
+
 func ParseWindowsAutopilotProfileAssignmentStatus(v string) (any, error) {
-    result := UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-    switch v {
-        case "unknown":
-            result = UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "assignedInSync":
-            result = ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "assignedOutOfSync":
-            result = ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "assignedUnkownSyncState":
-            result = ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "notAssigned":
-            result = NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "pending":
-            result = PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        case "failed":
-            result = FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	switch v {
+	case "unknown":
+		result = UNKNOWN_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "assignedInSync":
+		result = ASSIGNEDINSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "assignedOutOfSync":
+		result = ASSIGNEDOUTOFSYNC_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "assignedUnkownSyncState":
+		result = ASSIGNEDUNKOWNSYNCSTATE_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "notAssigned":
+		result = NOTASSIGNED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "pending":
+		result = PENDING_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	case "failed":
+		result = FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsAutopilotProfileAssignmentStatus(values []WindowsAutopilotProfileAssignmentStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsAutopilotProfileAssignmentStatus) isMultiValue() bool {
-    return false
+	return false
 }

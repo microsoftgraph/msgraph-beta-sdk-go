@@ -4,67 +4,73 @@
 package security
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder provides operations to call the enablePolicy method.
 type CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder and sets the default values.
-func NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) {
-    m := &CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/legalHolds/{ediscoveryHoldPolicy%2Did}/microsoft.graph.security.enablePolicy", pathParameters),
-    }
-    return m
+func NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder {
+	m := &CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/legalHolds/{ediscoveryHoldPolicy%2Did}/microsoft.graph.security.enablePolicy", pathParameters),
+	}
+	return m
 }
+
 // NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder instantiates a new CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder and sets the default values.
-func NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal(urlParams, requestAdapter)
+func NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Post enable an eDiscovery hold policy (legal hold) to apply the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-enablepolicy?view=graph-rest-beta
-func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) Post(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration) error {
+	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 // ToPostRequestInformation enable an eDiscovery hold policy (legal hold) to apply the hold across all the data sources included in the policy in a single operation. This operation runs asynchronously. To track completion, get the ediscoveryHoldPolicy and review its isEnabled and errors properties.
 // returns a *RequestInformation when successful
-func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder when successful
-func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) {
-    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder) WithUrl(rawUrl string) *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder {
+	return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityEnablePolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

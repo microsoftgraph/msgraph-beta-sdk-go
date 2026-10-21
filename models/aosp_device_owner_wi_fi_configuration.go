@@ -4,512 +4,541 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // AospDeviceOwnerWiFiConfiguration by providing the configurations in this profile you can instruct the AOSP device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
 type AospDeviceOwnerWiFiConfiguration struct {
-    DeviceConfiguration
+	DeviceConfiguration
 }
+
 // NewAospDeviceOwnerWiFiConfiguration instantiates a new AospDeviceOwnerWiFiConfiguration and sets the default values.
-func NewAospDeviceOwnerWiFiConfiguration()(*AospDeviceOwnerWiFiConfiguration) {
-    m := &AospDeviceOwnerWiFiConfiguration{
-        DeviceConfiguration: *NewDeviceConfiguration(),
-    }
-    odataTypeValue := "#microsoft.graph.aospDeviceOwnerWiFiConfiguration"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewAospDeviceOwnerWiFiConfiguration() *AospDeviceOwnerWiFiConfiguration {
+	m := &AospDeviceOwnerWiFiConfiguration{
+		DeviceConfiguration: *NewDeviceConfiguration(),
+	}
+	odataTypeValue := "#microsoft.graph.aospDeviceOwnerWiFiConfiguration"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                switch *mappingValue {
-                    case "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration":
-                        return NewAospDeviceOwnerEnterpriseWiFiConfiguration(), nil
-                }
-            }
-        }
-    }
-    return NewAospDeviceOwnerWiFiConfiguration(), nil
+func CreateAospDeviceOwnerWiFiConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	if parseNode != nil {
+		mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+		if err != nil {
+			return nil, err
+		}
+		if mappingValueNode != nil {
+			mappingValue, err := mappingValueNode.GetStringValue()
+			if err != nil {
+				return nil, err
+			}
+			if mappingValue != nil {
+				switch *mappingValue {
+				case "#microsoft.graph.aospDeviceOwnerEnterpriseWiFiConfiguration":
+					return NewAospDeviceOwnerEnterpriseWiFiConfiguration(), nil
+				}
+			}
+		}
+	}
+	return NewAospDeviceOwnerWiFiConfiguration(), nil
 }
+
 // GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
 // returns a *bool when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetConnectAutomatically()(*bool) {
-    val, err := m.GetBackingStore().Get("connectAutomatically")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetConnectAutomatically() *bool {
+	val, err := m.GetBackingStore().Get("connectAutomatically")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
 // returns a *bool when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
-    val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetConnectWhenNetworkNameIsHidden() *bool {
+	val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.DeviceConfiguration.GetFieldDeserializers()
-    res["connectAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectAutomatically(val)
-        }
-        return nil
-    }
-    res["connectWhenNetworkNameIsHidden"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectWhenNetworkNameIsHidden(val)
-        }
-        return nil
-    }
-    res["networkName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetNetworkName(val)
-        }
-        return nil
-    }
-    res["preSharedKey"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreSharedKey(val)
-        }
-        return nil
-    }
-    res["preSharedKeyIsSet"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreSharedKeyIsSet(val)
-        }
-        return nil
-    }
-    res["proxyAutomaticConfigurationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyAutomaticConfigurationUrl(val)
-        }
-        return nil
-    }
-    res["proxyExclusionList"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetProxyExclusionList(res)
-        }
-        return nil
-    }
-    res["proxyManualAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyManualAddress(val)
-        }
-        return nil
-    }
-    res["proxyManualPort"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyManualPort(val)
-        }
-        return nil
-    }
-    res["proxySetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiProxySetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxySetting(val.(*WiFiProxySetting))
-        }
-        return nil
-    }
-    res["ssid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSsid(val)
-        }
-        return nil
-    }
-    res["wiFiSecurityType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAospDeviceOwnerWiFiSecurityType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetWiFiSecurityType(val.(*AospDeviceOwnerWiFiSecurityType))
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AospDeviceOwnerWiFiConfiguration) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.DeviceConfiguration.GetFieldDeserializers()
+	res["connectAutomatically"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetConnectAutomatically(val)
+		}
+		return nil
+	}
+	res["connectWhenNetworkNameIsHidden"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetConnectWhenNetworkNameIsHidden(val)
+		}
+		return nil
+	}
+	res["networkName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetNetworkName(val)
+		}
+		return nil
+	}
+	res["preSharedKey"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPreSharedKey(val)
+		}
+		return nil
+	}
+	res["preSharedKeyIsSet"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPreSharedKeyIsSet(val)
+		}
+		return nil
+	}
+	res["proxyAutomaticConfigurationUrl"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProxyAutomaticConfigurationUrl(val)
+		}
+		return nil
+	}
+	res["proxyExclusionList"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfPrimitiveValues("string")
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]string, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = *(v.(*string))
+				}
+			}
+			m.SetProxyExclusionList(res)
+		}
+		return nil
+	}
+	res["proxyManualAddress"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProxyManualAddress(val)
+		}
+		return nil
+	}
+	res["proxyManualPort"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProxyManualPort(val)
+		}
+		return nil
+	}
+	res["proxySetting"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseWiFiProxySetting)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProxySetting(val.(*WiFiProxySetting))
+		}
+		return nil
+	}
+	res["ssid"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSsid(val)
+		}
+		return nil
+	}
+	res["wiFiSecurityType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseAospDeviceOwnerWiFiSecurityType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetWiFiSecurityType(val.(*AospDeviceOwnerWiFiSecurityType))
+		}
+		return nil
+	}
+	return res
 }
+
 // GetNetworkName gets the networkName property value. Network Name
 // returns a *string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName()(*string) {
-    val, err := m.GetBackingStore().Get("networkName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetNetworkName() *string {
+	val, err := m.GetBackingStore().Get("networkName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPreSharedKey gets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 // returns a *string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKey()(*string) {
-    val, err := m.GetBackingStore().Get("preSharedKey")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKey() *string {
+	val, err := m.GetBackingStore().Get("preSharedKey")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPreSharedKeyIsSet gets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
 // returns a *bool when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet()(*bool) {
-    val, err := m.GetBackingStore().Get("preSharedKeyIsSet")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetPreSharedKeyIsSet() *bool {
+	val, err := m.GetBackingStore().Get("preSharedKeyIsSet")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
 // returns a *string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
-    val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyAutomaticConfigurationUrl() *string {
+	val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetProxyExclusionList gets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
 // returns a []string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList()([]string) {
-    val, err := m.GetBackingStore().Get("proxyExclusionList")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyExclusionList() []string {
+	val, err := m.GetBackingStore().Get("proxyExclusionList")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]string)
+	}
+	return nil
 }
+
 // GetProxyManualAddress gets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
 // returns a *string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualAddress()(*string) {
-    val, err := m.GetBackingStore().Get("proxyManualAddress")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualAddress() *string {
+	val, err := m.GetBackingStore().Get("proxyManualAddress")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetProxyManualPort gets the proxyManualPort property value. Specify the proxy server port.
 // returns a *int32 when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualPort()(*int32) {
-    val, err := m.GetBackingStore().Get("proxyManualPort")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxyManualPort() *int32 {
+	val, err := m.GetBackingStore().Get("proxyManualPort")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
+
 // GetProxySetting gets the proxySetting property value. Wi-Fi Proxy Settings.
 // returns a *WiFiProxySetting when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetProxySetting()(*WiFiProxySetting) {
-    val, err := m.GetBackingStore().Get("proxySetting")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*WiFiProxySetting)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetProxySetting() *WiFiProxySetting {
+	val, err := m.GetBackingStore().Get("proxySetting")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*WiFiProxySetting)
+	}
+	return nil
 }
+
 // GetSsid gets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
 // returns a *string when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetSsid()(*string) {
-    val, err := m.GetBackingStore().Get("ssid")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetSsid() *string {
+	val, err := m.GetBackingStore().Get("ssid")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
 // returns a *AospDeviceOwnerWiFiSecurityType when successful
-func (m *AospDeviceOwnerWiFiConfiguration) GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType) {
-    val, err := m.GetBackingStore().Get("wiFiSecurityType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*AospDeviceOwnerWiFiSecurityType)
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) GetWiFiSecurityType() *AospDeviceOwnerWiFiSecurityType {
+	val, err := m.GetBackingStore().Get("wiFiSecurityType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*AospDeviceOwnerWiFiSecurityType)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.DeviceConfiguration.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteBoolValue("connectAutomatically", m.GetConnectAutomatically())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("connectWhenNetworkNameIsHidden", m.GetConnectWhenNetworkNameIsHidden())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("networkName", m.GetNetworkName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("preSharedKey", m.GetPreSharedKey())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("preSharedKeyIsSet", m.GetPreSharedKeyIsSet())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("proxyAutomaticConfigurationUrl", m.GetProxyAutomaticConfigurationUrl())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProxyExclusionList() != nil {
-        err = writer.WriteCollectionOfStringValues("proxyExclusionList", m.GetProxyExclusionList())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("proxyManualAddress", m.GetProxyManualAddress())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("proxyManualPort", m.GetProxyManualPort())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProxySetting() != nil {
-        cast := (*m.GetProxySetting()).String()
-        err = writer.WriteStringValue("proxySetting", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("ssid", m.GetSsid())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetWiFiSecurityType() != nil {
-        cast := (*m.GetWiFiSecurityType()).String()
-        err = writer.WriteStringValue("wiFiSecurityType", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AospDeviceOwnerWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.DeviceConfiguration.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteBoolValue("connectAutomatically", m.GetConnectAutomatically())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("connectWhenNetworkNameIsHidden", m.GetConnectWhenNetworkNameIsHidden())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("networkName", m.GetNetworkName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("preSharedKey", m.GetPreSharedKey())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("preSharedKeyIsSet", m.GetPreSharedKeyIsSet())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("proxyAutomaticConfigurationUrl", m.GetProxyAutomaticConfigurationUrl())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProxyExclusionList() != nil {
+		err = writer.WriteCollectionOfStringValues("proxyExclusionList", m.GetProxyExclusionList())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("proxyManualAddress", m.GetProxyManualAddress())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteInt32Value("proxyManualPort", m.GetProxyManualPort())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetProxySetting() != nil {
+		cast := (*m.GetProxySetting()).String()
+		err = writer.WriteStringValue("proxySetting", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("ssid", m.GetSsid())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetWiFiSecurityType() != nil {
+		cast := (*m.GetWiFiSecurityType()).String()
+		err = writer.WriteStringValue("wiFiSecurityType", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
-func (m *AospDeviceOwnerWiFiConfiguration) SetConnectAutomatically(value *bool)() {
-    err := m.GetBackingStore().Set("connectAutomatically", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetConnectAutomatically(value *bool) {
+	err := m.GetBackingStore().Set("connectAutomatically", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
-func (m *AospDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
-    err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool) {
+	err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetNetworkName sets the networkName property value. Network Name
-func (m *AospDeviceOwnerWiFiConfiguration) SetNetworkName(value *string)() {
-    err := m.GetBackingStore().Set("networkName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetNetworkName(value *string) {
+	err := m.GetBackingStore().Set("networkName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPreSharedKey sets the preSharedKey property value. This is the pre-shared key for WPA Personal Wi-Fi network.
-func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKey(value *string)() {
-    err := m.GetBackingStore().Set("preSharedKey", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKey(value *string) {
+	err := m.GetBackingStore().Set("preSharedKey", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPreSharedKeyIsSet sets the preSharedKeyIsSet property value. This is the pre-shared key for WPA Personal Wi-Fi network.
-func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool)() {
-    err := m.GetBackingStore().Set("preSharedKeyIsSet", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetPreSharedKeyIsSet(value *bool) {
+	err := m.GetBackingStore().Set("preSharedKeyIsSet", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. Specify the proxy server configuration script URL.
-func (m *AospDeviceOwnerWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
-    err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string) {
+	err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProxyExclusionList sets the proxyExclusionList property value. List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
-func (m *AospDeviceOwnerWiFiConfiguration) SetProxyExclusionList(value []string)() {
-    err := m.GetBackingStore().Set("proxyExclusionList", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyExclusionList(value []string) {
+	err := m.GetBackingStore().Set("proxyExclusionList", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProxyManualAddress sets the proxyManualAddress property value. Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.
-func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualAddress(value *string)() {
-    err := m.GetBackingStore().Set("proxyManualAddress", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualAddress(value *string) {
+	err := m.GetBackingStore().Set("proxyManualAddress", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProxyManualPort sets the proxyManualPort property value. Specify the proxy server port.
-func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualPort(value *int32)() {
-    err := m.GetBackingStore().Set("proxyManualPort", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxyManualPort(value *int32) {
+	err := m.GetBackingStore().Set("proxyManualPort", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetProxySetting sets the proxySetting property value. Wi-Fi Proxy Settings.
-func (m *AospDeviceOwnerWiFiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
-    err := m.GetBackingStore().Set("proxySetting", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetProxySetting(value *WiFiProxySetting) {
+	err := m.GetBackingStore().Set("proxySetting", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSsid sets the ssid property value. This is the name of the Wi-Fi network that is broadcast to all devices.
-func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string)() {
-    err := m.GetBackingStore().Set("ssid", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetSsid(value *string) {
+	err := m.GetBackingStore().Set("ssid", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for AOSP Device Owner.
-func (m *AospDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)() {
-    err := m.GetBackingStore().Set("wiFiSecurityType", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AospDeviceOwnerWiFiConfiguration) SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType) {
+	err := m.GetBackingStore().Set("wiFiSecurityType", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AospDeviceOwnerWiFiConfigurationable interface {
-    DeviceConfigurationable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetConnectAutomatically()(*bool)
-    GetConnectWhenNetworkNameIsHidden()(*bool)
-    GetNetworkName()(*string)
-    GetPreSharedKey()(*string)
-    GetPreSharedKeyIsSet()(*bool)
-    GetProxyAutomaticConfigurationUrl()(*string)
-    GetProxyExclusionList()([]string)
-    GetProxyManualAddress()(*string)
-    GetProxyManualPort()(*int32)
-    GetProxySetting()(*WiFiProxySetting)
-    GetSsid()(*string)
-    GetWiFiSecurityType()(*AospDeviceOwnerWiFiSecurityType)
-    SetConnectAutomatically(value *bool)()
-    SetConnectWhenNetworkNameIsHidden(value *bool)()
-    SetNetworkName(value *string)()
-    SetPreSharedKey(value *string)()
-    SetPreSharedKeyIsSet(value *bool)()
-    SetProxyAutomaticConfigurationUrl(value *string)()
-    SetProxyExclusionList(value []string)()
-    SetProxyManualAddress(value *string)()
-    SetProxyManualPort(value *int32)()
-    SetProxySetting(value *WiFiProxySetting)()
-    SetSsid(value *string)()
-    SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)()
+	DeviceConfigurationable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetConnectAutomatically() *bool
+	GetConnectWhenNetworkNameIsHidden() *bool
+	GetNetworkName() *string
+	GetPreSharedKey() *string
+	GetPreSharedKeyIsSet() *bool
+	GetProxyAutomaticConfigurationUrl() *string
+	GetProxyExclusionList() []string
+	GetProxyManualAddress() *string
+	GetProxyManualPort() *int32
+	GetProxySetting() *WiFiProxySetting
+	GetSsid() *string
+	GetWiFiSecurityType() *AospDeviceOwnerWiFiSecurityType
+	SetConnectAutomatically(value *bool)
+	SetConnectWhenNetworkNameIsHidden(value *bool)
+	SetNetworkName(value *string)
+	SetPreSharedKey(value *string)
+	SetPreSharedKeyIsSet(value *bool)
+	SetProxyAutomaticConfigurationUrl(value *string)
+	SetProxyExclusionList(value []string)
+	SetProxyManualAddress(value *string)
+	SetProxyManualPort(value *int32)
+	SetProxySetting(value *WiFiProxySetting)
+	SetSsid(value *string)
+	SetWiFiSecurityType(value *AospDeviceOwnerWiFiSecurityType)
 }

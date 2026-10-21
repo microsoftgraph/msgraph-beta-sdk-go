@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type HistoryEventType int
 
 const (
-    CREATED_HISTORYEVENTTYPE HistoryEventType = iota
-    UPDATED_HISTORYEVENTTYPE
-    DELETED_HISTORYEVENTTYPE
-    UNDELETED_HISTORYEVENTTYPE
-    MOVED_HISTORYEVENTTYPE
-    UNKNOWNFUTUREVALUE_HISTORYEVENTTYPE
+	CREATED_HISTORYEVENTTYPE HistoryEventType = iota
+	UPDATED_HISTORYEVENTTYPE
+	DELETED_HISTORYEVENTTYPE
+	UNDELETED_HISTORYEVENTTYPE
+	MOVED_HISTORYEVENTTYPE
+	UNKNOWNFUTUREVALUE_HISTORYEVENTTYPE
 )
 
 func (i HistoryEventType) String() string {
-    return []string{"created", "updated", "deleted", "undeleted", "moved", "unknownFutureValue"}[i]
+	return []string{"created", "updated", "deleted", "undeleted", "moved", "unknownFutureValue"}[i]
 }
+
 func ParseHistoryEventType(v string) (any, error) {
-    result := CREATED_HISTORYEVENTTYPE
-    switch v {
-        case "created":
-            result = CREATED_HISTORYEVENTTYPE
-        case "updated":
-            result = UPDATED_HISTORYEVENTTYPE
-        case "deleted":
-            result = DELETED_HISTORYEVENTTYPE
-        case "undeleted":
-            result = UNDELETED_HISTORYEVENTTYPE
-        case "moved":
-            result = MOVED_HISTORYEVENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_HISTORYEVENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := CREATED_HISTORYEVENTTYPE
+	switch v {
+	case "created":
+		result = CREATED_HISTORYEVENTTYPE
+	case "updated":
+		result = UPDATED_HISTORYEVENTTYPE
+	case "deleted":
+		result = DELETED_HISTORYEVENTTYPE
+	case "undeleted":
+		result = UNDELETED_HISTORYEVENTTYPE
+	case "moved":
+		result = MOVED_HISTORYEVENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_HISTORYEVENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeHistoryEventType(values []HistoryEventType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i HistoryEventType) isMultiValue() bool {
-    return false
+	return false
 }

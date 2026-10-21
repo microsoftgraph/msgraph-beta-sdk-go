@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Determines which clients a content cache will serve.
 type MacOSContentCachingClientPolicy int
 
 const (
-    // Defaults to clients in local network.
-    NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY MacOSContentCachingClientPolicy = iota
-    // Content caches will provide content to devices only in their immediate local network.
-    CLIENTSINLOCALNETWORK_MACOSCONTENTCACHINGCLIENTPOLICY
-    // Content caches will provide content to devices that share the same public IP address.
-    CLIENTSWITHSAMEPUBLICIPADDRESS_MACOSCONTENTCACHINGCLIENTPOLICY
-    // Content caches will provide content to devices in contentCachingClientListenRanges.
-    CLIENTSINCUSTOMLOCALNETWORKS_MACOSCONTENTCACHINGCLIENTPOLICY
-    // Content caches will provide content to devices in contentCachingClientListenRanges, contentCachingPeerListenRanges, and contentCachingParents.
-    CLIENTSINCUSTOMLOCALNETWORKSWITHFALLBACK_MACOSCONTENTCACHINGCLIENTPOLICY
+	// Defaults to clients in local network.
+	NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY MacOSContentCachingClientPolicy = iota
+	// Content caches will provide content to devices only in their immediate local network.
+	CLIENTSINLOCALNETWORK_MACOSCONTENTCACHINGCLIENTPOLICY
+	// Content caches will provide content to devices that share the same public IP address.
+	CLIENTSWITHSAMEPUBLICIPADDRESS_MACOSCONTENTCACHINGCLIENTPOLICY
+	// Content caches will provide content to devices in contentCachingClientListenRanges.
+	CLIENTSINCUSTOMLOCALNETWORKS_MACOSCONTENTCACHINGCLIENTPOLICY
+	// Content caches will provide content to devices in contentCachingClientListenRanges, contentCachingPeerListenRanges, and contentCachingParents.
+	CLIENTSINCUSTOMLOCALNETWORKSWITHFALLBACK_MACOSCONTENTCACHINGCLIENTPOLICY
 )
 
 func (i MacOSContentCachingClientPolicy) String() string {
-    return []string{"notConfigured", "clientsInLocalNetwork", "clientsWithSamePublicIpAddress", "clientsInCustomLocalNetworks", "clientsInCustomLocalNetworksWithFallback"}[i]
+	return []string{"notConfigured", "clientsInLocalNetwork", "clientsWithSamePublicIpAddress", "clientsInCustomLocalNetworks", "clientsInCustomLocalNetworksWithFallback"}[i]
 }
+
 func ParseMacOSContentCachingClientPolicy(v string) (any, error) {
-    result := NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY
-    switch v {
-        case "notConfigured":
-            result = NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY
-        case "clientsInLocalNetwork":
-            result = CLIENTSINLOCALNETWORK_MACOSCONTENTCACHINGCLIENTPOLICY
-        case "clientsWithSamePublicIpAddress":
-            result = CLIENTSWITHSAMEPUBLICIPADDRESS_MACOSCONTENTCACHINGCLIENTPOLICY
-        case "clientsInCustomLocalNetworks":
-            result = CLIENTSINCUSTOMLOCALNETWORKS_MACOSCONTENTCACHINGCLIENTPOLICY
-        case "clientsInCustomLocalNetworksWithFallback":
-            result = CLIENTSINCUSTOMLOCALNETWORKSWITHFALLBACK_MACOSCONTENTCACHINGCLIENTPOLICY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY
+	switch v {
+	case "notConfigured":
+		result = NOTCONFIGURED_MACOSCONTENTCACHINGCLIENTPOLICY
+	case "clientsInLocalNetwork":
+		result = CLIENTSINLOCALNETWORK_MACOSCONTENTCACHINGCLIENTPOLICY
+	case "clientsWithSamePublicIpAddress":
+		result = CLIENTSWITHSAMEPUBLICIPADDRESS_MACOSCONTENTCACHINGCLIENTPOLICY
+	case "clientsInCustomLocalNetworks":
+		result = CLIENTSINCUSTOMLOCALNETWORKS_MACOSCONTENTCACHINGCLIENTPOLICY
+	case "clientsInCustomLocalNetworksWithFallback":
+		result = CLIENTSINCUSTOMLOCALNETWORKSWITHFALLBACK_MACOSCONTENTCACHINGCLIENTPOLICY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMacOSContentCachingClientPolicy(values []MacOSContentCachingClientPolicy) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MacOSContentCachingClientPolicy) isMultiValue() bool {
-    return false
+	return false
 }

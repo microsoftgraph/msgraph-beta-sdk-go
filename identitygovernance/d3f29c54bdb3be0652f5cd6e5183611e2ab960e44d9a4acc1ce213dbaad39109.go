@@ -4,74 +4,77 @@
 package identitygovernance
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder provides operations to call the batchRecordDecisions method.
 type AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal instantiates a new AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder and sets the default values.
-func NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) {
-    m := &AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/batchRecordDecisions", pathParameters),
-    }
-    return m
+func NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder {
+	m := &AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/identityGovernance/accessReviews/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}/decisions/{accessReviewInstanceDecisionItem%2Did}/instance/batchRecordDecisions", pathParameters),
+	}
+	return m
 }
+
 // NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder instantiates a new AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder and sets the default values.
-func NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
+func NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Post enables reviewers to review all accessReviewInstanceDecisionItem objects in a specific pending  accessReviewInstance in batches by using principalId, resourceId, or neither.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/accessreviewinstance-batchrecorddecisions?view=graph-rest-beta
-func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) Post(ctx context.Context, body AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) Post(ctx context.Context, body AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration) error {
+	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 // ToPostRequestInformation enables reviewers to review all accessReviewInstanceDecisionItem objects in a specific pending  accessReviewInstance in batches by using principalId, resourceId, or neither.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *RequestInformation when successful
-func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
-    return requestInfo, nil
+func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsPostRequestBodyable, requestConfiguration *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+	if err != nil {
+		return nil, err
+	}
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-02/PrivatePreview:groupPeerOutlierInsights on 2021-10-21 and will be removed 2022-02-18
 // returns a *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder when successful
-func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) WithUrl(rawUrl string)(*AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) {
-    return NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder) WithUrl(rawUrl string) *AccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder {
+	return NewAccessReviewsInstancesItemStagesItemDecisionsItemInstanceBatchRecordDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

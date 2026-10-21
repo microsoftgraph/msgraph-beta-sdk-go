@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type DeviceManagementConfigurationPolicyAssignmentCollectionResponse struct {
-    BaseCollectionPaginationCountResponse
+	BaseCollectionPaginationCountResponse
 }
+
 // NewDeviceManagementConfigurationPolicyAssignmentCollectionResponse instantiates a new DeviceManagementConfigurationPolicyAssignmentCollectionResponse and sets the default values.
-func NewDeviceManagementConfigurationPolicyAssignmentCollectionResponse()(*DeviceManagementConfigurationPolicyAssignmentCollectionResponse) {
-    m := &DeviceManagementConfigurationPolicyAssignmentCollectionResponse{
-        BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
-    }
-    return m
+func NewDeviceManagementConfigurationPolicyAssignmentCollectionResponse() *DeviceManagementConfigurationPolicyAssignmentCollectionResponse {
+	m := &DeviceManagementConfigurationPolicyAssignmentCollectionResponse{
+		BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
+	}
+	return m
 }
+
 // CreateDeviceManagementConfigurationPolicyAssignmentCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateDeviceManagementConfigurationPolicyAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewDeviceManagementConfigurationPolicyAssignmentCollectionResponse(), nil
+func CreateDeviceManagementConfigurationPolicyAssignmentCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewDeviceManagementConfigurationPolicyAssignmentCollectionResponse(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationPolicyAssignmentFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceManagementConfigurationPolicyAssignmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DeviceManagementConfigurationPolicyAssignmentable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
+	res["value"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementConfigurationPolicyAssignmentFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]DeviceManagementConfigurationPolicyAssignmentable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(DeviceManagementConfigurationPolicyAssignmentable)
+				}
+			}
+			m.SetValue(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetValue gets the value property value. The value property
 // returns a []DeviceManagementConfigurationPolicyAssignmentable when successful
-func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) GetValue()([]DeviceManagementConfigurationPolicyAssignmentable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DeviceManagementConfigurationPolicyAssignmentable)
-    }
-    return nil
+func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) GetValue() []DeviceManagementConfigurationPolicyAssignmentable {
+	val, err := m.GetBackingStore().Get("value")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]DeviceManagementConfigurationPolicyAssignmentable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetValue() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
+		for i, v := range m.GetValue() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("value", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetValue sets the value property value. The value property
-func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) SetValue(value []DeviceManagementConfigurationPolicyAssignmentable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *DeviceManagementConfigurationPolicyAssignmentCollectionResponse) SetValue(value []DeviceManagementConfigurationPolicyAssignmentable) {
+	err := m.GetBackingStore().Set("value", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type DeviceManagementConfigurationPolicyAssignmentCollectionResponseable interface {
-    BaseCollectionPaginationCountResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]DeviceManagementConfigurationPolicyAssignmentable)
-    SetValue(value []DeviceManagementConfigurationPolicyAssignmentable)()
+	BaseCollectionPaginationCountResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetValue() []DeviceManagementConfigurationPolicyAssignmentable
+	SetValue(value []DeviceManagementConfigurationPolicyAssignmentable)
 }

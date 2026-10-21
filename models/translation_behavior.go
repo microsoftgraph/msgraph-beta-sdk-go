@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type TranslationBehavior int
 
 const (
-    ASK_TRANSLATIONBEHAVIOR TranslationBehavior = iota
-    YES_TRANSLATIONBEHAVIOR
-    NO_TRANSLATIONBEHAVIOR
+	ASK_TRANSLATIONBEHAVIOR TranslationBehavior = iota
+	YES_TRANSLATIONBEHAVIOR
+	NO_TRANSLATIONBEHAVIOR
 )
 
 func (i TranslationBehavior) String() string {
-    return []string{"Ask", "Yes", "No"}[i]
+	return []string{"Ask", "Yes", "No"}[i]
 }
+
 func ParseTranslationBehavior(v string) (any, error) {
-    result := ASK_TRANSLATIONBEHAVIOR
-    switch v {
-        case "Ask":
-            result = ASK_TRANSLATIONBEHAVIOR
-        case "Yes":
-            result = YES_TRANSLATIONBEHAVIOR
-        case "No":
-            result = NO_TRANSLATIONBEHAVIOR
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ASK_TRANSLATIONBEHAVIOR
+	switch v {
+	case "Ask":
+		result = ASK_TRANSLATIONBEHAVIOR
+	case "Yes":
+		result = YES_TRANSLATIONBEHAVIOR
+	case "No":
+		result = NO_TRANSLATIONBEHAVIOR
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeTranslationBehavior(values []TranslationBehavior) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i TranslationBehavior) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CrossTenantMigrationJobType int
 
 const (
-    VALIDATE_CROSSTENANTMIGRATIONJOBTYPE CrossTenantMigrationJobType = iota
-    MIGRATE_CROSSTENANTMIGRATIONJOBTYPE
-    UNKNOWNFUTUREVALUE_CROSSTENANTMIGRATIONJOBTYPE
+	VALIDATE_CROSSTENANTMIGRATIONJOBTYPE CrossTenantMigrationJobType = iota
+	MIGRATE_CROSSTENANTMIGRATIONJOBTYPE
+	UNKNOWNFUTUREVALUE_CROSSTENANTMIGRATIONJOBTYPE
 )
 
 func (i CrossTenantMigrationJobType) String() string {
-    return []string{"validate", "migrate", "unknownFutureValue"}[i]
+	return []string{"validate", "migrate", "unknownFutureValue"}[i]
 }
+
 func ParseCrossTenantMigrationJobType(v string) (any, error) {
-    result := VALIDATE_CROSSTENANTMIGRATIONJOBTYPE
-    switch v {
-        case "validate":
-            result = VALIDATE_CROSSTENANTMIGRATIONJOBTYPE
-        case "migrate":
-            result = MIGRATE_CROSSTENANTMIGRATIONJOBTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CROSSTENANTMIGRATIONJOBTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := VALIDATE_CROSSTENANTMIGRATIONJOBTYPE
+	switch v {
+	case "validate":
+		result = VALIDATE_CROSSTENANTMIGRATIONJOBTYPE
+	case "migrate":
+		result = MIGRATE_CROSSTENANTMIGRATIONJOBTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CROSSTENANTMIGRATIONJOBTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCrossTenantMigrationJobType(values []CrossTenantMigrationJobType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CrossTenantMigrationJobType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package windowsupdates
+
 type ApprovalStatus int
 
 const (
-    APPROVED_APPROVALSTATUS ApprovalStatus = iota
-    SUSPENDED_APPROVALSTATUS
-    UNKNOWNFUTUREVALUE_APPROVALSTATUS
+	APPROVED_APPROVALSTATUS ApprovalStatus = iota
+	SUSPENDED_APPROVALSTATUS
+	UNKNOWNFUTUREVALUE_APPROVALSTATUS
 )
 
 func (i ApprovalStatus) String() string {
-    return []string{"approved", "suspended", "unknownFutureValue"}[i]
+	return []string{"approved", "suspended", "unknownFutureValue"}[i]
 }
+
 func ParseApprovalStatus(v string) (any, error) {
-    result := APPROVED_APPROVALSTATUS
-    switch v {
-        case "approved":
-            result = APPROVED_APPROVALSTATUS
-        case "suspended":
-            result = SUSPENDED_APPROVALSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_APPROVALSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APPROVED_APPROVALSTATUS
+	switch v {
+	case "approved":
+		result = APPROVED_APPROVALSTATUS
+	case "suspended":
+		result = SUSPENDED_APPROVALSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_APPROVALSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeApprovalStatus(values []ApprovalStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ApprovalStatus) isMultiValue() bool {
-    return false
+	return false
 }

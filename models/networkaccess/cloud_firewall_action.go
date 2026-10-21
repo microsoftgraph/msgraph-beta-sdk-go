@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package networkaccess
+
 type CloudFirewallAction int
 
 const (
-    ALLOW_CLOUDFIREWALLACTION CloudFirewallAction = iota
-    BLOCK_CLOUDFIREWALLACTION
-    UNKNOWNFUTUREVALUE_CLOUDFIREWALLACTION
+	ALLOW_CLOUDFIREWALLACTION CloudFirewallAction = iota
+	BLOCK_CLOUDFIREWALLACTION
+	UNKNOWNFUTUREVALUE_CLOUDFIREWALLACTION
 )
 
 func (i CloudFirewallAction) String() string {
-    return []string{"allow", "block", "unknownFutureValue"}[i]
+	return []string{"allow", "block", "unknownFutureValue"}[i]
 }
+
 func ParseCloudFirewallAction(v string) (any, error) {
-    result := ALLOW_CLOUDFIREWALLACTION
-    switch v {
-        case "allow":
-            result = ALLOW_CLOUDFIREWALLACTION
-        case "block":
-            result = BLOCK_CLOUDFIREWALLACTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDFIREWALLACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALLOW_CLOUDFIREWALLACTION
+	switch v {
+	case "allow":
+		result = ALLOW_CLOUDFIREWALLACTION
+	case "block":
+		result = BLOCK_CLOUDFIREWALLACTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDFIREWALLACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudFirewallAction(values []CloudFirewallAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudFirewallAction) isMultiValue() bool {
-    return false
+	return false
 }

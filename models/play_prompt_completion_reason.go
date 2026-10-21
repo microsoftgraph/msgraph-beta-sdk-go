@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PlayPromptCompletionReason int
 
 const (
-    UNKNOWN_PLAYPROMPTCOMPLETIONREASON PlayPromptCompletionReason = iota
-    COMPLETEDSUCCESSFULLY_PLAYPROMPTCOMPLETIONREASON
-    MEDIAOPERATIONCANCELED_PLAYPROMPTCOMPLETIONREASON
-    UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
+	UNKNOWN_PLAYPROMPTCOMPLETIONREASON PlayPromptCompletionReason = iota
+	COMPLETEDSUCCESSFULLY_PLAYPROMPTCOMPLETIONREASON
+	MEDIAOPERATIONCANCELED_PLAYPROMPTCOMPLETIONREASON
+	UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
 )
 
 func (i PlayPromptCompletionReason) String() string {
-    return []string{"unknown", "completedSuccessfully", "mediaOperationCanceled", "unknownFutureValue"}[i]
+	return []string{"unknown", "completedSuccessfully", "mediaOperationCanceled", "unknownFutureValue"}[i]
 }
+
 func ParsePlayPromptCompletionReason(v string) (any, error) {
-    result := UNKNOWN_PLAYPROMPTCOMPLETIONREASON
-    switch v {
-        case "unknown":
-            result = UNKNOWN_PLAYPROMPTCOMPLETIONREASON
-        case "completedSuccessfully":
-            result = COMPLETEDSUCCESSFULLY_PLAYPROMPTCOMPLETIONREASON
-        case "mediaOperationCanceled":
-            result = MEDIAOPERATIONCANCELED_PLAYPROMPTCOMPLETIONREASON
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_PLAYPROMPTCOMPLETIONREASON
+	switch v {
+	case "unknown":
+		result = UNKNOWN_PLAYPROMPTCOMPLETIONREASON
+	case "completedSuccessfully":
+		result = COMPLETEDSUCCESSFULLY_PLAYPROMPTCOMPLETIONREASON
+	case "mediaOperationCanceled":
+		result = MEDIAOPERATIONCANCELED_PLAYPROMPTCOMPLETIONREASON
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePlayPromptCompletionReason(values []PlayPromptCompletionReason) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PlayPromptCompletionReason) isMultiValue() bool {
-    return false
+	return false
 }

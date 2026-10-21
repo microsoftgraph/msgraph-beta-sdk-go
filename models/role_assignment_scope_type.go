@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Specifies the type of scope for a Role Assignment.
 type RoleAssignmentScopeType int
 
 const (
-    // Default. Indicates that assignments are allowed to the specified resource scopes. Resource scopes are listed as Entra ID security group IDs.
-    RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE RoleAssignmentScopeType = iota
-    // Indicates that assignments are allowed to all Intune devices. Note that this does not map to any Entra ID security group, it is internal to Intune.
-    ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
-    // Indicates that assignments are allowed to all Intune licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
-    ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-    // Indicates that assignments are allowed to all Intune devices and licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
-    ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-    // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
+	// Default. Indicates that assignments are allowed to the specified resource scopes. Resource scopes are listed as Entra ID security group IDs.
+	RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE RoleAssignmentScopeType = iota
+	// Indicates that assignments are allowed to all Intune devices. Note that this does not map to any Entra ID security group, it is internal to Intune.
+	ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
+	// Indicates that assignments are allowed to all Intune licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
+	ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+	// Indicates that assignments are allowed to all Intune devices and licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
+	ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
 )
 
 func (i RoleAssignmentScopeType) String() string {
-    return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers", "unknownFutureValue"}[i]
+	return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers", "unknownFutureValue"}[i]
 }
+
 func ParseRoleAssignmentScopeType(v string) (any, error) {
-    result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
-    switch v {
-        case "resourceScope":
-            result = RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
-        case "allDevices":
-            result = ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
-        case "allLicensedUsers":
-            result = ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-        case "allDevicesAndLicensedUsers":
-            result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
+	switch v {
+	case "resourceScope":
+		result = RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
+	case "allDevices":
+		result = ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
+	case "allLicensedUsers":
+		result = ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+	case "allDevicesAndLicensedUsers":
+		result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRoleAssignmentScopeType(values []RoleAssignmentScopeType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RoleAssignmentScopeType) isMultiValue() bool {
-    return false
+	return false
 }

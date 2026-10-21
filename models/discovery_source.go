@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type DiscoverySource int
 
 const (
-    // DiscoverySource is Unknown.
-    UNKNOWN_DISCOVERYSOURCE DiscoverySource = iota
-    // Device is imported by admin.
-    ADMINIMPORT_DISCOVERYSOURCE
-    // Device is added by Apple device enrollment program (Dep).
-    DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
+	// DiscoverySource is Unknown.
+	UNKNOWN_DISCOVERYSOURCE DiscoverySource = iota
+	// Device is imported by admin.
+	ADMINIMPORT_DISCOVERYSOURCE
+	// Device is added by Apple device enrollment program (Dep).
+	DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
 )
 
 func (i DiscoverySource) String() string {
-    return []string{"unknown", "adminImport", "deviceEnrollmentProgram"}[i]
+	return []string{"unknown", "adminImport", "deviceEnrollmentProgram"}[i]
 }
+
 func ParseDiscoverySource(v string) (any, error) {
-    result := UNKNOWN_DISCOVERYSOURCE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_DISCOVERYSOURCE
-        case "adminImport":
-            result = ADMINIMPORT_DISCOVERYSOURCE
-        case "deviceEnrollmentProgram":
-            result = DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_DISCOVERYSOURCE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_DISCOVERYSOURCE
+	case "adminImport":
+		result = ADMINIMPORT_DISCOVERYSOURCE
+	case "deviceEnrollmentProgram":
+		result = DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDiscoverySource(values []DiscoverySource) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DiscoverySource) isMultiValue() bool {
-    return false
+	return false
 }

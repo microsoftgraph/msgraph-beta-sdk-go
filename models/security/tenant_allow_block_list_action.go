@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package security
+
 type TenantAllowBlockListAction int
 
 const (
-    ALLOW_TENANTALLOWBLOCKLISTACTION TenantAllowBlockListAction = iota
-    BLOCK_TENANTALLOWBLOCKLISTACTION
-    UNKNOWNFUTUREVALUE_TENANTALLOWBLOCKLISTACTION
+	ALLOW_TENANTALLOWBLOCKLISTACTION TenantAllowBlockListAction = iota
+	BLOCK_TENANTALLOWBLOCKLISTACTION
+	UNKNOWNFUTUREVALUE_TENANTALLOWBLOCKLISTACTION
 )
 
 func (i TenantAllowBlockListAction) String() string {
-    return []string{"allow", "block", "unknownFutureValue"}[i]
+	return []string{"allow", "block", "unknownFutureValue"}[i]
 }
+
 func ParseTenantAllowBlockListAction(v string) (any, error) {
-    result := ALLOW_TENANTALLOWBLOCKLISTACTION
-    switch v {
-        case "allow":
-            result = ALLOW_TENANTALLOWBLOCKLISTACTION
-        case "block":
-            result = BLOCK_TENANTALLOWBLOCKLISTACTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_TENANTALLOWBLOCKLISTACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := ALLOW_TENANTALLOWBLOCKLISTACTION
+	switch v {
+	case "allow":
+		result = ALLOW_TENANTALLOWBLOCKLISTACTION
+	case "block":
+		result = BLOCK_TENANTALLOWBLOCKLISTACTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_TENANTALLOWBLOCKLISTACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeTenantAllowBlockListAction(values []TenantAllowBlockListAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i TenantAllowBlockListAction) isMultiValue() bool {
-    return false
+	return false
 }
