@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type GcpEncryption int
 
 const (
-    GOOGLE_GCPENCRYPTION GcpEncryption = iota
-    CUSTOMER_GCPENCRYPTION
-    UNKNOWNFUTUREVALUE_GCPENCRYPTION
+	GOOGLE_GCPENCRYPTION GcpEncryption = iota
+	CUSTOMER_GCPENCRYPTION
+	UNKNOWNFUTUREVALUE_GCPENCRYPTION
 )
 
 func (i GcpEncryption) String() string {
-    return []string{"google", "customer", "unknownFutureValue"}[i]
+	return []string{"google", "customer", "unknownFutureValue"}[i]
 }
+
 func ParseGcpEncryption(v string) (any, error) {
-    result := GOOGLE_GCPENCRYPTION
-    switch v {
-        case "google":
-            result = GOOGLE_GCPENCRYPTION
-        case "customer":
-            result = CUSTOMER_GCPENCRYPTION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_GCPENCRYPTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := GOOGLE_GCPENCRYPTION
+	switch v {
+	case "google":
+		result = GOOGLE_GCPENCRYPTION
+	case "customer":
+		result = CUSTOMER_GCPENCRYPTION
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_GCPENCRYPTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeGcpEncryption(values []GcpEncryption) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i GcpEncryption) isMultiValue() bool {
-    return false
+	return false
 }

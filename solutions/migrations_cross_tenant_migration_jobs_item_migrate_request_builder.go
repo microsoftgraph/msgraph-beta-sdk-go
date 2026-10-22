@@ -4,75 +4,81 @@
 package solutions
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder provides operations to call the migrate method.
 type MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal instantiates a new MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder and sets the default values.
-func NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) {
-    m := &MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/migrate", pathParameters),
-    }
-    return m
+func NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder {
+	m := &MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/migrations/crossTenantMigrationJobs/{crossTenantMigrationJob%2Did}/migrate", pathParameters),
+	}
+	return m
 }
+
 // NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder instantiates a new MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder and sets the default values.
-func NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal(urlParams, requestAdapter)
+func NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Post migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
+// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
-// 
+//
 // [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantmigrationjob-migrate?view=graph-rest-beta
-func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) Post(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return nil, err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCrossTenantMigrationJobFromDiscriminatorValue, errorMapping)
-    if err != nil {
-        return nil, err
-    }
-    if res == nil {
-        return nil, nil
-    }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
+func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) Post(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable, error) {
+	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return nil, err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCrossTenantMigrationJobFromDiscriminatorValue, errorMapping)
+	if err != nil {
+		return nil, err
+	}
+	if res == nil {
+		return nil, nil
+	}
+	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
 }
+
 // ToPostRequestInformation migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
+// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
-func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
+// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder when successful
-func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) WithUrl(rawUrl string)(*MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) {
-    return NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder {
+	return NewMigrationsCrossTenantMigrationJobsItemMigrateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

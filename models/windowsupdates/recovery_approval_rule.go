@@ -4,41 +4,46 @@
 package windowsupdates
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type RecoveryApprovalRule struct {
-    ApprovalRule
+	ApprovalRule
 }
+
 // NewRecoveryApprovalRule instantiates a new RecoveryApprovalRule and sets the default values.
-func NewRecoveryApprovalRule()(*RecoveryApprovalRule) {
-    m := &RecoveryApprovalRule{
-        ApprovalRule: *NewApprovalRule(),
-    }
-    odataTypeValue := "#microsoft.graph.windowsUpdates.recoveryApprovalRule"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewRecoveryApprovalRule() *RecoveryApprovalRule {
+	m := &RecoveryApprovalRule{
+		ApprovalRule: *NewApprovalRule(),
+	}
+	odataTypeValue := "#microsoft.graph.windowsUpdates.recoveryApprovalRule"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateRecoveryApprovalRuleFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateRecoveryApprovalRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewRecoveryApprovalRule(), nil
+func CreateRecoveryApprovalRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewRecoveryApprovalRule(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *RecoveryApprovalRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ApprovalRule.GetFieldDeserializers()
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *RecoveryApprovalRule) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.ApprovalRule.GetFieldDeserializers()
+	return res
 }
+
 // Serialize serializes information the current object
-func (m *RecoveryApprovalRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ApprovalRule.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *RecoveryApprovalRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.ApprovalRule.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 type RecoveryApprovalRuleable interface {
-    ApprovalRuleable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ApprovalRuleable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

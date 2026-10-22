@@ -4,335 +4,356 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type AccessPackageResourceScope struct {
-    Entity
+	Entity
 }
+
 // NewAccessPackageResourceScope instantiates a new AccessPackageResourceScope and sets the default values.
-func NewAccessPackageResourceScope()(*AccessPackageResourceScope) {
-    m := &AccessPackageResourceScope{
-        Entity: *NewEntity(),
-    }
-    return m
+func NewAccessPackageResourceScope() *AccessPackageResourceScope {
+	m := &AccessPackageResourceScope{
+		Entity: *NewEntity(),
+	}
+	return m
 }
+
 // CreateAccessPackageResourceScopeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAccessPackageResourceScope(), nil
+func CreateAccessPackageResourceScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAccessPackageResourceScope(), nil
 }
+
 // GetAccessPackageResource gets the accessPackageResource property value. The accessPackageResource property
 // returns a AccessPackageResourceable when successful
-func (m *AccessPackageResourceScope) GetAccessPackageResource()(AccessPackageResourceable) {
-    val, err := m.GetBackingStore().Get("accessPackageResource")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AccessPackageResourceable)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetAccessPackageResource() AccessPackageResourceable {
+	val, err := m.GetBackingStore().Get("accessPackageResource")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AccessPackageResourceable)
+	}
+	return nil
 }
+
 // GetDescription gets the description property value. The description of the scope.
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetDescription()(*string) {
-    val, err := m.GetBackingStore().Get("description")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetDescription() *string {
+	val, err := m.GetBackingStore().Get("description")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetDisplayName gets the displayName property value. The display name of the scope.
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetDisplayName()(*string) {
-    val, err := m.GetBackingStore().Get("displayName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetDisplayName() *string {
+	val, err := m.GetBackingStore().Get("displayName")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AccessPackageResourceScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["accessPackageResource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAccessPackageResource(val.(AccessPackageResourceable))
-        }
-        return nil
-    }
-    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDescription(val)
-        }
-        return nil
-    }
-    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["isRootScope"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsRootScope(val)
-        }
-        return nil
-    }
-    res["originId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOriginId(val)
-        }
-        return nil
-    }
-    res["originSystem"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOriginSystem(val)
-        }
-        return nil
-    }
-    res["roleOriginId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRoleOriginId(val)
-        }
-        return nil
-    }
-    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUrl(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AccessPackageResourceScope) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["accessPackageResource"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAccessPackageResourceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAccessPackageResource(val.(AccessPackageResourceable))
+		}
+		return nil
+	}
+	res["description"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDescription(val)
+		}
+		return nil
+	}
+	res["displayName"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["isRootScope"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsRootScope(val)
+		}
+		return nil
+	}
+	res["originId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOriginId(val)
+		}
+		return nil
+	}
+	res["originSystem"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOriginSystem(val)
+		}
+		return nil
+	}
+	res["roleOriginId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRoleOriginId(val)
+		}
+		return nil
+	}
+	res["url"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUrl(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetIsRootScope gets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
 // returns a *bool when successful
-func (m *AccessPackageResourceScope) GetIsRootScope()(*bool) {
-    val, err := m.GetBackingStore().Get("isRootScope")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetIsRootScope() *bool {
+	val, err := m.GetBackingStore().Get("isRootScope")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetOriginId()(*string) {
-    val, err := m.GetBackingStore().Get("originId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetOriginId() *string {
+	val, err := m.GetBackingStore().Get("originId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetOriginSystem()(*string) {
-    val, err := m.GetBackingStore().Get("originSystem")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetOriginSystem() *string {
+	val, err := m.GetBackingStore().Get("originSystem")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetRoleOriginId gets the roleOriginId property value. The origin system for the role, if different.
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetRoleOriginId()(*string) {
-    val, err := m.GetBackingStore().Get("roleOriginId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetRoleOriginId() *string {
+	val, err := m.GetBackingStore().Get("roleOriginId")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetUrl gets the url property value. A resource locator for the scope.
 // returns a *string when successful
-func (m *AccessPackageResourceScope) GetUrl()(*string) {
-    val, err := m.GetBackingStore().Get("url")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AccessPackageResourceScope) GetUrl() *string {
+	val, err := m.GetBackingStore().Get("url")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteObjectValue("accessPackageResource", m.GetAccessPackageResource())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("description", m.GetDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("isRootScope", m.GetIsRootScope())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("originId", m.GetOriginId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("originSystem", m.GetOriginSystem())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("roleOriginId", m.GetRoleOriginId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("url", m.GetUrl())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AccessPackageResourceScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteObjectValue("accessPackageResource", m.GetAccessPackageResource())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("description", m.GetDescription())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("displayName", m.GetDisplayName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isRootScope", m.GetIsRootScope())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("originId", m.GetOriginId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("originSystem", m.GetOriginSystem())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("roleOriginId", m.GetRoleOriginId())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("url", m.GetUrl())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAccessPackageResource sets the accessPackageResource property value. The accessPackageResource property
-func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable)() {
-    err := m.GetBackingStore().Set("accessPackageResource", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetAccessPackageResource(value AccessPackageResourceable) {
+	err := m.GetBackingStore().Set("accessPackageResource", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDescription sets the description property value. The description of the scope.
-func (m *AccessPackageResourceScope) SetDescription(value *string)() {
-    err := m.GetBackingStore().Set("description", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetDescription(value *string) {
+	err := m.GetBackingStore().Set("description", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetDisplayName sets the displayName property value. The display name of the scope.
-func (m *AccessPackageResourceScope) SetDisplayName(value *string)() {
-    err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetDisplayName(value *string) {
+	err := m.GetBackingStore().Set("displayName", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetIsRootScope sets the isRootScope property value. True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
-func (m *AccessPackageResourceScope) SetIsRootScope(value *bool)() {
-    err := m.GetBackingStore().Set("isRootScope", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetIsRootScope(value *bool) {
+	err := m.GetBackingStore().Set("isRootScope", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
-func (m *AccessPackageResourceScope) SetOriginId(value *string)() {
-    err := m.GetBackingStore().Set("originId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetOriginId(value *string) {
+	err := m.GetBackingStore().Set("originId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).
-func (m *AccessPackageResourceScope) SetOriginSystem(value *string)() {
-    err := m.GetBackingStore().Set("originSystem", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetOriginSystem(value *string) {
+	err := m.GetBackingStore().Set("originSystem", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetRoleOriginId sets the roleOriginId property value. The origin system for the role, if different.
-func (m *AccessPackageResourceScope) SetRoleOriginId(value *string)() {
-    err := m.GetBackingStore().Set("roleOriginId", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetRoleOriginId(value *string) {
+	err := m.GetBackingStore().Set("roleOriginId", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetUrl sets the url property value. A resource locator for the scope.
-func (m *AccessPackageResourceScope) SetUrl(value *string)() {
-    err := m.GetBackingStore().Set("url", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AccessPackageResourceScope) SetUrl(value *string) {
+	err := m.GetBackingStore().Set("url", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AccessPackageResourceScopeable interface {
-    Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAccessPackageResource()(AccessPackageResourceable)
-    GetDescription()(*string)
-    GetDisplayName()(*string)
-    GetIsRootScope()(*bool)
-    GetOriginId()(*string)
-    GetOriginSystem()(*string)
-    GetRoleOriginId()(*string)
-    GetUrl()(*string)
-    SetAccessPackageResource(value AccessPackageResourceable)()
-    SetDescription(value *string)()
-    SetDisplayName(value *string)()
-    SetIsRootScope(value *bool)()
-    SetOriginId(value *string)()
-    SetOriginSystem(value *string)()
-    SetRoleOriginId(value *string)()
-    SetUrl(value *string)()
+	Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAccessPackageResource() AccessPackageResourceable
+	GetDescription() *string
+	GetDisplayName() *string
+	GetIsRootScope() *bool
+	GetOriginId() *string
+	GetOriginSystem() *string
+	GetRoleOriginId() *string
+	GetUrl() *string
+	SetAccessPackageResource(value AccessPackageResourceable)
+	SetDescription(value *string)
+	SetDisplayName(value *string)
+	SetIsRootScope(value *bool)
+	SetOriginId(value *string)
+	SetOriginSystem(value *string)
+	SetRoleOriginId(value *string)
+	SetUrl(value *string)
 }

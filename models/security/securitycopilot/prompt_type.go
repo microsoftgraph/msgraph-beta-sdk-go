@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package securitycopilot
+
 type PromptType int
 
 const (
-    UNKNOWN_PROMPTTYPE PromptType = iota
-    CONTEXT_PROMPTTYPE
-    PROMPT_PROMPTTYPE
-    SKILL_PROMPTTYPE
-    FEEDBACK_PROMPTTYPE
-    UNKNOWNFUTUREVALUE_PROMPTTYPE
+	UNKNOWN_PROMPTTYPE PromptType = iota
+	CONTEXT_PROMPTTYPE
+	PROMPT_PROMPTTYPE
+	SKILL_PROMPTTYPE
+	FEEDBACK_PROMPTTYPE
+	UNKNOWNFUTUREVALUE_PROMPTTYPE
 )
 
 func (i PromptType) String() string {
-    return []string{"unknown", "context", "prompt", "skill", "feedback", "unknownFutureValue"}[i]
+	return []string{"unknown", "context", "prompt", "skill", "feedback", "unknownFutureValue"}[i]
 }
+
 func ParsePromptType(v string) (any, error) {
-    result := UNKNOWN_PROMPTTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_PROMPTTYPE
-        case "context":
-            result = CONTEXT_PROMPTTYPE
-        case "prompt":
-            result = PROMPT_PROMPTTYPE
-        case "skill":
-            result = SKILL_PROMPTTYPE
-        case "feedback":
-            result = FEEDBACK_PROMPTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PROMPTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_PROMPTTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_PROMPTTYPE
+	case "context":
+		result = CONTEXT_PROMPTTYPE
+	case "prompt":
+		result = PROMPT_PROMPTTYPE
+	case "skill":
+		result = SKILL_PROMPTTYPE
+	case "feedback":
+		result = FEEDBACK_PROMPTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PROMPTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePromptType(values []PromptType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PromptType) isMultiValue() bool {
-    return false
+	return false
 }

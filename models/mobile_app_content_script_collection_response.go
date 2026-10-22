@@ -4,88 +4,95 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 type MobileAppContentScriptCollectionResponse struct {
-    BaseCollectionPaginationCountResponse
+	BaseCollectionPaginationCountResponse
 }
+
 // NewMobileAppContentScriptCollectionResponse instantiates a new MobileAppContentScriptCollectionResponse and sets the default values.
-func NewMobileAppContentScriptCollectionResponse()(*MobileAppContentScriptCollectionResponse) {
-    m := &MobileAppContentScriptCollectionResponse{
-        BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
-    }
-    return m
+func NewMobileAppContentScriptCollectionResponse() *MobileAppContentScriptCollectionResponse {
+	m := &MobileAppContentScriptCollectionResponse{
+		BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
+	}
+	return m
 }
+
 // CreateMobileAppContentScriptCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateMobileAppContentScriptCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewMobileAppContentScriptCollectionResponse(), nil
+func CreateMobileAppContentScriptCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewMobileAppContentScriptCollectionResponse(), nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *MobileAppContentScriptCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
-    res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMobileAppContentScriptFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MobileAppContentScriptable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MobileAppContentScriptable)
-                }
-            }
-            m.SetValue(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *MobileAppContentScriptCollectionResponse) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
+	res["value"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateMobileAppContentScriptFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]MobileAppContentScriptable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(MobileAppContentScriptable)
+				}
+			}
+			m.SetValue(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetValue gets the value property value. The value property
 // returns a []MobileAppContentScriptable when successful
-func (m *MobileAppContentScriptCollectionResponse) GetValue()([]MobileAppContentScriptable) {
-    val, err := m.GetBackingStore().Get("value")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MobileAppContentScriptable)
-    }
-    return nil
+func (m *MobileAppContentScriptCollectionResponse) GetValue() []MobileAppContentScriptable {
+	val, err := m.GetBackingStore().Get("value")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]MobileAppContentScriptable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *MobileAppContentScriptCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetValue() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
-        for i, v := range m.GetValue() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("value", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *MobileAppContentScriptCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetValue() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetValue()))
+		for i, v := range m.GetValue() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("value", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetValue sets the value property value. The value property
-func (m *MobileAppContentScriptCollectionResponse) SetValue(value []MobileAppContentScriptable)() {
-    err := m.GetBackingStore().Set("value", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *MobileAppContentScriptCollectionResponse) SetValue(value []MobileAppContentScriptable) {
+	err := m.GetBackingStore().Set("value", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type MobileAppContentScriptCollectionResponseable interface {
-    BaseCollectionPaginationCountResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]MobileAppContentScriptable)
-    SetValue(value []MobileAppContentScriptable)()
+	BaseCollectionPaginationCountResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetValue() []MobileAppContentScriptable
+	SetValue(value []MobileAppContentScriptable)
 }

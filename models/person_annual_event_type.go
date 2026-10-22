@@ -2,44 +2,48 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type PersonAnnualEventType int
 
 const (
-    BIRTHDAY_PERSONANNUALEVENTTYPE PersonAnnualEventType = iota
-    WEDDING_PERSONANNUALEVENTTYPE
-    WORK_PERSONANNUALEVENTTYPE
-    OTHER_PERSONANNUALEVENTTYPE
-    UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
+	BIRTHDAY_PERSONANNUALEVENTTYPE PersonAnnualEventType = iota
+	WEDDING_PERSONANNUALEVENTTYPE
+	WORK_PERSONANNUALEVENTTYPE
+	OTHER_PERSONANNUALEVENTTYPE
+	UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
 )
 
 func (i PersonAnnualEventType) String() string {
-    return []string{"birthday", "wedding", "work", "other", "unknownFutureValue"}[i]
+	return []string{"birthday", "wedding", "work", "other", "unknownFutureValue"}[i]
 }
+
 func ParsePersonAnnualEventType(v string) (any, error) {
-    result := BIRTHDAY_PERSONANNUALEVENTTYPE
-    switch v {
-        case "birthday":
-            result = BIRTHDAY_PERSONANNUALEVENTTYPE
-        case "wedding":
-            result = WEDDING_PERSONANNUALEVENTTYPE
-        case "work":
-            result = WORK_PERSONANNUALEVENTTYPE
-        case "other":
-            result = OTHER_PERSONANNUALEVENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := BIRTHDAY_PERSONANNUALEVENTTYPE
+	switch v {
+	case "birthday":
+		result = BIRTHDAY_PERSONANNUALEVENTTYPE
+	case "wedding":
+		result = WEDDING_PERSONANNUALEVENTTYPE
+	case "work":
+		result = WORK_PERSONANNUALEVENTTYPE
+	case "other":
+		result = OTHER_PERSONANNUALEVENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializePersonAnnualEventType(values []PersonAnnualEventType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i PersonAnnualEventType) isMultiValue() bool {
-    return false
+	return false
 }

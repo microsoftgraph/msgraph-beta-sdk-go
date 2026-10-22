@@ -2,42 +2,46 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // An enum type to represent approval actions of single or list of drivers.
 type DriverApprovalAction int
 
 const (
-    // This indicates the action to approve single or list of drivers.
-    APPROVE_DRIVERAPPROVALACTION DriverApprovalAction = iota
-    // This indicates the action to approve single or list of drivers.
-    DECLINE_DRIVERAPPROVALACTION
-    // This indicates the action to suspend single or list of drivers.
-    SUSPEND_DRIVERAPPROVALACTION
+	// This indicates the action to approve single or list of drivers.
+	APPROVE_DRIVERAPPROVALACTION DriverApprovalAction = iota
+	// This indicates the action to approve single or list of drivers.
+	DECLINE_DRIVERAPPROVALACTION
+	// This indicates the action to suspend single or list of drivers.
+	SUSPEND_DRIVERAPPROVALACTION
 )
 
 func (i DriverApprovalAction) String() string {
-    return []string{"approve", "decline", "suspend"}[i]
+	return []string{"approve", "decline", "suspend"}[i]
 }
+
 func ParseDriverApprovalAction(v string) (any, error) {
-    result := APPROVE_DRIVERAPPROVALACTION
-    switch v {
-        case "approve":
-            result = APPROVE_DRIVERAPPROVALACTION
-        case "decline":
-            result = DECLINE_DRIVERAPPROVALACTION
-        case "suspend":
-            result = SUSPEND_DRIVERAPPROVALACTION
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APPROVE_DRIVERAPPROVALACTION
+	switch v {
+	case "approve":
+		result = APPROVE_DRIVERAPPROVALACTION
+	case "decline":
+		result = DECLINE_DRIVERAPPROVALACTION
+	case "suspend":
+		result = SUSPEND_DRIVERAPPROVALACTION
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDriverApprovalAction(values []DriverApprovalAction) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DriverApprovalAction) isMultiValue() bool {
-    return false
+	return false
 }

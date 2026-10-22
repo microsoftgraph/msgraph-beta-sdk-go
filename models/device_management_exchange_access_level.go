@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Access Level in Exchange.
 type DeviceManagementExchangeAccessLevel int
 
 const (
-    // No device access rule has been configured in Exchange.
-    NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL DeviceManagementExchangeAccessLevel = iota
-    // Allow the device access to Exchange.
-    ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-    // Block the device from accessing Exchange.
-    BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-    // Quarantine the device in Exchange.
-    QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	// No device access rule has been configured in Exchange.
+	NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL DeviceManagementExchangeAccessLevel = iota
+	// Allow the device access to Exchange.
+	ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	// Block the device from accessing Exchange.
+	BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	// Quarantine the device in Exchange.
+	QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
 )
 
 func (i DeviceManagementExchangeAccessLevel) String() string {
-    return []string{"none", "allow", "block", "quarantine"}[i]
+	return []string{"none", "allow", "block", "quarantine"}[i]
 }
+
 func ParseDeviceManagementExchangeAccessLevel(v string) (any, error) {
-    result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-    switch v {
-        case "none":
-            result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "allow":
-            result = ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "block":
-            result = BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        case "quarantine":
-            result = QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	switch v {
+	case "none":
+		result = NONE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	case "allow":
+		result = ALLOW_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	case "block":
+		result = BLOCK_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	case "quarantine":
+		result = QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeDeviceManagementExchangeAccessLevel(values []DeviceManagementExchangeAccessLevel) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i DeviceManagementExchangeAccessLevel) isMultiValue() bool {
-    return false
+	return false
 }

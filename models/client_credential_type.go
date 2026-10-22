@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type ClientCredentialType int
 
 const (
-    NONE_CLIENTCREDENTIALTYPE ClientCredentialType = iota
-    CLIENTSECRET_CLIENTCREDENTIALTYPE
-    CLIENTASSERTION_CLIENTCREDENTIALTYPE
-    FEDERATEDIDENTITYCREDENTIAL_CLIENTCREDENTIALTYPE
-    MANAGEDIDENTITY_CLIENTCREDENTIALTYPE
-    CERTIFICATE_CLIENTCREDENTIALTYPE
-    UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
+	NONE_CLIENTCREDENTIALTYPE ClientCredentialType = iota
+	CLIENTSECRET_CLIENTCREDENTIALTYPE
+	CLIENTASSERTION_CLIENTCREDENTIALTYPE
+	FEDERATEDIDENTITYCREDENTIAL_CLIENTCREDENTIALTYPE
+	MANAGEDIDENTITY_CLIENTCREDENTIALTYPE
+	CERTIFICATE_CLIENTCREDENTIALTYPE
+	UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
 )
 
 func (i ClientCredentialType) String() string {
-    return []string{"none", "clientSecret", "clientAssertion", "federatedIdentityCredential", "managedIdentity", "certificate", "unknownFutureValue"}[i]
+	return []string{"none", "clientSecret", "clientAssertion", "federatedIdentityCredential", "managedIdentity", "certificate", "unknownFutureValue"}[i]
 }
+
 func ParseClientCredentialType(v string) (any, error) {
-    result := NONE_CLIENTCREDENTIALTYPE
-    switch v {
-        case "none":
-            result = NONE_CLIENTCREDENTIALTYPE
-        case "clientSecret":
-            result = CLIENTSECRET_CLIENTCREDENTIALTYPE
-        case "clientAssertion":
-            result = CLIENTASSERTION_CLIENTCREDENTIALTYPE
-        case "federatedIdentityCredential":
-            result = FEDERATEDIDENTITYCREDENTIAL_CLIENTCREDENTIALTYPE
-        case "managedIdentity":
-            result = MANAGEDIDENTITY_CLIENTCREDENTIALTYPE
-        case "certificate":
-            result = CERTIFICATE_CLIENTCREDENTIALTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NONE_CLIENTCREDENTIALTYPE
+	switch v {
+	case "none":
+		result = NONE_CLIENTCREDENTIALTYPE
+	case "clientSecret":
+		result = CLIENTSECRET_CLIENTCREDENTIALTYPE
+	case "clientAssertion":
+		result = CLIENTASSERTION_CLIENTCREDENTIALTYPE
+	case "federatedIdentityCredential":
+		result = FEDERATEDIDENTITYCREDENTIAL_CLIENTCREDENTIALTYPE
+	case "managedIdentity":
+		result = MANAGEDIDENTITY_CLIENTCREDENTIALTYPE
+	case "certificate":
+		result = CERTIFICATE_CLIENTCREDENTIALTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeClientCredentialType(values []ClientCredentialType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ClientCredentialType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcSnapshotImportSourceType int
 
 const (
-    AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE CloudPcSnapshotImportSourceType = iota
-    SASURL_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE CloudPcSnapshotImportSourceType = iota
+	SASURL_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
 )
 
 func (i CloudPcSnapshotImportSourceType) String() string {
-    return []string{"azureStorageAccount", "sasUrl", "unknownFutureValue"}[i]
+	return []string{"azureStorageAccount", "sasUrl", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcSnapshotImportSourceType(v string) (any, error) {
-    result := AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
-    switch v {
-        case "azureStorageAccount":
-            result = AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
-        case "sasUrl":
-            result = SASURL_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	switch v {
+	case "azureStorageAccount":
+		result = AZURESTORAGEACCOUNT_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	case "sasUrl":
+		result = SASURL_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTIMPORTSOURCETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcSnapshotImportSourceType(values []CloudPcSnapshotImportSourceType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcSnapshotImportSourceType) isMultiValue() bool {
-    return false
+	return false
 }

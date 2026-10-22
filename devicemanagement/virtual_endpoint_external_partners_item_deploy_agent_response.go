@@ -4,27 +4,30 @@
 package devicemanagement
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use VirtualEndpointExternalPartnersItemDeployAgentPostResponseable instead.
 type VirtualEndpointExternalPartnersItemDeployAgentResponse struct {
-    VirtualEndpointExternalPartnersItemDeployAgentPostResponse
+	VirtualEndpointExternalPartnersItemDeployAgentPostResponse
 }
+
 // NewVirtualEndpointExternalPartnersItemDeployAgentResponse instantiates a new VirtualEndpointExternalPartnersItemDeployAgentResponse and sets the default values.
-func NewVirtualEndpointExternalPartnersItemDeployAgentResponse()(*VirtualEndpointExternalPartnersItemDeployAgentResponse) {
-    m := &VirtualEndpointExternalPartnersItemDeployAgentResponse{
-        VirtualEndpointExternalPartnersItemDeployAgentPostResponse: *NewVirtualEndpointExternalPartnersItemDeployAgentPostResponse(),
-    }
-    return m
+func NewVirtualEndpointExternalPartnersItemDeployAgentResponse() *VirtualEndpointExternalPartnersItemDeployAgentResponse {
+	m := &VirtualEndpointExternalPartnersItemDeployAgentResponse{
+		VirtualEndpointExternalPartnersItemDeployAgentPostResponse: *NewVirtualEndpointExternalPartnersItemDeployAgentPostResponse(),
+	}
+	return m
 }
+
 // CreateVirtualEndpointExternalPartnersItemDeployAgentResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateVirtualEndpointExternalPartnersItemDeployAgentResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewVirtualEndpointExternalPartnersItemDeployAgentResponse(), nil
+func CreateVirtualEndpointExternalPartnersItemDeployAgentResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewVirtualEndpointExternalPartnersItemDeployAgentResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use VirtualEndpointExternalPartnersItemDeployAgentPostResponseable instead.
 type VirtualEndpointExternalPartnersItemDeployAgentResponseable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    VirtualEndpointExternalPartnersItemDeployAgentPostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	VirtualEndpointExternalPartnersItemDeployAgentPostResponseable
 }

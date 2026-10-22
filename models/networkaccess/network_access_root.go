@@ -4,654 +4,687 @@
 package networkaccess
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type NetworkAccessRoot struct {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
 }
+
 // NewNetworkAccessRoot instantiates a new NetworkAccessRoot and sets the default values.
-func NewNetworkAccessRoot()(*NetworkAccessRoot) {
-    m := &NetworkAccessRoot{
-        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
-    }
-    return m
+func NewNetworkAccessRoot() *NetworkAccessRoot {
+	m := &NetworkAccessRoot{
+		Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+	}
+	return m
 }
+
 // CreateNetworkAccessRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateNetworkAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewNetworkAccessRoot(), nil
+func CreateNetworkAccessRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewNetworkAccessRoot(), nil
 }
+
 // GetAlerts gets the alerts property value. The alerts property
 // returns a []Alertable when successful
-func (m *NetworkAccessRoot) GetAlerts()([]Alertable) {
-    val, err := m.GetBackingStore().Get("alerts")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]Alertable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetAlerts() []Alertable {
+	val, err := m.GetBackingStore().Get("alerts")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]Alertable)
+	}
+	return nil
 }
+
 // GetCloudFirewallPolicies gets the cloudFirewallPolicies property value. A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
 // returns a []CloudFirewallPolicyable when successful
-func (m *NetworkAccessRoot) GetCloudFirewallPolicies()([]CloudFirewallPolicyable) {
-    val, err := m.GetBackingStore().Get("cloudFirewallPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]CloudFirewallPolicyable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetCloudFirewallPolicies() []CloudFirewallPolicyable {
+	val, err := m.GetBackingStore().Get("cloudFirewallPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CloudFirewallPolicyable)
+	}
+	return nil
 }
+
 // GetConnectivity gets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
 // returns a Connectivityable when successful
-func (m *NetworkAccessRoot) GetConnectivity()(Connectivityable) {
-    val, err := m.GetBackingStore().Get("connectivity")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Connectivityable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetConnectivity() Connectivityable {
+	val, err := m.GetBackingStore().Get("connectivity")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(Connectivityable)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
-    res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]Alertable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(Alertable)
-                }
-            }
-            m.SetAlerts(res)
-        }
-        return nil
-    }
-    res["cloudFirewallPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudFirewallPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudFirewallPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(CloudFirewallPolicyable)
-                }
-            }
-            m.SetCloudFirewallPolicies(res)
-        }
-        return nil
-    }
-    res["connectivity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateConnectivityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetConnectivity(val.(Connectivityable))
-        }
-        return nil
-    }
-    res["filteringPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFilteringPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FilteringPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(FilteringPolicyable)
-                }
-            }
-            m.SetFilteringPolicies(res)
-        }
-        return nil
-    }
-    res["filteringProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFilteringProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FilteringProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(FilteringProfileable)
-                }
-            }
-            m.SetFilteringProfiles(res)
-        }
-        return nil
-    }
-    res["forwardingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateForwardingPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ForwardingPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ForwardingPolicyable)
-                }
-            }
-            m.SetForwardingPolicies(res)
-        }
-        return nil
-    }
-    res["forwardingProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateForwardingProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ForwardingProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ForwardingProfileable)
-                }
-            }
-            m.SetForwardingProfiles(res)
-        }
-        return nil
-    }
-    res["logs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateLogsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetLogs(val.(Logsable))
-        }
-        return nil
-    }
-    res["reports"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateReportsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetReports(val.(Reportsable))
-        }
-        return nil
-    }
-    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateSettingsFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSettings(val.(Settingsable))
-        }
-        return nil
-    }
-    res["tenantStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTenantStatusFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTenantStatus(val.(TenantStatusable))
-        }
-        return nil
-    }
-    res["threatIntelligencePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateThreatIntelligencePolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ThreatIntelligencePolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ThreatIntelligencePolicyable)
-                }
-            }
-            m.SetThreatIntelligencePolicies(res)
-        }
-        return nil
-    }
-    res["tls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateTlsTerminationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTls(val.(TlsTerminationable))
-        }
-        return nil
-    }
-    res["tlsInspectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTlsInspectionPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TlsInspectionPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TlsInspectionPolicyable)
-                }
-            }
-            m.SetTlsInspectionPolicies(res)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *NetworkAccessRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.Entity.GetFieldDeserializers()
+	res["alerts"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]Alertable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(Alertable)
+				}
+			}
+			m.SetAlerts(res)
+		}
+		return nil
+	}
+	res["cloudFirewallPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCloudFirewallPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CloudFirewallPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CloudFirewallPolicyable)
+				}
+			}
+			m.SetCloudFirewallPolicies(res)
+		}
+		return nil
+	}
+	res["connectivity"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateConnectivityFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetConnectivity(val.(Connectivityable))
+		}
+		return nil
+	}
+	res["filteringPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateFilteringPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]FilteringPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(FilteringPolicyable)
+				}
+			}
+			m.SetFilteringPolicies(res)
+		}
+		return nil
+	}
+	res["filteringProfiles"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateFilteringProfileFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]FilteringProfileable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(FilteringProfileable)
+				}
+			}
+			m.SetFilteringProfiles(res)
+		}
+		return nil
+	}
+	res["forwardingPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateForwardingPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ForwardingPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ForwardingPolicyable)
+				}
+			}
+			m.SetForwardingPolicies(res)
+		}
+		return nil
+	}
+	res["forwardingProfiles"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateForwardingProfileFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ForwardingProfileable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ForwardingProfileable)
+				}
+			}
+			m.SetForwardingProfiles(res)
+		}
+		return nil
+	}
+	res["logs"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateLogsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLogs(val.(Logsable))
+		}
+		return nil
+	}
+	res["reports"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateReportsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetReports(val.(Reportsable))
+		}
+		return nil
+	}
+	res["settings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSettings(val.(Settingsable))
+		}
+		return nil
+	}
+	res["tenantStatus"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTenantStatusFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTenantStatus(val.(TenantStatusable))
+		}
+		return nil
+	}
+	res["threatIntelligencePolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateThreatIntelligencePolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ThreatIntelligencePolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ThreatIntelligencePolicyable)
+				}
+			}
+			m.SetThreatIntelligencePolicies(res)
+		}
+		return nil
+	}
+	res["tls"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateTlsTerminationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetTls(val.(TlsTerminationable))
+		}
+		return nil
+	}
+	res["tlsInspectionPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTlsInspectionPolicyFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TlsInspectionPolicyable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TlsInspectionPolicyable)
+				}
+			}
+			m.SetTlsInspectionPolicies(res)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetFilteringPolicies gets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 // returns a []FilteringPolicyable when successful
-func (m *NetworkAccessRoot) GetFilteringPolicies()([]FilteringPolicyable) {
-    val, err := m.GetBackingStore().Get("filteringPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]FilteringPolicyable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetFilteringPolicies() []FilteringPolicyable {
+	val, err := m.GetBackingStore().Get("filteringPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]FilteringPolicyable)
+	}
+	return nil
 }
+
 // GetFilteringProfiles gets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
 // returns a []FilteringProfileable when successful
-func (m *NetworkAccessRoot) GetFilteringProfiles()([]FilteringProfileable) {
-    val, err := m.GetBackingStore().Get("filteringProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]FilteringProfileable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetFilteringProfiles() []FilteringProfileable {
+	val, err := m.GetBackingStore().Get("filteringProfiles")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]FilteringProfileable)
+	}
+	return nil
 }
+
 // GetForwardingPolicies gets the forwardingPolicies property value. The forwardingPolicies property
 // returns a []ForwardingPolicyable when successful
-func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
-    val, err := m.GetBackingStore().Get("forwardingPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ForwardingPolicyable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetForwardingPolicies() []ForwardingPolicyable {
+	val, err := m.GetBackingStore().Get("forwardingPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ForwardingPolicyable)
+	}
+	return nil
 }
+
 // GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
 // returns a []ForwardingProfileable when successful
-func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
-    val, err := m.GetBackingStore().Get("forwardingProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ForwardingProfileable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetForwardingProfiles() []ForwardingProfileable {
+	val, err := m.GetBackingStore().Get("forwardingProfiles")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ForwardingProfileable)
+	}
+	return nil
 }
+
 // GetLogs gets the logs property value. Represents network connections that are routed through Global Secure Access.
 // returns a Logsable when successful
-func (m *NetworkAccessRoot) GetLogs()(Logsable) {
-    val, err := m.GetBackingStore().Get("logs")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Logsable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetLogs() Logsable {
+	val, err := m.GetBackingStore().Get("logs")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(Logsable)
+	}
+	return nil
 }
+
 // GetReports gets the reports property value. Represents the status of the Global Secure Access services for the tenant.
 // returns a Reportsable when successful
-func (m *NetworkAccessRoot) GetReports()(Reportsable) {
-    val, err := m.GetBackingStore().Get("reports")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Reportsable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetReports() Reportsable {
+	val, err := m.GetBackingStore().Get("reports")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(Reportsable)
+	}
+	return nil
 }
+
 // GetSettings gets the settings property value. Global Secure Access settings.
 // returns a Settingsable when successful
-func (m *NetworkAccessRoot) GetSettings()(Settingsable) {
-    val, err := m.GetBackingStore().Get("settings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(Settingsable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetSettings() Settingsable {
+	val, err := m.GetBackingStore().Get("settings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(Settingsable)
+	}
+	return nil
 }
+
 // GetTenantStatus gets the tenantStatus property value. Represents the status of the Global Secure Access services for the tenant.
 // returns a TenantStatusable when successful
-func (m *NetworkAccessRoot) GetTenantStatus()(TenantStatusable) {
-    val, err := m.GetBackingStore().Get("tenantStatus")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(TenantStatusable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetTenantStatus() TenantStatusable {
+	val, err := m.GetBackingStore().Get("tenantStatus")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TenantStatusable)
+	}
+	return nil
 }
+
 // GetThreatIntelligencePolicies gets the threatIntelligencePolicies property value. The threatIntelligencePolicies property
 // returns a []ThreatIntelligencePolicyable when successful
-func (m *NetworkAccessRoot) GetThreatIntelligencePolicies()([]ThreatIntelligencePolicyable) {
-    val, err := m.GetBackingStore().Get("threatIntelligencePolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ThreatIntelligencePolicyable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetThreatIntelligencePolicies() []ThreatIntelligencePolicyable {
+	val, err := m.GetBackingStore().Get("threatIntelligencePolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ThreatIntelligencePolicyable)
+	}
+	return nil
 }
+
 // GetTls gets the tls property value. A container for tenant-level TLS inspection settings for Global Secure Access.
 // returns a TlsTerminationable when successful
-func (m *NetworkAccessRoot) GetTls()(TlsTerminationable) {
-    val, err := m.GetBackingStore().Get("tls")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(TlsTerminationable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetTls() TlsTerminationable {
+	val, err := m.GetBackingStore().Get("tls")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(TlsTerminationable)
+	}
+	return nil
 }
+
 // GetTlsInspectionPolicies gets the tlsInspectionPolicies property value. Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
 // returns a []TlsInspectionPolicyable when successful
-func (m *NetworkAccessRoot) GetTlsInspectionPolicies()([]TlsInspectionPolicyable) {
-    val, err := m.GetBackingStore().Get("tlsInspectionPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TlsInspectionPolicyable)
-    }
-    return nil
+func (m *NetworkAccessRoot) GetTlsInspectionPolicies() []TlsInspectionPolicyable {
+	val, err := m.GetBackingStore().Get("tlsInspectionPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TlsInspectionPolicyable)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    if m.GetAlerts() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
-        for i, v := range m.GetAlerts() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("alerts", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetCloudFirewallPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudFirewallPolicies()))
-        for i, v := range m.GetCloudFirewallPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("cloudFirewallPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("connectivity", m.GetConnectivity())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetFilteringPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFilteringPolicies()))
-        for i, v := range m.GetFilteringPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("filteringPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetFilteringProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFilteringProfiles()))
-        for i, v := range m.GetFilteringProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("filteringProfiles", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetForwardingPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingPolicies()))
-        for i, v := range m.GetForwardingPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("forwardingPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetForwardingProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingProfiles()))
-        for i, v := range m.GetForwardingProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("forwardingProfiles", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("logs", m.GetLogs())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("reports", m.GetReports())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("settings", m.GetSettings())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("tenantStatus", m.GetTenantStatus())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetThreatIntelligencePolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatIntelligencePolicies()))
-        for i, v := range m.GetThreatIntelligencePolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("threatIntelligencePolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("tls", m.GetTls())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetTlsInspectionPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTlsInspectionPolicies()))
-        for i, v := range m.GetTlsInspectionPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("tlsInspectionPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.Entity.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	if m.GetAlerts() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
+		for i, v := range m.GetAlerts() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("alerts", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetCloudFirewallPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudFirewallPolicies()))
+		for i, v := range m.GetCloudFirewallPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("cloudFirewallPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("connectivity", m.GetConnectivity())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetFilteringPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFilteringPolicies()))
+		for i, v := range m.GetFilteringPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("filteringPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetFilteringProfiles() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFilteringProfiles()))
+		for i, v := range m.GetFilteringProfiles() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("filteringProfiles", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetForwardingPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingPolicies()))
+		for i, v := range m.GetForwardingPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("forwardingPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetForwardingProfiles() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingProfiles()))
+		for i, v := range m.GetForwardingProfiles() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("forwardingProfiles", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("logs", m.GetLogs())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("reports", m.GetReports())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("settings", m.GetSettings())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("tenantStatus", m.GetTenantStatus())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetThreatIntelligencePolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatIntelligencePolicies()))
+		for i, v := range m.GetThreatIntelligencePolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("threatIntelligencePolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("tls", m.GetTls())
+		if err != nil {
+			return err
+		}
+	}
+	if m.GetTlsInspectionPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTlsInspectionPolicies()))
+		for i, v := range m.GetTlsInspectionPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("tlsInspectionPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetAlerts sets the alerts property value. The alerts property
-func (m *NetworkAccessRoot) SetAlerts(value []Alertable)() {
-    err := m.GetBackingStore().Set("alerts", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetAlerts(value []Alertable) {
+	err := m.GetBackingStore().Set("alerts", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetCloudFirewallPolicies sets the cloudFirewallPolicies property value. A collection of cloud firewall policies that define rules for managing network traffic through the Global Secure Access services.
-func (m *NetworkAccessRoot) SetCloudFirewallPolicies(value []CloudFirewallPolicyable)() {
-    err := m.GetBackingStore().Set("cloudFirewallPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetCloudFirewallPolicies(value []CloudFirewallPolicyable) {
+	err := m.GetBackingStore().Set("cloudFirewallPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetConnectivity sets the connectivity property value. Connectivity represents all the connectivity components in Global Secure Access.
-func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable)() {
-    err := m.GetBackingStore().Set("connectivity", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetConnectivity(value Connectivityable) {
+	err := m.GetBackingStore().Set("connectivity", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFilteringPolicies sets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
-func (m *NetworkAccessRoot) SetFilteringPolicies(value []FilteringPolicyable)() {
-    err := m.GetBackingStore().Set("filteringPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetFilteringPolicies(value []FilteringPolicyable) {
+	err := m.GetBackingStore().Set("filteringPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetFilteringProfiles sets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
-func (m *NetworkAccessRoot) SetFilteringProfiles(value []FilteringProfileable)() {
-    err := m.GetBackingStore().Set("filteringProfiles", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetFilteringProfiles(value []FilteringProfileable) {
+	err := m.GetBackingStore().Set("filteringProfiles", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetForwardingPolicies sets the forwardingPolicies property value. The forwardingPolicies property
-func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable)() {
-    err := m.GetBackingStore().Set("forwardingPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable) {
+	err := m.GetBackingStore().Set("forwardingPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetForwardingProfiles sets the forwardingProfiles property value. The forwardingProfiles property
-func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable)() {
-    err := m.GetBackingStore().Set("forwardingProfiles", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable) {
+	err := m.GetBackingStore().Set("forwardingProfiles", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetLogs sets the logs property value. Represents network connections that are routed through Global Secure Access.
-func (m *NetworkAccessRoot) SetLogs(value Logsable)() {
-    err := m.GetBackingStore().Set("logs", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetLogs(value Logsable) {
+	err := m.GetBackingStore().Set("logs", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetReports sets the reports property value. Represents the status of the Global Secure Access services for the tenant.
-func (m *NetworkAccessRoot) SetReports(value Reportsable)() {
-    err := m.GetBackingStore().Set("reports", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetReports(value Reportsable) {
+	err := m.GetBackingStore().Set("reports", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetSettings sets the settings property value. Global Secure Access settings.
-func (m *NetworkAccessRoot) SetSettings(value Settingsable)() {
-    err := m.GetBackingStore().Set("settings", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetSettings(value Settingsable) {
+	err := m.GetBackingStore().Set("settings", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTenantStatus sets the tenantStatus property value. Represents the status of the Global Secure Access services for the tenant.
-func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable)() {
-    err := m.GetBackingStore().Set("tenantStatus", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable) {
+	err := m.GetBackingStore().Set("tenantStatus", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetThreatIntelligencePolicies sets the threatIntelligencePolicies property value. The threatIntelligencePolicies property
-func (m *NetworkAccessRoot) SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)() {
-    err := m.GetBackingStore().Set("threatIntelligencePolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable) {
+	err := m.GetBackingStore().Set("threatIntelligencePolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTls sets the tls property value. A container for tenant-level TLS inspection settings for Global Secure Access.
-func (m *NetworkAccessRoot) SetTls(value TlsTerminationable)() {
-    err := m.GetBackingStore().Set("tls", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetTls(value TlsTerminationable) {
+	err := m.GetBackingStore().Set("tls", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetTlsInspectionPolicies sets the tlsInspectionPolicies property value. Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
-func (m *NetworkAccessRoot) SetTlsInspectionPolicies(value []TlsInspectionPolicyable)() {
-    err := m.GetBackingStore().Set("tlsInspectionPolicies", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *NetworkAccessRoot) SetTlsInspectionPolicies(value []TlsInspectionPolicyable) {
+	err := m.GetBackingStore().Set("tlsInspectionPolicies", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type NetworkAccessRootable interface {
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAlerts()([]Alertable)
-    GetCloudFirewallPolicies()([]CloudFirewallPolicyable)
-    GetConnectivity()(Connectivityable)
-    GetFilteringPolicies()([]FilteringPolicyable)
-    GetFilteringProfiles()([]FilteringProfileable)
-    GetForwardingPolicies()([]ForwardingPolicyable)
-    GetForwardingProfiles()([]ForwardingProfileable)
-    GetLogs()(Logsable)
-    GetReports()(Reportsable)
-    GetSettings()(Settingsable)
-    GetTenantStatus()(TenantStatusable)
-    GetThreatIntelligencePolicies()([]ThreatIntelligencePolicyable)
-    GetTls()(TlsTerminationable)
-    GetTlsInspectionPolicies()([]TlsInspectionPolicyable)
-    SetAlerts(value []Alertable)()
-    SetCloudFirewallPolicies(value []CloudFirewallPolicyable)()
-    SetConnectivity(value Connectivityable)()
-    SetFilteringPolicies(value []FilteringPolicyable)()
-    SetFilteringProfiles(value []FilteringProfileable)()
-    SetForwardingPolicies(value []ForwardingPolicyable)()
-    SetForwardingProfiles(value []ForwardingProfileable)()
-    SetLogs(value Logsable)()
-    SetReports(value Reportsable)()
-    SetSettings(value Settingsable)()
-    SetTenantStatus(value TenantStatusable)()
-    SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)()
-    SetTls(value TlsTerminationable)()
-    SetTlsInspectionPolicies(value []TlsInspectionPolicyable)()
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAlerts() []Alertable
+	GetCloudFirewallPolicies() []CloudFirewallPolicyable
+	GetConnectivity() Connectivityable
+	GetFilteringPolicies() []FilteringPolicyable
+	GetFilteringProfiles() []FilteringProfileable
+	GetForwardingPolicies() []ForwardingPolicyable
+	GetForwardingProfiles() []ForwardingProfileable
+	GetLogs() Logsable
+	GetReports() Reportsable
+	GetSettings() Settingsable
+	GetTenantStatus() TenantStatusable
+	GetThreatIntelligencePolicies() []ThreatIntelligencePolicyable
+	GetTls() TlsTerminationable
+	GetTlsInspectionPolicies() []TlsInspectionPolicyable
+	SetAlerts(value []Alertable)
+	SetCloudFirewallPolicies(value []CloudFirewallPolicyable)
+	SetConnectivity(value Connectivityable)
+	SetFilteringPolicies(value []FilteringPolicyable)
+	SetFilteringProfiles(value []FilteringProfileable)
+	SetForwardingPolicies(value []ForwardingPolicyable)
+	SetForwardingProfiles(value []ForwardingProfileable)
+	SetLogs(value Logsable)
+	SetReports(value Reportsable)
+	SetSettings(value Settingsable)
+	SetTenantStatus(value TenantStatusable)
+	SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)
+	SetTls(value TlsTerminationable)
+	SetTlsInspectionPolicies(value []TlsInspectionPolicyable)
 }

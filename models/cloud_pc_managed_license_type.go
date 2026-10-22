@@ -2,38 +2,42 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type CloudPcManagedLicenseType int
 
 const (
-    FRONTLINE_CLOUDPCMANAGEDLICENSETYPE CloudPcManagedLicenseType = iota
-    RESERVE_CLOUDPCMANAGEDLICENSETYPE
-    UNKNOWNFUTUREVALUE_CLOUDPCMANAGEDLICENSETYPE
+	FRONTLINE_CLOUDPCMANAGEDLICENSETYPE CloudPcManagedLicenseType = iota
+	RESERVE_CLOUDPCMANAGEDLICENSETYPE
+	UNKNOWNFUTUREVALUE_CLOUDPCMANAGEDLICENSETYPE
 )
 
 func (i CloudPcManagedLicenseType) String() string {
-    return []string{"frontline", "reserve", "unknownFutureValue"}[i]
+	return []string{"frontline", "reserve", "unknownFutureValue"}[i]
 }
+
 func ParseCloudPcManagedLicenseType(v string) (any, error) {
-    result := FRONTLINE_CLOUDPCMANAGEDLICENSETYPE
-    switch v {
-        case "frontline":
-            result = FRONTLINE_CLOUDPCMANAGEDLICENSETYPE
-        case "reserve":
-            result = RESERVE_CLOUDPCMANAGEDLICENSETYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_CLOUDPCMANAGEDLICENSETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := FRONTLINE_CLOUDPCMANAGEDLICENSETYPE
+	switch v {
+	case "frontline":
+		result = FRONTLINE_CLOUDPCMANAGEDLICENSETYPE
+	case "reserve":
+		result = RESERVE_CLOUDPCMANAGEDLICENSETYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_CLOUDPCMANAGEDLICENSETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeCloudPcManagedLicenseType(values []CloudPcManagedLicenseType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i CloudPcManagedLicenseType) isMultiValue() bool {
-    return false
+	return false
 }

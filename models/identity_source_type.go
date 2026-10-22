@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type IdentitySourceType int
 
 const (
-    AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE IdentitySourceType = iota
-    EXTERNAL_IDENTITYSOURCETYPE
+	AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE IdentitySourceType = iota
+	EXTERNAL_IDENTITYSOURCETYPE
 )
 
 func (i IdentitySourceType) String() string {
-    return []string{"azureActiveDirectory", "external"}[i]
+	return []string{"azureActiveDirectory", "external"}[i]
 }
+
 func ParseIdentitySourceType(v string) (any, error) {
-    result := AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
-    switch v {
-        case "azureActiveDirectory":
-            result = AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
-        case "external":
-            result = EXTERNAL_IDENTITYSOURCETYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
+	switch v {
+	case "azureActiveDirectory":
+		result = AZUREACTIVEDIRECTORY_IDENTITYSOURCETYPE
+	case "external":
+		result = EXTERNAL_IDENTITYSOURCETYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeIdentitySourceType(values []IdentitySourceType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i IdentitySourceType) isMultiValue() bool {
-    return false
+	return false
 }

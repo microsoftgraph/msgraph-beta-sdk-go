@@ -4,27 +4,30 @@
 package groups
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemTeamPrimaryChannelJoinedUsersRemovePostResponseable instead.
 type ItemTeamPrimaryChannelJoinedUsersRemoveResponse struct {
-    ItemTeamPrimaryChannelJoinedUsersRemovePostResponse
+	ItemTeamPrimaryChannelJoinedUsersRemovePostResponse
 }
+
 // NewItemTeamPrimaryChannelJoinedUsersRemoveResponse instantiates a new ItemTeamPrimaryChannelJoinedUsersRemoveResponse and sets the default values.
-func NewItemTeamPrimaryChannelJoinedUsersRemoveResponse()(*ItemTeamPrimaryChannelJoinedUsersRemoveResponse) {
-    m := &ItemTeamPrimaryChannelJoinedUsersRemoveResponse{
-        ItemTeamPrimaryChannelJoinedUsersRemovePostResponse: *NewItemTeamPrimaryChannelJoinedUsersRemovePostResponse(),
-    }
-    return m
+func NewItemTeamPrimaryChannelJoinedUsersRemoveResponse() *ItemTeamPrimaryChannelJoinedUsersRemoveResponse {
+	m := &ItemTeamPrimaryChannelJoinedUsersRemoveResponse{
+		ItemTeamPrimaryChannelJoinedUsersRemovePostResponse: *NewItemTeamPrimaryChannelJoinedUsersRemovePostResponse(),
+	}
+	return m
 }
+
 // CreateItemTeamPrimaryChannelJoinedUsersRemoveResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemTeamPrimaryChannelJoinedUsersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemTeamPrimaryChannelJoinedUsersRemoveResponse(), nil
+func CreateItemTeamPrimaryChannelJoinedUsersRemoveResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemTeamPrimaryChannelJoinedUsersRemoveResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemTeamPrimaryChannelJoinedUsersRemovePostResponseable instead.
 type ItemTeamPrimaryChannelJoinedUsersRemoveResponseable interface {
-    ItemTeamPrimaryChannelJoinedUsersRemovePostResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemTeamPrimaryChannelJoinedUsersRemovePostResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

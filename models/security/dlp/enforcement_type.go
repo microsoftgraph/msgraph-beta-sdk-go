@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package dlp
+
 type EnforcementType int
 
 const (
-    UNKNOWN_ENFORCEMENTTYPE EnforcementType = iota
-    COMBINED_ENFORCEMENTTYPE
-    SEPARATE_ENFORCEMENTTYPE
-    UNKNOWNFUTUREVALUE_ENFORCEMENTTYPE
+	UNKNOWN_ENFORCEMENTTYPE EnforcementType = iota
+	COMBINED_ENFORCEMENTTYPE
+	SEPARATE_ENFORCEMENTTYPE
+	UNKNOWNFUTUREVALUE_ENFORCEMENTTYPE
 )
 
 func (i EnforcementType) String() string {
-    return []string{"unknown", "combined", "separate", "unknownFutureValue"}[i]
+	return []string{"unknown", "combined", "separate", "unknownFutureValue"}[i]
 }
+
 func ParseEnforcementType(v string) (any, error) {
-    result := UNKNOWN_ENFORCEMENTTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_ENFORCEMENTTYPE
-        case "combined":
-            result = COMBINED_ENFORCEMENTTYPE
-        case "separate":
-            result = SEPARATE_ENFORCEMENTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ENFORCEMENTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_ENFORCEMENTTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_ENFORCEMENTTYPE
+	case "combined":
+		result = COMBINED_ENFORCEMENTTYPE
+	case "separate":
+		result = SEPARATE_ENFORCEMENTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ENFORCEMENTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeEnforcementType(values []EnforcementType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i EnforcementType) isMultiValue() bool {
-    return false
+	return false
 }

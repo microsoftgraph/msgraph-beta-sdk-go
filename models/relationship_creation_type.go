@@ -2,41 +2,45 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type RelationshipCreationType int
 
 const (
-    // Represents a relationship between two tenants that was created by an explicit approval from the governed tenant admin.
-    APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE RelationshipCreationType = iota
-    // Represents a relationship between the add-on tenant and the tenant from which it was created.
-    ADDONTENANT_RELATIONSHIPCREATIONTYPE
-    // This will help in making this enum evolvable and adding more values in the future-
-    UNKNOWNFUTUREVALUE_RELATIONSHIPCREATIONTYPE
+	// Represents a relationship between two tenants that was created by an explicit approval from the governed tenant admin.
+	APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE RelationshipCreationType = iota
+	// Represents a relationship between the add-on tenant and the tenant from which it was created.
+	ADDONTENANT_RELATIONSHIPCREATIONTYPE
+	// This will help in making this enum evolvable and adding more values in the future-
+	UNKNOWNFUTUREVALUE_RELATIONSHIPCREATIONTYPE
 )
 
 func (i RelationshipCreationType) String() string {
-    return []string{"approvedByAdmin", "addOnTenant", "unknownFutureValue"}[i]
+	return []string{"approvedByAdmin", "addOnTenant", "unknownFutureValue"}[i]
 }
+
 func ParseRelationshipCreationType(v string) (any, error) {
-    result := APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE
-    switch v {
-        case "approvedByAdmin":
-            result = APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE
-        case "addOnTenant":
-            result = ADDONTENANT_RELATIONSHIPCREATIONTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_RELATIONSHIPCREATIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE
+	switch v {
+	case "approvedByAdmin":
+		result = APPROVEDBYADMIN_RELATIONSHIPCREATIONTYPE
+	case "addOnTenant":
+		result = ADDONTENANT_RELATIONSHIPCREATIONTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_RELATIONSHIPCREATIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeRelationshipCreationType(values []RelationshipCreationType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i RelationshipCreationType) isMultiValue() bool {
-    return false
+	return false
 }

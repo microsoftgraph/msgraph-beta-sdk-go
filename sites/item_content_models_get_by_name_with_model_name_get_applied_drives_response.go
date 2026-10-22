@@ -4,27 +4,30 @@
 package sites
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // Deprecated: This class is obsolete. Use ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable instead.
 type ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse struct {
-    ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse
+	ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse
 }
+
 // NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse instantiates a new ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse and sets the default values.
-func NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse()(*ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse) {
-    m := &ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse{
-        ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse: *NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse(),
-    }
-    return m
+func NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse() *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse {
+	m := &ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse{
+		ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse: *NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponse(),
+	}
+	return m
 }
+
 // CreateItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse(), nil
+func CreateItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponse(), nil
 }
+
 // Deprecated: This class is obsolete. Use ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable instead.
 type ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseable interface {
-    ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 }

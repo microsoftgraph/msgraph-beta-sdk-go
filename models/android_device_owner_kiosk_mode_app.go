@@ -4,190 +4,203 @@
 package models
 
 import (
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
 // AndroidDeviceOwnerKioskModeApp an application on the Android Device Owner Managed Home Screen
 type AndroidDeviceOwnerKioskModeApp struct {
-    AndroidDeviceOwnerKioskModeFolderItem
+	AndroidDeviceOwnerKioskModeFolderItem
 }
+
 // NewAndroidDeviceOwnerKioskModeApp instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
-func NewAndroidDeviceOwnerKioskModeApp()(*AndroidDeviceOwnerKioskModeApp) {
-    m := &AndroidDeviceOwnerKioskModeApp{
-        AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
-    }
-    odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp"
-    m.SetOdataType(&odataTypeValue)
-    return m
+func NewAndroidDeviceOwnerKioskModeApp() *AndroidDeviceOwnerKioskModeApp {
+	m := &AndroidDeviceOwnerKioskModeApp{
+		AndroidDeviceOwnerKioskModeFolderItem: *NewAndroidDeviceOwnerKioskModeFolderItem(),
+	}
+	odataTypeValue := "#microsoft.graph.androidDeviceOwnerKioskModeApp"
+	m.SetOdataType(&odataTypeValue)
+	return m
 }
+
 // CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewAndroidDeviceOwnerKioskModeApp(), nil
+func CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+	return NewAndroidDeviceOwnerKioskModeApp(), nil
 }
+
 // GetClassName gets the className property value. Class name of application
 // returns a *string when successful
-func (m *AndroidDeviceOwnerKioskModeApp) GetClassName()(*string) {
-    val, err := m.GetBackingStore().Get("className")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AndroidDeviceOwnerKioskModeApp) GetClassName() *string {
+	val, err := m.GetBackingStore().Get("className")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.AndroidDeviceOwnerKioskModeFolderItem.GetFieldDeserializers()
-    res["className"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetClassName(val)
-        }
-        return nil
-    }
-    res["offlineAppAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOfflineAppAccessEnabled(val)
-        }
-        return nil
-    }
-    res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPackageEscaped(val)
-        }
-        return nil
-    }
-    res["preSignInAppAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetPreSignInAppAccessEnabled(val)
-        }
-        return nil
-    }
-    return res
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
+func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+	res := m.AndroidDeviceOwnerKioskModeFolderItem.GetFieldDeserializers()
+	res["className"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetClassName(val)
+		}
+		return nil
+	}
+	res["offlineAppAccessEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetOfflineAppAccessEnabled(val)
+		}
+		return nil
+	}
+	res["package"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPackageEscaped(val)
+		}
+		return nil
+	}
+	res["preSignInAppAccessEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetPreSignInAppAccessEnabled(val)
+		}
+		return nil
+	}
+	return res
 }
+
 // GetOfflineAppAccessEnabled gets the offlineAppAccessEnabled property value. Indicates whether the application can be used when sign in fails due to network issues in Managed Home Screen. When TRUE, indicates the application can be used when sign in fails due to network issues in Managed Home Screen. When FALSE, indicates the application cannot be used when sign in fails due to network issues in Managed Home Screen. Default value is FALSE.
 // returns a *bool when successful
-func (m *AndroidDeviceOwnerKioskModeApp) GetOfflineAppAccessEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("offlineAppAccessEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AndroidDeviceOwnerKioskModeApp) GetOfflineAppAccessEnabled() *bool {
+	val, err := m.GetBackingStore().Get("offlineAppAccessEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // GetPackageEscaped gets the package property value. Package name of application
 // returns a *string when successful
-func (m *AndroidDeviceOwnerKioskModeApp) GetPackageEscaped()(*string) {
-    val, err := m.GetBackingStore().Get("packageEscaped")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
+func (m *AndroidDeviceOwnerKioskModeApp) GetPackageEscaped() *string {
+	val, err := m.GetBackingStore().Get("packageEscaped")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
 }
+
 // GetPreSignInAppAccessEnabled gets the preSignInAppAccessEnabled property value. Indicates whether the application can be used prior to signing in to the Managed Home Screen. When TRUE, indicates the app can be used prior to sign in for Managed Home Screen. When FALSE, indicates the app cannot be used prior to sign in for Managed Home Screen. Default value is FALSE.
 // returns a *bool when successful
-func (m *AndroidDeviceOwnerKioskModeApp) GetPreSignInAppAccessEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("preSignInAppAccessEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
+func (m *AndroidDeviceOwnerKioskModeApp) GetPreSignInAppAccessEnabled() *bool {
+	val, err := m.GetBackingStore().Get("preSignInAppAccessEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
 }
+
 // Serialize serializes information the current object
-func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.AndroidDeviceOwnerKioskModeFolderItem.Serialize(writer)
-    if err != nil {
-        return err
-    }
-    {
-        err = writer.WriteStringValue("className", m.GetClassName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("offlineAppAccessEnabled", m.GetOfflineAppAccessEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("package", m.GetPackageEscaped())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteBoolValue("preSignInAppAccessEnabled", m.GetPreSignInAppAccessEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    return nil
+func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	err := m.AndroidDeviceOwnerKioskModeFolderItem.Serialize(writer)
+	if err != nil {
+		return err
+	}
+	{
+		err = writer.WriteStringValue("className", m.GetClassName())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("offlineAppAccessEnabled", m.GetOfflineAppAccessEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteStringValue("package", m.GetPackageEscaped())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("preSignInAppAccessEnabled", m.GetPreSignInAppAccessEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
+
 // SetClassName sets the className property value. Class name of application
-func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
-    err := m.GetBackingStore().Set("className", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string) {
+	err := m.GetBackingStore().Set("className", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetOfflineAppAccessEnabled sets the offlineAppAccessEnabled property value. Indicates whether the application can be used when sign in fails due to network issues in Managed Home Screen. When TRUE, indicates the application can be used when sign in fails due to network issues in Managed Home Screen. When FALSE, indicates the application cannot be used when sign in fails due to network issues in Managed Home Screen. Default value is FALSE.
-func (m *AndroidDeviceOwnerKioskModeApp) SetOfflineAppAccessEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("offlineAppAccessEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AndroidDeviceOwnerKioskModeApp) SetOfflineAppAccessEnabled(value *bool) {
+	err := m.GetBackingStore().Set("offlineAppAccessEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPackageEscaped sets the package property value. Package name of application
-func (m *AndroidDeviceOwnerKioskModeApp) SetPackageEscaped(value *string)() {
-    err := m.GetBackingStore().Set("packageEscaped", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AndroidDeviceOwnerKioskModeApp) SetPackageEscaped(value *string) {
+	err := m.GetBackingStore().Set("packageEscaped", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 // SetPreSignInAppAccessEnabled sets the preSignInAppAccessEnabled property value. Indicates whether the application can be used prior to signing in to the Managed Home Screen. When TRUE, indicates the app can be used prior to sign in for Managed Home Screen. When FALSE, indicates the app cannot be used prior to sign in for Managed Home Screen. Default value is FALSE.
-func (m *AndroidDeviceOwnerKioskModeApp) SetPreSignInAppAccessEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("preSignInAppAccessEnabled", value)
-    if err != nil {
-        panic(err)
-    }
+func (m *AndroidDeviceOwnerKioskModeApp) SetPreSignInAppAccessEnabled(value *bool) {
+	err := m.GetBackingStore().Set("preSignInAppAccessEnabled", value)
+	if err != nil {
+		panic(err)
+	}
 }
+
 type AndroidDeviceOwnerKioskModeAppable interface {
-    AndroidDeviceOwnerKioskModeFolderItemable
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetClassName()(*string)
-    GetOfflineAppAccessEnabled()(*bool)
-    GetPackageEscaped()(*string)
-    GetPreSignInAppAccessEnabled()(*bool)
-    SetClassName(value *string)()
-    SetOfflineAppAccessEnabled(value *bool)()
-    SetPackageEscaped(value *string)()
-    SetPreSignInAppAccessEnabled(value *bool)()
+	AndroidDeviceOwnerKioskModeFolderItemable
+	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetClassName() *string
+	GetOfflineAppAccessEnabled() *bool
+	GetPackageEscaped() *string
+	GetPreSignInAppAccessEnabled() *bool
+	SetClassName(value *string)
+	SetOfflineAppAccessEnabled(value *bool)
+	SetPackageEscaped(value *string)
+	SetPreSignInAppAccessEnabled(value *bool)
 }

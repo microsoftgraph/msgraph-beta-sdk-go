@@ -2,62 +2,66 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package healthmonitoring
+
 type AlertType int
 
 const (
-    UNKNOWN_ALERTTYPE AlertType = iota
-    MFASIGNINFAILURE_ALERTTYPE
-    MANAGEDDEVICESIGNINFAILURE_ALERTTYPE
-    COMPLIANTDEVICESIGNINFAILURE_ALERTTYPE
-    UNKNOWNFUTUREVALUE_ALERTTYPE
-    CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
-    SAMLSIGNINFAILURE_ALERTTYPE
-    INTERNETAPPBLOCKEDBYPOLICY_ALERTTYPE
-    PRIVATEAPPBLOCKEDBYCONNECTOR_ALERTTYPE
-    REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
-    REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
+	UNKNOWN_ALERTTYPE AlertType = iota
+	MFASIGNINFAILURE_ALERTTYPE
+	MANAGEDDEVICESIGNINFAILURE_ALERTTYPE
+	COMPLIANTDEVICESIGNINFAILURE_ALERTTYPE
+	UNKNOWNFUTUREVALUE_ALERTTYPE
+	CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
+	SAMLSIGNINFAILURE_ALERTTYPE
+	INTERNETAPPBLOCKEDBYPOLICY_ALERTTYPE
+	PRIVATEAPPBLOCKEDBYCONNECTOR_ALERTTYPE
+	REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
+	REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
 )
 
 func (i AlertType) String() string {
-    return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn", "samlSignInFailure", "internetAppBlockedByPolicy", "privateAppBlockedByConnector", "remoteNetworkTunnelConnectivity", "remoteNetworkBgpConnectivity"}[i]
+	return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn", "samlSignInFailure", "internetAppBlockedByPolicy", "privateAppBlockedByConnector", "remoteNetworkTunnelConnectivity", "remoteNetworkBgpConnectivity"}[i]
 }
+
 func ParseAlertType(v string) (any, error) {
-    result := UNKNOWN_ALERTTYPE
-    switch v {
-        case "unknown":
-            result = UNKNOWN_ALERTTYPE
-        case "mfaSignInFailure":
-            result = MFASIGNINFAILURE_ALERTTYPE
-        case "managedDeviceSignInFailure":
-            result = MANAGEDDEVICESIGNINFAILURE_ALERTTYPE
-        case "compliantDeviceSignInFailure":
-            result = COMPLIANTDEVICESIGNINFAILURE_ALERTTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_ALERTTYPE
-        case "conditionalAccessBlockedSignIn":
-            result = CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
-        case "samlSignInFailure":
-            result = SAMLSIGNINFAILURE_ALERTTYPE
-        case "internetAppBlockedByPolicy":
-            result = INTERNETAPPBLOCKEDBYPOLICY_ALERTTYPE
-        case "privateAppBlockedByConnector":
-            result = PRIVATEAPPBLOCKEDBYCONNECTOR_ALERTTYPE
-        case "remoteNetworkTunnelConnectivity":
-            result = REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
-        case "remoteNetworkBgpConnectivity":
-            result = REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_ALERTTYPE
+	switch v {
+	case "unknown":
+		result = UNKNOWN_ALERTTYPE
+	case "mfaSignInFailure":
+		result = MFASIGNINFAILURE_ALERTTYPE
+	case "managedDeviceSignInFailure":
+		result = MANAGEDDEVICESIGNINFAILURE_ALERTTYPE
+	case "compliantDeviceSignInFailure":
+		result = COMPLIANTDEVICESIGNINFAILURE_ALERTTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_ALERTTYPE
+	case "conditionalAccessBlockedSignIn":
+		result = CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
+	case "samlSignInFailure":
+		result = SAMLSIGNINFAILURE_ALERTTYPE
+	case "internetAppBlockedByPolicy":
+		result = INTERNETAPPBLOCKEDBYPOLICY_ALERTTYPE
+	case "privateAppBlockedByConnector":
+		result = PRIVATEAPPBLOCKEDBYCONNECTOR_ALERTTYPE
+	case "remoteNetworkTunnelConnectivity":
+		result = REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
+	case "remoteNetworkBgpConnectivity":
+		result = REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeAlertType(values []AlertType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i AlertType) isMultiValue() bool {
-    return false
+	return false
 }

@@ -2,35 +2,39 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package casemanagement
+
 type ThirdPartyWorkItemType int
 
 const (
-    INCIDENT_THIRDPARTYWORKITEMTYPE ThirdPartyWorkItemType = iota
-    UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMTYPE
+	INCIDENT_THIRDPARTYWORKITEMTYPE ThirdPartyWorkItemType = iota
+	UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMTYPE
 )
 
 func (i ThirdPartyWorkItemType) String() string {
-    return []string{"incident", "unknownFutureValue"}[i]
+	return []string{"incident", "unknownFutureValue"}[i]
 }
+
 func ParseThirdPartyWorkItemType(v string) (any, error) {
-    result := INCIDENT_THIRDPARTYWORKITEMTYPE
-    switch v {
-        case "incident":
-            result = INCIDENT_THIRDPARTYWORKITEMTYPE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := INCIDENT_THIRDPARTYWORKITEMTYPE
+	switch v {
+	case "incident":
+		result = INCIDENT_THIRDPARTYWORKITEMTYPE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_THIRDPARTYWORKITEMTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeThirdPartyWorkItemType(values []ThirdPartyWorkItemType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i ThirdPartyWorkItemType) isMultiValue() bool {
-    return false
+	return false
 }

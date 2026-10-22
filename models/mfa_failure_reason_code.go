@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type MfaFailureReasonCode int
 
 const (
-    MFAINCOMPLETE_MFAFAILUREREASONCODE MfaFailureReasonCode = iota
-    MFADENIED_MFAFAILUREREASONCODE
-    SYSTEMFAILURE_MFAFAILUREREASONCODE
-    BADREQUEST_MFAFAILUREREASONCODE
-    OTHER_MFAFAILUREREASONCODE
-    UNKNOWNFUTUREVALUE_MFAFAILUREREASONCODE
+	MFAINCOMPLETE_MFAFAILUREREASONCODE MfaFailureReasonCode = iota
+	MFADENIED_MFAFAILUREREASONCODE
+	SYSTEMFAILURE_MFAFAILUREREASONCODE
+	BADREQUEST_MFAFAILUREREASONCODE
+	OTHER_MFAFAILUREREASONCODE
+	UNKNOWNFUTUREVALUE_MFAFAILUREREASONCODE
 )
 
 func (i MfaFailureReasonCode) String() string {
-    return []string{"mfaIncomplete", "mfaDenied", "systemFailure", "badRequest", "other", "unknownFutureValue"}[i]
+	return []string{"mfaIncomplete", "mfaDenied", "systemFailure", "badRequest", "other", "unknownFutureValue"}[i]
 }
+
 func ParseMfaFailureReasonCode(v string) (any, error) {
-    result := MFAINCOMPLETE_MFAFAILUREREASONCODE
-    switch v {
-        case "mfaIncomplete":
-            result = MFAINCOMPLETE_MFAFAILUREREASONCODE
-        case "mfaDenied":
-            result = MFADENIED_MFAFAILUREREASONCODE
-        case "systemFailure":
-            result = SYSTEMFAILURE_MFAFAILUREREASONCODE
-        case "badRequest":
-            result = BADREQUEST_MFAFAILUREREASONCODE
-        case "other":
-            result = OTHER_MFAFAILUREREASONCODE
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_MFAFAILUREREASONCODE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := MFAINCOMPLETE_MFAFAILUREREASONCODE
+	switch v {
+	case "mfaIncomplete":
+		result = MFAINCOMPLETE_MFAFAILUREREASONCODE
+	case "mfaDenied":
+		result = MFADENIED_MFAFAILUREREASONCODE
+	case "systemFailure":
+		result = SYSTEMFAILURE_MFAFAILUREREASONCODE
+	case "badRequest":
+		result = BADREQUEST_MFAFAILUREREASONCODE
+	case "other":
+		result = OTHER_MFAFAILUREREASONCODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_MFAFAILUREREASONCODE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeMfaFailureReasonCode(values []MfaFailureReasonCode) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i MfaFailureReasonCode) isMultiValue() bool {
-    return false
+	return false
 }

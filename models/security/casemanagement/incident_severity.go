@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package casemanagement
+
 type IncidentSeverity int
 
 const (
-    UNKNOWN_INCIDENTSEVERITY IncidentSeverity = iota
-    INFORMATIONAL_INCIDENTSEVERITY
-    LOW_INCIDENTSEVERITY
-    MEDIUM_INCIDENTSEVERITY
-    HIGH_INCIDENTSEVERITY
-    UNKNOWNFUTUREVALUE_INCIDENTSEVERITY
+	UNKNOWN_INCIDENTSEVERITY IncidentSeverity = iota
+	INFORMATIONAL_INCIDENTSEVERITY
+	LOW_INCIDENTSEVERITY
+	MEDIUM_INCIDENTSEVERITY
+	HIGH_INCIDENTSEVERITY
+	UNKNOWNFUTUREVALUE_INCIDENTSEVERITY
 )
 
 func (i IncidentSeverity) String() string {
-    return []string{"unknown", "informational", "low", "medium", "high", "unknownFutureValue"}[i]
+	return []string{"unknown", "informational", "low", "medium", "high", "unknownFutureValue"}[i]
 }
+
 func ParseIncidentSeverity(v string) (any, error) {
-    result := UNKNOWN_INCIDENTSEVERITY
-    switch v {
-        case "unknown":
-            result = UNKNOWN_INCIDENTSEVERITY
-        case "informational":
-            result = INFORMATIONAL_INCIDENTSEVERITY
-        case "low":
-            result = LOW_INCIDENTSEVERITY
-        case "medium":
-            result = MEDIUM_INCIDENTSEVERITY
-        case "high":
-            result = HIGH_INCIDENTSEVERITY
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_INCIDENTSEVERITY
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_INCIDENTSEVERITY
+	switch v {
+	case "unknown":
+		result = UNKNOWN_INCIDENTSEVERITY
+	case "informational":
+		result = INFORMATIONAL_INCIDENTSEVERITY
+	case "low":
+		result = LOW_INCIDENTSEVERITY
+	case "medium":
+		result = MEDIUM_INCIDENTSEVERITY
+	case "high":
+		result = HIGH_INCIDENTSEVERITY
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_INCIDENTSEVERITY
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeIncidentSeverity(values []IncidentSeverity) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i IncidentSeverity) isMultiValue() bool {
-    return false
+	return false
 }

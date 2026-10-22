@@ -2,50 +2,54 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package healthmonitoring
+
 type Scenario int
 
 const (
-    UNKNOWN_SCENARIO Scenario = iota
-    MFA_SCENARIO
-    DEVICES_SCENARIO
-    UNKNOWNFUTUREVALUE_SCENARIO
-    CONDITIONALACCESS_SCENARIO
-    SAML_SCENARIO
-    GSA_SCENARIO
+	UNKNOWN_SCENARIO Scenario = iota
+	MFA_SCENARIO
+	DEVICES_SCENARIO
+	UNKNOWNFUTUREVALUE_SCENARIO
+	CONDITIONALACCESS_SCENARIO
+	SAML_SCENARIO
+	GSA_SCENARIO
 )
 
 func (i Scenario) String() string {
-    return []string{"unknown", "mfa", "devices", "unknownFutureValue", "conditionalAccess", "saml", "gsa"}[i]
+	return []string{"unknown", "mfa", "devices", "unknownFutureValue", "conditionalAccess", "saml", "gsa"}[i]
 }
+
 func ParseScenario(v string) (any, error) {
-    result := UNKNOWN_SCENARIO
-    switch v {
-        case "unknown":
-            result = UNKNOWN_SCENARIO
-        case "mfa":
-            result = MFA_SCENARIO
-        case "devices":
-            result = DEVICES_SCENARIO
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SCENARIO
-        case "conditionalAccess":
-            result = CONDITIONALACCESS_SCENARIO
-        case "saml":
-            result = SAML_SCENARIO
-        case "gsa":
-            result = GSA_SCENARIO
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := UNKNOWN_SCENARIO
+	switch v {
+	case "unknown":
+		result = UNKNOWN_SCENARIO
+	case "mfa":
+		result = MFA_SCENARIO
+	case "devices":
+		result = DEVICES_SCENARIO
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SCENARIO
+	case "conditionalAccess":
+		result = CONDITIONALACCESS_SCENARIO
+	case "saml":
+		result = SAML_SCENARIO
+	case "gsa":
+		result = GSA_SCENARIO
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeScenario(values []Scenario) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i Scenario) isMultiValue() bool {
-    return false
+	return false
 }

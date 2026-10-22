@@ -4,67 +4,70 @@
 package solutions
 
 import (
-    "context"
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+	"context"
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+	i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
 // VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder provides operations to call the cancel method.
 type VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder struct {
-    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+
 // VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+	// Request headers
+	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+	// Request options
+	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+
 // NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderInternal instantiates a new VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder and sets the default values.
-func NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) {
-    m := &VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}')/cancel", pathParameters),
-    }
-    return m
+func NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder {
+	m := &VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder{
+		BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/registrations(userId='{userId}')/cancel", pathParameters),
+	}
+	return m
 }
+
 // NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder instantiates a new VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder and sets the default values.
-func NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) {
-    urlParams := make(map[string]string)
-    urlParams["request-raw-url"] = rawUrl
-    return NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderInternal(urlParams, requestAdapter)
+func NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter) *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder {
+	urlParams := make(map[string]string)
+	urlParams["request-raw-url"] = rawUrl
+	return NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
+
 // Post invoke action cancel
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration)(error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
+func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration) error {
+	requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration)
+	if err != nil {
+		return err
+	}
+	errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings{
+		"XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+	}
+	err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+	if err != nil {
+		return err
+	}
+	return nil
 }
+
 // ToPostRequestInformation invoke action cancel
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *RequestInformation when successful
-func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
+func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+	if requestConfiguration != nil {
+		requestInfo.Headers.AddAll(requestConfiguration.Headers)
+		requestInfo.AddRequestOptions(requestConfiguration.Options)
+	}
+	requestInfo.Headers.TryAdd("Accept", "application/json")
+	return requestInfo, nil
 }
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-03/PrivatePreview:responderForm on 2025-06-17 and will be removed 2025-12-17
 // returns a *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder when successful
-func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) WithUrl(rawUrl string)(*VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) {
-    return NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+func (m *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder) WithUrl(rawUrl string) *VirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder {
+	return NewVirtualEventsTownhallsItemRegistrationsWithUserIdCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)
 }

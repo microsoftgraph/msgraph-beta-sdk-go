@@ -2,46 +2,50 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 // Windows VPN connection type.
 type WindowsVpnConnectionType int
 
 const (
-    // Pulse Secure.
-    PULSESECURE_WINDOWSVPNCONNECTIONTYPE WindowsVpnConnectionType = iota
-    // F5 Edge Client.
-    F5EDGECLIENT_WINDOWSVPNCONNECTIONTYPE
-    // Dell SonicWALL Mobile Connection.
-    DELLSONICWALLMOBILECONNECT_WINDOWSVPNCONNECTIONTYPE
-    // Check Point Capsule VPN.
-    CHECKPOINTCAPSULEVPN_WINDOWSVPNCONNECTIONTYPE
+	// Pulse Secure.
+	PULSESECURE_WINDOWSVPNCONNECTIONTYPE WindowsVpnConnectionType = iota
+	// F5 Edge Client.
+	F5EDGECLIENT_WINDOWSVPNCONNECTIONTYPE
+	// Dell SonicWALL Mobile Connection.
+	DELLSONICWALLMOBILECONNECT_WINDOWSVPNCONNECTIONTYPE
+	// Check Point Capsule VPN.
+	CHECKPOINTCAPSULEVPN_WINDOWSVPNCONNECTIONTYPE
 )
 
 func (i WindowsVpnConnectionType) String() string {
-    return []string{"pulseSecure", "f5EdgeClient", "dellSonicWallMobileConnect", "checkPointCapsuleVpn"}[i]
+	return []string{"pulseSecure", "f5EdgeClient", "dellSonicWallMobileConnect", "checkPointCapsuleVpn"}[i]
 }
+
 func ParseWindowsVpnConnectionType(v string) (any, error) {
-    result := PULSESECURE_WINDOWSVPNCONNECTIONTYPE
-    switch v {
-        case "pulseSecure":
-            result = PULSESECURE_WINDOWSVPNCONNECTIONTYPE
-        case "f5EdgeClient":
-            result = F5EDGECLIENT_WINDOWSVPNCONNECTIONTYPE
-        case "dellSonicWallMobileConnect":
-            result = DELLSONICWALLMOBILECONNECT_WINDOWSVPNCONNECTIONTYPE
-        case "checkPointCapsuleVpn":
-            result = CHECKPOINTCAPSULEVPN_WINDOWSVPNCONNECTIONTYPE
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := PULSESECURE_WINDOWSVPNCONNECTIONTYPE
+	switch v {
+	case "pulseSecure":
+		result = PULSESECURE_WINDOWSVPNCONNECTIONTYPE
+	case "f5EdgeClient":
+		result = F5EDGECLIENT_WINDOWSVPNCONNECTIONTYPE
+	case "dellSonicWallMobileConnect":
+		result = DELLSONICWALLMOBILECONNECT_WINDOWSVPNCONNECTIONTYPE
+	case "checkPointCapsuleVpn":
+		result = CHECKPOINTCAPSULEVPN_WINDOWSVPNCONNECTIONTYPE
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeWindowsVpnConnectionType(values []WindowsVpnConnectionType) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i WindowsVpnConnectionType) isMultiValue() bool {
-    return false
+	return false
 }

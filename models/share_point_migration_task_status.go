@@ -2,47 +2,51 @@
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 package models
+
 type SharePointMigrationTaskStatus int
 
 const (
-    NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS SharePointMigrationTaskStatus = iota
-    INPROGRESS_SHAREPOINTMIGRATIONTASKSTATUS
-    COMPLETED_SHAREPOINTMIGRATIONTASKSTATUS
-    CANCELLED_SHAREPOINTMIGRATIONTASKSTATUS
-    FAILED_SHAREPOINTMIGRATIONTASKSTATUS
-    UNKNOWNFUTUREVALUE_SHAREPOINTMIGRATIONTASKSTATUS
+	NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS SharePointMigrationTaskStatus = iota
+	INPROGRESS_SHAREPOINTMIGRATIONTASKSTATUS
+	COMPLETED_SHAREPOINTMIGRATIONTASKSTATUS
+	CANCELLED_SHAREPOINTMIGRATIONTASKSTATUS
+	FAILED_SHAREPOINTMIGRATIONTASKSTATUS
+	UNKNOWNFUTUREVALUE_SHAREPOINTMIGRATIONTASKSTATUS
 )
 
 func (i SharePointMigrationTaskStatus) String() string {
-    return []string{"notStarted", "inProgress", "completed", "cancelled", "failed", "unknownFutureValue"}[i]
+	return []string{"notStarted", "inProgress", "completed", "cancelled", "failed", "unknownFutureValue"}[i]
 }
+
 func ParseSharePointMigrationTaskStatus(v string) (any, error) {
-    result := NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS
-    switch v {
-        case "notStarted":
-            result = NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS
-        case "inProgress":
-            result = INPROGRESS_SHAREPOINTMIGRATIONTASKSTATUS
-        case "completed":
-            result = COMPLETED_SHAREPOINTMIGRATIONTASKSTATUS
-        case "cancelled":
-            result = CANCELLED_SHAREPOINTMIGRATIONTASKSTATUS
-        case "failed":
-            result = FAILED_SHAREPOINTMIGRATIONTASKSTATUS
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_SHAREPOINTMIGRATIONTASKSTATUS
-        default:
-            return nil, nil
-    }
-    return &result, nil
+	result := NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS
+	switch v {
+	case "notStarted":
+		result = NOTSTARTED_SHAREPOINTMIGRATIONTASKSTATUS
+	case "inProgress":
+		result = INPROGRESS_SHAREPOINTMIGRATIONTASKSTATUS
+	case "completed":
+		result = COMPLETED_SHAREPOINTMIGRATIONTASKSTATUS
+	case "cancelled":
+		result = CANCELLED_SHAREPOINTMIGRATIONTASKSTATUS
+	case "failed":
+		result = FAILED_SHAREPOINTMIGRATIONTASKSTATUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_SHAREPOINTMIGRATIONTASKSTATUS
+	default:
+		return nil, nil
+	}
+	return &result, nil
 }
+
 func SerializeSharePointMigrationTaskStatus(values []SharePointMigrationTaskStatus) []string {
-    result := make([]string, len(values))
-    for i, v := range values {
-        result[i] = v.String()
-    }
-    return result
+	result := make([]string, len(values))
+	for i, v := range values {
+		result[i] = v.String()
+	}
+	return result
 }
+
 func (i SharePointMigrationTaskStatus) isMultiValue() bool {
-    return false
+	return false
 }
