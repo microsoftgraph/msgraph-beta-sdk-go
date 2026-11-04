@@ -50,6 +50,8 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
 					return NewOnInteractiveAuthFlowStartListener(), nil
 				case "#microsoft.graph.onPasswordSubmitListener":
 					return NewOnPasswordSubmitListener(), nil
+				case "#microsoft.graph.onPasswordUpdateListener":
+					return NewOnPasswordUpdateListener(), nil
 				case "#microsoft.graph.onPhoneMethodLoadStartListener":
 					return NewOnPhoneMethodLoadStartListener(), nil
 				case "#microsoft.graph.onTokenIssuanceStartListener":

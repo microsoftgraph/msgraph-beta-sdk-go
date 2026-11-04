@@ -180,7 +180,7 @@ func (m *PasswordCredentialConfiguration) GetRestrictionType() *AppCredentialRes
 	return nil
 }
 
-// GetState gets the state property value. Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn't evaluated or enforced.
+// GetState gets the state property value. Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, audit, unknownFutureValue. If enabled, the restriction is evaluated and enforced. If disabled, the restriction isn't evaluated or enforced. If audit, the restriction is evaluated but not enforced.
 // returns a *AppManagementRestrictionState when successful
 func (m *PasswordCredentialConfiguration) GetState() *AppManagementRestrictionState {
 	val, err := m.GetBackingStore().Get("state")
@@ -295,7 +295,7 @@ func (m *PasswordCredentialConfiguration) SetRestrictionType(value *AppCredentia
 	}
 }
 
-// SetState sets the state property value. Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, unknownFutureValue. If enabled, the restriction is evaluated. If disabled, the restriction isn't evaluated or enforced.
+// SetState sets the state property value. Indicates whether the restriction is evaluated. The possible values are: enabled, disabled, audit, unknownFutureValue. If enabled, the restriction is evaluated and enforced. If disabled, the restriction isn't evaluated or enforced. If audit, the restriction is evaluated but not enforced.
 func (m *PasswordCredentialConfiguration) SetState(value *AppManagementRestrictionState) {
 	err := m.GetBackingStore().Set("state", value)
 	if err != nil {

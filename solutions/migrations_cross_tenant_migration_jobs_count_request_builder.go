@@ -48,7 +48,6 @@ func NewMigrationsCrossTenantMigrationJobsCountRequestBuilder(rawUrl string, req
 }
 
 // Get get the number of the resource
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MigrationsCrossTenantMigrationJobsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsCountRequestBuilderGetRequestConfiguration) (*int32, error) {
@@ -70,7 +69,6 @@ func (m *MigrationsCrossTenantMigrationJobsCountRequestBuilder) Get(ctx context.
 }
 
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsCountRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -86,7 +84,6 @@ func (m *MigrationsCrossTenantMigrationJobsCountRequestBuilder) ToGetRequestInfo
 }
 
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsCountRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsCountRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsCountRequestBuilder {
 	return NewMigrationsCrossTenantMigrationJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)

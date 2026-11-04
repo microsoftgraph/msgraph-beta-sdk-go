@@ -47,7 +47,7 @@ func (m *Error) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb
 	return m.backingStore
 }
 
-// GetCode gets the code property value. The error code
+// GetCode gets the code property value. The error code.
 // returns a *string when successful
 func (m *Error) GetCode() *string {
 	val, err := m.GetBackingStore().Get("code")
@@ -97,7 +97,7 @@ func (m *Error) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 	return res
 }
 
-// GetMessage gets the message property value. The message for the error
+// GetMessage gets the message property value. The message for the error.
 // returns a *string when successful
 func (m *Error) GetMessage() *string {
 	val, err := m.GetBackingStore().Get("message")
@@ -165,7 +165,7 @@ func (m *Error) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd
 	m.backingStore = value
 }
 
-// SetCode sets the code property value. The error code
+// SetCode sets the code property value. The error code.
 func (m *Error) SetCode(value *string) {
 	err := m.GetBackingStore().Set("code", value)
 	if err != nil {
@@ -173,7 +173,7 @@ func (m *Error) SetCode(value *string) {
 	}
 }
 
-// SetMessage sets the message property value. The message for the error
+// SetMessage sets the message property value. The message for the error.
 func (m *Error) SetMessage(value *string) {
 	err := m.GetBackingStore().Set("message", value)
 	if err != nil {

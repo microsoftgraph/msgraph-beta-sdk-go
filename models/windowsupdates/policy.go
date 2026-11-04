@@ -36,6 +36,10 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 			}
 			if mappingValue != nil {
 				switch *mappingValue {
+				case "#microsoft.graph.windowsUpdates.driverUpdatePolicy":
+					return NewDriverUpdatePolicy(), nil
+				case "#microsoft.graph.windowsUpdates.featureUpdatePolicy":
+					return NewFeatureUpdatePolicy(), nil
 				case "#microsoft.graph.windowsUpdates.qualityUpdatePolicy":
 					return NewQualityUpdatePolicy(), nil
 				}
@@ -45,7 +49,20 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 	return NewPolicy(), nil
 }
 
-// GetApplicableContent gets the applicableContent property value. Represents content applicable for offering to the related collection of devices.
+// GetApplicableCatalogs gets the applicableCatalogs property value. The catalog entries that apply to devices targeted by the policy.
+// returns a []ApplicableCatalogable when successful
+func (m *Policy) GetApplicableCatalogs() []ApplicableCatalogable {
+	val, err := m.GetBackingStore().Get("applicableCatalogs")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ApplicableCatalogable)
+	}
+	return nil
+}
+
+// GetApplicableContent gets the applicableContent property value. The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
 // returns a []ApplicableContentable when successful
 func (m *Policy) GetApplicableContent() []ApplicableContentable {
 	val, err := m.GetBackingStore().Get("applicableContent")
@@ -71,7 +88,7 @@ func (m *Policy) GetApprovalRules() []ApprovalRuleable {
 	return nil
 }
 
-// GetApprovals gets the approvals property value. Represents a set of quality updates policy approval types.
+// GetApprovals gets the approvals property value. The update content approvals associated with the policy.
 // returns a []PolicyApprovalable when successful
 func (m *Policy) GetApprovals() []PolicyApprovalable {
 	val, err := m.GetBackingStore().Get("approvals")
@@ -127,6 +144,22 @@ func (m *Policy) GetDisplayName() *string {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *Policy) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["applicableCatalogs"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateApplicableCatalogFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ApplicableCatalogable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ApplicableCatalogable)
+				}
+			}
+			m.SetApplicableCatalogs(res)
+		}
+		return nil
+	}
 	res["applicableContent"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateApplicableContentFromDiscriminatorValue)
 		if err != nil {
@@ -247,7 +280,7 @@ func (m *Policy) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f
 	return nil
 }
 
-// GetRings gets the rings property value. Represents a set of deployment rings that contains update deployment settings.
+// GetRings gets the rings property value. The deployment rings that define targeting, deferral, and pause settings for the policy.
 // returns a []Ringable when successful
 func (m *Policy) GetRings() []Ringable {
 	val, err := m.GetBackingStore().Get("rings")
@@ -265,6 +298,18 @@ func (m *Policy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 	err := m.Entity.Serialize(writer)
 	if err != nil {
 		return err
+	}
+	if m.GetApplicableCatalogs() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplicableCatalogs()))
+		for i, v := range m.GetApplicableCatalogs() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("applicableCatalogs", cast)
+		if err != nil {
+			return err
+		}
 	}
 	if m.GetApplicableContent() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplicableContent()))
@@ -341,7 +386,15 @@ func (m *Policy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
 	return nil
 }
 
-// SetApplicableContent sets the applicableContent property value. Represents content applicable for offering to the related collection of devices.
+// SetApplicableCatalogs sets the applicableCatalogs property value. The catalog entries that apply to devices targeted by the policy.
+func (m *Policy) SetApplicableCatalogs(value []ApplicableCatalogable) {
+	err := m.GetBackingStore().Set("applicableCatalogs", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetApplicableContent sets the applicableContent property value. The existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
 func (m *Policy) SetApplicableContent(value []ApplicableContentable) {
 	err := m.GetBackingStore().Set("applicableContent", value)
 	if err != nil {
@@ -357,7 +410,7 @@ func (m *Policy) SetApprovalRules(value []ApprovalRuleable) {
 	}
 }
 
-// SetApprovals sets the approvals property value. Represents a set of quality updates policy approval types.
+// SetApprovals sets the approvals property value. The update content approvals associated with the policy.
 func (m *Policy) SetApprovals(value []PolicyApprovalable) {
 	err := m.GetBackingStore().Set("approvals", value)
 	if err != nil {
@@ -397,7 +450,7 @@ func (m *Policy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a
 	}
 }
 
-// SetRings sets the rings property value. Represents a set of deployment rings that contains update deployment settings.
+// SetRings sets the rings property value. The deployment rings that define targeting, deferral, and pause settings for the policy.
 func (m *Policy) SetRings(value []Ringable) {
 	err := m.GetBackingStore().Set("rings", value)
 	if err != nil {
@@ -408,6 +461,7 @@ func (m *Policy) SetRings(value []Ringable) {
 type Policyable interface {
 	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetApplicableCatalogs() []ApplicableCatalogable
 	GetApplicableContent() []ApplicableContentable
 	GetApprovalRules() []ApprovalRuleable
 	GetApprovals() []PolicyApprovalable
@@ -416,6 +470,7 @@ type Policyable interface {
 	GetDisplayName() *string
 	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetRings() []Ringable
+	SetApplicableCatalogs(value []ApplicableCatalogable)
 	SetApplicableContent(value []ApplicableContentable)
 	SetApprovalRules(value []ApprovalRuleable)
 	SetApprovals(value []PolicyApprovalable)

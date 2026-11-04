@@ -44,7 +44,7 @@ func (m *Comment) GetFieldDeserializers() map[string]func(i878a80d2330e89d268963
 	return res
 }
 
-// GetMessage gets the message property value. The comment body. Supports $filter.
+// GetMessage gets the message property value. The comment body. The maximum length is 1,000 characters for incident cases and 5,000 characters for generic cases. Supports $filter.
 // returns a *string when successful
 func (m *Comment) GetMessage() *string {
 	val, err := m.GetBackingStore().Get("message")
@@ -72,7 +72,7 @@ func (m *Comment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 	return nil
 }
 
-// SetMessage sets the message property value. The comment body. Supports $filter.
+// SetMessage sets the message property value. The comment body. The maximum length is 1,000 characters for incident cases and 5,000 characters for generic cases. Supports $filter.
 func (m *Comment) SetMessage(value *string) {
 	err := m.GetBackingStore().Set("message", value)
 	if err != nil {

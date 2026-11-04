@@ -41,7 +41,7 @@ func (m *AgentMetadata) GetAdditionalData() map[string]any {
 	return val.(map[string]any)
 }
 
-// GetAgentAdministrativeUnitId gets the agentAdministrativeUnitId property value. The agentAdministrativeUnitId property
+// GetAgentAdministrativeUnitId gets the agentAdministrativeUnitId property value. The identifier of the administrative unit associated with the agent. Optional.
 // returns a *string when successful
 func (m *AgentMetadata) GetAgentAdministrativeUnitId() *string {
 	val, err := m.GetBackingStore().Get("agentAdministrativeUnitId")
@@ -54,7 +54,7 @@ func (m *AgentMetadata) GetAgentAdministrativeUnitId() *string {
 	return nil
 }
 
-// GetAgentBlueprintId gets the agentBlueprintId property value. The agentBlueprintId property
+// GetAgentBlueprintId gets the agentBlueprintId property value. The identifier of the blueprint from which the agent was created. Optional.
 // returns a *string when successful
 func (m *AgentMetadata) GetAgentBlueprintId() *string {
 	val, err := m.GetBackingStore().Get("agentBlueprintId")
@@ -67,7 +67,7 @@ func (m *AgentMetadata) GetAgentBlueprintId() *string {
 	return nil
 }
 
-// GetAgentCategory gets the agentCategory property value. The agentCategory property
+// GetAgentCategory gets the agentCategory property value. The category of the agent, for example, Agents.Foundry.MicrosoftAzure, Agents.Copilot.Studio, or Agents.Local. Optional.
 // returns a *string when successful
 func (m *AgentMetadata) GetAgentCategory() *string {
 	val, err := m.GetBackingStore().Get("agentCategory")
@@ -80,7 +80,7 @@ func (m *AgentMetadata) GetAgentCategory() *string {
 	return nil
 }
 
-// GetAgentOwner gets the agentOwner property value. The agentOwner property
+// GetAgentOwner gets the agentOwner property value. The owner associated with the agent. Optional.
 // returns a *string when successful
 func (m *AgentMetadata) GetAgentOwner() *string {
 	val, err := m.GetBackingStore().Get("agentOwner")
@@ -93,7 +93,7 @@ func (m *AgentMetadata) GetAgentOwner() *string {
 	return nil
 }
 
-// GetAgentPublisher gets the agentPublisher property value. The agentPublisher property
+// GetAgentPublisher gets the agentPublisher property value. The publisher associated with the agent. Optional.
 // returns a *string when successful
 func (m *AgentMetadata) GetAgentPublisher() *string {
 	val, err := m.GetBackingStore().Get("agentPublisher")
@@ -106,7 +106,7 @@ func (m *AgentMetadata) GetAgentPublisher() *string {
 	return nil
 }
 
-// GetAltAgentIds gets the altAgentIds property value. The altAgentIds property
+// GetAltAgentIds gets the altAgentIds property value. Alternate identifiers that can identify the agent. Required when agentMetadata is provided. Use an empty collection ([]) when the agent has no alternate identifiers.
 // returns a []string when successful
 func (m *AgentMetadata) GetAltAgentIds() []string {
 	val, err := m.GetBackingStore().Get("altAgentIds")
@@ -218,7 +218,7 @@ func (m *AgentMetadata) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 	return res
 }
 
-// GetIsEntraAgentId gets the isEntraAgentId property value. The isEntraAgentId property
+// GetIsEntraAgentId gets the isEntraAgentId property value. Indicates whether the value property of the associated policyLocationAgent is a Microsoft Entra agent ID. Required when agentMetadata is provided.
 // returns a *bool when successful
 func (m *AgentMetadata) GetIsEntraAgentId() *bool {
 	val, err := m.GetBackingStore().Get("isEntraAgentId")
@@ -311,7 +311,7 @@ func (m *AgentMetadata) SetAdditionalData(value map[string]any) {
 	}
 }
 
-// SetAgentAdministrativeUnitId sets the agentAdministrativeUnitId property value. The agentAdministrativeUnitId property
+// SetAgentAdministrativeUnitId sets the agentAdministrativeUnitId property value. The identifier of the administrative unit associated with the agent. Optional.
 func (m *AgentMetadata) SetAgentAdministrativeUnitId(value *string) {
 	err := m.GetBackingStore().Set("agentAdministrativeUnitId", value)
 	if err != nil {
@@ -319,7 +319,7 @@ func (m *AgentMetadata) SetAgentAdministrativeUnitId(value *string) {
 	}
 }
 
-// SetAgentBlueprintId sets the agentBlueprintId property value. The agentBlueprintId property
+// SetAgentBlueprintId sets the agentBlueprintId property value. The identifier of the blueprint from which the agent was created. Optional.
 func (m *AgentMetadata) SetAgentBlueprintId(value *string) {
 	err := m.GetBackingStore().Set("agentBlueprintId", value)
 	if err != nil {
@@ -327,7 +327,7 @@ func (m *AgentMetadata) SetAgentBlueprintId(value *string) {
 	}
 }
 
-// SetAgentCategory sets the agentCategory property value. The agentCategory property
+// SetAgentCategory sets the agentCategory property value. The category of the agent, for example, Agents.Foundry.MicrosoftAzure, Agents.Copilot.Studio, or Agents.Local. Optional.
 func (m *AgentMetadata) SetAgentCategory(value *string) {
 	err := m.GetBackingStore().Set("agentCategory", value)
 	if err != nil {
@@ -335,7 +335,7 @@ func (m *AgentMetadata) SetAgentCategory(value *string) {
 	}
 }
 
-// SetAgentOwner sets the agentOwner property value. The agentOwner property
+// SetAgentOwner sets the agentOwner property value. The owner associated with the agent. Optional.
 func (m *AgentMetadata) SetAgentOwner(value *string) {
 	err := m.GetBackingStore().Set("agentOwner", value)
 	if err != nil {
@@ -343,7 +343,7 @@ func (m *AgentMetadata) SetAgentOwner(value *string) {
 	}
 }
 
-// SetAgentPublisher sets the agentPublisher property value. The agentPublisher property
+// SetAgentPublisher sets the agentPublisher property value. The publisher associated with the agent. Optional.
 func (m *AgentMetadata) SetAgentPublisher(value *string) {
 	err := m.GetBackingStore().Set("agentPublisher", value)
 	if err != nil {
@@ -351,7 +351,7 @@ func (m *AgentMetadata) SetAgentPublisher(value *string) {
 	}
 }
 
-// SetAltAgentIds sets the altAgentIds property value. The altAgentIds property
+// SetAltAgentIds sets the altAgentIds property value. Alternate identifiers that can identify the agent. Required when agentMetadata is provided. Use an empty collection ([]) when the agent has no alternate identifiers.
 func (m *AgentMetadata) SetAltAgentIds(value []string) {
 	err := m.GetBackingStore().Set("altAgentIds", value)
 	if err != nil {
@@ -364,7 +364,7 @@ func (m *AgentMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41
 	m.backingStore = value
 }
 
-// SetIsEntraAgentId sets the isEntraAgentId property value. The isEntraAgentId property
+// SetIsEntraAgentId sets the isEntraAgentId property value. Indicates whether the value property of the associated policyLocationAgent is a Microsoft Entra agent ID. Required when agentMetadata is provided.
 func (m *AgentMetadata) SetIsEntraAgentId(value *bool) {
 	err := m.GetBackingStore().Set("isEntraAgentId", value)
 	if err != nil {

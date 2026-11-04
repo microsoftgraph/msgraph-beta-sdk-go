@@ -49,6 +49,16 @@ func (m *CopilotPolicySetting) GetFieldDeserializers() map[string]func(i878a80d2
 		}
 		return nil
 	}
+	res["valueObject"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCopilotPolicySettingValueObjectFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetValueObject(val.(CopilotPolicySettingValueObjectable))
+		}
+		return nil
+	}
 	return res
 }
 
@@ -78,6 +88,19 @@ func (m *CopilotPolicySetting) GetValue() *string {
 	return nil
 }
 
+// GetValueObject gets the valueObject property value. The native JSON representation of a complex setting, or null for scalar settings.
+// returns a CopilotPolicySettingValueObjectable when successful
+func (m *CopilotPolicySetting) GetValueObject() CopilotPolicySettingValueObjectable {
+	val, err := m.GetBackingStore().Get("valueObject")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CopilotPolicySettingValueObjectable)
+	}
+	return nil
+}
+
 // Serialize serializes information the current object
 func (m *CopilotPolicySetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
 	err := m.Entity.Serialize(writer)
@@ -92,6 +115,12 @@ func (m *CopilotPolicySetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
 	}
 	{
 		err = writer.WriteStringValue("value", m.GetValue())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("valueObject", m.GetValueObject())
 		if err != nil {
 			return err
 		}
@@ -115,11 +144,21 @@ func (m *CopilotPolicySetting) SetValue(value *string) {
 	}
 }
 
+// SetValueObject sets the valueObject property value. The native JSON representation of a complex setting, or null for scalar settings.
+func (m *CopilotPolicySetting) SetValueObject(value CopilotPolicySettingValueObjectable) {
+	err := m.GetBackingStore().Set("valueObject", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type CopilotPolicySettingable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetPolicyId() *string
 	GetValue() *string
+	GetValueObject() CopilotPolicySettingValueObjectable
 	SetPolicyId(value *string)
 	SetValue(value *string)
+	SetValueObject(value CopilotPolicySettingValueObjectable)
 }

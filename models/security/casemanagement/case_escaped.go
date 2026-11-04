@@ -231,7 +231,7 @@ func (m *CaseEscaped) GetRelations() []Relationable {
 	return nil
 }
 
-// GetSlaPolicies gets the slaPolicies property value. A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
+// GetSlaPolicies gets the slaPolicies property value. A read-only collection of SLA (service level agreement) policy status entries for the case. Each entry contains the policy's current status and breach target time. Computed by the service. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
 // returns a []CaseSlaPolicyEntryable when successful
 func (m *CaseEscaped) GetSlaPolicies() []CaseSlaPolicyEntryable {
 	val, err := m.GetBackingStore().Get("slaPolicies")
@@ -385,7 +385,7 @@ func (m *CaseEscaped) SetRelations(value []Relationable) {
 	}
 }
 
-// SetSlaPolicies sets the slaPolicies property value. A denormalized, read-only collection of SLA (service level agreement) policy status entries for the case. Each entry represents one SLA policy applied to the case, including its current status and breach target time. Computed by the service; any value supplied in a create or update request is silently ignored. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
+// SetSlaPolicies sets the slaPolicies property value. A read-only collection of SLA (service level agreement) policy status entries for the case. Each entry contains the policy's current status and breach target time. Computed by the service. Supports $filter using the any() lambda operator only, for example, $filter=slaPolicies/any(p: p/status eq 'breached'). The all() lambda operator and other collection functions aren't supported. Doesn't support $orderby.
 func (m *CaseEscaped) SetSlaPolicies(value []CaseSlaPolicyEntryable) {
 	err := m.GetBackingStore().Set("slaPolicies", value)
 	if err != nil {

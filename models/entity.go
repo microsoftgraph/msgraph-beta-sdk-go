@@ -776,6 +776,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewCloudPcBulkPowerOn(), nil
 				case "#microsoft.graph.cloudPcBulkReinstallAgent":
 					return NewCloudPcBulkReinstallAgent(), nil
+				case "#microsoft.graph.cloudPcBulkRelocate":
+					return NewCloudPcBulkRelocate(), nil
 				case "#microsoft.graph.cloudPcBulkReprovision":
 					return NewCloudPcBulkReprovision(), nil
 				case "#microsoft.graph.cloudPcBulkResize":
@@ -2444,6 +2446,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewOnPasswordSubmitCustomExtension(), nil
 				case "#microsoft.graph.onPasswordSubmitListener":
 					return NewOnPasswordSubmitListener(), nil
+				case "#microsoft.graph.onPasswordUpdateCustomExtension":
+					return NewOnPasswordUpdateCustomExtension(), nil
+				case "#microsoft.graph.onPasswordUpdateListener":
+					return NewOnPasswordUpdateListener(), nil
 				case "#microsoft.graph.onPhoneMethodLoadStartListener":
 					return NewOnPhoneMethodLoadStartListener(), nil
 				case "#microsoft.graph.onPremAuthenticationPolicy":
@@ -2930,6 +2936,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewRoleDefinition(), nil
 				case "#microsoft.graph.roleManagementAlert":
 					return NewRoleManagementAlert(), nil
+				case "#microsoft.graph.roleManagementCustomCalloutExtension":
+					return NewRoleManagementCustomCalloutExtension(), nil
 				case "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration":
 					return NewRolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration(), nil
 				case "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident":
@@ -3464,6 +3472,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewUnifiedRoleManagementPolicyAssignment(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule":
 					return NewUnifiedRoleManagementPolicyAuthenticationContextRule(), nil
+				case "#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule":
+					return NewUnifiedRoleManagementPolicyCustomExtensionRule(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule":
 					return NewUnifiedRoleManagementPolicyEnablementRule(), nil
 				case "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule":

@@ -36,6 +36,8 @@ func CreateApprovalRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
 			}
 			if mappingValue != nil {
 				switch *mappingValue {
+				case "#microsoft.graph.windowsUpdates.driverUpdateApprovalRule":
+					return NewDriverUpdateApprovalRule(), nil
 				case "#microsoft.graph.windowsUpdates.qualityUpdateApprovalRule":
 					return NewQualityUpdateApprovalRule(), nil
 				case "#microsoft.graph.windowsUpdates.recoveryApprovalRule":

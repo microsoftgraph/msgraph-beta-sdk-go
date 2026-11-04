@@ -74,7 +74,7 @@ func (m *IdentityVerificationEventsConfiguration) GetFieldDeserializers() map[st
 	return res
 }
 
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether identity verification events and credential provenance information are collected and exposed for Verified ID verification across the tenant. The default value is false when this property is omitted from the configuration object.
 // returns a *bool when successful
 func (m *IdentityVerificationEventsConfiguration) GetIsEnabled() *bool {
 	val, err := m.GetBackingStore().Get("isEnabled")
@@ -136,7 +136,7 @@ func (m *IdentityVerificationEventsConfiguration) SetBackingStore(value ie8677ce
 	m.backingStore = value
 }
 
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether identity verification events and credential provenance information are collected and exposed for Verified ID verification across the tenant. The default value is false when this property is omitted from the configuration object.
 func (m *IdentityVerificationEventsConfiguration) SetIsEnabled(value *bool) {
 	err := m.GetBackingStore().Set("isEnabled", value)
 	if err != nil {

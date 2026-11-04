@@ -62,6 +62,16 @@ func (m *RuleSchedule) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 		}
 		return nil
 	}
+	res["lookback"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetISODurationValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetLookback(val)
+		}
+		return nil
+	}
 	res["nextRunDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetTimeValue()
 		if err != nil {
@@ -99,6 +109,19 @@ func (m *RuleSchedule) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 // returns a *ISODuration when successful
 func (m *RuleSchedule) GetFrequency() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration {
 	val, err := m.GetBackingStore().Get("frequency")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+	}
+	return nil
+}
+
+// GetLookback gets the lookback property value. The lookback property
+// returns a *ISODuration when successful
+func (m *RuleSchedule) GetLookback() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration {
+	val, err := m.GetBackingStore().Get("lookback")
 	if err != nil {
 		panic(err)
 	}
@@ -156,6 +179,12 @@ func (m *RuleSchedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 		}
 	}
 	{
+		err := writer.WriteISODurationValue("lookback", m.GetLookback())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err := writer.WriteTimeValue("nextRunDateTime", m.GetNextRunDateTime())
 		if err != nil {
 			return err
@@ -203,6 +232,14 @@ func (m *RuleSchedule) SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0
 	}
 }
 
+// SetLookback sets the lookback property value. The lookback property
+func (m *RuleSchedule) SetLookback(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+	err := m.GetBackingStore().Set("lookback", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetNextRunDateTime sets the nextRunDateTime property value. Timestamp of the custom detection rule's next scheduled run. Deprecated. This property will be removed from this resource on 2026-10-01.
 func (m *RuleSchedule) SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("nextRunDateTime", value)
@@ -233,11 +270,13 @@ type RuleScheduleable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 	GetFrequency() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
+	GetLookback() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration
 	GetNextRunDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetOdataType() *string
 	GetPeriod() *string
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+	SetLookback(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
 	SetNextRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetOdataType(value *string)
 	SetPeriod(value *string)

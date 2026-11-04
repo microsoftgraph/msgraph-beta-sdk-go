@@ -97,7 +97,7 @@ func (m *ExchangeOnlineCrossTenantMigrationSettings) GetOdataType() *string {
 	return nil
 }
 
-// GetSourceEndpoint gets the sourceEndpoint property value. Name of the Migration Endpoint in the source tenant
+// GetSourceEndpoint gets the sourceEndpoint property value. Name of the migration endpoint in the source tenant.
 // returns a *string when successful
 func (m *ExchangeOnlineCrossTenantMigrationSettings) GetSourceEndpoint() *string {
 	val, err := m.GetBackingStore().Get("sourceEndpoint")
@@ -110,7 +110,7 @@ func (m *ExchangeOnlineCrossTenantMigrationSettings) GetSourceEndpoint() *string
 	return nil
 }
 
-// GetTargetDeliveryDomain gets the targetDeliveryDomain property value. Delivery domain on the target tenant
+// GetTargetDeliveryDomain gets the targetDeliveryDomain property value. Delivery domain on the target tenant.
 // returns a *string when successful
 func (m *ExchangeOnlineCrossTenantMigrationSettings) GetTargetDeliveryDomain() *string {
 	val, err := m.GetBackingStore().Get("targetDeliveryDomain")
@@ -173,7 +173,7 @@ func (m *ExchangeOnlineCrossTenantMigrationSettings) SetOdataType(value *string)
 	}
 }
 
-// SetSourceEndpoint sets the sourceEndpoint property value. Name of the Migration Endpoint in the source tenant
+// SetSourceEndpoint sets the sourceEndpoint property value. Name of the migration endpoint in the source tenant.
 func (m *ExchangeOnlineCrossTenantMigrationSettings) SetSourceEndpoint(value *string) {
 	err := m.GetBackingStore().Set("sourceEndpoint", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *ExchangeOnlineCrossTenantMigrationSettings) SetSourceEndpoint(value *st
 	}
 }
 
-// SetTargetDeliveryDomain sets the targetDeliveryDomain property value. Delivery domain on the target tenant
+// SetTargetDeliveryDomain sets the targetDeliveryDomain property value. Delivery domain on the target tenant.
 func (m *ExchangeOnlineCrossTenantMigrationSettings) SetTargetDeliveryDomain(value *string) {
 	err := m.GetBackingStore().Set("targetDeliveryDomain", value)
 	if err != nil {

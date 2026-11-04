@@ -331,7 +331,7 @@ func (m *CrossTenantMigrationJob) GetResourceType() *string {
 	return nil
 }
 
-// GetSourceTenantId gets the sourceTenantId property value. ID (GUID) of the tenant that content is migrated from.
+// GetSourceTenantId gets the sourceTenantId property value. ID (GUID) of the source tenant for the content migration.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetSourceTenantId() *string {
 	val, err := m.GetBackingStore().Get("sourceTenantId")
@@ -357,7 +357,7 @@ func (m *CrossTenantMigrationJob) GetStatus() *CrossTenantMigrationJobStatus {
 	return nil
 }
 
-// GetTargetTenantId gets the targetTenantId property value. ID of the tenant that content is migrated to. Read-only.
+// GetTargetTenantId gets the targetTenantId property value. ID of the target tenant for the content migration. Read-only.
 // returns a *string when successful
 func (m *CrossTenantMigrationJob) GetTargetTenantId() *string {
 	val, err := m.GetBackingStore().Get("targetTenantId")
@@ -583,7 +583,7 @@ func (m *CrossTenantMigrationJob) SetResourceType(value *string) {
 	}
 }
 
-// SetSourceTenantId sets the sourceTenantId property value. ID (GUID) of the tenant that content is migrated from.
+// SetSourceTenantId sets the sourceTenantId property value. ID (GUID) of the source tenant for the content migration.
 func (m *CrossTenantMigrationJob) SetSourceTenantId(value *string) {
 	err := m.GetBackingStore().Set("sourceTenantId", value)
 	if err != nil {
@@ -599,7 +599,7 @@ func (m *CrossTenantMigrationJob) SetStatus(value *CrossTenantMigrationJobStatus
 	}
 }
 
-// SetTargetTenantId sets the targetTenantId property value. ID of the tenant that content is migrated to. Read-only.
+// SetTargetTenantId sets the targetTenantId property value. ID of the target tenant for the content migration. Read-only.
 func (m *CrossTenantMigrationJob) SetTargetTenantId(value *string) {
 	err := m.GetBackingStore().Set("targetTenantId", value)
 	if err != nil {

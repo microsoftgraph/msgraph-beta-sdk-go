@@ -172,7 +172,7 @@ func (m *TodoTaskList) GetIsShared() *bool {
 	return nil
 }
 
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Read-only. Nullable.
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Nullable.
 // returns a []SingleValueExtendedPropertyable when successful
 func (m *TodoTaskList) GetSingleValueExtendedProperties() []SingleValueExtendedPropertyable {
 	val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -313,7 +313,7 @@ func (m *TodoTaskList) SetIsShared(value *bool) {
 	}
 }
 
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Read-only. Nullable.
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the task list. Nullable.
 func (m *TodoTaskList) SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable) {
 	err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
 	if err != nil {

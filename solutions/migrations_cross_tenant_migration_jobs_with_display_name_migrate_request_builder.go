@@ -39,7 +39,6 @@ func NewMigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder(r
 }
 
 // Post migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -64,7 +63,6 @@ func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder)
 }
 
 // ToPostRequestInformation migrate a cross-tenant migration job asynchronously. The job must pass validation before migration can start. After a job is created by using the Create crossTenantMigrationJob method and validated by using the validate action, call this action to start the migration of user data from the source tenant to the target tenant for the specified workloads. Validation results expire after seven days; if expired, revalidate the job before you call the migrate API. This action is asynchronous. After you call the migrate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of completed, completedWithErrors, or failed.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +75,6 @@ func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder)
 }
 
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder {
 	return NewMigrationsCrossTenantMigrationJobsWithDisplayNameMigrateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)

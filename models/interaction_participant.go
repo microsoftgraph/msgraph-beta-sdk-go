@@ -109,7 +109,7 @@ func (m *InteractionParticipant) GetOdataType() *string {
 	return nil
 }
 
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The identifier of the participant. Required.
 // returns a *string when successful
 func (m *InteractionParticipant) GetValue() *string {
 	val, err := m.GetBackingStore().Get("value")
@@ -166,7 +166,7 @@ func (m *InteractionParticipant) SetOdataType(value *string) {
 	}
 }
 
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The identifier of the participant. Required.
 func (m *InteractionParticipant) SetValue(value *string) {
 	err := m.GetBackingStore().Set("value", value)
 	if err != nil {

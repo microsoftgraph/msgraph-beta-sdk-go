@@ -5,6 +5,7 @@ package models
 
 import (
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+	i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
 )
 
 type UnifiedRoleDefinition struct {
@@ -34,6 +35,19 @@ func (m *UnifiedRoleDefinition) GetAllowedPrincipalTypes() *AllowedRolePrincipal
 	}
 	if val != nil {
 		return val.(*AllowedRolePrincipalTypes)
+	}
+	return nil
+}
+
+// GetDeletedDateTime gets the deletedDateTime property value. The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.
+// returns a *Time when successful
+func (m *UnifiedRoleDefinition) GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("deletedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	}
 	return nil
 }
@@ -75,6 +89,16 @@ func (m *UnifiedRoleDefinition) GetFieldDeserializers() map[string]func(i878a80d
 		}
 		if val != nil {
 			m.SetAllowedPrincipalTypes(val.(*AllowedRolePrincipalTypes))
+		}
+		return nil
+	}
+	res["deletedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedDateTime(val)
 		}
 		return nil
 	}
@@ -317,6 +341,12 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 		}
 	}
 	{
+		err = writer.WriteTimeValue("deletedDateTime", m.GetDeletedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteStringValue("description", m.GetDescription())
 		if err != nil {
 			return err
@@ -394,6 +424,14 @@ func (m *UnifiedRoleDefinition) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetAllowedPrincipalTypes sets the allowedPrincipalTypes property value. Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
 func (m *UnifiedRoleDefinition) SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes) {
 	err := m.GetBackingStore().Set("allowedPrincipalTypes", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetDeletedDateTime sets the deletedDateTime property value. The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.
+func (m *UnifiedRoleDefinition) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("deletedDateTime", value)
 	if err != nil {
 		panic(err)
 	}
@@ -483,6 +521,7 @@ type UnifiedRoleDefinitionable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetAllowedPrincipalTypes() *AllowedRolePrincipalTypes
+	GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetDescription() *string
 	GetDisplayName() *string
 	GetInheritsPermissionsFrom() []UnifiedRoleDefinitionable
@@ -494,6 +533,7 @@ type UnifiedRoleDefinitionable interface {
 	GetTemplateId() *string
 	GetVersion() *string
 	SetAllowedPrincipalTypes(value *AllowedRolePrincipalTypes)
+	SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetDescription(value *string)
 	SetDisplayName(value *string)
 	SetInheritsPermissionsFrom(value []UnifiedRoleDefinitionable)

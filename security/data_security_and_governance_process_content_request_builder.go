@@ -38,7 +38,7 @@ func NewDataSecurityAndGovernanceProcessContentRequestBuilder(rawUrl string, req
 	return NewDataSecurityAndGovernanceProcessContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post evaluate content against Microsoft Purview Data Loss Prevention (DLP) policies and return the policy actions that apply to the supplied content. Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool (A2T) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies. For A2T scenarios: The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.
+// Post process content from an agent interaction against tenant data protection policies. The protected agent is identified in protectedAppMetadata.applicationLocation, and the other parties in the interaction are identified in activityMetadata.participants.
 // returns a ProcessContentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -62,7 +62,7 @@ func (m *DataSecurityAndGovernanceProcessContentRequestBuilder) Post(ctx context
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProcessContentResponseable), nil
 }
 
-// ToPostRequestInformation evaluate content against Microsoft Purview Data Loss Prevention (DLP) policies and return the policy actions that apply to the supplied content. Use this API when an application needs to evaluate content before or during data movement. In Agent-to-Tool (A2T) scenarios, the agent runtime calls this API before invoking an external tool to determine whether the content should be allowed, blocked, or audited according to Microsoft Purview policies. For A2T scenarios: The response contains any applicable policy actions together with the protection scope state, allowing callers to determine whether cached protection scopes should be refreshed.
+// ToPostRequestInformation process content from an agent interaction against tenant data protection policies. The protected agent is identified in protectedAppMetadata.applicationLocation, and the other parties in the interaction are identified in activityMetadata.participants.
 // returns a *RequestInformation when successful
 func (m *DataSecurityAndGovernanceProcessContentRequestBuilder) ToPostRequestInformation(ctx context.Context, body DataSecurityAndGovernanceProcessContentPostRequestBodyable, requestConfiguration *DataSecurityAndGovernanceProcessContentRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

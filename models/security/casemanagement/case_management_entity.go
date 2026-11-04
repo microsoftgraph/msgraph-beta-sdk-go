@@ -58,6 +58,8 @@ func CreateCaseManagementEntityFromDiscriminatorValue(parseNode i878a80d2330e89d
 					return NewRecommendationRelation(), nil
 				case "#microsoft.graph.security.caseManagement.relation":
 					return NewRelation(), nil
+				case "#microsoft.graph.security.caseManagement.slaPolicyDefinition":
+					return NewSlaPolicyDefinition(), nil
 				case "#microsoft.graph.security.caseManagement.task":
 					return NewTask(), nil
 				case "#microsoft.graph.security.caseManagement.workspaceIndicatorRelation":

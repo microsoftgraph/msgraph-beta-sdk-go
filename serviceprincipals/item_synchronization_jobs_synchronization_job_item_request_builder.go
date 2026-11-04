@@ -114,6 +114,12 @@ func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) Get(ctx co
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SynchronizationJobable), nil
 }
 
+// ObjectConnections provides operations to manage the objectConnections property of the microsoft.graph.synchronizationJob entity.
+// returns a *ItemSynchronizationJobsItemObjectConnectionsRequestBuilder when successful
+func (m *ItemSynchronizationJobsSynchronizationJobItemRequestBuilder) ObjectConnections() *ItemSynchronizationJobsItemObjectConnectionsRequestBuilder {
+	return NewItemSynchronizationJobsItemObjectConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Patch update the navigation property jobs in servicePrincipals
 // returns a SynchronizationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -44,7 +44,7 @@ func (m *ToolParticipant) GetFieldDeserializers() map[string]func(i878a80d2330e8
 	return res
 }
 
-// GetMcpServerId gets the mcpServerId property value. The mcpServerId property
+// GetMcpServerId gets the mcpServerId property value. The stable identifier of the Model Context Protocol (MCP) server that hosts the tool. Optional.
 // returns a *string when successful
 func (m *ToolParticipant) GetMcpServerId() *string {
 	val, err := m.GetBackingStore().Get("mcpServerId")
@@ -72,7 +72,7 @@ func (m *ToolParticipant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
 	return nil
 }
 
-// SetMcpServerId sets the mcpServerId property value. The mcpServerId property
+// SetMcpServerId sets the mcpServerId property value. The stable identifier of the Model Context Protocol (MCP) server that hosts the tool. Optional.
 func (m *ToolParticipant) SetMcpServerId(value *string) {
 	err := m.GetBackingStore().Set("mcpServerId", value)
 	if err != nil {

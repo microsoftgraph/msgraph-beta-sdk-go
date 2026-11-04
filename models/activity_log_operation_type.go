@@ -17,11 +17,12 @@ const (
 	POLICYLEVELOFFBOARDING_ACTIVITYLOGOPERATIONTYPE
 	RESTORETASKCREATED_ACTIVITYLOGOPERATIONTYPE
 	RESTORETASKCOMPLETED_ACTIVITYLOGOPERATIONTYPE
+	BACKUPPOLICYDELETED_ACTIVITYLOGOPERATIONTYPE
 	UNKNOWNFUTUREVALUE_ACTIVITYLOGOPERATIONTYPE
 )
 
 func (i ActivityLogOperationType) String() string {
-	return []string{"backupPolicyCreated", "backupPolicyActivated", "backupPolicyModified", "backupPolicyPaused", "backupPolicyRenamed", "dynamicRuleExecution", "dynamicRuleDeletion", "protectionUnitLevelOffboarding", "policyLevelOffboarding", "restoreTaskCreated", "restoreTaskCompleted", "unknownFutureValue"}[i]
+	return []string{"backupPolicyCreated", "backupPolicyActivated", "backupPolicyModified", "backupPolicyPaused", "backupPolicyRenamed", "dynamicRuleExecution", "dynamicRuleDeletion", "protectionUnitLevelOffboarding", "policyLevelOffboarding", "restoreTaskCreated", "restoreTaskCompleted", "backupPolicyDeleted", "unknownFutureValue"}[i]
 }
 
 func ParseActivityLogOperationType(v string) (any, error) {
@@ -49,6 +50,8 @@ func ParseActivityLogOperationType(v string) (any, error) {
 		result = RESTORETASKCREATED_ACTIVITYLOGOPERATIONTYPE
 	case "restoreTaskCompleted":
 		result = RESTORETASKCOMPLETED_ACTIVITYLOGOPERATIONTYPE
+	case "backupPolicyDeleted":
+		result = BACKUPPOLICYDELETED_ACTIVITYLOGOPERATIONTYPE
 	case "unknownFutureValue":
 		result = UNKNOWNFUTUREVALUE_ACTIVITYLOGOPERATIONTYPE
 	default:

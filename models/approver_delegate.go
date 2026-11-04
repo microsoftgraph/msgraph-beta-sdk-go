@@ -47,7 +47,7 @@ func (m *ApproverDelegate) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d411
 	return m.backingStore
 }
 
-// GetDelegate gets the delegate property value. The identity that receives the approval delegation. Only singleUser and groupMembers are currently supported.
+// GetDelegate gets the delegate property value. The user or group that receives the approval delegation. Only the singleUser and groupMembers subtypes are supported.
 // returns a UserSetable when successful
 func (m *ApproverDelegate) GetDelegate() UserSetable {
 	val, err := m.GetBackingStore().Get("delegate")
@@ -110,7 +110,7 @@ func (m *ApproverDelegate) GetOdataType() *string {
 	return nil
 }
 
-// GetSchedule gets the schedule property value. The schedule for the delegation, including start date and expiration pattern (duration, end date, or no expiration).
+// GetSchedule gets the schedule property value. The period during which the delegation is in effect, expressed as a start date and an expiration pattern. If you don't specify a schedule, the delegation starts immediately and doesn't expire.
 // returns a RequestScheduleable when successful
 func (m *ApproverDelegate) GetSchedule() RequestScheduleable {
 	val, err := m.GetBackingStore().Get("schedule")
@@ -165,7 +165,7 @@ func (m *ApproverDelegate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078
 	m.backingStore = value
 }
 
-// SetDelegate sets the delegate property value. The identity that receives the approval delegation. Only singleUser and groupMembers are currently supported.
+// SetDelegate sets the delegate property value. The user or group that receives the approval delegation. Only the singleUser and groupMembers subtypes are supported.
 func (m *ApproverDelegate) SetDelegate(value UserSetable) {
 	err := m.GetBackingStore().Set("delegate", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *ApproverDelegate) SetOdataType(value *string) {
 	}
 }
 
-// SetSchedule sets the schedule property value. The schedule for the delegation, including start date and expiration pattern (duration, end date, or no expiration).
+// SetSchedule sets the schedule property value. The period during which the delegation is in effect, expressed as a start date and an expiration pattern. If you don't specify a schedule, the delegation starts immediately and doesn't expire.
 func (m *ApproverDelegate) SetSchedule(value RequestScheduleable) {
 	err := m.GetBackingStore().Set("schedule", value)
 	if err != nil {

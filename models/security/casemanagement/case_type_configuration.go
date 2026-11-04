@@ -105,6 +105,22 @@ func (m *CaseTypeConfiguration) GetFieldDeserializers() map[string]func(i878a80d
 		}
 		return nil
 	}
+	res["slaPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateSlaPolicyDefinitionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]SlaPolicyDefinitionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(SlaPolicyDefinitionable)
+				}
+			}
+			m.SetSlaPolicies(res)
+		}
+		return nil
+	}
 	res["statuses"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateStatusDefinitionFromDiscriminatorValue)
 		if err != nil {
@@ -122,6 +138,19 @@ func (m *CaseTypeConfiguration) GetFieldDeserializers() map[string]func(i878a80d
 		return nil
 	}
 	return res
+}
+
+// GetSlaPolicies gets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// returns a []SlaPolicyDefinitionable when successful
+func (m *CaseTypeConfiguration) GetSlaPolicies() []SlaPolicyDefinitionable {
+	val, err := m.GetBackingStore().Get("slaPolicies")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]SlaPolicyDefinitionable)
+	}
+	return nil
 }
 
 // GetStatuses gets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
@@ -167,6 +196,18 @@ func (m *CaseTypeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
 			return err
 		}
 	}
+	if m.GetSlaPolicies() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSlaPolicies()))
+		for i, v := range m.GetSlaPolicies() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("slaPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetStatuses() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStatuses()))
 		for i, v := range m.GetStatuses() {
@@ -206,6 +247,14 @@ func (m *CaseTypeConfiguration) SetDisplayName(value *string) {
 	}
 }
 
+// SetSlaPolicies sets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+func (m *CaseTypeConfiguration) SetSlaPolicies(value []SlaPolicyDefinitionable) {
+	err := m.GetBackingStore().Set("slaPolicies", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetStatuses sets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
 func (m *CaseTypeConfiguration) SetStatuses(value []StatusDefinitionable) {
 	err := m.GetBackingStore().Set("statuses", value)
@@ -220,9 +269,11 @@ type CaseTypeConfigurationable interface {
 	GetCustomFields() []CustomFieldDefinitionable
 	GetDefaultStatusId() *string
 	GetDisplayName() *string
+	GetSlaPolicies() []SlaPolicyDefinitionable
 	GetStatuses() []StatusDefinitionable
 	SetCustomFields(value []CustomFieldDefinitionable)
 	SetDefaultStatusId(value *string)
 	SetDisplayName(value *string)
+	SetSlaPolicies(value []SlaPolicyDefinitionable)
 	SetStatuses(value []StatusDefinitionable)
 }

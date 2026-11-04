@@ -39,7 +39,6 @@ func NewMigrationsCrossTenantMigrationJobsItemValidateRequestBuilder(rawUrl stri
 }
 
 // Post validate the configuration of a cross-tenant migration job asynchronously. This action doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -64,7 +63,6 @@ func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) Post(ctx 
 }
 
 // ToPostRequestInformation validate the configuration of a cross-tenant migration job asynchronously. This action doesn't migrate any content, but goes through validation for the specified workloads to find any errors or misconfigurations that affect an actual migration job. The job must be in a submitted or validateFailed status before you can call this action. This action is asynchronous. After you call the validate API, poll the Get crossTenantMigrationJob endpoint to check for a terminal status of validatePassed or validateFailed.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +75,6 @@ func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) ToPostReq
 }
 
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsItemValidateRequestBuilder {
 	return NewMigrationsCrossTenantMigrationJobsItemValidateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)

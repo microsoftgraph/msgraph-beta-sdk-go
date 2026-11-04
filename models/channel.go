@@ -52,6 +52,19 @@ func (m *Channel) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077
 	return nil
 }
 
+// GetDeletedDateTime gets the deletedDateTime property value. The deletedDateTime property
+// returns a *Time when successful
+func (m *Channel) GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("deletedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
 // GetDescription gets the description property value. Optional textual description for the channel.
 // returns a *string when successful
 func (m *Channel) GetDescription() *string {
@@ -131,6 +144,16 @@ func (m *Channel) GetFieldDeserializers() map[string]func(i878a80d2330e89d268963
 		}
 		if val != nil {
 			m.SetCreatedDateTime(val)
+		}
+		return nil
+	}
+	res["deletedDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDeletedDateTime(val)
 		}
 		return nil
 	}
@@ -629,6 +652,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 		}
 	}
 	{
+		err = writer.WriteTimeValue("deletedDateTime", m.GetDeletedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteStringValue("description", m.GetDescription())
 		if err != nil {
 			return err
@@ -812,6 +841,14 @@ func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
 	}
 }
 
+// SetDeletedDateTime sets the deletedDateTime property value. The deletedDateTime property
+func (m *Channel) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("deletedDateTime", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetDescription sets the description property value. Optional textual description for the channel.
 func (m *Channel) SetDescription(value *string) {
 	err := m.GetBackingStore().Set("description", value)
@@ -985,6 +1022,7 @@ type Channelable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetAllMembers() []ConversationMemberable
 	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetDescription() *string
 	GetDisplayName() *string
 	GetEmail() *string
@@ -1008,6 +1046,7 @@ type Channelable interface {
 	GetWebUrl() *string
 	SetAllMembers(value []ConversationMemberable)
 	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetDescription(value *string)
 	SetDisplayName(value *string)
 	SetEmail(value *string)

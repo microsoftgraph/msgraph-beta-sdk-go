@@ -60,7 +60,7 @@ func (m *ProcessContentRequest) GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd07
 	return m.backingStore
 }
 
-// GetContentEntries gets the contentEntries property value. A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. For the ContentActivity API only, use content activity metadata for DLP enforcement results or evaluation incomplete activity metadata when policy evaluation couldn't be completed. The ContentActivity-specific types aren't supported by the processContent or processContentAsync APIs. Required.
+// GetContentEntries gets the contentEntries property value. The content entries to process. Use processConversationMetadata for prompts and responses and processFileMetadata for files. For the ContentActivity API only, use contentActivityMetadata for DLP enforcement results or evaluationIncompleteActivityMetadata when policy evaluation couldn't be completed. The ContentActivity-specific types aren't supported by the processContent or processContentAsync APIs. Required.
 // returns a []ProcessContentMetadataBaseable when successful
 func (m *ProcessContentRequest) GetContentEntries() []ProcessContentMetadataBaseable {
 	val, err := m.GetBackingStore().Get("contentEntries")
@@ -231,7 +231,7 @@ func (m *ProcessContentRequest) GetOdataType() *string {
 	return nil
 }
 
-// GetProtectedAppMetadata gets the protectedAppMetadata property value. Metadata about the protected application making the request. Required.
+// GetProtectedAppMetadata gets the protectedAppMetadata property value. Metadata about the protected application. For an agent request, applicationLocation must be a policyLocationAgent. Required for agent requests; otherwise optional.
 // returns a ProtectedApplicationMetadataable when successful
 func (m *ProcessContentRequest) GetProtectedAppMetadata() ProtectedApplicationMetadataable {
 	val, err := m.GetBackingStore().Get("protectedAppMetadata")
@@ -330,7 +330,7 @@ func (m *ProcessContentRequest) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827e
 	m.backingStore = value
 }
 
-// SetContentEntries sets the contentEntries property value. A collection of content entries to be processed. Each entry contains the content itself and its metadata. Use conversation metadata for content like prompts and responses and file metadata for files. For the ContentActivity API only, use content activity metadata for DLP enforcement results or evaluation incomplete activity metadata when policy evaluation couldn't be completed. The ContentActivity-specific types aren't supported by the processContent or processContentAsync APIs. Required.
+// SetContentEntries sets the contentEntries property value. The content entries to process. Use processConversationMetadata for prompts and responses and processFileMetadata for files. For the ContentActivity API only, use contentActivityMetadata for DLP enforcement results or evaluationIncompleteActivityMetadata when policy evaluation couldn't be completed. The ContentActivity-specific types aren't supported by the processContent or processContentAsync APIs. Required.
 func (m *ProcessContentRequest) SetContentEntries(value []ProcessContentMetadataBaseable) {
 	err := m.GetBackingStore().Set("contentEntries", value)
 	if err != nil {
@@ -378,7 +378,7 @@ func (m *ProcessContentRequest) SetOdataType(value *string) {
 	}
 }
 
-// SetProtectedAppMetadata sets the protectedAppMetadata property value. Metadata about the protected application making the request. Required.
+// SetProtectedAppMetadata sets the protectedAppMetadata property value. Metadata about the protected application. For an agent request, applicationLocation must be a policyLocationAgent. Required for agent requests; otherwise optional.
 func (m *ProcessContentRequest) SetProtectedAppMetadata(value ProtectedApplicationMetadataable) {
 	err := m.GetBackingStore().Set("protectedAppMetadata", value)
 	if err != nil {

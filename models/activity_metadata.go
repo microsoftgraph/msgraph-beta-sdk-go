@@ -116,7 +116,7 @@ func (m *ActivityMetadata) GetOdataType() *string {
 	return nil
 }
 
-// GetParticipants gets the participants property value. The participants property
+// GetParticipants gets the participants property value. The other parties in an agent interaction. Specify the concrete participant type by using the @odata.type property. Required when evaluationScope.type is agent; otherwise optional.
 // returns a []InteractionParticipantable when successful
 func (m *ActivityMetadata) GetParticipants() []InteractionParticipantable {
 	val, err := m.GetBackingStore().Get("participants")
@@ -194,7 +194,7 @@ func (m *ActivityMetadata) SetOdataType(value *string) {
 	}
 }
 
-// SetParticipants sets the participants property value. The participants property
+// SetParticipants sets the participants property value. The other parties in an agent interaction. Specify the concrete participant type by using the @odata.type property. Required when evaluationScope.type is agent; otherwise optional.
 func (m *ActivityMetadata) SetParticipants(value []InteractionParticipantable) {
 	err := m.GetBackingStore().Set("participants", value)
 	if err != nil {

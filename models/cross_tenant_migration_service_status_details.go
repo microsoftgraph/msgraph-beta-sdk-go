@@ -47,7 +47,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) GetBackingStore() ie8677ce2c7
 	return m.backingStore
 }
 
-// GetErrors gets the errors property value. Errors associated with the migration for this service
+// GetErrors gets the errors property value. Errors associated with the migration for this service.
 // returns a []Errorable when successful
 func (m *CrossTenantMigrationServiceStatusDetails) GetErrors() []Errorable {
 	val, err := m.GetBackingStore().Get("errors")
@@ -123,7 +123,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) GetFieldDeserializers() map[s
 	return res
 }
 
-// GetMessage gets the message property value. Service status message
+// GetMessage gets the message property value. Service status message.
 // returns a *string when successful
 func (m *CrossTenantMigrationServiceStatusDetails) GetMessage() *string {
 	val, err := m.GetBackingStore().Get("message")
@@ -149,7 +149,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) GetOdataType() *string {
 	return nil
 }
 
-// GetService gets the service property value. Service or workload the status details are associated with
+// GetService gets the service property value. Service or workload associated with the status details.
 // returns a *string when successful
 func (m *CrossTenantMigrationServiceStatusDetails) GetService() *string {
 	val, err := m.GetBackingStore().Get("service")
@@ -236,7 +236,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) SetBackingStore(value ie8677c
 	m.backingStore = value
 }
 
-// SetErrors sets the errors property value. Errors associated with the migration for this service
+// SetErrors sets the errors property value. Errors associated with the migration for this service.
 func (m *CrossTenantMigrationServiceStatusDetails) SetErrors(value []Errorable) {
 	err := m.GetBackingStore().Set("errors", value)
 	if err != nil {
@@ -244,7 +244,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) SetErrors(value []Errorable) 
 	}
 }
 
-// SetMessage sets the message property value. Service status message
+// SetMessage sets the message property value. Service status message.
 func (m *CrossTenantMigrationServiceStatusDetails) SetMessage(value *string) {
 	err := m.GetBackingStore().Set("message", value)
 	if err != nil {
@@ -260,7 +260,7 @@ func (m *CrossTenantMigrationServiceStatusDetails) SetOdataType(value *string) {
 	}
 }
 
-// SetService sets the service property value. Service or workload the status details are associated with
+// SetService sets the service property value. Service or workload associated with the status details.
 func (m *CrossTenantMigrationServiceStatusDetails) SetService(value *string) {
 	err := m.GetBackingStore().Set("service", value)
 	if err != nil {

@@ -208,6 +208,12 @@ func (m *EnterpriseAppsItemRoleAssignmentScheduleRequestsUnifiedRoleAssignmentSc
 	return requestInfo, nil
 }
 
+// UpdateRequest provides operations to call the updateRequest method.
+// returns a *EnterpriseAppsItemRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder when successful
+func (m *EnterpriseAppsItemRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) UpdateRequest() *EnterpriseAppsItemRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilder {
+	return NewEnterpriseAppsItemRoleAssignmentScheduleRequestsItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *EnterpriseAppsItemRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder when successful
 func (m *EnterpriseAppsItemRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder) WithUrl(rawUrl string) *EnterpriseAppsItemRoleAssignmentScheduleRequestsUnifiedRoleAssignmentScheduleRequestItemRequestBuilder {

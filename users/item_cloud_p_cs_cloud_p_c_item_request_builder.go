@@ -183,6 +183,12 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Reboot() *ItemCloudPCsItemReboot
 	return NewItemCloudPCsItemRebootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Relocate provides operations to call the relocate method.
+// returns a *ItemCloudPCsItemRelocateRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) Relocate() *ItemCloudPCsItemRelocateRequestBuilder {
+	return NewItemCloudPCsItemRelocateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Rename provides operations to call the rename method.
 // returns a *ItemCloudPCsItemRenameRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Rename() *ItemCloudPCsItemRenameRequestBuilder {

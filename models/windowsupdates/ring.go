@@ -36,6 +36,10 @@ func CreateRingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 			}
 			if mappingValue != nil {
 				switch *mappingValue {
+				case "#microsoft.graph.windowsUpdates.driverUpdateRing":
+					return NewDriverUpdateRing(), nil
+				case "#microsoft.graph.windowsUpdates.featureUpdateRing":
+					return NewFeatureUpdateRing(), nil
 				case "#microsoft.graph.windowsUpdates.qualityUpdateRing":
 					return NewQualityUpdateRing(), nil
 				}
@@ -58,7 +62,7 @@ func (m *Ring) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16
 	return nil
 }
 
-// GetDeferralInDays gets the deferralInDays property value. The quality update deferral period in days. The value must be between 0 and 30. Optional.
+// GetDeferralInDays gets the deferralInDays property value. The update deferral period in days. The value must be between 0 and 30. Optional.
 // returns a *int32 when successful
 func (m *Ring) GetDeferralInDays() *int32 {
 	val, err := m.GetBackingStore().Get("deferralInDays")
@@ -210,7 +214,7 @@ func (m *Ring) GetIncludedGroupAssignment() IncludedGroupAssignmentable {
 	return nil
 }
 
-// GetIsPaused gets the isPaused property value. The pause action for the quality update ring policy. Required.
+// GetIsPaused gets the isPaused property value. The pause action for the update ring. Required.
 // returns a *bool when successful
 func (m *Ring) GetIsPaused() *bool {
 	val, err := m.GetBackingStore().Get("isPaused")
@@ -223,7 +227,7 @@ func (m *Ring) GetIsPaused() *bool {
 	return nil
 }
 
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time whenthe ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *Ring) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -301,7 +305,7 @@ func (m *Ring) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
 	}
 }
 
-// SetDeferralInDays sets the deferralInDays property value. The quality update deferral period in days. The value must be between 0 and 30. Optional.
+// SetDeferralInDays sets the deferralInDays property value. The update deferral period in days. The value must be between 0 and 30. Optional.
 func (m *Ring) SetDeferralInDays(value *int32) {
 	err := m.GetBackingStore().Set("deferralInDays", value)
 	if err != nil {
@@ -341,7 +345,7 @@ func (m *Ring) SetIncludedGroupAssignment(value IncludedGroupAssignmentable) {
 	}
 }
 
-// SetIsPaused sets the isPaused property value. The pause action for the quality update ring policy. Required.
+// SetIsPaused sets the isPaused property value. The pause action for the update ring. Required.
 func (m *Ring) SetIsPaused(value *bool) {
 	err := m.GetBackingStore().Set("isPaused", value)
 	if err != nil {
@@ -349,7 +353,7 @@ func (m *Ring) SetIsPaused(value *bool) {
 	}
 }
 
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time whenthe ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the ring was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *Ring) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("lastModifiedDateTime", value)
 	if err != nil {

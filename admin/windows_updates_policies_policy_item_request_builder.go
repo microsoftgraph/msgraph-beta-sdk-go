@@ -23,7 +23,7 @@ type WindowsUpdatesPoliciesPolicyItemRequestBuilderDeleteRequestConfiguration st
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// WindowsUpdatesPoliciesPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// WindowsUpdatesPoliciesPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 type WindowsUpdatesPoliciesPolicyItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -47,6 +47,12 @@ type WindowsUpdatesPoliciesPolicyItemRequestBuilderPatchRequestConfiguration str
 	Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
 	// Request options
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+
+// ApplicableCatalogs provides operations to manage the applicableCatalogs property of the microsoft.graph.windowsUpdates.policy entity.
+// returns a *WindowsUpdatesPoliciesItemApplicableCatalogsRequestBuilder when successful
+func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ApplicableCatalogs() *WindowsUpdatesPoliciesItemApplicableCatalogsRequestBuilder {
+	return NewWindowsUpdatesPoliciesItemApplicableCatalogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // ApplicableContent provides operations to manage the applicableContent property of the microsoft.graph.windowsUpdates.policy entity.
@@ -76,7 +82,7 @@ func NewWindowsUpdatesPoliciesPolicyItemRequestBuilder(rawUrl string, requestAda
 	return NewWindowsUpdatesPoliciesPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete a Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// Delete delete a Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -96,7 +102,7 @@ func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) Delete(ctx context.Cont
 	return nil
 }
 
-// Get read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// Get read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a Policyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +126,7 @@ func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) Get(ctx context.Context
 	return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Policyable), nil
 }
 
-// Patch update the properties of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// Patch update the properties of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a Policyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -150,7 +156,7 @@ func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) Rings() *WindowsUpdates
 	return NewWindowsUpdatesPoliciesItemRingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToDeleteRequestInformation delete a Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// ToDeleteRequestInformation delete a Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesPolicyItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +168,7 @@ func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ToDeleteRequestInformat
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation read the properties and relationships of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// ToGetRequestInformation read the properties and relationships of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesPolicyItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -177,7 +183,7 @@ func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ToGetRequestInformation
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the properties of a policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// ToPatchRequestInformation update the properties of a policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Policyable, requestConfiguration *WindowsUpdatesPoliciesPolicyItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

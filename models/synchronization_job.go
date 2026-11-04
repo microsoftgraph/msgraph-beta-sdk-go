@@ -52,6 +52,22 @@ func (m *SynchronizationJob) GetFieldDeserializers() map[string]func(i878a80d233
 		}
 		return nil
 	}
+	res["objectConnections"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateObjectConnectionFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ObjectConnectionable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ObjectConnectionable)
+				}
+			}
+			m.SetObjectConnections(res)
+		}
+		return nil
+	}
 	res["schedule"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateSynchronizationScheduleFromDiscriminatorValue)
 		if err != nil {
@@ -109,6 +125,19 @@ func (m *SynchronizationJob) GetFieldDeserializers() map[string]func(i878a80d233
 		return nil
 	}
 	return res
+}
+
+// GetObjectConnections gets the objectConnections property value. Connector data store linkage records contained by the job. During public preview, retrieve an individual connection using a known objectId, or delete it to clear its cached linkage. Collection listing isn't supported and returns 400 Bad Request.
+// returns a []ObjectConnectionable when successful
+func (m *SynchronizationJob) GetObjectConnections() []ObjectConnectionable {
+	val, err := m.GetBackingStore().Get("objectConnections")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ObjectConnectionable)
+	}
+	return nil
 }
 
 // GetSchedule gets the schedule property value. Schedule used to run the job. Read-only.
@@ -188,6 +217,18 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 			return err
 		}
 	}
+	if m.GetObjectConnections() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetObjectConnections()))
+		for i, v := range m.GetObjectConnections() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("objectConnections", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteObjectValue("schedule", m.GetSchedule())
 		if err != nil {
@@ -230,6 +271,14 @@ func (m *SynchronizationJob) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetBulkUpload sets the bulkUpload property value. The bulk upload operation for the job.
 func (m *SynchronizationJob) SetBulkUpload(value BulkUploadable) {
 	err := m.GetBackingStore().Set("bulkUpload", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetObjectConnections sets the objectConnections property value. Connector data store linkage records contained by the job. During public preview, retrieve an individual connection using a known objectId, or delete it to clear its cached linkage. Collection listing isn't supported and returns 400 Bad Request.
+func (m *SynchronizationJob) SetObjectConnections(value []ObjectConnectionable) {
+	err := m.GetBackingStore().Set("objectConnections", value)
 	if err != nil {
 		panic(err)
 	}
@@ -279,12 +328,14 @@ type SynchronizationJobable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetBulkUpload() BulkUploadable
+	GetObjectConnections() []ObjectConnectionable
 	GetSchedule() SynchronizationScheduleable
 	GetSchema() SynchronizationSchemaable
 	GetStatus() SynchronizationStatusable
 	GetSynchronizationJobSettings() []KeyValuePairable
 	GetTemplateId() *string
 	SetBulkUpload(value BulkUploadable)
+	SetObjectConnections(value []ObjectConnectionable)
 	SetSchedule(value SynchronizationScheduleable)
 	SetSchema(value SynchronizationSchemaable)
 	SetStatus(value SynchronizationStatusable)

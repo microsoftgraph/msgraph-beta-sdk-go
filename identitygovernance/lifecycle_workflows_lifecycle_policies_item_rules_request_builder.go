@@ -15,7 +15,7 @@ type LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilderGetQueryParameters get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+// LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilderGetQueryParameters get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
 type LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -73,7 +73,7 @@ func NewLifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilder(rawUrl string
 	return NewLifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+// Get get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
 // returns a LifecyclePolicyRuleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -97,7 +97,7 @@ func (m *LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilder) Get(ctx con
 	return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.LifecyclePolicyRuleCollectionResponseable), nil
 }
 
-// ToGetRequestInformation get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Rules are evaluated together with AND logic.
+// ToGetRequestInformation get a list of the lifecyclePolicyRule objects and their properties for a lifecyclePolicy. Each enabled rule is evaluated independently, and any violation makes the policy noncompliant.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsLifecyclePoliciesItemRulesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

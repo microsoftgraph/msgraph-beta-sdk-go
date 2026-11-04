@@ -233,7 +233,7 @@ func (m *RestoreSessionBase) GetLastModifiedDateTime() *i336074805fc853987abe6f7
 	return nil
 }
 
-// GetPolicyId gets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during create or update, the service validates that the referenced protection units belong to the specified policy.
+// GetPolicyId gets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy.
 // returns a *string when successful
 func (m *RestoreSessionBase) GetPolicyId() *string {
 	val, err := m.GetBackingStore().Get("policyId")
@@ -404,7 +404,7 @@ func (m *RestoreSessionBase) SetLastModifiedDateTime(value *i336074805fc853987ab
 	}
 }
 
-// SetPolicyId sets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during create or update, the service validates that the referenced protection units belong to the specified policy.
+// SetPolicyId sets the policyId property value. The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy.
 func (m *RestoreSessionBase) SetPolicyId(value *string) {
 	err := m.GetBackingStore().Set("policyId", value)
 	if err != nil {

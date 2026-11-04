@@ -53,6 +53,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 					return NewCloudPcBulkPowerOn(), nil
 				case "#microsoft.graph.cloudPcBulkReinstallAgent":
 					return NewCloudPcBulkReinstallAgent(), nil
+				case "#microsoft.graph.cloudPcBulkRelocate":
+					return NewCloudPcBulkRelocate(), nil
 				case "#microsoft.graph.cloudPcBulkReprovision":
 					return NewCloudPcBulkReprovision(), nil
 				case "#microsoft.graph.cloudPcBulkResize":

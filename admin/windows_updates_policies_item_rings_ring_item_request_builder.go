@@ -23,7 +23,7 @@ type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderDeleteRequestConfigura
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetQueryParameters read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+// WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetQueryParameters read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 type WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,7 +64,7 @@ func NewWindowsUpdatesPoliciesItemRingsRingItemRequestBuilder(rawUrl string, req
 	return NewWindowsUpdatesPoliciesItemRingsRingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete a ring object. You can use this method with the following child object type: qualityUpdateRing.
+// Delete delete a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -84,7 +84,7 @@ func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) Delete(ctx conte
 	return nil
 }
 
-// Get read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+// Get read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a Ringable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -108,7 +108,7 @@ func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) Get(ctx context.
 	return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Ringable), nil
 }
 
-// Patch update the properties of a ring object. You can use this method with the following child object type: qualityUpdateRing.
+// Patch update the properties of a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a Ringable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -132,7 +132,7 @@ func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) Patch(ctx contex
 	return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Ringable), nil
 }
 
-// ToDeleteRequestInformation delete a ring object. You can use this method with the following child object type: qualityUpdateRing.
+// ToDeleteRequestInformation delete a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +144,7 @@ func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) ToDeleteRequestI
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation read the properties and relationships of ring object. You can use this method with the following child object type: qualityUpdateRing.
+// ToGetRequestInformation read the properties and relationships of ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -159,7 +159,7 @@ func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) ToGetRequestInfo
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the properties of a ring object. You can use this method with the following child object type: qualityUpdateRing.
+// ToPatchRequestInformation update the properties of a ring object. You can use this method with the following child object types: driverUpdateRing, featureUpdateRing, and qualityUpdateRing.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Ringable, requestConfiguration *WindowsUpdatesPoliciesItemRingsRingItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

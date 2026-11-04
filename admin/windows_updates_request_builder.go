@@ -70,6 +70,12 @@ func NewWindowsUpdatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 	return NewWindowsUpdatesRequestBuilderInternal(urlParams, requestAdapter)
 }
 
+// Data provides operations to manage the data property of the microsoft.graph.adminWindowsUpdates entity.
+// returns a *WindowsUpdatesDataRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) Data() *WindowsUpdatesDataRequestBuilder {
+	return NewWindowsUpdatesDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Delete delete navigation property updates for admin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesRequestBuilderDeleteRequestConfiguration) error {
@@ -157,6 +163,12 @@ func (m *WindowsUpdatesRequestBuilder) Products() *WindowsUpdatesProductsRequest
 // returns a *WindowsUpdatesResourceConnectionsRequestBuilder when successful
 func (m *WindowsUpdatesRequestBuilder) ResourceConnections() *WindowsUpdatesResourceConnectionsRequestBuilder {
 	return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// TenantSettings provides operations to manage the tenantSettings property of the microsoft.graph.adminWindowsUpdates entity.
+// returns a *WindowsUpdatesTenantSettingsRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) TenantSettings() *WindowsUpdatesTenantSettingsRequestBuilder {
+	return NewWindowsUpdatesTenantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // ToDeleteRequestInformation delete navigation property updates for admin

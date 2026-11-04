@@ -23,7 +23,7 @@ type WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryIte
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters represents content applicable for offering to the related collection of devices.
+// WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters the existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
 type WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -87,7 +87,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntr
 	return nil
 }
 
-// Get represents content applicable for offering to the related collection of devices.
+// Get the existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
 // returns a ApplicableContentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetRequestConfiguration) (i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ApplicableContentable, error) {
@@ -147,7 +147,7 @@ func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntr
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation represents content applicable for offering to the related collection of devices.
+// ToGetRequestInformation the existing applicable-content collection. For driver and feature update applicability, use applicableCatalogs.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesItemApplicableContentApplicableContentCatalogEntryItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
