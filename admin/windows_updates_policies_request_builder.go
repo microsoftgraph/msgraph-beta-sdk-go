@@ -15,7 +15,7 @@ type WindowsUpdatesPoliciesRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// WindowsUpdatesPoliciesRequestBuilderGetQueryParameters get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+// WindowsUpdatesPoliciesRequestBuilderGetQueryParameters get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 type WindowsUpdatesPoliciesRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *WindowsUpdatesPoliciesRequestBuilder) Count() *WindowsUpdatesPoliciesCo
 	return NewWindowsUpdatesPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+// Get get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a PolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -111,7 +111,7 @@ func (m *WindowsUpdatesPoliciesRequestBuilder) Get(ctx context.Context, requestC
 	return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.PolicyCollectionResponseable), nil
 }
 
-// Post create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// Post create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a Policyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -135,7 +135,7 @@ func (m *WindowsUpdatesPoliciesRequestBuilder) Post(ctx context.Context, body i1
 	return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Policyable), nil
 }
 
-// ToGetRequestInformation get a list of the policy objects and their properties.  You can use this method with the following child object type: qualityUpdatePolicy.
+// ToGetRequestInformation get a list of the policy objects and their properties.  You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesPoliciesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +150,7 @@ func (m *WindowsUpdatesPoliciesRequestBuilder) ToGetRequestInformation(ctx conte
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create a new Windows update policy object. You can use this method with the following child object type: qualityUpdatePolicy.
+// ToPostRequestInformation create a new Windows update policy object. You can use this method with the following child object types: driverUpdatePolicy, featureUpdatePolicy, and qualityUpdatePolicy.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Policyable, requestConfiguration *WindowsUpdatesPoliciesRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

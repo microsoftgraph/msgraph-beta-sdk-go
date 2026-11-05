@@ -367,6 +367,12 @@ func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriodve
 	return NewGetMicrosoft365CopilotUserCountTrendWithPeriodversionVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
 
+// GetMicrosoft365Emissions provides operations to call the getMicrosoft365Emissions method.
+// returns a *GetMicrosoft365EmissionsRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365Emissions() *GetMicrosoft365EmissionsRequestBuilder {
+	return NewGetMicrosoft365EmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // GetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
 // returns a *GetOffice365ActivationCountsRequestBuilder when successful
 func (m *ReportsRequestBuilder) GetOffice365ActivationCounts() *GetOffice365ActivationCountsRequestBuilder {

@@ -269,7 +269,7 @@ func (m *BackupCountStatistics) GetTotal() *int32 {
 	return nil
 }
 
-// GetUnprotectedCompleted gets the unprotectedCompleted property value. The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken.
+// GetUnprotectedCompleted gets the unprotectedCompleted property value. The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are taken.
 // returns a *int32 when successful
 func (m *BackupCountStatistics) GetUnprotectedCompleted() *int32 {
 	val, err := m.GetBackingStore().Get("unprotectedCompleted")
@@ -462,7 +462,7 @@ func (m *BackupCountStatistics) SetTotal(value *int32) {
 	}
 }
 
-// SetUnprotectedCompleted sets the unprotectedCompleted property value. The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are being taken.
+// SetUnprotectedCompleted sets the unprotectedCompleted property value. The count of artifacts that are no longer actively protected. These artifacts have historical restore points, but no new backups are taken.
 func (m *BackupCountStatistics) SetUnprotectedCompleted(value *int32) {
 	err := m.GetBackingStore().Set("unprotectedCompleted", value)
 	if err != nil {

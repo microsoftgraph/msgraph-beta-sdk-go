@@ -36,6 +36,8 @@ func CreateTeamworkHostedContentFromDiscriminatorValue(parseNode i878a80d2330e89
 				switch *mappingValue {
 				case "#microsoft.graph.chatMessageHostedContent":
 					return NewChatMessageHostedContent(), nil
+				case "#microsoft.graph.teamworkCustomEmoji":
+					return NewTeamworkCustomEmoji(), nil
 				}
 			}
 		}

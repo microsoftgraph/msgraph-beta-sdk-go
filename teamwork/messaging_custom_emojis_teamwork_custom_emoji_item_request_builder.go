@@ -23,7 +23,7 @@ type MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderDeleteRequestConf
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderGetQueryParameters the collection of custom emojis available in organization messaging.
+// MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderGetQueryParameters get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
 type MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,8 +64,17 @@ func NewMessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder(rawUrl string
 	return NewMessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete navigation property customEmojis for teamwork
+// Content provides operations to manage the media for the teamwork entity.
+// returns a *MessagingCustomEmojisItemValueContentRequestBuilder when successful
+func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) Content() *MessagingCustomEmojisItemValueContentRequestBuilder {
+	return NewMessagingCustomEmojisItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// Delete delete a custom emoji by display name from the teamwork messaging of the organization.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkcustomemoji-delete?view=graph-rest-beta
 func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -81,9 +90,12 @@ func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) Delete(ctx 
 	return nil
 }
 
-// Get the collection of custom emojis available in organization messaging.
+// Get get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
 // returns a TeamworkCustomEmojiable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkcustomemoji-get?view=graph-rest-beta
 func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -123,7 +135,7 @@ func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) Patch(ctx c
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkCustomEmojiable), nil
 }
 
-// ToDeleteRequestInformation delete navigation property customEmojis for teamwork
+// ToDeleteRequestInformation delete a custom emoji by display name from the teamwork messaging of the organization.
 // returns a *RequestInformation when successful
 func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +147,7 @@ func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) ToDeleteReq
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of custom emojis available in organization messaging.
+// ToGetRequestInformation get a single custom emoji or the raw image content of a custom emoji by display name from the teamwork messaging of the organization.
 // returns a *RequestInformation when successful
 func (m *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MessagingCustomEmojisTeamworkCustomEmojiItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

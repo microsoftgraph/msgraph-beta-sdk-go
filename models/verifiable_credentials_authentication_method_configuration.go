@@ -60,7 +60,7 @@ func (m *VerifiableCredentialsAuthenticationMethodConfiguration) GetFieldDeseria
 	return res
 }
 
-// GetIdentityVerificationEventsConfiguration gets the identityVerificationEventsConfiguration property value. The identityVerificationEventsConfiguration property
+// GetIdentityVerificationEventsConfiguration gets the identityVerificationEventsConfiguration property value. The optional tenant-level configuration that controls whether identity verification events and credential provenance information are collected and exposed for Verified ID verification. This setting isn't scoped to individual Verified ID profiles. If no configuration is stored or the stored value is null, event collection and exposure are disabled. Omitting this property from a PATCH request leaves its existing value unchanged.
 // returns a IdentityVerificationEventsConfigurationable when successful
 func (m *VerifiableCredentialsAuthenticationMethodConfiguration) GetIdentityVerificationEventsConfiguration() IdentityVerificationEventsConfigurationable {
 	val, err := m.GetBackingStore().Get("identityVerificationEventsConfiguration")
@@ -113,7 +113,7 @@ func (m *VerifiableCredentialsAuthenticationMethodConfiguration) Serialize(write
 	return nil
 }
 
-// SetIdentityVerificationEventsConfiguration sets the identityVerificationEventsConfiguration property value. The identityVerificationEventsConfiguration property
+// SetIdentityVerificationEventsConfiguration sets the identityVerificationEventsConfiguration property value. The optional tenant-level configuration that controls whether identity verification events and credential provenance information are collected and exposed for Verified ID verification. This setting isn't scoped to individual Verified ID profiles. If no configuration is stored or the stored value is null, event collection and exposure are disabled. Omitting this property from a PATCH request leaves its existing value unchanged.
 func (m *VerifiableCredentialsAuthenticationMethodConfiguration) SetIdentityVerificationEventsConfiguration(value IdentityVerificationEventsConfigurationable) {
 	err := m.GetBackingStore().Set("identityVerificationEventsConfiguration", value)
 	if err != nil {

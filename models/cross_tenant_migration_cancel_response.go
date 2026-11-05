@@ -84,7 +84,7 @@ func (m *CrossTenantMigrationCancelResponse) GetFieldDeserializers() map[string]
 	return res
 }
 
-// GetMessage gets the message property value. The customer facing description of the cancellation request
+// GetMessage gets the message property value. The description of the cancellation request.
 // returns a *string when successful
 func (m *CrossTenantMigrationCancelResponse) GetMessage() *string {
 	val, err := m.GetBackingStore().Get("message")
@@ -110,7 +110,7 @@ func (m *CrossTenantMigrationCancelResponse) GetOdataType() *string {
 	return nil
 }
 
-// GetStatus gets the status property value. The cancellation request status
+// GetStatus gets the status property value. The cancellation request status.
 // returns a *string when successful
 func (m *CrossTenantMigrationCancelResponse) GetStatus() *string {
 	val, err := m.GetBackingStore().Get("status")
@@ -165,7 +165,7 @@ func (m *CrossTenantMigrationCancelResponse) SetBackingStore(value ie8677ce2c7e1
 	m.backingStore = value
 }
 
-// SetMessage sets the message property value. The customer facing description of the cancellation request
+// SetMessage sets the message property value. The description of the cancellation request.
 func (m *CrossTenantMigrationCancelResponse) SetMessage(value *string) {
 	err := m.GetBackingStore().Set("message", value)
 	if err != nil {
@@ -181,7 +181,7 @@ func (m *CrossTenantMigrationCancelResponse) SetOdataType(value *string) {
 	}
 }
 
-// SetStatus sets the status property value. The cancellation request status
+// SetStatus sets the status property value. The cancellation request status.
 func (m *CrossTenantMigrationCancelResponse) SetStatus(value *string) {
 	err := m.GetBackingStore().Set("status", value)
 	if err != nil {

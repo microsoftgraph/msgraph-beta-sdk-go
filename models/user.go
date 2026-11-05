@@ -2951,7 +2951,7 @@ func (m *User) GetIdentities() []ObjectIdentityable {
 	return nil
 }
 
-// GetIdentityGovernance gets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.
+// GetIdentityGovernance gets the identityGovernance property value. The identity governance settings for the user. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
 // returns a IdentityGovernanceUserSettingsable when successful
 func (m *User) GetIdentityGovernance() IdentityGovernanceUserSettingsable {
 	val, err := m.GetBackingStore().Get("identityGovernance")
@@ -6122,7 +6122,7 @@ func (m *User) SetIdentities(value []ObjectIdentityable) {
 	}
 }
 
-// SetIdentityGovernance sets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. Nullable. Returned only on $select. Supports $expand.
+// SetIdentityGovernance sets the identityGovernance property value. The identity governance settings for the user. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
 func (m *User) SetIdentityGovernance(value IdentityGovernanceUserSettingsable) {
 	err := m.GetBackingStore().Set("identityGovernance", value)
 	if err != nil {

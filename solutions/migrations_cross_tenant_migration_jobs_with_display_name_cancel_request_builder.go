@@ -39,7 +39,6 @@ func NewMigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder(ra
 }
 
 // Post cancel a crossTenantMigrationJob. All tasks within the job that were in a Sync state are canceled. If the job can't be canceled, a 409 Conflict response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a CrossTenantMigrationCancelResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -64,7 +63,6 @@ func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder) 
 }
 
 // ToPostRequestInformation cancel a crossTenantMigrationJob. All tasks within the job that were in a Sync state are canceled. If the job can't be canceled, a 409 Conflict response is returned and the migrations continue. This response happens when a migration is already in progress or is in a terminal state.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +75,6 @@ func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder) 
 }
 
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder {
 	return NewMigrationsCrossTenantMigrationJobsWithDisplayNameCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)

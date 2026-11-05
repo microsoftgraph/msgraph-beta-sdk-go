@@ -8,18 +8,6 @@ type EvaluationErrorType int
 const (
 	UNSUPPORTEDFILE_EVALUATIONERRORTYPE EvaluationErrorType = iota
 	PASSWORDPROTECTEDFILE_EVALUATIONERRORTYPE
-	FILETOOLARGE_EVALUATIONERRORTYPE
-	ARCHIVESIZETOOLARGE_EVALUATIONERRORTYPE
-	TEXTEXCEEDSMCETHRESHOLD_EVALUATIONERRORTYPE
-	PARTIALLYSCANNEDARCHIVE_EVALUATIONERRORTYPE
-	PARTIALIMAGEEXTRACTION_EVALUATIONERRORTYPE
-	IMAGEOCRPARTIALRESULT_EVALUATIONERRORTYPE
-	OCRPROCESSINGFAILURE_EVALUATIONERRORTYPE
-	OCRQUOTAEXHAUSTED_EVALUATIONERRORTYPE
-	CLASSIFICATIONSERVICEERROR_EVALUATIONERRORTYPE
-	SITEXTRACTIONFAILURE_EVALUATIONERRORTYPE
-	TEXTEXTRACTIONFAILURE_EVALUATIONERRORTYPE
-	ARCHIVETEXTEXTRACTIONERROR_EVALUATIONERRORTYPE
 	MISSINGORINVALIDCONFIGURATION_EVALUATIONERRORTYPE
 	AGENTFAILURE_EVALUATIONERRORTYPE
 	ENFORCEMENTTIMEOUT_EVALUATIONERRORTYPE
@@ -29,11 +17,16 @@ const (
 	SERVICETIMEOUT_EVALUATIONERRORTYPE
 	SERVICEERROR_EVALUATIONERRORTYPE
 	SERVICEUNAVAILABLE_EVALUATIONERRORTYPE
+	CONTENTTOOLARGE_EVALUATIONERRORTYPE
+	PARTIALLYSCANNED_EVALUATIONERRORTYPE
+	UNSCANNABLE_EVALUATIONERRORTYPE
+	BILLINGNOTSETUP_EVALUATIONERRORTYPE
+	AUTHENTICATIONORAUTHORIZATIONFAILED_EVALUATIONERRORTYPE
 	UNKNOWNFUTUREVALUE_EVALUATIONERRORTYPE
 )
 
 func (i EvaluationErrorType) String() string {
-	return []string{"unsupportedFile", "passwordProtectedFile", "fileTooLarge", "archiveSizeTooLarge", "textExceedsMceThreshold", "partiallyScannedArchive", "partialImageExtraction", "imageOcrPartialResult", "ocrProcessingFailure", "ocrQuotaExhausted", "classificationServiceError", "sitExtractionFailure", "textExtractionFailure", "archiveTextExtractionError", "missingOrInvalidConfiguration", "agentFailure", "enforcementTimeout", "osOverride", "processNonExistent", "other", "serviceTimeout", "serviceError", "serviceUnavailable", "unknownFutureValue"}[i]
+	return []string{"unsupportedFile", "passwordProtectedFile", "missingOrInvalidConfiguration", "agentFailure", "enforcementTimeout", "osOverride", "processNonExistent", "other", "serviceTimeout", "serviceError", "serviceUnavailable", "contentTooLarge", "partiallyScanned", "unscannable", "billingNotSetup", "authenticationOrAuthorizationFailed", "unknownFutureValue"}[i]
 }
 
 func ParseEvaluationErrorType(v string) (any, error) {
@@ -43,30 +36,6 @@ func ParseEvaluationErrorType(v string) (any, error) {
 		result = UNSUPPORTEDFILE_EVALUATIONERRORTYPE
 	case "passwordProtectedFile":
 		result = PASSWORDPROTECTEDFILE_EVALUATIONERRORTYPE
-	case "fileTooLarge":
-		result = FILETOOLARGE_EVALUATIONERRORTYPE
-	case "archiveSizeTooLarge":
-		result = ARCHIVESIZETOOLARGE_EVALUATIONERRORTYPE
-	case "textExceedsMceThreshold":
-		result = TEXTEXCEEDSMCETHRESHOLD_EVALUATIONERRORTYPE
-	case "partiallyScannedArchive":
-		result = PARTIALLYSCANNEDARCHIVE_EVALUATIONERRORTYPE
-	case "partialImageExtraction":
-		result = PARTIALIMAGEEXTRACTION_EVALUATIONERRORTYPE
-	case "imageOcrPartialResult":
-		result = IMAGEOCRPARTIALRESULT_EVALUATIONERRORTYPE
-	case "ocrProcessingFailure":
-		result = OCRPROCESSINGFAILURE_EVALUATIONERRORTYPE
-	case "ocrQuotaExhausted":
-		result = OCRQUOTAEXHAUSTED_EVALUATIONERRORTYPE
-	case "classificationServiceError":
-		result = CLASSIFICATIONSERVICEERROR_EVALUATIONERRORTYPE
-	case "sitExtractionFailure":
-		result = SITEXTRACTIONFAILURE_EVALUATIONERRORTYPE
-	case "textExtractionFailure":
-		result = TEXTEXTRACTIONFAILURE_EVALUATIONERRORTYPE
-	case "archiveTextExtractionError":
-		result = ARCHIVETEXTEXTRACTIONERROR_EVALUATIONERRORTYPE
 	case "missingOrInvalidConfiguration":
 		result = MISSINGORINVALIDCONFIGURATION_EVALUATIONERRORTYPE
 	case "agentFailure":
@@ -85,6 +54,16 @@ func ParseEvaluationErrorType(v string) (any, error) {
 		result = SERVICEERROR_EVALUATIONERRORTYPE
 	case "serviceUnavailable":
 		result = SERVICEUNAVAILABLE_EVALUATIONERRORTYPE
+	case "contentTooLarge":
+		result = CONTENTTOOLARGE_EVALUATIONERRORTYPE
+	case "partiallyScanned":
+		result = PARTIALLYSCANNED_EVALUATIONERRORTYPE
+	case "unscannable":
+		result = UNSCANNABLE_EVALUATIONERRORTYPE
+	case "billingNotSetup":
+		result = BILLINGNOTSETUP_EVALUATIONERRORTYPE
+	case "authenticationOrAuthorizationFailed":
+		result = AUTHENTICATIONORAUTHORIZATIONFAILED_EVALUATIONERRORTYPE
 	case "unknownFutureValue":
 		result = UNKNOWNFUTUREVALUE_EVALUATIONERRORTYPE
 	default:

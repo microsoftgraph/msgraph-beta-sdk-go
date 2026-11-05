@@ -25,7 +25,7 @@ func CreateAppManagementAuditFromDiscriminatorValue(parseNode i878a80d2330e89d26
 	return NewAppManagementAudit(), nil
 }
 
-// GetAppliedAppManagementPolicyRestrictions gets the appliedAppManagementPolicyRestrictions property value. The appliedAppManagementPolicyRestrictions property
+// GetAppliedAppManagementPolicyRestrictions gets the appliedAppManagementPolicyRestrictions property value. Details of the app management policy restrictions applied to the activity. Supports $filter (eq).
 // returns a []AppliedAppManagementPolicyRestrictionable when successful
 func (m *AppManagementAudit) GetAppliedAppManagementPolicyRestrictions() []AppliedAppManagementPolicyRestrictionable {
 	val, err := m.GetBackingStore().Get("appliedAppManagementPolicyRestrictions")
@@ -82,7 +82,7 @@ func (m *AppManagementAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	return nil
 }
 
-// SetAppliedAppManagementPolicyRestrictions sets the appliedAppManagementPolicyRestrictions property value. The appliedAppManagementPolicyRestrictions property
+// SetAppliedAppManagementPolicyRestrictions sets the appliedAppManagementPolicyRestrictions property value. Details of the app management policy restrictions applied to the activity. Supports $filter (eq).
 func (m *AppManagementAudit) SetAppliedAppManagementPolicyRestrictions(value []AppliedAppManagementPolicyRestrictionable) {
 	err := m.GetBackingStore().Set("appliedAppManagementPolicyRestrictions", value)
 	if err != nil {

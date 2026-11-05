@@ -56,6 +56,16 @@ func CreateLifecyclePolicyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *LifecyclePolicyRule) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["gracePeriodInDays"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetInt32Value()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetGracePeriodInDays(val)
+		}
+		return nil
+	}
 	res["isEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetBoolValue()
 		if err != nil {
@@ -67,6 +77,19 @@ func (m *LifecyclePolicyRule) GetFieldDeserializers() map[string]func(i878a80d23
 		return nil
 	}
 	return res
+}
+
+// GetGracePeriodInDays gets the gracePeriodInDays property value. The optional grace period, in days, that starts when the rule violation is first detected. The allowed range is 0 through 30. If omitted or set to null, the gracePeriodInDays value of the containing lifecycle policy applies. A value of 0 means no additional grace period. If multiple rules remain violated, the earliest rule grace-period expiry starts the policy action sequence; the policy-level grace period isn't added again.
+// returns a *int32 when successful
+func (m *LifecyclePolicyRule) GetGracePeriodInDays() *int32 {
+	val, err := m.GetBackingStore().Get("gracePeriodInDays")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*int32)
+	}
+	return nil
 }
 
 // GetIsEnabled gets the isEnabled property value. Indicates whether the rule is enabled and evaluated as part of its policy.
@@ -89,12 +112,26 @@ func (m *LifecyclePolicyRule) Serialize(writer i878a80d2330e89d26896388a3f487eef
 		return err
 	}
 	{
+		err = writer.WriteInt32Value("gracePeriodInDays", m.GetGracePeriodInDays())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
 		if err != nil {
 			return err
 		}
 	}
 	return nil
+}
+
+// SetGracePeriodInDays sets the gracePeriodInDays property value. The optional grace period, in days, that starts when the rule violation is first detected. The allowed range is 0 through 30. If omitted or set to null, the gracePeriodInDays value of the containing lifecycle policy applies. A value of 0 means no additional grace period. If multiple rules remain violated, the earliest rule grace-period expiry starts the policy action sequence; the policy-level grace period isn't added again.
+func (m *LifecyclePolicyRule) SetGracePeriodInDays(value *int32) {
+	err := m.GetBackingStore().Set("gracePeriodInDays", value)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // SetIsEnabled sets the isEnabled property value. Indicates whether the rule is enabled and evaluated as part of its policy.
@@ -108,6 +145,8 @@ func (m *LifecyclePolicyRule) SetIsEnabled(value *bool) {
 type LifecyclePolicyRuleable interface {
 	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetGracePeriodInDays() *int32
 	GetIsEnabled() *bool
+	SetGracePeriodInDays(value *int32)
 	SetIsEnabled(value *bool)
 }

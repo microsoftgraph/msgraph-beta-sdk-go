@@ -41,7 +41,7 @@ func (m *IdentityGovernanceUserSettings) GetAdditionalData() map[string]any {
 	return val.(map[string]any)
 }
 
-// GetApproverDelegate gets the approverDelegate property value. The approver delegate configuration for the user, including the delegate identity and delegation schedule. Nullable.
+// GetApproverDelegate gets the approverDelegate property value. The user or group that approves Microsoft Entra entitlement management access package assignment requests and access reviews on behalf of the user, and the period during which the delegation is in effect. Nullable.
 // returns a ApproverDelegateable when successful
 func (m *IdentityGovernanceUserSettings) GetApproverDelegate() ApproverDelegateable {
 	val, err := m.GetBackingStore().Get("approverDelegate")
@@ -131,7 +131,7 @@ func (m *IdentityGovernanceUserSettings) SetAdditionalData(value map[string]any)
 	}
 }
 
-// SetApproverDelegate sets the approverDelegate property value. The approver delegate configuration for the user, including the delegate identity and delegation schedule. Nullable.
+// SetApproverDelegate sets the approverDelegate property value. The user or group that approves Microsoft Entra entitlement management access package assignment requests and access reviews on behalf of the user, and the period during which the delegation is in effect. Nullable.
 func (m *IdentityGovernanceUserSettings) SetApproverDelegate(value ApproverDelegateable) {
 	err := m.GetBackingStore().Set("approverDelegate", value)
 	if err != nil {

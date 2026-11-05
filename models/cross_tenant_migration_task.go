@@ -26,7 +26,7 @@ func CreateCrossTenantMigrationTaskFromDiscriminatorValue(parseNode i878a80d2330
 	return NewCrossTenantMigrationTask(), nil
 }
 
-// GetCurrentStatus gets the currentStatus property value. Most recent status of this migration task
+// GetCurrentStatus gets the currentStatus property value. Most recent status of this migration task.
 // returns a []CrossTenantMigrationServiceStatusDetailsable when successful
 func (m *CrossTenantMigrationTask) GetCurrentStatus() []CrossTenantMigrationServiceStatusDetailsable {
 	val, err := m.GetBackingStore().Get("currentStatus")
@@ -82,7 +82,7 @@ func (m *CrossTenantMigrationTask) GetFieldDeserializers() map[string]func(i878a
 	return res
 }
 
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Time the task was last updated
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the task was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CrossTenantMigrationTask) GetLastUpdatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -95,7 +95,7 @@ func (m *CrossTenantMigrationTask) GetLastUpdatedDateTime() *i336074805fc853987a
 	return nil
 }
 
-// GetTaskType gets the taskType property value. Type of migration task. Only Users are supported at this time.
+// GetTaskType gets the taskType property value. Type of migration task. Currently, only Users is supported.
 // returns a *string when successful
 func (m *CrossTenantMigrationTask) GetTaskType() *string {
 	val, err := m.GetBackingStore().Get("taskType")
@@ -141,7 +141,7 @@ func (m *CrossTenantMigrationTask) Serialize(writer i878a80d2330e89d26896388a3f4
 	return nil
 }
 
-// SetCurrentStatus sets the currentStatus property value. Most recent status of this migration task
+// SetCurrentStatus sets the currentStatus property value. Most recent status of this migration task.
 func (m *CrossTenantMigrationTask) SetCurrentStatus(value []CrossTenantMigrationServiceStatusDetailsable) {
 	err := m.GetBackingStore().Set("currentStatus", value)
 	if err != nil {
@@ -149,7 +149,7 @@ func (m *CrossTenantMigrationTask) SetCurrentStatus(value []CrossTenantMigration
 	}
 }
 
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Time the task was last updated
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the task was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.
 func (m *CrossTenantMigrationTask) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
 	if err != nil {
@@ -157,7 +157,7 @@ func (m *CrossTenantMigrationTask) SetLastUpdatedDateTime(value *i336074805fc853
 	}
 }
 
-// SetTaskType sets the taskType property value. Type of migration task. Only Users are supported at this time.
+// SetTaskType sets the taskType property value. Type of migration task. Currently, only Users is supported.
 func (m *CrossTenantMigrationTask) SetTaskType(value *string) {
 	err := m.GetBackingStore().Set("taskType", value)
 	if err != nil {

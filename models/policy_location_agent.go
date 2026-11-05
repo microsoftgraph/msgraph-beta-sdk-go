@@ -27,7 +27,7 @@ func CreatePolicyLocationAgentFromDiscriminatorValue(parseNode i878a80d2330e89d2
 	return NewPolicyLocationAgent(), nil
 }
 
-// GetAgentMetadata gets the agentMetadata property value. The agentMetadata property
+// GetAgentMetadata gets the agentMetadata property value. Metadata used for agent policy scoping and evaluation. Optional.
 // returns a AgentMetadataable when successful
 func (m *PolicyLocationAgent) GetAgentMetadata() AgentMetadataable {
 	val, err := m.GetBackingStore().Get("agentMetadata")
@@ -72,7 +72,7 @@ func (m *PolicyLocationAgent) Serialize(writer i878a80d2330e89d26896388a3f487eef
 	return nil
 }
 
-// SetAgentMetadata sets the agentMetadata property value. The agentMetadata property
+// SetAgentMetadata sets the agentMetadata property value. Metadata used for agent policy scoping and evaluation. Optional.
 func (m *PolicyLocationAgent) SetAgentMetadata(value AgentMetadataable) {
 	err := m.GetBackingStore().Set("agentMetadata", value)
 	if err != nil {

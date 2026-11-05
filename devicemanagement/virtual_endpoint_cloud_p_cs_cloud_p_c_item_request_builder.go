@@ -186,6 +186,12 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Reboot() *VirtualEndp
 	return NewVirtualEndpointCloudPCsItemRebootRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Relocate provides operations to call the relocate method.
+// returns a *VirtualEndpointCloudPCsItemRelocateRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Relocate() *VirtualEndpointCloudPCsItemRelocateRequestBuilder {
+	return NewVirtualEndpointCloudPCsItemRelocateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Rename provides operations to call the rename method.
 // returns a *VirtualEndpointCloudPCsItemRenameRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Rename() *VirtualEndpointCloudPCsItemRenameRequestBuilder {

@@ -37,10 +37,13 @@ func NewDataSecurityAndGovernanceProtectionScopesComputeRequestBuilder(rawUrl st
 	return NewDataSecurityAndGovernanceProtectionScopesComputeRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post invoke action compute
+// Post compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
 // Deprecated: This method is obsolete. Use PostAsComputePostResponse instead.
 // returns a DataSecurityAndGovernanceProtectionScopesComputeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta
 func (m *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilder) Post(ctx context.Context, body DataSecurityAndGovernanceProtectionScopesComputePostRequestBodyable, requestConfiguration *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilderPostRequestConfiguration) (DataSecurityAndGovernanceProtectionScopesComputeResponseable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -59,9 +62,12 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilder) Post(ct
 	return res.(DataSecurityAndGovernanceProtectionScopesComputeResponseable), nil
 }
 
-// PostAsComputePostResponse invoke action compute
+// PostAsComputePostResponse compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
 // returns a DataSecurityAndGovernanceProtectionScopesComputePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/tenantprotectionscopecontainer-compute?view=graph-rest-beta
 func (m *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilder) PostAsComputePostResponse(ctx context.Context, body DataSecurityAndGovernanceProtectionScopesComputePostRequestBodyable, requestConfiguration *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilderPostRequestConfiguration) (DataSecurityAndGovernanceProtectionScopesComputePostResponseable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -80,7 +86,7 @@ func (m *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilder) PostAsC
 	return res.(DataSecurityAndGovernanceProtectionScopesComputePostResponseable), nil
 }
 
-// ToPostRequestInformation invoke action compute
+// ToPostRequestInformation compute tenant-wide data protection policies and actions, including user, group, or agent policy scopes.
 // returns a *RequestInformation when successful
 func (m *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilder) ToPostRequestInformation(ctx context.Context, body DataSecurityAndGovernanceProtectionScopesComputePostRequestBodyable, requestConfiguration *DataSecurityAndGovernanceProtectionScopesComputeRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

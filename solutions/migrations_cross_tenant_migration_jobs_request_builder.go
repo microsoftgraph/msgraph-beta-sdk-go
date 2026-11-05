@@ -15,7 +15,7 @@ type MigrationsCrossTenantMigrationJobsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// MigrationsCrossTenantMigrationJobsRequestBuilderGetQueryParameters get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
+// MigrationsCrossTenantMigrationJobsRequestBuilderGetQueryParameters get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
 type MigrationsCrossTenantMigrationJobsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -54,7 +54,6 @@ type MigrationsCrossTenantMigrationJobsRequestBuilderPostRequestConfiguration st
 }
 
 // ByCrossTenantMigrationJobId provides operations to manage the crossTenantMigrationJobs property of the microsoft.graph.migrationsRoot entity.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) ByCrossTenantMigrationJobId(crossTenantMigrationJobId string) *MigrationsCrossTenantMigrationJobsCrossTenantMigrationJobItemRequestBuilder {
 	urlTplParams := make(map[string]string)
@@ -88,8 +87,7 @@ func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) Count() *MigrationsCr
 	return NewMigrationsCrossTenantMigrationJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Get get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
 // returns a CrossTenantMigrationJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -113,8 +111,7 @@ func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) Get(ctx context.Conte
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobCollectionResponseable), nil
 }
 
-// Post create a new crossTenantMigrationJob. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// Post create a new crossTenantMigrationJob object. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
 // returns a CrossTenantMigrationJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -138,8 +135,7 @@ func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) Post(ctx context.Cont
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable), nil
 }
 
-// ToGetRequestInformation get a list of the crossTenantMigrationJob objects and their properties. By default 20 objects are returned. More can be retrieved through the @odata.nextLink url provided in the response.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// ToGetRequestInformation get a list of the crossTenantMigrationJob objects and their properties. By default, 20 objects are returned. You can retrieve more objects by using the @odata.nextLink URL provided in the response.
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MigrationsCrossTenantMigrationJobsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,8 +150,7 @@ func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) ToGetRequestInformati
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create a new crossTenantMigrationJob. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
+// ToPostRequestInformation create a new crossTenantMigrationJob object. A job defines the migration batch but doesn't start validation or migration. After you create the job, call validate to verify tenant and resource configuration, then call migrate to begin the actual migration.
 // returns a *RequestInformation when successful
 func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantMigrationJobable, requestConfiguration *MigrationsCrossTenantMigrationJobsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -172,7 +167,6 @@ func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) ToPostRequestInformat
 }
 
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:CrossTenantContentMigrationAPI on 2023-11-15 and will be removed 2026-07-09
 // returns a *MigrationsCrossTenantMigrationJobsRequestBuilder when successful
 func (m *MigrationsCrossTenantMigrationJobsRequestBuilder) WithUrl(rawUrl string) *MigrationsCrossTenantMigrationJobsRequestBuilder {
 	return NewMigrationsCrossTenantMigrationJobsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter)

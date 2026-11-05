@@ -183,7 +183,7 @@ func (m *AppliedAppManagementPolicyRestriction) GetOdataType() *string {
 	return nil
 }
 
-// GetPolicyId gets the policyId property value. The policyId property
+// GetPolicyId gets the policyId property value. The unique identifier of the policy that contains the restriction.
 // returns a *string when successful
 func (m *AppliedAppManagementPolicyRestriction) GetPolicyId() *string {
 	val, err := m.GetBackingStore().Get("policyId")
@@ -248,7 +248,7 @@ func (m *AppliedAppManagementPolicyRestriction) GetRestrictionState() *AppManage
 	return nil
 }
 
-// GetRestrictionType gets the restrictionType property value. The restrictionType property
+// GetRestrictionType gets the restrictionType property value. The type of restriction applied to the activity.
 // returns a *string when successful
 func (m *AppliedAppManagementPolicyRestriction) GetRestrictionType() *string {
 	val, err := m.GetBackingStore().Get("restrictionType")
@@ -367,7 +367,7 @@ func (m *AppliedAppManagementPolicyRestriction) SetOdataType(value *string) {
 	}
 }
 
-// SetPolicyId sets the policyId property value. The policyId property
+// SetPolicyId sets the policyId property value. The unique identifier of the policy that contains the restriction.
 func (m *AppliedAppManagementPolicyRestriction) SetPolicyId(value *string) {
 	err := m.GetBackingStore().Set("policyId", value)
 	if err != nil {
@@ -407,7 +407,7 @@ func (m *AppliedAppManagementPolicyRestriction) SetRestrictionState(value *AppMa
 	}
 }
 
-// SetRestrictionType sets the restrictionType property value. The restrictionType property
+// SetRestrictionType sets the restrictionType property value. The type of restriction applied to the activity.
 func (m *AppliedAppManagementPolicyRestriction) SetRestrictionType(value *string) {
 	err := m.GetBackingStore().Set("restrictionType", value)
 	if err != nil {

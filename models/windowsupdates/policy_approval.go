@@ -27,6 +27,19 @@ func CreatePolicyApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 	return NewPolicyApproval(), nil
 }
 
+// GetApprovedBy gets the approvedBy property value. The approvedBy property
+// returns a *ApprovedBy when successful
+func (m *PolicyApproval) GetApprovedBy() *ApprovedBy {
+	val, err := m.GetBackingStore().Get("approvedBy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*ApprovedBy)
+	}
+	return nil
+}
+
 // GetCatalogEntry gets the catalogEntry property value. The content that you can approve for deployment. Read-only.
 // returns a CatalogEntryable when successful
 func (m *PolicyApproval) GetCatalogEntry() CatalogEntryable {
@@ -70,6 +83,16 @@ func (m *PolicyApproval) GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *PolicyApproval) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["approvedBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseApprovedBy)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetApprovedBy(val.(*ApprovedBy))
+		}
+		return nil
+	}
 	res["catalogEntry"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateCatalogEntryFromDiscriminatorValue)
 		if err != nil {
@@ -110,6 +133,16 @@ func (m *PolicyApproval) GetFieldDeserializers() map[string]func(i878a80d2330e89
 		}
 		return nil
 	}
+	res["startDateTime"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetTimeValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetStartDateTime(val)
+		}
+		return nil
+	}
 	res["status"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetEnumValue(ParseApprovalStatus)
 		if err != nil {
@@ -127,6 +160,19 @@ func (m *PolicyApproval) GetFieldDeserializers() map[string]func(i878a80d2330e89
 // returns a *Time when successful
 func (m *PolicyApproval) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
+// GetStartDateTime gets the startDateTime property value. The date and time when the approved content can start being offered. If omitted when the approval is created, the service uses the current time.
+// returns a *Time when successful
+func (m *PolicyApproval) GetStartDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
+	val, err := m.GetBackingStore().Get("startDateTime")
 	if err != nil {
 		panic(err)
 	}
@@ -155,6 +201,13 @@ func (m *PolicyApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 	if err != nil {
 		return err
 	}
+	if m.GetApprovedBy() != nil {
+		cast := (*m.GetApprovedBy()).String()
+		err = writer.WriteStringValue("approvedBy", &cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteObjectValue("catalogEntry", m.GetCatalogEntry())
 		if err != nil {
@@ -179,6 +232,12 @@ func (m *PolicyApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 			return err
 		}
 	}
+	{
+		err = writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetStatus() != nil {
 		cast := (*m.GetStatus()).String()
 		err = writer.WriteStringValue("status", &cast)
@@ -187,6 +246,14 @@ func (m *PolicyApproval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 		}
 	}
 	return nil
+}
+
+// SetApprovedBy sets the approvedBy property value. The approvedBy property
+func (m *PolicyApproval) SetApprovedBy(value *ApprovedBy) {
+	err := m.GetBackingStore().Set("approvedBy", value)
+	if err != nil {
+		panic(err)
+	}
 }
 
 // SetCatalogEntry sets the catalogEntry property value. The content that you can approve for deployment. Read-only.
@@ -221,6 +288,14 @@ func (m *PolicyApproval) SetLastModifiedDateTime(value *i336074805fc853987abe6f7
 	}
 }
 
+// SetStartDateTime sets the startDateTime property value. The date and time when the approved content can start being offered. If omitted when the approval is created, the service uses the current time.
+func (m *PolicyApproval) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+	err := m.GetBackingStore().Set("startDateTime", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetStatus sets the status property value. The status property
 func (m *PolicyApproval) SetStatus(value *ApprovalStatus) {
 	err := m.GetBackingStore().Set("status", value)
@@ -232,14 +307,18 @@ func (m *PolicyApproval) SetStatus(value *ApprovalStatus) {
 type PolicyApprovalable interface {
 	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetApprovedBy() *ApprovedBy
 	GetCatalogEntry() CatalogEntryable
 	GetCatalogEntryId() *string
 	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetStartDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetStatus() *ApprovalStatus
+	SetApprovedBy(value *ApprovedBy)
 	SetCatalogEntry(value CatalogEntryable)
 	SetCatalogEntryId(value *string)
 	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetStatus(value *ApprovalStatus)
 }

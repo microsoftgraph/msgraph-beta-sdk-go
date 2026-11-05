@@ -27,7 +27,7 @@ func CreateProtectedApplicationMetadataFromDiscriminatorValue(parseNode i878a80d
 	return NewProtectedApplicationMetadata(), nil
 }
 
-// GetApplicationLocation gets the applicationLocation property value. The location of the application being protected. For Agent-to-Tool (A2T) scenarios, this represents the tool receiving the content. Required.
+// GetApplicationLocation gets the applicationLocation property value. The location that identifies the protected application. For agent evaluation, use policyLocationAgent. Optional.
 // returns a PolicyLocationable when successful
 func (m *ProtectedApplicationMetadata) GetApplicationLocation() PolicyLocationable {
 	val, err := m.GetBackingStore().Get("applicationLocation")
@@ -72,7 +72,7 @@ func (m *ProtectedApplicationMetadata) Serialize(writer i878a80d2330e89d26896388
 	return nil
 }
 
-// SetApplicationLocation sets the applicationLocation property value. The location of the application being protected. For Agent-to-Tool (A2T) scenarios, this represents the tool receiving the content. Required.
+// SetApplicationLocation sets the applicationLocation property value. The location that identifies the protected application. For agent evaluation, use policyLocationAgent. Optional.
 func (m *ProtectedApplicationMetadata) SetApplicationLocation(value PolicyLocationable) {
 	err := m.GetBackingStore().Set("applicationLocation", value)
 	if err != nil {

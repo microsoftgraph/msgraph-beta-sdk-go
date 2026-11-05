@@ -44,7 +44,7 @@ func (m *AzureAdTokenAuthentication) GetFieldDeserializers() map[string]func(i87
 	return res
 }
 
-// GetResourceId gets the resourceId property value. The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.
+// GetResourceId gets the resourceId property value. The app ID or identifier URI of the Microsoft Entra application used to authenticate calls to the external app.
 // returns a *string when successful
 func (m *AzureAdTokenAuthentication) GetResourceId() *string {
 	val, err := m.GetBackingStore().Get("resourceId")
@@ -72,7 +72,7 @@ func (m *AzureAdTokenAuthentication) Serialize(writer i878a80d2330e89d26896388a3
 	return nil
 }
 
-// SetResourceId sets the resourceId property value. The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.
+// SetResourceId sets the resourceId property value. The app ID or identifier URI of the Microsoft Entra application used to authenticate calls to the external app.
 func (m *AzureAdTokenAuthentication) SetResourceId(value *string) {
 	err := m.GetBackingStore().Set("resourceId", value)
 	if err != nil {

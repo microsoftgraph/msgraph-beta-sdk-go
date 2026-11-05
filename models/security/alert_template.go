@@ -99,6 +99,19 @@ func (m *AlertTemplate) GetEntityMappings() EntityMappingConfigurationable {
 	return nil
 }
 
+// GetEventGroupingKind gets the eventGroupingKind property value. The eventGroupingKind property
+// returns a *EventGroupingKind when successful
+func (m *AlertTemplate) GetEventGroupingKind() *EventGroupingKind {
+	val, err := m.GetBackingStore().Get("eventGroupingKind")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*EventGroupingKind)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *AlertTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -140,6 +153,16 @@ func (m *AlertTemplate) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 		}
 		if val != nil {
 			m.SetEntityMappings(val.(EntityMappingConfigurationable))
+		}
+		return nil
+	}
+	res["eventGroupingKind"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseEventGroupingKind)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetEventGroupingKind(val.(*EventGroupingKind))
 		}
 		return nil
 	}
@@ -351,6 +374,13 @@ func (m *AlertTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 			return err
 		}
 	}
+	if m.GetEventGroupingKind() != nil {
+		cast := (*m.GetEventGroupingKind()).String()
+		err := writer.WriteStringValue("eventGroupingKind", &cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetImpactedAssets() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetImpactedAssets()))
 		for i, v := range m.GetImpactedAssets() {
@@ -460,6 +490,14 @@ func (m *AlertTemplate) SetEntityMappings(value EntityMappingConfigurationable) 
 	}
 }
 
+// SetEventGroupingKind sets the eventGroupingKind property value. The eventGroupingKind property
+func (m *AlertTemplate) SetEventGroupingKind(value *EventGroupingKind) {
+	err := m.GetBackingStore().Set("eventGroupingKind", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetImpactedAssets sets the impactedAssets property value. Indicates the impacted assets for the alert triggered by the custom detection rule. Deprecated. Use entityMappings instead. This property will be removed from this resource on 2026-10-01.
 func (m *AlertTemplate) SetImpactedAssets(value []ImpactedAssetable) {
 	err := m.GetBackingStore().Set("impactedAssets", value)
@@ -525,6 +563,7 @@ type AlertTemplateable interface {
 	GetCustomDetails() AlertCustomDetailsable
 	GetDescription() *string
 	GetEntityMappings() EntityMappingConfigurationable
+	GetEventGroupingKind() *EventGroupingKind
 	GetImpactedAssets() []ImpactedAssetable
 	GetMitreTechniques() []string
 	GetOdataType() *string
@@ -537,6 +576,7 @@ type AlertTemplateable interface {
 	SetCustomDetails(value AlertCustomDetailsable)
 	SetDescription(value *string)
 	SetEntityMappings(value EntityMappingConfigurationable)
+	SetEventGroupingKind(value *EventGroupingKind)
 	SetImpactedAssets(value []ImpactedAssetable)
 	SetMitreTechniques(value []string)
 	SetOdataType(value *string)

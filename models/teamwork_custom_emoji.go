@@ -9,14 +9,16 @@ import (
 )
 
 type TeamworkCustomEmoji struct {
-	Entity
+	TeamworkHostedContent
 }
 
 // NewTeamworkCustomEmoji instantiates a new TeamworkCustomEmoji and sets the default values.
 func NewTeamworkCustomEmoji() *TeamworkCustomEmoji {
 	m := &TeamworkCustomEmoji{
-		Entity: *NewEntity(),
+		TeamworkHostedContent: *NewTeamworkHostedContent(),
 	}
+	odataTypeValue := "#microsoft.graph.teamworkCustomEmoji"
+	m.SetOdataType(&odataTypeValue)
 	return m
 }
 
@@ -24,19 +26,6 @@ func NewTeamworkCustomEmoji() *TeamworkCustomEmoji {
 // returns a Parsable when successful
 func CreateTeamworkCustomEmojiFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) (i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
 	return NewTeamworkCustomEmoji(), nil
-}
-
-// GetContentBytes gets the contentBytes property value. The base64-encoded image content of the emoji. Supported formats include PNG and GIF.
-// returns a *string when successful
-func (m *TeamworkCustomEmoji) GetContentBytes() *string {
-	val, err := m.GetBackingStore().Get("contentBytes")
-	if err != nil {
-		panic(err)
-	}
-	if val != nil {
-		return val.(*string)
-	}
-	return nil
 }
 
 // GetCreatedBy gets the createdBy property value. The createdBy property
@@ -65,7 +54,7 @@ func (m *TeamworkCustomEmoji) GetCreatedDateTime() *i336074805fc853987abe6f7fe3a
 	return nil
 }
 
-// GetDisplayName gets the displayName property value. The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.
+// GetDisplayName gets the displayName property value. The unique display name of the custom emoji. This property is an alternate key and must not conflict with existing emoji names.
 // returns a *string when successful
 func (m *TeamworkCustomEmoji) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -81,17 +70,7 @@ func (m *TeamworkCustomEmoji) GetDisplayName() *string {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *TeamworkCustomEmoji) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-	res := m.Entity.GetFieldDeserializers()
-	res["contentBytes"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-		val, err := n.GetStringValue()
-		if err != nil {
-			return err
-		}
-		if val != nil {
-			m.SetContentBytes(val)
-		}
-		return nil
-	}
+	res := m.TeamworkHostedContent.GetFieldDeserializers()
 	res["createdBy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateCustomEmojiFromIdentitySetFromDiscriminatorValue)
 		if err != nil {
@@ -127,15 +106,9 @@ func (m *TeamworkCustomEmoji) GetFieldDeserializers() map[string]func(i878a80d23
 
 // Serialize serializes information the current object
 func (m *TeamworkCustomEmoji) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
-	err := m.Entity.Serialize(writer)
+	err := m.TeamworkHostedContent.Serialize(writer)
 	if err != nil {
 		return err
-	}
-	{
-		err = writer.WriteStringValue("contentBytes", m.GetContentBytes())
-		if err != nil {
-			return err
-		}
 	}
 	{
 		err = writer.WriteObjectValue("createdBy", m.GetCreatedBy())
@@ -158,14 +131,6 @@ func (m *TeamworkCustomEmoji) Serialize(writer i878a80d2330e89d26896388a3f487eef
 	return nil
 }
 
-// SetContentBytes sets the contentBytes property value. The base64-encoded image content of the emoji. Supported formats include PNG and GIF.
-func (m *TeamworkCustomEmoji) SetContentBytes(value *string) {
-	err := m.GetBackingStore().Set("contentBytes", value)
-	if err != nil {
-		panic(err)
-	}
-}
-
 // SetCreatedBy sets the createdBy property value. The createdBy property
 func (m *TeamworkCustomEmoji) SetCreatedBy(value CustomEmojiFromIdentitySetable) {
 	err := m.GetBackingStore().Set("createdBy", value)
@@ -182,7 +147,7 @@ func (m *TeamworkCustomEmoji) SetCreatedDateTime(value *i336074805fc853987abe6f7
 	}
 }
 
-// SetDisplayName sets the displayName property value. The unique display name of the custom emoji. Key. Must be unique and must not conflict with existing emoji names.
+// SetDisplayName sets the displayName property value. The unique display name of the custom emoji. This property is an alternate key and must not conflict with existing emoji names.
 func (m *TeamworkCustomEmoji) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -191,13 +156,11 @@ func (m *TeamworkCustomEmoji) SetDisplayName(value *string) {
 }
 
 type TeamworkCustomEmojiable interface {
-	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-	GetContentBytes() *string
+	TeamworkHostedContentable
 	GetCreatedBy() CustomEmojiFromIdentitySetable
 	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetDisplayName() *string
-	SetContentBytes(value *string)
 	SetCreatedBy(value CustomEmojiFromIdentitySetable)
 	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetDisplayName(value *string)

@@ -25,7 +25,7 @@ func CreateMigrationsRootFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 	return NewMigrationsRoot(), nil
 }
 
-// GetCrossTenantMigrationJobs gets the crossTenantMigrationJobs property value. Migration Jobs associated with this tenant.
+// GetCrossTenantMigrationJobs gets the crossTenantMigrationJobs property value. Migration jobs associated with this tenant.
 // returns a []CrossTenantMigrationJobable when successful
 func (m *MigrationsRoot) GetCrossTenantMigrationJobs() []CrossTenantMigrationJobable {
 	val, err := m.GetBackingStore().Get("crossTenantMigrationJobs")
@@ -82,7 +82,7 @@ func (m *MigrationsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 	return nil
 }
 
-// SetCrossTenantMigrationJobs sets the crossTenantMigrationJobs property value. Migration Jobs associated with this tenant.
+// SetCrossTenantMigrationJobs sets the crossTenantMigrationJobs property value. Migration jobs associated with this tenant.
 func (m *MigrationsRoot) SetCrossTenantMigrationJobs(value []CrossTenantMigrationJobable) {
 	err := m.GetBackingStore().Set("crossTenantMigrationJobs", value)
 	if err != nil {

@@ -9,10 +9,11 @@ const (
 	ENABLED_APPMANAGEMENTRESTRICTIONSTATE AppManagementRestrictionState = iota
 	DISABLED_APPMANAGEMENTRESTRICTIONSTATE
 	UNKNOWNFUTUREVALUE_APPMANAGEMENTRESTRICTIONSTATE
+	AUDIT_APPMANAGEMENTRESTRICTIONSTATE
 )
 
 func (i AppManagementRestrictionState) String() string {
-	return []string{"enabled", "disabled", "unknownFutureValue"}[i]
+	return []string{"enabled", "disabled", "unknownFutureValue", "audit"}[i]
 }
 
 func ParseAppManagementRestrictionState(v string) (any, error) {
@@ -24,6 +25,8 @@ func ParseAppManagementRestrictionState(v string) (any, error) {
 		result = DISABLED_APPMANAGEMENTRESTRICTIONSTATE
 	case "unknownFutureValue":
 		result = UNKNOWNFUTUREVALUE_APPMANAGEMENTRESTRICTIONSTATE
+	case "audit":
+		result = AUDIT_APPMANAGEMENTRESTRICTIONSTATE
 	default:
 		return nil, nil
 	}

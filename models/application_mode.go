@@ -9,10 +9,11 @@ const (
 	MANUAL_APPLICATIONMODE ApplicationMode = iota
 	AUTOMATIC_APPLICATIONMODE
 	RECOMMENDED_APPLICATIONMODE
+	UNKNOWNFUTUREVALUE_APPLICATIONMODE
 )
 
 func (i ApplicationMode) String() string {
-	return []string{"manual", "automatic", "recommended"}[i]
+	return []string{"manual", "automatic", "recommended", "unknownFutureValue"}[i]
 }
 
 func ParseApplicationMode(v string) (any, error) {
@@ -24,6 +25,8 @@ func ParseApplicationMode(v string) (any, error) {
 		result = AUTOMATIC_APPLICATIONMODE
 	case "recommended":
 		result = RECOMMENDED_APPLICATIONMODE
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_APPLICATIONMODE
 	default:
 		return nil, nil
 	}

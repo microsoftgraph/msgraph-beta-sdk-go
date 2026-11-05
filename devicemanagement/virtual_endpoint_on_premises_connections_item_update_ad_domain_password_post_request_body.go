@@ -6,6 +6,7 @@ package devicemanagement
 import (
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+	ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
 type VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody struct {
@@ -60,6 +61,19 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReque
 	return m.backingStore
 }
 
+// GetDomainJoinCredential gets the domainJoinCredential property value. The domainJoinCredential property
+// returns a CloudPcDomainJoinCredentialable when successful
+func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) GetDomainJoinCredential() ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable {
+	val, err := m.GetBackingStore().Get("domainJoinCredential")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
@@ -74,6 +88,16 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReque
 		}
 		return nil
 	}
+	res["domainJoinCredential"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateCloudPcDomainJoinCredentialFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDomainJoinCredential(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable))
+		}
+		return nil
+	}
 	return res
 }
 
@@ -81,6 +105,12 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReque
 func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
 	{
 		err := writer.WriteStringValue("adDomainPassword", m.GetAdDomainPassword())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("domainJoinCredential", m.GetDomainJoinCredential())
 		if err != nil {
 			return err
 		}
@@ -115,12 +145,22 @@ func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostReque
 	m.backingStore = value
 }
 
+// SetDomainJoinCredential sets the domainJoinCredential property value. The domainJoinCredential property
+func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBody) SetDomainJoinCredential(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable) {
+	err := m.GetBackingStore().Set("domainJoinCredential", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetAdDomainPassword() *string
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+	GetDomainJoinCredential() ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable
 	SetAdDomainPassword(value *string)
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+	SetDomainJoinCredential(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDomainJoinCredentialable)
 }

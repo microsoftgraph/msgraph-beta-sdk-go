@@ -75,6 +75,16 @@ func (m *RestoreTaskActivityLog) GetFieldDeserializers() map[string]func(i878a80
 		}
 		return nil
 	}
+	res["restoreJobType"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetEnumValue(ParseRestoreJobType)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetRestoreJobType(val.(*RestoreJobType))
+		}
+		return nil
+	}
 	res["restoreSessionId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -92,16 +102,6 @@ func (m *RestoreTaskActivityLog) GetFieldDeserializers() map[string]func(i878a80
 		}
 		if val != nil {
 			m.SetRestoreSessionStatus(val.(*RestoreSessionStatus))
-		}
-		return nil
-	}
-	res["tags"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-		val, err := n.GetEnumValue(ParseRestorePointTags)
-		if err != nil {
-			return err
-		}
-		if val != nil {
-			m.SetTags(val.(*RestorePointTags))
 		}
 		return nil
 	}
@@ -134,6 +134,19 @@ func (m *RestoreTaskActivityLog) GetRestoreCompletionDateTime() *i336074805fc853
 	return nil
 }
 
+// GetRestoreJobType gets the restoreJobType property value. Indicates whether the restore job is standard, bulk, or granular. The possible values are: standard, bulk, unknownFutureValue, granular. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: granular.
+// returns a *RestoreJobType when successful
+func (m *RestoreTaskActivityLog) GetRestoreJobType() *RestoreJobType {
+	val, err := m.GetBackingStore().Get("restoreJobType")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*RestoreJobType)
+	}
+	return nil
+}
+
 // GetRestoreSessionId gets the restoreSessionId property value. The unique identifier of the restore session associated with this activity log.
 // returns a *string when successful
 func (m *RestoreTaskActivityLog) GetRestoreSessionId() *string {
@@ -156,19 +169,6 @@ func (m *RestoreTaskActivityLog) GetRestoreSessionStatus() *RestoreSessionStatus
 	}
 	if val != nil {
 		return val.(*RestoreSessionStatus)
-	}
-	return nil
-}
-
-// GetTags gets the tags property value. The tags property
-// returns a *RestorePointTags when successful
-func (m *RestoreTaskActivityLog) GetTags() *RestorePointTags {
-	val, err := m.GetBackingStore().Get("tags")
-	if err != nil {
-		panic(err)
-	}
-	if val != nil {
-		return val.(*RestorePointTags)
 	}
 	return nil
 }
@@ -198,6 +198,13 @@ func (m *RestoreTaskActivityLog) Serialize(writer i878a80d2330e89d26896388a3f487
 			return err
 		}
 	}
+	if m.GetRestoreJobType() != nil {
+		cast := (*m.GetRestoreJobType()).String()
+		err = writer.WriteStringValue("restoreJobType", &cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteStringValue("restoreSessionId", m.GetRestoreSessionId())
 		if err != nil {
@@ -207,13 +214,6 @@ func (m *RestoreTaskActivityLog) Serialize(writer i878a80d2330e89d26896388a3f487
 	if m.GetRestoreSessionStatus() != nil {
 		cast := (*m.GetRestoreSessionStatus()).String()
 		err = writer.WriteStringValue("restoreSessionStatus", &cast)
-		if err != nil {
-			return err
-		}
-	}
-	if m.GetTags() != nil {
-		cast := (*m.GetTags()).String()
-		err = writer.WriteStringValue("tags", &cast)
 		if err != nil {
 			return err
 		}
@@ -245,6 +245,14 @@ func (m *RestoreTaskActivityLog) SetRestoreCompletionDateTime(value *i336074805f
 	}
 }
 
+// SetRestoreJobType sets the restoreJobType property value. Indicates whether the restore job is standard, bulk, or granular. The possible values are: standard, bulk, unknownFutureValue, granular. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: granular.
+func (m *RestoreTaskActivityLog) SetRestoreJobType(value *RestoreJobType) {
+	err := m.GetBackingStore().Set("restoreJobType", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetRestoreSessionId sets the restoreSessionId property value. The unique identifier of the restore session associated with this activity log.
 func (m *RestoreTaskActivityLog) SetRestoreSessionId(value *string) {
 	err := m.GetBackingStore().Set("restoreSessionId", value)
@@ -261,27 +269,19 @@ func (m *RestoreTaskActivityLog) SetRestoreSessionStatus(value *RestoreSessionSt
 	}
 }
 
-// SetTags sets the tags property value. The tags property
-func (m *RestoreTaskActivityLog) SetTags(value *RestorePointTags) {
-	err := m.GetBackingStore().Set("tags", value)
-	if err != nil {
-		panic(err)
-	}
-}
-
 type RestoreTaskActivityLogable interface {
 	ActivityLogBaseable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetDestinationType() *DestinationType
 	GetRestoreArtifactDetails() RestoreArtifactDetailsable
 	GetRestoreCompletionDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetRestoreJobType() *RestoreJobType
 	GetRestoreSessionId() *string
 	GetRestoreSessionStatus() *RestoreSessionStatus
-	GetTags() *RestorePointTags
 	SetDestinationType(value *DestinationType)
 	SetRestoreArtifactDetails(value RestoreArtifactDetailsable)
 	SetRestoreCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetRestoreJobType(value *RestoreJobType)
 	SetRestoreSessionId(value *string)
 	SetRestoreSessionStatus(value *RestoreSessionStatus)
-	SetTags(value *RestorePointTags)
 }

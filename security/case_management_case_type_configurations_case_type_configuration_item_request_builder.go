@@ -75,6 +75,12 @@ func (m *CaseManagementCaseTypeConfigurationsCaseTypeConfigurationItemRequestBui
 	return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CaseTypeConfigurationable), nil
 }
 
+// SlaPolicies provides operations to manage the slaPolicies property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.
+// returns a *CaseManagementCaseTypeConfigurationsItemSlaPoliciesRequestBuilder when successful
+func (m *CaseManagementCaseTypeConfigurationsCaseTypeConfigurationItemRequestBuilder) SlaPolicies() *CaseManagementCaseTypeConfigurationsItemSlaPoliciesRequestBuilder {
+	return NewCaseManagementCaseTypeConfigurationsItemSlaPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Statuses provides operations to manage the statuses property of the microsoft.graph.security.caseManagement.caseTypeConfiguration entity.
 // returns a *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder when successful
 func (m *CaseManagementCaseTypeConfigurationsCaseTypeConfigurationItemRequestBuilder) Statuses() *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder {

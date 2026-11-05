@@ -47,7 +47,7 @@ func (m *AppliedAuthenticationEventListener) GetBackingStore() ie8677ce2c7e1b4c2
 	return m.backingStore
 }
 
-// GetEventType gets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue, attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit.
+// GetEventType gets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue, attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit, passwordUpdate. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit, passwordUpdate.
 // returns a *AuthenticationEventType when successful
 func (m *AppliedAuthenticationEventListener) GetEventType() *AuthenticationEventType {
 	val, err := m.GetBackingStore().Get("eventType")
@@ -195,7 +195,7 @@ func (m *AppliedAuthenticationEventListener) SetBackingStore(value ie8677ce2c7e1
 	m.backingStore = value
 }
 
-// SetEventType sets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue, attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit.
+// SetEventType sets the eventType property value. The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue, attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit, passwordUpdate. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: attributeCollectionStart, attributeCollectionSubmit, emailOtpSend, passwordSubmit, passwordUpdate.
 func (m *AppliedAuthenticationEventListener) SetEventType(value *AuthenticationEventType) {
 	err := m.GetBackingStore().Set("eventType", value)
 	if err != nil {

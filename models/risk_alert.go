@@ -120,6 +120,16 @@ func (m *RiskAlert) GetFieldDeserializers() map[string]func(i878a80d2330e89d2689
 		}
 		return nil
 	}
+	res["source"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSource(val)
+		}
+		return nil
+	}
 	return res
 }
 
@@ -175,6 +185,19 @@ func (m *RiskAlert) GetSeverity() *Severity {
 	return nil
 }
 
+// GetSource gets the source property value. The source property
+// returns a *string when successful
+func (m *RiskAlert) GetSource() *string {
+	val, err := m.GetBackingStore().Get("source")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
 // Serialize serializes information the current object
 func (m *RiskAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
 	{
@@ -204,6 +227,12 @@ func (m *RiskAlert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
 	if m.GetSeverity() != nil {
 		cast := (*m.GetSeverity()).String()
 		err := writer.WriteStringValue("severity", &cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteStringValue("source", m.GetSource())
 		if err != nil {
 			return err
 		}
@@ -270,6 +299,14 @@ func (m *RiskAlert) SetSeverity(value *Severity) {
 	}
 }
 
+// SetSource sets the source property value. The source property
+func (m *RiskAlert) SetSource(value *string) {
+	err := m.GetBackingStore().Set("source", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type RiskAlertable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -280,10 +317,12 @@ type RiskAlertable interface {
 	GetOdataType() *string
 	GetProviderAlertId() *string
 	GetSeverity() *Severity
+	GetSource() *string
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetDisplayName(value *string)
 	SetMitreTechniques(value []string)
 	SetOdataType(value *string)
 	SetProviderAlertId(value *string)
 	SetSeverity(value *Severity)
+	SetSource(value *string)
 }

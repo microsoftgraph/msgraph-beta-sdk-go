@@ -769,6 +769,16 @@ func (m *Group) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 		}
 		return nil
 	}
+	res["mailboxId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetStringValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetMailboxId(val)
+		}
+		return nil
+	}
 	res["mailEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetBoolValue()
 		if err != nil {
@@ -1514,6 +1524,19 @@ func (m *Group) GetLicenseProcessingState() LicenseProcessingStateable {
 // returns a *string when successful
 func (m *Group) GetMail() *string {
 	val, err := m.GetBackingStore().Get("mail")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*string)
+	}
+	return nil
+}
+
+// GetMailboxId gets the mailboxId property value. The identifier of the Exchange mailbox associated with a Microsoft 365 group. Treat this value as an opaque identifier and don't parse or validate its format. If the group mailbox isn't provisioned, this property returns 00000000-0000-0000-0000-000000000000. Requires $select to retrieve. Read-only.
+// returns a *string when successful
+func (m *Group) GetMailboxId() *string {
+	val, err := m.GetBackingStore().Get("mailboxId")
 	if err != nil {
 		panic(err)
 	}
@@ -2437,6 +2460,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 		}
 	}
 	{
+		err = writer.WriteStringValue("mailboxId", m.GetMailboxId())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteBoolValue("mailEnabled", m.GetMailEnabled())
 		if err != nil {
 			return err
@@ -3099,6 +3128,14 @@ func (m *Group) SetMail(value *string) {
 	}
 }
 
+// SetMailboxId sets the mailboxId property value. The identifier of the Exchange mailbox associated with a Microsoft 365 group. Treat this value as an opaque identifier and don't parse or validate its format. If the group mailbox isn't provisioned, this property returns 00000000-0000-0000-0000-000000000000. Requires $select to retrieve. Read-only.
+func (m *Group) SetMailboxId(value *string) {
+	err := m.GetBackingStore().Set("mailboxId", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetMailEnabled sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
 func (m *Group) SetMailEnabled(value *bool) {
 	err := m.GetBackingStore().Set("mailEnabled", value)
@@ -3522,6 +3559,7 @@ type Groupable interface {
 	GetIsSubscribedByMail() *bool
 	GetLicenseProcessingState() LicenseProcessingStateable
 	GetMail() *string
+	GetMailboxId() *string
 	GetMailEnabled() *bool
 	GetMailNickname() *string
 	GetMemberOf() []DirectoryObjectable
@@ -3606,6 +3644,7 @@ type Groupable interface {
 	SetIsSubscribedByMail(value *bool)
 	SetLicenseProcessingState(value LicenseProcessingStateable)
 	SetMail(value *string)
+	SetMailboxId(value *string)
 	SetMailEnabled(value *bool)
 	SetMailNickname(value *string)
 	SetMemberOf(value []DirectoryObjectable)

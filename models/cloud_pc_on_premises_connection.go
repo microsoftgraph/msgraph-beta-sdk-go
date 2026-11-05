@@ -38,7 +38,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainName() *string {
 	return nil
 }
 
-// GetAdDomainPassword gets the adDomainPassword property value. The password associated with adDomainUsername.
+// GetAdDomainPassword gets the adDomainPassword property value. The password associated with adDomainUsername. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential property instead. If both properties are provided, domainJoinCredential takes precedence.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnection) GetAdDomainPassword() *string {
 	val, err := m.GetBackingStore().Get("adDomainPassword")
@@ -51,7 +51,7 @@ func (m *CloudPcOnPremisesConnection) GetAdDomainPassword() *string {
 	return nil
 }
 
-// GetAdDomainUsername gets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
+// GetAdDomainUsername gets the adDomainUsername property value. The username of an Active Directory account that has permissions to create computer objects in Active Directory. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential/domainUserPrincipalName property instead.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnection) GetAdDomainUsername() *string {
 	val, err := m.GetBackingStore().Get("adDomainUsername")
@@ -99,6 +99,19 @@ func (m *CloudPcOnPremisesConnection) GetDisplayName() *string {
 	}
 	if val != nil {
 		return val.(*string)
+	}
+	return nil
+}
+
+// GetDomainJoinCredential gets the domainJoinCredential property value. The Active Directory credential that Windows 365 uses to join Cloud PCs to the on-premises domain. Set @odata.type to #microsoft.graph.cloudPcPlainTextDomainJoinCredential to supply the username and password directly, or to #microsoft.graph.cloudPcKeyVaultDomainJoinCredential to retrieve the password from a customer-owned Azure Key Vault. Takes precedence over the deprecated adDomainPassword property when both are supplied.
+// returns a CloudPcDomainJoinCredentialable when successful
+func (m *CloudPcOnPremisesConnection) GetDomainJoinCredential() CloudPcDomainJoinCredentialable {
+	val, err := m.GetBackingStore().Get("domainJoinCredential")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CloudPcDomainJoinCredentialable)
 	}
 	return nil
 }
@@ -164,6 +177,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers() map[string]func(i8
 		}
 		if val != nil {
 			m.SetDisplayName(val)
+		}
+		return nil
+	}
+	res["domainJoinCredential"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCloudPcDomainJoinCredentialFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetDomainJoinCredential(val.(CloudPcDomainJoinCredentialable))
 		}
 		return nil
 	}
@@ -385,7 +408,7 @@ func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetail() CloudPcOnPrem
 	return nil
 }
 
-// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// GetHealthCheckStatusDetails gets the healthCheckStatusDetails property value. Indicates the health checks for the connection and their respective results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only. The healthCheckStatusDetails property is deprecated and stopped returning data on January 31, 2024. Going forward, use the healthCheckStatusDetail property.
 // returns a CloudPcOnPremisesConnectionStatusDetailsable when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatusDetails() CloudPcOnPremisesConnectionStatusDetailsable {
 	val, err := m.GetBackingStore().Get("healthCheckStatusDetails")
@@ -611,6 +634,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
 		}
 	}
 	{
+		err = writer.WriteObjectValue("domainJoinCredential", m.GetDomainJoinCredential())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteBoolValue("healthCheckPaused", m.GetHealthCheckPaused())
 		if err != nil {
 			return err
@@ -726,7 +755,7 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainName(value *string) {
 	}
 }
 
-// SetAdDomainPassword sets the adDomainPassword property value. The password associated with adDomainUsername.
+// SetAdDomainPassword sets the adDomainPassword property value. The password associated with adDomainUsername. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential property instead. If both properties are provided, domainJoinCredential takes precedence.
 func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string) {
 	err := m.GetBackingStore().Set("adDomainPassword", value)
 	if err != nil {
@@ -734,7 +763,7 @@ func (m *CloudPcOnPremisesConnection) SetAdDomainPassword(value *string) {
 	}
 }
 
-// SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
+// SetAdDomainUsername sets the adDomainUsername property value. The username of an Active Directory account that has permissions to create computer objects in Active Directory. This deprecated property is retained for backward compatibility and will be removed on December 31, 2026. Going forward use the domainJoinCredential/domainUserPrincipalName property instead.
 func (m *CloudPcOnPremisesConnection) SetAdDomainUsername(value *string) {
 	err := m.GetBackingStore().Set("adDomainUsername", value)
 	if err != nil {
@@ -766,6 +795,14 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string) {
 	}
 }
 
+// SetDomainJoinCredential sets the domainJoinCredential property value. The Active Directory credential that Windows 365 uses to join Cloud PCs to the on-premises domain. Set @odata.type to #microsoft.graph.cloudPcPlainTextDomainJoinCredential to supply the username and password directly, or to #microsoft.graph.cloudPcKeyVaultDomainJoinCredential to retrieve the password from a customer-owned Azure Key Vault. Takes precedence over the deprecated adDomainPassword property when both are supplied.
+func (m *CloudPcOnPremisesConnection) SetDomainJoinCredential(value CloudPcDomainJoinCredentialable) {
+	err := m.GetBackingStore().Set("domainJoinCredential", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetHealthCheckPaused sets the healthCheckPaused property value. Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckPaused(value *bool) {
 	err := m.GetBackingStore().Set("healthCheckPaused", value)
@@ -790,7 +827,7 @@ func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetail(value CloudPcOn
 	}
 }
 
-// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. The details of the connection's health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.
+// SetHealthCheckStatusDetails sets the healthCheckStatusDetails property value. Indicates the health checks for the connection and their respective results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only. The healthCheckStatusDetails property is deprecated and stopped returning data on January 31, 2024. Going forward, use the healthCheckStatusDetail property.
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable) {
 	err := m.GetBackingStore().Set("healthCheckStatusDetails", value)
 	if err != nil {
@@ -911,6 +948,7 @@ type CloudPcOnPremisesConnectionable interface {
 	GetAlternateResourceUrl() *string
 	GetConnectionType() *CloudPcOnPremisesConnectionType
 	GetDisplayName() *string
+	GetDomainJoinCredential() CloudPcDomainJoinCredentialable
 	GetHealthCheckPaused() *bool
 	GetHealthCheckStatus() *CloudPcOnPremisesConnectionStatus
 	GetHealthCheckStatusDetail() CloudPcOnPremisesConnectionStatusDetailable
@@ -934,6 +972,7 @@ type CloudPcOnPremisesConnectionable interface {
 	SetAlternateResourceUrl(value *string)
 	SetConnectionType(value *CloudPcOnPremisesConnectionType)
 	SetDisplayName(value *string)
+	SetDomainJoinCredential(value CloudPcDomainJoinCredentialable)
 	SetHealthCheckPaused(value *bool)
 	SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)
 	SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)
