@@ -15,7 +15,7 @@ type ItemPlannerPlans_v2PlanItemRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemPlannerPlans_v2PlanItemRequestBuilderGetQueryParameters read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+// ItemPlannerPlans_v2PlanItemRequestBuilderGetQueryParameters read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
 type ItemPlannerPlans_v2PlanItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewItemPlannerPlans_v2PlanItemRequestBuilder(rawUrl string, requestAdapter 
 	return NewItemPlannerPlans_v2PlanItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+// Get read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
 // returns a Planable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlans_v2PlanItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlans_v2PlanItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Planable, error) {
@@ -69,7 +69,7 @@ func (m *ItemPlannerPlans_v2PlanItemRequestBuilder) Get(ctx context.Context, req
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Planable), nil
 }
 
-// ToGetRequestInformation read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+// ToGetRequestInformation read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlans_v2PlanItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlans_v2PlanItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

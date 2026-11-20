@@ -69,6 +69,12 @@ func (m *ConditionalAccessRequestBuilder) Policies() *ConditionalAccessPoliciesR
 	return NewConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Settings provides operations to manage the settings property of the microsoft.graph.conditionalAccessRoot entity.
+// returns a *ConditionalAccessSettingsRequestBuilder when successful
+func (m *ConditionalAccessRequestBuilder) Settings() *ConditionalAccessSettingsRequestBuilder {
+	return NewConditionalAccessSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Templates provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
 // returns a *ConditionalAccessTemplatesRequestBuilder when successful
 func (m *ConditionalAccessRequestBuilder) Templates() *ConditionalAccessTemplatesRequestBuilder {

@@ -38,7 +38,7 @@ func (m *ServicePrincipalSignInActivity) GetAppId() *string {
 	return nil
 }
 
-// GetApplicationAuthenticationClientSignInActivity gets the applicationAuthenticationClientSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.
+// GetApplicationAuthenticationClientSignInActivity gets the applicationAuthenticationClientSignInActivity property value. The sign-in activity reported as app-only authentication where the application acts as a client. Subject to the preview classification limitation described above.
 // returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationClientSignInActivity() SignInActivityable {
 	val, err := m.GetBackingStore().Get("applicationAuthenticationClientSignInActivity")
@@ -51,7 +51,7 @@ func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationClientSignI
 	return nil
 }
 
-// GetApplicationAuthenticationResourceSignInActivity gets the applicationAuthenticationResourceSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.
+// GetApplicationAuthenticationResourceSignInActivity gets the applicationAuthenticationResourceSignInActivity property value. The sign-in activity reported as app-only authentication where the application acts as a resource. Subject to the preview classification limitation described above.
 // returns a SignInActivityable when successful
 func (m *ServicePrincipalSignInActivity) GetApplicationAuthenticationResourceSignInActivity() SignInActivityable {
 	val, err := m.GetBackingStore().Get("applicationAuthenticationResourceSignInActivity")
@@ -223,7 +223,7 @@ func (m *ServicePrincipalSignInActivity) SetAppId(value *string) {
 	}
 }
 
-// SetApplicationAuthenticationClientSignInActivity sets the applicationAuthenticationClientSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.
+// SetApplicationAuthenticationClientSignInActivity sets the applicationAuthenticationClientSignInActivity property value. The sign-in activity reported as app-only authentication where the application acts as a client. Subject to the preview classification limitation described above.
 func (m *ServicePrincipalSignInActivity) SetApplicationAuthenticationClientSignInActivity(value SignInActivityable) {
 	err := m.GetBackingStore().Set("applicationAuthenticationClientSignInActivity", value)
 	if err != nil {
@@ -231,7 +231,7 @@ func (m *ServicePrincipalSignInActivity) SetApplicationAuthenticationClientSignI
 	}
 }
 
-// SetApplicationAuthenticationResourceSignInActivity sets the applicationAuthenticationResourceSignInActivity property value. The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.
+// SetApplicationAuthenticationResourceSignInActivity sets the applicationAuthenticationResourceSignInActivity property value. The sign-in activity reported as app-only authentication where the application acts as a resource. Subject to the preview classification limitation described above.
 func (m *ServicePrincipalSignInActivity) SetApplicationAuthenticationResourceSignInActivity(value SignInActivityable) {
 	err := m.GetBackingStore().Set("applicationAuthenticationResourceSignInActivity", value)
 	if err != nil {

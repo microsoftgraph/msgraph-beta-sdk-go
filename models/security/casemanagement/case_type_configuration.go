@@ -26,7 +26,7 @@ func CreateCaseTypeConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89
 	return NewCaseTypeConfiguration(), nil
 }
 
-// GetCustomFields gets the customFields property value. The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// GetCustomFields gets the customFields property value. The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a []CustomFieldDefinitionable when successful
 func (m *CaseTypeConfiguration) GetCustomFields() []CustomFieldDefinitionable {
 	val, err := m.GetBackingStore().Get("customFields")
@@ -140,7 +140,7 @@ func (m *CaseTypeConfiguration) GetFieldDeserializers() map[string]func(i878a80d
 	return res
 }
 
-// GetSlaPolicies gets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// GetSlaPolicies gets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
 // returns a []SlaPolicyDefinitionable when successful
 func (m *CaseTypeConfiguration) GetSlaPolicies() []SlaPolicyDefinitionable {
 	val, err := m.GetBackingStore().Get("slaPolicies")
@@ -153,7 +153,7 @@ func (m *CaseTypeConfiguration) GetSlaPolicies() []SlaPolicyDefinitionable {
 	return nil
 }
 
-// GetStatuses gets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// GetStatuses gets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a []StatusDefinitionable when successful
 func (m *CaseTypeConfiguration) GetStatuses() []StatusDefinitionable {
 	val, err := m.GetBackingStore().Get("statuses")
@@ -223,7 +223,7 @@ func (m *CaseTypeConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
 	return nil
 }
 
-// SetCustomFields sets the customFields property value. The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// SetCustomFields sets the customFields property value. The contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 func (m *CaseTypeConfiguration) SetCustomFields(value []CustomFieldDefinitionable) {
 	err := m.GetBackingStore().Set("customFields", value)
 	if err != nil {
@@ -247,7 +247,7 @@ func (m *CaseTypeConfiguration) SetDisplayName(value *string) {
 	}
 }
 
-// SetSlaPolicies sets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// SetSlaPolicies sets the slaPolicies property value. The contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
 func (m *CaseTypeConfiguration) SetSlaPolicies(value []SlaPolicyDefinitionable) {
 	err := m.GetBackingStore().Set("slaPolicies", value)
 	if err != nil {
@@ -255,7 +255,7 @@ func (m *CaseTypeConfiguration) SetSlaPolicies(value []SlaPolicyDefinitionable) 
 	}
 }
 
-// SetStatuses sets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// SetStatuses sets the statuses property value. The contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 func (m *CaseTypeConfiguration) SetStatuses(value []StatusDefinitionable) {
 	err := m.GetBackingStore().Set("statuses", value)
 	if err != nil {

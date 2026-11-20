@@ -41,6 +41,12 @@ type SecurityRequestBuilderPatchRequestConfiguration struct {
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
+// AgenticSecurity the agenticSecurity property
+// returns a *AgenticSecurityRequestBuilder when successful
+func (m *SecurityRequestBuilder) AgenticSecurity() *AgenticSecurityRequestBuilder {
+	return NewAgenticSecurityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // Alerts provides operations to manage the alerts property of the microsoft.graph.security entity.
 // returns a *AlertsRequestBuilder when successful
 func (m *SecurityRequestBuilder) Alerts() *AlertsRequestBuilder {
@@ -102,6 +108,12 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 	urlParams := make(map[string]string)
 	urlParams["request-raw-url"] = rawUrl
 	return NewSecurityRequestBuilderInternal(urlParams, requestAdapter)
+}
+
+// ContentManagement the contentManagement property
+// returns a *ContentManagementRequestBuilder when successful
+func (m *SecurityRequestBuilder) ContentManagement() *ContentManagementRequestBuilder {
+	return NewContentManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // DataDiscovery provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.

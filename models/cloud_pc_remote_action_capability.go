@@ -40,7 +40,7 @@ func (m *CloudPcRemoteActionCapability) GetActionCapability() *ActionCapability 
 	return nil
 }
 
-// GetActionName gets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
+// GetActionName gets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview, unknownFutureValue, setDeviceName. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: setDeviceName. The default value is unknown.
 // returns a *CloudPcRemoteActionName when successful
 func (m *CloudPcRemoteActionCapability) GetActionName() *CloudPcRemoteActionName {
 	val, err := m.GetBackingStore().Get("actionName")
@@ -162,7 +162,7 @@ func (m *CloudPcRemoteActionCapability) SetActionCapability(value *ActionCapabil
 	}
 }
 
-// SetActionName sets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
+// SetActionName sets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview, unknownFutureValue, setDeviceName. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: setDeviceName. The default value is unknown.
 func (m *CloudPcRemoteActionCapability) SetActionName(value *CloudPcRemoteActionName) {
 	err := m.GetBackingStore().Set("actionName", value)
 	if err != nil {

@@ -26,7 +26,7 @@ func CreateUserAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 	return NewUserAssignment(), nil
 }
 
-// GetAssignedBy gets the assignedBy property value. Identity of the user (or application) that made the assignment.
+// GetAssignedBy gets the assignedBy property value. Identity of the user (or application) that made the assignment. Read-only.
 // returns a IdentitySetable when successful
 func (m *UserAssignment) GetAssignedBy() IdentitySetable {
 	val, err := m.GetBackingStore().Get("assignedBy")
@@ -39,7 +39,7 @@ func (m *UserAssignment) GetAssignedBy() IdentitySetable {
 	return nil
 }
 
-// GetAssignedDateTime gets the assignedDateTime property value. Date and time the assignment was made.
+// GetAssignedDateTime gets the assignedDateTime property value. Date and time the assignment was made. Read-only.
 // returns a *Time when successful
 func (m *UserAssignment) GetAssignedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("assignedDateTime")
@@ -152,7 +152,7 @@ func (m *UserAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
 	return nil
 }
 
-// SetAssignedBy sets the assignedBy property value. Identity of the user (or application) that made the assignment.
+// SetAssignedBy sets the assignedBy property value. Identity of the user (or application) that made the assignment. Read-only.
 func (m *UserAssignment) SetAssignedBy(value IdentitySetable) {
 	err := m.GetBackingStore().Set("assignedBy", value)
 	if err != nil {
@@ -160,7 +160,7 @@ func (m *UserAssignment) SetAssignedBy(value IdentitySetable) {
 	}
 }
 
-// SetAssignedDateTime sets the assignedDateTime property value. Date and time the assignment was made.
+// SetAssignedDateTime sets the assignedDateTime property value. Date and time the assignment was made. Read-only.
 func (m *UserAssignment) SetAssignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("assignedDateTime", value)
 	if err != nil {

@@ -225,6 +225,18 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResul
 	return NewItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// RetrieveFlexCloudPcAccessConfiguration provides operations to call the retrieveFlexCloudPcAccessConfiguration method.
+// returns a *ItemCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveFlexCloudPcAccessConfiguration() *ItemCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilder {
+	return NewItemCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// RetrieveFlexCloudPcConfigurationDetail provides operations to call the retrieveFlexCloudPcConfigurationDetail method.
+// returns a *ItemCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveFlexCloudPcConfigurationDetail() *ItemCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilder {
+	return NewItemCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // RetrieveFrontlineCloudPcDetail provides operations to call the retrieveFrontlineCloudPcDetail method.
 // returns a *ItemCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveFrontlineCloudPcDetail() *ItemCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder {
@@ -247,6 +259,12 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveSnapshots() *ItemCloudPC
 // returns a *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation() *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder {
 	return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// SetDeviceName provides operations to call the setDeviceName method.
+// returns a *ItemCloudPCsItemSetDeviceNameRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) SetDeviceName() *ItemCloudPCsItemSetDeviceNameRequestBuilder {
+	return NewItemCloudPCsItemSetDeviceNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // SetReviewStatus provides operations to call the setReviewStatus method.

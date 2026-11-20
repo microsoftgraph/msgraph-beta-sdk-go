@@ -25,7 +25,7 @@ func CreateTeamworkTagMemberFromDiscriminatorValue(parseNode i878a80d2330e89d268
 	return NewTeamworkTagMember(), nil
 }
 
-// GetDisplayName gets the displayName property value. The member's display name.
+// GetDisplayName gets the displayName property value. The member's display name. For channel-owned tags, the value can be null if the user can't be resolved.
 // returns a *string when successful
 func (m *TeamworkTagMember) GetDisplayName() *string {
 	val, err := m.GetBackingStore().Get("displayName")
@@ -75,7 +75,7 @@ func (m *TeamworkTagMember) GetFieldDeserializers() map[string]func(i878a80d2330
 	return res
 }
 
-// GetTenantId gets the tenantId property value. The ID of the tenant that the tag member is a part of.
+// GetTenantId gets the tenantId property value. The ID of the tenant that the tag member is a part of. For channel-owned tags, this is the request tenant, not a separately resolved home tenant.
 // returns a *string when successful
 func (m *TeamworkTagMember) GetTenantId() *string {
 	val, err := m.GetBackingStore().Get("tenantId")
@@ -128,7 +128,7 @@ func (m *TeamworkTagMember) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 	return nil
 }
 
-// SetDisplayName sets the displayName property value. The member's display name.
+// SetDisplayName sets the displayName property value. The member's display name. For channel-owned tags, the value can be null if the user can't be resolved.
 func (m *TeamworkTagMember) SetDisplayName(value *string) {
 	err := m.GetBackingStore().Set("displayName", value)
 	if err != nil {
@@ -136,7 +136,7 @@ func (m *TeamworkTagMember) SetDisplayName(value *string) {
 	}
 }
 
-// SetTenantId sets the tenantId property value. The ID of the tenant that the tag member is a part of.
+// SetTenantId sets the tenantId property value. The ID of the tenant that the tag member is a part of. For channel-owned tags, this is the request tenant, not a separately resolved home tenant.
 func (m *TeamworkTagMember) SetTenantId(value *string) {
 	err := m.GetBackingStore().Set("tenantId", value)
 	if err != nil {

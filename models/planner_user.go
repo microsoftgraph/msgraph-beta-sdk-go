@@ -261,7 +261,7 @@ func (m *PlannerUser) GetPlans() []PlannerPlanable {
 	return nil
 }
 
-// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
 // returns a []Planable when successful
 func (m *PlannerUser) GetPlansV2() []Planable {
 	val, err := m.GetBackingStore().Get("plans_v2")
@@ -326,7 +326,7 @@ func (m *PlannerUser) GetTasks() []PlannerTaskable {
 	return nil
 }
 
-// GetTasksV2 gets the tasks_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+// GetTasksV2 gets the tasks_v2 property value. Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
 // returns a []Taskable when successful
 func (m *PlannerUser) GetTasksV2() []Taskable {
 	val, err := m.GetBackingStore().Get("tasks_v2")
@@ -508,7 +508,7 @@ func (m *PlannerUser) SetPlans(value []PlannerPlanable) {
 	}
 }
 
-// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans associated with the user.
+// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API associated with the user.
 func (m *PlannerUser) SetPlansV2(value []Planable) {
 	err := m.GetBackingStore().Set("plans_v2", value)
 	if err != nil {
@@ -548,7 +548,7 @@ func (m *PlannerUser) SetTasks(value []PlannerTaskable) {
 	}
 }
 
-// SetTasksV2 sets the tasks_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+// SetTasksV2 sets the tasks_v2 property value. Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
 func (m *PlannerUser) SetTasksV2(value []Taskable) {
 	err := m.GetBackingStore().Set("tasks_v2", value)
 	if err != nil {

@@ -15,7 +15,7 @@ type Tasks_v2ItemChecklistRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Tasks_v2ItemChecklistRequestBuilderGetQueryParameters the collection of checklist items on the task. Read-only. Nullable.
+// Tasks_v2ItemChecklistRequestBuilderGetQueryParameters checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 type Tasks_v2ItemChecklistRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *Tasks_v2ItemChecklistRequestBuilder) Count() *Tasks_v2ItemChecklistCoun
 	return NewTasks_v2ItemChecklistCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of checklist items on the task. Read-only. Nullable.
+// Get checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a ChecklistItemV4CollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Tasks_v2ItemChecklistRequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2ItemChecklistRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemV4CollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *Tasks_v2ItemChecklistRequestBuilder) Post(ctx context.Context, body ie2
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemV4able), nil
 }
 
-// ToGetRequestInformation the collection of checklist items on the task. Read-only. Nullable.
+// ToGetRequestInformation checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Tasks_v2ItemChecklistRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Tasks_v2ItemChecklistRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

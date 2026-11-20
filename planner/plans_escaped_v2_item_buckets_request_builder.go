@@ -15,7 +15,7 @@ type Plans_v2ItemBucketsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Plans_v2ItemBucketsRequestBuilderGetQueryParameters the collection of buckets in the plan. Read-only. Nullable.
+// Plans_v2ItemBucketsRequestBuilderGetQueryParameters get a list of the bucket objects and their properties.
 type Plans_v2ItemBucketsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,9 +87,12 @@ func (m *Plans_v2ItemBucketsRequestBuilder) Count() *Plans_v2ItemBucketsCountReq
 	return NewPlans_v2ItemBucketsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of buckets in the plan. Read-only. Nullable.
+// Get get a list of the bucket objects and their properties.
 // returns a BucketCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/plan-list-buckets?view=graph-rest-beta
 func (m *Plans_v2ItemBucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BucketCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,9 +111,12 @@ func (m *Plans_v2ItemBucketsRequestBuilder) Get(ctx context.Context, requestConf
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BucketCollectionResponseable), nil
 }
 
-// Post create new navigation property to buckets for planner
+// Post create a new bucket object.
 // returns a Bucketable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/plan-post-buckets?view=graph-rest-beta
 func (m *Plans_v2ItemBucketsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, requestConfiguration *Plans_v2ItemBucketsRequestBuilderPostRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -129,7 +135,7 @@ func (m *Plans_v2ItemBucketsRequestBuilder) Post(ctx context.Context, body ie233
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable), nil
 }
 
-// ToGetRequestInformation the collection of buckets in the plan. Read-only. Nullable.
+// ToGetRequestInformation get a list of the bucket objects and their properties.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemBucketsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +150,7 @@ func (m *Plans_v2ItemBucketsRequestBuilder) ToGetRequestInformation(ctx context.
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create new navigation property to buckets for planner
+// ToPostRequestInformation create a new bucket object.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemBucketsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, requestConfiguration *Plans_v2ItemBucketsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

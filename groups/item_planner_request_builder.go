@@ -64,11 +64,8 @@ func NewItemPlannerRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 	return NewItemPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete a plannerGroup object.
+// Delete delete navigation property planner for groups
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-//
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-planner?view=graph-rest-beta
 func (m *ItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,12 +105,9 @@ func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguratio
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerGroupable), nil
 }
 
-// Patch update the properties of a plannerGroup object.
+// Patch update the navigation property planner in groups
 // returns a PlannerGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-//
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannergroup-update?view=graph-rest-beta
 func (m *ItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerGroupable, requestConfiguration *ItemPlannerRequestBuilderPatchRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerGroupable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -144,7 +138,7 @@ func (m *ItemPlannerRequestBuilder) Plans_v2() *ItemPlannerPlans_v2RequestBuilde
 	return NewItemPlannerPlans_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToDeleteRequestInformation delete a plannerGroup object.
+// ToDeleteRequestInformation delete navigation property planner for groups
 // returns a *RequestInformation when successful
 func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -171,7 +165,7 @@ func (m *ItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context,
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the properties of a plannerGroup object.
+// ToPatchRequestInformation update the navigation property planner in groups
 // returns a *RequestInformation when successful
 func (m *ItemPlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerGroupable, requestConfiguration *ItemPlannerRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

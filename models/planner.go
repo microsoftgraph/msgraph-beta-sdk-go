@@ -183,7 +183,7 @@ func (m *Planner) GetPlans() []PlannerPlanable {
 	return nil
 }
 
-// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans.
+// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API.
 // returns a []Planable when successful
 func (m *Planner) GetPlansV2() []Planable {
 	val, err := m.GetBackingStore().Get("plans_v2")
@@ -222,7 +222,7 @@ func (m *Planner) GetTasks() []PlannerTaskable {
 	return nil
 }
 
-// GetTasksV2 gets the tasks_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 tasks.
+// GetTasksV2 gets the tasks_v2 property value. Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API.
 // returns a []Taskable when successful
 func (m *Planner) GetTasksV2() []Taskable {
 	val, err := m.GetBackingStore().Get("tasks_v2")
@@ -352,7 +352,7 @@ func (m *Planner) SetPlans(value []PlannerPlanable) {
 	}
 }
 
-// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans.
+// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API.
 func (m *Planner) SetPlansV2(value []Planable) {
 	err := m.GetBackingStore().Set("plans_v2", value)
 	if err != nil {
@@ -376,7 +376,7 @@ func (m *Planner) SetTasks(value []PlannerTaskable) {
 	}
 }
 
-// SetTasksV2 sets the tasks_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 tasks.
+// SetTasksV2 sets the tasks_v2 property value. Read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API.
 func (m *Planner) SetTasksV2(value []Taskable) {
 	err := m.GetBackingStore().Set("tasks_v2", value)
 	if err != nil {

@@ -23,7 +23,7 @@ type Plans_v2ItemBucketsBucketItemRequestBuilderDeleteRequestConfiguration struc
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// Plans_v2ItemBucketsBucketItemRequestBuilderGetQueryParameters the collection of buckets in the plan. Read-only. Nullable.
+// Plans_v2ItemBucketsBucketItemRequestBuilderGetQueryParameters read the properties and relationships of bucket object.
 type Plans_v2ItemBucketsBucketItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -64,8 +64,11 @@ func NewPlans_v2ItemBucketsBucketItemRequestBuilder(rawUrl string, requestAdapte
 	return NewPlans_v2ItemBucketsBucketItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete navigation property buckets for planner
+// Delete delete a bucket object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/plan-delete-buckets?view=graph-rest-beta
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -81,9 +84,12 @@ func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Delete(ctx context.Context
 	return nil
 }
 
-// Get the collection of buckets in the plan. Read-only. Nullable.
+// Get read the properties and relationships of bucket object.
 // returns a Bucketable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/bucket-get?view=graph-rest-beta
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -102,9 +108,12 @@ func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Get(ctx context.Context, r
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable), nil
 }
 
-// Patch update the navigation property buckets in planner
+// Patch update the properties of a bucket object.
 // returns a Bucketable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/bucket-update?view=graph-rest-beta
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderPatchRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -123,7 +132,7 @@ func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) Patch(ctx context.Context,
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable), nil
 }
 
-// ToDeleteRequestInformation delete navigation property buckets for planner
+// ToDeleteRequestInformation delete a bucket object.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) ToDeleteRequestInformation
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of buckets in the plan. Read-only. Nullable.
+// ToGetRequestInformation read the properties and relationships of bucket object.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +159,7 @@ func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) ToGetRequestInformation(ct
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the navigation property buckets in planner
+// ToPatchRequestInformation update the properties of a bucket object.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemBucketsBucketItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bucketable, requestConfiguration *Plans_v2ItemBucketsBucketItemRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

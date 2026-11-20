@@ -94,7 +94,7 @@ func (m *SensitiveContentEvidence) GetFieldDeserializers() map[string]func(i878a
 	return res
 }
 
-// GetLength gets the length property value. The length property
+// GetLength gets the length property value. The length of the evidence text.
 // returns a *int32 when successful
 func (m *SensitiveContentEvidence) GetLength() *int32 {
 	val, err := m.GetBackingStore().Get("length")
@@ -107,7 +107,7 @@ func (m *SensitiveContentEvidence) GetLength() *int32 {
 	return nil
 }
 
-// GetMatch gets the match property value. The match property
+// GetMatch gets the match property value. The matched evidence text.
 // returns a *string when successful
 func (m *SensitiveContentEvidence) GetMatch() *string {
 	val, err := m.GetBackingStore().Get("match")
@@ -133,7 +133,7 @@ func (m *SensitiveContentEvidence) GetOdataType() *string {
 	return nil
 }
 
-// GetOffset gets the offset property value. The offset property
+// GetOffset gets the offset property value. The start position of the evidence text.
 // returns a *int32 when successful
 func (m *SensitiveContentEvidence) GetOffset() *int32 {
 	val, err := m.GetBackingStore().Get("offset")
@@ -194,7 +194,7 @@ func (m *SensitiveContentEvidence) SetBackingStore(value ie8677ce2c7e1b4c22e9c38
 	m.backingStore = value
 }
 
-// SetLength sets the length property value. The length property
+// SetLength sets the length property value. The length of the evidence text.
 func (m *SensitiveContentEvidence) SetLength(value *int32) {
 	err := m.GetBackingStore().Set("length", value)
 	if err != nil {
@@ -202,7 +202,7 @@ func (m *SensitiveContentEvidence) SetLength(value *int32) {
 	}
 }
 
-// SetMatch sets the match property value. The match property
+// SetMatch sets the match property value. The matched evidence text.
 func (m *SensitiveContentEvidence) SetMatch(value *string) {
 	err := m.GetBackingStore().Set("match", value)
 	if err != nil {
@@ -218,7 +218,7 @@ func (m *SensitiveContentEvidence) SetOdataType(value *string) {
 	}
 }
 
-// SetOffset sets the offset property value. The offset property
+// SetOffset sets the offset property value. The start position of the evidence text.
 func (m *SensitiveContentEvidence) SetOffset(value *int32) {
 	err := m.GetBackingStore().Set("offset", value)
 	if err != nil {

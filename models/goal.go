@@ -319,7 +319,7 @@ func (m *Goal) GetNotes() ItemBodyable {
 	return nil
 }
 
-// GetPlanId gets the planId property value. ID of the plan that contains the goal. Required, and immutable after creation.
+// GetPlanId gets the planId property value. ID of the plan that contains the goal. Immutable after creation.
 // returns a *string when successful
 func (m *Goal) GetPlanId() *string {
 	val, err := m.GetBackingStore().Get("planId")
@@ -552,7 +552,7 @@ func (m *Goal) SetNotes(value ItemBodyable) {
 	}
 }
 
-// SetPlanId sets the planId property value. ID of the plan that contains the goal. Required, and immutable after creation.
+// SetPlanId sets the planId property value. ID of the plan that contains the goal. Immutable after creation.
 func (m *Goal) SetPlanId(value *string) {
 	err := m.GetBackingStore().Set("planId", value)
 	if err != nil {

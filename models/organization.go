@@ -766,7 +766,7 @@ func (m *Organization) GetProvisionedPlans() []ProvisionedPlanable {
 	return nil
 }
 
-// GetResourceQuotas gets the resourceQuotas property value. The resourceQuotas property
+// GetResourceQuotas gets the resourceQuotas property value. The quota configurations for resource types in the organization. Each resourceType value must be unique in the collection. The maxPercentage value represents the maximum percentage of directorySizeQuota.total that the resource type can consume, from 0 to 100. A value of 0 blocks creation of new resources of that type.
 // returns a []ResourceQuotaable when successful
 func (m *Organization) GetResourceQuotas() []ResourceQuotaable {
 	val, err := m.GetBackingStore().Get("resourceQuotas")
@@ -1334,7 +1334,7 @@ func (m *Organization) SetProvisionedPlans(value []ProvisionedPlanable) {
 	}
 }
 
-// SetResourceQuotas sets the resourceQuotas property value. The resourceQuotas property
+// SetResourceQuotas sets the resourceQuotas property value. The quota configurations for resource types in the organization. Each resourceType value must be unique in the collection. The maxPercentage value represents the maximum percentage of directorySizeQuota.total that the resource type can consume, from 0 to 100. A value of 0 blocks creation of new resources of that type.
 func (m *Organization) SetResourceQuotas(value []ResourceQuotaable) {
 	err := m.GetBackingStore().Set("resourceQuotas", value)
 	if err != nil {

@@ -111,7 +111,7 @@ func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Get(ctx con
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorCollectionResponseable), nil
 }
 
-// Post create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+// Post create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
 // returns a ConfigurationMonitorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -150,7 +150,7 @@ func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) ToGetReques
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
+// ToPostRequestInformation create a new configurationMonitor object that runs periodically in the background at a scheduled frequency to detect configuration drift in monitorOnly mode, or applies a desired-state baseline once in applyOnce mode.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, requestConfiguration *ConfigurationManagementConfigurationMonitorsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

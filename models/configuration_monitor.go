@@ -280,7 +280,7 @@ func (m *ConfigurationMonitor) GetMode() *MonitorMode {
 	return nil
 }
 
-// GetMonitorRunFrequencyInHours gets the monitorRunFrequencyInHours property value. Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.
+// GetMonitorRunFrequencyInHours gets the monitorRunFrequencyInHours property value. Frequency at which a monitorOnly monitor runs. The default frequency is six hours. Regardless of when you create or update a monitorOnly monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM. This schedule doesn't apply to applyOnce monitors.
 // returns a *int32 when successful
 func (m *ConfigurationMonitor) GetMonitorRunFrequencyInHours() *int32 {
 	val, err := m.GetBackingStore().Get("monitorRunFrequencyInHours")
@@ -463,7 +463,7 @@ func (m *ConfigurationMonitor) SetMode(value *MonitorMode) {
 	}
 }
 
-// SetMonitorRunFrequencyInHours sets the monitorRunFrequencyInHours property value. Frequency at which the monitor runs. The default frequency is six hours. Regardless of when you create or update a monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM.
+// SetMonitorRunFrequencyInHours sets the monitorRunFrequencyInHours property value. Frequency at which a monitorOnly monitor runs. The default frequency is six hours. Regardless of when you create or update a monitorOnly monitor, it gets triggered within the next 6 hours. Currently, monitors are picked up at fixed times: 6 AM, 12 PM, 6 PM, and 12 AM (all in GMT). For example, if you create a monitor at 9 AM, it gets triggered around 12 PM. If you update a monitor at 4 PM, it gets triggered around 6 PM. This schedule doesn't apply to applyOnce monitors.
 func (m *ConfigurationMonitor) SetMonitorRunFrequencyInHours(value *int32) {
 	err := m.GetBackingStore().Set("monitorRunFrequencyInHours", value)
 	if err != nil {

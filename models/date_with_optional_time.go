@@ -117,7 +117,7 @@ func (m *DateWithOptionalTime) GetFieldDeserializers() map[string]func(i878a80d2
 	return res
 }
 
-// GetIsTimeSpecified gets the isTimeSpecified property value. Indicates whether a specific time (not just a date) was provided.
+// GetIsTimeSpecified gets the isTimeSpecified property value. Indicates whether a specific time (not just a date) was provided. Read-only.
 // returns a *bool when successful
 func (m *DateWithOptionalTime) GetIsTimeSpecified() *bool {
 	val, err := m.GetBackingStore().Get("isTimeSpecified")
@@ -143,7 +143,7 @@ func (m *DateWithOptionalTime) GetOdataType() *string {
 	return nil
 }
 
-// GetTime gets the time property value. The optional time-of-day component of the value.
+// GetTime gets the time property value. The optional time-of-day component of the value. Read-only.
 // returns a *TimeOnly when successful
 func (m *DateWithOptionalTime) GetTime() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly {
 	val, err := m.GetBackingStore().Get("time")
@@ -156,7 +156,7 @@ func (m *DateWithOptionalTime) GetTime() *i878a80d2330e89d26896388a3f487eef27b0a
 	return nil
 }
 
-// GetTimeZone gets the timeZone property value. Time zone the time value is expressed in, if time is set.
+// GetTimeZone gets the timeZone property value. Time zone the time value is expressed in, if time is set. Read-only.
 // returns a *string when successful
 func (m *DateWithOptionalTime) GetTimeZone() *string {
 	val, err := m.GetBackingStore().Get("timeZone")
@@ -231,7 +231,7 @@ func (m *DateWithOptionalTime) SetDate(value *i878a80d2330e89d26896388a3f487eef2
 	}
 }
 
-// SetIsTimeSpecified sets the isTimeSpecified property value. Indicates whether a specific time (not just a date) was provided.
+// SetIsTimeSpecified sets the isTimeSpecified property value. Indicates whether a specific time (not just a date) was provided. Read-only.
 func (m *DateWithOptionalTime) SetIsTimeSpecified(value *bool) {
 	err := m.GetBackingStore().Set("isTimeSpecified", value)
 	if err != nil {
@@ -247,7 +247,7 @@ func (m *DateWithOptionalTime) SetOdataType(value *string) {
 	}
 }
 
-// SetTime sets the time property value. The optional time-of-day component of the value.
+// SetTime sets the time property value. The optional time-of-day component of the value. Read-only.
 func (m *DateWithOptionalTime) SetTime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.TimeOnly) {
 	err := m.GetBackingStore().Set("time", value)
 	if err != nil {
@@ -255,7 +255,7 @@ func (m *DateWithOptionalTime) SetTime(value *i878a80d2330e89d26896388a3f487eef2
 	}
 }
 
-// SetTimeZone sets the timeZone property value. Time zone the time value is expressed in, if time is set.
+// SetTimeZone sets the timeZone property value. Time zone the time value is expressed in, if time is set. Read-only.
 func (m *DateWithOptionalTime) SetTimeZone(value *string) {
 	err := m.GetBackingStore().Set("timeZone", value)
 	if err != nil {

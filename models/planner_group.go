@@ -77,7 +77,7 @@ func (m *PlannerGroup) GetPlans() []PlannerPlanable {
 	return nil
 }
 
-// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+// GetPlansV2 gets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group.
 // returns a []Planable when successful
 func (m *PlannerGroup) GetPlansV2() []Planable {
 	val, err := m.GetBackingStore().Get("plans_v2")
@@ -131,7 +131,7 @@ func (m *PlannerGroup) SetPlans(value []PlannerPlanable) {
 	}
 }
 
-// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of Planner Graph V4 plans owned by the group.
+// SetPlansV2 sets the plans_v2 property value. Read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the group.
 func (m *PlannerGroup) SetPlansV2(value []Planable) {
 	err := m.GetBackingStore().Set("plans_v2", value)
 	if err != nil {

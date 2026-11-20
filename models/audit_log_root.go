@@ -193,6 +193,22 @@ func (m *AuditLogRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d2
 		}
 		return nil
 	}
+	res["resourcePolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateResourcePolicyEvaluationEventFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]ResourcePolicyEvaluationEventable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(ResourcePolicyEvaluationEventable)
+				}
+			}
+			m.SetResourcePolicy(res)
+		}
+		return nil
+	}
 	res["signInEventsAppSummary"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateSignInEventsAppActivityFromDiscriminatorValue)
 		if err != nil {
@@ -282,6 +298,19 @@ func (m *AuditLogRoot) GetProvisioning() []ProvisioningObjectSummaryable {
 	}
 	if val != nil {
 		return val.([]ProvisioningObjectSummaryable)
+	}
+	return nil
+}
+
+// GetResourcePolicy gets the resourcePolicy property value. The resourcePolicy property
+// returns a []ResourcePolicyEvaluationEventable when successful
+func (m *AuditLogRoot) GetResourcePolicy() []ResourcePolicyEvaluationEventable {
+	val, err := m.GetBackingStore().Get("resourcePolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]ResourcePolicyEvaluationEventable)
 	}
 	return nil
 }
@@ -406,6 +435,18 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
 			return err
 		}
 	}
+	if m.GetResourcePolicy() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourcePolicy()))
+		for i, v := range m.GetResourcePolicy() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err := writer.WriteCollectionOfObjectValues("resourcePolicy", cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetSignInEventsAppSummary() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignInEventsAppSummary()))
 		for i, v := range m.GetSignInEventsAppSummary() {
@@ -524,6 +565,14 @@ func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable) {
 	}
 }
 
+// SetResourcePolicy sets the resourcePolicy property value. The resourcePolicy property
+func (m *AuditLogRoot) SetResourcePolicy(value []ResourcePolicyEvaluationEventable) {
+	err := m.GetBackingStore().Set("resourcePolicy", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSignInEventsAppSummary sets the signInEventsAppSummary property value. Represents the number of sign-in events for a specific application.
 func (m *AuditLogRoot) SetSignInEventsAppSummary(value []SignInEventsAppActivityable) {
 	err := m.GetBackingStore().Set("signInEventsAppSummary", value)
@@ -567,6 +616,7 @@ type AuditLogRootable interface {
 	GetDirectoryProvisioning() []ProvisioningObjectSummaryable
 	GetOdataType() *string
 	GetProvisioning() []ProvisioningObjectSummaryable
+	GetResourcePolicy() []ResourcePolicyEvaluationEventable
 	GetSignInEventsAppSummary() []SignInEventsAppActivityable
 	GetSignInEventsSummary() []SignInEventsActivityable
 	GetSignIns() []SignInable
@@ -578,6 +628,7 @@ type AuditLogRootable interface {
 	SetDirectoryProvisioning(value []ProvisioningObjectSummaryable)
 	SetOdataType(value *string)
 	SetProvisioning(value []ProvisioningObjectSummaryable)
+	SetResourcePolicy(value []ResourcePolicyEvaluationEventable)
 	SetSignInEventsAppSummary(value []SignInEventsAppActivityable)
 	SetSignInEventsSummary(value []SignInEventsActivityable)
 	SetSignIns(value []SignInable)
