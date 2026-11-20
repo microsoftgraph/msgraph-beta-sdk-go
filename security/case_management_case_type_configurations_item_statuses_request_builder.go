@@ -15,7 +15,7 @@ type CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilderGetQueryParameters the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilderGetQueryParameters the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 type CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder) Count()
 	return NewCaseManagementCaseTypeConfigurationsItemStatusesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// Get the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a StatusDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilderGetRequestConfiguration) (i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.StatusDefinitionCollectionResponseable, error) {
@@ -100,7 +100,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder) Get(ctx
 	return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.StatusDefinitionCollectionResponseable), nil
 }
 
-// ToGetRequestInformation the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// ToGetRequestInformation the contained top-level statuses that a case of this type can be set to. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemStatusesRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

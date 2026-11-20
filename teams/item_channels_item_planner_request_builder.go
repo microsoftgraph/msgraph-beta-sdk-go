@@ -64,11 +64,8 @@ func NewItemChannelsItemPlannerRequestBuilder(rawUrl string, requestAdapter i2ae
 	return NewItemChannelsItemPlannerRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete a teamsChannelPlanner object.
+// Delete delete navigation property planner for teams
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-//
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-delete-planner?view=graph-rest-beta
 func (m *ItemChannelsItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChannelsItemPlannerRequestBuilderDeleteRequestConfiguration) error {
 	requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -108,12 +105,9 @@ func (m *ItemChannelsItemPlannerRequestBuilder) Get(ctx context.Context, request
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsChannelPlannerable), nil
 }
 
-// Patch update the properties of a teamsChannelPlanner object.
+// Patch update the navigation property planner in teams
 // returns a TeamsChannelPlannerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-//
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamschannelplanner-update?view=graph-rest-beta
 func (m *ItemChannelsItemPlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsChannelPlannerable, requestConfiguration *ItemChannelsItemPlannerRequestBuilderPatchRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsChannelPlannerable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -144,7 +138,7 @@ func (m *ItemChannelsItemPlannerRequestBuilder) Plans_v2() *ItemChannelsItemPlan
 	return NewItemChannelsItemPlannerPlans_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToDeleteRequestInformation delete a teamsChannelPlanner object.
+// ToDeleteRequestInformation delete navigation property planner for teams
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemPlannerRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -171,7 +165,7 @@ func (m *ItemChannelsItemPlannerRequestBuilder) ToGetRequestInformation(ctx cont
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the properties of a teamsChannelPlanner object.
+// ToPatchRequestInformation update the navigation property planner in teams
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemPlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsChannelPlannerable, requestConfiguration *ItemChannelsItemPlannerRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

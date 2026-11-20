@@ -15,7 +15,7 @@ type Tasks_v2ItemUserAssignmentsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Tasks_v2ItemUserAssignmentsRequestBuilderGetQueryParameters the collection of user assignments on the task. Read-only. Nullable.
+// Tasks_v2ItemUserAssignmentsRequestBuilderGetQueryParameters user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 type Tasks_v2ItemUserAssignmentsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *Tasks_v2ItemUserAssignmentsRequestBuilder) Count() *Tasks_v2ItemUserAss
 	return NewTasks_v2ItemUserAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of user assignments on the task. Read-only. Nullable.
+// Get user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a UserAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Tasks_v2ItemUserAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2ItemUserAssignmentsRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAssignmentCollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *Tasks_v2ItemUserAssignmentsRequestBuilder) Post(ctx context.Context, bo
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAssignmentable), nil
 }
 
-// ToGetRequestInformation the collection of user assignments on the task. Read-only. Nullable.
+// ToGetRequestInformation user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Tasks_v2ItemUserAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Tasks_v2ItemUserAssignmentsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

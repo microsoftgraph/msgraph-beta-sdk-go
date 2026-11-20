@@ -191,7 +191,7 @@ func (m *Dependency) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a
 	return nil
 }
 
-// GetSourceItemId gets the sourceItemId property value. ID of the source item in the dependency.
+// GetSourceItemId gets the sourceItemId property value. ID of the source item in the dependency. Immutable after creation.
 // returns a *string when successful
 func (m *Dependency) GetSourceItemId() *string {
 	val, err := m.GetBackingStore().Get("sourceItemId")
@@ -204,7 +204,7 @@ func (m *Dependency) GetSourceItemId() *string {
 	return nil
 }
 
-// GetTargetItemId gets the targetItemId property value. ID of the target item in the dependency.
+// GetTargetItemId gets the targetItemId property value. ID of the target item in the dependency. Immutable after creation.
 // returns a *string when successful
 func (m *Dependency) GetTargetItemId() *string {
 	val, err := m.GetBackingStore().Get("targetItemId")
@@ -317,7 +317,7 @@ func (m *Dependency) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3a
 	}
 }
 
-// SetSourceItemId sets the sourceItemId property value. ID of the source item in the dependency.
+// SetSourceItemId sets the sourceItemId property value. ID of the source item in the dependency. Immutable after creation.
 func (m *Dependency) SetSourceItemId(value *string) {
 	err := m.GetBackingStore().Set("sourceItemId", value)
 	if err != nil {
@@ -325,7 +325,7 @@ func (m *Dependency) SetSourceItemId(value *string) {
 	}
 }
 
-// SetTargetItemId sets the targetItemId property value. ID of the target item in the dependency.
+// SetTargetItemId sets the targetItemId property value. ID of the target item in the dependency. Immutable after creation.
 func (m *Dependency) SetTargetItemId(value *string) {
 	err := m.GetBackingStore().Set("targetItemId", value)
 	if err != nil {

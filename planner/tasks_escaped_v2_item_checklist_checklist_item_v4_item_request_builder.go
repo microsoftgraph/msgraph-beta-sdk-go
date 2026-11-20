@@ -23,7 +23,7 @@ type Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderDeleteRequestConfigur
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderGetQueryParameters the collection of checklist items on the task. Read-only. Nullable.
+// Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderGetQueryParameters checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 type Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilder) Delete(ctx cont
 	return nil
 }
 
-// Get the collection of checklist items on the task. Read-only. Nullable.
+// Get checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a ChecklistItemV4able when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChecklistItemV4able, error) {
@@ -135,7 +135,7 @@ func (m *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilder) ToDeleteRequest
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of checklist items on the task. Read-only. Nullable.
+// ToGetRequestInformation checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Tasks_v2ItemChecklistChecklistItemV4ItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

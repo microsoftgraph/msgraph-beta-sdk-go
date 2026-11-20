@@ -23,7 +23,7 @@ type Plans_v2ItemLinksContentLinkItemRequestBuilderDeleteRequestConfiguration st
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// Plans_v2ItemLinksContentLinkItemRequestBuilderGetQueryParameters the collection of content links attached to the plan. Read-only. Nullable.
+// Plans_v2ItemLinksContentLinkItemRequestBuilderGetQueryParameters content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
 type Plans_v2ItemLinksContentLinkItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *Plans_v2ItemLinksContentLinkItemRequestBuilder) Delete(ctx context.Cont
 	return nil
 }
 
-// Get the collection of content links attached to the plan. Read-only. Nullable.
+// Get content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a ContentLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Plans_v2ItemLinksContentLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemLinksContentLinkItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentLinkable, error) {
@@ -135,7 +135,7 @@ func (m *Plans_v2ItemLinksContentLinkItemRequestBuilder) ToDeleteRequestInformat
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of content links attached to the plan. Read-only. Nullable.
+// ToGetRequestInformation content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemLinksContentLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemLinksContentLinkItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

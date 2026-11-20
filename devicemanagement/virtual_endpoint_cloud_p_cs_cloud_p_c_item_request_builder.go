@@ -228,6 +228,18 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemote
 	return NewVirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// RetrieveFlexCloudPcAccessConfiguration provides operations to call the retrieveFlexCloudPcAccessConfiguration method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveFlexCloudPcAccessConfiguration() *VirtualEndpointCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilder {
+	return NewVirtualEndpointCloudPCsItemRetrieveFlexCloudPcAccessConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// RetrieveFlexCloudPcConfigurationDetail provides operations to call the retrieveFlexCloudPcConfigurationDetail method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveFlexCloudPcConfigurationDetail() *VirtualEndpointCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilder {
+	return NewVirtualEndpointCloudPCsItemRetrieveFlexCloudPcConfigurationDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // RetrieveFrontlineCloudPcDetail provides operations to call the retrieveFrontlineCloudPcDetail method.
 // returns a *VirtualEndpointCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveFrontlineCloudPcDetail() *VirtualEndpointCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder {
@@ -250,6 +262,12 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveSnapshots() *
 // returns a *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation() *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder {
 	return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
+// SetDeviceName provides operations to call the setDeviceName method.
+// returns a *VirtualEndpointCloudPCsItemSetDeviceNameRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) SetDeviceName() *VirtualEndpointCloudPCsItemSetDeviceNameRequestBuilder {
+	return NewVirtualEndpointCloudPCsItemSetDeviceNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
 // SetReviewStatus provides operations to call the setReviewStatus method.

@@ -1670,6 +1670,16 @@ func (m *User) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a
 		}
 		return nil
 	}
+	res["identityVerificationStatus"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdentityVerificationStatusFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIdentityVerificationStatus(val.(IdentityVerificationStatusable))
+		}
+		return nil
+	}
 	res["imAddresses"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfPrimitiveValues("string")
 		if err != nil {
@@ -1755,6 +1765,16 @@ func (m *User) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a
 		}
 		if val != nil {
 			m.SetInvitedBy(val.(DirectoryObjectable))
+		}
+		return nil
+	}
+	res["isHardDeleteProtectionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHardDeleteProtectionEnabled(val)
 		}
 		return nil
 	}
@@ -2951,7 +2971,7 @@ func (m *User) GetIdentities() []ObjectIdentityable {
 	return nil
 }
 
-// GetIdentityGovernance gets the identityGovernance property value. The identity governance settings for the user. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
+// GetIdentityGovernance gets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
 // returns a IdentityGovernanceUserSettingsable when successful
 func (m *User) GetIdentityGovernance() IdentityGovernanceUserSettingsable {
 	val, err := m.GetBackingStore().Get("identityGovernance")
@@ -2973,6 +2993,19 @@ func (m *User) GetIdentityParentId() *string {
 	}
 	if val != nil {
 		return val.(*string)
+	}
+	return nil
+}
+
+// GetIdentityVerificationStatus gets the identityVerificationStatus property value. The user's overall identity verification state and recent verification events. Retrieve through the get identity verification status operation.
+// returns a IdentityVerificationStatusable when successful
+func (m *User) GetIdentityVerificationStatus() IdentityVerificationStatusable {
+	val, err := m.GetBackingStore().Get("identityVerificationStatus")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdentityVerificationStatusable)
 	}
 	return nil
 }
@@ -3064,6 +3097,19 @@ func (m *User) GetInvitedBy() DirectoryObjectable {
 	}
 	if val != nil {
 		return val.(DirectoryObjectable)
+	}
+	return nil
+}
+
+// GetIsHardDeleteProtectionEnabled gets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the user (excluding on-premises synchronized users). When true, permanent deletion is blocked for seven days after soft deletion. The user can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing user by using Update user; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+// returns a *bool when successful
+func (m *User) GetIsHardDeleteProtectionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isHardDeleteProtectionEnabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
 	}
 	return nil
 }
@@ -4827,6 +4873,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("identityVerificationStatus", m.GetIdentityVerificationStatus())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetImAddresses() != nil {
 		err = writer.WriteCollectionOfStringValues("imAddresses", m.GetImAddresses())
 		if err != nil {
@@ -4865,6 +4917,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 	}
 	{
 		err = writer.WriteObjectValue("invitedBy", m.GetInvitedBy())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isHardDeleteProtectionEnabled", m.GetIsHardDeleteProtectionEnabled())
 		if err != nil {
 			return err
 		}
@@ -6122,7 +6180,7 @@ func (m *User) SetIdentities(value []ObjectIdentityable) {
 	}
 }
 
-// SetIdentityGovernance sets the identityGovernance property value. The identity governance settings for the user. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
+// SetIdentityGovernance sets the identityGovernance property value. The identity governance settings for the user, including the approver delegate configuration. You can get or update the user's approver delegate through the approverDelegate property. Nullable. Returned only on $select. Supports $expand.
 func (m *User) SetIdentityGovernance(value IdentityGovernanceUserSettingsable) {
 	err := m.GetBackingStore().Set("identityGovernance", value)
 	if err != nil {
@@ -6133,6 +6191,14 @@ func (m *User) SetIdentityGovernance(value IdentityGovernanceUserSettingsable) {
 // SetIdentityParentId sets the identityParentId property value. The object ID of the parent identity for agent users. Always null for regular user accounts. For agentUser resources, this property references the object ID of the associated agent identity.
 func (m *User) SetIdentityParentId(value *string) {
 	err := m.GetBackingStore().Set("identityParentId", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetIdentityVerificationStatus sets the identityVerificationStatus property value. The user's overall identity verification state and recent verification events. Retrieve through the get identity verification status operation.
+func (m *User) SetIdentityVerificationStatus(value IdentityVerificationStatusable) {
+	err := m.GetBackingStore().Set("identityVerificationStatus", value)
 	if err != nil {
 		panic(err)
 	}
@@ -6189,6 +6255,14 @@ func (m *User) SetInterests(value []string) {
 // SetInvitedBy sets the invitedBy property value. The user or service principal that invited the user.
 func (m *User) SetInvitedBy(value DirectoryObjectable) {
 	err := m.GetBackingStore().Set("invitedBy", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetIsHardDeleteProtectionEnabled sets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the user (excluding on-premises synchronized users). When true, permanent deletion is blocked for seven days after soft deletion. The user can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing user by using Update user; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+func (m *User) SetIsHardDeleteProtectionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isHardDeleteProtectionEnabled", value)
 	if err != nil {
 		panic(err)
 	}
@@ -6991,6 +7065,7 @@ type Userable interface {
 	GetIdentities() []ObjectIdentityable
 	GetIdentityGovernance() IdentityGovernanceUserSettingsable
 	GetIdentityParentId() *string
+	GetIdentityVerificationStatus() IdentityVerificationStatusable
 	GetImAddresses() []string
 	GetInferenceClassification() InferenceClassificationable
 	GetInfoCatalogs() []string
@@ -6998,6 +7073,7 @@ type Userable interface {
 	GetInsights() ItemInsightsable
 	GetInterests() []string
 	GetInvitedBy() DirectoryObjectable
+	GetIsHardDeleteProtectionEnabled() *bool
 	GetIsLicenseReconciliationNeeded() *bool
 	GetIsManagementRestricted() *bool
 	GetIsResourceAccount() *bool
@@ -7155,6 +7231,7 @@ type Userable interface {
 	SetIdentities(value []ObjectIdentityable)
 	SetIdentityGovernance(value IdentityGovernanceUserSettingsable)
 	SetIdentityParentId(value *string)
+	SetIdentityVerificationStatus(value IdentityVerificationStatusable)
 	SetImAddresses(value []string)
 	SetInferenceClassification(value InferenceClassificationable)
 	SetInfoCatalogs(value []string)
@@ -7162,6 +7239,7 @@ type Userable interface {
 	SetInsights(value ItemInsightsable)
 	SetInterests(value []string)
 	SetInvitedBy(value DirectoryObjectable)
+	SetIsHardDeleteProtectionEnabled(value *bool)
 	SetIsLicenseReconciliationNeeded(value *bool)
 	SetIsManagementRestricted(value *bool)
 	SetIsResourceAccount(value *bool)

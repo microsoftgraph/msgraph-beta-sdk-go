@@ -78,7 +78,7 @@ func (m *CustomFieldDefinition) GetCreatedDateTime() *i336074805fc853987abe6f7fe
 	return nil
 }
 
-// GetDeletedBy gets the deletedBy property value. Identity of the user who deleted the custom field definition, if it was deleted.
+// GetDeletedBy gets the deletedBy property value. Identity of the user who deleted the custom field definition, if it was deleted. Read-only.
 // returns a IdentitySetable when successful
 func (m *CustomFieldDefinition) GetDeletedBy() IdentitySetable {
 	val, err := m.GetBackingStore().Get("deletedBy")
@@ -91,7 +91,7 @@ func (m *CustomFieldDefinition) GetDeletedBy() IdentitySetable {
 	return nil
 }
 
-// GetDeletedDateTime gets the deletedDateTime property value. Date and time the custom field definition was deleted, if applicable.
+// GetDeletedDateTime gets the deletedDateTime property value. Date and time the custom field definition was deleted, if applicable. Read-only.
 // returns a *Time when successful
 func (m *CustomFieldDefinition) GetDeletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("deletedDateTime")
@@ -302,7 +302,7 @@ func (m *CustomFieldDefinition) GetRollupType() *CustomFieldRollupType {
 	return nil
 }
 
-// GetValueType gets the valueType property value. Data type of the custom field's values.. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue.
+// GetValueType gets the valueType property value. Data type of the custom field's values. Immutable after creation. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue. The values utcDateTime, decimal, and multipleChoiceText can occur on existing fields; they aren't supported types for new field definitions.
 // returns a *CustomFieldValueType when successful
 func (m *CustomFieldDefinition) GetValueType() *CustomFieldValueType {
 	val, err := m.GetBackingStore().Get("valueType")
@@ -412,7 +412,7 @@ func (m *CustomFieldDefinition) SetCreatedDateTime(value *i336074805fc853987abe6
 	}
 }
 
-// SetDeletedBy sets the deletedBy property value. Identity of the user who deleted the custom field definition, if it was deleted.
+// SetDeletedBy sets the deletedBy property value. Identity of the user who deleted the custom field definition, if it was deleted. Read-only.
 func (m *CustomFieldDefinition) SetDeletedBy(value IdentitySetable) {
 	err := m.GetBackingStore().Set("deletedBy", value)
 	if err != nil {
@@ -420,7 +420,7 @@ func (m *CustomFieldDefinition) SetDeletedBy(value IdentitySetable) {
 	}
 }
 
-// SetDeletedDateTime sets the deletedDateTime property value. Date and time the custom field definition was deleted, if applicable.
+// SetDeletedDateTime sets the deletedDateTime property value. Date and time the custom field definition was deleted, if applicable. Read-only.
 func (m *CustomFieldDefinition) SetDeletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("deletedDateTime", value)
 	if err != nil {
@@ -468,7 +468,7 @@ func (m *CustomFieldDefinition) SetRollupType(value *CustomFieldRollupType) {
 	}
 }
 
-// SetValueType sets the valueType property value. Data type of the custom field's values.. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue.
+// SetValueType sets the valueType property value. Data type of the custom field's values. Immutable after creation. The possible values are: text, date, utcDateTime, number, decimal, flag, singleChoiceText, multipleChoiceText, unknownFutureValue. The values utcDateTime, decimal, and multipleChoiceText can occur on existing fields; they aren't supported types for new field definitions.
 func (m *CustomFieldDefinition) SetValueType(value *CustomFieldValueType) {
 	err := m.GetBackingStore().Set("valueType", value)
 	if err != nil {

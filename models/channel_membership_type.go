@@ -10,10 +10,11 @@ const (
 	PRIVATE_CHANNELMEMBERSHIPTYPE
 	UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE
 	SHARED_CHANNELMEMBERSHIPTYPE
+	UNTYPED_CHANNELMEMBERSHIPTYPE
 )
 
 func (i ChannelMembershipType) String() string {
-	return []string{"standard", "private", "unknownFutureValue", "shared"}[i]
+	return []string{"standard", "private", "unknownFutureValue", "shared", "unTyped"}[i]
 }
 
 func ParseChannelMembershipType(v string) (any, error) {
@@ -27,6 +28,8 @@ func ParseChannelMembershipType(v string) (any, error) {
 		result = UNKNOWNFUTUREVALUE_CHANNELMEMBERSHIPTYPE
 	case "shared":
 		result = SHARED_CHANNELMEMBERSHIPTYPE
+	case "unTyped":
+		result = UNTYPED_CHANNELMEMBERSHIPTYPE
 	default:
 		return nil, nil
 	}

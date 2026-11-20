@@ -15,7 +15,7 @@ type Plans_v2ItemContextsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Plans_v2ItemContextsRequestBuilderGetQueryParameters the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// Plans_v2ItemContextsRequestBuilderGetQueryParameters context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 type Plans_v2ItemContextsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *Plans_v2ItemContextsRequestBuilder) Count() *Plans_v2ItemContextsCountR
 	return NewPlans_v2ItemContextsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// Get context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a PlanContextLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Plans_v2ItemContextsRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemContextsRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlanContextLinkCollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *Plans_v2ItemContextsRequestBuilder) Post(ctx context.Context, body ie23
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlanContextLinkable), nil
 }
 
-// ToGetRequestInformation the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// ToGetRequestInformation context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemContextsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemContextsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

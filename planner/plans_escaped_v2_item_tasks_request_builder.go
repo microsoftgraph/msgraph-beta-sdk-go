@@ -15,7 +15,7 @@ type Plans_v2ItemTasksRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Plans_v2ItemTasksRequestBuilderGetQueryParameters the collection of tasks in the plan. Read-only. Nullable.
+// Plans_v2ItemTasksRequestBuilderGetQueryParameters get a list of the task objects and their properties.
 type Plans_v2ItemTasksRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -79,9 +79,12 @@ func (m *Plans_v2ItemTasksRequestBuilder) Count() *Plans_v2ItemTasksCountRequest
 	return NewPlans_v2ItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of tasks in the plan. Read-only. Nullable.
+// Get get a list of the task objects and their properties.
 // returns a TaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+//
+// [Find more info here]: https://learn.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta
 func (m *Plans_v2ItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemTasksRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TaskCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -100,7 +103,7 @@ func (m *Plans_v2ItemTasksRequestBuilder) Get(ctx context.Context, requestConfig
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TaskCollectionResponseable), nil
 }
 
-// ToGetRequestInformation the collection of tasks in the plan. Read-only. Nullable.
+// ToGetRequestInformation get a list of the task objects and their properties.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemTasksRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

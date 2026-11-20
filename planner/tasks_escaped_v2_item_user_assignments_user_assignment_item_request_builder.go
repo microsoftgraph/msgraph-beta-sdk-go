@@ -23,7 +23,7 @@ type Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderDeleteRequestCon
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderGetQueryParameters the collection of user assignments on the task. Read-only. Nullable.
+// Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderGetQueryParameters user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 type Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilder) Delete(ctx
 	return nil
 }
 
-// Get the collection of user assignments on the task. Read-only. Nullable.
+// Get user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a UserAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAssignmentable, error) {
@@ -135,7 +135,7 @@ func (m *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilder) ToDeleteRe
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of user assignments on the task. Read-only. Nullable.
+// ToGetRequestInformation user assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Tasks_v2ItemUserAssignmentsUserAssignmentItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

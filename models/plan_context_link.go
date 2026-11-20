@@ -217,7 +217,7 @@ func (m *PlanContextLink) GetIsActive() *bool {
 	return nil
 }
 
-// GetIsCreation gets the isCreation property value. Indicates whether this context link represents the original creation surface for the plan.
+// GetIsCreation gets the isCreation property value. Indicates whether this context link represents the original creation surface for the plan. Service-populated. Read-only.
 // returns a *bool when successful
 func (m *PlanContextLink) GetIsCreation() *bool {
 	val, err := m.GetBackingStore().Get("isCreation")
@@ -230,7 +230,7 @@ func (m *PlanContextLink) GetIsCreation() *bool {
 	return nil
 }
 
-// GetKey gets the key property value. Identifier for the context the plan is surfaced in.
+// GetKey gets the key property value. Client-specified identifier for the context the plan is surfaced in. Immutable after creation.
 // returns a *string when successful
 func (m *PlanContextLink) GetKey() *string {
 	val, err := m.GetBackingStore().Get("key")
@@ -243,7 +243,7 @@ func (m *PlanContextLink) GetKey() *string {
 	return nil
 }
 
-// GetOwnerAppId gets the ownerAppId property value. Application ID of the app that owns the surface the plan is linked from.
+// GetOwnerAppId gets the ownerAppId property value. Application ID of the app that owns the surface the plan is linked from. Service-populated. Read-only.
 // returns a *string when successful
 func (m *PlanContextLink) GetOwnerAppId() *string {
 	val, err := m.GetBackingStore().Get("ownerAppId")
@@ -381,7 +381,7 @@ func (m *PlanContextLink) SetIsActive(value *bool) {
 	}
 }
 
-// SetIsCreation sets the isCreation property value. Indicates whether this context link represents the original creation surface for the plan.
+// SetIsCreation sets the isCreation property value. Indicates whether this context link represents the original creation surface for the plan. Service-populated. Read-only.
 func (m *PlanContextLink) SetIsCreation(value *bool) {
 	err := m.GetBackingStore().Set("isCreation", value)
 	if err != nil {
@@ -389,7 +389,7 @@ func (m *PlanContextLink) SetIsCreation(value *bool) {
 	}
 }
 
-// SetKey sets the key property value. Identifier for the context the plan is surfaced in.
+// SetKey sets the key property value. Client-specified identifier for the context the plan is surfaced in. Immutable after creation.
 func (m *PlanContextLink) SetKey(value *string) {
 	err := m.GetBackingStore().Set("key", value)
 	if err != nil {
@@ -397,7 +397,7 @@ func (m *PlanContextLink) SetKey(value *string) {
 	}
 }
 
-// SetOwnerAppId sets the ownerAppId property value. Application ID of the app that owns the surface the plan is linked from.
+// SetOwnerAppId sets the ownerAppId property value. Application ID of the app that owns the surface the plan is linked from. Service-populated. Read-only.
 func (m *PlanContextLink) SetOwnerAppId(value *string) {
 	err := m.GetBackingStore().Set("ownerAppId", value)
 	if err != nil {

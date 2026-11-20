@@ -146,6 +146,12 @@ func (m *AuditLogsRequestBuilder) Provisioning() *ProvisioningRequestBuilder {
 	return NewProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// ResourcePolicy provides operations to manage the resourcePolicy property of the microsoft.graph.auditLogRoot entity.
+// returns a *ResourcePolicyRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) ResourcePolicy() *ResourcePolicyRequestBuilder {
+	return NewResourcePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // SignInEventsAppSummary provides operations to manage the signInEventsAppSummary property of the microsoft.graph.auditLogRoot entity.
 // returns a *SignInEventsAppSummaryRequestBuilder when successful
 func (m *AuditLogsRequestBuilder) SignInEventsAppSummary() *SignInEventsAppSummaryRequestBuilder {

@@ -23,7 +23,7 @@ type CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemR
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilderGetQueryParameters the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilderGetQueryParameters the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
 type CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionI
 	return nil
 }
 
-// Get the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// Get the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
 // returns a SlaPolicyDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilderGetRequestConfiguration) (i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.SlaPolicyDefinitionable, error) {
@@ -135,7 +135,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionI
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, $skip, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
+// ToGetRequestInformation the contained SLA policy definitions configured for this case type. Supports $filter and $orderby on createdBy, createdDateTime, description, displayName, id, isActive, lastModifiedBy, and lastModifiedDateTime on the collection endpoint. For information about supported query parameters, see List slaPolicies. Also supports $count, $select, and $top on the collection endpoint. Supports $expand=slaPolicies when getting a case type configuration.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemSlaPoliciesSlaPolicyDefinitionItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

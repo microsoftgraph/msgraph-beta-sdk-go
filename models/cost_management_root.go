@@ -26,10 +26,39 @@ func CreateCostManagementRootFromDiscriminatorValue(parseNode i878a80d2330e89d26
 	return NewCostManagementRoot(), nil
 }
 
+// GetCreditRequests gets the creditRequests property value. The collection of credit requests for this tenant. Excludes audit-only requests by default.A list or requested-count dependency failure returns a Graph serviceNotAvailable error.Supports $filter on state and serviceId (eq), $select, $count=true, and $top (default 50, maximum 200).Results are ordered newest-first; $orderby is not supported.Server-driven paging returns an OData nextLink when additional pages are available.
+// returns a []CreditRequestable when successful
+func (m *CostManagementRoot) GetCreditRequests() []CreditRequestable {
+	val, err := m.GetBackingStore().Get("creditRequests")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]CreditRequestable)
+	}
+	return nil
+}
+
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *CostManagementRoot) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := m.Entity.GetFieldDeserializers()
+	res["creditRequests"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateCreditRequestFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]CreditRequestable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(CreditRequestable)
+				}
+			}
+			m.SetCreditRequests(res)
+		}
+		return nil
+	}
 	res["spendingPolicies"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateSpendingPolicyFromDiscriminatorValue)
 		if err != nil {
@@ -43,6 +72,16 @@ func (m *CostManagementRoot) GetFieldDeserializers() map[string]func(i878a80d233
 				}
 			}
 			m.SetSpendingPolicies(res)
+		}
+		return nil
+	}
+	res["usageReports"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCostManagementUsageReportRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetUsageReports(val.(CostManagementUsageReportRootable))
 		}
 		return nil
 	}
@@ -78,6 +117,19 @@ func (m *CostManagementRoot) GetSpendingPolicies() []SpendingPolicyable {
 	return nil
 }
 
+// GetUsageReports gets the usageReports property value. Reported consumption of Copilot Credits, split by user, group, service and funding.
+// returns a CostManagementUsageReportRootable when successful
+func (m *CostManagementRoot) GetUsageReports() CostManagementUsageReportRootable {
+	val, err := m.GetBackingStore().Get("usageReports")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CostManagementUsageReportRootable)
+	}
+	return nil
+}
+
 // GetUserBalances gets the userBalances property value. Per-user consumption balances, addressed by the user's identifier.
 // returns a []CostManagementUserBalanceable when successful
 func (m *CostManagementRoot) GetUserBalances() []CostManagementUserBalanceable {
@@ -97,6 +149,18 @@ func (m *CostManagementRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	if err != nil {
 		return err
 	}
+	if m.GetCreditRequests() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCreditRequests()))
+		for i, v := range m.GetCreditRequests() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("creditRequests", cast)
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetSpendingPolicies() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpendingPolicies()))
 		for i, v := range m.GetSpendingPolicies() {
@@ -105,6 +169,12 @@ func (m *CostManagementRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 			}
 		}
 		err = writer.WriteCollectionOfObjectValues("spendingPolicies", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("usageReports", m.GetUsageReports())
 		if err != nil {
 			return err
 		}
@@ -124,9 +194,25 @@ func (m *CostManagementRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 	return nil
 }
 
+// SetCreditRequests sets the creditRequests property value. The collection of credit requests for this tenant. Excludes audit-only requests by default.A list or requested-count dependency failure returns a Graph serviceNotAvailable error.Supports $filter on state and serviceId (eq), $select, $count=true, and $top (default 50, maximum 200).Results are ordered newest-first; $orderby is not supported.Server-driven paging returns an OData nextLink when additional pages are available.
+func (m *CostManagementRoot) SetCreditRequests(value []CreditRequestable) {
+	err := m.GetBackingStore().Set("creditRequests", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetSpendingPolicies sets the spendingPolicies property value. The spending policies that govern Copilot Credits consumption.
 func (m *CostManagementRoot) SetSpendingPolicies(value []SpendingPolicyable) {
 	err := m.GetBackingStore().Set("spendingPolicies", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetUsageReports sets the usageReports property value. Reported consumption of Copilot Credits, split by user, group, service and funding.
+func (m *CostManagementRoot) SetUsageReports(value CostManagementUsageReportRootable) {
+	err := m.GetBackingStore().Set("usageReports", value)
 	if err != nil {
 		panic(err)
 	}
@@ -143,8 +229,12 @@ func (m *CostManagementRoot) SetUserBalances(value []CostManagementUserBalanceab
 type CostManagementRootable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetCreditRequests() []CreditRequestable
 	GetSpendingPolicies() []SpendingPolicyable
+	GetUsageReports() CostManagementUsageReportRootable
 	GetUserBalances() []CostManagementUserBalanceable
+	SetCreditRequests(value []CreditRequestable)
 	SetSpendingPolicies(value []SpendingPolicyable)
+	SetUsageReports(value CostManagementUsageReportRootable)
 	SetUserBalances(value []CostManagementUserBalanceable)
 }

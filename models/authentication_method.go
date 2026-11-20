@@ -107,6 +107,16 @@ func (m *AuthenticationMethod) GetFieldDeserializers() map[string]func(i878a80d2
 		}
 		return nil
 	}
+	res["provenance"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateCredentialProvenanceFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetProvenance(val.(CredentialProvenanceable))
+		}
+		return nil
+	}
 	return res
 }
 
@@ -119,6 +129,19 @@ func (m *AuthenticationMethod) GetLastUsedDateTime() *i336074805fc853987abe6f7fe
 	}
 	if val != nil {
 		return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	}
+	return nil
+}
+
+// GetProvenance gets the provenance property value. The provenance and trust classification of the authentication method. Supports administrative attestation. Returned for FIDO2 authentication methods; null for method types that don't support provenance.
+// returns a CredentialProvenanceable when successful
+func (m *AuthenticationMethod) GetProvenance() CredentialProvenanceable {
+	val, err := m.GetBackingStore().Get("provenance")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(CredentialProvenanceable)
 	}
 	return nil
 }
@@ -137,6 +160,12 @@ func (m *AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487ee
 	}
 	{
 		err = writer.WriteTimeValue("lastUsedDateTime", m.GetLastUsedDateTime())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("provenance", m.GetProvenance())
 		if err != nil {
 			return err
 		}
@@ -160,11 +189,21 @@ func (m *AuthenticationMethod) SetLastUsedDateTime(value *i336074805fc853987abe6
 	}
 }
 
+// SetProvenance sets the provenance property value. The provenance and trust classification of the authentication method. Supports administrative attestation. Returned for FIDO2 authentication methods; null for method types that don't support provenance.
+func (m *AuthenticationMethod) SetProvenance(value CredentialProvenanceable) {
+	err := m.GetBackingStore().Set("provenance", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 type AuthenticationMethodable interface {
 	Entityable
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
 	GetCreatedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
 	GetLastUsedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time
+	GetProvenance() CredentialProvenanceable
 	SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
 	SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+	SetProvenance(value CredentialProvenanceable)
 }

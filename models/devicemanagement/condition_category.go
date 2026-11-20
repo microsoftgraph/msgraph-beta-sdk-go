@@ -20,10 +20,13 @@ const (
 	CLOUDPCUSERSETTINGSPERSISTENCEUSAGETHRESHOLD_CONDITIONCATEGORY
 	CLOUDPCDEPROVISIONEDTHRESHOLD_CONDITIONCATEGORY
 	CLOUDPCRESERVEDEPROVISIONFAILEDTHRESHOLD_CONDITIONCATEGORY
+	CLOUDPCRESERVELICENSESAVAILABILITYBELOWTHRESHOLD_CONDITIONCATEGORY
+	RESERVECLOUDPCUNLICENSEDUSERSASSIGNMENT_CONDITIONCATEGORY
+	CLOUDPCMAXUSERSTORAGEUSAGETHRESHOLDEXCEEDED_CONDITIONCATEGORY
 )
 
 func (i ConditionCategory) String() string {
-	return []string{"provisionFailures", "imageUploadFailures", "azureNetworkConnectionCheckFailures", "cloudPcInGracePeriod", "frontlineInsufficientLicenses", "cloudPcConnectionErrors", "cloudPcHostHealthCheckFailures", "cloudPcZoneOutage", "unknownFutureValue", "frontlineBufferUsageDuration", "frontlineBufferUsageThreshold", "cloudPcUserSettingsPersistenceUsageThreshold", "cloudPcDeprovisionedThreshold", "cloudPcReserveDeprovisionFailedThreshold"}[i]
+	return []string{"provisionFailures", "imageUploadFailures", "azureNetworkConnectionCheckFailures", "cloudPcInGracePeriod", "frontlineInsufficientLicenses", "cloudPcConnectionErrors", "cloudPcHostHealthCheckFailures", "cloudPcZoneOutage", "unknownFutureValue", "frontlineBufferUsageDuration", "frontlineBufferUsageThreshold", "cloudPcUserSettingsPersistenceUsageThreshold", "cloudPcDeprovisionedThreshold", "cloudPcReserveDeprovisionFailedThreshold", "cloudPcReserveLicensesAvailabilityBelowThreshold", "reserveCloudPcUnlicensedUsersAssignment", "cloudPcMaxUserStorageUsageThresholdExceeded"}[i]
 }
 
 func ParseConditionCategory(v string) (any, error) {
@@ -57,6 +60,12 @@ func ParseConditionCategory(v string) (any, error) {
 		result = CLOUDPCDEPROVISIONEDTHRESHOLD_CONDITIONCATEGORY
 	case "cloudPcReserveDeprovisionFailedThreshold":
 		result = CLOUDPCRESERVEDEPROVISIONFAILEDTHRESHOLD_CONDITIONCATEGORY
+	case "cloudPcReserveLicensesAvailabilityBelowThreshold":
+		result = CLOUDPCRESERVELICENSESAVAILABILITYBELOWTHRESHOLD_CONDITIONCATEGORY
+	case "reserveCloudPcUnlicensedUsersAssignment":
+		result = RESERVECLOUDPCUNLICENSEDUSERSASSIGNMENT_CONDITIONCATEGORY
+	case "cloudPcMaxUserStorageUsageThresholdExceeded":
+		result = CLOUDPCMAXUSERSTORAGEUSAGETHRESHOLDEXCEEDED_CONDITIONCATEGORY
 	default:
 		return nil, nil
 	}

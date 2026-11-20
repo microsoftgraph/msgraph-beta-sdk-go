@@ -94,7 +94,7 @@ func (m *ResourceQuota) GetFieldDeserializers() map[string]func(i878a80d2330e89d
 	return res
 }
 
-// GetMaxPercentage gets the maxPercentage property value. The maxPercentage property
+// GetMaxPercentage gets the maxPercentage property value. The maximum percentage of the organization's directorySizeQuota.total that this resource type can consume. The value must be between 0 and 100. A value of 0 blocks creation of new resources of this type. If omitted for supported resource types, the default is 80.
 // returns a *int32 when successful
 func (m *ResourceQuota) GetMaxPercentage() *int32 {
 	val, err := m.GetBackingStore().Get("maxPercentage")
@@ -133,7 +133,7 @@ func (m *ResourceQuota) GetResourceType() *ResourceQuotaType {
 	return nil
 }
 
-// GetTotal gets the total property value. The total property
+// GetTotal gets the total property value. The effective maximum number of resources allowed, calculated from directorySizeQuota.total and maxPercentage. This value is read-only and changes when the organization's overall quota changes.
 // returns a *int32 when successful
 func (m *ResourceQuota) GetTotal() *int32 {
 	val, err := m.GetBackingStore().Get("total")
@@ -195,7 +195,7 @@ func (m *ResourceQuota) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41
 	m.backingStore = value
 }
 
-// SetMaxPercentage sets the maxPercentage property value. The maxPercentage property
+// SetMaxPercentage sets the maxPercentage property value. The maximum percentage of the organization's directorySizeQuota.total that this resource type can consume. The value must be between 0 and 100. A value of 0 blocks creation of new resources of this type. If omitted for supported resource types, the default is 80.
 func (m *ResourceQuota) SetMaxPercentage(value *int32) {
 	err := m.GetBackingStore().Set("maxPercentage", value)
 	if err != nil {
@@ -219,7 +219,7 @@ func (m *ResourceQuota) SetResourceType(value *ResourceQuotaType) {
 	}
 }
 
-// SetTotal sets the total property value. The total property
+// SetTotal sets the total property value. The effective maximum number of resources allowed, calculated from directorySizeQuota.total and maxPercentage. This value is read-only and changes when the organization's overall quota changes.
 func (m *ResourceQuota) SetTotal(value *int32) {
 	err := m.GetBackingStore().Set("total", value)
 	if err != nil {

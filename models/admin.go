@@ -239,6 +239,16 @@ func (m *Admin) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 		}
 		return nil
 	}
+	res["resourcePolicy"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateResourcePolicyRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetResourcePolicy(val.(ResourcePolicyRootable))
+		}
+		return nil
+	}
 	res["serviceAnnouncement"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateServiceAnnouncementFromDiscriminatorValue)
 		if err != nil {
@@ -343,6 +353,19 @@ func (m *Admin) GetReportSettings() AdminReportSettingsable {
 	}
 	if val != nil {
 		return val.(AdminReportSettingsable)
+	}
+	return nil
+}
+
+// GetResourcePolicy gets the resourcePolicy property value. The resourcePolicy property
+// returns a ResourcePolicyRootable when successful
+func (m *Admin) GetResourcePolicy() ResourcePolicyRootable {
+	val, err := m.GetBackingStore().Get("resourcePolicy")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ResourcePolicyRootable)
 	}
 	return nil
 }
@@ -463,6 +486,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 	}
 	{
 		err := writer.WriteObjectValue("reportSettings", m.GetReportSettings())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("resourcePolicy", m.GetResourcePolicy())
 		if err != nil {
 			return err
 		}
@@ -601,6 +630,14 @@ func (m *Admin) SetReportSettings(value AdminReportSettingsable) {
 	}
 }
 
+// SetResourcePolicy sets the resourcePolicy property value. The resourcePolicy property
+func (m *Admin) SetResourcePolicy(value ResourcePolicyRootable) {
+	err := m.GetBackingStore().Set("resourcePolicy", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetServiceAnnouncement sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
 func (m *Admin) SetServiceAnnouncement(value ServiceAnnouncementable) {
 	err := m.GetBackingStore().Set("serviceAnnouncement", value)
@@ -649,6 +686,7 @@ type Adminable interface {
 	GetOdataType() *string
 	GetPeople() PeopleAdminSettingsable
 	GetReportSettings() AdminReportSettingsable
+	GetResourcePolicy() ResourcePolicyRootable
 	GetServiceAnnouncement() ServiceAnnouncementable
 	GetSharepoint() Sharepointable
 	GetTodo() AdminTodoable
@@ -665,6 +703,7 @@ type Adminable interface {
 	SetOdataType(value *string)
 	SetPeople(value PeopleAdminSettingsable)
 	SetReportSettings(value AdminReportSettingsable)
+	SetResourcePolicy(value ResourcePolicyRootable)
 	SetServiceAnnouncement(value ServiceAnnouncementable)
 	SetSharepoint(value Sharepointable)
 	SetTodo(value AdminTodoable)

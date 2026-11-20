@@ -82,7 +82,7 @@ func NewDeviceItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 	return NewDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Delete delete a registered device.
+// Delete delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
@@ -198,7 +198,7 @@ func (m *DeviceItemRequestBuilder) Restore() *ItemRestoreRequestBuilder {
 	return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// ToDeleteRequestInformation delete a registered device.
+// ToDeleteRequestInformation delete a registered device. When deleted, the device is moved to the deleted items container and is available for recovery for up to 30 days. After 30 days, the device is permanently deleted.- To learn more, see deletedItems.- For more information about soft deletion behavior for devices, see Device soft delete overview (preview).
 // returns a *RequestInformation when successful
 func (m *DeviceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeviceItemRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

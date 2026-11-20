@@ -63,6 +63,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
 					return NewCloudPcBulkRestart(), nil
 				case "#microsoft.graph.cloudPcBulkRestore":
 					return NewCloudPcBulkRestore(), nil
+				case "#microsoft.graph.cloudPcBulkSetDeviceName":
+					return NewCloudPcBulkSetDeviceName(), nil
 				case "#microsoft.graph.cloudPcBulkSetReviewStatus":
 					return NewCloudPcBulkSetReviewStatus(), nil
 				case "#microsoft.graph.cloudPcBulkTroubleshoot":
@@ -87,7 +89,7 @@ func (m *CloudPcBulkAction) GetActionSummary() CloudPcBulkActionSummaryable {
 	return nil
 }
 
-// GetCloudPcIds gets the cloudPcIds property value. The cloudPcIds property
+// GetCloudPcIds gets the cloudPcIds property value. IDs of the Cloud PCs the bulk action applies to. Individual Cloud PC IDs are GUID-formatted strings.
 // returns a []string when successful
 func (m *CloudPcBulkAction) GetCloudPcIds() []string {
 	val, err := m.GetBackingStore().Get("cloudPcIds")
@@ -308,7 +310,7 @@ func (m *CloudPcBulkAction) SetActionSummary(value CloudPcBulkActionSummaryable)
 	}
 }
 
-// SetCloudPcIds sets the cloudPcIds property value. The cloudPcIds property
+// SetCloudPcIds sets the cloudPcIds property value. IDs of the Cloud PCs the bulk action applies to. Individual Cloud PC IDs are GUID-formatted strings.
 func (m *CloudPcBulkAction) SetCloudPcIds(value []string) {
 	err := m.GetBackingStore().Set("cloudPcIds", value)
 	if err != nil {

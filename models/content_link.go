@@ -65,7 +65,7 @@ func (m *ContentLink) GetDisplayName() *string {
 	return nil
 }
 
-// GetExtensions gets the extensions property value. Custom extension field values set on the entity. Supports $select.
+// GetExtensions gets the extensions property value. Custom extension field values set at creation. Can't be changed afterward. Supports $select.
 // returns a ExtensionFieldCollectionable when successful
 func (m *ContentLink) GetExtensions() ExtensionFieldCollectionable {
 	val, err := m.GetBackingStore().Get("extensions")
@@ -191,7 +191,7 @@ func (m *ContentLink) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97
 	return nil
 }
 
-// GetLinkType gets the linkType property value. Type of content the link points to. The possible values are: documentReference, webReference, unknownFutureValue.
+// GetLinkType gets the linkType property value. Type of content the link points to. Required at creation and immutable afterward. The possible values are: documentReference, webReference, unknownFutureValue.
 // returns a *ContentLinkType when successful
 func (m *ContentLink) GetLinkType() *ContentLinkType {
 	val, err := m.GetBackingStore().Get("linkType")
@@ -204,7 +204,7 @@ func (m *ContentLink) GetLinkType() *ContentLinkType {
 	return nil
 }
 
-// GetWebUrl gets the webUrl property value. URL the link points to.
+// GetWebUrl gets the webUrl property value. URL the link points to. Required at creation and immutable afterward.
 // returns a *string when successful
 func (m *ContentLink) GetWebUrl() *string {
 	val, err := m.GetBackingStore().Get("webUrl")
@@ -287,7 +287,7 @@ func (m *ContentLink) SetDisplayName(value *string) {
 	}
 }
 
-// SetExtensions sets the extensions property value. Custom extension field values set on the entity. Supports $select.
+// SetExtensions sets the extensions property value. Custom extension field values set at creation. Can't be changed afterward. Supports $select.
 func (m *ContentLink) SetExtensions(value ExtensionFieldCollectionable) {
 	err := m.GetBackingStore().Set("extensions", value)
 	if err != nil {
@@ -311,7 +311,7 @@ func (m *ContentLink) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3
 	}
 }
 
-// SetLinkType sets the linkType property value. Type of content the link points to. The possible values are: documentReference, webReference, unknownFutureValue.
+// SetLinkType sets the linkType property value. Type of content the link points to. Required at creation and immutable afterward. The possible values are: documentReference, webReference, unknownFutureValue.
 func (m *ContentLink) SetLinkType(value *ContentLinkType) {
 	err := m.GetBackingStore().Set("linkType", value)
 	if err != nil {
@@ -319,7 +319,7 @@ func (m *ContentLink) SetLinkType(value *ContentLinkType) {
 	}
 }
 
-// SetWebUrl sets the webUrl property value. URL the link points to.
+// SetWebUrl sets the webUrl property value. URL the link points to. Required at creation and immutable afterward.
 func (m *ContentLink) SetWebUrl(value *string) {
 	err := m.GetBackingStore().Set("webUrl", value)
 	if err != nil {

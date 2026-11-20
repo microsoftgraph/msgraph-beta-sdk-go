@@ -15,7 +15,7 @@ type Tasks_v2ItemLinksRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// Tasks_v2ItemLinksRequestBuilderGetQueryParameters the collection of content links attached to the task. Read-only. Nullable.
+// Tasks_v2ItemLinksRequestBuilderGetQueryParameters content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
 type Tasks_v2ItemLinksRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -87,7 +87,7 @@ func (m *Tasks_v2ItemLinksRequestBuilder) Count() *Tasks_v2ItemLinksCountRequest
 	return NewTasks_v2ItemLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the collection of content links attached to the task. Read-only. Nullable.
+// Get content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a ContentLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Tasks_v2ItemLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2ItemLinksRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentLinkCollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *Tasks_v2ItemLinksRequestBuilder) Post(ctx context.Context, body ie233ee
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentLinkable), nil
 }
 
-// ToGetRequestInformation the collection of content links attached to the task. Read-only. Nullable.
+// ToGetRequestInformation content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Tasks_v2ItemLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Tasks_v2ItemLinksRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

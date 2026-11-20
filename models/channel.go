@@ -383,6 +383,22 @@ func (m *Channel) GetFieldDeserializers() map[string]func(i878a80d2330e89d268963
 		}
 		return nil
 	}
+	res["tags"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetCollectionOfObjectValues(CreateTeamworkChannelTagFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			res := make([]TeamworkChannelTagable, len(val))
+			for i, v := range val {
+				if v != nil {
+					res[i] = v.(TeamworkChannelTagable)
+				}
+			}
+			m.SetTags(res)
+		}
+		return nil
+	}
 	res["tenantId"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetStringValue()
 		if err != nil {
@@ -601,6 +617,19 @@ func (m *Channel) GetTabs() []TeamsTabable {
 	return nil
 }
 
+// GetTags gets the tags property value. The tags owned by the channel.
+// returns a []TeamworkChannelTagable when successful
+func (m *Channel) GetTags() []TeamworkChannelTagable {
+	val, err := m.GetBackingStore().Get("tags")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.([]TeamworkChannelTagable)
+	}
+	return nil
+}
+
 // GetTenantId gets the tenantId property value. The ID of the Microsoft Entra tenant.
 // returns a *string when successful
 func (m *Channel) GetTenantId() *string {
@@ -810,6 +839,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 			return err
 		}
 	}
+	if m.GetTags() != nil {
+		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTags()))
+		for i, v := range m.GetTags() {
+			if v != nil {
+				cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+			}
+		}
+		err = writer.WriteCollectionOfObjectValues("tags", cast)
+		if err != nil {
+			return err
+		}
+	}
 	{
 		err = writer.WriteStringValue("tenantId", m.GetTenantId())
 		if err != nil {
@@ -1001,6 +1042,14 @@ func (m *Channel) SetTabs(value []TeamsTabable) {
 	}
 }
 
+// SetTags sets the tags property value. The tags owned by the channel.
+func (m *Channel) SetTags(value []TeamworkChannelTagable) {
+	err := m.GetBackingStore().Set("tags", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetTenantId sets the tenantId property value. The ID of the Microsoft Entra tenant.
 func (m *Channel) SetTenantId(value *string) {
 	err := m.GetBackingStore().Set("tenantId", value)
@@ -1042,6 +1091,7 @@ type Channelable interface {
 	GetSharedWithTeams() []SharedWithChannelTeamInfoable
 	GetSummary() ChannelSummaryable
 	GetTabs() []TeamsTabable
+	GetTags() []TeamworkChannelTagable
 	GetTenantId() *string
 	GetWebUrl() *string
 	SetAllMembers(value []ConversationMemberable)
@@ -1066,6 +1116,7 @@ type Channelable interface {
 	SetSharedWithTeams(value []SharedWithChannelTeamInfoable)
 	SetSummary(value ChannelSummaryable)
 	SetTabs(value []TeamsTabable)
+	SetTags(value []TeamworkChannelTagable)
 	SetTenantId(value *string)
 	SetWebUrl(value *string)
 }

@@ -23,7 +23,7 @@ type Plans_v2ItemContextsPlanContextLinkItemRequestBuilderDeleteRequestConfigura
 	Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 
-// Plans_v2ItemContextsPlanContextLinkItemRequestBuilderGetQueryParameters the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// Plans_v2ItemContextsPlanContextLinkItemRequestBuilderGetQueryParameters context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 type Plans_v2ItemContextsPlanContextLinkItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -81,7 +81,7 @@ func (m *Plans_v2ItemContextsPlanContextLinkItemRequestBuilder) Delete(ctx conte
 	return nil
 }
 
-// Get the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// Get context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a PlanContextLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *Plans_v2ItemContextsPlanContextLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *Plans_v2ItemContextsPlanContextLinkItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlanContextLinkable, error) {
@@ -135,7 +135,7 @@ func (m *Plans_v2ItemContextsPlanContextLinkItemRequestBuilder) ToDeleteRequestI
 	return requestInfo, nil
 }
 
-// ToGetRequestInformation the collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// ToGetRequestInformation context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a *RequestInformation when successful
 func (m *Plans_v2ItemContextsPlanContextLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Plans_v2ItemContextsPlanContextLinkItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

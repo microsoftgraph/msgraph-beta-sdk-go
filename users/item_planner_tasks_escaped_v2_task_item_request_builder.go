@@ -15,7 +15,7 @@ type ItemPlannerTasks_v2TaskItemRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemPlannerTasks_v2TaskItemRequestBuilderGetQueryParameters read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+// ItemPlannerTasks_v2TaskItemRequestBuilderGetQueryParameters read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
 type ItemPlannerTasks_v2TaskItemRequestBuilderGetQueryParameters struct {
 	// Expand related entities
 	Expand []string "uriparametername:\"%24expand\""
@@ -48,7 +48,7 @@ func NewItemPlannerTasks_v2TaskItemRequestBuilder(rawUrl string, requestAdapter 
 	return NewItemPlannerTasks_v2TaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Get read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+// Get read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
 // returns a Taskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerTasks_v2TaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerTasks_v2TaskItemRequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Taskable, error) {
@@ -69,7 +69,7 @@ func (m *ItemPlannerTasks_v2TaskItemRequestBuilder) Get(ctx context.Context, req
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Taskable), nil
 }
 
-// ToGetRequestInformation read-only. Nullable. The collection of Planner Graph V4 tasks assigned to the user.
+// ToGetRequestInformation read-only. Nullable. The collection of tasks in the Planner Unified plans Graph API assigned to the user.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerTasks_v2TaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerTasks_v2TaskItemRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

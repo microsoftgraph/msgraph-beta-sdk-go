@@ -17,10 +17,12 @@ const (
 	PRIVATEAPPBLOCKEDBYCONNECTOR_ALERTTYPE
 	REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
 	REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
+	AGENTIDAUTONOMOUSSIGNINFAILURE_ALERTTYPE
+	AGENTIDINTERACTIVESIGNINFAILURE_ALERTTYPE
 )
 
 func (i AlertType) String() string {
-	return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn", "samlSignInFailure", "internetAppBlockedByPolicy", "privateAppBlockedByConnector", "remoteNetworkTunnelConnectivity", "remoteNetworkBgpConnectivity"}[i]
+	return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn", "samlSignInFailure", "internetAppBlockedByPolicy", "privateAppBlockedByConnector", "remoteNetworkTunnelConnectivity", "remoteNetworkBgpConnectivity", "agentIdAutonomousSignInFailure", "agentIdInteractiveSignInFailure"}[i]
 }
 
 func ParseAlertType(v string) (any, error) {
@@ -48,6 +50,10 @@ func ParseAlertType(v string) (any, error) {
 		result = REMOTENETWORKTUNNELCONNECTIVITY_ALERTTYPE
 	case "remoteNetworkBgpConnectivity":
 		result = REMOTENETWORKBGPCONNECTIVITY_ALERTTYPE
+	case "agentIdAutonomousSignInFailure":
+		result = AGENTIDAUTONOMOUSSIGNINFAILURE_ALERTTYPE
+	case "agentIdInteractiveSignInFailure":
+		result = AGENTIDINTERACTIVESIGNINFAILURE_ALERTTYPE
 	default:
 		return nil, nil
 	}

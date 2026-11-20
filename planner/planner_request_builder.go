@@ -92,12 +92,9 @@ func (m *PlannerRequestBuilder) Goals() *GoalsRequestBuilder {
 	return NewGoalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Patch update the properties of a planner object.
+// Patch update planner
 // returns a Plannerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-//
-// [Find more info here]: https://learn.microsoft.com/graph/api/planner-update?view=graph-rest-beta
 func (m *PlannerRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Plannerable, requestConfiguration *PlannerRequestBuilderPatchRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Plannerable, error) {
 	requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {
@@ -161,7 +158,7 @@ func (m *PlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, req
 	return requestInfo, nil
 }
 
-// ToPatchRequestInformation update the properties of a planner object.
+// ToPatchRequestInformation update planner
 // returns a *RequestInformation when successful
 func (m *PlannerRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Plannerable, requestConfiguration *PlannerRequestBuilderPatchRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -118,7 +118,7 @@ func (m *RuleSchedule) GetFrequency() *i878a80d2330e89d26896388a3f487eef27b0a0e6
 	return nil
 }
 
-// GetLookback gets the lookback property value. The lookback property
+// GetLookback gets the lookback property value. The time window evaluated by each scheduled rule run, expressed as an ISO 8601 duration, for example PT4H for four hours. Events match this window based on either event time or ingestion time. The value must be at least frequency. When omitted, the service derives the default lookback from frequency. Not supported for near-real-time rules with a zero frequency.
 // returns a *ISODuration when successful
 func (m *RuleSchedule) GetLookback() *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration {
 	val, err := m.GetBackingStore().Get("lookback")
@@ -232,7 +232,7 @@ func (m *RuleSchedule) SetFrequency(value *i878a80d2330e89d26896388a3f487eef27b0
 	}
 }
 
-// SetLookback sets the lookback property value. The lookback property
+// SetLookback sets the lookback property value. The time window evaluated by each scheduled rule run, expressed as an ISO 8601 duration, for example PT4H for four hours. Events match this window based on either event time or ingestion time. The value must be at least frequency. When omitted, the service derives the default lookback from frequency. Not supported for near-real-time rules with a zero frequency.
 func (m *RuleSchedule) SetLookback(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
 	err := m.GetBackingStore().Set("lookback", value)
 	if err != nil {
