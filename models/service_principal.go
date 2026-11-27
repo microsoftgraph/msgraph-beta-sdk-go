@@ -720,6 +720,16 @@ func (m *ServicePrincipal) GetFieldDeserializers() map[string]func(i878a80d2330e
 		}
 		return nil
 	}
+	res["idJag"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdJagServicePrincipalConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIdJag(val.(IdJagServicePrincipalConfigurationable))
+		}
+		return nil
+	}
 	res["info"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetObjectValue(CreateInformationalUrlFromDiscriminatorValue)
 		if err != nil {
@@ -737,6 +747,16 @@ func (m *ServicePrincipal) GetFieldDeserializers() map[string]func(i878a80d2330e
 		}
 		if val != nil {
 			m.SetIsDisabled(val)
+		}
+		return nil
+	}
+	res["isHardDeleteProtectionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHardDeleteProtectionEnabled(val)
 		}
 		return nil
 	}
@@ -1185,6 +1205,19 @@ func (m *ServicePrincipal) GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryP
 	return nil
 }
 
+// GetIdJag gets the idJag property value. The idJag property
+// returns a IdJagServicePrincipalConfigurationable when successful
+func (m *ServicePrincipal) GetIdJag() IdJagServicePrincipalConfigurationable {
+	val, err := m.GetBackingStore().Get("idJag")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdJagServicePrincipalConfigurationable)
+	}
+	return nil
+}
+
 // GetInfo gets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 // returns a InformationalUrlable when successful
 func (m *ServicePrincipal) GetInfo() InformationalUrlable {
@@ -1202,6 +1235,19 @@ func (m *ServicePrincipal) GetInfo() InformationalUrlable {
 // returns a *bool when successful
 func (m *ServicePrincipal) GetIsDisabled() *bool {
 	val, err := m.GetBackingStore().Get("isDisabled")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetIsHardDeleteProtectionEnabled gets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the service principal. When true, permanent deletion is blocked for seven days after soft deletion. The service principal can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing service principal by using Update servicePrincipal; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+// returns a *bool when successful
+func (m *ServicePrincipal) GetIsHardDeleteProtectionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isHardDeleteProtectionEnabled")
 	if err != nil {
 		panic(err)
 	}
@@ -1862,6 +1908,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 		}
 	}
 	{
+		err = writer.WriteObjectValue("idJag", m.GetIdJag())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteObjectValue("info", m.GetInfo())
 		if err != nil {
 			return err
@@ -1869,6 +1921,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 	}
 	{
 		err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isHardDeleteProtectionEnabled", m.GetIsHardDeleteProtectionEnabled())
 		if err != nil {
 			return err
 		}
@@ -2356,6 +2414,14 @@ func (m *ServicePrincipal) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscov
 	}
 }
 
+// SetIdJag sets the idJag property value. The idJag property
+func (m *ServicePrincipal) SetIdJag(value IdJagServicePrincipalConfigurationable) {
+	err := m.GetBackingStore().Set("idJag", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetInfo sets the info property value. Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
 func (m *ServicePrincipal) SetInfo(value InformationalUrlable) {
 	err := m.GetBackingStore().Set("info", value)
@@ -2367,6 +2433,14 @@ func (m *ServicePrincipal) SetInfo(value InformationalUrlable) {
 // SetIsDisabled sets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
 func (m *ServicePrincipal) SetIsDisabled(value *bool) {
 	err := m.GetBackingStore().Set("isDisabled", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetIsHardDeleteProtectionEnabled sets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the service principal. When true, permanent deletion is blocked for seven days after soft deletion. The service principal can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing service principal by using Update servicePrincipal; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+func (m *ServicePrincipal) SetIsHardDeleteProtectionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isHardDeleteProtectionEnabled", value)
 	if err != nil {
 		panic(err)
 	}
@@ -2658,8 +2732,10 @@ type ServicePrincipalable interface {
 	GetFederatedIdentityCredentials() []FederatedIdentityCredentialable
 	GetHomepage() *string
 	GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryPolicyable
+	GetIdJag() IdJagServicePrincipalConfigurationable
 	GetInfo() InformationalUrlable
 	GetIsDisabled() *bool
+	GetIsHardDeleteProtectionEnabled() *bool
 	GetKeyCredentials() []KeyCredentialable
 	GetLicenseDetails() []LicenseDetailsable
 	GetLoginUrl() *string
@@ -2719,8 +2795,10 @@ type ServicePrincipalable interface {
 	SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)
 	SetHomepage(value *string)
 	SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)
+	SetIdJag(value IdJagServicePrincipalConfigurationable)
 	SetInfo(value InformationalUrlable)
 	SetIsDisabled(value *bool)
+	SetIsHardDeleteProtectionEnabled(value *bool)
 	SetKeyCredentials(value []KeyCredentialable)
 	SetLicenseDetails(value []LicenseDetailsable)
 	SetLoginUrl(value *string)

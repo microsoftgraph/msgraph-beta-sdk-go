@@ -462,6 +462,12 @@ func (m *UserItemRequestBuilder) GetPasswordSingleSignOnCredentials() *ItemGetPa
 	return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// IdentityVerificationStatus provides operations to manage the identityVerificationStatus property of the microsoft.graph.user entity.
+// returns a *ItemIdentityVerificationStatusRequestBuilder when successful
+func (m *UserItemRequestBuilder) IdentityVerificationStatus() *ItemIdentityVerificationStatusRequestBuilder {
+	return NewItemIdentityVerificationStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // InferenceClassification provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
 // returns a *ItemInferenceClassificationRequestBuilder when successful
 func (m *UserItemRequestBuilder) InferenceClassification() *ItemInferenceClassificationRequestBuilder {

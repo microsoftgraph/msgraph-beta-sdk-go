@@ -26,7 +26,7 @@ func CreateTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 	return NewTask(), nil
 }
 
-// GetArchivalInfo gets the archivalInfo property value. Information about whether the entity is archived, and when it was archived.
+// GetArchivalInfo gets the archivalInfo property value. Service-populated information about whether the entity is archived, and when it was archived. Read-only.
 // returns a PlannerArchivalInfoable when successful
 func (m *Task) GetArchivalInfo() PlannerArchivalInfoable {
 	val, err := m.GetBackingStore().Get("archivalInfo")
@@ -65,7 +65,7 @@ func (m *Task) GetCapabilities() TaskCapabilityable {
 	return nil
 }
 
-// GetChecklist gets the checklist property value. The collection of checklist items on the task. Read-only. Nullable.
+// GetChecklist gets the checklist property value. Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a []ChecklistItemV4able when successful
 func (m *Task) GetChecklist() []ChecklistItemV4able {
 	val, err := m.GetBackingStore().Get("checklist")
@@ -78,7 +78,7 @@ func (m *Task) GetChecklist() []ChecklistItemV4able {
 	return nil
 }
 
-// GetCompletedBy gets the completedBy property value. Identity of the user who marked the task complete.
+// GetCompletedBy gets the completedBy property value. Identity of the user who marked the task complete. Read-only.
 // returns a IdentitySetable when successful
 func (m *Task) GetCompletedBy() IdentitySetable {
 	val, err := m.GetBackingStore().Get("completedBy")
@@ -91,7 +91,7 @@ func (m *Task) GetCompletedBy() IdentitySetable {
 	return nil
 }
 
-// GetCompletedDateTime gets the completedDateTime property value. Date and time the task was completed.
+// GetCompletedDateTime gets the completedDateTime property value. Date and time the task was completed. Read-only.
 // returns a *Time when successful
 func (m *Task) GetCompletedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time {
 	val, err := m.GetBackingStore().Get("completedDateTime")
@@ -548,7 +548,7 @@ func (m *Task) GetGoalIds() []string {
 	return nil
 }
 
-// GetHasChat gets the hasChat property value. Indicates whether the task has an associated chat.
+// GetHasChat gets the hasChat property value. Indicates whether the task has an associated chat. Read-only.
 // returns a *bool when successful
 func (m *Task) GetHasChat() *bool {
 	val, err := m.GetBackingStore().Get("hasChat")
@@ -561,7 +561,7 @@ func (m *Task) GetHasChat() *bool {
 	return nil
 }
 
-// GetHasChildren gets the hasChildren property value. Indicates whether the task has subtasks.
+// GetHasChildren gets the hasChildren property value. Indicates whether the task has subtasks. Read-only.
 // returns a *bool when successful
 func (m *Task) GetHasChildren() *bool {
 	val, err := m.GetBackingStore().Get("hasChildren")
@@ -574,7 +574,7 @@ func (m *Task) GetHasChildren() *bool {
 	return nil
 }
 
-// GetIsCritical gets the isCritical property value. Indicates whether the task is on the critical path, as computed from its dependencies.
+// GetIsCritical gets the isCritical property value. Indicates whether the task is on the critical path, as computed from its dependencies. Read-only.
 // returns a *bool when successful
 func (m *Task) GetIsCritical() *bool {
 	val, err := m.GetBackingStore().Get("isCritical")
@@ -613,7 +613,7 @@ func (m *Task) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f30
 	return nil
 }
 
-// GetLinks gets the links property value. The collection of content links attached to the task. Read-only. Nullable.
+// GetLinks gets the links property value. Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a []ContentLinkable when successful
 func (m *Task) GetLinks() []ContentLinkable {
 	val, err := m.GetBackingStore().Get("links")
@@ -769,7 +769,7 @@ func (m *Task) GetStatus() *PlannerTaskStatus {
 	return nil
 }
 
-// GetUserAssignments gets the userAssignments property value. The collection of user assignments on the task. Read-only. Nullable.
+// GetUserAssignments gets the userAssignments property value. User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 // returns a []UserAssignmentable when successful
 func (m *Task) GetUserAssignments() []UserAssignmentable {
 	val, err := m.GetBackingStore().Get("userAssignments")
@@ -996,7 +996,7 @@ func (m *Task) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 	return nil
 }
 
-// SetArchivalInfo sets the archivalInfo property value. Information about whether the entity is archived, and when it was archived.
+// SetArchivalInfo sets the archivalInfo property value. Service-populated information about whether the entity is archived, and when it was archived. Read-only.
 func (m *Task) SetArchivalInfo(value PlannerArchivalInfoable) {
 	err := m.GetBackingStore().Set("archivalInfo", value)
 	if err != nil {
@@ -1020,7 +1020,7 @@ func (m *Task) SetCapabilities(value TaskCapabilityable) {
 	}
 }
 
-// SetChecklist sets the checklist property value. The collection of checklist items on the task. Read-only. Nullable.
+// SetChecklist sets the checklist property value. Checklist items on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 func (m *Task) SetChecklist(value []ChecklistItemV4able) {
 	err := m.GetBackingStore().Set("checklist", value)
 	if err != nil {
@@ -1028,7 +1028,7 @@ func (m *Task) SetChecklist(value []ChecklistItemV4able) {
 	}
 }
 
-// SetCompletedBy sets the completedBy property value. Identity of the user who marked the task complete.
+// SetCompletedBy sets the completedBy property value. Identity of the user who marked the task complete. Read-only.
 func (m *Task) SetCompletedBy(value IdentitySetable) {
 	err := m.GetBackingStore().Set("completedBy", value)
 	if err != nil {
@@ -1036,7 +1036,7 @@ func (m *Task) SetCompletedBy(value IdentitySetable) {
 	}
 }
 
-// SetCompletedDateTime sets the completedDateTime property value. Date and time the task was completed.
+// SetCompletedDateTime sets the completedDateTime property value. Date and time the task was completed. Read-only.
 func (m *Task) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
 	err := m.GetBackingStore().Set("completedDateTime", value)
 	if err != nil {
@@ -1100,7 +1100,7 @@ func (m *Task) SetGoalIds(value []string) {
 	}
 }
 
-// SetHasChat sets the hasChat property value. Indicates whether the task has an associated chat.
+// SetHasChat sets the hasChat property value. Indicates whether the task has an associated chat. Read-only.
 func (m *Task) SetHasChat(value *bool) {
 	err := m.GetBackingStore().Set("hasChat", value)
 	if err != nil {
@@ -1108,7 +1108,7 @@ func (m *Task) SetHasChat(value *bool) {
 	}
 }
 
-// SetHasChildren sets the hasChildren property value. Indicates whether the task has subtasks.
+// SetHasChildren sets the hasChildren property value. Indicates whether the task has subtasks. Read-only.
 func (m *Task) SetHasChildren(value *bool) {
 	err := m.GetBackingStore().Set("hasChildren", value)
 	if err != nil {
@@ -1116,7 +1116,7 @@ func (m *Task) SetHasChildren(value *bool) {
 	}
 }
 
-// SetIsCritical sets the isCritical property value. Indicates whether the task is on the critical path, as computed from its dependencies.
+// SetIsCritical sets the isCritical property value. Indicates whether the task is on the critical path, as computed from its dependencies. Read-only.
 func (m *Task) SetIsCritical(value *bool) {
 	err := m.GetBackingStore().Set("isCritical", value)
 	if err != nil {
@@ -1140,7 +1140,7 @@ func (m *Task) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
 	}
 }
 
-// SetLinks sets the links property value. The collection of content links attached to the task. Read-only. Nullable.
+// SetLinks sets the links property value. Content links attached to the task. Can be supplied when creating a task by using a deep insert. Nullable.
 func (m *Task) SetLinks(value []ContentLinkable) {
 	err := m.GetBackingStore().Set("links", value)
 	if err != nil {
@@ -1236,7 +1236,7 @@ func (m *Task) SetStatus(value *PlannerTaskStatus) {
 	}
 }
 
-// SetUserAssignments sets the userAssignments property value. The collection of user assignments on the task. Read-only. Nullable.
+// SetUserAssignments sets the userAssignments property value. User assignments on the task. Can be supplied when creating a task by using a deep insert. Nullable.
 func (m *Task) SetUserAssignments(value []UserAssignmentable) {
 	err := m.GetBackingStore().Set("userAssignments", value)
 	if err != nil {

@@ -159,6 +159,16 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers() map[string]func(i878a80d
 		}
 		return nil
 	}
+	res["settings"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateConditionalAccessSettingsFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetSettings(val.(ConditionalAccessSettingsable))
+		}
+		return nil
+	}
 	res["templates"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessTemplateFromDiscriminatorValue)
 		if err != nil {
@@ -200,6 +210,19 @@ func (m *ConditionalAccessRoot) GetPolicies() []ConditionalAccessPolicyable {
 	}
 	if val != nil {
 		return val.([]ConditionalAccessPolicyable)
+	}
+	return nil
+}
+
+// GetSettings gets the settings property value. The tenant-wide Conditional Access settings, including user-action exclusions.
+// returns a ConditionalAccessSettingsable when successful
+func (m *ConditionalAccessRoot) GetSettings() ConditionalAccessSettingsable {
+	val, err := m.GetBackingStore().Get("settings")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ConditionalAccessSettingsable)
 	}
 	return nil
 }
@@ -277,6 +300,12 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("settings", m.GetSettings())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetTemplates() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplates()))
 		for i, v := range m.GetTemplates() {
@@ -340,6 +369,14 @@ func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)
 	}
 }
 
+// SetSettings sets the settings property value. The tenant-wide Conditional Access settings, including user-action exclusions.
+func (m *ConditionalAccessRoot) SetSettings(value ConditionalAccessSettingsable) {
+	err := m.GetBackingStore().Set("settings", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetTemplates sets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 func (m *ConditionalAccessRoot) SetTemplates(value []ConditionalAccessTemplateable) {
 	err := m.GetBackingStore().Set("templates", value)
@@ -357,6 +394,7 @@ type ConditionalAccessRootable interface {
 	GetDeletedItems() CaPoliciesDeletableRootable
 	GetNamedLocations() []NamedLocationable
 	GetPolicies() []ConditionalAccessPolicyable
+	GetSettings() ConditionalAccessSettingsable
 	GetTemplates() []ConditionalAccessTemplateable
 	SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)
 	SetAuthenticationStrength(value AuthenticationStrengthRootable)
@@ -364,5 +402,6 @@ type ConditionalAccessRootable interface {
 	SetDeletedItems(value CaPoliciesDeletableRootable)
 	SetNamedLocations(value []NamedLocationable)
 	SetPolicies(value []ConditionalAccessPolicyable)
+	SetSettings(value ConditionalAccessSettingsable)
 	SetTemplates(value []ConditionalAccessTemplateable)
 }

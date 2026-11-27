@@ -16,10 +16,12 @@ const (
 	REPORTONLYFAILURE_APPLIEDCONDITIONALACCESSPOLICYRESULT
 	REPORTONLYNOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT
 	REPORTONLYINTERRUPTED_APPLIEDCONDITIONALACCESSPOLICYRESULT
+	NOTAPPLIEDALLAPPSEXCLUSION_APPLIEDCONDITIONALACCESSPOLICYRESULT
+	REPORTONLYNOTAPPLIEDALLAPPSEXCLUSION_APPLIEDCONDITIONALACCESSPOLICYRESULT
 )
 
 func (i AppliedConditionalAccessPolicyResult) String() string {
-	return []string{"success", "failure", "notApplied", "notEnabled", "unknown", "unknownFutureValue", "reportOnlySuccess", "reportOnlyFailure", "reportOnlyNotApplied", "reportOnlyInterrupted"}[i]
+	return []string{"success", "failure", "notApplied", "notEnabled", "unknown", "unknownFutureValue", "reportOnlySuccess", "reportOnlyFailure", "reportOnlyNotApplied", "reportOnlyInterrupted", "notAppliedAllAppsExclusion", "reportOnlyNotAppliedAllAppsExclusion"}[i]
 }
 
 func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
@@ -45,6 +47,10 @@ func ParseAppliedConditionalAccessPolicyResult(v string) (any, error) {
 		result = REPORTONLYNOTAPPLIED_APPLIEDCONDITIONALACCESSPOLICYRESULT
 	case "reportOnlyInterrupted":
 		result = REPORTONLYINTERRUPTED_APPLIEDCONDITIONALACCESSPOLICYRESULT
+	case "notAppliedAllAppsExclusion":
+		result = NOTAPPLIEDALLAPPSEXCLUSION_APPLIEDCONDITIONALACCESSPOLICYRESULT
+	case "reportOnlyNotAppliedAllAppsExclusion":
+		result = REPORTONLYNOTAPPLIEDALLAPPSEXCLUSION_APPLIEDCONDITIONALACCESSPOLICYRESULT
 	default:
 		return nil, nil
 	}

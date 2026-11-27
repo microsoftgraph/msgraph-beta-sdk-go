@@ -469,6 +469,16 @@ func (m *Application) GetFieldDeserializers() map[string]func(i878a80d2330e89d26
 		}
 		return nil
 	}
+	res["identifierUriConfiguration"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateApplicationIdentifierUriConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIdentifierUriConfiguration(val.(ApplicationIdentifierUriConfigurationable))
+		}
+		return nil
+	}
 	res["identifierUris"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfPrimitiveValues("string")
 		if err != nil {
@@ -482,6 +492,16 @@ func (m *Application) GetFieldDeserializers() map[string]func(i878a80d2330e89d26
 				}
 			}
 			m.SetIdentifierUris(res)
+		}
+		return nil
+	}
+	res["idJag"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateIdJagApplicationConfigurationFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIdJag(val.(IdJagApplicationConfigurationable))
 		}
 		return nil
 	}
@@ -522,6 +542,16 @@ func (m *Application) GetFieldDeserializers() map[string]func(i878a80d2330e89d26
 		}
 		if val != nil {
 			m.SetIsFallbackPublicClient(val)
+		}
+		return nil
+	}
+	res["isHardDeleteProtectionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHardDeleteProtectionEnabled(val)
 		}
 		return nil
 	}
@@ -892,6 +922,19 @@ func (m *Application) GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryPolicy
 	return nil
 }
 
+// GetIdentifierUriConfiguration gets the identifierUriConfiguration property value. The identifierUriConfiguration property
+// returns a ApplicationIdentifierUriConfigurationable when successful
+func (m *Application) GetIdentifierUriConfiguration() ApplicationIdentifierUriConfigurationable {
+	val, err := m.GetBackingStore().Get("identifierUriConfiguration")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ApplicationIdentifierUriConfigurationable)
+	}
+	return nil
+}
+
 // GetIdentifierUris gets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 // returns a []string when successful
 func (m *Application) GetIdentifierUris() []string {
@@ -901,6 +944,19 @@ func (m *Application) GetIdentifierUris() []string {
 	}
 	if val != nil {
 		return val.([]string)
+	}
+	return nil
+}
+
+// GetIdJag gets the idJag property value. The idJag property
+// returns a IdJagApplicationConfigurationable when successful
+func (m *Application) GetIdJag() IdJagApplicationConfigurationable {
+	val, err := m.GetBackingStore().Get("idJag")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(IdJagApplicationConfigurationable)
 	}
 	return nil
 }
@@ -948,6 +1004,19 @@ func (m *Application) GetIsDisabled() *bool {
 // returns a *bool when successful
 func (m *Application) GetIsFallbackPublicClient() *bool {
 	val, err := m.GetBackingStore().Get("isFallbackPublicClient")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetIsHardDeleteProtectionEnabled gets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the application. When true, permanent deletion is blocked for seven days after soft deletion. The application can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing application by using Update application; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+// returns a *bool when successful
+func (m *Application) GetIsHardDeleteProtectionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isHardDeleteProtectionEnabled")
 	if err != nil {
 		panic(err)
 	}
@@ -1478,8 +1547,20 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 			return err
 		}
 	}
+	{
+		err = writer.WriteObjectValue("identifierUriConfiguration", m.GetIdentifierUriConfiguration())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetIdentifierUris() != nil {
 		err = writer.WriteCollectionOfStringValues("identifierUris", m.GetIdentifierUris())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteObjectValue("idJag", m.GetIdJag())
 		if err != nil {
 			return err
 		}
@@ -1504,6 +1585,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 	}
 	{
 		err = writer.WriteBoolValue("isFallbackPublicClient", m.GetIsFallbackPublicClient())
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err = writer.WriteBoolValue("isHardDeleteProtectionEnabled", m.GetIsHardDeleteProtectionEnabled())
 		if err != nil {
 			return err
 		}
@@ -1866,9 +1953,25 @@ func (m *Application) SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPo
 	}
 }
 
+// SetIdentifierUriConfiguration sets the identifierUriConfiguration property value. The identifierUriConfiguration property
+func (m *Application) SetIdentifierUriConfiguration(value ApplicationIdentifierUriConfigurationable) {
+	err := m.GetBackingStore().Set("identifierUriConfiguration", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetIdentifierUris sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API's code, and it must be globally unique across Microsoft Entra ID. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
 func (m *Application) SetIdentifierUris(value []string) {
 	err := m.GetBackingStore().Set("identifierUris", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetIdJag sets the idJag property value. The idJag property
+func (m *Application) SetIdJag(value IdJagApplicationConfigurationable) {
+	err := m.GetBackingStore().Set("idJag", value)
 	if err != nil {
 		panic(err)
 	}
@@ -1901,6 +2004,14 @@ func (m *Application) SetIsDisabled(value *bool) {
 // SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool) {
 	err := m.GetBackingStore().Set("isFallbackPublicClient", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetIsHardDeleteProtectionEnabled sets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the application. When true, permanent deletion is blocked for seven days after soft deletion. The application can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing application by using Update application; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+func (m *Application) SetIsHardDeleteProtectionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isHardDeleteProtectionEnabled", value)
 	if err != nil {
 		panic(err)
 	}
@@ -2159,11 +2270,14 @@ type Applicationable interface {
 	GetFederatedIdentityCredentials() []FederatedIdentityCredentialable
 	GetGroupMembershipClaims() *string
 	GetHomeRealmDiscoveryPolicies() []HomeRealmDiscoveryPolicyable
+	GetIdentifierUriConfiguration() ApplicationIdentifierUriConfigurationable
 	GetIdentifierUris() []string
+	GetIdJag() IdJagApplicationConfigurationable
 	GetInfo() InformationalUrlable
 	GetIsDeviceOnlyAuthSupported() *bool
 	GetIsDisabled() *bool
 	GetIsFallbackPublicClient() *bool
+	GetIsHardDeleteProtectionEnabled() *bool
 	GetKeyCredentials() []KeyCredentialable
 	GetLogo() []byte
 	GetManagerApplications() []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID
@@ -2211,11 +2325,14 @@ type Applicationable interface {
 	SetFederatedIdentityCredentials(value []FederatedIdentityCredentialable)
 	SetGroupMembershipClaims(value *string)
 	SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)
+	SetIdentifierUriConfiguration(value ApplicationIdentifierUriConfigurationable)
 	SetIdentifierUris(value []string)
+	SetIdJag(value IdJagApplicationConfigurationable)
 	SetInfo(value InformationalUrlable)
 	SetIsDeviceOnlyAuthSupported(value *bool)
 	SetIsDisabled(value *bool)
 	SetIsFallbackPublicClient(value *bool)
+	SetIsHardDeleteProtectionEnabled(value *bool)
 	SetKeyCredentials(value []KeyCredentialable)
 	SetLogo(value []byte)
 	SetManagerApplications(value []i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)

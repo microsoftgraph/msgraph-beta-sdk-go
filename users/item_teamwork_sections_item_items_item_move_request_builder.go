@@ -38,7 +38,7 @@ func NewItemTeamworkSectionsItemItemsItemMoveRequestBuilder(rawUrl string, reque
 	return NewItemTeamworkSectionsItemItemsItemMoveRequestBuilderInternal(urlParams, requestAdapter)
 }
 
-// Post move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
+// Post move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section.
 // returns a TeamworkSectionItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -62,7 +62,7 @@ func (m *ItemTeamworkSectionsItemItemsItemMoveRequestBuilder) Post(ctx context.C
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionItemable), nil
 }
 
-// ToPostRequestInformation move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section. Use this action instead of add when the item is already in a user-defined section.
+// ToPostRequestInformation move an item from one user-defined section to another user-defined section in a user's teamwork. Each item can belong to only one section at a time. This action removes the item from its current section and adds it to the target section.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsItemItemsItemMoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamworkSectionsItemItemsItemMovePostRequestBodyable, requestConfiguration *ItemTeamworkSectionsItemItemsItemMoveRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

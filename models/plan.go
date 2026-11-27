@@ -26,7 +26,7 @@ func CreatePlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
 	return NewPlan(), nil
 }
 
-// GetArchivalInfo gets the archivalInfo property value. Information about whether the entity is archived, and when it was archived.
+// GetArchivalInfo gets the archivalInfo property value. Service-populated information about whether the entity is archived, and when it was archived. Read-only.
 // returns a PlannerArchivalInfoable when successful
 func (m *Plan) GetArchivalInfo() PlannerArchivalInfoable {
 	val, err := m.GetBackingStore().Get("archivalInfo")
@@ -104,7 +104,7 @@ func (m *Plan) GetContentSensitivityLabelAssignment() ContentSensitivityLabelAss
 	return nil
 }
 
-// GetContexts gets the contexts property value. The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// GetContexts gets the contexts property value. Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a []PlanContextLinkable when successful
 func (m *Plan) GetContexts() []PlanContextLinkable {
 	val, err := m.GetBackingStore().Get("contexts")
@@ -169,7 +169,7 @@ func (m *Plan) GetDisplayName() *string {
 	return nil
 }
 
-// GetDuration gets the duration property value. Duration of the plan, in days.
+// GetDuration gets the duration property value. Computed duration of the plan, in seconds. Read-only.
 // returns a *int32 when successful
 func (m *Plan) GetDuration() *int32 {
 	val, err := m.GetBackingStore().Get("duration")
@@ -489,7 +489,7 @@ func (m *Plan) GetGoals() []Goalable {
 	return nil
 }
 
-// GetHasChat gets the hasChat property value. Indicates whether the plan has an associated chat.
+// GetHasChat gets the hasChat property value. Indicates whether the plan has an associated chat. Read-only.
 // returns a *bool when successful
 func (m *Plan) GetHasChat() *bool {
 	val, err := m.GetBackingStore().Get("hasChat")
@@ -541,7 +541,7 @@ func (m *Plan) GetLastModifiedDateTime() *i336074805fc853987abe6f7fe3ad97a6a6f30
 	return nil
 }
 
-// GetLinks gets the links property value. The collection of content links attached to the plan. Read-only. Nullable.
+// GetLinks gets the links property value. Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
 // returns a []ContentLinkable when successful
 func (m *Plan) GetLinks() []ContentLinkable {
 	val, err := m.GetBackingStore().Get("links")
@@ -776,7 +776,7 @@ func (m *Plan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
 	return nil
 }
 
-// SetArchivalInfo sets the archivalInfo property value. Information about whether the entity is archived, and when it was archived.
+// SetArchivalInfo sets the archivalInfo property value. Service-populated information about whether the entity is archived, and when it was archived. Read-only.
 func (m *Plan) SetArchivalInfo(value PlannerArchivalInfoable) {
 	err := m.GetBackingStore().Set("archivalInfo", value)
 	if err != nil {
@@ -824,7 +824,7 @@ func (m *Plan) SetContentSensitivityLabelAssignment(value ContentSensitivityLabe
 	}
 }
 
-// SetContexts sets the contexts property value. The collection of context links describing where the plan is surfaced. Read-only. Nullable.
+// SetContexts sets the contexts property value. Context links describing where the plan is surfaced. Can be supplied when creating a plan by using a deep insert. Nullable.
 func (m *Plan) SetContexts(value []PlanContextLinkable) {
 	err := m.GetBackingStore().Set("contexts", value)
 	if err != nil {
@@ -864,7 +864,7 @@ func (m *Plan) SetDisplayName(value *string) {
 	}
 }
 
-// SetDuration sets the duration property value. Duration of the plan, in days.
+// SetDuration sets the duration property value. Computed duration of the plan, in seconds. Read-only.
 func (m *Plan) SetDuration(value *int32) {
 	err := m.GetBackingStore().Set("duration", value)
 	if err != nil {
@@ -888,7 +888,7 @@ func (m *Plan) SetGoals(value []Goalable) {
 	}
 }
 
-// SetHasChat sets the hasChat property value. Indicates whether the plan has an associated chat.
+// SetHasChat sets the hasChat property value. Indicates whether the plan has an associated chat. Read-only.
 func (m *Plan) SetHasChat(value *bool) {
 	err := m.GetBackingStore().Set("hasChat", value)
 	if err != nil {
@@ -920,7 +920,7 @@ func (m *Plan) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a
 	}
 }
 
-// SetLinks sets the links property value. The collection of content links attached to the plan. Read-only. Nullable.
+// SetLinks sets the links property value. Content links attached to the plan. Can be supplied when creating a plan by using a deep insert. Nullable.
 func (m *Plan) SetLinks(value []ContentLinkable) {
 	err := m.GetBackingStore().Set("links", value)
 	if err != nil {

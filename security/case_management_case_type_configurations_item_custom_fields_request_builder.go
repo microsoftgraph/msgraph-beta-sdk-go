@@ -15,7 +15,7 @@ type CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilderGetQueryParameters the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilderGetQueryParameters the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 type CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilder) Cou
 	return NewCaseManagementCaseTypeConfigurationsItemCustomFieldsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// Get the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a CustomFieldDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilder) Get(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilderGetRequestConfiguration) (i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CustomFieldDefinitionCollectionResponseable, error) {
@@ -100,7 +100,7 @@ func (m *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilder) Get
 	return res.(i750b9d71a9bf5f6c4275c76749e837bdafc4c29fba400a35892bce5f6331b4f9.CustomFieldDefinitionCollectionResponseable), nil
 }
 
-// ToGetRequestInformation the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, $skip, and $top.
+// ToGetRequestInformation the contained custom-field definitions that make up the blank-form schema for this case type. Read-only. Supports $count, $expand, $filter, $orderby, $select, and $top.
 // returns a *RequestInformation when successful
 func (m *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CaseManagementCaseTypeConfigurationsItemCustomFieldsRequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

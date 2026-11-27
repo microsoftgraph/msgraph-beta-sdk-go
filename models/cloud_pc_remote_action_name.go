@@ -20,10 +20,11 @@ const (
 	POWERON_CLOUDPCREMOTEACTIONNAME
 	POWEROFF_CLOUDPCREMOTEACTIONNAME
 	MOVEREGION_CLOUDPCREMOTEACTIONNAME
+	SETDEVICENAME_CLOUDPCREMOTEACTIONNAME
 )
 
 func (i CloudPcRemoteActionName) String() string {
-	return []string{"unknown", "restart", "rename", "resize", "restore", "reprovision", "changeUserAccountType", "troubleshoot", "placeUnderReview", "unknownFutureValue", "createSnapshot", "powerOn", "powerOff", "moveRegion"}[i]
+	return []string{"unknown", "restart", "rename", "resize", "restore", "reprovision", "changeUserAccountType", "troubleshoot", "placeUnderReview", "unknownFutureValue", "createSnapshot", "powerOn", "powerOff", "moveRegion", "setDeviceName"}[i]
 }
 
 func ParseCloudPcRemoteActionName(v string) (any, error) {
@@ -57,6 +58,8 @@ func ParseCloudPcRemoteActionName(v string) (any, error) {
 		result = POWEROFF_CLOUDPCREMOTEACTIONNAME
 	case "moveRegion":
 		result = MOVEREGION_CLOUDPCREMOTEACTIONNAME
+	case "setDeviceName":
+		result = SETDEVICENAME_CLOUDPCREMOTEACTIONNAME
 	default:
 		return nil, nil
 	}

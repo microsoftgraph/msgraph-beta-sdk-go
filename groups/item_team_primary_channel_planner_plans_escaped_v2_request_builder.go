@@ -15,7 +15,7 @@ type ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilder struct {
 	i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
 
-// ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilderGetQueryParameters read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+// ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilderGetQueryParameters read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
 type ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilderGetQueryParameters struct {
 	// Include count of items
 	Count *bool "uriparametername:\"%24count\""
@@ -79,7 +79,7 @@ func (m *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilder) Count() *ItemTeamP
 	return NewItemTeamPrimaryChannelPlannerPlans_v2CountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
-// Get read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+// Get read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
 // returns a PlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlanCollectionResponseable, error) {
@@ -100,7 +100,7 @@ func (m *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilder) Get(ctx context.Co
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlanCollectionResponseable), nil
 }
 
-// ToGetRequestInformation read-only. Nullable. The collection of Planner Graph V4 plans owned by the Teams channel. Currently, only shared channels are supported.
+// ToGetRequestInformation read-only. Nullable. The collection of plans in the Planner Unified plans Graph API owned by the Teams channel. Currently, only shared channels are supported.
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelPlannerPlans_v2RequestBuilderGetRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

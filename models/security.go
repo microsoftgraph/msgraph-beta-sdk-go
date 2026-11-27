@@ -41,6 +41,19 @@ func (m *Security) GetAdditionalData() map[string]any {
 	return val.(map[string]any)
 }
 
+// GetAgenticSecurity gets the agenticSecurity property value. The agenticSecurity property
+// returns a AgenticSecurityRootable when successful
+func (m *Security) GetAgenticSecurity() AgenticSecurityRootable {
+	val, err := m.GetBackingStore().Get("agenticSecurity")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(AgenticSecurityRootable)
+	}
+	return nil
+}
+
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer's tenant.
 // returns a []Alertable when successful
 func (m *Security) GetAlerts() []Alertable {
@@ -86,6 +99,19 @@ func (m *Security) GetCloudAppSecurityProfiles() []CloudAppSecurityProfileable {
 	return nil
 }
 
+// GetContentManagement gets the contentManagement property value. The contentManagement property
+// returns a ContentManagementRootable when successful
+func (m *Security) GetContentManagement() ContentManagementRootable {
+	val, err := m.GetBackingStore().Get("contentManagement")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(ContentManagementRootable)
+	}
+	return nil
+}
+
 // GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
 // returns a TenantDataSecurityAndGovernanceable when successful
 func (m *Security) GetDataSecurityAndGovernance() TenantDataSecurityAndGovernanceable {
@@ -116,6 +142,16 @@ func (m *Security) GetDomainSecurityProfiles() []DomainSecurityProfileable {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error when successful
 func (m *Security) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 	res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error)
+	res["agenticSecurity"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateAgenticSecurityRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetAgenticSecurity(val.(AgenticSecurityRootable))
+		}
+		return nil
+	}
 	res["alerts"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
 		if err != nil {
@@ -155,6 +191,16 @@ func (m *Security) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896
 				}
 			}
 			m.SetCloudAppSecurityProfiles(res)
+		}
+		return nil
+	}
+	res["contentManagement"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetObjectValue(CreateContentManagementRootFromDiscriminatorValue)
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetContentManagement(val.(ContentManagementRootable))
 		}
 		return nil
 	}
@@ -525,6 +571,12 @@ func (m *Security) GetUserSecurityProfiles() []UserSecurityProfileable {
 
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter) error {
+	{
+		err := writer.WriteObjectValue("agenticSecurity", m.GetAgenticSecurity())
+		if err != nil {
+			return err
+		}
+	}
 	if m.GetAlerts() != nil {
 		cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
 		for i, v := range m.GetAlerts() {
@@ -551,6 +603,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
 			}
 		}
 		err := writer.WriteCollectionOfObjectValues("cloudAppSecurityProfiles", cast)
+		if err != nil {
+			return err
+		}
+	}
+	{
+		err := writer.WriteObjectValue("contentManagement", m.GetContentManagement())
 		if err != nil {
 			return err
 		}
@@ -722,6 +780,14 @@ func (m *Security) SetAdditionalData(value map[string]any) {
 	}
 }
 
+// SetAgenticSecurity sets the agenticSecurity property value. The agenticSecurity property
+func (m *Security) SetAgenticSecurity(value AgenticSecurityRootable) {
+	err := m.GetBackingStore().Set("agenticSecurity", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer's tenant.
 func (m *Security) SetAlerts(value []Alertable) {
 	err := m.GetBackingStore().Set("alerts", value)
@@ -746,6 +812,14 @@ func (m *Security) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d4118542
 // SetCloudAppSecurityProfiles sets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable) {
 	err := m.GetBackingStore().Set("cloudAppSecurityProfiles", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
+// SetContentManagement sets the contentManagement property value. The contentManagement property
+func (m *Security) SetContentManagement(value ContentManagementRootable) {
+	err := m.GetBackingStore().Set("contentManagement", value)
 	if err != nil {
 		panic(err)
 	}
@@ -867,10 +941,12 @@ type Securityable interface {
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
 	ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
 	i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+	GetAgenticSecurity() AgenticSecurityRootable
 	GetAlerts() []Alertable
 	GetAttackSimulation() AttackSimulationRootable
 	GetBackingStore() ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 	GetCloudAppSecurityProfiles() []CloudAppSecurityProfileable
+	GetContentManagement() ContentManagementRootable
 	GetDataSecurityAndGovernance() TenantDataSecurityAndGovernanceable
 	GetDomainSecurityProfiles() []DomainSecurityProfileable
 	GetFileSecurityProfiles() []FileSecurityProfileable
@@ -885,10 +961,12 @@ type Securityable interface {
 	GetSubjectRightsRequests() []SubjectRightsRequestable
 	GetTiIndicators() []TiIndicatorable
 	GetUserSecurityProfiles() []UserSecurityProfileable
+	SetAgenticSecurity(value AgenticSecurityRootable)
 	SetAlerts(value []Alertable)
 	SetAttackSimulation(value AttackSimulationRootable)
 	SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
 	SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)
+	SetContentManagement(value ContentManagementRootable)
 	SetDataSecurityAndGovernance(value TenantDataSecurityAndGovernanceable)
 	SetDomainSecurityProfiles(value []DomainSecurityProfileable)
 	SetFileSecurityProfiles(value []FileSecurityProfileable)

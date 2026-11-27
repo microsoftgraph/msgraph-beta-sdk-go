@@ -111,7 +111,7 @@ func (m *ItemTeamworkSectionsItemItemsRequestBuilder) Get(ctx context.Context, r
 	return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionItemCollectionResponseable), nil
 }
 
-// Post add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
+// Post add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. An item can belong to only one section at a time. If the item is in a different user-defined section, this request moves it to the target section. If the item is already in the target section, the request succeeds without making changes.
 // returns a TeamworkSectionItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -156,7 +156,7 @@ func (m *ItemTeamworkSectionsItemItemsRequestBuilder) ToGetRequestInformation(ct
 	return requestInfo, nil
 }
 
-// ToPostRequestInformation add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. Each item can belong to only one section at a time. You can only add items that are currently in a system-defined section. If the item is already in another user-defined section, use the move action to relocate it.
+// ToPostRequestInformation add an item, such as a chat, channel, meeting, or community, to a user-defined section in a user's teamwork. An item can belong to only one section at a time. If the item is in a different user-defined section, this request moves it to the target section. If the item is already in the target section, the request succeeds without making changes.
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSectionsItemItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkSectionItemable, requestConfiguration *ItemTeamworkSectionsItemItemsRequestBuilderPostRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
 	requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

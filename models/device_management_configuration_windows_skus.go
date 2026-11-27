@@ -36,10 +36,16 @@ const (
 	WINDOWSMULTISESSION_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
 	// Indicates the Device Management Configuration Windows SKU is 'surfaceHub'
 	SURFACEHUB_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	// Indicates that the setting is applicable to the Windows CPC SKU family. Existing public beta member.
+	WINDOWSCPC_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	// Evolvable enumeration sentinel value. Do not use.
+	UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	// Indicates that the setting is applicable to the Windows Server SKU family. Use the Prefer: include-unknown-enum-members request header to receive this value.
+	WINDOWSSERVER_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
 )
 
 func (i DeviceManagementConfigurationWindowsSkus) String() string {
-	return []string{"unknown", "windowsHome", "windowsProfessional", "windowsEnterprise", "windowsEducation", "windowsMobile", "windowsMobileEnterprise", "windowsTeamSurface", "iot", "iotEnterprise", "holoLens", "holoLensEnterprise", "holographicForBusiness", "windowsMultiSession", "surfaceHub"}[i]
+	return []string{"unknown", "windowsHome", "windowsProfessional", "windowsEnterprise", "windowsEducation", "windowsMobile", "windowsMobileEnterprise", "windowsTeamSurface", "iot", "iotEnterprise", "holoLens", "holoLensEnterprise", "holographicForBusiness", "windowsMultiSession", "surfaceHub", "windowsCPC", "unknownFutureValue", "windowsServer"}[i]
 }
 
 func ParseDeviceManagementConfigurationWindowsSkus(v string) (any, error) {
@@ -75,6 +81,12 @@ func ParseDeviceManagementConfigurationWindowsSkus(v string) (any, error) {
 		result = WINDOWSMULTISESSION_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
 	case "surfaceHub":
 		result = SURFACEHUB_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	case "windowsCPC":
+		result = WINDOWSCPC_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	case "unknownFutureValue":
+		result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+	case "windowsServer":
+		result = WINDOWSSERVER_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
 	default:
 		return nil, nil
 	}

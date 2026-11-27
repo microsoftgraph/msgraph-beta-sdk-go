@@ -164,6 +164,12 @@ func (m *AdminRequestBuilder) ReportSettings() *ReportSettingsRequestBuilder {
 	return NewReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// ResourcePolicy provides operations to manage the resourcePolicy property of the microsoft.graph.admin entity.
+// returns a *ResourcePolicyRequestBuilder when successful
+func (m *AdminRequestBuilder) ResourcePolicy() *ResourcePolicyRequestBuilder {
+	return NewResourcePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
 // returns a *ServiceAnnouncementRequestBuilder when successful
 func (m *AdminRequestBuilder) ServiceAnnouncement() *ServiceAnnouncementRequestBuilder {

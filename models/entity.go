@@ -148,6 +148,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewAgentCollection(), nil
 				case "#microsoft.graph.agentCommunicationConfiguration":
 					return NewAgentCommunicationConfiguration(), nil
+				case "#microsoft.graph.agenticSecurityRoot":
+					return NewAgenticSecurityRoot(), nil
 				case "#microsoft.graph.agentIdentity":
 					return NewAgentIdentity(), nil
 				case "#microsoft.graph.agentIdentityBlueprint":
@@ -160,6 +162,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewAgentRegistration(), nil
 				case "#microsoft.graph.agentRiskDetection":
 					return NewAgentRiskDetection(), nil
+				case "#microsoft.graph.agentRun":
+					return NewAgentRun(), nil
 				case "#microsoft.graph.agentUser":
 					return NewAgentUser(), nil
 				case "#microsoft.graph.agreement":
@@ -786,6 +790,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewCloudPcBulkRestart(), nil
 				case "#microsoft.graph.cloudPcBulkRestore":
 					return NewCloudPcBulkRestore(), nil
+				case "#microsoft.graph.cloudPcBulkSetDeviceName":
+					return NewCloudPcBulkSetDeviceName(), nil
 				case "#microsoft.graph.cloudPcBulkSetReviewStatus":
 					return NewCloudPcBulkSetReviewStatus(), nil
 				case "#microsoft.graph.cloudPcBulkTroubleshoot":
@@ -858,6 +864,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewComplianceManagementPartner(), nil
 				case "#microsoft.graph.conditionalAccessRoot":
 					return NewConditionalAccessRoot(), nil
+				case "#microsoft.graph.conditionalAccessSettings":
+					return NewConditionalAccessSettings(), nil
 				case "#microsoft.graph.conditionalAccessTemplate":
 					return NewConditionalAccessTemplate(), nil
 				case "#microsoft.graph.configManagerCollection":
@@ -892,6 +900,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewContentActivity(), nil
 				case "#microsoft.graph.contentLink":
 					return NewContentLink(), nil
+				case "#microsoft.graph.contentManagementRoot":
+					return NewContentManagementRoot(), nil
 				case "#microsoft.graph.contentModel":
 					return NewContentModel(), nil
 				case "#microsoft.graph.contentSharingSession":
@@ -946,16 +956,26 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewCorsConfiguration_v2(), nil
 				case "#microsoft.graph.costManagementAlertSetting":
 					return NewCostManagementAlertSetting(), nil
+				case "#microsoft.graph.costManagementFundingUsageRecord":
+					return NewCostManagementFundingUsageRecord(), nil
 				case "#microsoft.graph.costManagementRoot":
 					return NewCostManagementRoot(), nil
+				case "#microsoft.graph.costManagementUsageReportRoot":
+					return NewCostManagementUsageReportRoot(), nil
 				case "#microsoft.graph.costManagementUserBalance":
 					return NewCostManagementUserBalance(), nil
+				case "#microsoft.graph.costManagementUserUsageServiceDetail":
+					return NewCostManagementUserUsageServiceDetail(), nil
+				case "#microsoft.graph.costManagementUserUsageSessionDetail":
+					return NewCostManagementUserUsageSessionDetail(), nil
 				case "#microsoft.graph.credentialUsageSummary":
 					return NewCredentialUsageSummary(), nil
 				case "#microsoft.graph.credentialUserRegistrationCount":
 					return NewCredentialUserRegistrationCount(), nil
 				case "#microsoft.graph.credentialUserRegistrationDetails":
 					return NewCredentialUserRegistrationDetails(), nil
+				case "#microsoft.graph.creditRequest":
+					return NewCreditRequest(), nil
 				case "#microsoft.graph.crossTenantAccessPolicy":
 					return NewCrossTenantAccessPolicy(), nil
 				case "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault":
@@ -1396,6 +1416,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewDriveRestoreArtifact(), nil
 				case "#microsoft.graph.driveRestoreArtifactsBulkAdditionRequest":
 					return NewDriveRestoreArtifactsBulkAdditionRequest(), nil
+				case "#microsoft.graph.dynamicPermissionsManagementRoot":
+					return NewDynamicPermissionsManagementRoot(), nil
 				case "#microsoft.graph.dynamicRuleActivityLog":
 					return NewDynamicRuleActivityLog(), nil
 				case "#microsoft.graph.easEmailProfileConfigurationBase":
@@ -1826,6 +1848,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewIdentityUserFlowAttribute(), nil
 				case "#microsoft.graph.identityUserFlowAttributeAssignment":
 					return NewIdentityUserFlowAttributeAssignment(), nil
+				case "#microsoft.graph.identityVerificationEvent":
+					return NewIdentityVerificationEvent(), nil
+				case "#microsoft.graph.identityVerificationStatus":
+					return NewIdentityVerificationStatus(), nil
 				case "#microsoft.graph.identityVerifiedIdRoot":
 					return NewIdentityVerifiedIdRoot(), nil
 				case "#microsoft.graph.impactedResource":
@@ -1888,6 +1914,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewInvalidLicenseAlertConfiguration(), nil
 				case "#microsoft.graph.invalidLicenseAlertIncident":
 					return NewInvalidLicenseAlertIncident(), nil
+				case "#microsoft.graph.investigationInput":
+					return NewInvestigationInput(), nil
+				case "#microsoft.graph.investigationMessage":
+					return NewInvestigationMessage(), nil
+				case "#microsoft.graph.investigationOutput":
+					return NewInvestigationOutput(), nil
+				case "#microsoft.graph.investigationSession":
+					return NewInvestigationSession(), nil
 				case "#microsoft.graph.invitation":
 					return NewInvitation(), nil
 				case "#microsoft.graph.inviteParticipantsOperation":
@@ -2668,6 +2702,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewPlannerUser(), nil
 				case "#microsoft.graph.platformCredentialAuthenticationMethod":
 					return NewPlatformCredentialAuthenticationMethod(), nil
+				case "#microsoft.graph.playbookDefinition":
+					return NewPlaybookDefinition(), nil
 				case "#microsoft.graph.playPromptOperation":
 					return NewPlayPromptOperation(), nil
 				case "#microsoft.graph.policyBase":
@@ -2894,6 +2930,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewResourceAccountKeyAuthenticationMethod(), nil
 				case "#microsoft.graph.resourceOperation":
 					return NewResourceOperation(), nil
+				case "#microsoft.graph.resourcePolicyConfiguration":
+					return NewResourcePolicyConfiguration(), nil
+				case "#microsoft.graph.resourcePolicyDeletableRoot":
+					return NewResourcePolicyDeletableRoot(), nil
+				case "#microsoft.graph.resourcePolicyEvaluationEvent":
+					return NewResourcePolicyEvaluationEvent(), nil
+				case "#microsoft.graph.resourcePolicyRoot":
+					return NewResourcePolicyRoot(), nil
 				case "#microsoft.graph.resourceSpecificPermissionGrant":
 					return NewResourceSpecificPermissionGrant(), nil
 				case "#microsoft.graph.restoreArtifactBase":
@@ -3314,6 +3358,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
 					return NewTeamwork(), nil
 				case "#microsoft.graph.teamworkBot":
 					return NewTeamworkBot(), nil
+				case "#microsoft.graph.teamworkChannelTag":
+					return NewTeamworkChannelTag(), nil
 				case "#microsoft.graph.teamworkCustomEmoji":
 					return NewTeamworkCustomEmoji(), nil
 				case "#microsoft.graph.teamworkDevice":

@@ -213,6 +213,12 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) Tabs() *ItemTeamPrimaryChannelTab
 	return NewItemTeamPrimaryChannelTabsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 
+// Tags provides operations to manage the tags property of the microsoft.graph.channel entity.
+// returns a *ItemTeamPrimaryChannelTagsRequestBuilder when successful
+func (m *ItemTeamPrimaryChannelRequestBuilder) Tags() *ItemTeamPrimaryChannelTagsRequestBuilder {
+	return NewItemTeamPrimaryChannelTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+
 // ToDeleteRequestInformation delete navigation property primaryChannel for groups
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelRequestBuilderDeleteRequestConfiguration) (*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

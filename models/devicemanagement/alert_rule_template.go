@@ -16,10 +16,11 @@ const (
 	CLOUDPCFRONTLINECONCURRENCYSCENARIO_ALERTRULETEMPLATE
 	CLOUDPCUSERSETTINGSPERSISTENCESCENARIO_ALERTRULETEMPLATE
 	CLOUDPCDEPROVISIONFAILEDSCENARIO_ALERTRULETEMPLATE
+	CLOUDPCRESERVEHEALTHSCENARIO_ALERTRULETEMPLATE
 )
 
 func (i AlertRuleTemplate) String() string {
-	return []string{"cloudPcProvisionScenario", "cloudPcImageUploadScenario", "cloudPcOnPremiseNetworkConnectionCheckScenario", "unknownFutureValue", "cloudPcInGracePeriodScenario", "cloudPcFrontlineInsufficientLicensesScenario", "cloudPcInaccessibleScenario", "cloudPcFrontlineConcurrencyScenario", "cloudPcUserSettingsPersistenceScenario", "cloudPcDeprovisionFailedScenario"}[i]
+	return []string{"cloudPcProvisionScenario", "cloudPcImageUploadScenario", "cloudPcOnPremiseNetworkConnectionCheckScenario", "unknownFutureValue", "cloudPcInGracePeriodScenario", "cloudPcFrontlineInsufficientLicensesScenario", "cloudPcInaccessibleScenario", "cloudPcFrontlineConcurrencyScenario", "cloudPcUserSettingsPersistenceScenario", "cloudPcDeprovisionFailedScenario", "cloudPcReserveHealthScenario"}[i]
 }
 
 func ParseAlertRuleTemplate(v string) (any, error) {
@@ -45,6 +46,8 @@ func ParseAlertRuleTemplate(v string) (any, error) {
 		result = CLOUDPCUSERSETTINGSPERSISTENCESCENARIO_ALERTRULETEMPLATE
 	case "cloudPcDeprovisionFailedScenario":
 		result = CLOUDPCDEPROVISIONFAILEDSCENARIO_ALERTRULETEMPLATE
+	case "cloudPcReserveHealthScenario":
+		result = CLOUDPCRESERVEHEALTHSCENARIO_ALERTRULETEMPLATE
 	default:
 		return nil, nil
 	}

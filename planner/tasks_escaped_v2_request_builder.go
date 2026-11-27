@@ -92,7 +92,7 @@ func (m *Tasks_v2RequestBuilder) Count() *Tasks_v2CountRequestBuilder {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
-// [Find more info here]: https://learn.microsoft.com/graph/api/plan-list-tasks?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-list-tasks_v2?view=graph-rest-beta
 func (m *Tasks_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *Tasks_v2RequestBuilderGetRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TaskCollectionResponseable, error) {
 	requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration)
 	if err != nil {
@@ -116,7 +116,7 @@ func (m *Tasks_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 //
-// [Find more info here]: https://learn.microsoft.com/graph/api/plan-post-tasks?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-tasks_v2?view=graph-rest-beta
 func (m *Tasks_v2RequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Taskable, requestConfiguration *Tasks_v2RequestBuilderPostRequestConfiguration) (ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Taskable, error) {
 	requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration)
 	if err != nil {

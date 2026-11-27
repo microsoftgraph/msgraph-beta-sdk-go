@@ -729,6 +729,16 @@ func (m *Group) GetFieldDeserializers() map[string]func(i878a80d2330e89d26896388
 		}
 		return nil
 	}
+	res["isHardDeleteProtectionEnabled"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+		val, err := n.GetBoolValue()
+		if err != nil {
+			return err
+		}
+		if val != nil {
+			m.SetIsHardDeleteProtectionEnabled(val)
+		}
+		return nil
+	}
 	res["isManagementRestricted"] = func(n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
 		val, err := n.GetBoolValue()
 		if err != nil {
@@ -1472,6 +1482,19 @@ func (m *Group) GetIsAssignableToRole() *bool {
 // returns a *bool when successful
 func (m *Group) GetIsFavorite() *bool {
 	val, err := m.GetBackingStore().Get("isFavorite")
+	if err != nil {
+		panic(err)
+	}
+	if val != nil {
+		return val.(*bool)
+	}
+	return nil
+}
+
+// GetIsHardDeleteProtectionEnabled gets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the group. Supported for cloud-only groups. When true, permanent deletion is blocked for seven days after soft deletion. The group can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing group by using Update group; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+// returns a *bool when successful
+func (m *Group) GetIsHardDeleteProtectionEnabled() *bool {
+	val, err := m.GetBackingStore().Get("isHardDeleteProtectionEnabled")
 	if err != nil {
 		panic(err)
 	}
@@ -2436,6 +2459,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 		}
 	}
 	{
+		err = writer.WriteBoolValue("isHardDeleteProtectionEnabled", m.GetIsHardDeleteProtectionEnabled())
+		if err != nil {
+			return err
+		}
+	}
+	{
 		err = writer.WriteBoolValue("isManagementRestricted", m.GetIsManagementRestricted())
 		if err != nil {
 			return err
@@ -3096,6 +3125,14 @@ func (m *Group) SetIsFavorite(value *bool) {
 	}
 }
 
+// SetIsHardDeleteProtectionEnabled sets the isHardDeleteProtectionEnabled property value. Indicates whether hard deletion protection is enabled for the group. Supported for cloud-only groups. When true, permanent deletion is blocked for seven days after soft deletion. The group can still be soft deleted and restored. Once enabled, protection can't be disabled or set to null. Enable protection on an existing group by using Update group; enabling it during creation isn't supported. Setting this property to true requires the Microsoft Entra Backup Administrator role. Nullable. Requires $select to retrieve. Supports $filter (eq).
+func (m *Group) SetIsHardDeleteProtectionEnabled(value *bool) {
+	err := m.GetBackingStore().Set("isHardDeleteProtectionEnabled", value)
+	if err != nil {
+		panic(err)
+	}
+}
+
 // SetIsManagementRestricted sets the isManagementRestricted property value. Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit.
 func (m *Group) SetIsManagementRestricted(value *bool) {
 	err := m.GetBackingStore().Set("isManagementRestricted", value)
@@ -3555,6 +3592,7 @@ type Groupable interface {
 	GetIsArchived() *bool
 	GetIsAssignableToRole() *bool
 	GetIsFavorite() *bool
+	GetIsHardDeleteProtectionEnabled() *bool
 	GetIsManagementRestricted() *bool
 	GetIsSubscribedByMail() *bool
 	GetLicenseProcessingState() LicenseProcessingStateable
@@ -3640,6 +3678,7 @@ type Groupable interface {
 	SetIsArchived(value *bool)
 	SetIsAssignableToRole(value *bool)
 	SetIsFavorite(value *bool)
+	SetIsHardDeleteProtectionEnabled(value *bool)
 	SetIsManagementRestricted(value *bool)
 	SetIsSubscribedByMail(value *bool)
 	SetLicenseProcessingState(value LicenseProcessingStateable)
